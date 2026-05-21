@@ -205,6 +205,22 @@
   line-height: 1.6;
 }
 
+.footer-cert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: var(--spacing-sm) 0 0;
+}
+
+.footer-cert img {
+  display: block;
+  height: 29px;
+  width: auto;
+  max-width: 96px;
+  object-fit: contain;
+}
+
 .footer-social {
   display: flex;
   flex-wrap: wrap;
@@ -212,6 +228,10 @@
   list-style: none;
   padding: 0;
   margin: var(--spacing-sm) 0 0;
+}
+
+.footer-section .footer-social {
+  margin-top: var(--spacing-md);
 }
 
 .footer-social a {
