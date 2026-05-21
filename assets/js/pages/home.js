@@ -1,16 +1,72 @@
+function createSkeletonCard() {
+  const card = document.createElement('div');
+  card.className = 'product-card product-card--skeleton';
+  card.setAttribute('aria-hidden', 'true');
+  card.innerHTML = `
+    <div class="product-card-skeleton-image"></div>
+    <div class="product-card-skeleton-body">
+      <div class="product-card-skeleton-line product-card-skeleton-line--short"></div>
+      <div class="product-card-skeleton-line"></div>
+      <div class="product-card-skeleton-line product-card-skeleton-line--medium"></div>
+      <div class="product-card-skeleton-btn"></div>
+    </div>`;
+  return card;
+}
+
+function initStaticCardImages(root) {
+  root.querySelectorAll('.product-card-image--hero[data-fallback]').forEach((img) => {
+    img.addEventListener('error', () => {
+      if (img.dataset.fallbackDone) return;
+      const fallback = img.dataset.fallback;
+      if (fallback && img.src !== fallback) {
+        img.dataset.fallbackDone = '1';
+        img.src = fallback;
+      }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('featured-products-grid');
   if (!grid) return;
+
+  const fallbackMsg = document.getElementById('featured-grid-fallback-msg');
+  const staticBackup = grid.innerHTML;
+  const hadStatic = !!grid.querySelector('.product-card--static');
+
+  if (!hadStatic) {
+    grid.innerHTML = '';
+    for (let i = 0; i < 6; i += 1) {
+      grid.appendChild(createSkeletonCard());
+    }
+  } else {
+    grid.classList.add('product-grid--loading');
+    if (fallbackMsg) fallbackMsg.hidden = true;
+    initStaticCardImages(grid);
+  }
+
   const pm = new ProductManager();
   try {
     await pm.loadProducts();
     const featured = pm.getFeaturedProducts().slice(0, 6);
+    grid.classList.remove('product-grid--loading');
     grid.innerHTML = '';
     featured.forEach((product) => {
-      const card = new ProductCard(product);
-      grid.appendChild(card.render());
+      grid.appendChild(new ProductCard(product).render());
     });
   } catch (e) {
-    grid.innerHTML = `<p class="loading-message">${e.message || 'Ürünler yüklenemedi.'}</p>`;
+    grid.classList.remove('product-grid--loading');
+    if (hadStatic) {
+      grid.innerHTML = staticBackup;
+      if (fallbackMsg) fallbackMsg.hidden = true;
+      initStaticCardImages(grid);
+      const notice = document.createElement('p');
+      notice.className = 'catalog-fallback-notice';
+      notice.textContent =
+        e.message || 'Öne çıkan ürünler yüklenemedi. Statik liste gösteriliyor.';
+      grid.parentElement.insertBefore(notice, grid);
+    } else {
+      grid.innerHTML = `<p class="loading-message">${e.message || 'Ürünler yüklenemedi.'}</p>`;
+    }
   }
 });

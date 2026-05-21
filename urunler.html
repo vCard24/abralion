@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Abralion ürün kataloğu - 24 ana ürün, 5 kategori.">
+  <meta name="description" content="Abralion ürün kataloğu - 24 ana ürün, 5 kategori. Kesici taşlar, elmas diskler, flap diskler, matkap ve kırıcı-delici uçlar.">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
   <title>Ürünlerimiz - Abralion</title>
   <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -66,24 +67,388 @@
     <div class="container">
       <div class="products-page-header text-center">
         <h1>Ürünlerimiz</h1>
-        <p id="products-count">Yükleniyor…</p>
+        <p id="products-count">24 ürün</p>
       </div>
       <div class="products-layout">
         <aside class="products-sidebar">
           <h2>Kategoriler</h2>
           <div class="sidebar-section">
-            <button type="button" class="category-btn active" data-category="all" onclick="filterCategory('all')">Tümü</button>
-            <button type="button" class="category-btn" data-category="kesici-taslama-flap-disk" onclick="filterCategory('kesici-taslama-flap-disk')">Kesici - Taşlama - Flap</button>
-            <button type="button" class="category-btn" data-category="elmas-kesici" onclick="filterCategory('elmas-kesici')">Elmas Kesici</button>
-            <button type="button" class="category-btn" data-category="uclar" onclick="filterCategory('uclar')">Kırıcı & Delici</button>
-            <button type="button" class="category-btn" data-category="maket-bicaklari" onclick="filterCategory('maket-bicaklari')">Maket Bıçakları</button>
-            <button type="button" class="category-btn" data-category="metreler" onclick="filterCategory('metreler')">Metreler</button>
+            <a href="urunler.html" class="category-btn active" data-category="all">Tümü</a>
+            <a href="urunler.html?kategori=kesici-taslama-flap-disk" class="category-btn" data-category="kesici-taslama-flap-disk">Kesici - Taşlama - Flap</a>
+            <a href="urunler.html?kategori=elmas-kesici" class="category-btn" data-category="elmas-kesici">Elmas Kesici</a>
+            <a href="urunler.html?kategori=uclar" class="category-btn" data-category="uclar">Kırıcı & Delici</a>
+            <a href="urunler.html?kategori=maket-bicaklari" class="category-btn" data-category="maket-bicaklari">Maket Bıçakları</a>
+            <a href="urunler.html?kategori=metreler" class="category-btn" data-category="metreler">Metreler</a>
           </div>
         </aside>
         <div class="products-main">
           <div class="product-grid" id="products-grid">
-            <div class="loading-message">Ürünler yükleniyor…</div>
+            <!-- CATALOG_STATIC_START -->
+          <div class="product-card product-card--static" data-category-id="elmas-kesici">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/asfalt-icin-elmas-kesme-diski.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/asfalt-icin-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-kart.jpg" alt="Asfalt İçin Elmas Kesme Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/asfalt-icin-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Elmas Kesici</div>
+              <h3 class="product-card-title"><a href="urun/asfalt-icin-elmas-kesme-diski.html">Asfalt İçin Elmas Kesme Diski</a></h3>
+              <p class="product-card-description">Asfalt ve yumuşak aşındırıcı malzemeler için özel olarak tasarlanmış elmas daire testere. Profesyonel kullanıcılar için …</p>
+              <div class="product-card-actions">
+                <a href="urun/asfalt-icin-elmas-kesme-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
           </div>
+          <div class="product-card product-card--static" data-category-id="elmas-kesici">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/granit-ve-mermer-segmentli-taslama-diski.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/granit-ve-mermer-segmentli-taslama-diski/granit-ve-mermer-segmentli-taslama-diski-kart.jpg" alt="Granit ve Mermer Segmentli Taşlama Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/granit-ve-mermer-segmentli-taslama-diski/granit-ve-mermer-segmentli-taslama-diski-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Elmas Kesici</div>
+              <h3 class="product-card-title"><a href="urun/granit-ve-mermer-segmentli-taslama-diski.html">Granit ve Mermer Segmentli Taşlama Diski</a></h3>
+              <p class="product-card-description">T tipi yapıya sahip bu segmentli taşlama diski; granit, mermer ve sert taş yüzeylerde yüksek performanslı kesim ve taşla…</p>
+              <div class="product-card-actions">
+                <a href="urun/granit-ve-mermer-segmentli-taslama-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="elmas-kesici">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/guclendirilmis-beton-icin-elmas-kesme-diski.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/guclendirilmis-beton-icin-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-kart.jpg" alt="Güçlendirilmiş Beton İçin Elmas Kesme Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/guclendirilmis-beton-icin-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Elmas Kesici</div>
+              <h3 class="product-card-title"><a href="urun/guclendirilmis-beton-icin-elmas-kesme-diski.html">Güçlendirilmiş Beton İçin Elmas Kesme Diski</a></h3>
+              <p class="product-card-description">Ağır iş ve universal uygulamalar için tasarlanmıştır. Güçlendirilmiş beton, doğal taşlar, mermer ve birçok yapı malzemes…</p>
+              <div class="product-card-actions">
+                <a href="urun/guclendirilmis-beton-icin-elmas-kesme-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="elmas-kesici">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/segmentli-standart-elmas-kesici.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kart.jpg" alt="Segmentli Standart Elmas Kesici" loading="lazy" width="400" height="300" data-fallback="assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Elmas Kesici</div>
+              <h3 class="product-card-title"><a href="urun/segmentli-standart-elmas-kesici.html">Segmentli Standart Elmas Kesici</a></h3>
+              <p class="product-card-description">Kuru Kesim İçin Uygun. Beton, donatılı beton, granit, tuğla, taş, duvar ve çeşitli inşaat malzemelerinde çok amaçlı kull…</p>
+              <div class="product-card-actions">
+                <a href="urun/segmentli-standart-elmas-kesici.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="elmas-kesici">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/ultra-ince-elmas-disk.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kart.jpg" alt="Ultra İnce Elmas Disk" loading="lazy" width="400" height="300" data-fallback="assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Elmas Kesici</div>
+              <h3 class="product-card-title"><a href="urun/ultra-ince-elmas-disk.html">Ultra İnce Elmas Disk</a></h3>
+              <p class="product-card-description">Özel ultra ince elmas dişleri sayesinde sert malzemelerde hızlı ve pürüzsüz kesim sağlar. Abralion markalı elmas kesme d…</p>
+              <div class="product-card-actions">
+                <a href="urun/ultra-ince-elmas-disk.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-kart.jpg" alt="355mm Metal Sabit Tezgah Kesme Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html">355mm Metal Sabit Tezgah Kesme Diski</a></h3>
+              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal kesimi için özel olarak geliştirilmiş büyük çaplı takviyeli kesme taşıdır. Endüstriyel u…</p>
+              <div class="product-card-actions">
+                <a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/ao-aluminyum-oksit-flap-disk.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kart.jpg" alt="AO Alüminyum Oksit Flap Disk" loading="lazy" width="400" height="300" data-fallback="assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/ao-aluminyum-oksit-flap-disk.html">AO Alüminyum Oksit Flap Disk</a></h3>
+              <p class="product-card-description">Metal ve ahşap yüzeylerin taşlanması için özel olarak geliştirilmiş flap disk. Alüminyum oksit (AO) aşındırıcı yapısı sa…</p>
+              <div class="product-card-actions">
+                <a href="urun/ao-aluminyum-oksit-flap-disk.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/metal-inox-kesme-tasi.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kart.png" alt="Metal / Inox Kesme Taşı" loading="lazy" width="400" height="300" data-fallback="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/metal-inox-kesme-tasi.html">Metal / Inox Kesme Taşı</a></h3>
+              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal kesimi için özel olarak geliştirilmiş takviyeli kesme taşıdır. İnce yapısı sayesinde has…</p>
+              <div class="product-card-actions">
+                <a href="urun/metal-inox-kesme-tasi.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/metal-inox-taslama-diski.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart.jpg" alt="Metal / Inox Taşlama Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/metal-inox-taslama-diski.html">Metal / Inox Taşlama Diski</a></h3>
+              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş takviyeli taşlama taşıdır. 304 ve 3…</p>
+              <div class="product-card-actions">
+                <a href="urun/metal-inox-taslama-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/zr-zirkon-flap-disk.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kart.jpg" alt="ZR Zirkon Flap Disk" loading="lazy" width="400" height="300" data-fallback="assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/zr-zirkon-flap-disk.html">ZR Zirkon Flap Disk</a></h3>
+              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş takviyeli taşlama taşıdır. 304 ve 3…</p>
+              <div class="product-card-actions">
+                <a href="urun/zr-zirkon-flap-disk.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="maket-bicaklari">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/maket-bicagi-yedek-ucu.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/maket-bicagi-yedek-ucu/maket-bicagi-yedek-ucu-kart.jpg" alt="Maket Bıçağı Yedek Ucu" loading="lazy" width="400" height="300" data-fallback="assets/images/products/maket-bicagi-yedek-ucu/maket-bicagi-yedek-ucu-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Maket Bıçakları</div>
+              <h3 class="product-card-title"><a href="urun/maket-bicagi-yedek-ucu.html">Maket Bıçağı Yedek Ucu</a></h3>
+              <p class="product-card-description">Profesyonel maket bıçaklarıyla uyumlu olarak tasarlanmış yedek uçlardır. Karton, deri, halı, alçıpan ve benzeri yüzeyler…</p>
+              <div class="product-card-actions">
+                <a href="urun/maket-bicagi-yedek-ucu.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="maket-bicaklari">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/profesyonel-metal-maket-bicagi.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/profesyonel-metal-maket-bicagi/profesyonel-metal-maket-bicagi-kart.jpg" alt="Profesyonel Metal Maket Bıçağı" loading="lazy" width="400" height="300" data-fallback="assets/images/products/profesyonel-metal-maket-bicagi/profesyonel-metal-maket-bicagi-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Maket Bıçakları</div>
+              <h3 class="product-card-title"><a href="urun/profesyonel-metal-maket-bicagi.html">Profesyonel Metal Maket Bıçağı</a></h3>
+              <p class="product-card-description">Karton, deri, halı, alçıpan ve yalıtım malzemeleri gibi çeşitli yüzeylerin hassas ve güvenli kesimi için tasarlanmış pro…</p>
+              <div class="product-card-actions">
+                <a href="urun/profesyonel-metal-maket-bicagi.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="maket-bicaklari">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/profesyonel-plastik-maket-bicagi.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/profesyonel-plastik-maket-bicagi/profesyonel-plastik-maket-bicagi-kart.jpg" alt="Profesyonel Plastik Maket Bıçağı" loading="lazy" width="400" height="300" data-fallback="assets/images/products/profesyonel-plastik-maket-bicagi/profesyonel-plastik-maket-bicagi-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Maket Bıçakları</div>
+              <h3 class="product-card-title"><a href="urun/profesyonel-plastik-maket-bicagi.html">Profesyonel Plastik Maket Bıçağı</a></h3>
+              <p class="product-card-description">Karton, deri, halı, alçıpan ve yalıtım malzemeleri gibi çeşitli yüzeylerin hassas ve güvenli kesimi için tasarlanmış pro…</p>
+              <div class="product-card-actions">
+                <a href="urun/profesyonel-plastik-maket-bicagi.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="metreler">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/abs-govdeli-profesyonel-serit-metre.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-kart.jpg" alt="ABS Gövdeli Profesyonel Şerit Metre" loading="lazy" width="400" height="300" data-fallback="assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Metreler</div>
+              <h3 class="product-card-title"><a href="urun/abs-govdeli-profesyonel-serit-metre.html">ABS Gövdeli Profesyonel Şerit Metre</a></h3>
+              <p class="product-card-description">İnşaat, imalat ve genel tadilat işlerinde yüksek hassasiyetli ölçüm yapabilmeniz için tasarlanmış profesyonel şerit metr…</p>
+              <div class="product-card-actions">
+                <a href="urun/abs-govdeli-profesyonel-serit-metre.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/duz-keski-sds-max.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/duz-keski-sds-max/duz-keski-sds-max-kart.jpg" alt="Düz Keski SDS Max" loading="lazy" width="400" height="300" data-fallback="assets/images/products/duz-keski-sds-max/duz-keski-sds-max-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/duz-keski-sds-max.html">Düz Keski SDS Max</a></h3>
+              <p class="product-card-description">Beton, tuğla, doğal taş ve asfalt gibi sert yüzeylerde kırma, yontma ve kanal açma işlemleri için özel olarak tasarlanmı…</p>
+              <div class="product-card-actions">
+                <a href="urun/duz-keski-sds-max.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/duz-keski-sds-plus.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-kart.jpg" alt="Düz Keski SDS Plus" loading="lazy" width="400" height="300" data-fallback="assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/duz-keski-sds-plus.html">Düz Keski SDS Plus</a></h3>
+              <p class="product-card-description">Beton, tuğla, doğal taş ve asfalt gibi sert yüzeylerde kırma, yontma ve kanal açma işlemleri için özel olarak tasarlanmı…</p>
+              <div class="product-card-actions">
+                <a href="urun/duz-keski-sds-plus.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/hss-matkap-ucu.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/hss-matkap-ucu/hss-matkap-ucu-kart.jpg" alt="HSS Matkap Ucu" loading="lazy" width="400" height="300" data-fallback="assets/images/products/hss-matkap-ucu/hss-matkap-ucu-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/hss-matkap-ucu.html">HSS Matkap Ucu</a></h3>
+              <p class="product-card-description">Yüksek kaliteli HSS (Yüksek Hız Çeliği) malzemeden üretilmiş olup; demir, çelik, döküm, alüminyum ve diğer metal alaşıml…</p>
+              <div class="product-card-actions">
+                <a href="urun/hss-matkap-ucu.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/miknatisli-anahtar-ucu-manyetik-somun-adaptoru.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/miknatisli-anahtar-ucu-manyetik-somun-adaptoru/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kart.jpg" alt="Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü)" loading="lazy" width="400" height="300" data-fallback="assets/images/products/miknatisli-anahtar-ucu-manyetik-somun-adaptoru/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/miknatisli-anahtar-ucu-manyetik-somun-adaptoru.html">Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü)</a></h3>
+              <p class="product-card-description">Elektrikli ve akülü vidalamalarla kullanım için tasarlanmış yüksek performanslı manyetik somun sıkma uçlarıdır. Üstün da…</p>
+              <div class="product-card-actions">
+                <a href="urun/miknatisli-anahtar-ucu-manyetik-somun-adaptoru.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/ph2-manyetik-bits-uc.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kart.jpg" alt="PH2 Manyetik Bits Uç" loading="lazy" width="400" height="300" data-fallback="assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/ph2-manyetik-bits-uc.html">PH2 Manyetik Bits Uç</a></h3>
+              <p class="product-card-description">Akülü ve elektrikli vidalama makineleriyle yoğun ve profesyonel kullanım için özel olarak tasarlanmış yüksek performansl…</p>
+              <div class="product-card-actions">
+                <a href="urun/ph2-manyetik-bits-uc.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/sds-max-burc-aleti-tarakli-murc.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/sds-max-burc-aleti-tarakli-murc/sds-max-burc-aleti-tarakli-murc-kart.jpg" alt="SDS MAX Burç Aleti (Taraklı Murç)" loading="lazy" width="400" height="300" data-fallback="assets/images/products/sds-max-burc-aleti-tarakli-murc/sds-max-burc-aleti-tarakli-murc-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/sds-max-burc-aleti-tarakli-murc.html">SDS MAX Burç Aleti (Taraklı Murç)</a></h3>
+              <p class="product-card-description">Beton, taş ve asfalt yüzeylerde pürüzlendirme, eski kaplamaları kaldırma ve taraklama işlemleri için özel olarak gelişti…</p>
+              <div class="product-card-actions">
+                <a href="urun/sds-max-burc-aleti-tarakli-murc.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/sds-plus-4-kesicili-beton-matkap-ucu-quadro.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu-quadro/sds-plus-4-kesicili-beton-matkap-ucu-quadro-kart.jpg" alt="SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro)" loading="lazy" width="400" height="300" data-fallback="assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu-quadro/sds-plus-4-kesicili-beton-matkap-ucu-quadro-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/sds-plus-4-kesicili-beton-matkap-ucu-quadro.html">SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro)</a></h3>
+              <p class="product-card-description">Beton, betonarme, doğal taş, tuğla ve duvar blokları gibi en sert yapı malzemelerinde yüksek performanslı delme işlemler…</p>
+              <div class="product-card-actions">
+                <a href="urun/sds-plus-4-kesicili-beton-matkap-ucu-quadro.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/sivri-uclu-keski-murc-sds-max.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max-kart.jpg" alt="Sivri Uçlu Keski / Murç (SDS Max)" loading="lazy" width="400" height="300" data-fallback="assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/sivri-uclu-keski-murc-sds-max.html">Sivri Uçlu Keski / Murç (SDS Max)</a></h3>
+              <p class="product-card-description">Beton, tuğla ve doğal taş gibi sert yapı malzemelerinde kırma ve ağır yıkım işlemleri için özel olarak tasarlanmış güçle…</p>
+              <div class="product-card-actions">
+                <a href="urun/sivri-uclu-keski-murc-sds-max.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/sivri-uclu-keski-murc-sds-plus.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kart.jpg" alt="Sivri Uçlu Keski / Murç (SDS Plus)" loading="lazy" width="400" height="300" data-fallback="assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/sivri-uclu-keski-murc-sds-plus.html">Sivri Uçlu Keski / Murç (SDS Plus)</a></h3>
+              <p class="product-card-description">Beton, tuğla ve doğal taş gibi sert yapı malzemelerinde kırma ve yıkım işlemleri için özel olarak tasarlanmış güçlendiri…</p>
+              <div class="product-card-actions">
+                <a href="urun/sivri-uclu-keski-murc-sds-plus.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="uclar">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kart.jpg" alt="Çok Fonksiyonlu Cam ve Seramik Matkap Ucu (4 Kesicili)" loading="lazy" width="400" height="300" data-fallback="assets/images/products/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kırıcı &amp; Delici</div>
+              <h3 class="product-card-title"><a href="urun/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili.html">Çok Fonksiyonlu Cam ve Seramik Matkap Ucu (4 Kesicili)</a></h3>
+              <p class="product-card-description">Seramik, fayans, porselen, cam, ayna ve hassas karo yüzeylerde kırma, çatlatma ve pullanma yapmadan son derece temiz ve …</p>
+              <div class="product-card-actions">
+                <a href="urun/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <!-- CATALOG_STATIC_END -->
+          </div>
+          <noscript>
+            <p class="no-products-message">Tam katalog ve filtreler için JavaScript gerekir. Tüm ürün sayfalarına <a href="urunler.html">ürün listesinden</a> veya menüden erişebilirsiniz.</p>
+          </noscript>
         </div>
       </div>
     </div>

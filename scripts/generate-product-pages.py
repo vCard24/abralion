@@ -2,6 +2,7 @@
 """24 urun detay HTML sayfasi uretir."""
 import json
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE = """<!DOCTYPE html>
@@ -74,7 +75,7 @@ TEMPLATE = """<!DOCTYPE html>
               <ul></ul>
             </div>
             <div class="product-actions">
-              <a href="../iletisim.html" class="btn btn-primary">Fiyat Teklifi Al</a>
+              <a href="../iletisim.html?urun={slug}&amp;konu={konu}" class="btn btn-primary">Fiyat Teklifi Al</a>
             </div>
             <p class="product-compare-hint">Teknik tablodaki kutucuklarla model seçip farklı ürünlerle karşılaştırabilirsiniz.</p>
           </div>
@@ -141,6 +142,7 @@ def main():
         html = TEMPLATE.format(
             slug=slug,
             name=esc(p["name"]),
+            konu=quote(p["name"], safe=""),
             description=esc((p.get("description") or "")[:160]),
         )
         path = out_dir / f"{slug}.html"

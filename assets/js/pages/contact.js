@@ -49,6 +49,7 @@
       },
     });
 
+    prefillFromUrl(form);
     form.addEventListener('submit', handleSubmit);
 
     form.querySelectorAll('.form-input, .form-textarea').forEach((field) => {
@@ -67,6 +68,18 @@
         }
       });
     });
+  }
+
+  function prefillFromUrl(form) {
+    const params = new URLSearchParams(window.location.search);
+    const konu = params.get('konu');
+    const subjectField = form.elements.subject;
+    if (!konu || !subjectField) return;
+
+    const productName = decodeURIComponent(konu.replace(/\+/g, ' ')).trim();
+    if (productName) {
+      subjectField.value = `Fiyat Teklifi - ${productName}`;
+    }
   }
 
   function handleSubmit(e) {

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Abralion - Profesyonel kesici, taşlama, elmas kesici ve endüstriyel uç ürünleri.">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
   <title>Abralion - Ana Sayfa</title>
   <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -63,21 +64,105 @@
   </header>
 
   <main id="main-content">
-    <section class="hero">
-      <img src="assets/images/arma.svg" alt="" class="hero-crest" aria-hidden="true">
+    <section class="home-hero-section section" id="home-hero-wrap">
       <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>Endüstriyel Kesim ve <span class="highlight">Taşlama Çözümleri</span></h1>
-            <p>Rusya'daki Türk firmalarına yüksek kaliteli kesici diskler, elmas kesiciler, flap diskler ve profesyonel uçlar sunuyoruz.</p>
-            <div class="hero-buttons">
-              <a href="urunler.html" class="btn btn-primary">Ürünleri İncele</a>
-              <a href="iletisim.html" class="btn btn-secondary">İletişime Geç</a>
+        <div class="home-hero" id="home-hero">
+          <div class="home-hero__layout">
+            <div class="home-hero__content">
+              <p class="home-hero__badge">
+                <span class="home-hero__badge-dot" aria-hidden="true"></span>
+                Rusya'da Endüstriyel Tedarik
+              </p>
+              <h1 class="home-hero__title">
+                Endüstriyel <span class="home-hero__accent">Kesim ve Taşlama</span> Çözümleri
+              </h1>
+              <p class="home-hero__subtitle">
+                Rusya'daki Türk firmalarına yüksek kaliteli kesici diskler, elmas kesiciler, flap diskler ve profesyonel uçlar sunuyoruz.
+              </p>
+              <div class="home-hero__actions">
+                <a href="urunler.html" class="btn btn-primary">Ürün Kataloğunu İncele</a>
+                <a href="iletisim.html" class="btn home-hero__btn-ghost">İletişime Geç</a>
+              </div>
+              <div class="home-hero__stats">
+                <div class="home-hero__stat">
+                  <span class="home-hero__stat-value">24</span>
+                  <span class="home-hero__stat-label">Ürün Ailesi</span>
+                </div>
+                <div class="home-hero__stat">
+                  <span class="home-hero__stat-value">90+</span>
+                  <span class="home-hero__stat-label">Varyasyon</span>
+                </div>
+                <div class="home-hero__stat">
+                  <span class="home-hero__stat-value">5</span>
+                  <span class="home-hero__stat-label">Kategori</span>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__deco-wrap" aria-hidden="true">
+              <svg class="home-hero__deco" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="170" cy="170" r="140" fill="none" stroke="currentColor" stroke-width="1"/>
+                <circle cx="170" cy="170" r="100" fill="none" stroke="currentColor" stroke-width="1"/>
+                <circle cx="170" cy="170" r="60" fill="none" stroke="currentColor" stroke-width="1"/>
+                <line x1="30" y1="170" x2="310" y2="170" stroke="currentColor" stroke-width="1"/>
+                <line x1="170" y1="30" x2="170" y2="310" stroke="currentColor" stroke-width="1"/>
+                <line x1="55" y1="55" x2="285" y2="285" stroke="currentColor" stroke-width="1"/>
+                <line x1="285" y1="55" x2="55" y2="285" stroke="currentColor" stroke-width="1"/>
+              </svg>
             </div>
           </div>
-          <div class="hero-image">
-            <img src="assets/images/logo.svg" alt="Abralion" class="hero-logo" data-logo>
-          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-trust section" id="home-trust" aria-label="Güven ve hizmet">
+      <div class="container">
+        <div class="home-trust__grid">
+          <article class="home-trust__card">
+            <span class="home-trust__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="home-trust__title">Uluslararası Kalite</h3>
+            <p class="home-trust__text">Standartlara uygun üretim</p>
+          </article>
+          <article class="home-trust__card">
+            <span class="home-trust__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                <path d="M15 18h2"/>
+                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+                <circle cx="17" cy="18" r="2"/>
+                <circle cx="7" cy="18" r="2"/>
+              </svg>
+            </span>
+            <h3 class="home-trust__title">Rusya'da Teslimat</h3>
+            <p class="home-trust__text">Yerel depo ve lojistik</p>
+          </article>
+          <article class="home-trust__card">
+            <span class="home-trust__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11h3l2-7h8l2 7h3v2H3z"/>
+                <path d="M6 13v4a2 2 0 0 0 2 2h1"/>
+                <path d="M18 13v4a2 2 0 0 1-2 2h-1"/>
+              </svg>
+            </span>
+            <h3 class="home-trust__title">Teknik Destek</h3>
+            <p class="home-trust__text">Türkçe ve Rusça hizmet</p>
+          </article>
+          <article class="home-trust__card">
+            <span class="home-trust__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </span>
+            <h3 class="home-trust__title">Hızlı Teklif</h3>
+            <p class="home-trust__text">24 saat içinde yanıt</p>
+          </article>
         </div>
       </div>
     </section>
@@ -106,7 +191,98 @@
           <p>PDF kataloğumuzdan seçilmiş ürünler</p>
         </div>
         <div class="product-grid" id="featured-products-grid">
-          <div class="loading-message">Ürünler yükleniyor…</div>
+          <!-- CATALOG_STATIC_START -->
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/metal-inox-kesme-tasi.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kart.png" alt="Metal / Inox Kesme Taşı" loading="lazy" width="400" height="300" data-fallback="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/metal-inox-kesme-tasi.html">Metal / Inox Kesme Taşı</a></h3>
+              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal kesimi için özel olarak geliştirilmiş takviyeli kesme taşıdır. İnce yapısı sayesinde has…</p>
+              <div class="product-card-actions">
+                <a href="urun/metal-inox-kesme-tasi.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-kart.jpg" alt="355mm Metal Sabit Tezgah Kesme Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html">355mm Metal Sabit Tezgah Kesme Diski</a></h3>
+              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal kesimi için özel olarak geliştirilmiş büyük çaplı takviyeli kesme taşıdır. Endüstriyel u…</p>
+              <div class="product-card-actions">
+                <a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/metal-inox-taslama-diski.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart.jpg" alt="Metal / Inox Taşlama Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/metal-inox-taslama-diski.html">Metal / Inox Taşlama Diski</a></h3>
+              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş takviyeli taşlama taşıdır. 304 ve 3…</p>
+              <div class="product-card-actions">
+                <a href="urun/metal-inox-taslama-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/zr-zirkon-flap-disk.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kart.jpg" alt="ZR Zirkon Flap Disk" loading="lazy" width="400" height="300" data-fallback="assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/zr-zirkon-flap-disk.html">ZR Zirkon Flap Disk</a></h3>
+              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş takviyeli taşlama taşıdır. 304 ve 3…</p>
+              <div class="product-card-actions">
+                <a href="urun/zr-zirkon-flap-disk.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/ao-aluminyum-oksit-flap-disk.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kart.jpg" alt="AO Alüminyum Oksit Flap Disk" loading="lazy" width="400" height="300" data-fallback="assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
+              <h3 class="product-card-title"><a href="urun/ao-aluminyum-oksit-flap-disk.html">AO Alüminyum Oksit Flap Disk</a></h3>
+              <p class="product-card-description">Metal ve ahşap yüzeylerin taşlanması için özel olarak geliştirilmiş flap disk. Alüminyum oksit (AO) aşındırıcı yapısı sa…</p>
+              <div class="product-card-actions">
+                <a href="urun/ao-aluminyum-oksit-flap-disk.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card product-card--static" data-category-id="elmas-kesici">
+            <div class="product-card-image-container product-card-image-container--static-hero">
+              <a href="urun/segmentli-standart-elmas-kesici.html">
+                <img class="product-card-image product-card-image--hero" src="assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kart.jpg" alt="Segmentli Standart Elmas Kesici" loading="lazy" width="400" height="300" data-fallback="assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kart.png">
+              </a>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-category">Elmas Kesici</div>
+              <h3 class="product-card-title"><a href="urun/segmentli-standart-elmas-kesici.html">Segmentli Standart Elmas Kesici</a></h3>
+              <p class="product-card-description">Kuru Kesim İçin Uygun. Beton, donatılı beton, granit, tuğla, taş, duvar ve çeşitli inşaat malzemelerinde çok amaçlı kull…</p>
+              <div class="product-card-actions">
+                <a href="urun/segmentli-standart-elmas-kesici.html" class="btn btn-primary btn-small">Detaylar</a>
+              </div>
+            </div>
+          </div>
+          <!-- CATALOG_STATIC_END -->
         </div>
         <div class="text-center mt-lg">
           <a href="urunler.html" class="btn btn-primary">Tüm Ürünleri Gör</a>
