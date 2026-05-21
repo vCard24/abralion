@@ -1246,8 +1246,9 @@ body.dark-theme .theme-toggle-btn:hover {
 }
 
 .home-hero__deco {
-  width: 280px;
-  height: 280px;
-  max-width: 280px;
-  max-height: 280px;
+  width: 312px;
+  height: 312px;
+  max-width: 312px;
+  max-height: 312px;
+  object-fit: contain;
 }

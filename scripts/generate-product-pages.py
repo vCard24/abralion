@@ -68,7 +68,7 @@ TEMPLATE = """<!DOCTYPE html>
           </div>
           <div class="product-detail-info">
             <div class="product-category" id="product-category"></div>
-            <h1 id="product-title"></h1>
+            <h1 id="product-title">{name}</h1>
             <p class="product-description" id="product-description"></p>
             <div class="product-features" id="product-features-short">
               <h3>Özellikler</h3>

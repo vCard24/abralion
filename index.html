@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Abralion - Profesyonel kesici, taşlama, elmas kesici ve endüstriyel uç ürünleri.">
+  <link rel="canonical" href="https://abralion.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Abralion">
+  <meta property="og:url" content="https://abralion.com/">
+  <meta property="og:title" content="Abralion - Ana Sayfa">
+  <meta property="og:description" content="Abralion - Profesyonel kesici, taşlama, elmas kesici ve endüstriyel uç ürünleri.">
+  <meta property="og:image" content="https://abralion.com/assets/images/logo.svg">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
   <title>Abralion - Ana Sayfa</title>
   <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
@@ -16,7 +23,9 @@
   <style id="home-critical-css">
     .home-top-panel { background: #231f20; border-radius: 12px; overflow: hidden; margin-bottom: 24px; }
     #home-hero.home-hero { display: flex; align-items: center; background: transparent; padding: 48px 40px 24px; min-height: 0; overflow: hidden; }
-    .home-hero__layout { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; }
+    .home-hero__layout { display: flex; align-items: center; justify-content: flex-start; gap: 0; width: 100%; }
+    .home-hero__content { flex: 0 1 520px; max-width: 55%; position: relative; z-index: 2; }
+    @keyframes home-hero-disc-spin { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
     .home-hero__content { flex: 1; min-width: 0; }
     .home-hero__title { margin: 0 0 16px; font-size: 2rem; font-weight: 600; line-height: 1.25; color: #fff; }
     .home-hero__accent { color: #e31e24; }
@@ -26,8 +35,8 @@
     .home-hero__stat:last-child { padding-right: 0; border-right: none; }
     .home-hero__stat-value { display: block; font-size: 1.5rem; font-weight: 700; color: #e31e24; }
     .home-hero__stat-label { display: block; margin-top: 4px; font-size: 11px; color: rgba(255, 255, 255, 0.5); }
-    .home-hero__deco-wrap { flex: 0 0 280px; display: flex; align-items: center; justify-content: center; pointer-events: none; }
-    .home-hero__deco { display: block; width: 280px; height: 280px; max-width: 280px; max-height: 280px; color: #e31e24; opacity: 0.12; }
+    .home-hero__deco-wrap { flex: 0 0 312px; display: flex; align-items: center; justify-content: center; margin-left: 91px; margin-right: 0; transform: none; pointer-events: none; }
+    .home-hero__deco { display: block; width: 312px; height: 312px; max-width: 312px; max-height: 312px; object-fit: contain; animation: home-hero-disc-spin 18s linear infinite; transform-origin: center center; }
     #home-trust.home-trust { margin: 0; padding: 0 40px 32px; background: transparent; }
     .home-trust__grid { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
     .home-trust__card { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1rem 1.25rem; }
@@ -50,7 +59,7 @@
 </head>
 <body>
   <script src="assets/js/theme-init.js"></script>
-<a href=\"#main-content\" class="sr-only">İçeriğe atla</a>
+<a href="#main-content" class="sr-only">İçeriğe atla</a>
 
   <header class="header">
     <div class="container">
@@ -134,15 +143,14 @@
               </div>
             </div>
             <div class="home-hero__deco-wrap" aria-hidden="true">
-              <svg class="home-hero__deco" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="170" cy="170" r="140" fill="none" stroke="currentColor" stroke-width="1"/>
-                <circle cx="170" cy="170" r="100" fill="none" stroke="currentColor" stroke-width="1"/>
-                <circle cx="170" cy="170" r="60" fill="none" stroke="currentColor" stroke-width="1"/>
-                <line x1="30" y1="170" x2="310" y2="170" stroke="currentColor" stroke-width="1"/>
-                <line x1="170" y1="30" x2="170" y2="310" stroke="currentColor" stroke-width="1"/>
-                <line x1="55" y1="55" x2="285" y2="285" stroke="currentColor" stroke-width="1"/>
-                <line x1="285" y1="55" x2="55" y2="285" stroke="currentColor" stroke-width="1"/>
-              </svg>
+              <img
+                class="home-hero__deco"
+                src="assets/images/abralion-disc.webp"
+                alt=""
+                width="312"
+                height="312"
+                loading="lazy"
+                decoding="async">
             </div>
           </div>
         </div>
