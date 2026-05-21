@@ -36,11 +36,43 @@ function filterStaticCards(grid, categoryId) {
   });
 }
 
+function updateStaticCount(grid, countEl, categoryId) {
+  if (!countEl) return;
+  const cards = grid.querySelectorAll('.product-card--static');
+  const visible = categoryId && categoryId !== 'all'
+    ? grid.querySelectorAll('.product-card--static:not([hidden])').length
+    : cards.length;
+  countEl.textContent = `${visible || cards.length} ürün`;
+}
+
+function renderProductCards(grid, products) {
+  if (typeof ProductCard === 'undefined') {
+    return false;
+  }
+  const fragment = document.createDocumentFragment();
+  let count = 0;
+  products.forEach((product) => {
+    try {
+      fragment.appendChild(new ProductCard(product).render());
+      count += 1;
+    } catch (err) {
+      console.error('Kart oluşturulamadı:', product?.slug, err);
+    }
+  });
+  if (!count) {
+    return false;
+  }
+  grid.innerHTML = '';
+  grid.appendChild(fragment);
+  return true;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('products-grid');
+  if (!grid) return;
+
   const countEl = document.getElementById('products-count');
   const fallbackMsg = document.getElementById('products-grid-fallback-msg');
-  const pm = new ProductManager();
   const params = new URLSearchParams(window.location.search);
   const kategori = params.get('kategori');
   const search = params.get('search');
@@ -59,10 +91,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       grid.appendChild(createSkeletonCard());
     }
   } else {
-    grid.classList.add('product-grid--loading');
     if (fallbackMsg) fallbackMsg.hidden = true;
     initStaticCardImages(grid);
     if (kategori) filterStaticCards(grid, kategori);
+    updateStaticCount(grid, countEl, kategori);
   }
 
   document.querySelectorAll('.category-btn').forEach((btn) => {
@@ -70,40 +102,52 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   try {
+    if (typeof ProductManager === 'undefined') {
+      throw new Error('Ürün modülü yüklenemedi.');
+    }
+    const pm = new ProductManager();
     await pm.loadProducts();
     let list = pm.getAllProducts();
     if (kategori) list = pm.filterByCategory(kategori);
     if (search) list = pm.search(search);
 
     if (countEl) countEl.textContent = `${list.length} ürün`;
-    grid.classList.remove('product-grid--loading');
-    grid.innerHTML = '';
+
     if (!list.length) {
-      grid.innerHTML = '<p class="no-products-message">Ürün bulunamadı.</p>';
+      if (!hadStatic) {
+        grid.innerHTML = '<p class="no-products-message">Ürün bulunamadı.</p>';
+      }
       return;
     }
-    list.forEach((product) => {
-      grid.appendChild(new ProductCard(product).render());
-    });
+
+    if (renderProductCards(grid, list)) {
+      if (fallbackMsg) fallbackMsg.hidden = true;
+      return;
+    }
+    if (!hadStatic) {
+      throw new Error('Ürünler gösterilemedi.');
+    }
   } catch (e) {
-    grid.classList.remove('product-grid--loading');
+    console.error('Ürün kataloğu:', e);
     if (hadStatic) {
       grid.innerHTML = staticBackup;
+      grid.classList.remove('product-grid--loading');
       if (fallbackMsg) fallbackMsg.hidden = true;
       initStaticCardImages(grid);
       if (kategori) filterStaticCards(grid, kategori);
-      const visible = grid.querySelectorAll('.product-card--static:not([hidden])').length;
-      const total = grid.querySelectorAll('.product-card--static').length;
-      if (countEl) countEl.textContent = `${visible || total} ürün`;
-      const notice = document.createElement('p');
-      notice.className = 'catalog-fallback-notice';
-      notice.textContent =
-        e.message || 'İnteraktif katalog yüklenemedi. Aşağıdaki statik liste ve ürün sayfalarını kullanabilirsiniz.';
-      grid.parentElement.insertBefore(notice, grid);
-    } else {
-      grid.innerHTML = `<p class="no-products-message">${e.message || 'Ürünler yüklenemedi.'}</p>`;
-      if (countEl) countEl.textContent = 'Ürünler yüklenemedi';
+      updateStaticCount(grid, countEl, kategori);
+      const existing = grid.parentElement.querySelector('.catalog-fallback-notice');
+      if (!existing) {
+        const notice = document.createElement('p');
+        notice.className = 'catalog-fallback-notice';
+        notice.textContent =
+          e.message || 'İnteraktif katalog yüklenemedi. Aşağıdaki statik liste ve ürün sayfalarını kullanabilirsiniz.';
+        grid.parentElement.insertBefore(notice, grid);
+      }
+      return;
     }
+    grid.innerHTML = `<p class="no-products-message">${e.message || 'Ürünler yüklenemedi.'}</p>`;
+    if (countEl) countEl.textContent = 'Ürünler yüklenemedi';
   }
 });
 

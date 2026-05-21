@@ -26,6 +26,28 @@ function initStaticCardImages(root) {
   });
 }
 
+function renderProductCards(grid, products) {
+  if (typeof ProductCard === 'undefined') {
+    return false;
+  }
+  const fragment = document.createDocumentFragment();
+  let count = 0;
+  products.forEach((product) => {
+    try {
+      fragment.appendChild(new ProductCard(product).render());
+      count += 1;
+    } catch (err) {
+      console.error('Kart oluşturulamadı:', product?.slug, err);
+    }
+  });
+  if (!count) {
+    return false;
+  }
+  grid.innerHTML = '';
+  grid.appendChild(fragment);
+  return true;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('featured-products-grid');
   if (!grid) return;
@@ -40,33 +62,44 @@ document.addEventListener('DOMContentLoaded', async () => {
       grid.appendChild(createSkeletonCard());
     }
   } else {
-    grid.classList.add('product-grid--loading');
     if (fallbackMsg) fallbackMsg.hidden = true;
     initStaticCardImages(grid);
   }
 
-  const pm = new ProductManager();
   try {
+    if (typeof ProductManager === 'undefined') {
+      throw new Error('Ürün modülü yüklenemedi.');
+    }
+    const pm = new ProductManager();
     await pm.loadProducts();
     const featured = pm.getFeaturedProducts().slice(0, 6);
-    grid.classList.remove('product-grid--loading');
-    grid.innerHTML = '';
-    featured.forEach((product) => {
-      grid.appendChild(new ProductCard(product).render());
-    });
+    if (!featured.length) {
+      return;
+    }
+    if (renderProductCards(grid, featured)) {
+      if (fallbackMsg) fallbackMsg.hidden = true;
+      return;
+    }
+    if (!hadStatic) {
+      throw new Error('Öne çıkan ürünler gösterilemedi.');
+    }
   } catch (e) {
-    grid.classList.remove('product-grid--loading');
+    console.error('Öne çıkan ürünler:', e);
     if (hadStatic) {
       grid.innerHTML = staticBackup;
+      grid.classList.remove('product-grid--loading');
       if (fallbackMsg) fallbackMsg.hidden = true;
       initStaticCardImages(grid);
-      const notice = document.createElement('p');
-      notice.className = 'catalog-fallback-notice';
-      notice.textContent =
-        e.message || 'Öne çıkan ürünler yüklenemedi. Statik liste gösteriliyor.';
-      grid.parentElement.insertBefore(notice, grid);
-    } else {
-      grid.innerHTML = `<p class="loading-message">${e.message || 'Ürünler yüklenemedi.'}</p>`;
+      const existing = grid.parentElement.querySelector('.catalog-fallback-notice');
+      if (!existing) {
+        const notice = document.createElement('p');
+        notice.className = 'catalog-fallback-notice';
+        notice.textContent =
+          e.message || 'Öne çıkan ürünler yüklenemedi. Statik liste gösteriliyor.';
+        grid.parentElement.insertBefore(notice, grid);
+      }
+      return;
     }
+    grid.innerHTML = `<p class="loading-message">${e.message || 'Ürünler yüklenemedi.'}</p>`;
   }
 });
