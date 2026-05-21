@@ -54,18 +54,25 @@
   background: rgba(227, 30, 36, 0.04);
 }
 
-/* ===== Ana sayfa — hero (#home-hero) ===== */
+/* ===== Ana sayfa — hero + güven (tek panel) ===== */
 .home-hero-section.section {
   padding: var(--spacing-md) 0 0;
   background: var(--color-white);
 }
 
+.home-top-panel {
+  background: var(--color-black);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+}
+
 #home-hero.home-hero {
   display: flex;
   align-items: center;
-  background: var(--color-black);
-  border-radius: 12px 12px 0 0;
-  padding: 48px 40px;
+  background: transparent;
+  border-radius: 0;
+  padding: 48px 40px 24px;
   min-height: 360px;
   overflow: hidden;
 }
@@ -194,24 +201,22 @@
 }
 
 /* ===== Ana sayfa — güven şeridi (#home-trust) ===== */
-#home-trust.home-trust.section {
-  margin-top: 0;
-  margin-bottom: var(--spacing-md);
-  padding: 0;
-  background: var(--color-black);
-  border-radius: 0 0 12px 12px;
-  position: relative;
-  z-index: 1;
-}
-
-#home-trust > .container {
-  padding-bottom: 32px;
+#home-trust.home-trust {
+  margin: 0;
+  padding: 0 40px 32px;
+  background: transparent;
 }
 
 .home-trust__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--spacing-sm);
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme #home-trust.home-trust.section {
+  background: transparent;
 }
 
 .home-trust__card {
@@ -225,13 +230,19 @@
   display: block;
   width: 28px;
   height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+  flex-shrink: 0;
   margin-bottom: 10px;
   color: var(--color-primary);
 }
 
 .home-trust__icon svg {
-  width: 100%;
-  height: 100%;
+  display: block;
+  width: 28px;
+  height: 28px;
+  max-width: 28px;
+  max-height: 28px;
   stroke: var(--color-primary);
 }
 
@@ -299,12 +310,16 @@ body.dark-theme #main-content .about-preview {
     padding-right: 0;
   }
 
-  #home-trust > .container {
-    padding-bottom: 24px;
+  #home-hero.home-hero {
+    padding: 32px 24px 16px;
+  }
+
+  #home-trust.home-trust {
+    padding: 0 24px 24px;
   }
 
   .home-trust__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
