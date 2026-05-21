@@ -1,0 +1,109 @@
+/* Otomatik üretildi — scripts/apply-kart-gorseller.py */
+.product-card-image-container--static-hero {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+.product-card:hover .product-card-image-container--static-hero {
+  filter: grayscale(0%);
+}
+
+.product-card[data-product-id="metal-inox-kesme-tasi"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kart.png);
+}
+
+.product-card[data-product-id="355mm-metal-sabit-tezgah-kesme-diski"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-kart.jpg);
+}
+
+.product-card[data-product-id="metal-inox-taslama-diski"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart.jpg);
+}
+
+.product-card[data-product-id="zr-zirkon-flap-disk"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kart.jpg);
+}
+
+.product-card[data-product-id="ao-aluminyum-oksit-flap-disk"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kart.jpg);
+}
+
+.product-card[data-product-id="segmentli-standart-elmas-kesici"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kart.jpg);
+}
+
+.product-card[data-product-id="ultra-ince-elmas-disk"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kart.jpg);
+}
+
+.product-card[data-product-id="granit-ve-mermer-segmentli-taslama-diski"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/granit-ve-mermer-segmentli-taslama-diski/granit-ve-mermer-segmentli-taslama-diski-kart.jpg);
+}
+
+.product-card[data-product-id="asfalt-icin-elmas-kesme-diski"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/asfalt-icin-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-kart.jpg);
+}
+
+.product-card[data-product-id="guclendirilmis-beton-icin-elmas-kesme-diski"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/guclendirilmis-beton-icin-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-kart.jpg);
+}
+
+.product-card[data-product-id="sds-max-burc-aleti-tarakli-murc"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/sds-max-burc-aleti-tarakli-murc/sds-max-burc-aleti-tarakli-murc-kart.jpg);
+}
+
+.product-card[data-product-id="hss-matkap-ucu"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/hss-matkap-ucu/hss-matkap-ucu-kart.jpg);
+}
+
+.product-card[data-product-id="sds-plus-4-kesicili-beton-matkap-ucu-quadro"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/sds-plus-4-kesicili-beton-matkap-ucu-quadro/sds-plus-4-kesicili-beton-matkap-ucu-quadro-kart.jpg);
+}
+
+.product-card[data-product-id="miknatisli-anahtar-ucu-manyetik-somun-adaptoru"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/miknatisli-anahtar-ucu-manyetik-somun-adaptoru/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kart.jpg);
+}
+
+.product-card[data-product-id="ph2-manyetik-bits-uc"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kart.jpg);
+}
+
+.product-card[data-product-id="duz-keski-sds-plus"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/duz-keski-sds-plus/duz-keski-sds-plus-kart.jpg);
+}
+
+.product-card[data-product-id="duz-keski-sds-max"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/duz-keski-sds-max/duz-keski-sds-max-kart.jpg);
+}
+
+.product-card[data-product-id="sivri-uclu-keski-murc-sds-plus"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kart.jpg);
+}
+
+.product-card[data-product-id="sivri-uclu-keski-murc-sds-max"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max-kart.jpg);
+}
+
+.product-card[data-product-id="cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kart.jpg);
+}
+
+.product-card[data-product-id="profesyonel-plastik-maket-bicagi"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/profesyonel-plastik-maket-bicagi/profesyonel-plastik-maket-bicagi-kart.jpg);
+}
+
+.product-card[data-product-id="profesyonel-metal-maket-bicagi"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/profesyonel-metal-maket-bicagi/profesyonel-metal-maket-bicagi-kart.jpg);
+}
+
+.product-card[data-product-id="maket-bicagi-yedek-ucu"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/maket-bicagi-yedek-ucu/maket-bicagi-yedek-ucu-kart.jpg);
+}
+
+.product-card[data-product-id="abs-govdeli-profesyonel-serit-metre"] .product-card-image-container--static-hero {
+  background-image: url(../images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-kart.jpg);
+}
+

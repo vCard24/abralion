@@ -1,0 +1,356 @@
+/* Karşılaştırma — sticky bar, tablo satırı, kart sayfası */
+
+.compare-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: var(--color-black);
+  color: var(--color-white);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  padding: var(--spacing-sm) 0;
+}
+
+.compare-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.compare-bar-text {
+  font-size: var(--font-size-small);
+}
+
+.compare-bar-count {
+  color: var(--color-primary);
+  font-size: 1.1em;
+}
+
+.compare-bar-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+body.has-compare-bar {
+  padding-bottom: 72px;
+}
+
+body.has-compare-bar .theme-toggle-btn {
+  bottom: 88px;
+}
+
+/* Tablo — karşılaştır sütunu */
+.page-product-detail .specs-table .compare-col,
+.page-product-detail .specs-table .compare-cell {
+  width: 48px;
+  text-align: center;
+  vertical-align: middle;
+  padding: var(--spacing-xs);
+}
+
+.compare-check {
+  display: inline-flex;
+  cursor: pointer;
+  margin: 0;
+}
+
+.compare-row-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.compare-check-box {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--color-gray-light);
+  border-radius: 3px;
+  background: var(--color-white);
+  transition: var(--transition);
+  position: relative;
+}
+
+.compare-row-input:checked + .compare-check-box {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.compare-row-input:checked + .compare-check-box::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.compare-row-input:disabled + .compare-check-box {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+tr.compare-row-active {
+  background: rgba(227, 30, 36, 0.06);
+}
+
+tr.compare-row-active td {
+  border-bottom-color: rgba(227, 30, 36, 0.2);
+}
+
+.page-product-detail .specs-table thead .compare-col {
+  background: var(--color-primary);
+  border: none;
+}
+
+/* Ürün kartı — ikon */
+.btn-icon-compare {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--border-radius);
+  background: var(--color-white);
+  color: var(--color-gray-dark);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.btn-icon-compare:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-icon-compare.in-compare {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.product-card-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-wrap: nowrap;
+  margin-top: auto;
+  width: 100%;
+}
+
+.product-card-actions .btn-primary {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-card-actions .btn-icon-compare {
+  flex-shrink: 0;
+}
+
+/* Toast */
+.compare-toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
+  z-index: 950;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+}
+
+.compare-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Karşılaştır sayfası — tablo matrisi (main.css .compare-table ile) */
+.compare-page .compare-summary {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--color-gray-medium);
+  margin: 0 0 var(--spacing-sm);
+  text-align: center;
+}
+
+.compare-page .compare-mixed-notice {
+  font-size: var(--font-size-small);
+  color: var(--color-gray-dark);
+  background: rgba(227, 30, 36, 0.06);
+  border: 1px solid rgba(227, 30, 36, 0.2);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: 0 0 var(--spacing-md);
+  line-height: 1.5;
+}
+
+.compare-page .compare-matrix {
+  table-layout: fixed;
+}
+
+.compare-page .compare-matrix .compare-product-col {
+  width: calc((100% - 200px) / 4);
+  vertical-align: top;
+}
+
+.compare-page .compare-matrix thead .compare-label-col {
+  vertical-align: bottom;
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-gray-medium);
+}
+
+.compare-page .compare-matrix-sku {
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.compare-page .compare-product-header .product-category {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.compare-page .compare-matrix-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.compare-page .compare-matrix-actions .btn {
+  width: 100%;
+}
+
+.compare-page .compare-matrix tbody .compare-label-col {
+  font-size: var(--font-size-small);
+  color: var(--color-gray-dark);
+}
+
+.compare-page .compare-matrix tbody .compare-value-col {
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-black);
+  vertical-align: middle;
+}
+
+.compare-page .compare-matrix tbody tr:nth-child(even) .compare-value-col {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.compare-page .compare-slot-empty {
+  background: var(--color-gray-lighter);
+  vertical-align: middle;
+}
+
+.compare-page .compare-slot-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  min-height: 200px;
+  padding: var(--spacing-md);
+  text-align: center;
+}
+
+.compare-page .compare-slot-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px dashed var(--color-gray-light);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: var(--color-gray-medium);
+  line-height: 1;
+}
+
+.compare-page .compare-slot-add p {
+  margin: 0;
+  font-size: var(--font-size-small);
+  color: var(--color-gray-medium);
+  font-weight: 600;
+}
+
+.compare-page .compare-slot-empty-cell {
+  background: var(--color-gray-lighter);
+}
+
+.compare-empty-hint {
+  color: var(--color-gray-medium);
+  font-size: var(--font-size-small);
+}
+
+.compare-actions-footer {
+  margin-top: var(--spacing-xl);
+}
+
+body.dark-theme .compare-bar {
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+body.dark-theme .compare-page .compare-table-wrapper {
+  background: var(--color-background-card, #252525);
+  border-color: #333;
+}
+
+body.dark-theme .compare-page .compare-table thead th,
+body.dark-theme .compare-page .compare-matrix tbody .compare-label-col {
+  background: #1f1f1f;
+  color: var(--color-text-secondary, #ccc);
+}
+
+body.dark-theme .compare-page .compare-matrix tbody .compare-value-col {
+  color: #f0f0f0;
+}
+
+body.dark-theme .compare-page .compare-slot-empty,
+body.dark-theme .compare-page .compare-slot-empty-cell {
+  background: #1a1a1a;
+}
+
+body.dark-theme .compare-page .compare-mixed-notice {
+  color: var(--color-text-secondary, #ccc);
+  background: rgba(227, 30, 36, 0.12);
+  border-color: rgba(227, 30, 36, 0.35);
+}
+
+body.dark-theme .compare-check-box {
+  background: #2a2a2a;
+  border-color: #555;
+}
+
+body.dark-theme tr.compare-row-active {
+  background: rgba(227, 30, 36, 0.12);
+}
+
+@media (max-width: 768px) {
+  .compare-page .compare-matrix .compare-product-col {
+    min-width: 180px;
+  }
+
+  body.has-compare-bar {
+    padding-bottom: 100px;
+  }
+}

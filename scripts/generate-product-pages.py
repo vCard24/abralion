@@ -1,0 +1,152 @@
+# -*- coding: utf-8 -*-
+"""24 urun detay HTML sayfasi uretir."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+TEMPLATE = """<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{description}">
+  <title>{name} - Abralion</title>
+  <link rel="icon" href="../assets/images/arma.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-theme.css">
+  <link rel="stylesheet" href="../assets/css/site-extra.css">
+  <link rel="stylesheet" href="../assets/css/product-detail-page.css">
+  <link rel="stylesheet" href="../assets/css/compare.css">
+</head>
+<body class="page-product-detail" data-base="../" data-product-id="{slug}">
+  <script src="../assets/js/theme-init.js"></script>
+  <a href="#main-content" class="sr-only">İçeriğe atla</a>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-container">
+        <a href="../index.html" class="header-logo-link"><img src="../assets/images/logo.svg" alt="Abralion" class="header-logo" data-logo></a>
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li><a href="../index.html" class="header-nav-link">Ana Sayfa</a></li>
+            <li class="header-nav-dropdown">
+              <a href="../urunler.html" class="header-nav-link active">Ürünlerimiz <span class="dropdown-arrow">▼</span></a>
+              <ul class="dropdown-menu mega-menu" id="mega-menu"></ul>
+            </li>
+            <li><a href="../karsilastir.html" class="header-nav-link">Karşılaştır <span class="compare-badge" style="display:none">0</span></a></li>
+            <li><a href="../dokumanlar.html" class="header-nav-link">Dökümanlar</a></li>
+            <li><a href="../hakkimizda.html" class="header-nav-link">Hakkımızda</a></li>
+            <li><a href="../iletisim.html" class="header-nav-link">İletişim</a></li>
+          </ul>
+          <div class="header-search">
+            <input type="search" class="header-search-input" placeholder="Ürün ara..." id="header-search-input" aria-label="Ürün ara">
+            <button type="button" class="header-search-btn" id="header-search-btn" aria-label="Ara">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </button>
+          </div>
+        </nav>
+        <button type="button" class="mobile-menu-toggle" aria-label="Menü"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="product-detail section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol id="product-breadcrumb"></ol>
+        </nav>
+
+        <div class="product-detail-grid">
+          <div class="product-detail-image">
+            <div id="product-gallery" class="product-gallery">
+              <p class="loading-message">Galeri yükleniyor…</p>
+            </div>
+          </div>
+          <div class="product-detail-info">
+            <div class="product-category" id="product-category"></div>
+            <h1 id="product-title"></h1>
+            <p class="product-description" id="product-description"></p>
+            <div class="product-features" id="product-features-short">
+              <h3>Özellikler</h3>
+              <ul></ul>
+            </div>
+            <div class="product-actions">
+              <a href="../iletisim.html" class="btn btn-primary">Fiyat Teklifi Al</a>
+            </div>
+            <p class="product-compare-hint">Teknik tablodaki kutucuklarla model seçip farklı ürünlerle karşılaştırabilirsiniz.</p>
+          </div>
+        </div>
+
+        <div class="product-specifications">
+          <h2>Teknik Özellikler</h2>
+          <div id="variant-specs-table" class="specs-table-container">
+            <p class="loading-message">Teknik tablo yükleniyor…</p>
+          </div>
+        </div>
+
+        <div class="product-features-detailed" id="product-features-detailed">
+          <h2>Ürün Özellikleri</h2>
+          <ul></ul>
+        </div>
+
+        <div class="product-applications" id="product-applications">
+          <h2>Uygulama Alanları</h2>
+          <ul></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-section">
+          <img src="../assets/images/logo.svg" alt="Abralion" class="footer-logo" data-logo>
+          <p class="footer-description">Endüstriyel kesim ve taşlama ürünleri.</p>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Abralion. Tüm hakları saklıdır.</p></div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/site.js"></script>
+  <script src="../assets/js/products-data.js"></script>
+  <script src="../assets/js/VariantDisplay.js"></script>
+  <script src="../assets/js/CompareManager.js"></script>
+  <script src="../assets/js/ProductManager.js"></script>
+  <script src="../assets/js/Header.js"></script>
+  <script src="../assets/js/MegaMenu.js"></script>
+  <script src="../assets/js/ThemeToggle.js"></script>
+  <script src="../assets/js/product-gallery.js"></script>
+  <script src="../assets/js/product-detail.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+"""
+
+def esc(s):
+    return (s or "").replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
+
+def main():
+    with open(ROOT / "data/products.json", encoding="utf-8") as f:
+        data = json.load(f)
+    out_dir = ROOT / "urun"
+    out_dir.mkdir(exist_ok=True)
+    count = 0
+    for p in data["products"]:
+        slug = p["slug"]
+        html = TEMPLATE.format(
+            slug=slug,
+            name=esc(p["name"]),
+            description=esc((p.get("description") or "")[:160]),
+        )
+        path = out_dir / f"{slug}.html"
+        path.write_text(html, encoding="utf-8")
+        count += 1
+    print(f"OK: {count} sayfa -> urun/")
+
+if __name__ == "__main__":
+    main()
