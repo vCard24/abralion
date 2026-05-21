@@ -1215,3 +1215,39 @@ body.dark-theme .theme-toggle-btn:hover {
   content: "→";
   color: var(--color-primary);
 }
+
+/* Ana sayfa hero + güven — yedek (site-extra yüklenmezse) */
+.home-top-panel {
+  background: var(--color-black);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.home-hero__layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.home-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.home-trust__icon,
+.home-trust__icon svg {
+  width: 28px;
+  height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+}
+
+.home-hero__deco {
+  width: 280px;
+  height: 280px;
+  max-width: 280px;
+  max-height: 280px;
+}
