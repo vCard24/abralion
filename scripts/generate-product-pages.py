@@ -106,10 +106,43 @@ TEMPLATE = """<!DOCTYPE html>
       <div class="footer-container">
         <div class="footer-section">
           <img src="../assets/images/logo.svg" alt="Abralion" class="footer-logo" data-logo>
-          <p class="footer-description">Endüstriyel kesim ve taşlama ürünleri.</p>
+          <p class="footer-description">Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Hızlı Linkler</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">Ana Sayfa</a></li>
+            <li><a href="../urunler.html">Ürünlerimiz</a></li>
+            <li><a href="../dokumanlar.html">Dökümanlar</a></li>
+            <li><a href="../hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="../iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Kategoriler</h3>
+          <ul class="footer-links">
+            <li><a href="../urunler.html?kategori=kesici-taslama-flap-disk">Kesici · Taşlama · Flap Disk</a></li>
+            <li><a href="../urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
+            <li><a href="../urunler.html?kategori=kirici-delici">Kırıcı &amp; Delici</a></li>
+            <li><a href="../urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
+            <li><a href="../urunler.html?kategori=metreler">Metreler</a></li>
+            <li><a href="../karsilastir.html">Ürün Karşılaştırma</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>İletişim</h3>
+          <ul class="footer-links">
+            <li><a href="../iletisim.html">İletişim Formu</a></li>
+            <li><a href="mailto:info@abralion.com">info@abralion.com</a></li>
+            <li><a href="https://www.abralion.com">www.abralion.com</a></li>
+            <li><a href="tel:+74951424267">8 (495) 142-42-67</a></li>
+            <li><a href="tel:+79014242670">8 (901) 424-26-70</a></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Abralion. Tüm hakları saklıdır.</p></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+      </div>
     </div>
   </footer>
 
