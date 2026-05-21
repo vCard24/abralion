@@ -20,42 +20,6 @@
   <link rel="stylesheet" href="assets/css/dark-theme.css">
   <link rel="stylesheet" href="assets/css/site-extra.css?v=20260522">
   <link rel="stylesheet" href="assets/css/compare.css">
-  <style id="home-critical-css">
-    .home-top-panel { background: #231f20; border-radius: 12px; overflow: hidden; margin-bottom: 24px; }
-    #home-hero.home-hero { display: flex; align-items: center; background: transparent; padding: 48px 40px 24px; min-height: 0; overflow: hidden; }
-    .home-hero__layout { display: flex; align-items: center; justify-content: flex-start; gap: 0; width: 100%; }
-    .home-hero__content { flex: 0 1 520px; max-width: 55%; position: relative; z-index: 2; }
-    @keyframes home-hero-disc-spin { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-    .home-hero__content { flex: 1; min-width: 0; }
-    .home-hero__title { margin: 0 0 16px; font-size: 2rem; font-weight: 600; line-height: 1.25; color: #fff; }
-    .home-hero__accent { color: #e31e24; }
-    .home-hero__subtitle { margin: 0 0 28px; max-width: 520px; line-height: 1.7; color: rgba(255, 255, 255, 0.65); }
-    .home-hero__stats { display: flex; flex-wrap: wrap; margin-top: 40px; }
-    .home-hero__stat { padding-right: 32px; border-right: 1px solid rgba(255, 255, 255, 0.15); }
-    .home-hero__stat:last-child { padding-right: 0; border-right: none; }
-    .home-hero__stat-value { display: block; font-size: 1.5rem; font-weight: 700; color: #e31e24; }
-    .home-hero__stat-label { display: block; margin-top: 4px; font-size: 11px; color: rgba(255, 255, 255, 0.5); }
-    .home-hero__deco-wrap { flex: 0 0 312px; display: flex; align-items: center; justify-content: center; margin-left: 91px; margin-right: 0; transform: none; pointer-events: none; }
-    .home-hero__deco { display: block; width: 312px; height: 312px; max-width: 312px; max-height: 312px; object-fit: contain; animation: home-hero-disc-spin 18s linear infinite; transform-origin: center center; }
-    #home-trust.home-trust { margin: 0; padding: 0 40px 32px; background: transparent; }
-    .home-trust__grid { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-    .home-trust__card { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1rem 1.25rem; }
-    .home-trust__icon { display: block; width: 28px !important; height: 28px !important; max-width: 28px; max-height: 28px; margin-bottom: 10px; }
-    .home-trust__icon svg { display: block; width: 28px !important; height: 28px !important; max-width: 28px; max-height: 28px; }
-    #home-trust .home-trust__title { display: block; margin: 0 0 6px; font-size: 14px; font-weight: 600; color: #fff !important; }
-    #home-trust .home-trust__text { display: block; margin: 0; font-size: 12px; color: rgba(255, 255, 255, 0.6); }
-    @media (max-width: 768px) {
-      #home-hero.home-hero { padding: 32px 24px 16px; }
-      .home-hero__title { font-size: 1.5rem; }
-      .home-hero__deco-wrap { display: none !important; }
-      #home-trust.home-trust { padding: 0 24px 24px; }
-      .home-trust__grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-      .home-hero__stat { padding-right: 24px; }
-    }
-    @media (max-width: 480px) {
-      .home-trust__grid { grid-template-columns: 1fr !important; }
-    }
-  </style>
 </head>
 <body>
   <script src="assets/js/theme-init.js"></script>
