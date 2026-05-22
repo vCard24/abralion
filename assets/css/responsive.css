@@ -61,9 +61,15 @@
     overflow: hidden;
   }
 
-  /* sticky + fixed birlikte iOS Safari'de sayfayı kilitleyebilir */
+  :root {
+    --header-mobile-height: 64px;
+  }
+
   .header {
-    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .mobile-menu-toggle {

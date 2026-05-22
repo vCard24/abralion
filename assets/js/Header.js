@@ -15,19 +15,34 @@ class Header {
     this.highlightActivePage();
   }
 
+  setMobileNavOpen(open) {
+    if (!this.mobileMenuToggle || !this.headerNav) return;
+    this.mobileMenuToggle.classList.toggle('active', open);
+    this.headerNav.classList.toggle('active', open);
+    this.mobileMenuToggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('mobile-nav-open', open);
+    if (!open) {
+      document.querySelectorAll('.header-nav-dropdown.active').forEach((dropdown) => {
+        dropdown.classList.remove('active');
+      });
+    }
+  }
+
   setupMobileMenu() {
     if (!this.mobileMenuToggle || !this.headerNav) return;
-    this.mobileMenuToggle.addEventListener('click', () => {
+    this.mobileMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isExpanded = this.mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-      this.mobileMenuToggle.setAttribute('aria-expanded', String(!isExpanded));
-      this.mobileMenuToggle.classList.toggle('active');
-      this.headerNav.classList.toggle('active');
+      this.setMobileNavOpen(!isExpanded);
     });
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.header-nav') && !e.target.closest('.mobile-menu-toggle')) {
-        this.mobileMenuToggle.classList.remove('active');
-        this.headerNav.classList.remove('active');
-        this.mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        this.setMobileNavOpen(false);
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        this.setMobileNavOpen(false);
       }
     });
   }
@@ -39,7 +54,11 @@ class Header {
         link.addEventListener('click', (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-            dropdown.classList.toggle('active');
+            const willOpen = !dropdown.classList.contains('active');
+            document.querySelectorAll('.header-nav-dropdown.active').forEach((other) => {
+              if (other !== dropdown) other.classList.remove('active');
+            });
+            dropdown.classList.toggle('active', willOpen);
           }
         });
       }

@@ -828,23 +828,41 @@
     max-height: none;
   }
 
-  .mega-menu-panel-inner {
-    grid-template-columns: 1fr;
-    padding: 12px;
-  }
-
-  .mega-menu-columns {
-    grid-template-columns: 1fr;
-    max-height: 240px;
-  }
-
+  .mega-menu-panels,
+  .mega-menu-panel,
+  .mega-menu-panel-inner,
+  .mega-menu-columns,
   .mega-menu-feature {
-    min-height: 120px;
-    order: -1;
+    display: none !important;
   }
 
-  .mega-menu-feature img {
-    max-height: 140px;
+  .mega-menu-layout {
+    max-height: none;
+  }
+
+  .mega-menu-tabs {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding: 0;
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .mega-menu-tab {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    border-bottom: 1px solid var(--color-gray-lighter);
+    border-radius: 0;
+    white-space: normal;
+  }
+
+  .mega-menu-tab.is-active {
+    background: rgba(227, 30, 36, 0.08);
+    border-bottom-color: var(--color-gray-lighter);
   }
 
   .dropdown-arrow {
