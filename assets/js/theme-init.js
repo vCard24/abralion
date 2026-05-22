@@ -1,7 +1,10 @@
-/* İlk boyamadan önce tema — localStorage yoksa dark */
 (function () {
-  var theme = localStorage.getItem('theme') || 'dark';
-  if (theme === 'dark' && document.body) {
-    document.body.classList.add('dark-theme');
+  try {
+    var theme = localStorage.getItem('theme') || 'dark';
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark-theme');
+    }
+  } catch (e) {
+    document.documentElement.classList.add('dark-theme');
   }
 })();
