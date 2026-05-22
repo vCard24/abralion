@@ -97,9 +97,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateStaticCount(grid, countEl, kategori);
   }
 
-  document.querySelectorAll('.category-btn').forEach((btn) => {
-    btn.classList.toggle('active', btn.dataset.category === (kategori || 'all'));
-  });
+  syncCategoryFilters(kategori || 'all');
+  initCategoryChips();
 
   try {
     if (typeof ProductManager === 'undefined') {
@@ -158,4 +157,19 @@ function filterCategory(cat) {
   } else {
     window.location.href = `${base}urunler.html?kategori=${encodeURIComponent(cat)}`;
   }
+}
+
+function syncCategoryFilters(activeCategory) {
+  const cat = activeCategory || 'all';
+  document.querySelectorAll('.category-btn, .category-chip').forEach((el) => {
+    el.classList.toggle('active', el.dataset.category === cat);
+  });
+}
+
+function initCategoryChips() {
+  document.querySelectorAll('.category-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      filterCategory(chip.dataset.category);
+    });
+  });
 }

@@ -242,16 +242,16 @@
     font-weight: 600;
   }
 
-  body.dark-theme .category-chips {
+  html.dark-theme body .category-chips {
     background: var(--color-background, #1a1a1a);
   }
 
-  body.dark-theme .category-chip {
+  html.dark-theme body .category-chip {
     color: var(--color-text-primary, #f0f0f0);
     border-color: var(--color-border-subtle, #333);
   }
 
-  body.dark-theme .category-chip.active {
+  html.dark-theme body .category-chip.active {
     color: var(--color-white);
   }
   
