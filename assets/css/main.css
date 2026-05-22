@@ -1090,15 +1090,41 @@ select:focus-visible {
 /* Responsive - Product Detail */
 @media screen and (max-width: 768px) {
   .product-detail-grid {
+    display: grid;
     grid-template-columns: 1fr;
+    padding: 0;
+    gap: 0;
   }
-  
+
+  .product-detail-image,
+  .product-detail-info {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .product-detail-image {
+    padding: var(--spacing-md);
+  }
+
+  .product-detail-info {
+    padding: var(--spacing-md);
+  }
+
+  .product-detail-info h1 {
+    font-size: 1.35rem;
+  }
+
   .product-actions {
     flex-direction: column;
   }
-  
+
+  .product-actions .btn {
+    width: 100%;
+  }
+
   .specs-table th {
-    width: 50%;
+    width: auto;
   }
 }
 
