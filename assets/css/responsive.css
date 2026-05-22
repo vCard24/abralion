@@ -40,10 +40,15 @@
 /* ===== Mobil (< 768px) ===== */
 @media screen and (max-width: 768px) {
   :root {
+    --font-size-base: 16px;
     --font-size-h1: 28px;
     --font-size-h2: 22px;
     --font-size-h3: 18px;
     --spacing-xl: 32px;
+  }
+
+  html {
+    font-size: var(--font-size-base);
   }
 
   html,
@@ -314,7 +319,7 @@
 /* ===== Küçük Mobil (< 480px) ===== */
 @media screen and (max-width: 480px) {
   :root {
-    --font-size-base: 14px;
+    --font-size-base: 16px;
     --font-size-h1: 24px;
     --font-size-h2: 20px;
     --font-size-h3: 16px;
