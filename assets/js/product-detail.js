@@ -133,11 +133,28 @@ function renderVariantTable(product, tableWrap) {
 }
 
 function renderProductPage(product) {
-  document.title = `${product.name} - Abralion`;
+  const base = getBasePath();
+  const slug = product.slug;
+  const description = (product.description || '').slice(0, 160);
+  const pageUrl = `${window.OG_SITE_ORIGIN || 'https://abralion.com'}/urun/${slug}.html`;
+  const shareImage =
+    product.images?.[0]?.src || `assets/images/products/${slug}/${slug}-kart.jpg`;
+  const shareImageAlt = product.images?.[0]?.alt || product.name;
 
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc && product.description) {
-    metaDesc.setAttribute('content', product.description.slice(0, 160));
+  if (typeof setPageSocialMeta === 'function') {
+    setPageSocialMeta({
+      title: `${product.name} - Abralion`,
+      description,
+      image: shareImage,
+      imageAlt: shareImageAlt,
+      url: pageUrl,
+      type: 'product',
+      base,
+    });
+  } else {
+    document.title = `${product.name} - Abralion`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && description) metaDesc.setAttribute('content', description);
   }
 
   renderBreadcrumb(product);

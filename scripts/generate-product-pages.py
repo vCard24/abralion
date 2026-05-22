@@ -5,20 +5,37 @@ from pathlib import Path
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
+SITE_ORIGIN = "https://abralion.com"
+DEFAULT_OG_IMAGE = f"{SITE_ORIGIN}/assets/images/abralion-disc.webp"
+
 TEMPLATE = """<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{description}">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Abralion">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:title" content="{og_title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:image" content="{og_image}">
+  <meta property="og:image:alt" content="{og_image_alt}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{og_title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="{og_image}">
+  <meta name="twitter:image:alt" content="{og_image_alt}">
   <title>{name} - Abralion</title>
   <link rel="icon" href="../assets/images/arma.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/components.css">
-  <link rel="stylesheet" href="../assets/css/responsive.css">
-  <link rel="stylesheet" href="../assets/css/dark-theme.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css?v=20260523">
+  <link rel="stylesheet" href="../assets/css/dark-theme.css?v=20260522">
   <link rel="stylesheet" href="../assets/css/site-extra.css">
-  <link rel="stylesheet" href="../assets/css/product-detail-page.css">
+  <link rel="stylesheet" href="../assets/css/product-detail-page.css?v=20260522">
   <link rel="stylesheet" href="../assets/css/gallery-lightbox.css">
   <link rel="stylesheet" href="../assets/css/compare.css">
 </head>
@@ -147,24 +164,42 @@ TEMPLATE = """<!DOCTYPE html>
     </div>
   </footer>
 
-  <script src="../assets/js/site.js"></script>
-  <script src="../assets/js/products-data.js"></script>
-  <script src="../assets/js/VariantDisplay.js"></script>
-  <script src="../assets/js/CompareManager.js"></script>
-  <script src="../assets/js/ProductManager.js"></script>
-  <script src="../assets/js/Header.js"></script>
-  <script src="../assets/js/MegaMenu.js"></script>
-  <script src="../assets/js/ThemeToggle.js"></script>
+  <script defer src="../assets/js/site.js"></script>
+  <script defer src="../assets/js/og-meta.js"></script>
+  <script defer src="../assets/js/products-data.js"></script>
+  <script defer src="../assets/js/VariantDisplay.js"></script>
+  <script defer src="../assets/js/CompareManager.js"></script>
+  <script defer src="../assets/js/ProductManager.js"></script>
+  <script defer src="../assets/js/Header.js?v=20260523"></script>
+  <script defer src="../assets/js/MegaMenu.js"></script>
+  <script defer src="../assets/js/ThemeToggle.js"></script>
   <script defer src="../assets/js/product-gallery.js"></script>
   <script defer src="../assets/js/gallery-lightbox.js"></script>
   <script defer src="../assets/js/product-detail.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/main.js"></script>
 </body>
 </html>
 """
 
 def esc(s):
     return (s or "").replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
+
+
+def product_og_image(product):
+    images = product.get("images") or []
+    if images and images[0].get("src"):
+        src = images[0]["src"].lstrip("/")
+        return f"{SITE_ORIGIN}/{src}"
+    slug = product["slug"]
+    return f"{SITE_ORIGIN}/assets/images/products/{slug}/{slug}-kart.jpg"
+
+
+def product_og_image_alt(product):
+    images = product.get("images") or []
+    if images and images[0].get("alt"):
+        return esc(images[0]["alt"])
+    return esc(product.get("name", ""))
+
 
 def main():
     with open(ROOT / "data/products.json", encoding="utf-8") as f:
@@ -174,11 +209,17 @@ def main():
     count = 0
     for p in data["products"]:
         slug = p["slug"]
+        canonical = f"{SITE_ORIGIN}/urun/{slug}.html"
+        og_title = esc(f'{p["name"]} - Abralion')
         html = TEMPLATE.format(
             slug=slug,
             name=esc(p["name"]),
             konu=quote(p["name"], safe=""),
             description=esc((p.get("description") or "")[:160]),
+            canonical=canonical,
+            og_title=og_title,
+            og_image=product_og_image(p),
+            og_image_alt=product_og_image_alt(p),
         )
         path = out_dir / f"{slug}.html"
         path.write_text(html, encoding="utf-8")
