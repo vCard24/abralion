@@ -45,28 +45,53 @@
     --font-size-h3: 18px;
     --spacing-xl: 32px;
   }
-  
+
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  body.mobile-nav-open {
+    overflow: hidden;
+  }
+
+  /* sticky + fixed birlikte iOS Safari'de sayfayı kilitleyebilir */
+  .header {
+    position: relative;
+  }
+
+  .mobile-menu-toggle {
+    position: relative;
+    z-index: 1002;
+  }
+
   /* Header - Mobil */
   .header-nav {
     position: fixed;
-    top: 70px;
+    top: var(--header-mobile-height, 70px);
     left: 0;
     right: 0;
+    bottom: 0;
+    max-height: none;
     background-color: var(--color-white);
     flex-direction: column;
+    align-items: stretch;
     padding: var(--spacing-md);
     box-shadow: var(--box-shadow);
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    z-index: 999;
-  }
-  
-  .header-nav.active {
-    transform: translateY(0);
+    transform: translate3d(100%, 0, 0);
     opacity: 1;
     visibility: visible;
+    pointer-events: none;
+    transition: transform 0.25s ease, visibility 0.25s ease;
+    z-index: 1001;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header-nav.active {
+    transform: translate3d(0, 0, 0);
+    pointer-events: auto;
   }
   
   .header-nav-list {
@@ -98,6 +123,10 @@
   .mobile-menu-toggle {
     display: flex;
   }
+
+  body.dark-theme .header-nav {
+    background-color: var(--color-background-elevated, #252626);
+  }
   
   .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
@@ -117,14 +146,9 @@
     gap: var(--spacing-md);
   }
   
-  /* Product Grid - Mobil */
+  /* Product Grid - Mobil (katalog grid: site-extra.css) */
   .product-grid {
     grid-template-columns: 1fr;
-  }
-
-  .products-main .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
   }
   
   /* Buttons - Mobil (kart içi butonlar hariç — site-extra.css) */
@@ -168,7 +192,67 @@
   }
   
   .products-sidebar {
-    position: static;
+    display: none;
+  }
+
+  .category-chips {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 10px 0 14px;
+    margin-bottom: var(--spacing-sm);
+    position: sticky;
+    top: var(--header-mobile-height, 64px);
+    z-index: 99;
+    background: var(--color-white);
+  }
+
+  .category-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-chip {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 16px;
+    min-height: 44px;
+    border: 1px solid var(--color-gray-lighter);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-black);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .category-chip:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .category-chip.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+  }
+
+  body.dark-theme .category-chips {
+    background: var(--color-background, #1a1a1a);
+  }
+
+  body.dark-theme .category-chip {
+    color: var(--color-text-primary, #f0f0f0);
+    border-color: var(--color-border-subtle, #333);
+  }
+
+  body.dark-theme .category-chip.active {
+    color: var(--color-white);
   }
   
   /* About Page - Mobil */
@@ -199,15 +283,28 @@
     grid-template-columns: 1fr;
   }
 
-  /* Ürün kartları — yan yana butonlar */
+  /* Ürün kartı aksiyonları — mobil (tek kural) */
   .product-card-actions {
+    display: flex;
     flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    align-items: stretch;
   }
 
   .product-card-actions .btn-primary {
     flex: 1 1 100%;
+    width: 100%;
   }
-  
+
+  .products-main .product-card-actions {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .products-main .product-card-actions .btn-small {
+    width: 100%;
+  }
+
   .cta-buttons {
     flex-direction: column;
     width: 100%;
