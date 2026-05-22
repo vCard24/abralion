@@ -1,6 +1,22 @@
+function readStoredTheme() {
+  try {
+    return localStorage.getItem('theme') || 'dark';
+  } catch {
+    return 'dark';
+  }
+}
+
+function writeStoredTheme(theme) {
+  try {
+    localStorage.setItem('theme', theme);
+  } catch {
+    /* ignore */
+  }
+}
+
 class ThemeToggle {
   constructor() {
-    this.currentTheme = localStorage.getItem('theme') || 'dark';
+    this.currentTheme = readStoredTheme();
     this.init();
   }
 
@@ -10,7 +26,7 @@ class ThemeToggle {
     this.toggleButton.addEventListener('click', () => {
       this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
       this.applyTheme(this.currentTheme);
-      localStorage.setItem('theme', this.currentTheme);
+      writeStoredTheme(this.currentTheme);
     });
   }
 
