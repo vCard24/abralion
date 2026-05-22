@@ -1,9 +1,16 @@
+let productGalleryController = null;
+let productGalleryKeyHandler = null;
+
 function initProductGallery() {
   const images = document.querySelectorAll('.gallery-main .slider-image');
   const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');
-  if (!images.length) return;
+  if (!images.length) {
+    productGalleryController = null;
+    return null;
+  }
 
   let current = 0;
+  let inlineKeyboardEnabled = true;
 
   function show(index) {
     current = (index + images.length) % images.length;
@@ -26,16 +33,33 @@ function initProductGallery() {
     });
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') show(current - 1);
-    if (e.key === 'ArrowRight') show(current + 1);
-  });
+  if (productGalleryKeyHandler) {
+    document.removeEventListener('keydown', productGalleryKeyHandler);
+  }
+
+  productGalleryKeyHandler = (e) => {
+    if (!inlineKeyboardEnabled || window.GalleryLightbox?.isOpen()) return;
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      show(current - 1);
+    }
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      show(current + 1);
+    }
+  };
+
+  document.addEventListener('keydown', productGalleryKeyHandler);
 
   show(0);
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (document.querySelector('.gallery-main .slider-image')) {
-    initProductGallery();
-  }
-});
+  productGalleryController = {
+    show,
+    getIndex: () => current,
+    setInlineKeyboardEnabled(enabled) {
+      inlineKeyboardEnabled = !!enabled;
+    },
+  };
+
+  return productGalleryController;
+}

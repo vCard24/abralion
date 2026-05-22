@@ -19,6 +19,7 @@ TEMPLATE = """<!DOCTYPE html>
   <link rel="stylesheet" href="../assets/css/dark-theme.css">
   <link rel="stylesheet" href="../assets/css/site-extra.css">
   <link rel="stylesheet" href="../assets/css/product-detail-page.css">
+  <link rel="stylesheet" href="../assets/css/gallery-lightbox.css">
   <link rel="stylesheet" href="../assets/css/compare.css">
 </head>
 <body class="page-product-detail" data-base="../" data-product-id="{slug}">
@@ -154,8 +155,9 @@ TEMPLATE = """<!DOCTYPE html>
   <script src="../assets/js/Header.js"></script>
   <script src="../assets/js/MegaMenu.js"></script>
   <script src="../assets/js/ThemeToggle.js"></script>
-  <script src="../assets/js/product-gallery.js"></script>
-  <script src="../assets/js/product-detail.js"></script>
+  <script defer src="../assets/js/product-gallery.js"></script>
+  <script defer src="../assets/js/gallery-lightbox.js"></script>
+  <script defer src="../assets/js/product-detail.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

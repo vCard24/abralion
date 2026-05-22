@@ -48,7 +48,10 @@ function renderGallery(product, container) {
     </div>
     <div class="gallery-thumbs" role="tablist" aria-label="Ürün görselleri">${thumbs}</div>`;
 
-  initProductGallery();
+  const galleryController = initProductGallery();
+  if (typeof initGalleryLightbox === 'function') {
+    initGalleryLightbox(galleryController);
+  }
 }
 
 function renderBreadcrumb(product) {
