@@ -93,7 +93,7 @@ def footer_html(base: str) -> str:
             <li><a href="mailto:info@abralion.com">info@abralion.com</a></li>
             <li><a href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a></li>
             <li><a href="tel:+74951424267">8 (495) 142-42-67</a></li>
-            <li><a href="tel:+79014242670">8 (901) 424-26-70</a></li>
+            <li><a href="tel:+79857896062">+7 985 789-60-62</a></li>
           </ul>
         </div>
       </div>

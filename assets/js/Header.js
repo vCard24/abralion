@@ -7,17 +7,46 @@ class Header {
     this.searchBtn = document.getElementById('header-search-btn');
     this.navLinks = document.querySelectorAll('.header-nav-link');
     this.backdrop = null;
+    this.navAnchor = null;
+    this.navInsertBefore = null;
+    this.mobileMq = window.matchMedia('(max-width: 768px)');
     this.init();
   }
 
   init() {
     this.ensureBackdrop();
     this.syncHeaderHeight();
+    this.setupMobileNavPortal();
     this.setupMobileMenu();
     this.setupDropdown();
     this.setupSearch();
     this.highlightActivePage();
-    window.addEventListener('resize', () => this.syncHeaderHeight());
+    window.addEventListener('resize', () => {
+      this.syncHeaderHeight();
+      this.setupMobileNavPortal();
+    });
+    this.mobileMq.addEventListener('change', () => this.setupMobileNavPortal());
+  }
+
+  setupMobileNavPortal() {
+    if (!this.headerNav) return;
+    const container = document.querySelector('.header-container');
+    if (!container) return;
+
+    if (this.mobileMq.matches) {
+      if (this.headerNav.parentElement === document.body) return;
+      this.navAnchor = container;
+      this.navInsertBefore = this.mobileMenuToggle || null;
+      document.body.appendChild(this.headerNav);
+      return;
+    }
+
+    if (this.headerNav.parentElement !== document.body) return;
+    if (this.navAnchor && this.navAnchor.isConnected) {
+      this.navAnchor.insertBefore(this.headerNav, this.navInsertBefore);
+    } else if (container) {
+      container.appendChild(this.headerNav);
+    }
   }
 
   ensureBackdrop() {

@@ -67,12 +67,19 @@
     position: sticky;
     top: 0;
     z-index: 1002;
+    overflow: visible;
+  }
+
+  /* backdrop-filter fixed çocukları header kutusuna hapseder — drawer görünmez */
+  html.dark-theme body .header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .mobile-nav-backdrop {
     position: fixed;
     inset: 0;
-    z-index: 1000;
+    z-index: 1090;
     background: rgba(0, 0, 0, 0.55);
     opacity: 0;
     visibility: hidden;
@@ -92,7 +99,7 @@
   .mobile-menu-toggle {
     display: flex;
     position: relative;
-    z-index: 1003;
+    z-index: 1110;
     flex-shrink: 0;
   }
 
@@ -117,7 +124,7 @@
     visibility: hidden;
     pointer-events: none;
     transition: transform 0.28s ease, visibility 0.28s ease;
-    z-index: 1001;
+    z-index: 1100;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
