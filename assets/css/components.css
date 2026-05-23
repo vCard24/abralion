@@ -706,7 +706,8 @@
   transition: color 0.15s ease, background 0.15s ease;
 }
 
-.mega-menu-product-link:hover {
+.mega-menu-product-link:hover,
+.mega-menu-product-link.is-featured {
   color: #E31E24;
   background: #f8f8f8;
 }
@@ -758,6 +759,7 @@
   max-height: 200px;
   object-fit: contain;
   display: block;
+  transition: opacity 0.2s ease;
 }
 
 .mega-menu-feature.is-missing {

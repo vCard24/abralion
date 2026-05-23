@@ -31,19 +31,24 @@ class Header {
   setupMobileNavPortal() {
     if (!this.headerNav) return;
     const container = document.querySelector('.header-container');
+    const brandNav = document.querySelector('.header-brand-nav');
     if (!container) return;
 
     if (this.mobileMq.matches) {
       if (this.headerNav.parentElement === document.body) return;
-      this.navAnchor = container;
-      this.navInsertBefore = this.mobileMenuToggle || null;
+      this.navAnchor = brandNav || container;
+      this.navInsertBefore = null;
       document.body.appendChild(this.headerNav);
       return;
     }
 
     if (this.headerNav.parentElement !== document.body) return;
     if (this.navAnchor && this.navAnchor.isConnected) {
-      this.navAnchor.insertBefore(this.headerNav, this.navInsertBefore);
+      if (this.navInsertBefore) {
+        this.navAnchor.insertBefore(this.headerNav, this.navInsertBefore);
+      } else {
+        this.navAnchor.appendChild(this.headerNav);
+      }
     } else if (container) {
       container.appendChild(this.headerNav);
     }

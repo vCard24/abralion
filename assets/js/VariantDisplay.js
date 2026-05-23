@@ -243,6 +243,35 @@ const PRODUCT_TABLE_COLUMNS = {
   ],
 };
 
+/** Tablo sütun genişliği — dar sayısal / geniş metin alanları */
+const SPEC_COL_NARROW = new Set([
+  'cap_mm', 'daire_capi_mm', 'gobek_capi_mm', 'kalinlik_mm',
+  'kutu_adet', 'koli_adet', 'kutu_ici_adet', 'grit',
+  'uzunluk_mm', 'toplam_uzunluk_mm', 'bicak_genisligi_mm',
+  'kafa_olcusu_mm', 'serit_genisligi_mm', 'uzunluk_m',
+]);
+
+const SPEC_COL_WIDE = new Set([
+  'saft_tipi', 'kullanim_yeri', 'malzeme', 'asindirici_tipi',
+  'baglanti_tipi', 'govde_kizak_tipi', 'bicak_malzemesi', 'urun_tipi',
+  'asindirici_kodu', 'uc_tipi', 'paket_icerigi', 'kasa_malzemesi',
+]);
+
+const SPEC_COL_COMPUTE_WIDE = new Set([
+  'olcu_saft_uzunluk_uc', 'olcu_saft_uzunluk', 'olcu_cap_uzunluk',
+  'max_hiz_flap_rpm', 'max_hiz_ms_only', 'max_hiz_rpm_only',
+]);
+
+function getSpecColumnClass(col) {
+  const id = col.key || col.compute;
+  if (!id) return 'spec-col--medium';
+  if (id === 'urun_kodu') return 'spec-col--code';
+  if (SPEC_COL_NARROW.has(id)) return 'spec-col--narrow';
+  if (SPEC_COL_WIDE.has(id) || SPEC_COL_COMPUTE_WIDE.has(id)) return 'spec-col--wide';
+  if (id === 'max_hiz_rpm' || id === 'max_hiz_ms') return 'spec-col--medium';
+  return 'spec-col--medium';
+}
+
 function formatVariantValue(key, value) {
   if (value === null || value === undefined || value === '') return '';
   if (key === 'daire_capi_mm') return `Ø ${value} mm`;

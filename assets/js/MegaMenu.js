@@ -23,7 +23,9 @@ function buildProductColumns(base, items) {
           const thumb = productThumbUrl(base, p);
           const short = p.name.length > 42 ? `${p.name.slice(0, 40)}…` : p.name;
           return `<li>
-            <a href="${productUrl(p.slug)}" class="mega-menu-product-link">
+            <a href="${productUrl(p.slug)}" class="mega-menu-product-link"
+              data-feature-src="${thumb}"
+              data-feature-name="${escapeHtml(p.name)}">
               <span class="mega-menu-product-thumb">
                 <img src="${thumb}" alt="" width="32" height="32" loading="lazy">
               </span>
@@ -35,6 +37,59 @@ function buildProductColumns(base, items) {
       return `<ul class="mega-menu-col">${links}</ul>`;
     })
     .join('');
+}
+
+function setPanelFeature(panel, src, href, name) {
+  const feature = panel?.querySelector('.mega-menu-feature');
+  const img = feature?.querySelector('img');
+  if (!feature || !img || !src) return;
+  if (href) feature.href = href;
+  if (name) {
+    img.alt = name;
+    feature.setAttribute('aria-label', name);
+  }
+  if (img.src !== src) {
+    img.src = src;
+    feature.classList.remove('is-missing');
+  }
+}
+
+function resetPanelFeature(panel) {
+  const feature = panel?.querySelector('.mega-menu-feature');
+  if (!feature) return;
+  setPanelFeature(
+    panel,
+    feature.dataset.defaultSrc,
+    feature.dataset.defaultHref,
+    feature.dataset.defaultName
+  );
+  panel.querySelectorAll('.mega-menu-product-link.is-featured').forEach((el) => {
+    el.classList.remove('is-featured');
+  });
+  const first = panel.querySelector('.mega-menu-product-link');
+  if (first) first.classList.add('is-featured');
+}
+
+function initPanelProductPreview(panel) {
+  if (!panel || panel.dataset.previewBound) return;
+  panel.dataset.previewBound = '1';
+
+  panel.querySelectorAll('.mega-menu-product-link').forEach((link) => {
+    const show = () => {
+      panel.querySelectorAll('.mega-menu-product-link.is-featured').forEach((el) => {
+        el.classList.remove('is-featured');
+      });
+      link.classList.add('is-featured');
+      setPanelFeature(
+        panel,
+        link.dataset.featureSrc || link.querySelector('img')?.src,
+        link.href,
+        link.dataset.featureName || link.querySelector('.mega-menu-product-name')?.textContent
+      );
+    };
+    link.addEventListener('mouseenter', show);
+    link.addEventListener('focus', show);
+  });
 }
 
 function initMegaMenuInteraction(root) {
@@ -51,9 +106,13 @@ function initMegaMenuInteraction(root) {
       tab.setAttribute('aria-selected', on ? 'true' : 'false');
     });
     panels.forEach((panel) => {
-      panel.classList.toggle('is-active', panel.dataset.category === catId);
+      const on = panel.dataset.category === catId;
+      panel.classList.toggle('is-active', on);
+      if (on) resetPanelFeature(panel);
     });
   };
+
+  panels.forEach((panel) => initPanelProductPreview(panel));
 
   tabs.forEach((tab) => {
     tab.addEventListener('mouseenter', () => activate(tab.dataset.category));
@@ -116,7 +175,11 @@ async function buildMegaMenu() {
           <div class="mega-menu-columns">${buildProductColumns(base, items)}</div>
           ${
             featured
-              ? `<a href="${featuredHref}" class="mega-menu-feature" aria-label="${escapeHtml(featured.name)}">
+              ? `<a href="${featuredHref}" class="mega-menu-feature"
+                  data-default-src="${featuredThumb}"
+                  data-default-href="${featuredHref}"
+                  data-default-name="${escapeHtml(featured.name)}"
+                  aria-label="${escapeHtml(featured.name)}">
                   <img src="${featuredThumb}" alt="${escapeHtml(featured.name)}" loading="lazy">
                 </a>`
               : ''
@@ -140,6 +203,10 @@ async function buildMegaMenu() {
     });
 
     initMegaMenuInteraction(container);
+
+    container.querySelectorAll('.mega-menu-panel.is-active').forEach((panel) => {
+      resetPanelFeature(panel);
+    });
   } catch (e) {
     console.error('Mega menü yüklenemedi', e);
   }

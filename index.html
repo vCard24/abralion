@@ -26,339 +26,422 @@
   <link rel="stylesheet" href="assets/css/dark-theme.css">
   <link rel="stylesheet" href="assets/css/site-extra.css?v=20260522">
   <link rel="stylesheet" href="assets/css/compare.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260526b">
 </head>
-<body>
+<body class="page-noir-site bg-carbon-black text-on-surface font-body-md antialiased">
   <script src="assets/js/theme-init.js"></script>
-<a href="#main-content" class="sr-only">İçeriğe atla</a>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-abrasive-red focus:text-white focus:rounded">İçeriğe atla</a>
 
-  <header class="header">
-    <div class="container">
-      <div class="header-container">
-        <a href="index.html" class="header-logo-link" aria-label="Abralion Ana Sayfa">
-          <img src="assets/images/logo.svg" alt="Abralion Logo" class="header-logo" data-logo>
+  <header class="header sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-steel-gray/20">
+    <div class="header-container flex items-center justify-between gap-6 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-4 md:py-5">
+      <div class="header-brand-nav flex items-center gap-8">
+        <a href="index.html" class="header-logo-link flex shrink-0 items-center transition-opacity hover:opacity-80" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz-yatay.svg" alt="Abralion" class="header-logo w-auto" width="438" height="132" decoding="async">
         </a>
-        <nav class="header-nav" aria-label="Ana navigasyon">
-          <ul class="header-nav-list">
-            <li><a href="index.html" class="header-nav-link">Ana Sayfa</a></li>
-            <li class="header-nav-dropdown">
-              <a href="urunler.html" class="header-nav-link">
+        <nav class="header-nav flex items-center gap-6" aria-label="Ana navigasyon">
+          <ul class="header-nav-list flex list-none items-center gap-6 m-0 p-0">
+            <li><a href="index.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Ana Sayfa</a></li>
+            <li class="header-nav-dropdown relative">
+              <a href="urunler.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
                 Ürünlerimiz
-                <span class="dropdown-arrow">▼</span>
+                <span class="dropdown-arrow" aria-hidden="true">▼</span>
               </a>
               <ul class="dropdown-menu mega-menu" id="mega-menu"></ul>
             </li>
-            <li>
-              <a href="karsilastir.html" class="header-nav-link">
-                Karşılaştır
-                <span class="compare-badge" style="display: none;">0</span>
-              </a>
-            </li>
-            <li><a href="dokumanlar.html" class="header-nav-link">Dökümanlar</a></li>
-            <li><a href="hakkimizda.html" class="header-nav-link">Hakkımızda</a></li>
-            <li><a href="iletisim.html" class="header-nav-link">İletişim</a></li>
+            <li><a href="dokumanlar.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Dökümanlar</a></li>
+            <li><a href="hakkimizda.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Hakkımızda</a></li>
+            <li><a href="iletisim.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">İletişim</a></li>
           </ul>
-          <div class="header-search">
-            <input type="search" class="header-search-input" placeholder="Ürün ara..." aria-label="Ürün ara" id="header-search-input">
-            <button type="button" class="header-search-btn" aria-label="Ara" id="header-search-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="m21 21-4.35-4.35"/>
-              </svg>
-            </button>
-          </div>
         </nav>
-        <button type="button" class="mobile-menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+      </div>
+      <div class="header-actions flex shrink-0 items-center gap-4">
+        <a href="karsilastir.html" class="header-compare-link hidden lg:inline-flex items-center gap-2 font-body-md text-body-md text-on-surface-variant transition-colors hover:text-on-surface">
+          <span class="material-symbols-outlined text-[20px]" data-icon="compare_arrows">compare_arrows</span>
+          Karşılaştır
+          <span class="compare-badge bg-surface-container-highest px-1.5 rounded text-xs font-bold" style="display: none;">0</span>
+        </a>
+        <a href="iletisim.html" class="header-cta-btn inline-flex items-center rounded-lg bg-abrasive-red px-6 py-2 font-label-caps text-label-caps uppercase text-white transition-all hover:brightness-110 active:scale-95">Teklif Al</a>
+        <button type="button" class="mobile-menu-toggle flex flex-col items-center justify-center gap-1.5 p-2.5 text-on-surface md:hidden" aria-label="Menüyü aç/kapat" aria-expanded="false">
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
         </button>
       </div>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="home-hero-section section" id="home-hero-wrap">
-      <div class="container">
-        <div class="home-top-panel">
-        <div class="home-hero" id="home-hero">
-          <div class="home-hero__layout">
-            <div class="home-hero__content">
-              <p class="home-hero__badge">
-                <span class="home-hero__badge-dot" aria-hidden="true"></span>
-                Rusya'da Endüstriyel Tedarik
-              </p>
-              <h1 class="home-hero__title">
-                Endüstriyel <span class="home-hero__accent">Kesim ve Taşlama</span> Çözümleri
-              </h1>
-              <p class="home-hero__subtitle">
-                Rusya'daki Türk firmalarına yüksek kaliteli kesici diskler, elmas kesiciler, flap diskler ve profesyonel uçlar sunuyoruz.
-              </p>
-              <div class="home-hero__actions">
-                <a href="urunler.html" class="btn btn-primary">Ürün Kataloğunu İncele</a>
-                <a href="iletisim.html" class="btn home-hero__btn-ghost">İletişime Geç</a>
-              </div>
-              <div class="home-hero__stats">
-                <div class="home-hero__stat">
-                  <span class="home-hero__stat-value">24</span>
-                  <span class="home-hero__stat-label">Ürün Ailesi</span>
-                </div>
-                <div class="home-hero__stat">
-                  <span class="home-hero__stat-value">90+</span>
-                  <span class="home-hero__stat-label">Varyasyon</span>
-                </div>
-                <div class="home-hero__stat">
-                  <span class="home-hero__stat-value">5</span>
-                  <span class="home-hero__stat-label">Kategori</span>
-                </div>
-              </div>
+    <section class="home-hero-section relative w-full overflow-hidden p-0" id="home-hero-wrap">
+      <div class="home-hero relative flex min-h-[min(90vh,920px)] flex-col" id="home-hero">
+
+        <!-- Full-width arka plan + overlay -->
+        <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+          <img
+            class="h-full w-full object-cover object-center"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKqaEYY_fkLR95PpLFvHL1LiFOAnNxqOXFiyE1X-gCGbjqXVCxgCf5u0OrZAFw5tazmiaxQgUO-s5R8lMhWs2ZupyBycxrTQ7VpycnvDBPvjPCh_7uV07SiZ-5KpHQLXae_4L-3Lh0Jj4jwBASCbulnaIcGgaLxlQhLm-e74NnBM_iD6mkVpgdvB0q5vrjv4O5kirei1QvSTA4IKRK6g0pkst_dILeB23y10hs55RFofu3eghw4O-2yNHCY5DW3vb5P4Uru4_KKwgY"
+            alt=""
+            width="1920"
+            height="1080"
+            decoding="async"
+            fetchpriority="high">
+          <div class="absolute inset-0 bg-gradient-to-r from-carbon-black via-carbon-black/90 to-carbon-black/55"></div>
+          <div class="absolute inset-0 bg-carbon-black/25"></div>
+        </div>
+
+        <!-- Ana metin -->
+        <div class="relative z-10 mx-auto flex w-full max-w-site flex-1 flex-col justify-center px-margin-mobile pb-8 pt-28 md:px-margin-desktop md:pt-32 lg:pb-12">
+          <div class="home-hero__content max-w-4xl space-y-8">
+            <p class="home-hero__badge flex items-center gap-2">
+              <span class="home-hero__badge-dot h-2 w-2 shrink-0 animate-pulse rounded-full" aria-hidden="true"></span>
+              <span class="font-label-caps text-label-caps uppercase tracking-widest text-abrasive-red">Rusya'da Endüstriyel Tedarik</span>
+            </p>
+            <h1 class="home-hero__title font-headline-display text-[2rem] leading-[1.1] tracking-tight text-white sm:text-headline-lg-mobile md:text-headline-lg lg:text-headline-display">
+              Endüstriyel Kesim ve Taşlama Çözümlerinde<br>
+              <span class="home-hero__accent text-abrasive-red">Güçlü Tedarik Ortağınız</span>
+            </h1>
+            <p class="home-hero__subtitle max-w-2xl font-body-lg text-body-lg text-secondary">
+              Rusya'daki Türk firmalarına yüksek kaliteli kesici diskler, elmas kesiciler, flap diskler ve profesyonel uçlar sunuyoruz.
+            </p>
+            <div class="home-hero__actions flex flex-wrap gap-4">
+              <a href="urunler.html" class="inline-flex items-center rounded bg-abrasive-red px-8 py-4 font-label-caps text-label-caps uppercase text-on-primary-container transition-all hover:brightness-110 active:scale-95">Ürün Kataloğunu İncele</a>
+              <a href="iletisim.html" class="home-hero__btn-ghost inline-flex items-center rounded px-8 py-4 font-label-caps text-label-caps uppercase transition-all">İletişime Geç</a>
             </div>
-            <div class="home-hero__deco-wrap" aria-hidden="true">
-              <img
-                class="home-hero__deco"
-                src="assets/images/abralion-disc.webp"
-                alt=""
-                width="312"
-                height="312"
-                loading="lazy"
-                decoding="async">
+            <div class="home-hero__stats flex flex-wrap gap-8 border-t border-white/10 pt-8">
+              <div class="home-hero__stat flex flex-col">
+                <span class="home-hero__stat-value font-headline-md text-headline-md text-white">24</span>
+                <span class="home-hero__stat-label font-technical-data text-technical-data uppercase text-steel-gray">Ürün Ailesi</span>
+              </div>
+              <div class="home-hero__stat flex flex-col">
+                <span class="home-hero__stat-value font-headline-md text-headline-md text-white">90+</span>
+                <span class="home-hero__stat-label font-technical-data text-technical-data uppercase text-steel-gray">Varyasyon</span>
+              </div>
+              <div class="home-hero__stat flex flex-col">
+                <span class="home-hero__stat-value font-headline-md text-headline-md text-white">5</span>
+                <span class="home-hero__stat-label font-technical-data text-technical-data uppercase text-steel-gray">Kategori</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="home-trust" id="home-trust" aria-label="Güven ve hizmet">
-        <div class="home-trust__grid">
-          <article class="home-trust__card">
-            <span class="home-trust__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-            </span>
-            <h3 class="home-trust__title">Uluslararası Kalite</h3>
-            <p class="home-trust__text">Standartlara uygun üretim</p>
-          </article>
-          <article class="home-trust__card">
-            <span class="home-trust__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
-                <path d="M15 18h2"/>
-                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
-                <circle cx="17" cy="18" r="2"/>
-                <circle cx="7" cy="18" r="2"/>
-              </svg>
-            </span>
-            <h3 class="home-trust__title">Rusya'da Teslimat</h3>
-            <p class="home-trust__text">Yerel depo ve lojistik</p>
-          </article>
-          <article class="home-trust__card">
-            <span class="home-trust__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 11h3l2-7h8l2 7h3v2H3z"/>
-                <path d="M6 13v4a2 2 0 0 0 2 2h1"/>
-                <path d="M18 13v4a2 2 0 0 1-2 2h-1"/>
-              </svg>
-            </span>
-            <h3 class="home-trust__title">Teknik Destek</h3>
-            <p class="home-trust__text">Türkçe ve Rusça hizmet</p>
-          </article>
-          <article class="home-trust__card">
-            <span class="home-trust__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-              </svg>
-            </span>
-            <h3 class="home-trust__title">Hızlı Teklif</h3>
-            <p class="home-trust__text">24 saat içinde yanıt</p>
-          </article>
+      </div>
+    </section>
+
+    <!-- Features Bento -->
+    <section class="py-section-gap max-w-7xl mx-auto px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
+          <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="verified">verified</span>
+          <h3 class="font-headline-md text-headline-md text-white mb-2">Uluslararası Kalite</h3>
+          <p class="font-body-md text-body-md text-secondary">Standartlara uygun, sertifikalı üretim süreçleri.</p>
+          <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
+        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
+          <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="local_shipping">local_shipping</span>
+          <h3 class="font-headline-md text-headline-md text-white mb-2">Rusya'da Teslimat</h3>
+          <p class="font-body-md text-body-md text-secondary">Kendi lojistik ağımızla kapıdan kapıya teslim.</p>
+          <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
+        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
+          <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="support_agent">support_agent</span>
+          <h3 class="font-headline-md text-headline-md text-white mb-2">Teknik Destek</h3>
+          <p class="font-body-md text-body-md text-secondary">Uzman mühendis kadromuzla anında çözüm.</p>
+          <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
+        </div>
+        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
+          <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="timer">timer</span>
+          <h3 class="font-headline-md text-headline-md text-white mb-2">Hızlı Teklif</h3>
+          <p class="font-body-md text-body-md text-secondary">İhtiyaçlarınıza 24 saat içinde yanıt garantisi.</p>
+          <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
       </div>
     </section>
 
-    <section class="about-preview section">
-      <div class="container">
-        <div class="about-preview-content">
-          <div class="about-preview-text">
-            <h2>Abralion Hakkında</h2>
-            <p>Endüstriyel kesim ve taşlama ürünlerinde güvenilir çözüm ortağınız. 5 kategoride 24 ana ürün ve geniş varyasyon yelpazesi.</p>
-            <a href="hakkimizda.html" class="btn btn-secondary mt-md">Daha Fazla Bilgi</a>
+    <!-- Category Showcase -->
+    <section class="py-section-gap bg-surface-container-lowest">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div class="max-w-2xl">
+            <span class="font-label-caps text-label-caps text-abrasive-red uppercase mb-4 block">Kategori Vitrini</span>
+            <h2 class="font-headline-lg text-headline-lg text-white">Endüstriyel ihtiyacınıza <span class="text-abrasive-red">net çözüm</span></h2>
           </div>
-          <div class="about-preview-features">
-            <div class="feature-item"><div class="feature-icon">✓</div><h3>Yüksek Kalite</h3><p>Uluslararası standartlara uygun ürünler</p></div>
-            <div class="feature-item"><div class="feature-icon">✓</div><h3>Geniş Katalog</h3><p>24 ürün ailesi, 90+ varyasyon</p></div>
-            <div class="feature-item"><div class="feature-icon">✓</div><h3>Güvenilir Hizmet</h3><p>Teknik destek ve fiyat teklifi</p></div>
+          <p class="font-body-md text-body-md text-secondary max-w-sm">
+            Her kategori; uygulama, malzeme ve seri bazında özenle filtrelenmiş binlerce varyasyondan oluşur.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+          <!-- Large Card -->
+          <div class="lg:col-span-2 relative group overflow-hidden rounded-lg aspect-video bg-surface-elevation">
+            <img alt="Taşlama Diskleri" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhX7em_u_ZsDLoI9GWZ1otI-5DZP9EcwNTohebWMQPAjWiyjHKeht9wpXdf0p8_EW0QI7fRk4yPsmcc7WCdePscZIvCzR0nz60aMwm_qhad6ALT5ish3Ch_hKMdnkUk7DSXl9RJRAw4LlZeYO6-wTA4KCfHbVpIMT7oQEy8olkIReAz77oP9dSZXWkCy6Xmqsh8fWrsbBONmwxKE1SlT9CCfwi-q3Ltu7_daMHkQ7rO9Gf6qLisWAu5U9Az"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent to-transparent p-10 flex flex-col justify-end">
+              <div class="flex gap-2 mb-4">
+                <span class="bg-abrasive-red px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white">Metal</span>
+                <span class="bg-white/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">Çelik</span>
+              </div>
+              <h3 class="font-headline-lg text-headline-lg text-white mb-2">Taşlama Diskleri</h3>
+              <p class="font-body-md text-body-md text-secondary mb-6 max-w-md">Uzun ömürlü, vibrasyonu azaltılmış profesyonel taşlama çözümleri.</p>
+              <a class="flex items-center gap-2 text-white font-label-caps text-label-caps uppercase group-hover:text-abrasive-red transition-colors" href="urunler.html?kategori=kesici-taslama-flap-disk">
+                Kategoriyi Keşfet <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+              </a>
+            </div>
+          </div>
+          <!-- Standard Card -->
+          <div class="relative group overflow-hidden rounded-lg aspect-square bg-surface-elevation">
+            <img alt="Kesici Taşlar" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ugPpK0TQL4trWr5LwinXpCYj9DrDABh8vCZcsUfI5Hq_J6FW0iEXjhx62iWCZAadmYyIC-0udGsqyDxKM88cniuUPD4-6KtWibvJy5_sLKnmdO1Z4OuJvnMLhIk06rG9ynkl3U5_4H5YpIdjKaXqLPeO-ur3I9vZZJnQ2H1kidGH-ed62R4wZo9njmIyBlUIbSCB5pRKSFd9KRAEl-HSnB9Zt-9AYc8QoqCYhcVS5KlveW6xTOVH-eIYREA"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent p-8 flex flex-col justify-end">
+              <div class="flex gap-2 mb-4">
+                <span class="bg-white/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">Inox</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-white mb-2">Kesici Taşlar</h3>
+              <p class="font-body-md text-body-md text-secondary mb-4">Yüksek devirli hassas kesim.</p>
+              <a class="flex items-center gap-2 text-white font-label-caps text-label-caps uppercase group-hover:text-abrasive-red transition-colors" href="urunler.html?kategori=kesici-taslama-flap-disk">
+                İncele <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+              </a>
+            </div>
+          </div>
+          <!-- Standard Card -->
+          <div class="relative group overflow-hidden rounded-lg aspect-square bg-surface-elevation">
+            <img alt="Flap Diskler" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ujUScPcHoXTpmoH8rdfVtmEd-TWhy8bMzaCXt8BHO6YS9yuv23pYNjZAjbkTKqGXgfM1VWAidEuCCqv8f1tU_9O0wPcP91uXELJW-4W5hQmv3Or0MNNsPXs-5ejZXCn_lHmGoDQ2lX3AIDpOeykgUJbG9cZ9FUBF0dItQ-KYpsEHoR0KI0bOAE9PzW7IeHttkpuDxdTgSYtN_XCUgDcrvssgDGrX7EcpfVoshllSRNhmMJcc01xnLrhN8Nu"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent p-8 flex flex-col justify-end">
+              <div class="flex gap-2 mb-4">
+                <span class="bg-white/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">Alüminyum</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-white mb-2">Flap Diskler</h3>
+              <p class="font-body-md text-body-md text-secondary mb-4">Yüzey hazırlama ve perdahlama.</p>
+              <a class="flex items-center gap-2 text-white font-label-caps text-label-caps uppercase group-hover:text-abrasive-red transition-colors" href="urunler.html?kategori=kesici-taslama-flap-disk">
+                İncele <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+              </a>
+            </div>
+          </div>
+          <!-- Large Card 2 -->
+          <div class="lg:col-span-2 relative group overflow-hidden rounded-lg aspect-video bg-surface-elevation">
+            <img alt="Elmas Ürünler" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ugwHJwa-2u1M0eh_pRLeEHxkcKdYLE7jZXn4sLgwnZaICDzKHrSX2ZqwxCO4-0xea-q1sbj-HpVWPK0lnn5m9s4COKk-QdvcAtqGODo6tDiL01qwNyuFcRgD1grgbFsPucxk5KSHUus8N93PtZ-tnUCqS1riU24mFpa8qLAnBIbb3W8EJOn5bZVpQqwZR4uBqpdvwjI6otPd-Nh8k6Xd6EIzWpo4UKh5iHJk1kkvxa0vCYIUr78B6Z2Jjc"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent to-transparent p-10 flex flex-col justify-end">
+              <div class="flex gap-2 mb-4">
+                <span class="bg-abrasive-red px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white">İnşaat</span>
+                <span class="bg-white/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">Granit</span>
+              </div>
+              <h3 class="font-headline-lg text-headline-lg text-white mb-2">Elmas Ürünler</h3>
+              <p class="font-body-md text-body-md text-secondary mb-6 max-w-md">Beton, mermer ve sert zeminler için üstün performanslı elmas segmentli kesiciler.</p>
+              <a class="flex items-center gap-2 text-white font-label-caps text-label-caps uppercase group-hover:text-abrasive-red transition-colors" href="urunler.html?kategori=elmas-kesici">
+                Kategoriyi Keşfet <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="featured-products section">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Öne Çıkan Ürünlerimiz</h2>
-          <p>PDF kataloğumuzdan seçilmiş ürünler</p>
+    <!-- Documents Section -->
+    <section class="py-section-gap max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap items-center">
+        <div>
+          <span class="font-label-caps text-label-caps text-abrasive-red uppercase mb-4 block">Teknik Dökümanlar</span>
+          <h2 class="font-headline-lg text-headline-lg text-white mb-6">Karar vermeden önce <span class="text-abrasive-red">tam bilgi</span></h2>
+          <p class="font-body-lg text-body-lg text-secondary mb-8">
+            Tüm dökümanlarımızı tek tıkla indirin. Ürün seçimini hızlandıran teknik tabloları ve sertifikalı teknik dosyalar bir arada.
+          </p>
+          <div class="flex gap-4">
+            <a href="dokumanlar.html" class="bg-abrasive-red text-white px-8 py-4 rounded-lg font-label-caps text-label-caps uppercase flex items-center gap-2 hover:brightness-110 transition-all">
+              Katalogları İncele
+              <span class="material-symbols-outlined" data-icon="download">download</span>
+            </a>
+          </div>
         </div>
-        <div class="product-grid" id="featured-products-grid">
-          <!-- CATALOG_STATIC_START -->
-          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
-            <div class="product-card-image-container product-card-image-container--static-hero">
-              <a href="urun/metal-inox-kesme-tasi.html">
-                <img class="product-card-image product-card-image--hero" src="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kart.png" alt="Metal / Inox Kesme Taşı" loading="lazy" width="400" height="300" data-fallback="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kart.png">
-              </a>
-            </div>
-            <div class="product-card-content">
-              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
-              <h3 class="product-card-title"><a href="urun/metal-inox-kesme-tasi.html">Metal / Inox Kesme Taşı</a></h3>
-              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal kesimi için özel olarak geliştirilmiş takviyeli kesme taşıdır. İnce yapısı sayesinde has…</p>
-              <div class="product-card-actions">
-                <a href="urun/metal-inox-kesme-tasi.html" class="btn btn-primary btn-small">Detaylar</a>
+        <div class="space-y-4">
+          <div class="bg-surface-elevation p-6 technical-border flex items-center justify-between group hover:border-abrasive-red transition-colors">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-abrasive-red text-3xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+              <div>
+                <p class="font-headline-md text-headline-md text-white text-lg">Genel Ürün Kataloğu 2026</p>
+                <p class="font-technical-data text-technical-data text-steel-gray">12.4 MB • PDF</p>
               </div>
             </div>
+            <a href="assets/documents/abralion_turkce_katalog.pdf" class="text-white hover:text-abrasive-red transition-colors" download aria-label="Genel Ürün Kataloğu 2026 indir">
+              <span class="material-symbols-outlined" data-icon="file_download">file_download</span>
+            </a>
           </div>
-          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
-            <div class="product-card-image-container product-card-image-container--static-hero">
-              <a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html">
-                <img class="product-card-image product-card-image--hero" src="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-kart.jpg" alt="355mm Metal Sabit Tezgah Kesme Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-kart.png">
-              </a>
-            </div>
-            <div class="product-card-content">
-              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
-              <h3 class="product-card-title"><a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html">355mm Metal Sabit Tezgah Kesme Diski</a></h3>
-              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal kesimi için özel olarak geliştirilmiş büyük çaplı takviyeli kesme taşıdır. Endüstriyel u…</p>
-              <div class="product-card-actions">
-                <a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+          <div class="bg-surface-elevation p-6 technical-border flex items-center justify-between group hover:border-abrasive-red transition-colors">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-abrasive-red text-3xl" data-icon="inventory_2">inventory_2</span>
+              <div>
+                <p class="font-headline-md text-headline-md text-white text-lg">Teknik Döküman Paketi</p>
+                <p class="font-technical-data text-technical-data text-steel-gray">5.8 MB • ZIP</p>
               </div>
             </div>
+            <a href="dokumanlar.html" class="text-white hover:text-abrasive-red transition-colors" aria-label="Teknik Döküman Paketi">
+              <span class="material-symbols-outlined" data-icon="file_download">file_download</span>
+            </a>
           </div>
-          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
-            <div class="product-card-image-container product-card-image-container--static-hero">
-              <a href="urun/metal-inox-taslama-diski.html">
-                <img class="product-card-image product-card-image--hero" src="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart.jpg" alt="Metal / Inox Taşlama Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart.png">
-              </a>
-            </div>
-            <div class="product-card-content">
-              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
-              <h3 class="product-card-title"><a href="urun/metal-inox-taslama-diski.html">Metal / Inox Taşlama Diski</a></h3>
-              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş takviyeli taşlama taşıdır. 304 ve 3…</p>
-              <div class="product-card-actions">
-                <a href="urun/metal-inox-taslama-diski.html" class="btn btn-primary btn-small">Detaylar</a>
+          <div class="bg-surface-elevation p-6 technical-border flex items-center justify-between group hover:border-abrasive-red transition-colors">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-abrasive-red text-3xl" data-icon="table_chart">table_chart</span>
+              <div>
+                <p class="font-headline-md text-headline-md text-white text-lg">Karşılaştırma Tablosu</p>
+                <p class="font-technical-data text-technical-data text-steel-gray">1.2 MB • XLSX</p>
               </div>
             </div>
+            <a href="karsilastir.html" class="text-white hover:text-abrasive-red transition-colors" aria-label="Karşılaştırma Tablosu">
+              <span class="material-symbols-outlined" data-icon="file_download">file_download</span>
+            </a>
           </div>
-          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
-            <div class="product-card-image-container product-card-image-container--static-hero">
-              <a href="urun/zr-zirkon-flap-disk.html">
-                <img class="product-card-image product-card-image--hero" src="assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kart.jpg" alt="ZR Zirkon Flap Disk" loading="lazy" width="400" height="300" data-fallback="assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kart.png">
-              </a>
-            </div>
-            <div class="product-card-content">
-              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
-              <h3 class="product-card-title"><a href="urun/zr-zirkon-flap-disk.html">ZR Zirkon Flap Disk</a></h3>
-              <p class="product-card-description">Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş takviyeli taşlama taşıdır. 304 ve 3…</p>
-              <div class="product-card-actions">
-                <a href="urun/zr-zirkon-flap-disk.html" class="btn btn-primary btn-small">Detaylar</a>
-              </div>
-            </div>
-          </div>
-          <div class="product-card product-card--static" data-category-id="kesici-taslama-flap-disk">
-            <div class="product-card-image-container product-card-image-container--static-hero">
-              <a href="urun/ao-aluminyum-oksit-flap-disk.html">
-                <img class="product-card-image product-card-image--hero" src="assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kart.jpg" alt="AO Alüminyum Oksit Flap Disk" loading="lazy" width="400" height="300" data-fallback="assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kart.png">
-              </a>
-            </div>
-            <div class="product-card-content">
-              <div class="product-card-category">Kesici - Taşlama - Flap Disk</div>
-              <h3 class="product-card-title"><a href="urun/ao-aluminyum-oksit-flap-disk.html">AO Alüminyum Oksit Flap Disk</a></h3>
-              <p class="product-card-description">Metal ve ahşap yüzeylerin taşlanması için özel olarak geliştirilmiş flap disk. Alüminyum oksit (AO) aşındırıcı yapısı sa…</p>
-              <div class="product-card-actions">
-                <a href="urun/ao-aluminyum-oksit-flap-disk.html" class="btn btn-primary btn-small">Detaylar</a>
-              </div>
-            </div>
-          </div>
-          <div class="product-card product-card--static" data-category-id="elmas-kesici">
-            <div class="product-card-image-container product-card-image-container--static-hero">
-              <a href="urun/segmentli-standart-elmas-kesici.html">
-                <img class="product-card-image product-card-image--hero" src="assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kart.jpg" alt="Segmentli Standart Elmas Kesici" loading="lazy" width="400" height="300" data-fallback="assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kart.png">
-              </a>
-            </div>
-            <div class="product-card-content">
-              <div class="product-card-category">Elmas Kesici</div>
-              <h3 class="product-card-title"><a href="urun/segmentli-standart-elmas-kesici.html">Segmentli Standart Elmas Kesici</a></h3>
-              <p class="product-card-description">Kuru Kesim İçin Uygun. Beton, donatılı beton, granit, tuğla, taş, duvar ve çeşitli inşaat malzemelerinde çok amaçlı kull…</p>
-              <div class="product-card-actions">
-                <a href="urun/segmentli-standart-elmas-kesici.html" class="btn btn-primary btn-small">Detaylar</a>
-              </div>
-            </div>
-          </div>
-          <!-- CATALOG_STATIC_END -->
         </div>
-        <div class="text-center mt-lg">
-          <a href="urunler.html" class="btn btn-primary">Tüm Ürünleri Gör</a>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-section-gap">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+        <div class="bg-gradient-to-r from-surface-elevation to-carbon-black technical-border p-12 md:p-20 relative overflow-hidden rounded-lg">
+          <div class="absolute top-0 right-0 w-1/2 h-full opacity-[0.12] pointer-events-none overflow-hidden" aria-hidden="true">
+            <svg class="absolute -top-8 -right-10 h-[115%] w-auto text-white" viewBox="0 0 960 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2.5 4.5" opacity="0.9">
+                <path d="M148 98c28-18 62-22 92-8 22 10 38 32 42 58 4 28-8 54-28 68-18 14-42 16-64 8-26-10-48-32-52-58-4-28 6-54 10-68z"/>
+                <path d="M208 188c12-4 28-2 38 10 10 14 8 34-2 48-12 16-32 24-48 20-18-4-32-22-30-40 2-20 18-36 42-38z"/>
+                <path d="M458 92c22-8 48-6 64 10 14 14 16 36 8 52-10 18-30 28-50 26-22-2-40-18-44-38-4-22 8-42 22-50z"/>
+                <path d="M472 152c18-6 38-4 52 12 14 16 14 40 4 58-12 20-34 32-56 28-24-4-42-26-40-50 2-24 20-42 40-48z"/>
+                <path d="M528 82c52-12 108-8 156 8 42 14 78 38 88 68 8 26-4 54-28 68-28 18-66 20-98 10-38-12-72-36-88-66-14-28-8-58 6-78-14-20-24-44-36-88z"/>
+                <path d="M668 262c24-6 48-4 62 12 12 14 10 34-2 46-14 14-36 18-54 10-20-8-32-28-24-46 8-18 26-28 18-22z"/>
+                <ellipse cx="480" cy="238" rx="420" ry="168" stroke-dasharray="1 6" opacity="0.45"/>
+                <ellipse cx="480" cy="238" rx="320" ry="128" stroke-dasharray="1 6" opacity="0.35"/>
+                <path d="M480 70v336M60 238h840" opacity="0.25"/>
+              </g>
+              <g fill="currentColor" opacity="0.65">
+                <circle cx="472" cy="118" r="2.5"/>
+                <circle cx="528" cy="108" r="2"/>
+                <circle cx="668" cy="142" r="2"/>
+                <circle cx="248" cy="138" r="2"/>
+                <circle cx="218" cy="228" r="1.75"/>
+                <circle cx="698" cy="278" r="1.75"/>
+              </g>
+              <path d="M472 118 L528 108 L668 142" stroke="currentColor" stroke-width="0.75" stroke-dasharray="1 4" opacity="0.4"/>
+              <path d="M472 118 L248 138" stroke="currentColor" stroke-width="0.75" stroke-dasharray="1 4" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="max-w-3xl relative z-10">
+            <span class="font-label-caps text-label-caps text-abrasive-red uppercase mb-6 block">Hızlı Yanıt</span>
+            <h2 class="font-headline-display text-headline-lg-mobile md:text-headline-lg lg:text-headline-display text-white mb-8">Doğru ürün, doğru destek, <br><span class="text-abrasive-red">hızlı teklif</span></h2>
+            <p class="font-body-lg text-body-lg text-secondary mb-10">
+              İhtiyaçlarınıza uygun endüstriyel çözüm için bizimle hemen iletişime geçin. 24 saat içinde net fiyat ve termin bilgisi sağlıyoruz.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="iletisim.html" class="bg-abrasive-red text-white px-10 py-5 rounded-lg font-label-caps text-label-caps uppercase hover:scale-105 transition-transform text-center">Hemen Teklif Al</a>
+              <a href="iletisim.html" class="bg-white/10 text-white px-10 py-5 rounded-lg font-label-caps text-label-caps uppercase backdrop-blur hover:bg-white/20 transition-all text-center">İletişime Geç</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="featured-products bg-background py-section-gap" id="featured-products-section">
+      <div class="mx-auto max-w-site px-margin-mobile lg:px-margin-desktop">
+        <header class="featured-products__header mb-10 md:mb-12">
+          <h2 class="font-headline-lg text-headline-lg text-white">Öne Çıkan Çözümler</h2>
+          <p class="mt-3 max-w-2xl font-body-md text-body-md text-steel-gray">PDF kataloğumuzdan seçilmiş endüstriyel kesim ve taşlama ürünleri — teknik verilerle hızlı karar.</p>
+        </header>
+        <div class="featured-carousel relative" data-featured-carousel>
+          <button type="button" class="featured-carousel__arrow featured-carousel__arrow--prev" aria-label="Önceki ürünler" disabled>
+            <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+          </button>
+          <div class="featured-carousel__viewport overflow-hidden">
+            <div class="featured-carousel__track" id="featured-products-grid">
+              <!-- CATALOG_STATIC_START -->
+              <!-- CATALOG_STATIC_END -->
+            </div>
+          </div>
+          <button type="button" class="featured-carousel__arrow featured-carousel__arrow--next" aria-label="Sonraki ürünler">
+            <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+          </button>
+        </div>
+        <div class="mt-10 md:mt-12">
+          <a href="urunler.html" class="inline-flex items-center rounded bg-abrasive-red px-8 py-4 font-label-caps text-label-caps uppercase text-on-primary-container transition-all hover:brightness-110 active:scale-95">Tüm Ürünleri Gör</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-section">
-          <img src="assets/images/logo.svg" alt="Abralion Logo" class="footer-logo" data-logo>
-          <p class="footer-description">
-            Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h3>Hızlı Linkler</h3>
-          <ul class="footer-links">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="urunler.html">Ürünlerimiz</a></li>
-            <li><a href="dokumanlar.html">Dökümanlar</a></li>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Kategoriler</h3>
-          <ul class="footer-links">
-            <li><a href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
-            <li><a href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
-            <li><a href="urunler.html?kategori=uclar">Kırıcı & Delici</a></li>
-            <li><a href="urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
-            <li><a href="urunler.html?kategori=metreler">Metreler</a></li>
-            <li><a href="karsilastir.html">Ürün Karşılaştırma</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>İletişim</h3>
-          <ul class="footer-links">
-            <li><a href="iletisim.html">İletişim Formu</a></li>
-            <li><a href="mailto:info@abralion.com">info@abralion.com</a></li>
-            <li><a href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a></li>
-            <li><a href="tel:+74951424267">8 (495) 142-42-67</a></li>
-            <li><a href="tel:+79857896062">+7 985 789-60-62</a></li>
-          </ul>
-        </div>
+  <footer class="footer bg-carbon-black border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+      <div class="space-y-6">
+        <a href="index.html" class="inline-block footer-logo-link" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz.svg" alt="Abralion Logo" class="footer-logo h-14 w-auto" data-logo>
+        </a>
+        <p class="footer-description font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
+        </p>
+
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Hızlı Linkler</h4>
+        <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+          <li><a class="transition-colors hover:text-abrasive-red" href="index.html">Ana Sayfa</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html">Ürünlerimiz</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="dokumanlar.html">Dökümanlar</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Kategoriler</h4>
+        <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=uclar">Kırıcı &amp; Delici</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=metreler">Metreler</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="karsilastir.html">Ürün Karşılaştırma</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">İletişim</h4>
+        <ul class="space-y-6 font-body-md text-body-md text-on-surface-variant">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="call">call</span>
+            <span>
+              <a class="transition-colors hover:text-abrasive-red" href="tel:+74951424267">8 (495) 142-42-67</a><br>
+              <a class="transition-colors hover:text-abrasive-red" href="tel:+79857896062">+7 985 789-60-62</a>
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="mail">mail</span>
+            <a class="transition-colors hover:text-abrasive-red" href="mailto:info@abralion.com">info@abralion.com</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="language">language</span>
+            <a class="transition-colors hover:text-abrasive-red" href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="location_on">location_on</span>
+            <span>Rusya — EKS-PLAST LLC<br><span class="text-xs opacity-60">Endüstriyel tedarik operasyon merkezi</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body-md text-sm text-on-surface-variant">&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+      <div class="flex flex-wrap justify-center gap-6 font-body-md text-sm text-on-surface-variant">
+        <a class="transition-colors hover:text-abrasive-red" href="#">Gizlilik Politikası</a>
+        <a class="transition-colors hover:text-abrasive-red" href="#">Kullanım Koşulları</a>
+        <a class="transition-colors hover:text-abrasive-red" href="#">KVKK</a>
       </div>
     </div>
   </footer>
+
 
   <script defer src="assets/js/site.js"></script>
   <script defer src="assets/js/products-data.js"></script>
   <script defer src="assets/js/CompareManager.js"></script>
   <script defer src="assets/js/ProductManager.js"></script>
-  <script defer src="assets/js/ProductCard.js"></script>
-  <script defer src="assets/js/Header.js?v=20260525"></script>
-  <script defer src="assets/js/MegaMenu.js"></script>
+  <script defer src="assets/js/ProductCard.js?v=20260525m"></script>
+  <script defer src="assets/js/Header.js?v=20260526a"></script>
+  <script defer src="assets/js/MegaMenu.js?v=20260526c"></script>
   <script defer src="assets/js/ThemeToggle.js"></script>
   <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/pages/home.js?v=20260523"></script>
+  <script defer src="assets/js/pages/home.js?v=20260525m"></script>
 </body>
 </html>

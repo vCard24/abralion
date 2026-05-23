@@ -24,271 +24,300 @@
   <link rel="stylesheet" href="assets/css/responsive.css?v=20260525">
   <link rel="stylesheet" href="assets/css/dark-theme.css">
   <link rel="stylesheet" href="assets/css/site-extra.css">
+  <link rel="stylesheet" href="assets/css/compare.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260526a">
 </head>
-<body>
+<body class="page-documents bg-carbon-black text-on-surface font-body-md antialiased selection:bg-abrasive-red selection:text-white overflow-x-hidden">
   <script src="assets/js/theme-init.js"></script>
-<a href="#main-content" class="sr-only">İçeriğe atla</a>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-abrasive-red focus:text-white focus:rounded">İçeriğe atla</a>
 
-  <header class="header">
-    <div class="container">
-      <div class="header-container">
-        <a href="index.html" class="header-logo-link" aria-label="Abralion Ana Sayfa">
-          <img src="assets/images/logo.svg" alt="Abralion Logo" class="header-logo" data-logo>
+  <header class="header sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-steel-gray/20">
+    <div class="header-container flex items-center justify-between gap-6 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-4 md:py-5">
+      <div class="header-brand-nav flex items-center gap-8">
+        <a href="index.html" class="header-logo-link flex shrink-0 items-center transition-opacity hover:opacity-80" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz-yatay.svg" alt="Abralion" class="header-logo w-auto" width="438" height="132" decoding="async">
         </a>
-        <nav class="header-nav" aria-label="Ana navigasyon">
-          <ul class="header-nav-list">
-            <li><a href="index.html" class="header-nav-link">Ana Sayfa</a></li>
-            <li class="header-nav-dropdown">
-              <a href="urunler.html" class="header-nav-link">
+        <nav class="header-nav flex items-center gap-6" aria-label="Ana navigasyon">
+          <ul class="header-nav-list flex list-none items-center gap-6 m-0 p-0">
+            <li><a href="index.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Ana Sayfa</a></li>
+            <li class="header-nav-dropdown relative">
+              <a href="urunler.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
                 Ürünlerimiz
-                <span class="dropdown-arrow">▼</span>
+                <span class="dropdown-arrow" aria-hidden="true">▼</span>
               </a>
               <ul class="dropdown-menu mega-menu" id="mega-menu"></ul>
             </li>
-            <li>
-              <a href="karsilastir.html" class="header-nav-link">
-                Karşılaştır
-                <span class="compare-badge" style="display: none;">0</span>
-              </a>
-            </li>
-            <li><a href="dokumanlar.html" class="header-nav-link">Dökümanlar</a></li>
-            <li><a href="hakkimizda.html" class="header-nav-link">Hakkımızda</a></li>
-            <li><a href="iletisim.html" class="header-nav-link">İletişim</a></li>
+            <li><a href="dokumanlar.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Dökümanlar</a></li>
+            <li><a href="hakkimizda.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Hakkımızda</a></li>
+            <li><a href="iletisim.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">İletişim</a></li>
           </ul>
-          <div class="header-search">
-            <input type="search" class="header-search-input" placeholder="Ürün ara..." aria-label="Ürün ara" id="header-search-input">
-            <button type="button" class="header-search-btn" aria-label="Ara" id="header-search-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="m21 21-4.35-4.35"/>
-              </svg>
-            </button>
-          </div>
         </nav>
-        <button type="button" class="mobile-menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+      </div>
+      <div class="header-actions flex shrink-0 items-center gap-4">
+        <a href="karsilastir.html" class="header-compare-link hidden lg:inline-flex items-center gap-2 font-body-md text-body-md text-on-surface-variant transition-colors hover:text-on-surface">
+          <span class="material-symbols-outlined text-[20px]" data-icon="compare_arrows">compare_arrows</span>
+          Karşılaştır
+          <span class="compare-badge bg-surface-container-highest px-1.5 rounded text-xs font-bold" style="display: none;">0</span>
+        </a>
+        <a href="iletisim.html" class="header-cta-btn inline-flex items-center rounded-lg bg-abrasive-red px-6 py-2 font-label-caps text-label-caps uppercase text-white transition-all hover:brightness-110 active:scale-95">Teklif Al</a>
+        <button type="button" class="mobile-menu-toggle flex flex-col items-center justify-center gap-1.5 p-2.5 text-on-surface md:hidden" aria-label="Menüyü aç/kapat" aria-expanded="false">
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="page-header">
-      <div class="container">
-        <h1>Dökümanlar</h1>
-        <p>Ürün katalogları, güvenlik tavsiyeleri ve teknik dökümanlar</p>
+  <main id="main-content" class="min-h-screen">
+    <!-- Hero -->
+    <section class="docs-hero-gradient relative overflow-hidden pt-24 pb-section-gap border-b border-steel-gray/10" aria-labelledby="docs-hero-title">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop relative z-10">
+        <div class="inline-flex items-center gap-2 text-abrasive-red mb-6">
+          <span class="w-8 h-0.5 bg-abrasive-red" aria-hidden="true"></span>
+          <span class="font-label-caps text-label-caps uppercase tracking-[0.2em]">Kaynak Merkezi</span>
+        </div>
+        <h1 id="docs-hero-title" class="font-headline-lg text-headline-lg md:text-headline-display md:leading-[1.1] text-white mb-8 max-w-4xl">
+          Dökümanlar ve <br><span class="text-abrasive-red">Teknik Bilgi</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          Ürün katalogları, teknik dökümanlar ve güvenli kullanım tavsiyeleri. Tüm dosyalarımız endüstriyel standartlara uygun şekilde PDF formatında hazırlanmıştır.
+        </p>
+      </div>
+      <div class="absolute -right-24 top-0 w-[500px] h-[500px] border border-steel-gray/10 rounded-full opacity-30 pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -right-12 top-12 w-[400px] h-[400px] border border-steel-gray/10 rounded-full opacity-20 pointer-events-none" aria-hidden="true"></div>
+    </section>
+
+    <!-- Ürün Katalogları -->
+    <section class="pb-section-gap" aria-labelledby="docs-catalogs-title">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+        <div class="flex items-end justify-between mb-12">
+          <div>
+            <h2 id="docs-catalogs-title" class="font-headline-md text-headline-md text-white mb-2">Ürün Katalogları</h2>
+            <div class="h-1 w-12 bg-abrasive-red" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <!-- TR Katalog -->
+          <article class="bg-surface-elevation technical-border p-6 md:p-gutter flex flex-col md:flex-row gap-6 hover:bg-surface-container-high transition-all group">
+            <div class="w-full md:w-1/3 aspect-[3/4] bg-carbon-black overflow-hidden relative border border-steel-gray/10 shrink-0">
+              <img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Abralion Türkçe ürün kataloğu kapak görseli" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB7ceKLnL8qi8ObetItsota3uowCETwaFgr677AErr4iLuG3oBqnqOvZMTNe68NmDxzTlm_8VGPutX9FuhfN4m5mqfb9XDvH2qJYhlIdRsfnPmLj9Xwk0x3j_8-xV6xPiSn2cUminLF_7po4_r6AimVouB6TEpPEUYW2HpzWc9RBRPu3iSvoUHOASwWAcumDXUav5h2SoO7InxOv-RVEO8c1qKZ62DFj6kIUH98tGkDsoT3OiDNL2EdothfngsoTgSfVUweWOsygO0" width="400" height="533" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-carbon-black to-transparent opacity-60" aria-hidden="true"></div>
+              <div class="absolute bottom-4 left-4">
+                <span class="bg-abrasive-red text-white font-technical-data text-[10px] px-2 py-1 uppercase">PDF | TR</span>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col min-w-0">
+              <h3 class="font-headline-md text-headline-md text-white mb-3">Türkçe Ürün Kataloğu</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">
+                Tüm ürünlerimizin Türkçe açıklamaları, teknik boyut tabloları ve malzeme spesifikasyonları.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-auto">
+                <a class="flex-1 min-w-[140px] flex items-center justify-center gap-2 bg-white text-carbon-black px-4 py-3 font-label-caps text-label-caps uppercase hover:bg-abrasive-red hover:text-white transition-colors" href="assets/documents/abralion_turkce_katalog.pdf" download>
+                  <span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                  İndir
+                </a>
+                <a class="flex-1 min-w-[140px] flex items-center justify-center gap-2 border border-steel-gray/30 text-on-surface px-4 py-3 font-label-caps text-label-caps uppercase hover:border-abrasive-red transition-colors" href="assets/documents/abralion_turkce_katalog.pdf" target="_blank" rel="noopener noreferrer">
+                  <span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+                  Görüntüle
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- RU Katalog -->
+          <article class="bg-surface-elevation technical-border p-6 md:p-gutter flex flex-col md:flex-row gap-6 hover:bg-surface-container-high transition-all group">
+            <div class="w-full md:w-1/3 aspect-[3/4] bg-carbon-black overflow-hidden relative border border-steel-gray/10 shrink-0">
+              <img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Abralion Rusça ürün kataloğu kapak görseli" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdnfQz_YACMbB7wwo6ritXnjlePjTBAIXANVFVHwKfLtIYKdqZYwhd2GzeZHS6KVjMBxOSRYCj4njZ745__cl2W5Sc624dlJA2B2-F_mU-1Z6V5IGQlYSqt9mWzUUJSXGkelZu9K1wc3Nw-JBwQIhuwE1-okmE4dmLAgI6sap7LtPJLKQFef3Gl0eYb2-2F4WxpCRGxQxGqXFRQis_Fi_Ty3f4MMrFrZrzuGgwKHjDPM8mlrDXIFaSB7gT9Muun05NklZz1HKfd-fg" width="400" height="533" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-carbon-black to-transparent opacity-60" aria-hidden="true"></div>
+              <div class="absolute bottom-4 left-4">
+                <span class="bg-abrasive-red text-white font-technical-data text-[10px] px-2 py-1 uppercase">PDF | RU</span>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col min-w-0">
+              <h3 class="font-headline-md text-headline-md text-white mb-3">Каталог Продукции</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">
+                Полное описание всех наших продуктов на русском языке для наших партнеров.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-auto">
+                <a class="flex-1 min-w-[140px] flex items-center justify-center gap-2 bg-white text-carbon-black px-4 py-3 font-label-caps text-label-caps uppercase hover:bg-abrasive-red hover:text-white transition-colors" href="assets/documents/abralion_russian_cataloque.pdf" download>
+                  <span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                  Скачать
+                </a>
+                <a class="flex-1 min-w-[140px] flex items-center justify-center gap-2 border border-steel-gray/30 text-on-surface px-4 py-3 font-label-caps text-label-caps uppercase hover:border-abrasive-red transition-colors" href="assets/documents/abralion_russian_cataloque.pdf" target="_blank" rel="noopener noreferrer">
+                  <span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+                  Открыть
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="documents-section section">
-      <div class="container">
-
-        <div class="documents-category">
-          <h2>Ürün Katalogları</h2>
-          <p class="category-description">Tüm ürünlerimizi detaylı olarak inceleyebileceğiniz kataloglarımız</p>
-
-          <div class="documents-grid">
-            <div class="document-card">
-              <div class="document-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
-              </div>
-              <div class="document-info">
-                <h3>Türkçe Ürün Kataloğu</h3>
-                <p>Tüm ürünlerimizin Türkçe açıklamaları ve teknik özellikleri</p>
-                <div class="document-meta">
-                  <span class="document-size">PDF</span>
-                  <span class="document-lang">Türkçe</span>
-                </div>
-              </div>
-              <div class="document-card-actions">
-                <a href="assets/documents/abralion_turkce_katalog.pdf" class="btn btn-primary" download>
-                  <svg class="btn-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                  </svg>
-                  İndir
+    <!-- Güvenlik Tavsiyeleri -->
+    <section class="bg-surface-container-lowest py-section-gap border-y border-steel-gray/10" aria-labelledby="docs-safety-title">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div class="max-w-xl">
+            <span class="font-label-caps text-label-caps text-abrasive-red uppercase tracking-widest mb-4 block">Güvenlik Birincil Önceliğimizdir</span>
+            <h2 id="docs-safety-title" class="font-headline-md text-headline-md md:text-headline-lg text-white">Güvenlik Tavsiyeleri</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-4">
+              Endüstriyel ürünlerimizi güvenli bir şekilde kullanmanız için önemli yönergeler. Lütfen kullanım öncesi dökümanları inceleyiniz.
+            </p>
+          </div>
+          <div class="hidden md:block shrink-0" aria-hidden="true">
+            <span class="material-symbols-outlined text-[64px] text-steel-gray/20" data-icon="safety_check">safety_check</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <article class="bg-surface-elevation border-l-4 border-l-abrasive-red p-8 flex items-start gap-8 group hover:bg-surface-container-high transition-all">
+            <div class="hidden sm:flex shrink-0 w-16 h-16 rounded-lg bg-carbon-black items-center justify-center technical-border group-hover:border-abrasive-red/50 transition-colors" aria-hidden="true">
+              <span class="material-symbols-outlined text-abrasive-red text-[32px]" data-icon="engineering">engineering</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-headline-md text-headline-md text-white mb-2">Aşındırıcı Ürünlerin Kullanımı İçin Güvenlik Tavsiyeleri</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6">Kesici taşlar, taşlama diskleri ve flap disklerin güvenli kullanımı, depolanması ve imhası hakkında bilgiler.</p>
+              <div class="flex flex-wrap gap-6">
+                <a class="inline-flex items-center gap-2 text-on-surface hover:text-abrasive-red transition-colors font-label-caps text-label-caps uppercase" href="assets/documents/guvenlik-asindirici-urunler.pdf" download>
+                  <span class="material-symbols-outlined" data-icon="description">description</span>
+                  PDF İndir
                 </a>
-                <a href="assets/documents/abralion_turkce_katalog.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Tarayıcıda Aç</a>
+                <a class="inline-flex items-center gap-2 text-on-surface hover:text-abrasive-red transition-colors font-label-caps text-label-caps uppercase" href="assets/documents/guvenlik-asindirici-urunler.pdf" target="_blank" rel="noopener noreferrer">
+                  <span class="material-symbols-outlined" data-icon="launch">launch</span>
+                  Tarayıcıda Aç
+                </a>
               </div>
             </div>
-
-            <div class="document-card">
-              <div class="document-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
-              </div>
-              <div class="document-info">
-                <h3>Каталог Продукции</h3>
-                <p>Полное описание всех наших продуктов на русском языке</p>
-                <div class="document-meta">
-                  <span class="document-size">PDF</span>
-                  <span class="document-lang">Rusça</span>
-                </div>
-              </div>
-              <div class="document-card-actions">
-                <a href="assets/documents/abralion_russian_cataloque.pdf" class="btn btn-primary" download>
-                  <svg class="btn-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                  </svg>
-                  Скачать
+          </article>
+          <article class="bg-surface-elevation border-l-4 border-l-abrasive-red p-8 flex items-start gap-8 group hover:bg-surface-container-high transition-all">
+            <div class="hidden sm:flex shrink-0 w-16 h-16 rounded-lg bg-carbon-black items-center justify-center technical-border group-hover:border-abrasive-red/50 transition-colors" aria-hidden="true">
+              <span class="material-symbols-outlined text-abrasive-red text-[32px]" data-icon="construction">construction</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-headline-md text-headline-md text-white mb-2">Delici ve Kırıcı Ürünlerin Kullanımı İçin Güvenlik Tavsiyeleri</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6">Matkaplar, keskiler ve delici uçların doğru teknikle ve kişisel koruyucu donanımlarla kullanımı.</p>
+              <div class="flex flex-wrap gap-6">
+                <a class="inline-flex items-center gap-2 text-on-surface hover:text-abrasive-red transition-colors font-label-caps text-label-caps uppercase" href="assets/documents/delici-ve-kirici-urunler-guvenlik-rehberi.pdf" download>
+                  <span class="material-symbols-outlined" data-icon="description">description</span>
+                  PDF İndir
                 </a>
-                <a href="assets/documents/abralion_russian_cataloque.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Открыть в браузере</a>
+                <a class="inline-flex items-center gap-2 text-on-surface hover:text-abrasive-red transition-colors font-label-caps text-label-caps uppercase" href="assets/documents/delici-ve-kirici-urunler-guvenlik-rehberi.pdf" target="_blank" rel="noopener noreferrer">
+                  <span class="material-symbols-outlined" data-icon="launch">launch</span>
+                  Tarayıcıda Aç
+                </a>
               </div>
+            </div>
+          </article>
+        </div>
+        <div class="documents-info-box mt-12 bg-surface-container-high/40 p-6 flex flex-col md:flex-row items-center gap-4 text-center md:text-left border border-steel-gray/10">
+          <span class="material-symbols-outlined text-abrasive-red shrink-0" data-icon="info">info</span>
+          <p class="font-body-md text-body-md text-on-surface-variant m-0">
+            Tüm dökümanlarımız <strong class="text-on-surface font-semibold">PDF formatındadır</strong> ve ücretsiz olarak indirilebilir. Güvenlik tavsiyeleri dökümanlarını mutlaka okuyunuz ve ürünlerimizi güvenli bir şekilde kullanınız. Daha fazla bilgi için <a href="iletisim.html">bizimle iletişime geçebilirsiniz</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-section-gap">
+      <div class="max-w-5xl mx-auto px-margin-mobile lg:px-margin-desktop text-center">
+        <div class="bg-surface-elevation p-8 md:p-20 relative overflow-hidden technical-border">
+          <div class="absolute top-0 right-0 w-1/2 h-full bg-abrasive-red/5 skew-x-[-20deg] translate-x-1/2 pointer-events-none" aria-hidden="true"></div>
+          <div class="relative z-10">
+            <h2 class="font-headline-md text-headline-md md:text-headline-lg text-white mb-6">Aradığınız dökümanı bulamadınız mı?</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+              Daha spesifik teknik detaylar veya özel proje dökümantasyonu için uzman ekibimiz size yardımcı olmaya hazırdır.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a class="bg-abrasive-red text-white px-10 py-4 font-label-caps text-label-caps uppercase hover:brightness-110 transition-all flex items-center justify-center gap-3" href="iletisim.html">
+                <span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                Teknik Destek Al
+              </a>
+              <a class="border border-white/20 text-on-surface px-10 py-4 font-label-caps text-label-caps uppercase hover:border-abrasive-red transition-all flex items-center justify-center gap-3" href="tel:+74951424267">
+                <span class="material-symbols-outlined" data-icon="call">call</span>
+                Bizi Arayın
+              </a>
             </div>
           </div>
         </div>
-
-        <div class="documents-category">
-          <h2>Güvenlik Tavsiyeleri</h2>
-          <p class="category-description">Ürünlerimizi güvenli bir şekilde kullanmanız için önemli bilgiler</p>
-
-          <div class="documents-grid">
-            <div class="document-card">
-              <div class="document-icon document-icon-safety">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="M12 8v4"/>
-                  <path d="M12 16h.01"/>
-                </svg>
-              </div>
-              <div class="document-info">
-                <h3>Aşındırıcı Ürünlerin Kullanımı İçin Güvenlik Tavsiyeleri</h3>
-                <p>Kesici taşlar, taşlama diskleri ve flap disklerin güvenli kullanımı</p>
-                <div class="document-meta">
-                  <span class="document-size">PDF</span>
-                  <span class="document-lang">Türkçe</span>
-                </div>
-              </div>
-              <div class="document-card-actions">
-                <a href="assets/documents/guvenlik-asindirici-urunler.pdf" class="btn btn-secondary" download>
-                  <svg class="btn-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                  </svg>
-                  İndir
-                </a>
-                <a href="assets/documents/guvenlik-asindirici-urunler.pdf" class="btn btn-secondary btn-open-browser" target="_blank" rel="noopener noreferrer">Tarayıcıda Aç</a>
-              </div>
-            </div>
-
-            <div class="document-card">
-              <div class="document-icon document-icon-safety">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="M12 8v4"/>
-                  <path d="M12 16h.01"/>
-                </svg>
-              </div>
-              <div class="document-info">
-                <h3>Delici ve Kırıcı Ürünlerin Kullanımı İçin Güvenlik Tavsiyeleri</h3>
-                <p>Matkaplar, keskiler ve delici uçların güvenli kullanımı</p>
-                <div class="document-meta">
-                  <span class="document-size">PDF</span>
-                  <span class="document-lang">Türkçe</span>
-                </div>
-              </div>
-              <div class="document-card-actions">
-                <a href="assets/documents/delici-ve-kirici-urunler-guvenlik-rehberi.pdf" class="btn btn-secondary" download>
-                  <svg class="btn-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                  </svg>
-                  İndir
-                </a>
-                <a href="assets/documents/delici-ve-kirici-urunler-guvenlik-rehberi.pdf" class="btn btn-secondary btn-open-browser" target="_blank" rel="noopener noreferrer">Tarayıcıda Aç</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="documents-info-box">
-          <div class="info-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-          </div>
-          <div class="info-content">
-            <h3>Döküman Hakkında Bilgi</h3>
-            <p>Tüm dökümanlarımız PDF formatındadır ve ücretsiz olarak indirilebilir. Güvenlik tavsiyeleri dökümanlarını mutlaka okuyunuz ve ürünlerimizi güvenli bir şekilde kullanınız.</p>
-            <p>Daha fazla bilgi için <a href="iletisim.html">bizimle iletişime geçebilirsiniz</a>.</p>
-          </div>
-        </div>
-
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-section">
-          <img src="assets/images/logo.svg" alt="Abralion Logo" class="footer-logo" data-logo>
-          <p class="footer-description">
-            Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h3>Hızlı Linkler</h3>
-          <ul class="footer-links">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="urunler.html">Ürünlerimiz</a></li>
-            <li><a href="dokumanlar.html">Dökümanlar</a></li>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Kategoriler</h3>
-          <ul class="footer-links">
-            <li><a href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
-            <li><a href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
-            <li><a href="urunler.html?kategori=uclar">Kırıcı & Delici</a></li>
-            <li><a href="urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
-            <li><a href="urunler.html?kategori=metreler">Metreler</a></li>
-            <li><a href="karsilastir.html">Ürün Karşılaştırma</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>İletişim</h3>
-          <ul class="footer-links">
-            <li><a href="iletisim.html">İletişim Formu</a></li>
-            <li><a href="mailto:info@abralion.com">info@abralion.com</a></li>
-            <li><a href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a></li>
-            <li><a href="tel:+74951424267">8 (495) 142-42-67</a></li>
-            <li><a href="tel:+79857896062">+7 985 789-60-62</a></li>
-          </ul>
-        </div>
+  <footer class="footer bg-carbon-black border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+      <div class="space-y-6">
+        <a href="index.html" class="inline-block footer-logo-link" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz.svg" alt="Abralion Logo" class="footer-logo h-14 w-auto" data-logo>
+        </a>
+        <p class="footer-description font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
+        </p>
+
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Hızlı Linkler</h4>
+        <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li><a class="transition-colors hover:text-abrasive-red" href="index.html">Ana Sayfa</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html">Ürünlerimiz</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red text-on-surface font-semibold" href="dokumanlar.html" aria-current="page">Dökümanlar</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Kategoriler</h4>
+        <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=uclar">Kırıcı &amp; Delici</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=metreler">Metreler</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="karsilastir.html">Ürün Karşılaştırma</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">İletişim</h4>
+        <ul class="space-y-6 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="call">call</span>
+            <span>
+              <a class="transition-colors hover:text-abrasive-red" href="tel:+74951424267">8 (495) 142-42-67</a><br>
+              <a class="transition-colors hover:text-abrasive-red" href="tel:+79857896062">+7 985 789-60-62</a>
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="mail">mail</span>
+            <a class="transition-colors hover:text-abrasive-red" href="mailto:info@abralion.com">info@abralion.com</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="language">language</span>
+            <a class="transition-colors hover:text-abrasive-red" href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body-md text-sm text-on-surface-variant">&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+      <div class="flex flex-wrap justify-center gap-6 font-body-md text-sm text-on-surface-variant">
+        <a class="transition-colors hover:text-abrasive-red" href="#">Gizlilik Politikası</a>
+        <a class="transition-colors hover:text-abrasive-red" href="#">Kullanım Koşulları</a>
+        <a class="transition-colors hover:text-abrasive-red" href="#">KVKK</a>
       </div>
     </div>
   </footer>
 
   <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/products-data.js"></script>
   <script defer src="assets/js/CompareManager.js"></script>
-  <script defer src="assets/js/Header.js?v=20260525"></script>
-  <script defer src="assets/js/MegaMenu.js"></script>
+  <script defer src="assets/js/ProductManager.js"></script>
+  <script defer src="assets/js/Header.js?v=20260526a"></script>
+  <script defer src="assets/js/MegaMenu.js?v=20260526c"></script>
   <script defer src="assets/js/ThemeToggle.js"></script>
   <script defer src="assets/js/main.js"></script>
 </body>

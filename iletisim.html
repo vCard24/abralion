@@ -24,225 +24,265 @@
   <link rel="stylesheet" href="assets/css/responsive.css?v=20260525">
   <link rel="stylesheet" href="assets/css/dark-theme.css">
   <link rel="stylesheet" href="assets/css/site-extra.css">
+  <link rel="stylesheet" href="assets/css/compare.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260526a">
 </head>
-<body>
+<body class="page-contact bg-carbon-black text-on-surface font-body-md antialiased selection:bg-abrasive-red selection:text-white overflow-x-hidden">
   <script src="assets/js/theme-init.js"></script>
-<a href="#main-content" class="sr-only">İçeriğe atla</a>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-abrasive-red focus:text-white focus:rounded">İçeriğe atla</a>
 
-  <header class="header">
-    <div class="container">
-      <div class="header-container">
-        <a href="index.html" class="header-logo-link" aria-label="Abralion Ana Sayfa">
-          <img src="assets/images/logo.svg" alt="Abralion Logo" class="header-logo" data-logo>
+  <header class="header sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-steel-gray/20">
+    <div class="header-container flex items-center justify-between gap-6 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-4 md:py-5">
+      <div class="header-brand-nav flex items-center gap-8">
+        <a href="index.html" class="header-logo-link flex shrink-0 items-center transition-opacity hover:opacity-80" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz-yatay.svg" alt="Abralion" class="header-logo w-auto" width="438" height="132" decoding="async">
         </a>
-        <nav class="header-nav" aria-label="Ana navigasyon">
-          <ul class="header-nav-list">
-            <li><a href="index.html" class="header-nav-link">Ana Sayfa</a></li>
-            <li class="header-nav-dropdown">
-              <a href="urunler.html" class="header-nav-link">
+        <nav class="header-nav flex items-center gap-6" aria-label="Ana navigasyon">
+          <ul class="header-nav-list flex list-none items-center gap-6 m-0 p-0">
+            <li><a href="index.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Ana Sayfa</a></li>
+            <li class="header-nav-dropdown relative">
+              <a href="urunler.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
                 Ürünlerimiz
-                <span class="dropdown-arrow">▼</span>
+                <span class="dropdown-arrow" aria-hidden="true">▼</span>
               </a>
               <ul class="dropdown-menu mega-menu" id="mega-menu"></ul>
             </li>
-            <li>
-              <a href="karsilastir.html" class="header-nav-link">
-                Karşılaştır
-                <span class="compare-badge" style="display: none;">0</span>
-              </a>
-            </li>
-            <li><a href="dokumanlar.html" class="header-nav-link">Dökümanlar</a></li>
-            <li><a href="hakkimizda.html" class="header-nav-link">Hakkımızda</a></li>
-            <li><a href="iletisim.html" class="header-nav-link">İletişim</a></li>
+            <li><a href="dokumanlar.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Dökümanlar</a></li>
+            <li><a href="hakkimizda.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Hakkımızda</a></li>
+            <li><a href="iletisim.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">İletişim</a></li>
           </ul>
-          <div class="header-search">
-            <input type="search" class="header-search-input" placeholder="Ürün ara..." aria-label="Ürün ara" id="header-search-input">
-            <button type="button" class="header-search-btn" aria-label="Ara" id="header-search-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="m21 21-4.35-4.35"/>
-              </svg>
-            </button>
-          </div>
         </nav>
-        <button type="button" class="mobile-menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+      </div>
+      <div class="header-actions flex shrink-0 items-center gap-4">
+        <a href="karsilastir.html" class="header-compare-link hidden lg:inline-flex items-center gap-2 font-body-md text-body-md text-on-surface-variant transition-colors hover:text-on-surface">
+          <span class="material-symbols-outlined text-[20px]" data-icon="compare_arrows">compare_arrows</span>
+          Karşılaştır
+          <span class="compare-badge bg-surface-container-highest px-1.5 rounded text-xs font-bold" style="display: none;">0</span>
+        </a>
+        <a href="iletisim.html" class="header-cta-btn inline-flex items-center rounded-lg bg-abrasive-red px-6 py-2 font-label-caps text-label-caps uppercase text-white transition-all hover:brightness-110 active:scale-95">Teklif Al</a>
+        <button type="button" class="mobile-menu-toggle flex flex-col items-center justify-center gap-1.5 p-2.5 text-on-surface md:hidden" aria-label="Menüyü aç/kapat" aria-expanded="false">
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="contact-page section">
-      <div class="container">
-        <div class="contact-header text-center">
-          <h1>İletişim</h1>
-          <p>Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız</p>
-        </div>
+  <main id="main-content" class="min-h-screen">
+    <!-- Hero -->
+    <section class="contact-hero-gradient relative pt-24 pb-section-gap overflow-hidden" aria-labelledby="contact-hero-title">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop relative z-10">
+        <span class="text-abrasive-red font-label-caps text-label-caps uppercase tracking-widest block mb-4">Küresel Destek Ağı</span>
+        <h1 id="contact-hero-title" class="font-headline-lg text-headline-lg text-white mb-6">
+          Bizimle <span class="text-abrasive-red">İletişime</span> Geçin
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          Endüstriyel kesme ve taşlama ihtiyaçlarınız için teknik destek, numune talepleri ve hızlı teklif alma süreçlerinde uzman ekibimizle yanınızdayız.
+        </p>
+      </div>
+    </section>
 
-        <div class="contact-layout">
-          <div class="contact-info">
-            <h2>İletişim Bilgileri</h2>
-            <p class="contact-intro">Ürünlerimiz hakkında bilgi almak veya sipariş vermek için aşağıdaki iletişim kanallarından bize ulaşabilirsiniz.</p>
+    <!-- Form + Bilgi -->
+    <section class="pb-section-gap" aria-labelledby="contact-form-title">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+          <div class="lg:col-span-7">
+            <div class="contact-glass-panel p-6 md:p-10 rounded-xl">
+              <h2 id="contact-form-title" class="font-headline-md text-headline-md text-white mb-2">Teklif Formu</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-8">Formu doldurarak bize mesaj gönderebilirsiniz. En kısa sürede size dönüş yapacağız.</p>
 
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M3 21h18"/>
-                  <path d="M5 21V7l8-4v18"/>
-                  <path d="M19 21V11l-6-4"/>
-                </svg>
+              <div class="form-success" id="form-success" role="status" aria-live="polite">
+                <p>✓ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.</p>
               </div>
-              <div class="contact-details">
-                <h3>Ana Şirket</h3>
-                <p><strong>EKS-PLAST LLC</strong></p>
-              </div>
-            </div>
 
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div class="contact-details">
-                <h3>E-posta</h3>
-                <a href="mailto:info@abralion.com">info@abralion.com</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
-              <div class="contact-details">
-                <h3>Website</h3>
-                <a href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </div>
-              <div class="contact-details">
-                <h3>Telefon</h3>
-                <p><a href="tel:+74951424267">8 (495) 142-42-67</a></p>
-                <p><a href="tel:+79857896062">+7 985 789-60-62</a></p>
-              </div>
+              <form id="contact-form" class="contact-form grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" novalidate>
+                <div class="flex flex-col gap-2">
+                  <label for="name" class="font-label-caps text-label-caps text-steel-gray">AD SOYAD *</label>
+                  <input type="text" id="name" name="name" class="form-input contact-input-field p-3 text-white" required aria-required="true" placeholder="Örn: Ahmet Yılmaz" autocomplete="name">
+                  <div class="form-error" id="name-error"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="email" class="font-label-caps text-label-caps text-steel-gray">E-POSTA *</label>
+                  <input type="email" id="email" name="email" class="form-input contact-input-field p-3 text-white" required aria-required="true" placeholder="ahmet@sirket.com" autocomplete="email">
+                  <div class="form-error" id="email-error"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="phone" class="font-label-caps text-label-caps text-steel-gray">TELEFON</label>
+                  <input type="tel" id="phone" name="phone" class="form-input contact-input-field p-3 text-white" placeholder="+7 XXX XXX XX XX" autocomplete="tel">
+                  <div class="form-error" id="phone-error"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="subject" class="font-label-caps text-label-caps text-steel-gray">KONU *</label>
+                  <input type="text" id="subject" name="subject" class="form-input contact-input-field p-3 text-white" required aria-required="true" placeholder="Fiyat teklifi, teknik bilgi…">
+                  <div class="form-error" id="subject-error"></div>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                  <label for="message" class="font-label-caps text-label-caps text-steel-gray">MESAJINIZ *</label>
+                  <textarea id="message" name="message" class="form-textarea contact-input-field p-3 text-white resize-none" required aria-required="true" placeholder="Projeniz hakkında detaylı bilgi verin..." rows="4"></textarea>
+                  <div class="form-error" id="message-error"></div>
+                </div>
+                <div class="md:col-span-2 mt-2">
+                  <button type="submit" class="w-full bg-abrasive-red text-white py-4 rounded-lg font-label-caps text-label-caps uppercase tracking-wider hover:brightness-110 transition-all flex justify-center items-center gap-2">
+                    Teklifi Gönder
+                    <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
 
-          <div class="contact-form-container">
-            <h2>Bize Mesaj Gönderin</h2>
-            <p class="form-intro">Formu doldurarak bize mesaj gönderebilirsiniz. En kısa sürede size dönüş yapacağız.</p>
-
-            <div class="form-success" id="form-success">
-              <p>✓ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.</p>
+          <div class="lg:col-span-5 flex flex-col gap-8">
+            <div class="contact-glass-panel p-8 rounded-xl border-l-4 border-l-abrasive-red">
+              <div class="flex items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-abrasive-red" data-icon="location_on">location_on</span>
+                <h3 class="font-headline-md text-headline-md text-white m-0">Rusya Operasyon</h3>
+              </div>
+              <div class="space-y-4">
+                <p class="text-on-surface-variant font-body-md m-0">
+                  <strong class="text-on-surface">EKS-PLAST LLC</strong><br>
+                  Rusya — endüstriyel kesim ve taşlama tedarik merkezi
+                </p>
+                <div class="flex flex-col gap-2">
+                  <a class="flex items-center gap-3 text-on-surface hover:text-abrasive-red transition-colors" href="tel:+74951424267">
+                    <span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+                    <span class="font-technical-data text-technical-data">8 (495) 142-42-67</span>
+                  </a>
+                  <a class="flex items-center gap-3 text-on-surface hover:text-abrasive-red transition-colors" href="tel:+79857896062">
+                    <span class="material-symbols-outlined text-sm" data-icon="smartphone">smartphone</span>
+                    <span class="font-technical-data text-technical-data">+7 985 789-60-62</span>
+                  </a>
+                  <a class="flex items-center gap-3 text-on-surface hover:text-abrasive-red transition-colors" href="mailto:info@abralion.com">
+                    <span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+                    <span class="font-technical-data text-technical-data">info@abralion.com</span>
+                  </a>
+                  <a class="flex items-center gap-3 text-on-surface hover:text-abrasive-red transition-colors" href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">
+                    <span class="material-symbols-outlined text-sm" data-icon="language">language</span>
+                    <span class="font-technical-data text-technical-data">www.abralion.com</span>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <form id="contact-form" class="contact-form" novalidate>
-              <div class="form-group">
-                <label for="name" class="form-label">Ad Soyad *</label>
-                <input type="text" id="name" name="name" class="form-input" required aria-required="true" placeholder="Adınız ve soyadınız">
-                <div class="form-error" id="name-error"></div>
-              </div>
+            <div class="grid grid-cols-2 gap-4">
+              <a href="dokumanlar.html" class="contact-quick-link bg-surface-container-high p-4 rounded-lg flex flex-col items-center gap-2 text-center group hover:bg-abrasive-red/10 transition-all">
+                <span class="material-symbols-outlined text-abrasive-red text-3xl" data-icon="description">description</span>
+                <span class="font-label-caps text-[10px] uppercase text-steel-gray">E-Katalog</span>
+              </a>
+              <a href="https://wa.me/79857896062" class="contact-quick-link bg-surface-container-high p-4 rounded-lg flex flex-col items-center gap-2 text-center group hover:bg-abrasive-red/10 transition-all" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişim">
+                <span class="material-symbols-outlined text-abrasive-red text-3xl" data-icon="support_agent">support_agent</span>
+                <span class="font-label-caps text-[10px] uppercase text-steel-gray">WhatsApp Destek</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <div class="form-group">
-                <label for="email" class="form-label">E-posta *</label>
-                <input type="email" id="email" name="email" class="form-input" required aria-required="true" placeholder="ornek@email.com">
-                <div class="form-error" id="email-error"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="phone" class="form-label">Telefon</label>
-                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 XXX XXX XX XX">
-                <div class="form-error" id="phone-error"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="subject" class="form-label">Konu *</label>
-                <input type="text" id="subject" name="subject" class="form-input" required aria-required="true" placeholder="Mesajınızın konusu">
-                <div class="form-error" id="subject-error"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label">Mesaj *</label>
-                <textarea id="message" name="message" class="form-textarea" required aria-required="true" placeholder="Mesajınızı buraya yazın..." rows="6"></textarea>
-                <div class="form-error" id="message-error"></div>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-large">Mesaj Gönder</button>
-            </form>
+    <!-- Harita -->
+    <section class="h-[500px] w-full relative grayscale overflow-hidden" aria-label="Operasyon bölgeleri haritası">
+      <div class="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-carbon-black via-transparent to-carbon-black" aria-hidden="true"></div>
+      <div class="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-carbon-black via-transparent to-carbon-black" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-[#121414] overflow-hidden">
+        <img class="w-full h-full object-cover opacity-20" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsCdluaz6DiAKZCwD8eIloxYo51RPsFVl6o5Ja4lMZB4PyM4UOu0DrmRmjtR_Sv4QCulbbXa8T8WRBAoajCWErtwNWDF_XorSkxgGi47AGUilgw9gsgRrGZxrVtdvj7uphiz4QLh0xE-B-53HuwQ_L7yI36unqDB4qVjJLarFXcm8mVGGZLCLuC9W3DFCPA_pUHxjmd4Qj4LzZ4pcII9-tY8XGnxZ9eHpVjvPJRFhSoANVaLLVVJyxsSHHNSTzbyVF9r-oZCKkx4rY" width="1920" height="500" loading="lazy" decoding="async">
+        <div class="absolute top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 z-20" aria-hidden="true">
+          <div class="relative flex items-center justify-center">
+            <div class="absolute w-12 h-12 bg-abrasive-red/20 rounded-full animate-ping"></div>
+            <div class="relative w-4 h-4 bg-abrasive-red rounded-full border-2 border-white"></div>
+            <div class="absolute top-8 bg-surface-elevation px-3 py-1 rounded border border-steel-gray/20 whitespace-nowrap">
+              <span class="text-xs font-label-caps text-white">MOSKOVA — EKS-PLAST LLC</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-section">
-          <img src="assets/images/logo.svg" alt="Abralion Logo" class="footer-logo" data-logo>
-          <p class="footer-description">
-            Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h3>Hızlı Linkler</h3>
-          <ul class="footer-links">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="urunler.html">Ürünlerimiz</a></li>
-            <li><a href="dokumanlar.html">Dökümanlar</a></li>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Kategoriler</h3>
-          <ul class="footer-links">
-            <li><a href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
-            <li><a href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
-            <li><a href="urunler.html?kategori=uclar">Kırıcı & Delici</a></li>
-            <li><a href="urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
-            <li><a href="urunler.html?kategori=metreler">Metreler</a></li>
-            <li><a href="karsilastir.html">Ürün Karşılaştırma</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>İletişim</h3>
-          <ul class="footer-links">
-            <li><a href="iletisim.html">İletişim Formu</a></li>
-            <li><a href="mailto:info@abralion.com">info@abralion.com</a></li>
-            <li><a href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a></li>
-            <li><a href="tel:+74951424267">8 (495) 142-42-67</a></li>
-            <li><a href="tel:+79857896062">+7 985 789-60-62</a></li>
-          </ul>
-        </div>
+  <footer class="footer bg-carbon-black border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+      <div class="space-y-6">
+        <a href="index.html" class="inline-block footer-logo-link" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz.svg" alt="Abralion Logo" class="footer-logo h-14 w-auto" data-logo>
+        </a>
+        <p class="footer-description font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
+        </p>
+
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Hızlı Linkler</h4>
+        <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li><a class="transition-colors hover:text-abrasive-red" href="index.html">Ana Sayfa</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html">Ürünlerimiz</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="dokumanlar.html">Dökümanlar</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red text-on-surface font-semibold" href="iletisim.html" aria-current="page">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Kategoriler</h4>
+        <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=uclar">Kırıcı &amp; Delici</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=metreler">Metreler</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="karsilastir.html">Ürün Karşılaştırma</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">İletişim</h4>
+        <ul class="footer-links space-y-6 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="call">call</span>
+            <span>
+              <a class="transition-colors hover:text-abrasive-red" href="tel:+74951424267">8 (495) 142-42-67</a><br>
+              <a class="transition-colors hover:text-abrasive-red" href="tel:+79857896062">+7 985 789-60-62</a>
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="mail">mail</span>
+            <a class="transition-colors hover:text-abrasive-red" href="mailto:info@abralion.com">info@abralion.com</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="language">language</span>
+            <a class="transition-colors hover:text-abrasive-red" href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body-md text-sm text-on-surface-variant">&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+      <div class="flex flex-wrap justify-center gap-6 font-body-md text-sm text-on-surface-variant">
+        <a class="transition-colors hover:text-abrasive-red" href="#">Gizlilik Politikası</a>
+        <a class="transition-colors hover:text-abrasive-red" href="#">Kullanım Koşulları</a>
+        <a class="transition-colors hover:text-abrasive-red" href="#">KVKK</a>
       </div>
     </div>
   </footer>
 
   <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/products-data.js"></script>
   <script defer src="assets/js/FormValidator.js"></script>
   <script defer src="assets/js/CompareManager.js"></script>
-  <script defer src="assets/js/Header.js?v=20260525"></script>
-  <script defer src="assets/js/MegaMenu.js"></script>
+  <script defer src="assets/js/ProductManager.js"></script>
+  <script defer src="assets/js/Header.js?v=20260526a"></script>
+  <script defer src="assets/js/MegaMenu.js?v=20260526c"></script>
   <script defer src="assets/js/ThemeToggle.js"></script>
   <script defer src="assets/js/main.js"></script>
   <script defer src="assets/js/pages/contact.js"></script>
+  <script>
+    document.querySelectorAll('.page-contact .contact-input-field').forEach(function (input) {
+      var label = input.parentElement && input.parentElement.querySelector('label');
+      if (!label) return;
+      input.addEventListener('focus', function () { label.style.color = '#E2231A'; });
+      input.addEventListener('blur', function () { label.style.color = '#8E8E93'; });
+    });
+  </script>
 </body>
 </html>

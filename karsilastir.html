@@ -17,7 +17,7 @@
   <meta name="twitter:title" content="Karşılaştır - Abralion">
   <meta name="twitter:description" content="Ürünleri yan yana karşılaştırın.">
   <meta name="twitter:image" content="https://abralion.com/assets/images/abralion-disc.webp">
-  <title>Karşılaştır - Abralion</title>
+  <title>Ürün Karşılaştırma - Abralion</title>
   <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -25,109 +25,184 @@
   <link rel="stylesheet" href="assets/css/dark-theme.css">
   <link rel="stylesheet" href="assets/css/site-extra.css">
   <link rel="stylesheet" href="assets/css/compare.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260526a">
 </head>
-<body class="compare-page">
+<body class="page-compare compare-page bg-carbon-black text-on-surface font-body-md antialiased selection:bg-abrasive-red selection:text-white overflow-x-hidden">
   <script src="assets/js/theme-init.js"></script>
-<a href="#main-content" class="sr-only">İçeriğe atla</a>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-abrasive-red focus:text-white focus:rounded">İçeriğe atla</a>
 
-  <header class="header">
-    <div class="container">
-      <div class="header-container">
-        <a href="index.html" class="header-logo-link" aria-label="Abralion Ana Sayfa">
-          <img src="assets/images/logo.svg" alt="Abralion Logo" class="header-logo" data-logo>
+  <header class="header sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-steel-gray/20">
+    <div class="header-container flex items-center justify-between gap-6 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-4 md:py-5">
+      <div class="header-brand-nav flex items-center gap-8">
+        <a href="index.html" class="header-logo-link flex shrink-0 items-center transition-opacity hover:opacity-80" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz-yatay.svg" alt="Abralion" class="header-logo w-auto" width="438" height="132" decoding="async">
         </a>
-        <nav class="header-nav" aria-label="Ana navigasyon">
-          <ul class="header-nav-list">
-            <li><a href="index.html" class="header-nav-link">Ana Sayfa</a></li>
-            <li class="header-nav-dropdown">
-              <a href="urunler.html" class="header-nav-link">
+        <nav class="header-nav flex items-center gap-6" aria-label="Ana navigasyon">
+          <ul class="header-nav-list flex list-none items-center gap-6 m-0 p-0">
+            <li><a href="index.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Ana Sayfa</a></li>
+            <li class="header-nav-dropdown relative">
+              <a href="urunler.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
                 Ürünlerimiz
-                <span class="dropdown-arrow">▼</span>
+                <span class="dropdown-arrow" aria-hidden="true">▼</span>
               </a>
               <ul class="dropdown-menu mega-menu" id="mega-menu"></ul>
             </li>
-            <li>
-              <a href="karsilastir.html" class="header-nav-link">
-                Karşılaştır
-                <span class="compare-badge" style="display: none;">0</span>
-              </a>
-            </li>
-            <li><a href="dokumanlar.html" class="header-nav-link">Dökümanlar</a></li>
-            <li><a href="hakkimizda.html" class="header-nav-link">Hakkımızda</a></li>
-            <li><a href="iletisim.html" class="header-nav-link">İletişim</a></li>
+            <li><a href="dokumanlar.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Dökümanlar</a></li>
+            <li><a href="hakkimizda.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Hakkımızda</a></li>
+            <li><a href="iletisim.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">İletişim</a></li>
           </ul>
-          <div class="header-search">
-            <input type="search" class="header-search-input" placeholder="Ürün ara..." aria-label="Ürün ara" id="header-search-input">
-            <button type="button" class="header-search-btn" aria-label="Ara" id="header-search-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="m21 21-4.35-4.35"/>
-              </svg>
-            </button>
-          </div>
         </nav>
-        <button type="button" class="mobile-menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+      </div>
+      <div class="header-actions flex shrink-0 items-center gap-4">
+        <a href="karsilastir.html" class="header-compare-link hidden lg:inline-flex items-center gap-2 font-body-md text-body-md text-on-surface-variant transition-colors hover:text-on-surface">
+          <span class="material-symbols-outlined text-[20px]" data-icon="compare_arrows">compare_arrows</span>
+          Karşılaştır
+          <span class="compare-badge bg-surface-container-highest px-1.5 rounded text-xs font-bold" style="display: none;">0</span>
+        </a>
+        <a href="iletisim.html" class="header-cta-btn inline-flex items-center rounded-lg bg-abrasive-red px-6 py-2 font-label-caps text-label-caps uppercase text-white transition-all hover:brightness-110 active:scale-95">Teklif Al</a>
+        <button type="button" class="mobile-menu-toggle flex flex-col items-center justify-center gap-1.5 p-2.5 text-on-surface md:hidden" aria-label="Menüyü aç/kapat" aria-expanded="false">
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <main id="main-content" class="section compare-page">
-    <div class="container">
-      <div class="compare-header text-center">
-        <h1>Ürün Karşılaştırma</h1>
-        <p>En fazla 4 modeli tablo halinde karşılaştırabilirsiniz (farklı ürün grupları ve ölçüler).</p>
-      </div>
-      <div id="compare-content"></div>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-section">
-          <img src="assets/images/logo.svg" alt="Abralion Logo" class="footer-logo" data-logo>
-          <p class="footer-description">
-            Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
+  <main id="main-content" class="min-h-screen">
+    <section class="pt-12 pb-8 md:pb-section-gap" aria-labelledby="compare-hero-title">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+        <div class="max-w-3xl">
+          <span class="text-abrasive-red font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Teknik Analiz</span>
+          <h1 id="compare-hero-title" class="font-headline-lg text-headline-lg mb-6 leading-tight text-white">
+            Ürün <span class="text-abrasive-red">Karşılaştırma</span>
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Endüstriyel kesme ve taşlama ihtiyaçlarınız için en doğru ekipmanı seçin. En fazla 4 modeli teknik özellikleriyle yan yana getirerek performans analizi yapın.
           </p>
         </div>
-        <div class="footer-section">
-          <h3>Hızlı Linkler</h3>
-          <ul class="footer-links">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="urunler.html">Ürünlerimiz</a></li>
-            <li><a href="dokumanlar.html">Dökümanlar</a></li>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
-          </ul>
+      </div>
+    </section>
+
+    <section class="pb-section-gap compare-dynamic-section" aria-label="Karşılaştırma tablosu">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+        <div id="compare-content"></div>
+      </div>
+    </section>
+
+    <section class="pb-section-gap compare-highlights" aria-labelledby="compare-why-title">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+        <div class="relative group compare-highlight-glow">
+          <div class="compare-highlight-card relative bg-surface-elevation p-8 border border-steel-gray/20 aspect-video flex flex-col justify-end overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none" aria-hidden="true">
+              <span class="material-symbols-outlined text-[120px]" data-icon="verified_user">verified_user</span>
+            </div>
+            <h2 class="font-headline-md text-headline-md mb-4 text-abrasive-red uppercase relative z-10">Endüstriyel Güvenlik Standartları</h2>
+            <p class="text-on-surface-variant font-body-md relative z-10 m-0">
+              Her Abralion ürünü oSa (Organization for the Safety of Abrasives) standartlarına tam uyum ile üretilir. Karşılaştırma tablolarımızdaki Max RPM değerleri, operasyonel güvenliğiniz için kritik birer veridir.
+            </p>
+          </div>
         </div>
-        <div class="footer-section">
-          <h3>Kategoriler</h3>
-          <ul class="footer-links">
-            <li><a href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
-            <li><a href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
-            <li><a href="urunler.html?kategori=uclar">Kırıcı & Delici</a></li>
-            <li><a href="urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
-            <li><a href="urunler.html?kategori=metreler">Metreler</a></li>
-            <li><a href="karsilastir.html">Ürün Karşılaştırma</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>İletişim</h3>
-          <ul class="footer-links">
-            <li><a href="iletisim.html">İletişim Formu</a></li>
-            <li><a href="mailto:info@abralion.com">info@abralion.com</a></li>
-            <li><a href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a></li>
-            <li><a href="tel:+74951424267">8 (495) 142-42-67</a></li>
-            <li><a href="tel:+79857896062">+7 985 789-60-62</a></li>
-          </ul>
+        <div class="space-y-8 pl-0 md:pl-12">
+          <h2 id="compare-why-title" class="font-headline-md text-headline-md text-white">Neden <span class="text-abrasive-red">Teknik Veriler</span> Önemli?</h2>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-surface-container-high flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-abrasive-red" data-icon="speed">speed</span>
+              </div>
+              <div>
+                <h3 class="font-label-caps text-label-caps uppercase mb-1 text-on-surface">Operasyonel Verimlilik</h3>
+                <p class="text-on-surface-variant text-sm m-0">Yanlış malzeme için yanlış disk kullanımı kesme süresini %40 artırabilir.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-surface-container-high flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-abrasive-red" data-icon="hardware">hardware</span>
+              </div>
+              <div>
+                <h3 class="font-label-caps text-label-caps uppercase mb-1 text-on-surface">Makine Ömrü</h3>
+                <p class="text-on-surface-variant text-sm m-0">Dengesiz ve standart dışı diskler taşlama motorlarına kalıcı hasar verebilir.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-surface-container-high flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-abrasive-red" data-icon="savings">savings</span>
+              </div>
+              <div>
+                <h3 class="font-label-caps text-label-caps uppercase mb-1 text-on-surface">Maliyet Tasarrufu</h3>
+                <p class="text-on-surface-variant text-sm m-0">Doğru ürün seçimi, sarf malzeme maliyetlerinizi yıllık bazda %25'e kadar düşürür.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+    </section>
+  </main>
+
+  <footer class="footer bg-carbon-black border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+      <div class="space-y-6">
+        <a href="index.html" class="inline-block footer-logo-link" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz.svg" alt="Abralion Logo" class="footer-logo h-14 w-auto" data-logo>
+        </a>
+        <p class="footer-description font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
+        </p>
+
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Hızlı Linkler</h4>
+        <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li><a class="transition-colors hover:text-abrasive-red" href="index.html">Ana Sayfa</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html">Ürünlerimiz</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="dokumanlar.html">Dökümanlar</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Kategoriler</h4>
+        <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=uclar">Kırıcı &amp; Delici</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=metreler">Metreler</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red text-on-surface font-semibold" href="karsilastir.html" aria-current="page">Ürün Karşılaştırma</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">İletişim</h4>
+        <ul class="footer-links space-y-6 font-body-md text-body-md text-on-surface-variant list-none p-0 m-0">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="call">call</span>
+            <span>
+              <a class="transition-colors hover:text-abrasive-red" href="tel:+74951424267">8 (495) 142-42-67</a><br>
+              <a class="transition-colors hover:text-abrasive-red" href="tel:+79857896062">+7 985 789-60-62</a>
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="mail">mail</span>
+            <a class="transition-colors hover:text-abrasive-red" href="mailto:info@abralion.com">info@abralion.com</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="language">language</span>
+            <a class="transition-colors hover:text-abrasive-red" href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body-md text-sm text-on-surface-variant">&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
+      <div class="flex flex-wrap justify-center gap-6 font-body-md text-sm text-on-surface-variant">
+        <a class="transition-colors hover:text-abrasive-red" href="#">Gizlilik Politikası</a>
+        <a class="transition-colors hover:text-abrasive-red" href="#">Kullanım Koşulları</a>
+        <a class="transition-colors hover:text-abrasive-red" href="#">KVKK</a>
       </div>
     </div>
   </footer>
@@ -137,10 +212,10 @@
   <script defer src="assets/js/VariantDisplay.js"></script>
   <script defer src="assets/js/CompareManager.js"></script>
   <script defer src="assets/js/ProductManager.js"></script>
-  <script defer src="assets/js/Header.js?v=20260525"></script>
-  <script defer src="assets/js/MegaMenu.js"></script>
+  <script defer src="assets/js/Header.js?v=20260526a"></script>
+  <script defer src="assets/js/MegaMenu.js?v=20260526c"></script>
   <script defer src="assets/js/ThemeToggle.js"></script>
   <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/pages/karsilastir.js"></script>
+  <script defer src="assets/js/pages/karsilastir.js?v=20260525g"></script>
 </body>
 </html>

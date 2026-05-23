@@ -44,7 +44,10 @@ const FOOTER_SOCIAL_SVGS = {
 };
 
 function initFooterCerts() {
-  const desc = document.querySelector('.footer .footer-description');
+  const brandCol = document.querySelector('.footer .space-y-6');
+  const desc =
+    document.querySelector('.footer .footer-description') ||
+    (brandCol && brandCol.querySelector('p'));
   if (!desc || desc.parentElement.querySelector('.footer-cert')) {
     return;
   }

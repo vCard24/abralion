@@ -1,185 +1,13 @@
 # -*- coding: utf-8 -*-
-"""24 urun detay HTML sayfasi uretir."""
+"""24 urun detay HTML sayfasi uretir (Precision Industrial Noir sablon)."""
 import json
 from pathlib import Path
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_ORIGIN = "https://abralion.com"
-DEFAULT_OG_IMAGE = f"{SITE_ORIGIN}/assets/images/abralion-disc.webp"
+TEMPLATE_PATH = Path(__file__).resolve().parent / "templates" / "product-detail-noir.html"
 
-TEMPLATE = """<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{description}">
-  <link rel="canonical" href="{canonical}">
-  <meta property="og:type" content="product">
-  <meta property="og:site_name" content="Abralion">
-  <meta property="og:locale" content="tr_TR">
-  <meta property="og:url" content="{canonical}">
-  <meta property="og:title" content="{og_title}">
-  <meta property="og:description" content="{description}">
-  <meta property="og:image" content="{og_image}">
-  <meta property="og:image:alt" content="{og_image_alt}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{og_title}">
-  <meta name="twitter:description" content="{description}">
-  <meta name="twitter:image" content="{og_image}">
-  <meta name="twitter:image:alt" content="{og_image_alt}">
-  <title>{name} - Abralion</title>
-  <link rel="icon" href="../assets/images/arma.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
-  <link rel="stylesheet" href="../assets/css/responsive.css?v=20260523">
-  <link rel="stylesheet" href="../assets/css/dark-theme.css?v=20260522">
-  <link rel="stylesheet" href="../assets/css/site-extra.css">
-  <link rel="stylesheet" href="../assets/css/product-detail-page.css?v=20260522">
-  <link rel="stylesheet" href="../assets/css/gallery-lightbox.css">
-  <link rel="stylesheet" href="../assets/css/compare.css">
-</head>
-<body class="page-product-detail" data-base="../" data-product-id="{slug}">
-  <script src="../assets/js/theme-init.js"></script>
-  <a href="#main-content" class="sr-only">İçeriğe atla</a>
-
-  <header class="header">
-    <div class="container">
-      <div class="header-container">
-        <a href="../index.html" class="header-logo-link"><img src="../assets/images/logo.svg" alt="Abralion" class="header-logo" data-logo></a>
-        <nav class="header-nav">
-          <ul class="header-nav-list">
-            <li><a href="../index.html" class="header-nav-link">Ana Sayfa</a></li>
-            <li class="header-nav-dropdown">
-              <a href="../urunler.html" class="header-nav-link active">Ürünlerimiz <span class="dropdown-arrow">▼</span></a>
-              <ul class="dropdown-menu mega-menu" id="mega-menu"></ul>
-            </li>
-            <li><a href="../karsilastir.html" class="header-nav-link">Karşılaştır <span class="compare-badge" style="display:none">0</span></a></li>
-            <li><a href="../dokumanlar.html" class="header-nav-link">Dökümanlar</a></li>
-            <li><a href="../hakkimizda.html" class="header-nav-link">Hakkımızda</a></li>
-            <li><a href="../iletisim.html" class="header-nav-link">İletişim</a></li>
-          </ul>
-          <div class="header-search">
-            <input type="search" class="header-search-input" placeholder="Ürün ara..." id="header-search-input" aria-label="Ürün ara">
-            <button type="button" class="header-search-btn" id="header-search-btn" aria-label="Ara">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            </button>
-          </div>
-        </nav>
-        <button type="button" class="mobile-menu-toggle" aria-label="Menü"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section class="product-detail section">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol id="product-breadcrumb"></ol>
-        </nav>
-
-        <div class="product-detail-grid">
-          <div class="product-detail-image">
-            <div id="product-gallery" class="product-gallery">
-              <p class="loading-message">Galeri yükleniyor…</p>
-            </div>
-          </div>
-          <div class="product-detail-info">
-            <div class="product-category" id="product-category"></div>
-            <h1 id="product-title">{name}</h1>
-            <p class="product-description" id="product-description"></p>
-            <div class="product-features" id="product-features-short">
-              <h3>Özellikler</h3>
-              <ul></ul>
-            </div>
-            <div class="product-actions">
-              <a href="../iletisim.html?urun={slug}&amp;konu={konu}" class="btn btn-primary">Fiyat Teklifi Al</a>
-            </div>
-            <p class="product-compare-hint">Teknik tablodaki kutucuklarla model seçip farklı ürünlerle karşılaştırabilirsiniz.</p>
-          </div>
-        </div>
-
-        <div class="product-specifications">
-          <h2>Teknik Özellikler</h2>
-          <div id="variant-specs-table" class="specs-table-container">
-            <p class="loading-message">Teknik tablo yükleniyor…</p>
-          </div>
-        </div>
-
-        <div class="product-features-detailed" id="product-features-detailed">
-          <h2>Ürün Özellikleri</h2>
-          <ul></ul>
-        </div>
-
-        <div class="product-applications" id="product-applications">
-          <h2>Uygulama Alanları</h2>
-          <ul></ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-section">
-          <img src="../assets/images/logo.svg" alt="Abralion" class="footer-logo" data-logo>
-          <p class="footer-description">Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.</p>
-        </div>
-        <div class="footer-section">
-          <h3>Hızlı Linkler</h3>
-          <ul class="footer-links">
-            <li><a href="../index.html">Ana Sayfa</a></li>
-            <li><a href="../urunler.html">Ürünlerimiz</a></li>
-            <li><a href="../dokumanlar.html">Dökümanlar</a></li>
-            <li><a href="../hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="../iletisim.html">İletişim</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Kategoriler</h3>
-          <ul class="footer-links">
-            <li><a href="../urunler.html?kategori=kesici-taslama-flap-disk">Kesici · Taşlama · Flap Disk</a></li>
-            <li><a href="../urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
-            <li><a href="../urunler.html?kategori=kirici-delici">Kırıcı &amp; Delici</a></li>
-            <li><a href="../urunler.html?kategori=maket-bicaklari">Maket Bıçakları</a></li>
-            <li><a href="../urunler.html?kategori=metreler">Metreler</a></li>
-            <li><a href="../karsilastir.html">Ürün Karşılaştırma</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>İletişim</h3>
-          <ul class="footer-links">
-            <li><a href="../iletisim.html">İletişim Formu</a></li>
-            <li><a href="mailto:info@abralion.com">info@abralion.com</a></li>
-            <li><a href="https://www.abralion.com">www.abralion.com</a></li>
-            <li><a href="tel:+74951424267">8 (495) 142-42-67</a></li>
-            <li><a href="tel:+79857896062">+7 985 789-60-62</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Abralion — EKS-PLAST LLC. Tüm hakları saklıdır.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script defer src="../assets/js/site.js"></script>
-  <script defer src="../assets/js/og-meta.js"></script>
-  <script defer src="../assets/js/products-data.js"></script>
-  <script defer src="../assets/js/VariantDisplay.js"></script>
-  <script defer src="../assets/js/CompareManager.js"></script>
-  <script defer src="../assets/js/ProductManager.js"></script>
-  <script defer src="../assets/js/Header.js?v=20260523"></script>
-  <script defer src="../assets/js/MegaMenu.js"></script>
-  <script defer src="../assets/js/ThemeToggle.js"></script>
-  <script defer src="../assets/js/product-gallery.js"></script>
-  <script defer src="../assets/js/gallery-lightbox.js"></script>
-  <script defer src="../assets/js/product-detail.js"></script>
-  <script defer src="../assets/js/main.js"></script>
-</body>
-</html>
-"""
 
 def esc(s):
     return (s or "").replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
@@ -202,6 +30,7 @@ def product_og_image_alt(product):
 
 
 def main():
+    template = TEMPLATE_PATH.read_text(encoding="utf-8")
     with open(ROOT / "data/products.json", encoding="utf-8") as f:
         data = json.load(f)
     out_dir = ROOT / "urun"
@@ -211,20 +40,23 @@ def main():
         slug = p["slug"]
         canonical = f"{SITE_ORIGIN}/urun/{slug}.html"
         og_title = esc(f'{p["name"]} - Abralion')
-        html = TEMPLATE.format(
-            slug=slug,
-            name=esc(p["name"]),
-            konu=quote(p["name"], safe=""),
-            description=esc((p.get("description") or "")[:160]),
-            canonical=canonical,
-            og_title=og_title,
-            og_image=product_og_image(p),
-            og_image_alt=product_og_image_alt(p),
-        )
+        html = template
+        for key, val in {
+            "slug": slug,
+            "name": esc(p["name"]),
+            "konu": quote(p["name"], safe=""),
+            "description": esc((p.get("description") or "")[:160]),
+            "canonical": canonical,
+            "og_title": og_title,
+            "og_image": product_og_image(p),
+            "og_image_alt": product_og_image_alt(p),
+        }.items():
+            html = html.replace("{" + key + "}", val)
         path = out_dir / f"{slug}.html"
         path.write_text(html, encoding="utf-8")
         count += 1
     print(f"OK: {count} sayfa -> urun/")
+
 
 if __name__ == "__main__":
     main()

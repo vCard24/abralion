@@ -1,0 +1,1491 @@
+/* Precision Industrial Noir — Phase 1: Header + Hero */
+
+.technical-border {
+  border: 1px solid rgba(142, 142, 147, 0.2);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Ürünler sayfası — asimetrik katalog grid */
+.product-grid-asymmetric {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+#products-grid.product-grid-asymmetric .no-products-message,
+#products-grid.product-grid-asymmetric .catalog-fallback-notice {
+  grid-column: 1 / -1;
+}
+
+/* Ürünler — Stitch katalog kartı (JS ProductCard) */
+#products-grid .product-card {
+  background-color: #1e1e1e;
+  border-radius: 0.125rem;
+  overflow: visible;
+  position: relative;
+  transform: none;
+  box-shadow: none;
+}
+
+#products-grid .product-card::before {
+  display: none;
+}
+
+#products-grid .product-card:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: #1e1e1e;
+}
+
+#products-grid .product-card-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Öne çıkan ürünler — kaydırmalı carousel */
+.featured-products.section,
+.featured-products {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: transparent;
+}
+
+.featured-carousel {
+  padding: 0 3.25rem;
+}
+
+.featured-carousel__viewport {
+  width: 100%;
+}
+
+.featured-carousel__track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.featured-carousel__track .product-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+}
+
+.featured-carousel__arrow {
+  position: absolute;
+  top: 38%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(142, 142, 147, 0.35);
+  background: rgba(30, 30, 30, 0.95);
+  color: #e2e2e2;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.featured-carousel__arrow:hover:not(:disabled) {
+  border-color: #e2231a;
+  color: #e2231a;
+}
+
+.featured-carousel__arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.featured-carousel__arrow--prev {
+  left: 0;
+}
+
+.featured-carousel__arrow--next {
+  right: 0;
+}
+
+.featured-carousel:not(.featured-carousel--scrollable) .featured-carousel__arrow {
+  display: none;
+}
+
+#featured-products-grid .product-card {
+  background-color: #1e1e1e;
+  border-radius: 0.125rem;
+  overflow: visible;
+  transform: none;
+  box-shadow: none;
+}
+
+#featured-products-grid .product-card::before {
+  display: none;
+}
+
+#featured-products-grid .product-card:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: #1e1e1e;
+}
+
+#featured-products-grid .product-card-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#featured-products-grid .product-card-title {
+  color: #e2e2e2;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+#featured-products-grid .product-card--compact .product-card-description,
+#featured-products-grid .product-card--compact .product-card-actions,
+#featured-products-grid .product-card-description,
+#featured-products-grid .product-card-actions,
+#featured-products-grid .product-card-spec {
+  display: none !important;
+}
+
+@media (max-width: 1023px) {
+  .featured-carousel__track .product-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 639px) {
+  .featured-carousel {
+    padding: 0 2.75rem;
+  }
+
+  .featured-carousel__track .product-card {
+    flex: 0 0 100%;
+  }
+
+  .featured-carousel__arrow {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+#products-grid .product-card-title {
+  color: #e2e2e2;
+  font-weight: 600;
+}
+
+#products-grid .product-card-description {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+#products-grid .product-card-actions {
+  display: flex;
+  margin-top: 0;
+  gap: 0;
+}
+
+#products-grid .product-card-actions .btn-icon-compare.in-compare {
+  background: #e2231a;
+  border-color: #e2231a;
+  color: #fff;
+}
+
+/* Header — Stitch TopNavBar */
+header.header {
+  width: 100%;
+  background-color: rgba(18, 20, 20, 0.8) !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(142, 142, 147, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+header.header .header-container {
+  width: 100%;
+  max-width: 80rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  header.header .header-container {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+header.header .header-brand-nav {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+header.header .header-logo-link {
+  flex-shrink: 0;
+}
+
+header.header .header-logo {
+  display: block;
+  height: 3rem;
+  width: auto;
+  max-width: none;
+  filter: none !important;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  header.header .header-logo {
+    height: 3.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  header.header .header-logo {
+    height: 3.5rem;
+  }
+}
+
+header.header .header-nav {
+  flex-grow: 0;
+  justify-content: flex-start;
+}
+
+header.header .header-nav-list {
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+header.header .header-nav-list > li > .header-nav-link {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+html.dark-theme body header.header .header-nav-link,
+header.header .header-nav-link {
+  font-family: Inter, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+  color: #e7bdb7 !important;
+  padding: 0 0 4px !important;
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 0;
+  background: transparent !important;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+header.header .header-nav-link::after {
+  display: none !important;
+}
+
+html.dark-theme body header.header .header-nav-link:hover,
+header.header .header-nav-link:hover {
+  color: #e2e2e2 !important;
+  background: transparent !important;
+  border-bottom-color: transparent;
+}
+
+html.dark-theme body header.header .header-nav-link.active,
+header.header .header-nav-link.active {
+  color: #e2231a !important;
+  background: transparent !important;
+  font-weight: 400 !important;
+  border-bottom: 2px solid #e2231a !important;
+  padding-bottom: 4px !important;
+}
+
+html.dark-theme body header.header .header-compare-link,
+header.header .header-compare-link {
+  font-family: Inter, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+  color: #e7bdb7 !important;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+html.dark-theme body header.header .header-compare-link:hover,
+header.header .header-compare-link:hover {
+  color: #e2e2e2 !important;
+}
+
+html.dark-theme body header.header .header-cta-btn,
+header.header .header-cta-btn {
+  font-family: Inter, sans-serif !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+header.header .compare-badge {
+  background: #333535 !important;
+  color: #e2e2e2 !important;
+  font-family: Inter, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  padding: 2px 6px;
+  border-radius: 0.125rem;
+  margin-left: 0;
+}
+
+header.header .header-search,
+header.header .header-search-input,
+header.header .header-search-btn {
+  display: none !important;
+}
+
+header.header .mobile-menu-toggle span {
+  background-color: currentColor;
+}
+
+header.header .mobile-menu-toggle:hover {
+  color: #e2231a;
+}
+
+header.header .dropdown-arrow {
+  color: #8e8e93;
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+@media (min-width: 769px) {
+  header.header .header-nav {
+    display: flex !important;
+    position: static;
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+    overflow: visible;
+  }
+
+  header.header .header-nav-list {
+    flex-direction: row;
+  }
+
+  header.header .header-nav-link {
+    width: auto;
+    padding: 0 0 4px !important;
+    text-align: left;
+  }
+}
+
+/* Hero — cinematic full-bleed (legacy site-extra sıfırlama) */
+.home-hero-section.section,
+.home-hero-section {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+#home-hero.home-hero {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#home-hero .home-hero__layout {
+  display: block;
+}
+
+#home-hero .home-hero__badge {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  width: auto;
+  color: inherit;
+}
+
+#home-hero .home-hero__badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #E2231A;
+}
+
+#home-hero .home-hero__title {
+  margin: 0;
+}
+
+#home-hero .home-hero__accent {
+  color: #E2231A;
+}
+
+#home-hero .home-hero__subtitle {
+  margin: 0;
+}
+
+#home-hero .home-hero__btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #fff;
+  border-radius: 0.25rem;
+}
+
+#home-hero .home-hero__btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+#home-hero .home-hero__stats {
+  margin: 0;
+}
+
+#home-hero .home-hero__stat {
+  padding: 0;
+  border-right: none;
+}
+
+/* Trust şeridi — hero içinde */
+#home-trust.home-trust {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+#home-trust .home-trust__grid {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  gap: inherit;
+}
+
+#home-trust .home-trust__card {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  text-align: left;
+}
+
+#home-trust .home-trust__icon {
+  margin: 0;
+  color: #E2231A;
+}
+
+#home-trust .home-trust__title {
+  margin: 0 0 4px;
+  font-size: inherit;
+  font-weight: inherit;
+  color: #fff;
+}
+
+#home-trust .home-trust__text {
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Footer — legacy sıfırlama (Tailwind renklerini silme) */
+footer.footer {
+  display: block !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  padding: 0;
+  background: #0a0a0a !important;
+  color: #e2e2e2;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer.footer .footer-container {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+footer.footer .footer-section {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+footer.footer .footer-bottom {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: #8e8e93;
+}
+
+footer.footer .footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer.footer .footer-description {
+  margin: 0;
+  color: #8e8e93;
+}
+
+footer.footer h4 {
+  color: #fff;
+}
+
+footer.footer p,
+footer.footer .text-on-surface-variant {
+  color: #8e8e93;
+}
+
+footer.footer a {
+  color: #e2e2e2;
+  text-decoration: none;
+}
+
+footer.footer a:hover {
+  color: #e2231a;
+}
+
+footer.footer .footer-logo {
+  display: block !important;
+  height: 3.5rem !important;
+  width: auto !important;
+  max-width: 180px;
+  margin: 0 0 1rem 0 !important;
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+footer.footer .footer-logo-link {
+  display: inline-block;
+  line-height: 0;
+  margin-bottom: 0.25rem;
+}
+
+footer.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== Ürün detay — Precision Industrial Noir ===== */
+.product-gallery-gradient {
+  background: radial-gradient(circle at center, #1e1e1e 0%, #0a0a0a 100%);
+}
+
+.page-product-detail {
+  background: #0a0a0a;
+}
+
+.page-product-detail .breadcrumb-noir a {
+  color: #8e8e93;
+  text-decoration: none;
+}
+
+.page-product-detail .breadcrumb-noir a:hover {
+  color: #e2e2e2;
+}
+
+.page-product-detail #product-gallery.product-gallery {
+  max-width: none;
+  margin: 0;
+}
+
+.page-product-detail .product-image-slider.gallery-main {
+  max-width: none;
+  margin: 0;
+}
+
+.page-product-detail .slider-container {
+  height: 100%;
+  min-height: 280px;
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.page-product-detail .slider-image {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  max-width: 80%;
+  max-height: 80%;
+  padding: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.page-product-detail .slider-image.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.page-product-detail .slider-btn.prev,
+.page-product-detail .slider-btn.next {
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.page-product-detail .gallery-thumb-btn.active {
+  border-color: #e2231a !important;
+}
+
+.page-product-detail #variant-specs-table .specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+
+.page-product-detail #variant-specs-table .specs-table thead tr {
+  background: #282a2b;
+  border-bottom: 1px solid rgba(142, 142, 147, 0.2);
+}
+
+.page-product-detail #variant-specs-table .specs-table th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8e8e93;
+}
+
+.page-product-detail #variant-specs-table .specs-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(142, 142, 147, 0.1);
+  color: #e2e2e2;
+}
+
+.page-product-detail #variant-specs-table .specs-table tbody tr:nth-child(even) {
+  background: rgba(26, 28, 28, 0.35);
+}
+
+.page-product-detail #variant-specs-table .specs-table tbody tr:hover {
+  background: rgba(30, 30, 30, 0.6);
+}
+
+.page-product-detail #variant-specs-table .compare-col,
+.page-product-detail #variant-specs-table .compare-cell {
+  width: 3rem;
+  text-align: center;
+}
+
+.page-product-detail #variant-specs-table .compare-check {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.page-product-detail #variant-specs-table .compare-check input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.page-product-detail #variant-specs-table .compare-check-box {
+  display: inline-block;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 1px solid rgba(142, 142, 147, 0.5);
+  background: transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.page-product-detail #variant-specs-table .compare-check input:checked + .compare-check-box {
+  background: #e2231a;
+  border-color: #e2231a;
+}
+
+.page-product-detail .loading-message,
+.page-product-detail .no-products-message {
+  color: #8e8e93;
+}
+
+/* Sekme panelleri — hidden class + attribute */
+.page-product-detail .product-detail-tabs-section .tab-content.hidden,
+.page-product-detail .product-detail-tabs-section .tab-content[hidden] {
+  display: none !important;
+}
+
+.page-product-detail .product-detail-tabs-section .tab-content:not(.hidden):not([hidden]) {
+  display: block;
+}
+
+.page-product-detail .product-specifications h2 {
+  color: #e2e2e2;
+}
+
+/* Karşılaştır butonu — compare.css beyaz arka planını geçersiz kıl */
+.page-product-detail .btn-icon-compare {
+  width: auto;
+  min-width: 0;
+  height: auto;
+  padding: 0.75rem;
+  background: transparent !important;
+  color: #e2e2e2 !important;
+  border: 1px solid rgba(142, 142, 147, 0.3) !important;
+  border-radius: 0.25rem;
+}
+
+.page-product-detail .btn-icon-compare:hover {
+  background: #1e1e1e !important;
+  color: #e2e2e2 !important;
+  border-color: rgba(142, 142, 147, 0.5) !important;
+}
+
+.page-product-detail .btn-icon-compare.in-compare {
+  background: #e2231a !important;
+  border-color: #e2231a !important;
+  color: #fff !important;
+}
+
+.page-product-detail .btn-icon-compare:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Teknik tablo — legacy components.css beyaz arka planını geçersiz kıl */
+.page-product-detail #variant-specs-table .specs-table {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+
+.page-product-detail #variant-specs-table .specs-table thead {
+  background: #282a2b !important;
+  color: #8e8e93 !important;
+}
+
+.page-product-detail #variant-specs-table .specs-table th {
+  background: transparent !important;
+  color: #8e8e93 !important;
+}
+
+.page-product-detail #variant-specs-table .specs-table td {
+  color: #e2e2e2 !important;
+  background: transparent !important;
+}
+
+.page-product-detail #variant-specs-table .specs-table tbody tr:hover td {
+  background: rgba(30, 30, 30, 0.6) !important;
+}
+
+.page-product-detail #variant-specs-table .compare-check-box {
+  background: transparent !important;
+  border-color: rgba(142, 142, 147, 0.5) !important;
+}
+
+/* Stitch ürün detay — legacy CSS sıfırlama */
+.page-product-detail-stitch .technical-border {
+  border: none;
+}
+
+.page-product-detail-stitch #product-gallery .product-gallery-gradient {
+  min-height: 0;
+}
+
+.page-product-detail-stitch .specs-table--stitch {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent !important;
+  box-shadow: none !important;
+  table-layout: auto;
+}
+
+.page-product-detail-stitch .specs-table--stitch thead tr {
+  background: #282a2b !important;
+}
+
+.page-product-detail-stitch .specs-table--stitch th,
+.page-product-detail-stitch .specs-table--stitch td {
+  border-bottom: 1px solid rgba(142, 142, 147, 0.1);
+  vertical-align: top;
+}
+
+.page-product-detail-stitch .specs-table--stitch th {
+  width: auto !important;
+  max-width: none;
+  background: transparent !important;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.page-product-detail-stitch .specs-table--stitch td {
+  white-space: normal;
+  line-height: 1.45;
+}
+
+.page-product-detail-stitch .specs-table--stitch .spec-col--compare {
+  width: 3rem;
+  min-width: 3rem;
+  white-space: nowrap;
+}
+
+.page-product-detail-stitch .specs-table--stitch .spec-col--narrow {
+  width: 1%;
+  min-width: 4.5rem;
+  max-width: 7rem;
+  white-space: nowrap;
+}
+
+.page-product-detail-stitch .specs-table--stitch th.spec-col--narrow {
+  white-space: nowrap;
+}
+
+.page-product-detail-stitch .specs-table--stitch .spec-col--code {
+  width: 1%;
+  white-space: nowrap;
+  min-width: 5.5rem;
+}
+
+.page-product-detail-stitch .specs-table--stitch .spec-col--wide {
+  width: auto;
+  min-width: 11rem;
+  max-width: 20rem;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.page-product-detail-stitch .specs-table--stitch .spec-col--medium {
+  min-width: 5.5rem;
+  max-width: 12rem;
+  white-space: normal;
+}
+
+.page-product-detail-stitch footer.footer {
+  border-top-color: rgba(142, 142, 147, 0.1);
+}
+
+.page-product-detail-stitch .stitch-compare-btn.btn-icon-compare {
+  width: 100%;
+}
+
+/* ===== Precision Industrial Noir — Ürün detay (DESIGN.md) ===== */
+html:has(body.page-product-detail-stitch),
+html.dark-theme:has(body.page-product-detail-stitch) {
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+html.dark-theme body.page-product-detail-stitch,
+html body.page-product-detail-stitch {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #e2e2e2;
+}
+
+.page-product-detail-stitch {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #e2e2e2;
+}
+
+.page-product-detail-stitch .shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-product-detail-stitch .shimmer-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(226, 35, 26, 0.05) 50%, transparent 55%);
+  animation: noir-shimmer 10s infinite;
+  pointer-events: none;
+}
+
+@keyframes noir-shimmer {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Legacy main.css / components.css sıfırlama */
+.page-product-detail-stitch .product-specifications {
+  margin-top: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.page-product-detail-stitch .product-specifications h2 {
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.page-product-detail-stitch #product-features-detailed,
+.page-product-detail-stitch #product-applications,
+.page-product-detail-stitch .product-applications {
+  margin-top: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.page-product-detail-stitch #product-features-detailed h2,
+.page-product-detail-stitch #product-applications h3 {
+  color: #8e8e93 !important;
+  border: none !important;
+}
+
+.page-product-detail-stitch #product-features-detailed ul li,
+.page-product-detail-stitch #product-applications ul li {
+  border-bottom: none !important;
+  padding-left: 0 !important;
+}
+
+.page-product-detail-stitch #product-features-detailed ul li::before,
+.page-product-detail-stitch #product-applications ul li::before {
+  content: none !important;
+}
+
+.page-product-detail-stitch #product-features-short.product-features {
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.page-product-detail-stitch #product-features-short h3 {
+  color: #8e8e93 !important;
+}
+
+.page-product-detail-stitch #product-title {
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.page-product-detail-stitch #product-category {
+  border-radius: 0.25rem;
+}
+
+.page-product-detail-stitch #product-description-quote {
+  background: #1e1e1e !important;
+  color: #e7bdb7;
+}
+
+.page-product-detail-stitch .noir-spec-badge {
+  display: inline-block;
+  background: #0a0a0a;
+  color: #8e8e93;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid rgba(142, 142, 147, 0.3);
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.page-product-detail-stitch .noir-related-card {
+  background: #1e1e1e;
+  border: 1px solid rgba(142, 142, 147, 0.1);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.page-product-detail-stitch .noir-related-card:hover {
+  border-color: rgba(226, 35, 26, 0.5);
+}
+
+.page-product-detail-stitch .noir-related-card__media {
+  aspect-ratio: 4 / 3;
+  background: #0a0a0a;
+}
+
+.page-product-detail-stitch .noir-related-card__code {
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-product-detail-stitch .product-detail-tab {
+  border-radius: 0;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.page-product-detail-stitch .product-detail-tab[aria-selected="true"] {
+  color: #ffffff;
+}
+
+.page-product-detail-stitch a.bg-abrasive-red,
+.page-product-detail-stitch button.bg-abrasive-red {
+  border-radius: 0.25rem;
+  letter-spacing: 0.1em;
+}
+
+.page-product-detail-stitch .border-steel-gray\/30 {
+  border-radius: 0.25rem;
+}
+
+.page-product-detail-stitch #product-tech-summary p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.page-product-detail-stitch #variant-specs-table .specs-table tbody tr:nth-child(even) {
+  background: rgba(26, 28, 28, 0.35) !important;
+}
+
+.page-product-detail-stitch #variant-specs-table .specs-table tbody tr:hover td {
+  background: rgba(30, 30, 30, 0.6) !important;
+}
+
+.page-product-detail-stitch #variant-specs-table .specs-table thead tr {
+  background: #282a2b !important;
+}
+
+.page-product-detail-stitch #variant-specs-table .specs-table th {
+  color: #8e8e93 !important;
+  background: transparent !important;
+  width: auto !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.page-product-detail-stitch #variant-specs-table .specs-table td {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.page-product-detail-stitch .gallery-thumb-btn {
+  border-radius: 0.25rem;
+}
+
+.page-product-detail-stitch .product-gallery-gradient {
+  border-radius: 0.25rem;
+}
+
+/* Hakkımızda — Stitch */
+html:has(body.page-about),
+html.dark-theme:has(body.page-about) {
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+html.dark-theme body.page-about,
+html body.page-about {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+.page-about {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #e2e2e2;
+}
+
+/* Ana sayfa + ürün listesi — carbon-black zemin */
+html:has(body.page-noir-site),
+html.dark-theme:has(body.page-noir-site) {
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+html.dark-theme body.page-noir-site,
+html body.page-noir-site {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #e2e2e2;
+}
+
+.page-about .about-glass-panel {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(142, 142, 147, 0.1);
+}
+
+.page-about .about-industrial-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(226, 35, 26, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.page-about .about-bento-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
+}
+
+.page-about .about-bento-card:hover {
+  transform: translateY(-4px);
+}
+
+.page-about .header-nav-link.is-active {
+  color: #e2231a;
+  border-bottom: 2px solid #e2231a;
+  padding-bottom: 6px;
+  border-radius: 0;
+}
+
+/* Dökümanlar — Stitch */
+html:has(body.page-documents),
+html.dark-theme:has(body.page-documents) {
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+html.dark-theme body.page-documents,
+html body.page-documents {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #e2e2e2;
+}
+
+.page-documents {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+.page-documents .docs-hero-gradient {
+  background: radial-gradient(circle at 70% 30%, rgba(226, 35, 26, 0.15) 0%, transparent 70%);
+}
+
+.page-documents .header-nav-link.is-active {
+  color: #e2231a;
+  border-bottom: 2px solid #e2231a;
+  padding-bottom: 6px;
+  border-radius: 0;
+}
+
+.page-documents .documents-info-box a {
+  color: #e2231a;
+  text-decoration: underline;
+}
+
+.page-documents .documents-info-box a:hover {
+  color: #fff;
+}
+
+/* İletişim — Stitch */
+html:has(body.page-contact),
+html.dark-theme:has(body.page-contact) {
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+html.dark-theme body.page-contact,
+html body.page-contact {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #e2e2e2;
+}
+
+.page-contact {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+.page-contact .contact-hero-gradient {
+  background: linear-gradient(to bottom, rgba(226, 35, 26, 0.05), transparent);
+}
+
+.page-contact .header-nav-link.is-active {
+  color: #e2231a;
+  border-bottom: 2px solid #e2231a;
+  padding-bottom: 6px;
+  border-radius: 0;
+}
+
+.page-contact .contact-glass-panel {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(142, 142, 147, 0.15);
+}
+
+.page-contact .contact-input-field,
+.page-contact .form-input.contact-input-field,
+.page-contact .form-textarea.contact-input-field {
+  background-color: #1e1e1e;
+  border: none;
+  border-bottom: 1px solid rgba(142, 142, 147, 0.3);
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.page-contact .contact-input-field:focus,
+.page-contact .form-input.contact-input-field:focus,
+.page-contact .form-textarea.contact-input-field:focus {
+  outline: none;
+  border-bottom-color: #e2231a;
+  box-shadow: none;
+}
+
+.page-contact .form-input.contact-input-field.error,
+.page-contact .form-textarea.contact-input-field.error {
+  border-bottom-color: #e2231a;
+}
+
+.page-contact .form-error {
+  color: #ffb4ab;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.page-contact .form-error.show {
+  display: block;
+}
+
+.page-contact .form-success {
+  background: rgba(226, 35, 26, 0.12);
+  border: 1px solid rgba(226, 35, 26, 0.35);
+  color: #e2e2e2;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.page-contact .form-success.show {
+  display: block;
+}
+
+.page-contact .contact-quick-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Karşılaştır — Stitch */
+html:has(body.page-compare),
+html.dark-theme:has(body.page-compare) {
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+html.dark-theme body.page-compare,
+html body.page-compare {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #e2e2e2;
+}
+
+.page-compare {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+}
+
+.page-compare .header-nav-link.is-active {
+  color: #e2231a;
+  border-bottom: 2px solid #e2231a;
+  padding-bottom: 6px;
+  border-radius: 0;
+}
+
+.page-compare .compare-highlight-glow::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: rgba(226, 35, 26, 0.2);
+  filter: blur(16px);
+  opacity: 0.25;
+  transition: opacity 1s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-compare .compare-highlight-glow:hover::before {
+  opacity: 0.5;
+}
+
+.page-compare .compare-table-wrapper {
+  background: transparent !important;
+  border-radius: 0.5rem;
+  margin: 0;
+}
+
+.page-compare .compare-table th,
+.page-compare .compare-table td {
+  border-color: rgba(142, 142, 147, 0.2) !important;
+  background: transparent !important;
+  color: #e2e2e2 !important;
+}
+
+.page-compare .compare-table thead th {
+  background: #1a1c1c !important;
+  color: #e2e2e2 !important;
+}
+
+.page-compare .compare-label-col {
+  color: #8e8e93 !important;
+  background: inherit !important;
+}
+
+.page-compare .compare-matrix tbody .compare-value-col,
+.page-compare .compare-value-col {
+  color: #e2e2e2 !important;
+}
+
+.page-compare .compare-product-header h3 {
+  color: #fff !important;
+}
+
+.page-compare .compare-product-header .product-category {
+  color: #e2231a !important;
+}
+
+.page-compare .compare-matrix-sku {
+  color: #8e8e93 !important;
+}
+
+.page-compare .compare-summary {
+  color: #8e8e93 !important;
+}
+
+.page-compare .compare-empty-hint {
+  color: #8e8e93 !important;
+}
+
+.page-compare .compare-slot-add p,
+.page-compare .compare-slot-empty-cell {
+  color: #8e8e93 !important;
+}
+
+.page-compare .compare-matrix tbody tr:nth-child(even) .compare-value-col {
+  background: transparent !important;
+}
+
+.page-compare .compare-matrix tbody tr.compare-row-dim th,
+.page-compare .compare-matrix tbody tr.compare-row-dim td {
+  background: #121414 !important;
+}
+
+.page-compare .compare-matrix tbody tr.compare-row-low th,
+.page-compare .compare-matrix tbody tr.compare-row-low td {
+  background: #1a1c1c !important;
+}
+
+.page-compare .compare-matrix tbody tr:hover th,
+.page-compare .compare-matrix tbody tr:hover td {
+  background: #282a2b !important;
+}
+
+.page-compare .compare-matrix tbody .compare-label-col {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8e8e93 !important;
+}
+
+.page-compare .compare-matrix tbody .compare-value-col {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.page-compare .compare-mixed-notice {
+  color: #e2e2e2 !important;
+  background: rgba(226, 35, 26, 0.08) !important;
+  border: 1px solid rgba(226, 35, 26, 0.25) !important;
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-compare .compare-remove-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(142, 142, 147, 0.3);
+  color: #e2e2e2;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.page-compare .compare-remove-btn:hover {
+  border-color: #e2231a;
+  color: #e2231a;
+}
+
+.page-compare .compare-slot-empty,
+.page-compare .compare-slot-empty-cell {
+  background: #1e1e1e !important;
+}
+
+.page-compare .compare-table-wrapper::before,
+.page-compare .compare-table-wrapper::after {
+  display: none !important;
+}
+
+.page-compare .compare-matrix .compare-product-col {
+  vertical-align: top;
+}
+
+.page-compare .compare-btn-quote {
+  display: block;
+  text-decoration: none;
+}
+
+.page-compare .compare-btn-detail {
+  text-decoration: none;
+}
+
+.page-compare ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.page-compare ::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+.page-compare ::-webkit-scrollbar-thumb {
+  background: #e2231a;
+  border-radius: 10px;
+}
