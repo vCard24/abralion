@@ -27,9 +27,15 @@ function initProductGallery() {
   document.querySelector('.slider-btn.next')?.addEventListener('click', () => show(current + 1));
 
   thumbBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    const activate = () => {
       const idx = parseInt(btn.dataset.index, 10);
       if (!Number.isNaN(idx)) show(idx);
+    };
+    btn.addEventListener('mouseenter', activate);
+    btn.addEventListener('focus', activate);
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      activate();
     });
   });
 

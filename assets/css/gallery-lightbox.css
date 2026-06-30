@@ -1,8 +1,11 @@
 /* Galeri lightbox — native dialog */
 
-.gallery-main .slider-container,
-.gallery-thumb-btn {
+.gallery-main .slider-container {
   cursor: zoom-in;
+}
+
+.gallery-thumb-btn {
+  cursor: pointer;
 }
 
 html.gallery-lightbox-open {

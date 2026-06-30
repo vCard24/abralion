@@ -212,28 +212,29 @@
   }
 
   function bindGalleryTriggers() {
+    const openAtCurrent = () => {
+      const idx = inlineController?.getIndex?.() ?? current;
+      open(idx);
+    };
+
     const container = document.querySelector('.gallery-main .slider-container');
     if (container) {
       container.setAttribute('role', 'button');
       container.setAttribute('tabindex', '0');
       container.setAttribute('aria-label', 'Görseli büyüt');
-      container.addEventListener('click', () => {
-        const idx = inlineController?.getIndex?.() ?? current;
-        open(idx);
-      });
+      container.addEventListener('click', openAtCurrent);
       container.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          const idx = inlineController?.getIndex?.() ?? current;
-          open(idx);
+          openAtCurrent();
         }
       });
     }
 
-    document.querySelectorAll('.gallery-thumb-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const idx = parseInt(btn.dataset.index, 10);
-        if (!Number.isNaN(idx)) open(idx);
+    document.querySelectorAll('.gallery-lightbox-trigger').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openAtCurrent();
       });
     });
   }

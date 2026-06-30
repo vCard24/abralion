@@ -13,14 +13,77 @@ function formatTableCellHtml(cell, col) {
   return escapeHtml(raw);
 }
 
+function kartImageSrc(base, slug) {
+  const jpg = `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
+  const png = `${base}assets/images/products/${slug}/${slug}-kart.png`;
+  return slug === 'metal-inox-kesme-tasi' ? png : jpg;
+}
+
+/** Uygulama görseli kutusu — yeni şablon veya eski img yapısı */
+function resolveApplicationVisualRoot() {
+  const tab = document.querySelector('#tab-description');
+  if (!tab) return null;
+
+  const existing = tab.querySelector('.product-application-visual');
+  if (existing) return existing;
+
+  const legacyImg = document.getElementById('product-application-image');
+  const wrap = legacyImg?.closest('.relative') || tab.querySelector('.relative.overflow-hidden');
+  if (!wrap) return null;
+
+  wrap.classList.add(
+    'product-application-visual',
+    'isolate',
+    'bg-surface-container',
+    'bg-contain',
+    'bg-center',
+    'bg-no-repeat'
+  );
+  legacyImg?.remove();
+  return wrap;
+}
+
+/** Her ürün sayfasında kart görseli; applicationImage veya kart yoksa galerinin ilk görseli */
+function setProductApplicationVisual(base, slug, productName, product) {
+  const visual = resolveApplicationVisualRoot();
+  if (!visual || !slug) return;
+
+  const apply = (url) => {
+    visual.style.backgroundImage = `url("${url}")`;
+    visual.setAttribute('role', 'img');
+    visual.setAttribute(
+      'aria-label',
+      productName ? `${productName} - Uygulama görseli` : 'Uygulama görseli'
+    );
+  };
+
+  const custom = product?.applicationImage;
+  if (custom) {
+    apply(custom.startsWith('assets') ? `${base}${custom}` : custom);
+    return;
+  }
+
+  const kart = kartImageSrc(base, slug);
+  const probe = new Image();
+  probe.onload = () => apply(kart);
+  probe.onerror = () => {
+    const g = product?.images?.[0]?.src;
+    if (g) {
+      apply(g.startsWith('assets') ? `${base}${g}` : g);
+    } else {
+      apply(kart);
+    }
+  };
+  probe.src = kart;
+}
+
 function productThumbForCard(base, product) {
   const slug = product.slug;
-  const kart = `${base}assets/images/products/${slug}/${slug}-kart.webp`;
   if (product.images?.[0]?.src) {
     const src = product.images[0].src;
     return src.startsWith('assets') ? `${base}${src}` : src;
   }
-  return kart;
+  return kartImageSrc(base, slug);
 }
 
 function renderRelatedProducts(product, pm) {
@@ -134,9 +197,9 @@ function renderGallery(product, container) {
   syncTransformOrigin();
 
   const galleryController = initProductGallery();
-  if (galleryController && typeof galleryController.showSlide === 'function') {
-    const originalShow = galleryController.showSlide.bind(galleryController);
-    galleryController.showSlide = (index) => {
+  if (galleryController && typeof galleryController.show === 'function') {
+    const originalShow = galleryController.show.bind(galleryController);
+    galleryController.show = (index) => {
       originalShow(index);
       syncTransformOrigin();
     };
@@ -336,14 +399,7 @@ function renderProductPage(product, pm) {
     { styled: true }
   );
 
-  const appImg = document.getElementById('product-application-image');
-  if (appImg && product.images?.[0]?.src) {
-    const imgSrc = product.images[0].src.startsWith('assets')
-      ? `${base}${product.images[0].src}`
-      : product.images[0].src;
-    appImg.src = imgSrc;
-    appImg.alt = product.images[0].alt || product.name;
-  }
+  setProductApplicationVisual(base, slug, product.name, product);
 
   const gallery = document.getElementById('product-gallery');
   if (gallery) renderGallery(product, gallery);

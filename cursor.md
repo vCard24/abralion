@@ -45,7 +45,7 @@ abralion-cursor/
 │   │   ├── site.js         # getBasePath(), productUrl()
 │   │   ├── products-data.js # window.ABRALION_CATALOG (file:// için)
 │   │   ├── ProductManager.js, ProductCard.js, CompareManager.js
-│   │   ├── MegaMenu.js, Header.js, ThemeToggle.js
+│   │   ├── MegaMenu.js, Header.js
 │   │   ├── product-detail.js, product-gallery.js, VariantDisplay.js
 │   │   └── pages/          # home.js, urunler.js, karsilastir.js, contact.js
 │   ├── images/
@@ -105,7 +105,7 @@ urunler.json  ──normalize.py──►  data/products.json
 | `iletisim.html` | `pages/contact.js` | `FormValidator.js` |
 
 **Ortak script sırası (kök sayfalar):**  
-`site.js` → `products-data.js` → `CompareManager` → `ProductManager` → `ProductCard` → `Header` → `MegaMenu` → `ThemeToggle` → `main.js` → sayfa JS
+`site.js` → `products-data.js` → `CompareManager` → `ProductManager` → `ProductCard` → `Header` → `MegaMenu` → `main.js` → sayfa JS
 
 **Mega menü:** `MegaMenu.js` → `#mega-menu` içine kategorileri ve ürün linklerini dinamik yazar.
 

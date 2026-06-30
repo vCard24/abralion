@@ -213,8 +213,23 @@ html.dark-theme body .mega-menu-product-link {
   color: var(--color-text-secondary);
 }
 
+html.dark-theme body .mega-menu-product-link:hover,
+html.dark-theme body .mega-menu-product-link.is-featured {
+  background: #1a1a1a;
+  color: #b8b8b8;
+}
+
 html.dark-theme body .mega-menu-product-link:hover {
-  background: #2a2a2a;
+  background: #252525;
+  color: var(--color-primary);
+}
+
+html.dark-theme body .mega-menu-product-link.is-featured {
+  box-shadow: inset 2px 0 0 rgba(227, 30, 36, 0.55);
+}
+
+html.dark-theme body .mega-menu-product-link.is-featured:hover {
+  background: #252525;
   color: var(--color-primary);
 }
 
@@ -631,23 +646,6 @@ html.dark-theme body .compare-label-col {
   background: var(--color-background-elevated);
   color: var(--color-text-primary);
   font-weight: 600;
-}
-
-/* ============================================
-   THEME TOGGLE - Elegant Button
-   ============================================ */
-html.dark-theme body .theme-toggle-btn {
-  background: var(--color-background-card);
-  border: 2px solid var(--color-border-medium);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(10px);
-}
-
-html.dark-theme body .theme-toggle-btn:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 6px 20px rgba(232, 93, 103, 0.3);
-  background: var(--color-background-elevated);
-  transform: translateY(-2px);
 }
 
 /* ============================================

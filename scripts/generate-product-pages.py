@@ -1,25 +1,35 @@
 # -*- coding: utf-8 -*-
-"""24 urun detay HTML sayfasi uretir (Precision Industrial Noir sablon)."""
+"""ABRALION_CATALOG ürünleri için urun/*.html sayfaları üretir."""
 import json
+import re
 from pathlib import Path
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_ORIGIN = "https://abralion.com"
 TEMPLATE_PATH = Path(__file__).resolve().parent / "templates" / "product-detail-noir.html"
+CATALOG_PATH = ROOT / "assets" / "js" / "products-data.js"
 
 
 def esc(s):
     return (s or "").replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
 
 
+def load_catalog():
+    raw = CATALOG_PATH.read_text(encoding="utf-8")
+    match = re.search(r"window\.ABRALION_CATALOG\s*=\s*(\{.*\})\s*;?\s*$", raw, re.S)
+    if not match:
+        raise SystemExit("ABRALION_CATALOG bulunamadı")
+    return json.loads(match.group(1))
+
+
 def product_og_image(product):
+    slug = product["slug"]
     images = product.get("images") or []
     if images and images[0].get("src"):
         src = images[0]["src"].lstrip("/")
         return f"{SITE_ORIGIN}/{src}"
-    slug = product["slug"]
-    return f"{SITE_ORIGIN}/assets/images/products/{slug}/{slug}-kart.jpg"
+    return f"{SITE_ORIGIN}/assets/images/products/{slug}/{slug}.webp"
 
 
 def product_og_image_alt(product):
@@ -31,10 +41,10 @@ def product_og_image_alt(product):
 
 def main():
     template = TEMPLATE_PATH.read_text(encoding="utf-8")
-    with open(ROOT / "data/products.json", encoding="utf-8") as f:
-        data = json.load(f)
+    data = load_catalog()
     out_dir = ROOT / "urun"
     out_dir.mkdir(exist_ok=True)
+
     count = 0
     for p in data["products"]:
         slug = p["slug"]
@@ -52,8 +62,7 @@ def main():
             "og_image_alt": product_og_image_alt(p),
         }.items():
             html = html.replace("{" + key + "}", val)
-        path = out_dir / f"{slug}.html"
-        path.write_text(html, encoding="utf-8")
+        (out_dir / f"{slug}.html").write_text(html, encoding="utf-8")
         count += 1
     print(f"OK: {count} sayfa -> urun/")
 

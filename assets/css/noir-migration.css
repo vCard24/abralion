@@ -1096,6 +1096,19 @@ html body.page-product-detail-stitch {
   border-radius: 0.25rem;
 }
 
+/* Uygulama görseli — kart görseli altta, karartma üstte (eski placeholder üstte kalmasın) */
+.page-product-detail-stitch .product-application-visual,
+.page-product-detail-stitch #tab-description .relative.h-\[300px\].overflow-hidden.group {
+  isolation: isolate;
+}
+
+.page-product-detail-stitch .product-application-visual {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--surface-container, #1c1c1e);
+}
+
 .page-product-detail-stitch .product-gallery-gradient {
   border-radius: 0.25rem;
 }

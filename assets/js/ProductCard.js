@@ -93,7 +93,7 @@ class ProductCard {
       if (!tags.includes('METAL')) tags.push('METAL');
     }
     if (product.categoryId === 'elmas-kesici') tags.push('ELMAS');
-    if (product.categoryId === 'uclar') tags.push('ENDÜSTRİYEL');
+    if (product.categoryId === 'kirici-delici') tags.push('ENDÜSTRİYEL');
 
     if (!tags.length && product.categoryName) {
       const short = product.categoryName.split(/[-–&]/)[0].trim().toUpperCase();
@@ -221,11 +221,17 @@ class ProductCard {
     const img = this.element.querySelector('.product-card-image');
     if (img) {
       img.addEventListener('error', () => {
-        if (img.dataset.fallbackDone) return;
+        if (img.dataset.galleryFallback) return;
         const fallback = img.dataset.fallback;
-        if (fallback && img.src !== fallback) {
+        if (fallback && img.src !== fallback && !img.dataset.fallbackDone) {
           img.dataset.fallbackDone = '1';
           img.src = fallback;
+          return;
+        }
+        const gallerySrc = this.product.images?.[0]?.src;
+        if (gallerySrc) {
+          img.dataset.galleryFallback = '1';
+          img.src = gallerySrc.startsWith('http') ? gallerySrc : `${getBasePath()}${gallerySrc}`;
         }
       });
     }

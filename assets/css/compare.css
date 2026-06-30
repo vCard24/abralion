@@ -38,10 +38,6 @@ body.has-compare-bar {
   padding-bottom: 72px;
 }
 
-body.has-compare-bar .theme-toggle-btn {
-  bottom: 88px;
-}
-
 /* Tablo — karşılaştır sütunu */
 .page-product-detail .specs-table .compare-col,
 .page-product-detail .specs-table .compare-cell {

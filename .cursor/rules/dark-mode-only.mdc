@@ -1,0 +1,11 @@
+---
+description: Abralion sitesi yalnızca koyu (dark) tema kullanır; light mode yok
+alwaysApply: true
+---
+
+# Tema — yalnızca dark mode
+
+- Abralion arayüzü **sadece koyu tema** ile tasarlanır; light mode desteklenmez ve kullanıcıya sunulmaz.
+- **ThemeToggle** veya tema değiştirme butonu/ikonu ekleme.
+- Sayfalarda `theme-init.js` ile `dark-theme` sınıfı uygulanır; footer logoları `logo-beyaz.svg` kullanır.
+- Yeni HTML şablonlarına `ThemeToggle.js` script etiketi ekleme.

@@ -616,8 +616,8 @@
   margin: 0;
   padding: 0 6px;
   gap: 0;
-  background: #f8f8f8;
-  border-bottom: 1px solid #e8e8e8;
+  background: #1e1e1e;
+  border-bottom: 1px solid #2a2a2a;
   flex-shrink: 0;
 }
 
@@ -630,7 +630,7 @@
   padding: 11px 14px;
   font-size: 13px;
   font-weight: 500;
-  color: #444;
+  color: #b0b0b0;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   white-space: nowrap;
@@ -639,12 +639,12 @@
 
 .mega-menu-tab:hover {
   color: #E31E24;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .mega-menu-tab.is-active {
   color: #E31E24;
-  background: #fff;
+  background: #141414;
   border-bottom-color: #E31E24;
   font-weight: 600;
 }
@@ -652,7 +652,7 @@
 .mega-menu-panels {
   position: relative;
   min-width: 0;
-  background: #fff;
+  background: #141414;
   flex: 1;
   overflow: hidden;
 }
@@ -700,7 +700,7 @@
   padding: 5px 4px;
   border-radius: 4px;
   text-decoration: none;
-  color: #333;
+  color: #b0b0b0;
   font-size: 13px;
   line-height: 1.4;
   transition: color 0.15s ease, background 0.15s ease;
@@ -708,8 +708,17 @@
 
 .mega-menu-product-link:hover,
 .mega-menu-product-link.is-featured {
+  color: #d0d0d0;
+  background: #1a1a1a;
+}
+
+.mega-menu-product-link:hover {
   color: #E31E24;
-  background: #f8f8f8;
+  background: #252525;
+}
+
+.mega-menu-product-link.is-featured {
+  box-shadow: inset 2px 0 0 rgba(227, 30, 36, 0.55);
 }
 
 .mega-menu-product-thumb {
@@ -718,8 +727,8 @@
   height: 32px;
   border-radius: 4px;
   overflow: hidden;
-  background: #f5f5f5;
-  border: 1px solid #eee;
+  background: #252525;
+  border: 1px solid #333;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -746,9 +755,9 @@
   justify-content: center;
   align-self: stretch;
   padding: 8px;
-  background: linear-gradient(135deg, rgba(227, 30, 36, 0.06) 0%, #fafafa 55%, #fff 100%);
+  background: linear-gradient(135deg, rgba(227, 30, 36, 0.1) 0%, #1a1a1a 55%, #141414 100%);
   border-radius: 10px;
-  border: 1px solid #eee;
+  border: 1px solid #2a2a2a;
   text-decoration: none;
   overflow: hidden;
   min-height: 160px;
@@ -763,7 +772,7 @@
 }
 
 .mega-menu-feature.is-missing {
-  background: #f5f5f5;
+  background: #1a1a1a;
 }
 
 @media screen and (max-width: 1100px) {
@@ -883,65 +892,7 @@
   }
 }
 
-/* ============================================
-   THEME TOGGLE BUTTON
-   ============================================ */
-
-.theme-toggle-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #E31E24;
-  color: #fff;
-  border: none;
-  box-shadow: 0 4px 12px rgba(227, 30, 36, 0.3);
-  cursor: pointer;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  font-size: 24px;
-}
-
-.theme-toggle-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(227, 30, 36, 0.4);
-}
-
-.theme-toggle-btn:active {
-  transform: scale(0.95);
-}
-
-.theme-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-.theme-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-}
-
-/* Dark theme button style */
-body.dark-theme .theme-toggle-btn {
-  background: #1a1a1a;
-  border: 2px solid #E31E24;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-theme .theme-toggle-btn:hover {
-  background: #E31E24;
-  box-shadow: 0 6px 16px rgba(227, 30, 36, 0.4);
-}
-
-/* Mobile positioning */
+/* Mobile — dokunma hedefleri */
 @media (max-width: 768px) {
   .btn-small {
     min-height: 44px;
@@ -949,18 +900,6 @@ body.dark-theme .theme-toggle-btn:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .theme-toggle-btn {
-    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
-    right: calc(20px + env(safe-area-inset-right, 0px));
-    width: 48px;
-    height: 48px;
-  }
-  
-  .theme-icon svg {
-    width: 20px;
-    height: 20px;
   }
 }
 
