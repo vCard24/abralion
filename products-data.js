@@ -934,7 +934,7 @@ window.ABRALION_CATALOG = {
         "Doğal taş, kireçtaşı ve kumtaşında dübel ve ankraj delikleri",
         "Elektrik, su tesisatı, klima montajı işleri"
       ],
-      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/SDS-Plus-2-Kesicili-Beton-Matkap-Ucu-gorsel-04.webp",
+      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-kullanim.webp",
       "images": [
         {
           "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu.webp",

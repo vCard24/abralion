@@ -306,10 +306,27 @@ function initFooterSocial() {
   links.insertAdjacentElement('afterend', ul);
 }
 
+function initWhatsAppFloat() {
+  if (document.getElementById('whatsapp-float')) {
+    return;
+  }
+
+  const link = document.createElement('a');
+  link.id = 'whatsapp-float';
+  link.className = 'whatsapp-float';
+  link.href = `https://wa.me/${FOOTER_SOCIAL_PHONE}`;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('aria-label', 'WhatsApp — +7 985 789-60-62');
+  link.innerHTML = FOOTER_SOCIAL_SVGS.whatsapp;
+  document.body.appendChild(link);
+}
+
 function initFooter() {
   initFooterCerts();
   initFooterSocial();
   initPdfLinks();
+  initWhatsAppFloat();
 }
 
 if (document.readyState === 'loading') {
