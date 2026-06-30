@@ -8,6 +8,185 @@ window.productUrl = function (slug) {
   return `${base}urun/${slug}.html`;
 };
 
+/** Karşılaştırma → teklif aktarımı (file:// dahil güvenilir) */
+window.ABRALION_COMPARE_PREFILL_KEY = 'abralion_compare_prefill';
+
+window.saveComparePrefillForQuote = function (keys) {
+  if (!Array.isArray(keys)) return;
+  const list = keys.filter((k) => typeof k === 'string' && k.length > 0).slice(0, 4);
+  try {
+    sessionStorage.setItem(window.ABRALION_COMPARE_PREFILL_KEY, JSON.stringify(list));
+  } catch {
+    /* ignore */
+  }
+  if (window.quoteManager?.setList) {
+    window.quoteManager.setList(list);
+  }
+};
+
+window.readComparePrefillForQuote = function () {
+  try {
+    const raw = sessionStorage.getItem(window.ABRALION_COMPARE_PREFILL_KEY);
+    const list = raw ? JSON.parse(raw) : [];
+    return Array.isArray(list) ? list.filter((k) => typeof k === 'string' && k.length > 0) : [];
+  } catch {
+    return [];
+  }
+};
+
+window.readCompareListFromStorage = function () {
+  try {
+    const raw = localStorage.getItem('abralion_compare_list');
+    const list = raw ? JSON.parse(raw) : [];
+    return Array.isArray(list) ? list.filter((k) => typeof k === 'string' && k.length > 0) : [];
+  } catch {
+    return [];
+  }
+};
+
+window.resolveCatalogKeys = function (keys, products) {
+  if (!Array.isArray(keys) || !Array.isArray(products)) return [];
+  return keys.map((key) => {
+    let productId = key;
+    let variantId = key;
+    if (typeof key === 'string' && key.includes('::')) {
+      const sep = key.indexOf('::');
+      productId = key.slice(0, sep);
+      variantId = key.slice(sep + 2);
+    }
+    const product = products.find((p) => p.id === productId || p.slug === productId);
+    if (!product) return { key, product: null, variant: null };
+    let variant = product.variants?.find(
+      (v) =>
+        v.id === variantId ||
+        v.urun_kodu === variantId ||
+        String(v.id) === String(variantId)
+    );
+    if (!variant && product.variants?.length) {
+      variant = product.variants[0];
+    }
+    return {
+      key,
+      product,
+      variant: variant || { id: variantId, urun_kodu: variantId },
+    };
+  });
+};
+
+window.collectCompareKeysForQuote = function () {
+  if (window.compareManager?.getCompareList) {
+    const live = window.compareManager.getCompareList();
+    if (live.length) return live;
+  }
+  return readCompareListFromStorage();
+};
+
+/** URL'de model taşıma — file:// için en güvenilir yol */
+window.encodeCompareKeysForUrl = function (keys) {
+  if (!Array.isArray(keys) || !keys.length) return '';
+  return keys
+    .slice(0, 4)
+    .map((key) => {
+      let productId = key;
+      let variantId = key;
+      if (key.includes('::')) {
+        const parts = key.split('::');
+        productId = parts[0];
+        variantId = parts.slice(1).join('::');
+      }
+      return `${encodeURIComponent(productId)}~${encodeURIComponent(variantId)}`;
+    })
+    .join(',');
+};
+
+window.parseModelsFromUrl = function (search) {
+  const raw = new URLSearchParams(search || window.location.search).get('models');
+  if (!raw) return [];
+  return raw
+    .split(',')
+    .map((part) => {
+      const sep = part.indexOf('~');
+      if (sep === -1) {
+        const id = decodeURIComponent(part);
+        return `${id}::${id}`;
+      }
+      const productId = decodeURIComponent(part.slice(0, sep));
+      const variantId = decodeURIComponent(part.slice(sep + 1));
+      return `${productId}::${variantId || productId}`;
+    })
+    .filter(Boolean);
+};
+
+window.buildQuotePageUrl = function (keys, base) {
+  const root = base != null ? base : getBasePath();
+  const list = Array.isArray(keys) ? keys.filter(Boolean).slice(0, 4) : [];
+  if (!list.length) return `${root}fiyat-teklifi.html?kaynak=karsilastir&from=compare`;
+  const models = encodeCompareKeysForUrl(list);
+  return `${root}fiyat-teklifi.html?kaynak=karsilastir&from=compare&models=${models}`;
+};
+
+window.isQuoteFromCompare = function (search) {
+  const params = new URLSearchParams(search || window.location.search);
+  return params.get('from') === 'compare' || params.get('kaynak') === 'karsilastir';
+};
+
+window.getCompareKeysForPrefill = function () {
+  const fromCompare = isQuoteFromCompare();
+  const fromUrl = parseModelsFromUrl();
+  if (fromUrl.length) return fromUrl;
+
+  if (fromCompare) {
+    const fromStorage = readCompareListFromStorage();
+    if (fromStorage.length) return fromStorage;
+
+    const fromSession = readComparePrefillForQuote();
+    if (fromSession.length) return fromSession;
+  }
+
+  const fromSession = readComparePrefillForQuote();
+  if (fromSession.length) return fromSession;
+
+  const fromCompareList = collectCompareKeysForQuote();
+  if (fromCompareList.length) return fromCompareList;
+
+  if (window.quoteManager?.getQuoteList) {
+    const fromQuote = window.quoteManager.getQuoteList();
+    if (fromQuote.length) return fromQuote;
+  }
+
+  return [];
+};
+
+window.navigateToQuotePage = function (keys, base) {
+  const list = Array.isArray(keys) ? keys : collectCompareKeysForQuote();
+  saveComparePrefillForQuote(list);
+  window.location.href = buildQuotePageUrl(list, base != null ? base : getBasePath());
+};
+
+/** PDF indirme dosya adi — ic metadata yerine okunabilir ad */
+window.sanitizeDownloadLabel = function (label) {
+  return (label || 'Dokuman')
+    .replace(/[\\/:*?"<>|]/g, '-')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
+
+window.documentDownloadFilename = function (label, suffix = 'teknik döküman') {
+  return `${sanitizeDownloadLabel(label)} ${suffix}.pdf`;
+};
+
+/** Tum PDF linklerini yeni sekmede ac */
+window.initPdfLinks = function (root = document) {
+  root.querySelectorAll('a[href*=".pdf"]').forEach((link) => {
+    link.removeAttribute('download');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+};
+
+/** @deprecated initPdfLinks kullanin */
+window.initPdfDownloadLinks = window.initPdfLinks;
+
 /** Mega menü — ürün küçük görseli (katalog → kart dosyası) */
 window.productThumbUrl = function (base, product) {
   const slug = product.slug;
@@ -130,6 +309,7 @@ function initFooterSocial() {
 function initFooter() {
   initFooterCerts();
   initFooterSocial();
+  initPdfLinks();
 }
 
 if (document.readyState === 'loading') {

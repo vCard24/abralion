@@ -171,7 +171,7 @@ class ProductCard {
 
     const descriptionHtml = this.compact
       ? ''
-      : `<p class="product-card-description text-technical-data text-on-surface-variant line-clamp-2 mb-6 opacity-70">${description}</p>`;
+      : `<p class="product-card-description text-technical-data text-on-surface-variant line-clamp-2 mb-4 opacity-70">${description}</p>`;
 
     const actionsHtml = this.compact
       ? ''
@@ -193,13 +193,13 @@ class ProductCard {
 
     const card = document.createElement('div');
     card.className =
-      'product-card group bg-surface-elevation technical-border p-6 flex flex-col transition-all duration-500 hover:border-abrasive-red/50' +
+      'product-card group bg-surface-elevation technical-border p-5 flex flex-col transition-all duration-500 hover:border-abrasive-red/50' +
       (this.compact ? ' product-card--compact' : '');
     card.setAttribute('data-product-id', p.id);
     if (p.categoryId) card.setAttribute('data-category-id', p.categoryId);
 
     card.innerHTML = `
-      <div class="relative overflow-hidden mb-6 aspect-[1.73] bg-carbon-black">
+      <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
         <img class="product-card-image absolute inset-0 h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700"
           src="${kartSrc}" alt="${name}" loading="lazy" width="400" height="300"
           data-fallback="${fallback}">

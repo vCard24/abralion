@@ -1,3 +1,22 @@
+function variantBadgeText(variant, product) {
+  if (variant.uzunluk_mm != null && variant.uc_genisligi_mm != null) {
+    return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm}x${variant.uc_genisligi_mm} mm`.replace(/^x/, '');
+  }
+  if (variant.uzunluk_mm != null) {
+    return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm} mm`.replace(/^x/, '');
+  }
+  if (variant.daire_capi_mm != null) {
+    return `Ø${variant.daire_capi_mm}${variant.kalinlik_mm != null ? ' x ' + variant.kalinlik_mm : ''} mm`;
+  }
+  if (variant.cap_mm != null) {
+    return `${variant.cap_mm} mm`;
+  }
+  if (variant.urun_kodu) {
+    return variant.urun_kodu;
+  }
+  return variant.id || '';
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('compare-content');
   if (!container) return;
@@ -73,8 +92,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       const { key, product, variant } = col;
       const img = (product.images?.[0]?.src || 'assets/images/placeholder/gorsel.jpg').replace(/^\//, '');
       const imgSrc = img.startsWith('assets') ? `${base}${img}` : img;
-      const sku = variant.urun_kodu || variant.id || '';
-      const quoteHref = `${base}iletisim.html?konu=${encodeURIComponent(product.name)}`;
+      const sku = variant.urun_kodu || '';
+      const inQuote = window.quoteManager?.isInList(product.id, variant.id || variant.urun_kodu);
+      const quoteBtnClass = inQuote
+        ? 'compare-btn-quote border border-abrasive-red text-abrasive-red bg-transparent'
+        : 'compare-btn-quote bg-abrasive-red text-white';
+      const quoteBtnLabel = inQuote ? 'Teklif Listesinde ✓' : 'Teklif Listesine Ekle';
       html += `<th class="compare-product-col p-6 border-b border-r border-steel-gray/20" scope="col">
         <div class="compare-product-header flex flex-col items-center gap-4 relative">
           <button type="button" class="compare-matrix-remove compare-remove-btn" data-key="${escapeHtml(key)}" aria-label="Kaldır">
@@ -83,9 +106,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           <img src="${escapeHtml(imgSrc)}" alt="" class="h-28 object-contain" loading="lazy">
           <p class="product-category font-label-caps text-[10px] uppercase text-abrasive-red m-0">${escapeHtml(product.categoryName)}</p>
           <h3 class="font-headline-md text-[18px] text-center text-white m-0">${escapeHtml(product.name)}</h3>
+          <p class="compare-matrix-variant font-label-caps text-[11px] text-abrasive-red uppercase m-0">${escapeHtml(variantBadgeText(variant, product))}</p>
           <p class="compare-matrix-sku font-technical-data text-technical-data text-steel-gray m-0">${escapeHtml(String(sku))}</p>
           <div class="compare-matrix-actions w-full flex flex-col gap-3 mt-2">
-            <a href="${quoteHref}" class="compare-btn-quote bg-abrasive-red text-white py-3 font-label-caps text-label-caps uppercase hover:brightness-110 transition-all w-full text-center">Teklif Listesine Ekle</a>
+            <button type="button" class="${quoteBtnClass} py-3 font-label-caps text-label-caps uppercase hover:brightness-110 transition-all w-full text-center compare-add-quote" data-key="${escapeHtml(key)}" data-product-id="${escapeHtml(product.id)}" data-variant-id="${escapeHtml(variant.id || variant.urun_kodu || '')}">${quoteBtnLabel}</button>
             <a href="${productUrl(product.slug)}" class="compare-btn-detail text-center font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-white transition-colors">Detayları İncele →</a>
           </div>
         </div>
@@ -122,9 +146,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   html += `</tbody></table></div>
-    <p class="text-center compare-actions-footer mt-10">
+    <div class="compare-actions-footer flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+      <a href="${typeof buildQuotePageUrl === 'function' ? buildQuotePageUrl(entries.map((e) => e.key), base) : `${base}fiyat-teklifi.html?from=compare`}" class="inline-flex items-center justify-center gap-2 bg-abrasive-red text-white px-8 py-3 font-label-caps text-label-caps uppercase hover:brightness-110 transition-all" id="compare-request-quote">
+        <span class="material-symbols-outlined text-lg" aria-hidden="true">request_quote</span>
+        Seçili Modeller İçin Teklif İste
+      </a>
       <button type="button" class="compare-btn-clear border border-steel-gray/30 text-on-surface px-8 py-3 font-label-caps text-label-caps uppercase hover:border-abrasive-red hover:text-abrasive-red transition-all" id="clear-compare">Tümünü temizle</button>
-    </p>
+    </div>
   </div>`;
 
   container.innerHTML = html;
@@ -135,11 +163,55 @@ document.addEventListener('DOMContentLoaded', async () => {
       location.reload();
     });
   });
+
+  container.querySelectorAll('.compare-add-quote').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (!window.quoteManager) return;
+      const { productId, variantId } = btn.dataset;
+      const result = window.quoteManager.toggle(productId, variantId);
+      showCompareToast(result.message);
+      const inList = window.quoteManager.isInList(productId, variantId);
+      btn.textContent = inList ? 'Teklif Listesinde ✓' : 'Teklif Listesine Ekle';
+      btn.classList.toggle('bg-abrasive-red', !inList);
+      btn.classList.toggle('text-white', !inList);
+      btn.classList.toggle('border', inList);
+      btn.classList.toggle('border-abrasive-red', inList);
+      btn.classList.toggle('text-abrasive-red', inList);
+      btn.classList.toggle('bg-transparent', inList);
+    });
+  });
+
+  document.getElementById('compare-request-quote')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const keys = entries.map((entry) => entry.key);
+    if (typeof navigateToQuotePage === 'function') {
+      navigateToQuotePage(keys, base);
+    } else {
+      window.location.href = e.currentTarget.href;
+    }
+  });
+
   document.getElementById('clear-compare')?.addEventListener('click', () => {
     window.compareManager.clearAll();
     location.reload();
   });
 });
+
+function showCompareToast(message) {
+  let toast = document.querySelector('.compare-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className =
+      'compare-toast fixed bottom-24 left-1/2 -translate-x-1/2 z-[1200] bg-surface-elevation border border-steel-gray/30 text-white px-6 py-3 rounded-lg shadow-lg font-body-md text-sm';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.hidden = false;
+  clearTimeout(showCompareToast._timer);
+  showCompareToast._timer = setTimeout(() => {
+    toast.hidden = true;
+  }, 2600);
+}
 
 function escapeHtml(text) {
   const d = document.createElement('div');

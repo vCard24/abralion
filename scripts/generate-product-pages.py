@@ -39,6 +39,13 @@ def product_og_image_alt(product):
     return esc(product.get("name", ""))
 
 
+def product_technical_catalog_href(product):
+    catalog = product.get("technicalCatalog")
+    if catalog:
+        return f"../{catalog.lstrip('/')}"
+    return "../dokumanlar.html"
+
+
 def main():
     template = TEMPLATE_PATH.read_text(encoding="utf-8")
     data = load_catalog()
@@ -60,6 +67,7 @@ def main():
             "og_title": og_title,
             "og_image": product_og_image(p),
             "og_image_alt": product_og_image_alt(p),
+            "technical_catalog_href": product_technical_catalog_href(p),
         }.items():
             html = html.replace("{" + key + "}", val)
         (out_dir / f"{slug}.html").write_text(html, encoding="utf-8")

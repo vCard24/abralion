@@ -19,6 +19,7 @@ function kartImageSrc(base, slug) {
   return slug === 'metal-inox-kesme-tasi' ? png : jpg;
 }
 
+
 /** Uygulama görseli kutusu — yeni şablon veya eski img yapısı */
 function resolveApplicationVisualRoot() {
   const tab = document.querySelector('#tab-description');
@@ -156,7 +157,7 @@ function renderGallery(product, container) {
   const slides = images
     .map((img, i) => {
       const src = img.src.startsWith('assets') ? `${base}${img.src}` : img.src;
-      return `<img src="${src}" alt="${escapeHtml(img.alt || product.name)}" class="slider-image w-4/5 h-4/5 object-contain transition-transform duration-700 group-hover:scale-110${i === 0 ? ' active' : ''}">`;
+      return `<img src="${src}" alt="${escapeHtml(img.alt || product.name)}" class="slider-image max-w-full max-h-full w-auto h-auto object-contain p-2 transition-transform duration-700 group-hover:scale-110${i === 0 ? ' active' : ''}">`;
     })
     .join('');
 
@@ -171,9 +172,9 @@ function renderGallery(product, container) {
     .join('');
 
   container.innerHTML = `
-    <div class="product-gallery-gradient aspect-square flex items-center justify-center border border-steel-gray/10 relative shimmer-effect group overflow-hidden product-image-slider gallery-main">
+    <div class="product-gallery-gradient w-full h-[min(420px,90vw)] max-h-[420px] flex items-center justify-center border border-steel-gray/10 relative shimmer-effect group overflow-hidden product-image-slider gallery-main bg-gradient-to-b from-surface-container to-carbon-black">
       <button type="button" class="slider-btn prev absolute left-4 top-1/2 z-20 -translate-y-1/2 flex h-12 w-12 items-center justify-center border border-white/10 bg-carbon-black/60 text-white transition-colors hover:bg-abrasive-red sr-only" aria-label="Önceki görsel">‹</button>
-      <div class="slider-container relative flex h-full w-full items-center justify-center z-10">${slides}</div>
+      <div class="slider-container relative flex h-full w-full max-h-[420px] items-center justify-center z-10 p-8 md:p-10 ![aspect-ratio:auto]">${slides}</div>
       <button type="button" class="slider-btn next absolute right-4 top-1/2 z-20 -translate-y-1/2 flex h-12 w-12 items-center justify-center border border-white/10 bg-carbon-black/60 text-white transition-colors hover:bg-abrasive-red sr-only" aria-label="Sonraki görsel">›</button>
       <div class="absolute bottom-6 left-6 flex gap-3 z-20">
         <button type="button" class="gallery-lightbox-trigger w-12 h-12 bg-carbon-black/60 border border-white/10 flex items-center justify-center hover:bg-abrasive-red transition-colors" aria-label="Yakınlaştır">
@@ -400,6 +401,22 @@ function renderProductPage(product, pm) {
   );
 
   setProductApplicationVisual(base, slug, product.name, product);
+
+  const catalogLink = document.getElementById('product-technical-catalog-link');
+  if (catalogLink) {
+    const catalog = product.technicalCatalog;
+    if (catalog) {
+      catalogLink.href = catalog.startsWith('assets') ? `${base}${catalog}` : catalog;
+      catalogLink.removeAttribute('download');
+      catalogLink.setAttribute('target', '_blank');
+      catalogLink.setAttribute('rel', 'noopener noreferrer');
+    } else {
+      catalogLink.href = `${base}dokumanlar.html`;
+      catalogLink.removeAttribute('download');
+      catalogLink.removeAttribute('target');
+      catalogLink.removeAttribute('rel');
+    }
+  }
 
   const gallery = document.getElementById('product-gallery');
   if (gallery) renderGallery(product, gallery);

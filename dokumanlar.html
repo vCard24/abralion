@@ -64,7 +64,7 @@
           Karşılaştır
           <span class="compare-badge bg-surface-container-highest px-1.5 rounded text-xs font-bold" style="display: none;">0</span>
         </a>
-        <a href="iletisim.html" class="header-cta-btn inline-flex items-center rounded-lg bg-abrasive-red px-6 py-2 font-label-caps text-label-caps uppercase text-white transition-all hover:brightness-110 active:scale-95">Teklif Al</a>
+        <a href="fiyat-teklifi.html" class="header-cta-btn inline-flex items-center rounded-lg bg-abrasive-red px-6 py-2 font-label-caps text-label-caps uppercase text-white transition-all hover:brightness-110 active:scale-95">Teklif Al</a>
         <button type="button" class="mobile-menu-toggle flex flex-col items-center justify-center gap-1.5 p-2.5 text-on-surface md:hidden" aria-label="Menüyü aç/kapat" aria-expanded="false">
           <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
           <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
@@ -76,27 +76,43 @@
 
   <main id="main-content" class="min-h-screen">
     <!-- Hero -->
-    <section class="docs-hero-gradient relative overflow-hidden pt-24 pb-section-gap border-b border-steel-gray/10" aria-labelledby="docs-hero-title">
-      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop relative z-10">
-        <div class="inline-flex items-center gap-2 text-abrasive-red mb-6">
-          <span class="w-8 h-0.5 bg-abrasive-red" aria-hidden="true"></span>
-          <span class="font-label-caps text-label-caps uppercase tracking-[0.2em]">Kaynak Merkezi</span>
+    <section class="docs-hero-gradient relative overflow-hidden border-b border-steel-gray/10" aria-labelledby="docs-hero-title">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop relative z-10 py-12 md:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 text-abrasive-red mb-4">
+              <span class="w-8 h-0.5 bg-abrasive-red" aria-hidden="true"></span>
+              <span class="font-label-caps text-label-caps uppercase tracking-[0.2em]">Kaynak Merkezi</span>
+            </div>
+            <h1 id="docs-hero-title" class="font-headline-lg text-headline-lg md:text-headline-display md:leading-[1.1] text-white mb-4 max-w-3xl">
+              Dökümanlar ve <span class="text-abrasive-red">Teknik Bilgi</span>
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-6">
+              Ürün katalogları, teknik dökümanlar ve güvenli kullanım tavsiyeleri. Tüm dosyalarımız endüstriyel standartlara uygun şekilde PDF formatında hazırlanmıştır.
+            </p>
+            <ul class="docs-hero-stats flex flex-wrap gap-3 list-none p-0 m-0" aria-label="Döküman özeti">
+              <li class="docs-hero-stat font-label-caps text-[11px] uppercase tracking-wide text-on-surface border border-steel-gray/25 bg-surface-elevation/60 px-3 py-2">2 Ürün Kataloğu</li>
+              <li class="docs-hero-stat font-label-caps text-[11px] uppercase tracking-wide text-on-surface border border-steel-gray/25 bg-surface-elevation/60 px-3 py-2">24 Teknik PDF</li>
+              <li class="docs-hero-stat font-label-caps text-[11px] uppercase tracking-wide text-on-surface border border-steel-gray/25 bg-surface-elevation/60 px-3 py-2">2 Güvenlik Rehberi</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-5 docs-hero-visual grid grid-cols-2 gap-3 sm:gap-4 max-w-[240px] sm:max-w-xs mx-auto lg:max-w-none lg:ml-auto mt-8 lg:mt-0" aria-hidden="true">
+            <div class="docs-hero-cover bg-surface-elevation border border-steel-gray/15 p-2 sm:p-3 aspect-[3/4] flex items-center justify-center">
+              <img class="w-full h-full object-contain" src="assets/images/documents/abralion-tr-catalog-ico.png" alt="" width="200" height="267" loading="eager" decoding="async">
+            </div>
+            <div class="docs-hero-cover bg-surface-elevation border border-steel-gray/15 p-2 sm:p-3 aspect-[3/4] flex items-center justify-center translate-y-3 sm:translate-y-6">
+              <img class="w-full h-full object-contain" src="assets/images/documents/abralion-ru-catalog-ico.png" alt="" width="200" height="267" loading="eager" decoding="async">
+            </div>
+          </div>
         </div>
-        <h1 id="docs-hero-title" class="font-headline-lg text-headline-lg md:text-headline-display md:leading-[1.1] text-white mb-8 max-w-4xl">
-          Dökümanlar ve <br><span class="text-abrasive-red">Teknik Bilgi</span>
-        </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-          Ürün katalogları, teknik dökümanlar ve güvenli kullanım tavsiyeleri. Tüm dosyalarımız endüstriyel standartlara uygun şekilde PDF formatında hazırlanmıştır.
-        </p>
       </div>
-      <div class="absolute -right-24 top-0 w-[500px] h-[500px] border border-steel-gray/10 rounded-full opacity-30 pointer-events-none" aria-hidden="true"></div>
-      <div class="absolute -right-12 top-12 w-[400px] h-[400px] border border-steel-gray/10 rounded-full opacity-20 pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -right-24 top-1/2 -translate-y-1/2 w-[420px] h-[420px] border border-steel-gray/10 rounded-full opacity-20 pointer-events-none" aria-hidden="true"></div>
     </section>
 
     <!-- Ürün Katalogları -->
-    <section class="pb-section-gap" aria-labelledby="docs-catalogs-title">
+    <section class="pt-12 md:pt-16 pb-section-gap" aria-labelledby="docs-catalogs-title">
       <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
-        <div class="flex items-end justify-between mb-12">
+        <div class="flex items-end justify-between mb-8 md:mb-10">
           <div>
             <h2 id="docs-catalogs-title" class="font-headline-md text-headline-md text-white mb-2">Ürün Katalogları</h2>
             <div class="h-1 w-12 bg-abrasive-red" aria-hidden="true"></div>
@@ -106,8 +122,8 @@
           <!-- TR Katalog -->
           <article class="bg-surface-elevation technical-border p-6 md:p-gutter flex flex-col md:flex-row gap-6 hover:bg-surface-container-high transition-all group">
             <div class="w-full md:w-1/3 aspect-[3/4] bg-carbon-black overflow-hidden relative border border-steel-gray/10 shrink-0">
-              <img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Abralion Türkçe ürün kataloğu kapak görseli" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB7ceKLnL8qi8ObetItsota3uowCETwaFgr677AErr4iLuG3oBqnqOvZMTNe68NmDxzTlm_8VGPutX9FuhfN4m5mqfb9XDvH2qJYhlIdRsfnPmLj9Xwk0x3j_8-xV6xPiSn2cUminLF_7po4_r6AimVouB6TEpPEUYW2HpzWc9RBRPu3iSvoUHOASwWAcumDXUav5h2SoO7InxOv-RVEO8c1qKZ62DFj6kIUH98tGkDsoT3OiDNL2EdothfngsoTgSfVUweWOsygO0" width="400" height="533" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-carbon-black to-transparent opacity-60" aria-hidden="true"></div>
+              <img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="Abralion Türkçe ürün kataloğu kapak görseli" src="assets/images/documents/abralion-tr-catalog-ico.png" width="400" height="533" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-carbon-black/40 to-transparent pointer-events-none" aria-hidden="true"></div>
               <div class="absolute bottom-4 left-4">
                 <span class="bg-abrasive-red text-white font-technical-data text-[10px] px-2 py-1 uppercase">PDF | TR</span>
               </div>
@@ -118,7 +134,7 @@
                 Tüm ürünlerimizin Türkçe açıklamaları, teknik boyut tabloları ve malzeme spesifikasyonları.
               </p>
               <div class="flex flex-wrap gap-4 mt-auto">
-                <a class="flex-1 min-w-[140px] flex items-center justify-center gap-2 bg-white text-carbon-black px-4 py-3 font-label-caps text-label-caps uppercase hover:bg-abrasive-red hover:text-white transition-colors" href="assets/documents/abralion_turkce_katalog.pdf" download>
+                <a class="flex-1 min-w-[140px] flex items-center justify-center gap-2 bg-white text-carbon-black px-4 py-3 font-label-caps text-label-caps uppercase hover:bg-abrasive-red hover:text-white transition-colors" href="assets/documents/abralion_turkce_katalog.pdf" target="_blank" rel="noopener noreferrer">
                   <span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
                   İndir
                 </a>
@@ -132,8 +148,8 @@
           <!-- RU Katalog -->
           <article class="bg-surface-elevation technical-border p-6 md:p-gutter flex flex-col md:flex-row gap-6 hover:bg-surface-container-high transition-all group">
             <div class="w-full md:w-1/3 aspect-[3/4] bg-carbon-black overflow-hidden relative border border-steel-gray/10 shrink-0">
-              <img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Abralion Rusça ürün kataloğu kapak görseli" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdnfQz_YACMbB7wwo6ritXnjlePjTBAIXANVFVHwKfLtIYKdqZYwhd2GzeZHS6KVjMBxOSRYCj4njZ745__cl2W5Sc624dlJA2B2-F_mU-1Z6V5IGQlYSqt9mWzUUJSXGkelZu9K1wc3Nw-JBwQIhuwE1-okmE4dmLAgI6sap7LtPJLKQFef3Gl0eYb2-2F4WxpCRGxQxGqXFRQis_Fi_Ty3f4MMrFrZrzuGgwKHjDPM8mlrDXIFaSB7gT9Muun05NklZz1HKfd-fg" width="400" height="533" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-carbon-black to-transparent opacity-60" aria-hidden="true"></div>
+              <img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="Abralion Rusça ürün kataloğu kapak görseli" src="assets/images/documents/abralion-ru-catalog-ico.png" width="400" height="533" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-carbon-black/40 to-transparent pointer-events-none" aria-hidden="true"></div>
               <div class="absolute bottom-4 left-4">
                 <span class="bg-abrasive-red text-white font-technical-data text-[10px] px-2 py-1 uppercase">PDF | RU</span>
               </div>
@@ -144,7 +160,7 @@
                 Полное описание всех наших продуктов на русском языке для наших партнеров.
               </p>
               <div class="flex flex-wrap gap-4 mt-auto">
-                <a class="flex-1 min-w-[140px] flex items-center justify-center gap-2 bg-white text-carbon-black px-4 py-3 font-label-caps text-label-caps uppercase hover:bg-abrasive-red hover:text-white transition-colors" href="assets/documents/abralion_russian_cataloque.pdf" download>
+                <a class="flex-1 min-w-[140px] flex items-center justify-center gap-2 bg-white text-carbon-black px-4 py-3 font-label-caps text-label-caps uppercase hover:bg-abrasive-red hover:text-white transition-colors" href="assets/documents/abralion_russian_cataloque.pdf" target="_blank" rel="noopener noreferrer">
                   <span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
                   Скачать
                 </a>
@@ -162,7 +178,7 @@
     <!-- Güvenlik Tavsiyeleri -->
     <section class="bg-surface-container-lowest py-section-gap border-y border-steel-gray/10" aria-labelledby="docs-safety-title">
       <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 gap-6">
           <div class="max-w-xl">
             <span class="font-label-caps text-label-caps text-abrasive-red uppercase tracking-widest mb-4 block">Güvenlik Birincil Önceliğimizdir</span>
             <h2 id="docs-safety-title" class="font-headline-md text-headline-md md:text-headline-lg text-white">Güvenlik Tavsiyeleri</h2>
@@ -183,7 +199,7 @@
               <h3 class="font-headline-md text-headline-md text-white mb-2">Aşındırıcı Ürünlerin Kullanımı İçin Güvenlik Tavsiyeleri</h3>
               <p class="font-body-md text-body-md text-on-surface-variant mb-6">Kesici taşlar, taşlama diskleri ve flap disklerin güvenli kullanımı, depolanması ve imhası hakkında bilgiler.</p>
               <div class="flex flex-wrap gap-6">
-                <a class="inline-flex items-center gap-2 text-on-surface hover:text-abrasive-red transition-colors font-label-caps text-label-caps uppercase" href="assets/documents/guvenlik-asindirici-urunler.pdf" download>
+                <a class="inline-flex items-center gap-2 text-on-surface hover:text-abrasive-red transition-colors font-label-caps text-label-caps uppercase" href="assets/documents/guvenlik-asindirici-urunler.pdf" target="_blank" rel="noopener noreferrer">
                   <span class="material-symbols-outlined" data-icon="description">description</span>
                   PDF İndir
                 </a>
@@ -202,7 +218,7 @@
               <h3 class="font-headline-md text-headline-md text-white mb-2">Delici ve Kırıcı Ürünlerin Kullanımı İçin Güvenlik Tavsiyeleri</h3>
               <p class="font-body-md text-body-md text-on-surface-variant mb-6">Matkaplar, keskiler ve delici uçların doğru teknikle ve kişisel koruyucu donanımlarla kullanımı.</p>
               <div class="flex flex-wrap gap-6">
-                <a class="inline-flex items-center gap-2 text-on-surface hover:text-abrasive-red transition-colors font-label-caps text-label-caps uppercase" href="assets/documents/delici-ve-kirici-urunler-guvenlik-rehberi.pdf" download>
+                <a class="inline-flex items-center gap-2 text-on-surface hover:text-abrasive-red transition-colors font-label-caps text-label-caps uppercase" href="assets/documents/delici-ve-kirici-urunler-guvenlik-rehberi.pdf" target="_blank" rel="noopener noreferrer">
                   <span class="material-symbols-outlined" data-icon="description">description</span>
                   PDF İndir
                 </a>

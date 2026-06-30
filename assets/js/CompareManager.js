@@ -16,9 +16,13 @@ class CompareManager {
 
   parseKey(key) {
     if (!key || typeof key !== 'string') return null;
-    if (key.includes(this.SEP)) {
-      const [productId, variantId] = key.split(this.SEP);
-      return { productId, variantId, key };
+    const sep = key.indexOf(this.SEP);
+    if (sep !== -1) {
+      return {
+        productId: key.slice(0, sep),
+        variantId: key.slice(sep + this.SEP.length),
+        key,
+      };
     }
     return { productId: key, variantId: key, key };
   }
@@ -136,11 +140,22 @@ class CompareManager {
         <span class="compare-bar-text"><strong class="compare-bar-count">0</strong> model seçildi</span>
         <div class="compare-bar-actions">
           <a href="${base}karsilastir.html" class="btn btn-primary btn-small">Karşılaştır</a>
+          <a href="${base}fiyat-teklifi.html?from=compare" class="btn btn-primary btn-small compare-bar-quote" id="compare-bar-quote">Teklif İste</a>
           <button type="button" class="btn btn-secondary btn-small" id="compare-bar-clear">Temizle</button>
         </div>
       </div>`;
     document.body.appendChild(bar);
     document.getElementById('compare-bar-clear')?.addEventListener('click', () => this.clearAll());
+    document.getElementById('compare-bar-quote')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const keys = this.getCompareList();
+      const base = typeof getBasePath === 'function' ? getBasePath() : '';
+      if (typeof navigateToQuotePage === 'function') {
+        navigateToQuotePage(keys, base);
+      } else {
+        window.location.href = `${base}fiyat-teklifi.html?from=compare`;
+      }
+    });
   }
 
   updateUI() {

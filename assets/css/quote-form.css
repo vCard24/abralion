@@ -1,0 +1,599 @@
+/* Teklif formu — ferah, tek sütun, açık input alanları */
+
+.page-quote .quote-hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 0%, rgba(226, 35, 26, 0.1), transparent 60%);
+}
+
+.page-quote .quote-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: center;
+}
+
+.page-quote .quote-progress__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8e8e93;
+}
+
+.page-quote .quote-progress__step span {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(142, 142, 147, 0.35);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.page-quote .quote-progress__step--active {
+  color: #f5f5f7;
+}
+
+.page-quote .quote-progress__step--active span {
+  background: rgba(226, 35, 26, 0.2);
+  border-color: #e2231a;
+  color: #ffb4b0;
+}
+
+.page-quote .quote-prefill-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.28);
+  color: #bbf7d0;
+  font-size: 0.9375rem;
+}
+
+.page-quote .quote-prefill-banner.hidden {
+  display: none !important;
+}
+
+.page-quote .quote-prefill-banner .material-symbols-outlined {
+  color: #86efac;
+  flex-shrink: 0;
+}
+
+.page-quote .quote-sheet {
+  background: rgba(32, 34, 36, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .page-quote .quote-sheet {
+    padding: 2.5rem 2.75rem 3rem;
+  }
+}
+
+.page-quote .quote-block + .quote-block {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.page-quote .quote-block-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.page-quote .quote-block-desc {
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+  color: #8e8e93;
+  line-height: 1.55;
+}
+
+.page-quote .quote-field-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.page-quote .quote-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #c8c8cc;
+}
+
+.page-quote .quote-optional-tag {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #8e8e93;
+  font-size: 0.75rem;
+}
+
+/* Açık, belirgin yazı alanları */
+.page-quote .quote-input,
+.page-quote .quote-select,
+.page-quote .quote-textarea {
+  width: 100%;
+  min-height: 3rem;
+  background: #ececee;
+  color: #141416;
+  border: 1px solid #c5c5ca;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.page-quote .quote-textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+}
+
+.page-quote .quote-input::placeholder,
+.page-quote .quote-textarea::placeholder {
+  color: #6b6b70;
+}
+
+.page-quote .quote-input:hover,
+.page-quote .quote-select:hover,
+.page-quote .quote-textarea:hover {
+  border-color: #a8a8ad;
+  background: #f4f4f6;
+}
+
+.page-quote .quote-input:focus,
+.page-quote .quote-select:focus,
+.page-quote .quote-textarea:focus {
+  outline: none;
+  border-color: #e2231a;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(226, 35, 26, 0.18);
+}
+
+.page-quote .quote-input.error,
+.page-quote .quote-select.error,
+.page-quote .quote-textarea.error {
+  border-color: #e2231a;
+  background: #fff5f5;
+}
+
+.page-quote .quote-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23444' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.page-quote .quote-product-row {
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-quote .quote-prefill-card {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .page-quote .quote-prefill-card {
+    grid-template-columns: 1fr min(12rem, 35%);
+    align-items: end;
+  }
+}
+
+.page-quote .quote-prefill-card__body {
+  padding: 0.25rem 0;
+}
+
+.page-quote .quote-prefill-card__cat {
+  margin: 0 0 0.35rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e2231a;
+}
+
+.page-quote .quote-prefill-card__name {
+  margin: 0 0 0.35rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.35;
+}
+
+.page-quote .quote-prefill-card__variant {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #a8a8ad;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.page-quote .quote-row-index {
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8e8e93;
+  margin-bottom: 1rem;
+}
+
+.page-quote .quote-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.page-quote .quote-btn-outline {
+  border: 1px solid rgba(200, 200, 204, 0.35);
+  color: #e2e2e2;
+  background: transparent;
+  padding: 0.65rem 1.15rem;
+  min-height: 3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+
+.page-quote .quote-btn-outline:hover:not(:disabled) {
+  border-color: #e2231a;
+  color: #ffb4b0;
+}
+
+.page-quote .quote-btn-outline:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.page-quote .quote-optional-block {
+  margin-top: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.page-quote .quote-optional-block summary {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #d8d8dc;
+  list-style: none;
+}
+
+.page-quote .quote-optional-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.page-quote .quote-optional-inner {
+  padding: 0 1.25rem 1.5rem;
+}
+
+.page-quote .quote-submit-block {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.page-quote .quote-kvkk {
+  font-size: 0.875rem;
+  color: #a8a8ad;
+  line-height: 1.55;
+}
+
+.page-quote .quote-kvkk a {
+  color: #f5f5f7;
+  text-decoration: underline;
+}
+
+.page-quote .quote-form-note {
+  font-size: 0.8125rem;
+  color: #8e8e93;
+}
+
+.page-quote .quote-form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.page-quote .quote-btn-primary {
+  min-height: 3.25rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.page-quote .quote-btn-pdf {
+  width: 100%;
+}
+
+.page-quote .quote-help-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-quote .quote-help-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.page-quote .quote-help-card {
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.page-quote .quote-help-card__label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8e8e93;
+  margin-bottom: 0.35rem;
+}
+
+.page-quote .quote-help-card__phone,
+.page-quote .quote-help-card__link {
+  color: #fff;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.page-quote .quote-help-card__phone:hover,
+.page-quote .quote-help-card__link:hover {
+  color: #e2231a;
+}
+
+.page-quote .quote-thank-you.hidden,
+.page-quote #quote-form-wrap.hidden {
+  display: none !important;
+}
+
+.page-quote .quote-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 1300;
+  max-width: min(92vw, 520px);
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.5rem;
+  background: rgba(28, 30, 32, 0.96);
+  border: 1px solid rgba(142, 142, 147, 0.35);
+  color: #f5f5f7;
+  font-size: 0.875rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.page-quote .quote-toast.hidden {
+  display: none !important;
+}
+
+.page-quote .quote-toast--error {
+  border-color: rgba(226, 35, 26, 0.55);
+  color: #ffb4b0;
+}
+
+.page-quote .quote-rows-error {
+  color: #ffb4b0;
+  margin-bottom: 1rem;
+}
+
+.page-quote .form-error {
+  color: #ffb4b0;
+  font-size: 0.8125rem;
+  margin-top: 0.35rem;
+  display: none;
+}
+
+.page-quote .form-error.show {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .page-quote .quote-form-actions {
+    flex-direction: row;
+  }
+
+  .page-quote .quote-btn-primary {
+    flex: 1 1 auto;
+  }
+
+  .page-quote .quote-btn-pdf {
+    flex: 0 0 auto;
+    min-width: 11rem;
+    width: auto;
+  }
+}
+
+@media print {
+  body.quote-print-mode .quote-print-area,
+  body.quote-print-mode .quote-print-area * {
+    visibility: visible;
+  }
+}
+
+/* PDF çıktı sayfası (ekranda gizli, A4 ~794px) — html2canvas ile Türkçe karakter desteği */
+.quote-pdf-sheet {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 794px;
+  background: #fff;
+  color: #111827;
+  font-family: Arial, "Helvetica Neue", Helvetica, "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.quote-pdf-sheet.is-capturing {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10000;
+}
+
+.quote-pdf-doc {
+  padding: 24px 28px 20px;
+}
+
+.quote-pdf-doc__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #e2231a;
+}
+
+.quote-pdf-doc__logo-text {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #e2231a;
+  letter-spacing: 0.06em;
+}
+
+.quote-pdf-doc__header-main h1 {
+  margin: 0 0 4px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.quote-pdf-doc__date {
+  margin: 0;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.quote-pdf-block {
+  margin-bottom: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.quote-pdf-block__head {
+  padding: 8px 14px;
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #374151;
+}
+
+.quote-pdf-block__body {
+  padding: 14px;
+}
+
+.quote-pdf-empty {
+  margin: 0;
+  color: #6b7280;
+}
+
+.quote-pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.quote-pdf-table th,
+.quote-pdf-table td {
+  border: 1px solid #e5e7eb;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.quote-pdf-table th {
+  background: #f9fafb;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+.quote-pdf-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+
+.quote-pdf-field {
+  min-width: 0;
+}
+
+.quote-pdf-field__label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.quote-pdf-field__value {
+  font-size: 13px;
+  color: #111827;
+  word-break: break-word;
+}
+
+.quote-pdf-field--full {
+  grid-column: 1 / -1;
+}
+
+.quote-pdf-doc__footer {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.quote-pdf-doc__footnote {
+  margin: 8px 0 0;
+  font-size: 10px;
+  color: #9ca3af;
+}

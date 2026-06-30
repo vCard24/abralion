@@ -204,7 +204,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/metal-inox-kesme-tasi.pdf"
     },
     {
       "id": "355mm-metal-sabit-tezgah-kesme-diski",
@@ -252,7 +253,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/355mm-metal-sabit-tezgah-kesme-diski.pdf"
     },
     {
       "id": "metal-inox-taslama-diski",
@@ -355,7 +357,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/metal-inox-taslama-diski.pdf"
     },
     {
       "id": "zr-zirkon-flap-disk",
@@ -379,6 +382,7 @@ window.ABRALION_CATALOG = {
         "Endüstriyel metal işleme ve kaynak sonrası temizlik",
         "Medikal ve kimya sektörüne yönelik paslanmaz parça taşlama"
       ],
+      "technicalCatalog": "assets/documents/products/zr-zirkon-flap-disk.pdf",
       "images": [
         {
           "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-genel.webp",
@@ -578,7 +582,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/ao-aluminyum-oksit-flap-disk.pdf"
     },
     {
       "id": "segmentli-standart-elmas-kesici",
@@ -633,7 +638,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/segmentli-standart-elmas-kesici.pdf"
     },
     {
       "id": "ultra-ince-elmas-disk",
@@ -658,6 +664,7 @@ window.ABRALION_CATALOG = {
         "Cam ve aşındırıcı sert malzemeler",
         "Islak ve kuru kesim uygulamaları"
       ],
+      "technicalCatalog": "assets/documents/products/ultra-ince-elmas-disk.pdf",
       "images": [
         {
           "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-etiket.webp",
@@ -735,7 +742,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/granit-mermer-segmentli-taslama-diski.pdf"
     },
     {
       "id": "asfalt-elmas-kesme-diski",
@@ -792,7 +800,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/asfalt-elmas-kesme-diski.pdf"
     },
     {
       "id": "beton-elmas-kesme-diski",
@@ -847,7 +856,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/beton-elmas-kesme-diski.pdf"
     },
     {
       "id": "genel-amacli-elmas-kesme-diski",
@@ -900,7 +910,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/genel-amacli-elmas-kesme-diski.pdf"
     },
     {
       "id": "sds-plus-2-kesicili-beton-matkap-ucu",
@@ -1115,7 +1126,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/sds-plus-2-kesicili-beton-matkap-ucu.pdf"
     },
     {
       "id": "sds-plus-4-kesicili-beton-matkap-ucu",
@@ -1329,7 +1341,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/sds-plus-4-kesicili-beton-matkap-ucu.pdf"
     },
     {
       "id": "hss-matkap-ucu",
@@ -1419,7 +1432,8 @@ window.ABRALION_CATALOG = {
           "kutu_ici_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/hss-matkap-ucu.pdf"
     },
     {
       "id": "duz-keski-sds-plus",
@@ -1475,7 +1489,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/duz-keski-sds-plus.pdf"
     },
     {
       "id": "duz-keski-sds-max",
@@ -1542,7 +1557,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/duz-keski-sds-max.pdf"
     },
     {
       "id": "sivri-uclu-keski-murc-sds-plus",
@@ -1585,7 +1601,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/sivri-uclu-keski-murc-sds-plus.pdf"
     },
     {
       "id": "sivri-uclu-keski-murc-sds-max",
@@ -1639,7 +1656,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/sivri-uclu-keski-murc-sds-max.pdf"
     },
     {
       "id": "cam-seramik-matkap-ucu",
@@ -1719,7 +1737,8 @@ window.ABRALION_CATALOG = {
           "kutu_ici_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/cam-seramik-matkap-ucu.pdf"
     },
     {
       "id": "sds-max-burc-aleti",
@@ -1765,7 +1784,8 @@ window.ABRALION_CATALOG = {
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/sds-max-burc-aleti.pdf"
     },
     {
       "id": "miknatisli-anahtar-ucu",
@@ -1817,7 +1837,8 @@ window.ABRALION_CATALOG = {
           "kutu_ici_adet": 10,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/miknatisli-anahtar-ucu.pdf"
     },
     {
       "id": "ph2-manyetik-bits-uc",
@@ -1896,7 +1917,8 @@ window.ABRALION_CATALOG = {
           "kutu_ici_adet": 10,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/ph2-manyetik-bits-uc.pdf"
     },
     {
       "id": "profesyonel-maket-bicagi",
@@ -1994,7 +2016,8 @@ window.ABRALION_CATALOG = {
           "kutu_ici_adet": 10,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/profesyonel-maket-bicagi.pdf"
     },
     {
       "id": "abs-govdeli-profesyonel-serit-metre",
@@ -2089,7 +2112,8 @@ window.ABRALION_CATALOG = {
           "kutu_ici_adet": 12,
           "koli_adet": null
         }
-      ]
+      ],
+      "technicalCatalog": "assets/documents/products/abs-govdeli-profesyonel-serit-metre.pdf"
     }
   ]
 };
