@@ -174,17 +174,24 @@
 
   function productDisplayImageUrl(product) {
     if (!product) return '';
+    const base = typeof getBasePath === 'function' ? getBasePath() : '';
+    if (typeof primaryProductImageSrc === 'function') {
+      return primaryProductImageSrc(product, base);
+    }
     const slug = product.slug || product.id;
     let rel = `assets/images/products/${slug}/${slug}-kart.jpg`;
     if (slug === 'metal-inox-kesme-tasi') {
       rel = `assets/images/products/${slug}/${slug}-kart.png`;
     }
-    if (product.images?.[0]?.src) {
-      rel = String(product.images[0].src).replace(/^\//, '');
-    }
-    const base = typeof getBasePath === 'function' ? getBasePath() : '';
     if (rel.startsWith('http')) return rel;
     return `${base}${rel}`.replace(/([^:]\/)\/+/g, '$1');
+  }
+
+  function bindQuoteSlotImage(media, product) {
+    const img = media?.querySelector('img');
+    if (img && product && typeof bindProductImageFallback === 'function') {
+      bindProductImageFallback(img, product, getBasePath());
+    }
   }
 
   function slotMediaHtml(product) {
@@ -204,7 +211,10 @@
     const productId = row.querySelector('.quote-field-product')?.value;
     const product = productId ? products.find((p) => p.id === productId) : null;
     const media = row.querySelector('.quote-product-slot__media');
-    if (media) media.innerHTML = slotMediaHtml(product);
+    if (media) {
+      media.innerHTML = slotMediaHtml(product);
+      bindQuoteSlotImage(media, product);
+    }
 
     const variantId = row.querySelector('.quote-field-variant')?.value;
     const variant = product?.variants?.find(
@@ -712,14 +722,16 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
 
   function productMailImageUrl(product) {
     if (!product) return '';
-    const slug = product.slug || product.id;
-    let rel = `assets/images/products/${slug}/${slug}-kart.jpg`;
-    if (slug === 'metal-inox-kesme-tasi') {
-      rel = `assets/images/products/${slug}/${slug}-kart.png`;
-    }
-    if (product.images?.[0]?.src) {
-      rel = String(product.images[0].src).replace(/^\//, '');
-    }
+    const rel =
+      typeof productImageRelForFetch === 'function'
+        ? productImageRelForFetch(product)
+        : (() => {
+            const slug = product.slug || product.id;
+            if (slug === 'metal-inox-kesme-tasi') {
+              return `assets/images/products/${slug}/${slug}-kart.png`;
+            }
+            return `assets/images/products/${slug}/${slug}-kart.jpg`;
+          })();
     return mailAbsoluteUrl(rel);
   }
 

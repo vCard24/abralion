@@ -58,32 +58,43 @@ function setProductApplicationVisual(base, slug, productName, product) {
     );
   };
 
+  const tryCandidates = (candidates) => {
+    let idx = 0;
+    const tryNext = () => {
+      if (idx >= candidates.length) return;
+      const probe = new Image();
+      probe.onload = () => apply(candidates[idx]);
+      probe.onerror = () => {
+        idx += 1;
+        tryNext();
+      };
+      probe.src = candidates[idx];
+    };
+    tryNext();
+  };
+
   const custom = product?.applicationImage;
   if (custom) {
-    apply(custom.startsWith('assets') ? `${base}${custom}` : custom);
+    const candidates =
+      typeof buildSingleImageCandidates === 'function'
+        ? buildSingleImageCandidates(custom, base)
+        : [custom.startsWith('assets') ? `${base}${custom}` : custom];
+    tryCandidates(candidates);
     return;
   }
 
-  const kart = kartImageSrc(base, slug);
-  const probe = new Image();
-  probe.onload = () => apply(kart);
-  probe.onerror = () => {
-    const g = product?.images?.[0]?.src;
-    if (g) {
-      apply(g.startsWith('assets') ? `${base}${g}` : g);
-    } else {
-      apply(kart);
-    }
-  };
-  probe.src = kart;
+  const candidates =
+    typeof buildProductImageCandidates === 'function'
+      ? buildProductImageCandidates(product || { slug }, base)
+      : [kartImageSrc(base, slug)];
+  tryCandidates(candidates);
 }
 
 function productThumbForCard(base, product) {
-  const slug = product.slug;
-  if (product.images?.[0]?.src) {
-    const src = product.images[0].src;
-    return src.startsWith('assets') ? `${base}${src}` : src;
+  if (typeof primaryProductImageSrc === 'function') {
+    return primaryProductImageSrc(product, base);
   }
+  const slug = product.slug;
   return kartImageSrc(base, slug);
 }
 
@@ -108,7 +119,7 @@ function renderRelatedProducts(product, pm) {
     const descRaw = (p.description || '').slice(0, 90);
     const desc = escapeHtml(descRaw);
     const name = escapeHtml(p.name);
-    return `<a href="${url}" class="noir-related-card group block overflow-hidden rounded-lg">
+    return `<a href="${url}" class="noir-related-card group block overflow-hidden rounded-lg" data-related-product-id="${escapeHtml(p.id)}">
       <div class="noir-related-card__media relative flex items-center justify-center p-8 overflow-hidden">
         <img class="h-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110 opacity-80" src="${thumb}" alt="" loading="lazy" width="400" height="300">
         <span class="noir-related-card__code absolute top-4 left-4 font-technical-data text-[10px] text-white px-2 py-1">${escapeHtml(code)}</span>
@@ -123,6 +134,14 @@ function renderRelatedProducts(product, pm) {
       </div>
     </a>`;
   }).join('');
+
+  if (typeof bindProductImageFallback === 'function') {
+    grid.querySelectorAll('[data-related-product-id]').forEach((link) => {
+      const p = related.find((item) => item.id === link.dataset.relatedProductId);
+      const img = link.querySelector('img');
+      if (p && img) bindProductImageFallback(img, p, base);
+    });
+  }
 }
 
 function escapeHtml(text) {
@@ -156,17 +175,27 @@ function renderGallery(product, container) {
 
   const slides = images
     .map((img, i) => {
-      const src = img.src.startsWith('assets') ? `${base}${img.src}` : img.src;
-      return `<img src="${src}" alt="${escapeHtml(img.alt || product.name)}" class="slider-image max-w-full max-h-full w-auto h-auto object-contain p-2 transition-transform duration-700 group-hover:scale-110${i === 0 ? ' active' : ''}">`;
+      const src =
+        typeof buildSingleImageCandidates === 'function'
+          ? buildSingleImageCandidates(img.src, base)[0]
+          : img.src.startsWith('assets')
+            ? `${base}${img.src}`
+            : img.src;
+      return `<img src="${src}" alt="${escapeHtml(img.alt || product.name)}" class="slider-image max-w-full max-h-full w-auto h-auto object-contain p-2 transition-transform duration-700 group-hover:scale-110${i === 0 ? ' active' : ''}" data-gallery-src="${escapeHtml(img.src)}">`;
     })
     .join('');
 
   const thumbs = images
     .map((img, i) => {
-      const src = img.src.startsWith('assets') ? `${base}${img.src}` : img.src;
+      const src =
+        typeof buildSingleImageCandidates === 'function'
+          ? buildSingleImageCandidates(img.src, base)[0]
+          : img.src.startsWith('assets')
+            ? `${base}${img.src}`
+            : img.src;
       const active = i === 0;
       return `<button type="button" class="gallery-thumb-btn aspect-square bg-surface-elevation border p-2 cursor-pointer transition-colors${active ? ' border-abrasive-red' : ' border-steel-gray/10 hover:border-abrasive-red/50'}" aria-label="Görsel ${i + 1}" aria-selected="${active ? 'true' : 'false'}" data-index="${i}">
-          <img src="${src}" alt="" class="gallery-thumb w-full h-full object-contain">
+          <img src="${src}" alt="" class="gallery-thumb w-full h-full object-contain" data-gallery-src="${escapeHtml(img.src)}">
         </button>`;
     })
     .join('');
@@ -207,6 +236,12 @@ function renderGallery(product, container) {
   }
   if (typeof initGalleryLightbox === 'function') {
     initGalleryLightbox(galleryController);
+  }
+
+  if (typeof bindGalleryImageFallback === 'function') {
+    container.querySelectorAll('[data-gallery-src]').forEach((img) => {
+      bindGalleryImageFallback(img, img.dataset.gallerySrc, base);
+    });
   }
 }
 
@@ -356,7 +391,18 @@ function renderProductPage(product, pm) {
   const description = (product.description || '').slice(0, 160);
   const pageUrl = `${window.OG_SITE_ORIGIN || 'https://abralion.com'}/urun/${slug}.html`;
   const shareImage =
-    product.images?.[0]?.src || `assets/images/products/${slug}/${slug}-kart.jpg`;
+    typeof buildProductImageCandidates === 'function'
+      ? (() => {
+          const relCandidates = buildProductImageCandidates(product, '');
+          const pick =
+            relCandidates.find(
+              (u) => !/\.webp(\?|#|$)/i.test(u) && !u.includes('placeholder')
+            ) || relCandidates[0];
+          if (!pick) return `assets/images/products/${slug}/${slug}-kart.jpg`;
+          const match = pick.match(/assets\/images\/[^\s"']+/);
+          return match ? match[0] : product.images?.[0]?.src || `assets/images/products/${slug}/${slug}-kart.jpg`;
+        })()
+      : product.images?.[0]?.src || `assets/images/products/${slug}/${slug}-kart.jpg`;
   const shareImageAlt = product.images?.[0]?.alt || product.name;
 
   if (typeof setPageSocialMeta === 'function') {

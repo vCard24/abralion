@@ -94,8 +94,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   slots.forEach((col) => {
     if (col) {
       const { key, product, variant } = col;
-      const img = (product.images?.[0]?.src || 'assets/images/placeholder/gorsel.jpg').replace(/^\//, '');
-      const imgSrc = img.startsWith('assets') ? `${base}${img}` : img;
+      const imgSrc =
+        typeof primaryProductImageSrc === 'function'
+          ? primaryProductImageSrc(product, base)
+          : (() => {
+              const img = (product.images?.[0]?.src || 'assets/images/placeholder/gorsel.jpg').replace(/^\//, '');
+              return img.startsWith('assets') ? `${base}${img}` : img;
+            })();
       const sku = variant.urun_kodu || '';
       const inQuote = window.quoteManager?.isInList(product.id, variant.id || variant.urun_kodu);
       const quoteBtnClass = inQuote
@@ -107,7 +112,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <button type="button" class="compare-matrix-remove compare-remove-btn" data-key="${escapeHtml(key)}" aria-label="Kaldır">
             <span class="material-symbols-outlined text-lg" aria-hidden="true">close</span>
           </button>
-          <img src="${escapeHtml(imgSrc)}" alt="" class="h-28 object-contain" loading="lazy">
+          <img src="${escapeHtml(imgSrc)}" alt="" class="h-28 object-contain" loading="lazy" data-compare-product-id="${escapeHtml(product.id)}">
           <p class="product-category font-label-caps text-[10px] uppercase text-abrasive-red m-0">${escapeHtml(product.categoryName)}</p>
           <h3 class="font-headline-md text-[18px] text-center text-white m-0">${escapeHtml(product.name)}</h3>
           <p class="compare-matrix-variant font-label-caps text-[11px] text-abrasive-red uppercase m-0">${escapeHtml(variantBadgeText(variant, product))}</p>
@@ -179,6 +184,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   container.innerHTML = html;
   bindCompareExportHandlers();
+
+  if (typeof bindProductImageFallback === 'function') {
+    container.querySelectorAll('img[data-compare-product-id]').forEach((img) => {
+      const product = columnData.find((col) => col.product?.id === img.dataset.compareProductId)?.product;
+      if (product) bindProductImageFallback(img, product, base);
+    });
+  }
 
   container.querySelectorAll('.compare-matrix-remove').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -252,14 +264,16 @@ function compareAbsoluteUrl(relativePath) {
 
 function compareProductImageUrl(product) {
   if (!product) return '';
-  const slug = product.slug || product.id;
-  let rel = `assets/images/products/${slug}/${slug}-kart.jpg`;
-  if (slug === 'metal-inox-kesme-tasi') {
-    rel = `assets/images/products/${slug}/${slug}-kart.png`;
-  }
-  if (product.images?.[0]?.src) {
-    rel = String(product.images[0].src).replace(/^\//, '');
-  }
+  const rel =
+    typeof productImageRelForFetch === 'function'
+      ? productImageRelForFetch(product)
+      : (() => {
+          const slug = product.slug || product.id;
+          if (slug === 'metal-inox-kesme-tasi') {
+            return `assets/images/products/${slug}/${slug}-kart.png`;
+          }
+          return `assets/images/products/${slug}/${slug}-kart.jpg`;
+        })();
   return compareAbsoluteUrl(rel);
 }
 

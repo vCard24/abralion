@@ -12,7 +12,10 @@ class ProductCard {
     return this.element;
   }
 
-  static kartImageSrc(base, slug) {
+  static kartImageSrc(base, slug, product) {
+    if (typeof primaryProductImageSrc === 'function') {
+      return primaryProductImageSrc(product || { slug, id: slug }, base);
+    }
     const jpg = `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
     const png = `${base}assets/images/products/${slug}/${slug}-kart.png`;
     return slug === 'metal-inox-kesme-tasi' ? png : jpg;
@@ -120,8 +123,7 @@ class ProductCard {
     const base = getBasePath();
     const p = this.product;
     const url = productUrl(p.slug);
-    const kartSrc = ProductCard.kartImageSrc(base, p.slug);
-    const fallback = `${base}assets/images/products/${p.slug}/${p.slug}-kart.png`;
+    const kartSrc = ProductCard.kartImageSrc(base, p.slug, p);
     const spec = ProductCard.formatTechnicalSpec(p);
     const name = p.name.replace(/"/g, '&quot;');
 
@@ -134,8 +136,7 @@ class ProductCard {
     card.innerHTML = `
       <a href="${url}" class="product-card-media block aspect-[4/3] overflow-hidden bg-carbon-black p-4">
         <img class="product-card-image mx-auto max-h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
-          src="${kartSrc}" alt="${name}" loading="lazy" width="400" height="300"
-          data-fallback="${fallback}">
+          src="${kartSrc}" alt="${name}" loading="lazy" width="400" height="300">
       </a>
       <div class="product-card-content flex flex-1 flex-col gap-3 p-5">
         <h3 class="product-card-title font-headline-md text-headline-md leading-snug">
@@ -155,8 +156,7 @@ class ProductCard {
     const p = this.product;
     const firstVar = p.variants?.[0];
     const variantId = firstVar ? (firstVar.urun_kodu || firstVar.id) : p.id;
-    const kartSrc = ProductCard.kartImageSrc(base, p.slug);
-    const fallback = `${base}assets/images/products/${p.slug}/${p.slug}-kart.png`;
+    const kartSrc = ProductCard.kartImageSrc(base, p.slug, p);
     const url = productUrl(p.slug);
     const spec = ProductCard.formatTechnicalSpecLabel(p);
     const name = p.name.replace(/"/g, '&quot;');
@@ -201,8 +201,7 @@ class ProductCard {
     card.innerHTML = `
       <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
         <img class="product-card-image absolute inset-0 h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-          src="${kartSrc}" alt="${name}" loading="lazy" width="400" height="300"
-          data-fallback="${fallback}">
+          src="${kartSrc}" alt="${name}" loading="lazy" width="400" height="300">
         ${featuredBadge}
       </div>
       <div class="mt-auto">
@@ -219,21 +218,8 @@ class ProductCard {
 
   attachEventListeners() {
     const img = this.element.querySelector('.product-card-image');
-    if (img) {
-      img.addEventListener('error', () => {
-        if (img.dataset.galleryFallback) return;
-        const fallback = img.dataset.fallback;
-        if (fallback && img.src !== fallback && !img.dataset.fallbackDone) {
-          img.dataset.fallbackDone = '1';
-          img.src = fallback;
-          return;
-        }
-        const gallerySrc = this.product.images?.[0]?.src;
-        if (gallerySrc) {
-          img.dataset.galleryFallback = '1';
-          img.src = gallerySrc.startsWith('http') ? gallerySrc : `${getBasePath()}${gallerySrc}`;
-        }
-      });
+    if (img && typeof bindProductImageFallback === 'function') {
+      bindProductImageFallback(img, this.product, getBasePath());
     }
 
     const compareBtn = this.element.querySelector('.btn-icon-compare');

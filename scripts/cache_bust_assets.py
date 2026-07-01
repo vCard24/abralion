@@ -6,10 +6,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ASSET_VER = "20260605"
 CSS_VER = "20260603"
+PRODUCT_IMAGE_UTILS_VER = "20260610"
 
 
 def patch(content: str) -> tuple[str, bool]:
     orig = content
+    if "product-image-utils.js" not in content:
+        content = re.sub(
+            r'(<script defer src="(\.\./)?assets/js/site\.js(?:\?v=[^"]+)?"></script>)',
+            lambda m: (
+                f'<script defer src="{m.group(2) or ""}assets/js/product-image-utils.js?v={PRODUCT_IMAGE_UTILS_VER}"></script>\n  '
+                + m.group(1)
+            ),
+            content,
+        )
     content = re.sub(
         r'src="(\.\./)?assets/js/site\.js(?:\?v=[^"]+)?"',
         lambda m: f'src="{m.group(1) or ""}assets/js/site.js?v={ASSET_VER}"',

@@ -187,13 +187,12 @@ window.initPdfLinks = function (root = document) {
 /** @deprecated initPdfLinks kullanin */
 window.initPdfDownloadLinks = window.initPdfLinks;
 
-/** Mega menü — ürün küçük görseli (katalog → kart dosyası) */
+/** Mega menü — ürün küçük görseli (kart → galeri, WebP uyumluluğu) */
 window.productThumbUrl = function (base, product) {
-  const slug = product.slug;
-  if (product.images?.[0]?.src) {
-    const src = product.images[0].src;
-    return src.startsWith('assets') ? `${base}${src}` : src;
+  if (typeof primaryProductImageSrc === 'function') {
+    return primaryProductImageSrc(product, base);
   }
+  const slug = product.slug;
   if (slug === 'metal-inox-kesme-tasi') {
     return `${base}assets/images/products/${slug}/${slug}-kart.png`;
   }
