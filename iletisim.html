@@ -127,6 +127,10 @@
                   <textarea id="message" name="message" class="form-textarea contact-input-field p-3 text-white resize-none" required aria-required="true" placeholder="Projeniz hakkında detaylı bilgi verin..." rows="4"></textarea>
                   <div class="form-error" id="message-error"></div>
                 </div>
+                <div class="hidden" aria-hidden="true" style="position:absolute;left:-9999px;height:0;overflow:hidden">
+                  <label for="contact-website">Website</label>
+                  <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+                </div>
                 <div class="md:col-span-2 mt-2">
                   <button type="submit" class="w-full bg-abrasive-red text-white py-4 rounded-lg font-label-caps text-label-caps uppercase tracking-wider hover:brightness-110 transition-all flex justify-center items-center gap-2">
                     Teklifi Gönder
@@ -265,7 +269,7 @@
     </div>
   </footer>
 
-  <script defer src="assets/js/site.js?v=20260604"></script>
+  <script defer src="assets/js/site.js?v=20260605"></script>
   <script defer src="assets/js/products-data.js"></script>
   <script defer src="assets/js/FormValidator.js"></script>
   <script defer src="assets/js/CompareManager.js"></script>
@@ -273,7 +277,7 @@
   <script defer src="assets/js/Header.js?v=20260603"></script>
   <script defer src="assets/js/MegaMenu.js?v=20260526c"></script>
   <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/pages/contact.js"></script>
+  <script defer src="assets/js/pages/contact.js?v=20260605"></script>
   <script>
     document.querySelectorAll('.page-contact .contact-input-field').forEach(function (input) {
       var label = input.parentElement && input.parentElement.querySelector('label');

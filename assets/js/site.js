@@ -379,6 +379,29 @@ function initWhatsAppFloat() {
   document.body.appendChild(link);
 }
 
+/** Form gönderimi — Hostinger PHP (api/send-mail.php) */
+window.sendFormMail = async function sendFormMail(payload) {
+  if (window.location.protocol === 'file:') {
+    throw new Error('Form gönderimi yalnızca canlı web sitesinden yapılabilir.');
+  }
+  const base = getBasePath();
+  const response = await fetch(`${base}api/send-mail.php`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  let data = {};
+  try {
+    data = await response.json();
+  } catch {
+    /* ignore */
+  }
+  if (!response.ok || !data.ok) {
+    throw new Error(data.error || 'E-posta gönderilemedi. Lütfen tekrar deneyin.');
+  }
+  return data;
+};
+
 function initFooter() {
   initFooterCerts();
   initFooterSocial();

@@ -91,7 +91,39 @@
       return;
     }
 
-    formValidator.showSuccess('✓ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
-    setTimeout(() => formValidator.reset(), 3000);
+    const form = document.getElementById('contact-form');
+    const submitBtn = form?.querySelector('[type="submit"]');
+    const payload = {
+      type: 'contact',
+      name: form.elements.name?.value?.trim() || '',
+      email: form.elements.email?.value?.trim() || '',
+      phone: form.elements.phone?.value?.trim() || '',
+      subject: form.elements.subject?.value?.trim() || '',
+      message: form.elements.message?.value?.trim() || '',
+      website: document.getElementById('contact-website')?.value || '',
+    };
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+    }
+
+    sendFormMail(payload)
+      .then(() => {
+        formValidator.showSuccess(
+          '✓ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.'
+        );
+        setTimeout(() => formValidator.reset(), 3000);
+      })
+      .catch((err) => {
+        const messageEl = document.getElementById('message-error');
+        if (messageEl) {
+          messageEl.textContent = err.message || 'Gönderim başarısız.';
+          messageEl.classList.add('show');
+          document.getElementById('message')?.classList.add('error');
+        }
+      })
+      .finally(() => {
+        if (submitBtn) submitBtn.disabled = false;
+      });
   }
 })();

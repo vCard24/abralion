@@ -621,21 +621,6 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
     document.getElementById('quote-form-heading')?.scrollIntoView();
   }
 
-  function tryOpenMailto(data) {
-    try {
-      const body = encodeURIComponent(buildSummaryText(data));
-      const subject = encodeURIComponent(`Fiyat Teklifi — ${data.name} (${data.reference})`);
-      const link = document.createElement('a');
-      link.href = `mailto:info@abralion.com?subject=${subject}&body=${body}`;
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-    } catch {
-      /* mailto isteğe bağlı */
-    }
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     const data = collectFormData();
@@ -646,14 +631,47 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
 
     data.reference = makeReference();
     data.submittedAt = new Date().toISOString();
-    syncQuoteStorage();
-    saveSubmit(data);
-    showThankYou(data);
-    tryOpenMailto(data);
 
-    const url = new URL(window.location.href);
-    url.searchParams.set('tesekkur', '1');
-    window.history.replaceState({}, '', url.pathname + url.search);
+    const submitBtn = document.querySelector('#quote-form [type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    const mailPayload = {
+      type: 'quote',
+      website: document.getElementById('quote-website')?.value || '',
+      reference: data.reference,
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      company: data.company,
+      country: data.country,
+      city: data.city,
+      message: data.message,
+      application: data.application,
+      volume: data.volume,
+      delivery: data.delivery,
+      urgency: data.urgency,
+      products: data.products.map((row) => ({
+        productName: row.product?.name || row.productId || '',
+        label: row.label || '',
+        qty: row.qty || '',
+      })),
+    };
+
+    sendFormMail(mailPayload)
+      .then(() => {
+        syncQuoteStorage();
+        saveSubmit(data);
+        showThankYou(data);
+        const url = new URL(window.location.href);
+        url.searchParams.set('tesekkur', '1');
+        window.history.replaceState({}, '', url.pathname + url.search);
+      })
+      .catch((err) => {
+        showToast(err.message || 'E-posta gönderilemedi.', 'error');
+      })
+      .finally(() => {
+        if (submitBtn) submitBtn.disabled = false;
+      });
   }
 
   function urgencyLabel(value) {
