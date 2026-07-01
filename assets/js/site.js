@@ -227,14 +227,14 @@ function initFooterCerts() {
   wrap.setAttribute('aria-label', 'Sertifikasyon işaretleri');
 
   [
-    { src: 'mpa-logo.png', alt: 'MPA Hannover' },
-    { src: 'eac-logo.png', alt: 'EAC uygunluk işareti' },
-  ].forEach(({ src, alt }) => {
+    { src: 'mpa-logo.svg', alt: 'MPA Hannover', width: 82, height: 29 },
+    { src: 'eac-logo.svg', alt: 'EAC uygunluk işareti', width: 29, height: 29 },
+  ].forEach(({ src, alt, width, height }) => {
     const img = document.createElement('img');
     img.src = `${base}assets/images/${src}`;
     img.alt = alt;
-    img.width = 120;
-    img.height = 48;
+    img.width = width;
+    img.height = height;
     img.loading = 'lazy';
     img.decoding = 'async';
     wrap.appendChild(img);

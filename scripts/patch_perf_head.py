@@ -9,6 +9,7 @@ ASYNC_CSS = (
     "responsive.css",
     "dark-theme.css",
     "site-extra.css",
+    "noir-migration.css",
 )
 
 COMPARE_PAGES = {"karsilastir.html"}
