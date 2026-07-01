@@ -386,8 +386,19 @@ function initFooter() {
   initWhatsAppFloat();
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initFooter);
-} else {
-  initFooter();
+function bootSiteFooter() {
+  try {
+    initFooter();
+  } catch (err) {
+    console.error('Footer init:', err);
+    initWhatsAppFloat();
+  }
 }
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootSiteFooter);
+} else {
+  bootSiteFooter();
+}
+
+initWhatsAppFloat();
