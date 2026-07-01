@@ -339,13 +339,16 @@ function resolveImageDataUrl(url) {
   return xhrBlobToDataUrl(url).then((dataUrl) => (dataUrl ? dataUrl : urlToDataUrl(url)));
 }
 
-function ensureCompareLogoDataUrl() {
-  if (compareLogoDataUrl) return Promise.resolve(compareLogoDataUrl);
-  return resolveImageDataUrl(compareAbsoluteUrl('assets/images/logo.svg')).then((data) => {
-    compareLogoDataUrl = data || '';
-    return compareLogoDataUrl;
-  });
-}
+  function ensureCompareLogoDataUrl() {
+    if (compareLogoDataUrl) return Promise.resolve(compareLogoDataUrl);
+    if (typeof window.ensureAbralionPdfLogoDataUrl === 'function') {
+      return window.ensureAbralionPdfLogoDataUrl().then((data) => {
+        compareLogoDataUrl = data || '';
+        return compareLogoDataUrl;
+      });
+    }
+    return Promise.resolve('');
+  }
 
 function resolveCompareExportImages(state) {
   return Promise.all(
@@ -401,11 +404,15 @@ function buildCompareExportSheet(state) {
 
   sheet.innerHTML = `<div class="compare-export-doc">
     <header class="compare-export-doc__header">
-      ${logoHtml}
-      <div>
-        <h1>Ürün Karşılaştırma</h1>
-        <p class="compare-export-doc__date">${escapeHtml(dateStr)}</p>
-      </div>
+      <table class="compare-export-doc__header-table" role="presentation" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="compare-export-doc__logo-cell">${logoHtml}</td>
+          <td class="compare-export-doc__header-text">
+            <h1>Ürün Karşılaştırma</h1>
+            <p class="compare-export-doc__date">${escapeHtml(dateStr)}</p>
+          </td>
+        </tr>
+      </table>
     </header>
     <p class="compare-export-doc__summary">${state.entries.length} / ${state.maxSlots} model karşılaştırılıyor</p>
     ${mixedNote}

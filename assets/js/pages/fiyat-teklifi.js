@@ -65,6 +65,7 @@
       const row = e.target.closest('.quote-product-row');
       if (e.target.matches('.quote-field-category')) onCategoryChange(row);
       else if (e.target.matches('.quote-field-product')) onProductChange(row);
+      else if (e.target.matches('.quote-field-variant')) updateRowMedia(row);
       syncQuoteStorage();
       clearRowError();
     });
@@ -164,40 +165,56 @@
     if (text) {
       text.textContent =
         count === 1
-          ? 'Karşılaştırma listenizden 1 model aktarıldı.'
-          : `Karşılaştırma listenizden ${count} model aktarıldı.`;
+          ? 'Karşılaştırma listenizden 1 model aktarıldı. Model, miktar ve diğer alanları buradan düzenleyebilirsiniz.'
+          : `Karşılaştırma listenizden ${count} model aktarıldı. Model, miktar ve diğer alanları buradan düzenleyebilirsiniz.`;
     }
     banner.hidden = false;
     banner.classList.remove('hidden');
   }
 
-  function addPrefillRow(data) {
-    if (rowCount >= MAX_ROWS) return;
-    const rowsHost = document.getElementById('quote-product-rows');
-    if (!rowsHost) return;
+  function productDisplayImageUrl(product) {
+    if (!product) return '';
+    const slug = product.slug || product.id;
+    let rel = `assets/images/products/${slug}/${slug}-kart.jpg`;
+    if (slug === 'metal-inox-kesme-tasi') {
+      rel = `assets/images/products/${slug}/${slug}-kart.png`;
+    }
+    if (product.images?.[0]?.src) {
+      rel = String(product.images[0].src).replace(/^\//, '');
+    }
+    const base = typeof getBasePath === 'function' ? getBasePath() : '';
+    if (rel.startsWith('http')) return rel;
+    return `${base}${rel}`.replace(/([^:]\/)\/+/g, '$1');
+  }
 
-    const index = rowCount + 1;
-    rowCount += 1;
+  function slotMediaHtml(product) {
+    if (!product) {
+      return `<div class="quote-product-slot__placeholder" aria-hidden="true">
+        <span class="quote-product-slot__plus">+</span>
+        <span class="quote-product-slot__placeholder-text">Ürün seçin</span>
+      </div>`;
+    }
+    const img = productDisplayImageUrl(product);
+    return img
+      ? `<img src="${escapeAttr(img)}" alt="" width="120" height="120" loading="lazy" decoding="async" />`
+      : `<div class="quote-product-slot__placeholder"><span class="quote-product-slot__plus">+</span></div>`;
+  }
 
-    const row = document.createElement('div');
-    row.className = 'quote-product-row quote-prefill-card';
-    row.dataset.rowIndex = String(index);
-    row.innerHTML = `
-      <div class="quote-prefill-card__body">
-        <p class="quote-prefill-card__cat">${escapeHtml(data.categoryName || '')}</p>
-        <p class="quote-prefill-card__name">${escapeHtml(data.productName || '')}</p>
-        <p class="quote-prefill-card__variant">${escapeHtml(data.variantLabel || data.variantId || '')}</p>
-      </div>
-      <div class="quote-field">
-        <label>Miktar <span class="quote-optional-tag">opsiyonel</span></label>
-        <input type="text" class="quote-input quote-field-qty" placeholder="Adet / koli" aria-label="Miktar ${index}" value="${escapeAttr(data.qty || '')}">
-      </div>
-      <input type="hidden" class="quote-field-category" value="${escapeAttr(data.categoryId || '')}">
-      <input type="hidden" class="quote-field-product" value="${escapeAttr(data.productId || '')}">
-      <input type="hidden" class="quote-field-variant" value="${escapeAttr(data.variantId || '')}">`;
+  function updateRowMedia(row) {
+    const productId = row.querySelector('.quote-field-product')?.value;
+    const product = productId ? products.find((p) => p.id === productId) : null;
+    const media = row.querySelector('.quote-product-slot__media');
+    if (media) media.innerHTML = slotMediaHtml(product);
 
-    rowsHost.appendChild(row);
-    updateRowControls();
+    const variantId = row.querySelector('.quote-field-variant')?.value;
+    const variant = product?.variants?.find(
+      (v) => v.id === variantId || v.urun_kodu === variantId || String(v.id) === String(variantId)
+    );
+    const codeEl = row.querySelector('.quote-product-slot__code');
+    if (codeEl) {
+      const code = variant?.urun_kodu || variant?.id || '';
+      codeEl.textContent = code ? String(code) : '—';
+    }
   }
 
   function addProductRow(prefill = {}) {
@@ -209,37 +226,43 @@
     rowCount += 1;
 
     const row = document.createElement('div');
-    row.className = 'quote-product-row';
+    row.className = 'quote-product-row quote-product-slot';
     row.dataset.rowIndex = String(index);
     row.innerHTML = `
-      <p class="quote-row-index">Ürün ${index}</p>
-      <div class="quote-field-stack">
-        <div class="quote-field">
-          <label>Kategori *</label>
-          <select class="quote-select quote-field-category" aria-label="Kategori ${index}">
-            <option value="">Kategori seçin</option>
-            ${categories
-              .slice()
-              .sort((a, b) => (a.order || 0) - (b.order || 0))
-              .map((c) => `<option value="${escapeAttr(c.id)}">${escapeHtml(c.name)}</option>`)
-              .join('')}
-          </select>
-        </div>
-        <div class="quote-field">
-          <label>Ürün *</label>
-          <select class="quote-select quote-field-product" disabled aria-label="Ürün ${index}">
-            <option value="">Önce kategori seçin</option>
-          </select>
-        </div>
-        <div class="quote-field">
-          <label>Model / Kod *</label>
-          <select class="quote-select quote-field-variant" disabled aria-label="Model ${index}">
-            <option value="">Önce ürün seçin</option>
-          </select>
-        </div>
-        <div class="quote-field">
-          <label>Miktar <span class="quote-optional-tag">opsiyonel</span></label>
-          <input type="text" class="quote-input quote-field-qty" placeholder="Adet / koli" aria-label="Miktar ${index}">
+      <div class="quote-product-slot__head">
+        <p class="quote-product-slot__label">Ürün ${index}</p>
+      </div>
+      <div class="quote-product-slot__layout">
+        <div class="quote-product-slot__media">${slotMediaHtml(null)}</div>
+        <div class="quote-product-slot__selects">
+          <div class="quote-field">
+            <label>Kategori *</label>
+            <select class="quote-select quote-field-category" aria-label="Kategori ${index}">
+              <option value="">Kategori seçin</option>
+              ${categories
+                .slice()
+                .sort((a, b) => (a.order || 0) - (b.order || 0))
+                .map((c) => `<option value="${escapeAttr(c.id)}">${escapeHtml(c.name)}</option>`)
+                .join('')}
+            </select>
+          </div>
+          <div class="quote-field">
+            <label>Ürün *</label>
+            <select class="quote-select quote-field-product" disabled aria-label="Ürün ${index}">
+              <option value="">Önce kategori seçin</option>
+            </select>
+          </div>
+          <div class="quote-field">
+            <label>Model / Kod *</label>
+            <select class="quote-select quote-field-variant" disabled aria-label="Model ${index}">
+              <option value="">Önce ürün seçin</option>
+            </select>
+          </div>
+          <div class="quote-field">
+            <label>Miktar <span class="quote-optional-tag">opsiyonel</span></label>
+            <input type="text" class="quote-input quote-field-qty" placeholder="Adet / koli" aria-label="Miktar ${index}">
+          </div>
+          <p class="quote-product-slot__code">—</p>
         </div>
       </div>`;
 
@@ -254,6 +277,7 @@
       row.querySelector('.quote-field-qty').value = prefill.qty;
     }
 
+    updateRowMedia(row);
     updateRowControls();
   }
 
@@ -270,6 +294,7 @@
 
     if (!catId) {
       productSel.disabled = true;
+      updateRowMedia(row);
       return;
     }
 
@@ -284,6 +309,8 @@
     if (productId && [...productSel.options].some((o) => o.value === productId)) {
       productSel.value = productId;
       onProductChange(row, variantId);
+    } else {
+      updateRowMedia(row);
     }
   }
 
@@ -296,6 +323,7 @@
     const product = products.find((p) => p.id === productId);
     if (!product?.variants?.length) {
       variantSel.disabled = true;
+      updateRowMedia(row);
       return;
     }
 
@@ -313,6 +341,7 @@
       );
       if (match) variantSel.value = match.id || match.urun_kodu;
     }
+    updateRowMedia(row);
   }
 
   function variantOptionLabel(variant, product) {
@@ -530,7 +559,7 @@
   }
 
   function buildPrintHtml(data) {
-    const logoSrc = pdfLogoDataUrl || mailAbsoluteUrl('assets/images/logo.svg');
+    const logoSrc = pdfLogoDataUrl || '';
     const logoHtml = logoSrc
       ? `<img src="${escapeAttr(logoSrc)}" alt="Abralion" style="display:block;width:160px;height:auto;margin-bottom:12px">`
       : '<p style="margin:0 0 12px;font-family:Montserrat,Arial,sans-serif;font-size:22px;font-weight:800;color:#E2231A">ABRALION</p>';
@@ -877,10 +906,13 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
 
   function ensurePdfLogoDataUrl() {
     if (pdfLogoDataUrl) return Promise.resolve(pdfLogoDataUrl);
-    return resolveImageDataUrl(mailAbsoluteUrl('assets/images/logo.svg')).then((data) => {
-      pdfLogoDataUrl = data || '';
-      return pdfLogoDataUrl;
-    });
+    if (typeof window.ensureAbralionPdfLogoDataUrl === 'function') {
+      return window.ensureAbralionPdfLogoDataUrl().then((data) => {
+        pdfLogoDataUrl = data || '';
+        return pdfLogoDataUrl;
+      });
+    }
+    return Promise.resolve('');
   }
 
   function waitForOneImage(img) {
@@ -908,6 +940,12 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
     if (src.startsWith('data:')) {
       return urlToDataUrl(src).then((dataUrl) => applyPdfImageDataUrl(img, dataUrl || ''));
     }
+
+    const row = img.closest('.quote-product-row');
+    const slotImg = row?.querySelector('.quote-product-slot__media img');
+    const slotDataUrl = imageElementToDataUrl(slotImg);
+    if (slotDataUrl) return applyPdfImageDataUrl(img, slotDataUrl);
+
     return urlToDataUrl(src)
       .then((dataUrl) => applyPdfImageDataUrl(img, dataUrl || ''))
       .catch(() => applyPdfImageDataUrl(img, ''));
@@ -1033,11 +1071,15 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
 
     sheet.innerHTML = `<div class="quote-pdf-doc">
       <header class="quote-pdf-doc__header">
-        ${pdfLogoHtml('quote-pdf-doc__logo')}
-        <div class="quote-pdf-doc__header-main">
-          <h1>Fiyat Teklifi Talep Formu</h1>
-          <p class="quote-pdf-doc__date">Talep tarihi: ${escapeHtml(dateStr)}${data.reference ? ` · Ref: ${escapeHtml(data.reference)}` : ''}</p>
-        </div>
+        <table class="quote-pdf-doc__header-table" role="presentation" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="quote-pdf-doc__logo-cell">${pdfLogoHtml('quote-pdf-doc__logo')}</td>
+            <td class="quote-pdf-doc__header-main">
+              <h1>Fiyat Teklifi Talep Formu</h1>
+              <p class="quote-pdf-doc__date">Talep tarihi: ${escapeHtml(dateStr)}${data.reference ? ` · Ref: ${escapeHtml(data.reference)}` : ''}</p>
+            </td>
+          </tr>
+        </table>
       </header>
       ${pdfBlock('Seçilen ürünler', `<div class="quote-pdf-products">${productsHtml}</div>`)}
       ${pdfBlock('İletişim bilgileri', `<div class="quote-pdf-fields">${contactHtml}</div>`)}

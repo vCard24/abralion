@@ -188,6 +188,128 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.page-quote .quote-products-slots {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .page-quote .quote-products-slots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.page-quote .quote-product-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.page-quote .quote-product-slot__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.page-quote .quote-product-slot__label {
+  margin: 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #e2231a;
+}
+
+.page-quote .quote-product-slot__layout {
+  display: grid;
+  grid-template-columns: minmax(96px, 120px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 480px) {
+  .page-quote .quote-product-slot__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-quote .quote-product-slot__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+
+.page-quote .quote-product-slot__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.35rem;
+}
+
+.page-quote .quote-product-slot__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  color: #8e8e93;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.page-quote .quote-product-slot__plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.page-quote .quote-product-slot__placeholder-text {
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.page-quote .quote-product-slot__selects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.page-quote .quote-product-slot__selects .quote-field {
+  margin: 0;
+}
+
+.page-quote .quote-product-slot__selects .quote-field label {
+  font-size: 0.6875rem;
+}
+
+.page-quote .quote-product-slot__code {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #a8a8ad;
+}
+
 .page-quote .quote-prefill-card {
   display: grid;
   gap: 1.25rem;
@@ -494,12 +616,29 @@
 }
 
 .quote-pdf-doc__header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding-bottom: 16px;
   margin-bottom: 18px;
+  padding-bottom: 16px;
   border-bottom: 2px solid #e2231a;
+}
+
+.quote-pdf-doc__header-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.quote-pdf-doc__logo-cell {
+  width: 170px;
+  vertical-align: middle;
+  padding-right: 16px;
+}
+
+.quote-pdf-doc__header-main {
+  vertical-align: middle;
+}
+
+.quote-pdf-doc__logo {
+  display: block;
+  line-height: 0;
 }
 
 .quote-pdf-doc__logo-text {
@@ -621,23 +760,28 @@
 
 .quote-pdf-doc__logo-image {
   display: block;
-  width: 160px;
-  max-width: 160px;
+  width: 150px;
+  max-width: 150px;
   height: auto;
 }
 
 .quote-pdf-products {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+  align-items: stretch;
 }
 
 .quote-pdf-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   overflow: hidden;
   background: #fff;
+  box-sizing: border-box;
 }
 
 .quote-pdf-card__badge {
