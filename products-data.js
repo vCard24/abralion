@@ -284,8 +284,8 @@ window.ABRALION_CATALOG = {
           "alt": "Metal / Inox Taşlama Diski - productsmetal inox taslama diski"
         },
         {
-          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski-kullanim.webp",
-          "alt": "Metal / Inox Taşlama Diski - productsmetal inox taslama diski kullanim"
+          "src": "assets/images/home/hero-bg.jpg",
+          "alt": "Metal / Inox Taşlama Diski - kullanım görseli"
         },
         {
           "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski1.webp",
