@@ -1,8 +1,4 @@
 # config.php doğrudan indirilemesin
-<Files "config.example.php">
-    Require all denied
-</Files>
-
 <Files "config.php">
     Require all denied
 </Files>
