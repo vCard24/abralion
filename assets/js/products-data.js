@@ -1,3 +1,7 @@
+/* Abralion ürün kataloğu — düzenle: assets/js/products-data.js
+   Otomatik: Cursor kayıtta + git commit öncesi min.js üretilir.
+   Manuel: npm run sync:catalog
+   Site yükler: products-data.min.js */
 window.ABRALION_CATALOG = {
   "categories": [
     {

@@ -1,0 +1,10 @@
+#!/bin/sh
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+if command -v python >/dev/null 2>&1; then
+  exec python "$ROOT/scripts/hooks/pre-commit.py"
+fi
+if command -v python3 >/dev/null 2>&1; then
+  exec python3 "$ROOT/scripts/hooks/pre-commit.py"
+fi
+echo "pre-commit: python bulunamadi" >&2
+exit 1

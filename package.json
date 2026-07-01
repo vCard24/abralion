@@ -2,7 +2,10 @@
   "name": "abralion-site",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --minify"
+    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --minify",
+    "build:js": "python scripts/minify_products_data.py",
+    "sync:catalog": "python scripts/sync_catalog.py",
+    "install:hooks": "python scripts/install_git_hooks.py"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",

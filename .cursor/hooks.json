@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": "python .cursor/hooks/sync-catalog-after-edit.py",
+        "matcher": "products-data\\.js"
+      }
+    ]
+  }
+}

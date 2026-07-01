@@ -20,7 +20,7 @@
     loadCatalog().catch((err) => {
       console.error('Katalog yüklenemedi:', err);
       showToast(
-        'Ürün kataloğu yüklenemedi. fiyat-teklifi.html ile aynı klasörde assets/js/products-data.js dosyasının olduğundan emin olun.',
+        'Ürün kataloğu yüklenemedi. assets/js/products-data.min.js dosyasının yüklendiğinden emin olun.',
         'error'
       );
       if (rowCount === 0) addProductRow();
@@ -81,7 +81,7 @@
       products = pm.getAllProducts();
       categories = window.ABRALION_CATALOG?.categories || pm.categories || [];
     } else {
-      throw new Error('Ürün kataloğu bulunamadı (products-data.js)');
+      throw new Error('Ürün kataloğu bulunamadı (products-data.min.js)');
     }
 
     if (!products.length) {

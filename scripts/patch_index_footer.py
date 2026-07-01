@@ -68,7 +68,7 @@ NEW_FOOTER = r"""  <footer class="footer bg-carbon-black border-t border-white/5
           </li>
           <li class="flex items-start gap-3">
             <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="location_on">location_on</span>
-            <span>Rusya — EKS-PLAST LLC<br><span class="text-xs opacity-60">Endüstriyel tedarik operasyon merkezi</span></span>
+            <span>Rusya — EKS-PLAST LLC<br><span class="text-xs footer-caption">Endüstriyel tedarik operasyon merkezi</span></span>
           </li>
         </ul>
       </motion>

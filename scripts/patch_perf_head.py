@@ -6,6 +6,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 ASYNC_CSS = (
+    "main.css",
+    "components.css",
     "responsive.css",
     "dark-theme.css",
     "site-extra.css",
@@ -63,15 +65,21 @@ def patch_fonts(content: str) -> str:
 def patch_blocking_css(content: str, prefix: str) -> str:
     for name in ASYNC_CSS:
         pattern = re.compile(
-            rf'\s*<link rel="stylesheet" href="{re.escape(prefix)}assets/css/{re.escape(name)}(?:\?v=[^"]+)?">\s*',
+            rf'(\s*)<link rel="stylesheet" href="({re.escape(prefix)}assets/css/{re.escape(name)}(?:\?v=[^"]+)?)">\s*',
             re.MULTILINE,
         )
-        href = f"{prefix}assets/css/{name}"
-        if name != "dark-theme.css":
-            href += "?v=20260603" if "?" not in name else ""
-        if name == "dark-theme.css":
-            href = f"{prefix}assets/css/dark-theme.css"
-        content = pattern.sub("\n" + async_stylesheet(href) + "\n", content, count=1)
+
+        def repl(match: re.Match[str]) -> str:
+            indent = match.group(1) or "  "
+            href = match.group(2)
+            if name == "dark-theme.css":
+                href = f"{prefix}assets/css/dark-theme.css"
+            elif name in ("main.css", "components.css", "responsive.css", "site-extra.css", "noir-migration.css"):
+                if "?v=" not in href and name != "main.css":
+                    href = f"{prefix}assets/css/{name}?v=20260603"
+            return "\n" + async_stylesheet(href).lstrip() + "\n"
+
+        content = pattern.sub(repl, content)
     return content
 
 

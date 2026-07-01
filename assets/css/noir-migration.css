@@ -569,7 +569,7 @@ footer.footer .footer-links {
 
 footer.footer .footer-description {
   margin: 0;
-  color: #8e8e93;
+  color: #bdbdc2;
 }
 
 footer.footer h4 {
@@ -578,7 +578,11 @@ footer.footer h4 {
 
 footer.footer p,
 footer.footer .text-on-surface-variant {
-  color: #8e8e93;
+  color: #bdbdc2;
+}
+
+footer.footer .footer-caption {
+  color: #aeaeb3;
 }
 
 footer.footer a {

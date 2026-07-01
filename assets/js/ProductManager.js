@@ -34,7 +34,7 @@ class ProductManager {
       }
       console.error('Ürün verisi yüklenemedi:', fetchError);
       throw new Error(
-        'Ürün kataloğu yüklenemedi. Sayfayı bir web sunucusu ile açın veya products-data.js dosyasının yüklendiğinden emin olun.'
+        'Ürün kataloğu yüklenemedi. Sayfayı bir web sunucusu ile açın veya products-data.min.js dosyasının yüklendiğinden emin olun.'
       );
     }
   }
