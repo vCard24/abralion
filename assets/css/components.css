@@ -1220,3 +1220,83 @@
   border-radius: 12px;
   overflow: hidden;
 }
+
+/* Sabit WhatsApp — tüm sayfalar (components.css her zaman yüklenir) */
+#whatsapp-float,
+.whatsapp-float {
+  position: fixed !important;
+  right: max(1rem, env(safe-area-inset-right, 0px));
+  bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+  z-index: 10050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  box-sizing: border-box;
+  pointer-events: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#whatsapp-float svg,
+.whatsapp-float svg {
+  width: 1.65rem;
+  height: 1.65rem;
+  max-width: 1.65rem;
+  max-height: 1.65rem;
+  display: block;
+  flex-shrink: 0;
+}
+
+#whatsapp-float:hover,
+.whatsapp-float:hover {
+  color: #fff;
+  transform: scale(1.06);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.42);
+}
+
+#whatsapp-float:focus-visible,
+.whatsapp-float:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+body.has-compare-bar #whatsapp-float,
+body.has-compare-bar .whatsapp-float {
+  bottom: max(5.25rem, calc(env(safe-area-inset-bottom, 0px) + 4.5rem));
+}
+
+@media (max-width: 640px) {
+  #whatsapp-float,
+  .whatsapp-float {
+    width: 3.25rem;
+    height: 3.25rem;
+    right: max(0.75rem, env(safe-area-inset-right, 0px));
+    bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  body.has-compare-bar #whatsapp-float,
+  body.has-compare-bar .whatsapp-float {
+    bottom: max(5rem, calc(env(safe-area-inset-bottom, 0px) + 4.25rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #whatsapp-float,
+  .whatsapp-float {
+    transition: none;
+  }
+
+  #whatsapp-float:hover,
+  .whatsapp-float:hover {
+    transform: none;
+  }
+}
