@@ -8,3 +8,5 @@ venv/
 .vscode/
 *.log
 api/config.php
+api/outbox/*
+!api/outbox/.gitkeep

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/quote-email-builder.php';
+
 header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -47,11 +49,18 @@ if (!in_array($type, ['contact', 'quote'], true)) {
 try {
     if ($type === 'contact') {
         [$subject, $body, $replyTo] = buildContactMail($data);
+        sendMail($config, (string) $config['mail_to'], $subject, $body, normalizeReplyTo($replyTo, $config));
     } else {
-        [$subject, $body, $replyTo] = buildQuoteMail($data);
+        [$subject, $htmlBody, $plainBody, $replyTo] = buildQuoteMail($data, $config);
+        sendHtmlMail(
+            $config,
+            (string) $config['mail_to'],
+            $subject,
+            $htmlBody,
+            $plainBody,
+            normalizeReplyTo($replyTo, $config)
+        );
     }
-
-    sendMail($config, (string) $config['mail_to'], $subject, $body, normalizeReplyTo($replyTo, $config));
     echo json_encode(['ok' => true]);
 } catch (Throwable $e) {
     error_log('Abralion send-mail: ' . $e->getMessage());
@@ -121,7 +130,7 @@ function buildContactMail(array $data): array
     return [$subject, $body, $email];
 }
 
-function buildQuoteMail(array $data): array
+function buildQuoteMail(array $data, array $config): array
 {
     $name = trim((string) ($data['name'] ?? ''));
     $email = trim((string) ($data['email'] ?? ''));
@@ -136,50 +145,10 @@ function buildQuoteMail(array $data): array
     $reference = trim((string) ($data['reference'] ?? '—'));
     $subject = '[Abralion Teklif] ' . $name . ' — ' . $reference;
 
-    $lines = [
-        'Yeni fiyat teklifi talebi',
-        '=========================',
-        'Referans: ' . $reference,
-        'Ad Soyad: ' . $name,
-        'Telefon: ' . $phone,
-        'E-posta: ' . $email,
-        'Firma: ' . trim((string) ($data['company'] ?? '')) ?: '—',
-        'Ülke: ' . trim((string) ($data['country'] ?? '')),
-        'Şehir: ' . trim((string) ($data['city'] ?? '')),
-        'Uygulama: ' . trim((string) ($data['application'] ?? '')) ?: '—',
-        'Miktar: ' . trim((string) ($data['volume'] ?? '')) ?: '—',
-        'Teslimat: ' . trim((string) ($data['delivery'] ?? '')) ?: '—',
-        'Aciliyet: ' . trim((string) ($data['urgency'] ?? '')) ?: '—',
-        '',
-        'Mesaj:',
-        trim((string) ($data['message'] ?? '')) ?: '—',
-        '',
-        '--- ÜRÜNLER ---',
-    ];
+    $html = abr_strip_data_urls_from_html(abr_build_quote_email_html($data, $config));
+    $plain = abr_build_quote_email_plain($data);
 
-    $products = $data['products'] ?? [];
-    if (is_array($products) && $products) {
-        foreach ($products as $i => $row) {
-            if (!is_array($row)) {
-                continue;
-            }
-            $productName = trim((string) ($row['productName'] ?? $row['label'] ?? ''));
-            $model = trim((string) ($row['label'] ?? ''));
-            $qty = trim((string) ($row['qty'] ?? ''));
-            $lines[] = ($i + 1) . '. ' . ($productName !== '' ? $productName : 'Ürün');
-            if ($model !== '') {
-                $lines[] = '   Model: ' . $model . ($qty !== '' ? ' | Miktar: ' . $qty : '');
-            }
-        }
-    } else {
-        $lines[] = '(Ürün listesi gönderilmedi)';
-    }
-
-    $lines[] = '';
-    $lines[] = 'Gönderim: ' . date('d.m.Y H:i:s');
-    $lines[] = 'IP: ' . ($_SERVER['REMOTE_ADDR'] ?? '—');
-
-    return [$subject, implode("\n", $lines), $email];
+    return [$subject, $html, $plain, $email];
 }
 
 function normalizeReplyTo(string $replyTo, array $config): string
@@ -199,7 +168,7 @@ function sendMail(array $config, string $to, string $subject, string $body, stri
     }
 
     if (!empty($config['use_smtp'])) {
-        smtpSend($config, $to, $subject, $body, $replyTo, $from, $fromName);
+        smtpSendPlain($config, $to, $subject, $body, $replyTo, $from, $fromName);
         return;
     }
 
@@ -216,7 +185,77 @@ function sendMail(array $config, string $to, string $subject, string $body, stri
     }
 }
 
-function smtpSend(
+function sendHtmlMail(
+    array $config,
+    string $to,
+    string $subject,
+    string $htmlBody,
+    string $plainBody,
+    string $replyTo
+): void {
+    $from = (string) ($config['mail_from'] ?? '');
+    $fromName = (string) ($config['mail_from_name'] ?? 'Abralion');
+    if ($from === '' || !filter_var($from, FILTER_VALIDATE_EMAIL)) {
+        throw new RuntimeException('Geçersiz gönderen adresi.');
+    }
+
+    $mimeBody = buildMultipartBody($plainBody, $htmlBody);
+
+    if (!empty($config['dev_save_only'])) {
+        saveOutboxMail($config, $subject, $mimeBody['body'], $mimeBody['boundary']);
+        return;
+    }
+
+    if (!empty($config['use_smtp'])) {
+        smtpSendMime($config, $to, $subject, $mimeBody['body'], $mimeBody['boundary'], $replyTo, $from, $fromName);
+        return;
+    }
+
+    $headers = implode("\r\n", [
+        'MIME-Version: 1.0',
+        'Content-Type: multipart/alternative; boundary="' . $mimeBody['boundary'] . '"',
+        'From: ' . encodeAddress($fromName, $from),
+        'Reply-To: ' . $replyTo,
+        'X-Mailer: Abralion-Forms',
+    ]);
+
+    if (!@mail($to, encodeHeader($subject), $mimeBody['body'], $headers)) {
+        throw new RuntimeException('mail() başarısız.');
+    }
+}
+
+/** @return array{boundary:string,body:string} */
+function buildMultipartBody(string $plainBody, string $htmlBody): array
+{
+    $boundary = 'abr_' . bin2hex(random_bytes(8));
+    $body = '--' . $boundary . "\r\n"
+        . "Content-Type: text/plain; charset=UTF-8\r\n"
+        . "Content-Transfer-Encoding: 8bit\r\n\r\n"
+        . $plainBody . "\r\n\r\n"
+        . '--' . $boundary . "\r\n"
+        . "Content-Type: text/html; charset=UTF-8\r\n"
+        . "Content-Transfer-Encoding: 8bit\r\n\r\n"
+        . $htmlBody . "\r\n\r\n"
+        . '--' . $boundary . '--';
+
+    return ['boundary' => $boundary, 'body' => $body];
+}
+
+function saveOutboxMail(array $config, string $subject, string $body, string $boundary): void
+{
+    $dir = __DIR__ . '/outbox';
+    if (!is_dir($dir) && !@mkdir($dir, 0755, true) && !is_dir($dir)) {
+        throw new RuntimeException('Outbox klasörü oluşturulamadı.');
+    }
+    $safe = preg_replace('/[^a-zA-Z0-9._-]+/', '-', $subject) ?: 'teklif';
+    $file = $dir . '/' . date('Ymd-His') . '-' . substr($safe, 0, 40) . '.eml';
+    $raw = "Subject: {$subject}\r\nContent-Type: multipart/alternative; boundary=\"{$boundary}\"\r\n\r\n{$body}";
+    if (@file_put_contents($file, $raw) === false) {
+        throw new RuntimeException('Outbox kaydı yazılamadı.');
+    }
+}
+
+function smtpSendPlain(
     array $config,
     string $to,
     string $subject,
@@ -224,6 +263,50 @@ function smtpSend(
     string $replyTo,
     string $from,
     string $fromName
+): void {
+    smtpSendRaw(
+        $config,
+        $to,
+        $subject,
+        $body,
+        $replyTo,
+        $from,
+        $fromName,
+        'text/plain; charset=UTF-8'
+    );
+}
+
+function smtpSendMime(
+    array $config,
+    string $to,
+    string $subject,
+    string $body,
+    string $boundary,
+    string $replyTo,
+    string $from,
+    string $fromName
+): void {
+    smtpSendRaw(
+        $config,
+        $to,
+        $subject,
+        $body,
+        $replyTo,
+        $from,
+        $fromName,
+        'multipart/alternative; boundary="' . $boundary . '"'
+    );
+}
+
+function smtpSendRaw(
+    array $config,
+    string $to,
+    string $subject,
+    string $body,
+    string $replyTo,
+    string $from,
+    string $fromName,
+    string $contentType
 ): void {
     $host = (string) ($config['smtp_host'] ?? '');
     $port = (int) ($config['smtp_port'] ?? 465);
@@ -273,7 +356,7 @@ function smtpSend(
         'Reply-To: <' . $replyTo . '>',
         'Subject: ' . encodeHeader($subject),
         'MIME-Version: 1.0',
-        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Type: ' . $contentType,
         'Content-Transfer-Encoding: 8bit',
         '',
         $body,

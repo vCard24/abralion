@@ -3,6 +3,7 @@
 
   const MAX_ROWS = 4;
   const SUBMIT_KEY = 'abralion_quote_last_submit';
+  const MAIL_SITE_ORIGIN = 'https://abralion.com';
   let products = [];
   let categories = [];
   let rowCount = 0;
@@ -621,6 +622,60 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
     document.getElementById('quote-form-heading')?.scrollIntoView();
   }
 
+  function mailAbsoluteUrl(relativePath) {
+    const base = getBasePath();
+    const combined = `${base}${relativePath}`.replace(/\/+/g, '/').replace(/^\//, '');
+    if (
+      window.location.protocol === 'file:' ||
+      !window.location.origin ||
+      window.location.origin === 'null'
+    ) {
+      return `${MAIL_SITE_ORIGIN}/${combined}`.replace(/([^:]\/)\/+/g, '$1');
+    }
+    try {
+      return new URL(`${base}${relativePath}`, window.location.href).href;
+    } catch {
+      return `${MAIL_SITE_ORIGIN}/${combined}`;
+    }
+  }
+
+  function productMailImageUrl(product) {
+    if (!product) return '';
+    const slug = product.slug || product.id;
+    let rel = `assets/images/products/${slug}/${slug}-kart.jpg`;
+    if (slug === 'metal-inox-kesme-tasi') {
+      rel = `assets/images/products/${slug}/${slug}-kart.png`;
+    }
+    if (product.images?.[0]?.src) {
+      rel = String(product.images[0].src).replace(/^\//, '');
+    }
+    return mailAbsoluteUrl(rel);
+  }
+
+  function serializeQuoteProductsForMail(rows) {
+    return rows.map((row) => {
+      const product = row.product;
+      const variant = row.variant;
+      let specLines = [];
+      if (typeof variantSpecLines === 'function' && variant && product) {
+        specLines = variantSpecLines(variant, product).slice(0, 5);
+      }
+      const slug = product?.slug || product?.id || row.productId || '';
+      const desc = product?.description ? String(product.description).trim() : '';
+      return {
+        productName: product?.name || row.productId || '',
+        categoryName: product?.categoryName || '',
+        label: row.label || '',
+        qty: row.qty || '',
+        slug,
+        imageUrl: product ? productMailImageUrl(product) : '',
+        productUrl: slug ? mailAbsoluteUrl(`urun/${slug}.html`) : '',
+        description: desc.length > 220 ? `${desc.slice(0, 217)}…` : desc,
+        specLines,
+      };
+    });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     const data = collectFormData();
@@ -650,11 +705,7 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
       volume: data.volume,
       delivery: data.delivery,
       urgency: data.urgency,
-      products: data.products.map((row) => ({
-        productName: row.product?.name || row.productId || '',
-        label: row.label || '',
-        qty: row.qty || '',
-      })),
+      products: serializeQuoteProductsForMail(data.products),
     };
 
     sendFormMail(mailPayload)

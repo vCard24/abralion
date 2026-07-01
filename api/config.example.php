@@ -36,4 +36,10 @@ return [
         'https://abralion.com',
         'https://www.abralion.com',
     ],
+
+    /** Görsellerin mutlak URL'si için (e-posta şablonu) */
+    'site_url' => 'https://abralion.com',
+
+    /** true ise SMTP yerine api/outbox/ klasörüne kaydeder (test) */
+    'dev_save_only' => false,
 ];
