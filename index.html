@@ -20,22 +20,28 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
   <title>Abralion - Ana Sayfa</title>
   <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/images/home/hero-bg.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/components.css?v=20260603">
-  <link rel="stylesheet" href="assets/css/responsive.css?v=20260603">
-  <link rel="stylesheet" href="assets/css/dark-theme.css">
-  <link rel="stylesheet" href="assets/css/site-extra.css?v=20260603">
-  <link rel="stylesheet" href="assets/css/compare.css">
+  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260603">
+  <link rel="preload" href="assets/css/responsive.css?v=20260603" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/responsive.css?v=20260603"></noscript>
+  <link rel="preload" href="assets/css/dark-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/dark-theme.css"></noscript>
+  <link rel="preload" href="assets/css/site-extra.css?v=20260603" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/site-extra.css?v=20260603"></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"></noscript>
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <script src="assets/js/tailwind-config.js"></script>
-  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260603">
 </head>
 <body class="page-noir-site bg-carbon-black text-on-surface font-body-md antialiased">
-  <script src="assets/js/theme-init.js"></script>
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-abrasive-red focus:text-white focus:rounded">İçeriğe atla</a>
+  <script>document.documentElement.classList.add("dark-theme","dark");document.body.classList.add("dark-theme");</script>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-abrasive-red focus:text-white focus:rounded">İçeriğe atla</a>
 
   <header class="header sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-steel-gray/20">
     <div class="header-container flex items-center justify-between gap-6 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-4 md:py-5">
@@ -83,7 +89,7 @@
         <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
           <img
             class="h-full w-full object-cover object-center"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKqaEYY_fkLR95PpLFvHL1LiFOAnNxqOXFiyE1X-gCGbjqXVCxgCf5u0OrZAFw5tazmiaxQgUO-s5R8lMhWs2ZupyBycxrTQ7VpycnvDBPvjPCh_7uV07SiZ-5KpHQLXae_4L-3Lh0Jj4jwBASCbulnaIcGgaLxlQhLm-e74NnBM_iD6mkVpgdvB0q5vrjv4O5kirei1QvSTA4IKRK6g0pkst_dILeB23y10hs55RFofu3eghw4O-2yNHCY5DW3vb5P4Uru4_KKwgY"
+            src="assets/images/home/hero-bg.webp"
             alt=""
             width="1920"
             height="1080"
@@ -136,25 +142,25 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
         <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
           <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="verified">verified</span>
-          <h3 class="font-headline-md text-headline-md text-white mb-2">Uluslararası Kalite</h3>
+          <h2 class="font-headline-md text-headline-md text-white mb-2">Uluslararası Kalite</h2>
           <p class="font-body-md text-body-md text-secondary">Standartlara uygun, sertifikalı üretim süreçleri.</p>
           <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
         <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
           <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="local_shipping">local_shipping</span>
-          <h3 class="font-headline-md text-headline-md text-white mb-2">Rusya'da Teslimat</h3>
+          <h2 class="font-headline-md text-headline-md text-white mb-2">Rusya'da Teslimat</h2>
           <p class="font-body-md text-body-md text-secondary">Kendi lojistik ağımızla kapıdan kapıya teslim.</p>
           <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
         <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
           <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="support_agent">support_agent</span>
-          <h3 class="font-headline-md text-headline-md text-white mb-2">Teknik Destek</h3>
+          <h2 class="font-headline-md text-headline-md text-white mb-2">Teknik Destek</h2>
           <p class="font-body-md text-body-md text-secondary">Uzman mühendis kadromuzla anında çözüm.</p>
           <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
         <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
           <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="timer">timer</span>
-          <h3 class="font-headline-md text-headline-md text-white mb-2">Hızlı Teklif</h3>
+          <h2 class="font-headline-md text-headline-md text-white mb-2">Hızlı Teklif</h2>
           <p class="font-body-md text-body-md text-secondary">İhtiyaçlarınıza 24 saat içinde yanıt garantisi.</p>
           <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
@@ -205,7 +211,7 @@
           </div>
           <!-- Standard Card -->
           <div class="relative group overflow-hidden rounded-lg aspect-square bg-surface-elevation">
-            <img alt="Flap Diskler" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kullanim.webp" width="600" height="600" loading="lazy" decoding="async"/>
+            <img alt="Flap Diskler" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-genel.webp" width="600" height="600" loading="lazy" decoding="async"/>
             <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent p-8 flex flex-col justify-end">
               <div class="flex gap-2 mb-4">
                 <span class="bg-white/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">Alüminyum</span>
@@ -441,6 +447,6 @@
   <script defer src="assets/js/Header.js?v=20260603"></script>
   <script defer src="assets/js/MegaMenu.js?v=20260526c"></script>
   <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/pages/home.js?v=20260525m"></script>
+  <script defer src="assets/js/pages/home.js?v=20260701"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
-/* Abralion-cursor ek stiller */
+/* Section eyebrow labels — WCAG contrast on dark surfaces */
+.page-noir-site .font-label-caps.text-abrasive-red.uppercase {
+  color: #ff8f89;
+}
 
 /* Dökümanlar sayfası — page-header (referans documents.html) */
 .page-header {

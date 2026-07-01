@@ -68,6 +68,7 @@ function initFeaturedCarousel() {
   if (!prevBtn || !nextBtn) return null;
 
   let index = 0;
+  let pendingUpdate = false;
 
   function maxIndex() {
     const cards = track.querySelectorAll('.product-card:not(.product-card--skeleton)');
@@ -84,6 +85,7 @@ function initFeaturedCarousel() {
   }
 
   function update() {
+    pendingUpdate = false;
     const cards = track.querySelectorAll('.product-card:not(.product-card--skeleton)');
     const visible = getFeaturedVisibleCount();
     const max = Math.max(0, cards.length - visible);
@@ -97,34 +99,40 @@ function initFeaturedCarousel() {
     carousel.classList.toggle('featured-carousel--scrollable', cards.length > visible);
   }
 
+  function scheduleUpdate() {
+    if (pendingUpdate) return;
+    pendingUpdate = true;
+    requestAnimationFrame(update);
+  }
+
   prevBtn.addEventListener('click', () => {
     index = Math.max(0, index - 1);
-    update();
+    scheduleUpdate();
   });
 
   nextBtn.addEventListener('click', () => {
     index = Math.min(maxIndex(), index + 1);
-    update();
+    scheduleUpdate();
   });
 
   window.addEventListener('resize', () => {
     index = Math.min(index, maxIndex());
-    update();
+    scheduleUpdate();
   });
 
   if (typeof ResizeObserver !== 'undefined') {
-    const ro = new ResizeObserver(() => update());
+    const ro = new ResizeObserver(() => scheduleUpdate());
     ro.observe(track);
   }
 
   const api = {
     reset() {
       index = 0;
-      update();
+      scheduleUpdate();
     },
   };
   carousel._featuredCarousel = api;
-  update();
+  scheduleUpdate();
   return api;
 }
 

@@ -7,14 +7,16 @@
   <title>Teklif Talebiniz Alındı - Abralion</title>
   <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/dark-theme.css">
-  <link rel="stylesheet" href="assets/css/quote-form.css?v=20260530b">
+  <link rel="preload" href="assets/css/dark-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/dark-theme.css"></noscript>
+<link rel="stylesheet" href="assets/css/quote-form.css?v=20260530b">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/js/tailwind-config.js"></script>
   <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260530a">
 </head>
 <body class="page-quote bg-carbon-black text-on-surface font-body-md antialiased min-h-screen flex flex-col">
-  <main id="main-content" class="flex-1 flex items-center justify-center px-margin-mobile py-16">
+  <script>document.documentElement.classList.add("dark-theme","dark");document.body.classList.add("dark-theme");</script>
+<main id="main-content" class="flex-1 flex items-center justify-center px-margin-mobile py-16">
     <div class="quote-form-panel rounded-xl p-8 md:p-12 max-w-xl w-full text-center space-y-6">
       <div class="quote-thank-you-icon mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-500/15">
         <span class="material-symbols-outlined text-5xl text-green-400" aria-hidden="true">check_circle</span>

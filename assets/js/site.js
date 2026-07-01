@@ -233,6 +233,8 @@ function initFooterCerts() {
     const img = document.createElement('img');
     img.src = `${base}assets/images/${src}`;
     img.alt = alt;
+    img.width = 120;
+    img.height = 48;
     img.loading = 'lazy';
     img.decoding = 'async';
     wrap.appendChild(img);
