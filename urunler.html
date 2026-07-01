@@ -93,21 +93,21 @@
   <h3 class="font-label-caps text-on-surface-variant mb-6 flex items-center gap-2">
   <span class="material-symbols-outlined text-abrasive-red" style="font-size: 18px;">category</span> KATEGORİ
                           </h3>
-  <div class="space-y-4">
+  <div class="space-y-4" id="category-filters">
   <label class="flex items-center gap-3 cursor-pointer group">
-  <input checked="" class="rounded-none border-steel-gray bg-transparent text-abrasive-red focus:ring-0 focus:ring-offset-0" type="checkbox"/>
-  <span class="font-body-md text-on-surface group-hover:text-abrasive-red transition-colors">Kesici &amp; Taşlama</span>
+  <input class="category-filter-input rounded-none border-steel-gray bg-transparent text-abrasive-red focus:ring-0 focus:ring-offset-0" type="checkbox" data-filter="kesici-taslama"/>
+  <span class="font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Kesici &amp; Taşlama</span>
   </label>
   <label class="flex items-center gap-3 cursor-pointer group">
-  <input class="rounded-none border-steel-gray bg-transparent text-abrasive-red focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+  <input class="category-filter-input rounded-none border-steel-gray bg-transparent text-abrasive-red focus:ring-0 focus:ring-offset-0" type="checkbox" data-filter="flap-disk"/>
   <span class="font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Flap Diskler</span>
   </label>
   <label class="flex items-center gap-3 cursor-pointer group">
-  <input class="rounded-none border-steel-gray bg-transparent text-abrasive-red focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+  <input class="category-filter-input rounded-none border-steel-gray bg-transparent text-abrasive-red focus:ring-0 focus:ring-offset-0" type="checkbox" data-filter="elmas-kesici"/>
   <span class="font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Elmas Kesiciler</span>
   </label>
   <label class="flex items-center gap-3 cursor-pointer group">
-  <input class="rounded-none border-steel-gray bg-transparent text-abrasive-red focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+  <input class="category-filter-input rounded-none border-steel-gray bg-transparent text-abrasive-red focus:ring-0 focus:ring-offset-0" type="checkbox" data-filter="kirici-delici"/>
   <span class="font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Delici &amp; Kırıcı</span>
   </label>
   </div>
@@ -116,16 +116,16 @@
   <h3 class="font-label-caps text-on-surface-variant mb-6 flex items-center gap-2">
   <span class="material-symbols-outlined text-abrasive-red" style="font-size: 18px;">construction</span> UYGULAMA ALANI
                           </h3>
-  <div class="flex flex-wrap gap-2">
-  <button class="bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors">METAL</button>
-  <button class="bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors">INOX</button>
-  <button class="bg-abrasive-red px-3 py-1 text-technical-data text-white">BETON</button>
-  <button class="bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors">MERMER</button>
-  <button class="bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors">AHŞAP</button>
+  <div class="flex flex-wrap gap-2" id="application-filters">
+  <button type="button" class="application-filter-btn bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors" data-application="metal">METAL</button>
+  <button type="button" class="application-filter-btn bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors" data-application="inox">INOX</button>
+  <button type="button" class="application-filter-btn bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors" data-application="beton">BETON</button>
+  <button type="button" class="application-filter-btn bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors" data-application="mermer">MERMER</button>
+  <button type="button" class="application-filter-btn bg-surface-elevation technical-border px-3 py-1 text-technical-data hover:bg-secondary-container transition-colors" data-application="ahsap">AHŞAP</button>
   </div>
   </div>
   <div class="pt-6 border-t border-steel-gray/10">
-  <button class="w-full bg-transparent border border-steel-gray/30 py-3 font-label-caps text-on-surface hover:border-abrasive-red hover:text-abrasive-red transition-all">
+  <button type="button" id="clear-filters-btn" class="w-full bg-transparent border border-steel-gray/30 py-3 font-label-caps text-on-surface hover:border-abrasive-red hover:text-abrasive-red transition-all">
                               FİLTRELERİ TEMİZLE
                           </button>
   </div>
@@ -366,6 +366,6 @@
   <script defer src="assets/js/Header.js?v=20260603"></script>
   <script defer src="assets/js/MegaMenu.js?v=20260526c"></script>
   <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/pages/urunler.js?v=20260523"></script>
+  <script defer src="assets/js/pages/urunler.js?v=20260604"></script>
 </body>
 </html>
