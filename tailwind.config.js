@@ -1,6 +1,12 @@
-/** @deprecated CDN yerine tailwind.config.js + npm run build:css kullanılıyor. */
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ['class', '.dark-theme'],
+  content: [
+    './*.html',
+    './urun/**/*.html',
+    './assets/js/**/*.js',
+    './scripts/templates/**/*.html',
+  ],
   theme: {
     extend: {
       colors: {
@@ -95,4 +101,5 @@ tailwind.config = {
       },
     },
   },
+  plugins: [require('@tailwindcss/forms')],
 };
