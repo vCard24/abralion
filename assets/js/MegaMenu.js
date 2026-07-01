@@ -196,6 +196,14 @@ async function buildMegaMenu() {
     </li>`;
 
     container.querySelectorAll('.mega-menu-product-thumb img, .mega-menu-feature img').forEach((img) => {
+      const link = img.closest('.mega-menu-product-link, .mega-menu-feature');
+      const slugMatch = link?.getAttribute('href')?.match(/\/([^/]+)\.html$/);
+      const slug = slugMatch?.[1];
+      const product = slug ? data.products.find((p) => p.slug === slug) : null;
+      if (product && typeof bindProductImageFallback === 'function') {
+        bindProductImageFallback(img, product, base);
+        return;
+      }
       img.addEventListener('error', () => {
         const wrap = img.closest('.mega-menu-product-thumb') || img.closest('.mega-menu-feature');
         wrap?.classList.add('is-missing');

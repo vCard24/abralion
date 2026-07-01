@@ -121,11 +121,11 @@ function renderRelatedProducts(product, pm) {
     const name = escapeHtml(p.name);
     return `<a href="${url}" class="noir-related-card group block overflow-hidden rounded-lg" data-related-product-id="${escapeHtml(p.id)}">
       <div class="noir-related-card__media relative flex items-center justify-center p-8 overflow-hidden">
-        <img class="h-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110 opacity-80" src="${thumb}" alt="" loading="lazy" width="400" height="300">
+        <img class="noir-related-card__img h-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110 opacity-80" src="${thumb}" alt="" loading="lazy" width="400" height="300" data-related-slug="${escapeHtml(p.slug)}">
         <span class="noir-related-card__code absolute top-4 left-4 font-technical-data text-[10px] text-white px-2 py-1">${escapeHtml(code)}</span>
       </div>
       <div class="p-6">
-        <h4 class="font-label-caps text-label-caps text-white mb-2 uppercase leading-snug">${name}</h4>
+        <h3 class="font-label-caps text-label-caps text-white mb-2 uppercase leading-snug">${name}</h3>
         <p class="text-[12px] text-steel-gray mb-4 line-clamp-2">${desc}${descRaw.length >= 90 ? '…' : ''}</p>
         <span class="text-abrasive-red font-label-caps text-[11px] inline-flex items-center gap-2 uppercase">
           Detayları İncele
@@ -171,7 +171,7 @@ function renderGallery(product, container) {
   const base = getBasePath();
   const images = (product.images && product.images.length)
     ? product.images
-    : [{ src: 'assets/images/placeholder/gorsel.jpg', alt: product.name }];
+    : [{ src: 'assets/images/home/hero-bg.jpg', alt: product.name }];
 
   const slides = images
     .map((img, i) => {

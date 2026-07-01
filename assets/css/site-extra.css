@@ -1,8 +1,4 @@
-/* Section eyebrow labels — WCAG contrast on dark surfaces */
-.page-noir-site .font-label-caps.text-abrasive-red.uppercase {
-  color: #ff8f89;
-}
-
+/* Section eyebrow labels — see noir-migration.css (--abrasive-red-text) */
 /* Dökümanlar sayfası — page-header (referans documents.html) */
 .page-header {
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);

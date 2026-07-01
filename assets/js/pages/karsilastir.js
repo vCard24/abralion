@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <thead>
         <tr class="bg-surface-container-low">
           <th class="compare-label-col p-6 border-b border-r border-steel-gray/20 w-1/5" scope="col">
-            <h3 class="font-headline-md text-headline-md text-white m-0">Teknik Özellikler</h3>
+            <h2 class="font-headline-md text-headline-md text-white m-0">Teknik Özellikler</h2>
           </th>`;
 
   slots.forEach((col) => {
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         typeof primaryProductImageSrc === 'function'
           ? primaryProductImageSrc(product, base)
           : (() => {
-              const img = (product.images?.[0]?.src || 'assets/images/placeholder/gorsel.jpg').replace(/^\//, '');
+              const img = (product.images?.[0]?.src || 'assets/images/home/hero-bg.jpg').replace(/^\//, '');
               return img.startsWith('assets') ? `${base}${img}` : img;
             })();
       const sku = variant.urun_kodu || '';
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           </button>
           <img src="${escapeHtml(imgSrc)}" alt="" class="h-28 object-contain" loading="lazy" data-compare-product-id="${escapeHtml(product.id)}">
           <p class="product-category font-label-caps text-[10px] uppercase text-abrasive-red m-0">${escapeHtml(product.categoryName)}</p>
-          <h3 class="font-headline-md text-[18px] text-center text-white m-0">${escapeHtml(product.name)}</h3>
+          <h2 class="font-headline-md text-[18px] text-center text-white m-0">${escapeHtml(product.name)}</h2>
           <p class="compare-matrix-variant font-label-caps text-[11px] text-abrasive-red uppercase m-0">${escapeHtml(variantBadgeText(variant, product))}</p>
           <p class="compare-matrix-sku font-technical-data text-technical-data text-steel-gray m-0">${escapeHtml(String(sku))}</p>
           <div class="compare-matrix-actions w-full flex flex-col gap-3 mt-2">

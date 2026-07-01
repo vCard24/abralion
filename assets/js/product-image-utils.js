@@ -1,28 +1,15 @@
 (function () {
   'use strict';
 
-  const PLACEHOLDER_REL = 'assets/images/placeholder/gorsel.jpg';
-  let webpSupported = null;
+  /** Her tarayıcıda yüklenebilen yedek görsel */
+  const PLACEHOLDER_REL = 'assets/images/home/hero-bg.jpg';
 
-  function detectWebpSupport() {
-    if (webpSupported !== null) return webpSupported;
-    try {
-      const canvas = document.createElement('canvas');
-      canvas.width = 1;
-      canvas.height = 1;
-      webpSupported = canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-    } catch {
-      webpSupported = false;
-    }
-    return webpSupported;
+  function normalizeRelPath(src) {
+    return String(src || '').replace(/^\//, '');
   }
 
   function isWebpUrl(url) {
     return /\.webp(\?|#|$)/i.test(String(url || ''));
-  }
-
-  function normalizeRelPath(src) {
-    return String(src || '').replace(/^\//, '');
   }
 
   function resolveBase(base) {
@@ -37,10 +24,32 @@
     return `${root}${normalizeRelPath(rel)}`.replace(/([^:]\/)\/+/g, '$1');
   }
 
+  function normalizeUrl(url) {
+    try {
+      return new URL(url, window.location.href).href;
+    } catch {
+      return String(url || '');
+    }
+  }
+
   function pushUnique(list, seen, url) {
     if (!url || seen.has(url)) return;
     seen.add(url);
     list.push(url);
+  }
+
+  /** WebP için her zaman webp + png + jpg adaylarını döndür (Safari canvas testi güvenilmez). */
+  function rasterRelVariants(rel) {
+    const path = normalizeRelPath(rel);
+    if (!path) return [];
+    if (!isWebpUrl(path)) return [path];
+
+    const png = path.replace(/\.webp$/i, '.png');
+    const jpg = path.replace(/\.webp$/i, '.jpg');
+    const out = [path];
+    if (png !== path && !out.includes(png)) out.push(png);
+    if (jpg !== path && !out.includes(jpg)) out.push(jpg);
+    return out;
   }
 
   function kartRelPaths(slug) {
@@ -53,16 +62,9 @@
   function galleryRelPaths(product) {
     const out = [];
     (product?.images || []).forEach((img) => {
-      const rel = normalizeRelPath(img?.src);
-      if (!rel) return;
-      if (isWebpUrl(rel) && !detectWebpSupport()) {
-        const png = rel.replace(/\.webp$/i, '.png');
-        const jpg = rel.replace(/\.webp$/i, '.jpg');
-        if (png !== rel) out.push(png);
-        if (jpg !== rel && jpg !== png) out.push(jpg);
-        return;
-      }
-      if (!out.includes(rel)) out.push(rel);
+      rasterRelVariants(img?.src).forEach((rel) => {
+        if (rel && !out.includes(rel)) out.push(rel);
+      });
     });
     return out;
   }
@@ -76,10 +78,9 @@
     galleryRelPaths(product).forEach((rel) => pushUnique(urls, seen, withBase(base, rel)));
 
     if (product?.applicationImage) {
-      const rel = normalizeRelPath(product.applicationImage);
-      if (!isWebpUrl(rel) || detectWebpSupport()) {
+      rasterRelVariants(product.applicationImage).forEach((rel) => {
         pushUnique(urls, seen, withBase(base, rel));
-      }
+      });
     }
 
     pushUnique(urls, seen, withBase(base, PLACEHOLDER_REL));
@@ -91,64 +92,71 @@
     return list[0] || withBase(base, PLACEHOLDER_REL);
   }
 
-  /** E-posta / PDF — mevcut dosyayı tercih et (WebP destekleniyorsa galeri WebP) */
   function productImageRelForFetch(product) {
     const candidates = buildProductImageCandidates(product, '');
-    const webp = candidates.find(
-      (u) => isWebpUrl(u) && !u.includes('placeholder')
-    );
-    if (webp && detectWebpSupport()) return webp.replace(/^(\.\.\/)+/, '');
     const raster = candidates.find(
-      (u) => !isWebpUrl(u) && !u.includes('placeholder')
+      (u) => !isWebpUrl(u) && !u.includes('placeholder') && !u.includes('hero-bg')
     );
-    return (raster || candidates[0] || PLACEHOLDER_REL).replace(/^(\.\.\/)+/, '');
+    const webp = candidates.find((u) => isWebpUrl(u));
+    const pick = raster || webp || candidates[0] || PLACEHOLDER_REL;
+    return pick.replace(/^(\.\.\/)+/, '');
   }
 
   function buildSingleImageCandidates(relPath, base) {
-    const rel = normalizeRelPath(relPath);
     const seen = new Set();
     const urls = [];
-    const abs = withBase(base, rel);
-
-    if (!isWebpUrl(rel) || detectWebpSupport()) {
-      pushUnique(urls, seen, abs);
-    }
-    if (isWebpUrl(rel)) {
-      pushUnique(urls, seen, withBase(base, rel.replace(/\.webp$/i, '.png')));
-      pushUnique(urls, seen, withBase(base, rel.replace(/\.webp$/i, '.jpg')));
-    }
+    rasterRelVariants(relPath).forEach((rel) => {
+      pushUnique(urls, seen, withBase(base, rel));
+    });
     pushUnique(urls, seen, withBase(base, PLACEHOLDER_REL));
     return urls;
   }
 
+  function advanceImageFallback(img) {
+    let list = [];
+    try {
+      list = JSON.parse(img.dataset.imageCandidates || '[]');
+    } catch {
+      return false;
+    }
+    if (!list.length) return false;
+
+    const current = normalizeUrl(img.currentSrc || img.src);
+    let idx = parseInt(img.dataset.imageCandidateIndex || '0', 10);
+
+    while (idx < list.length - 1) {
+      idx += 1;
+      const next = list[idx];
+      if (!next) continue;
+      if (normalizeUrl(next) === current) continue;
+      img.dataset.imageCandidateIndex = String(idx);
+      img.src = next;
+      return true;
+    }
+    return false;
+  }
+
   function bindImageFallbackChain(img, candidates) {
     if (!img || !candidates?.length) return;
-    img.dataset.imageCandidates = JSON.stringify(candidates);
+
+    const list = candidates.filter(Boolean);
+    img.dataset.imageCandidates = JSON.stringify(list);
     img.dataset.imageCandidateIndex = '0';
-    if (!img.getAttribute('src')) img.src = candidates[0];
+
+    if (!img.getAttribute('src')) {
+      img.src = list[0];
+    }
 
     if (img.dataset.imageFallbackBound === '1') return;
     img.dataset.imageFallbackBound = '1';
 
     img.addEventListener('error', () => {
-      let list = candidates;
-      try {
-        const parsed = JSON.parse(img.dataset.imageCandidates || '[]');
-        if (parsed.length) list = parsed;
-      } catch {
-        /* use candidates */
-      }
-
-      let idx = parseInt(img.dataset.imageCandidateIndex || '0', 10) + 1;
-      while (idx < list.length) {
-        if (list[idx] && img.src !== list[idx]) {
-          img.dataset.imageCandidateIndex = String(idx);
-          img.src = list[idx];
-          return;
-        }
-        idx += 1;
-      }
+      advanceImageFallback(img);
     });
+
+    if (img.complete && !img.naturalWidth) {
+      advanceImageFallback(img);
+    }
   }
 
   function bindProductImageFallback(img, product, base) {
@@ -174,10 +182,16 @@
     });
   }
 
+  /** Eski API — e-posta/PDF için WebP tercihi (canvas testi kullanılmaz) */
+  function detectWebpSupport() {
+    return true;
+  }
+
   window.ABRALION_IMAGE = {
     detectWebpSupport,
     isWebpUrl,
     withBase,
+    rasterRelVariants,
     buildProductImageCandidates,
     primaryProductImageSrc,
     productImageRelForFetch,

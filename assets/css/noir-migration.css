@@ -1,5 +1,22 @@
 /* Precision Industrial Noir — Phase 1: Header + Hero */
 
+/* WCAG 2 AA — koyu zemin üzerinde marka kırmızısı metin (#E2231A ≈ 4.2:1, küçük metin için yetersiz) */
+html.dark-theme body {
+  --abrasive-red-brand: #e2231a;
+  --abrasive-red-text: #ff756e;
+}
+
+html.dark-theme body .text-abrasive-red,
+html.dark-theme body .hover\:text-abrasive-red:hover,
+html.dark-theme body .group:hover .group-hover\:text-abrasive-red,
+html.dark-theme body .group\/btn:hover .group-hover\/btn\:text-abrasive-red {
+  color: var(--abrasive-red-text);
+}
+
+header.header {
+  background-color: rgba(18, 20, 20, 0.96) !important;
+}
+
 .technical-border {
   border: 1px solid rgba(142, 142, 147, 0.2);
 }
@@ -93,8 +110,8 @@
 }
 
 .featured-carousel__arrow:hover:not(:disabled) {
-  border-color: #e2231a;
-  color: #e2231a;
+  border-color: var(--abrasive-red-brand, #e2231a);
+  color: var(--abrasive-red-text, #ff756e);
 }
 
 .featured-carousel__arrow:disabled {
@@ -298,10 +315,10 @@ header.header .header-nav-link:hover {
 
 html.dark-theme body header.header .header-nav-link.active,
 header.header .header-nav-link.active {
-  color: #e2231a !important;
+  color: var(--abrasive-red-text, #ff756e) !important;
   background: transparent !important;
   font-weight: 400 !important;
-  border-bottom: 2px solid #e2231a !important;
+  border-bottom: 2px solid var(--abrasive-red-brand, #e2231a) !important;
   padding-bottom: 4px !important;
 }
 
@@ -356,7 +373,7 @@ header.header .mobile-menu-toggle span {
 }
 
 header.header .mobile-menu-toggle:hover {
-  color: #e2231a;
+  color: var(--abrasive-red-text, #ff756e);
 }
 
 header.header .dropdown-arrow {
@@ -572,7 +589,7 @@ footer.footer .footer-description {
   color: #bdbdc2;
 }
 
-footer.footer h4 {
+footer.footer h2 {
   color: #fff;
 }
 
@@ -591,7 +608,7 @@ footer.footer a {
 }
 
 footer.footer a:hover {
-  color: #e2231a;
+  color: var(--abrasive-red-text, #ff756e);
 }
 
 footer.footer .footer-logo {
@@ -1199,8 +1216,8 @@ html body.page-noir-site {
 }
 
 .page-about .header-nav-link.is-active {
-  color: #e2231a;
-  border-bottom: 2px solid #e2231a;
+  color: var(--abrasive-red-text, #ff756e);
+  border-bottom: 2px solid var(--abrasive-red-brand, #e2231a);
   padding-bottom: 6px;
   border-radius: 0;
 }
@@ -1246,14 +1263,14 @@ html body.page-documents {
 }
 
 .page-documents .header-nav-link.is-active {
-  color: #e2231a;
-  border-bottom: 2px solid #e2231a;
+  color: var(--abrasive-red-text, #ff756e);
+  border-bottom: 2px solid var(--abrasive-red-brand, #e2231a);
   padding-bottom: 6px;
   border-radius: 0;
 }
 
 .page-documents .documents-info-box a {
-  color: #e2231a;
+  color: var(--abrasive-red-text, #ff756e);
   text-decoration: underline;
 }
 
@@ -1287,8 +1304,8 @@ html body.page-contact {
 }
 
 .page-contact .header-nav-link.is-active {
-  color: #e2231a;
-  border-bottom: 2px solid #e2231a;
+  color: var(--abrasive-red-text, #ff756e);
+  border-bottom: 2px solid var(--abrasive-red-brand, #e2231a);
   padding-bottom: 6px;
   border-radius: 0;
 }
@@ -1366,7 +1383,7 @@ html body.page-quote {
 }
 
 .page-quote .form-error {
-  color: #e2231a;
+  color: #ffb4ab;
   font-size: 0.8125rem;
   display: none;
 }
@@ -1412,8 +1429,8 @@ html body.page-compare {
 }
 
 .page-compare .header-nav-link.is-active {
-  color: #e2231a;
-  border-bottom: 2px solid #e2231a;
+  color: var(--abrasive-red-text, #ff756e);
+  border-bottom: 2px solid var(--abrasive-red-brand, #e2231a);
   padding-bottom: 6px;
   border-radius: 0;
 }
@@ -1467,7 +1484,7 @@ html body.page-compare {
 }
 
 .page-compare .compare-product-header .product-category {
-  color: #e2231a !important;
+  color: var(--abrasive-red-text, #ff756e) !important;
 }
 
 .page-compare .compare-matrix-sku {
@@ -1546,8 +1563,8 @@ html body.page-compare {
 }
 
 .page-compare .compare-remove-btn:hover {
-  border-color: #e2231a;
-  color: #e2231a;
+  border-color: var(--abrasive-red-brand, #e2231a);
+  color: var(--abrasive-red-text, #ff756e);
 }
 
 .page-compare .compare-slot-empty,

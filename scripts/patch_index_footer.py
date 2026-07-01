@@ -28,7 +28,7 @@ NEW_FOOTER = r"""  <footer class="footer bg-carbon-black border-t border-white/5
         </div>
       </div>
       <div>
-        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Hızlı Linkler</h4>
+        <h2 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Hızlı Linkler</h2>
         <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
           <li><a class="transition-colors hover:text-abrasive-red" href="index.html">Ana Sayfa</a></li>
           <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html">Ürünlerimiz</a></li>
@@ -38,7 +38,7 @@ NEW_FOOTER = r"""  <footer class="footer bg-carbon-black border-t border-white/5
         </ul>
       </div>
       <div>
-        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Kategoriler</h4>
+        <h2 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Kategoriler</h2>
         <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
           <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=kesici-taslama-flap-disk">Kesici - Taşlama - Flap Disk</a></li>
           <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html?kategori=elmas-kesici">Elmas Kesici</a></li>
@@ -49,7 +49,7 @@ NEW_FOOTER = r"""  <footer class="footer bg-carbon-black border-t border-white/5
         </ul>
       </motion>
       <div>
-        <h4 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">İletişim</h4>
+        <h2 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">İletişim</h2>
         <ul class="space-y-6 font-body-md text-body-md text-on-surface-variant">
           <li class="flex items-start gap-3">
             <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="call">call</span>
