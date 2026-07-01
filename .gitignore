@@ -10,3 +10,4 @@ venv/
 api/config.php
 api/outbox/*
 !api/outbox/.gitkeep
+!api/outbox/.htaccess
