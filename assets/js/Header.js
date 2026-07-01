@@ -38,9 +38,12 @@ class Header {
       if (this.headerNav.parentElement === document.body) return;
       this.navAnchor = brandNav || container;
       this.navInsertBefore = null;
+      this.headerNav.classList.add('header-nav--mobile-drawer');
       document.body.appendChild(this.headerNav);
       return;
     }
+
+    this.headerNav.classList.remove('header-nav--mobile-drawer');
 
     if (this.headerNav.parentElement !== document.body) return;
     if (this.navAnchor && this.navAnchor.isConnected) {
