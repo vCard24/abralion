@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="assets/css/responsive.css?v=20260603">
   <link rel="stylesheet" href="assets/css/dark-theme.css">
   <link rel="stylesheet" href="assets/css/site-extra.css">
-  <link rel="stylesheet" href="assets/css/compare.css">
+  <link rel="stylesheet" href="assets/css/compare.css?v=20260608">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
@@ -75,7 +75,7 @@
   </header>
 
   <main id="main-content" class="min-h-screen">
-    <section class="pt-12 pb-8 md:pb-section-gap" aria-labelledby="compare-hero-title">
+    <section class="pt-12 pb-8 md:pb-section-gap compare-hero-section" aria-labelledby="compare-hero-title">
       <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
         <div class="max-w-3xl">
           <span class="text-abrasive-red font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Teknik Analiz</span>
@@ -206,6 +206,8 @@
     </div>
   </footer>
 
+  <div id="compare-pdf-sheet" class="compare-pdf-sheet" hidden aria-hidden="true"></div>
+
   <script defer src="assets/js/site.js?v=20260605"></script>
   <script src="assets/js/products-data.js"></script>
   <script defer src="assets/js/VariantDisplay.js"></script>
@@ -215,6 +217,8 @@
   <script defer src="assets/js/Header.js?v=20260603"></script>
   <script defer src="assets/js/MegaMenu.js?v=20260526c"></script>
   <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/pages/karsilastir.js?v=20260601"></script>
+  <script defer src="assets/js/pages/karsilastir.js?v=20260608"></script>
+  <script defer src="assets/js/vendor/html2canvas.min.js"></script>
+  <script defer src="assets/js/vendor/jspdf.umd.min.js"></script>
 </body>
 </html>

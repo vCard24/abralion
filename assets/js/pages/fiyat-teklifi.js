@@ -7,6 +7,7 @@
   let products = [];
   let categories = [];
   let rowCount = 0;
+  let pdfLogoDataUrl = '';
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
@@ -36,6 +37,7 @@
 
     form.addEventListener('submit', handleSubmit);
     document.getElementById('quote-pdf-btn')?.addEventListener('click', downloadPdf);
+    document.getElementById('quote-print-btn')?.addEventListener('click', printQuote);
     document.getElementById('quote-add-row')?.addEventListener('click', () => {
       if (rowCount >= MAX_ROWS) return;
       addProductRow();
@@ -528,47 +530,87 @@
   }
 
   function buildPrintHtml(data) {
-    const productRows = data.products
-      .map(
-        (row, i) =>
-          `<tr><td>${i + 1}</td><td>${escapeHtml(row.product?.name || '')}</td><td>${escapeHtml(row.label)}</td><td>${escapeHtml(row.qty || '—')}</td></tr>`
-      )
+    const logoSrc = pdfLogoDataUrl || mailAbsoluteUrl('assets/images/logo.svg');
+    const logoHtml = logoSrc
+      ? `<img src="${escapeAttr(logoSrc)}" alt="Abralion" style="display:block;width:160px;height:auto;margin-bottom:12px">`
+      : '<p style="margin:0 0 12px;font-family:Montserrat,Arial,sans-serif;font-size:22px;font-weight:800;color:#E2231A">ABRALION</p>';
+
+    const cards = (data.products || [])
+      .map((row, i) => {
+        const product = row.product;
+        const imgSrc = row.pdfImageDataUrl || (product ? productMailImageUrl(product) : '');
+        const categoryName = productCategoryName(product);
+        let specLines = [];
+        if (typeof variantSpecLines === 'function' && row.variant && product) {
+          specLines = variantSpecLines(row.variant, product).slice(0, 4);
+        }
+        const desc = product?.description ? String(product.description).trim() : '';
+        const shortDesc = desc.length > 180 ? `${desc.slice(0, 177)}…` : desc;
+        const imgCell = imgSrc
+          ? `<img src="${escapeAttr(imgSrc)}" alt="" style="display:block;max-width:88%;max-height:110px;margin:0 auto;object-fit:contain">`
+          : '<div style="font-size:11px;color:#9ca3af;text-align:center">Görsel yok</div>';
+        const specHtml = specLines
+          .map(
+            (line) =>
+              `<div style="display:flex;justify-content:space-between;gap:8px;font-size:10px;margin-top:4px"><span style="color:#6b7280">${escapeHtml(line.label || line[0] || '')}</span><span style="font-weight:600;color:#111827">${escapeHtml(line.value || line[1] || '')}</span></div>`
+          )
+          .join('');
+        return `<article style="border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#fff">
+          <div style="position:relative;padding:8px 12px 0">
+            <span style="display:inline-block;padding:2px 8px;border-radius:999px;background:#E2231A;color:#fff;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Ürün ${i + 1}</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;height:128px;background:linear-gradient(180deg,#f9fafb,#f3f4f6);border-bottom:1px solid #eef0f3">${imgCell}</div>
+          <div style="padding:10px 12px 12px">
+            <p style="margin:0 0 2px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:700;color:#111827">${escapeHtml(product?.name || row.productId || '—')}</p>
+            ${categoryName ? `<p style="margin:0 0 4px;font-size:10px;font-weight:600;color:#E2231A;text-transform:uppercase;letter-spacing:.04em">${escapeHtml(categoryName)}</p>` : ''}
+            <p style="margin:0 0 8px;font-size:11px;color:#4b5563">${escapeHtml(row.label || '—')}</p>
+            <div style="display:flex;justify-content:space-between;gap:8px;font-size:10px"><span style="color:#6b7280;font-weight:600">Miktar</span><span style="font-weight:600;color:#111827">${escapeHtml(row.qty || '—')}</span></div>
+            ${specHtml}
+            ${shortDesc ? `<p style="margin:8px 0 0;font-size:10px;line-height:1.45;color:#6b7280">${escapeHtml(shortDesc)}</p>` : ''}
+          </div>
+        </article>`;
+      })
       .join('');
 
     const details = [
       data.application && `Uygulama: ${escapeHtml(data.application)}`,
       data.volume && `Miktar: ${escapeHtml(data.volume)}`,
       data.delivery && `Teslimat: ${escapeHtml(data.delivery)}`,
-      data.urgency && `Aciliyet: ${escapeHtml(data.urgency)}`,
+      data.urgency && `Aciliyet: ${escapeHtml(urgencyLabel(data.urgency))}`,
       data.message && escapeHtml(data.message),
     ]
       .filter(Boolean)
       .join('<br>');
 
+    const dateStr = new Date().toLocaleString('tr-TR');
+
     return `<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><title>Abralion Teklif Talebi</title>
 <style>
-@page { margin: 18mm; }
-body{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;padding:24px;color:#111;line-height:1.5}
-h1{font-size:22px;margin:0 0 8px;color:#E2231A}
-h2{font-size:14px;margin:24px 0 8px;text-transform:uppercase;letter-spacing:.08em}
-table{width:100%;border-collapse:collapse;margin-top:8px}
-th,td{border:1px solid #ccc;padding:8px;text-align:left;font-size:13px}
-th{background:#f5f5f5}
-.meta{font-size:13px;color:#444}
+@page { margin: 14mm; }
+body{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;padding:20px;color:#111;line-height:1.5;max-width:820px;margin:0 auto}
+h1{font-family:Montserrat,Arial,sans-serif;font-size:20px;margin:0 0 6px;color:#111827}
+.meta{font-size:12px;color:#6b7280;margin:0 0 20px}
+h2{font-size:12px;margin:22px 0 10px;text-transform:uppercase;letter-spacing:.1em;color:#374151}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.contact{font-size:13px;color:#374151}
+.footer{margin-top:28px;padding-top:12px;border-top:1px solid #e5e7eb;font-size:11px;color:#6b7280}
+@media print{body{padding:0}}
 </style></head><body>
-<h1>Abralion — Fiyat Teklifi Talebi</h1>
-<p class="meta">${escapeHtml(new Date().toLocaleString('tr-TR'))}${data.reference ? ` · Ref: ${escapeHtml(data.reference)}` : ''}</p>
-<h2>Ürünler</h2>
-<table><thead><tr><th>#</th><th>Ürün</th><th>Model</th><th>Miktar</th></tr></thead><tbody>${productRows}</tbody></table>
+${logoHtml}
+<h1>Fiyat Teklifi Talep Formu</h1>
+<p class="meta">${escapeHtml(dateStr)}${data.reference ? ` · Ref: ${escapeHtml(data.reference)}` : ''}</p>
+<h2>Seçilen ürünler</h2>
+<div class="products">${cards || '<p>Ürün seçilmedi</p>'}</div>
 <h2>İletişim</h2>
-<p><strong>${escapeHtml(data.name || '—')}</strong><br>
+<p class="contact"><strong>${escapeHtml(data.name || '—')}</strong><br>
 ${data.phone ? `Tel: ${escapeHtml(data.phone)}<br>` : ''}
 ${data.email ? `E-posta: ${escapeHtml(data.email)}<br>` : ''}
 ${data.company ? `Firma: ${escapeHtml(data.company)}<br>` : ''}
 ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
 <h2>Talep detayları</h2>
-<p>${details || '—'}</p>
-<p style="margin-top:32px;font-size:12px;color:#666">EKS-PLAST LLC · info@abralion.com · www.abralion.com</p>
+<p class="contact">${details || '—'}</p>
+<p class="footer">EKS-PLAST LLC · info@abralion.com · www.abralion.com · 8 (495) 142-42-67<br>
+Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliği taşımaz.</p>
 <script>window.onload=function(){window.focus();window.print();};<\/script>
 </body></html>`;
   }
@@ -734,6 +776,172 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
     return map[value] || value || '';
   }
 
+  function productCategoryName(product) {
+    if (!product) return '';
+    if (product.categoryName) return product.categoryName;
+    const cat = categories.find((c) => c.id === product.categoryId);
+    return cat?.name || '';
+  }
+
+  function imageElementToDataUrl(imgEl) {
+    if (!imgEl || !imgEl.complete || !imgEl.naturalWidth) return '';
+    try {
+      let w = imgEl.naturalWidth;
+      let h = imgEl.naturalHeight;
+      const max = 900;
+      if (w > max || h > max) {
+        if (w >= h) {
+          h = Math.max(1, Math.round((h * max) / w));
+          w = max;
+        } else {
+          w = Math.max(1, Math.round((w * max) / h));
+          h = max;
+        }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      canvas.getContext('2d').drawImage(imgEl, 0, 0, w, h);
+      return canvas.toDataURL('image/jpeg', 0.88);
+    } catch {
+      return '';
+    }
+  }
+
+  function blobToDataUrl(blob) {
+    return new Promise((resolve) => {
+      if (!blob) {
+        resolve('');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result || '');
+      reader.onerror = () => resolve('');
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  function xhrBlobToDataUrl(url) {
+    return new Promise((resolve) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.responseType = 'blob';
+      xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300 && xhr.response) {
+          blobToDataUrl(xhr.response).then(resolve);
+        } else {
+          resolve('');
+        }
+      };
+      xhr.onerror = () => resolve('');
+      xhr.send();
+    });
+  }
+
+  function urlToDataUrl(url) {
+    return new Promise((resolve) => {
+      if (!url || url.startsWith('data:')) {
+        resolve(url || '');
+        return;
+      }
+      const loader = new Image();
+      loader.crossOrigin = 'anonymous';
+      loader.onload = () => resolve(imageElementToDataUrl(loader) || '');
+      loader.onerror = () => resolve('');
+      loader.src = url;
+    });
+  }
+
+  function resolveImageDataUrl(url) {
+    if (!url) return Promise.resolve('');
+    if (url.startsWith('data:')) return Promise.resolve(url);
+    if (window.location.protocol === 'file:') {
+      return Promise.resolve('');
+    }
+    return xhrBlobToDataUrl(url).then((dataUrl) => {
+      if (dataUrl) return dataUrl;
+      return urlToDataUrl(url);
+    });
+  }
+
+  function resolveAllProductImages(productRows) {
+    return Promise.all(
+      productRows.map((row) => {
+        const url = row.product ? productMailImageUrl(row.product) : '';
+        return resolveImageDataUrl(url).then((dataUrl) => {
+          row.pdfImageDataUrl = dataUrl || '';
+        });
+      })
+    );
+  }
+
+  function ensurePdfLogoDataUrl() {
+    if (pdfLogoDataUrl) return Promise.resolve(pdfLogoDataUrl);
+    return resolveImageDataUrl(mailAbsoluteUrl('assets/images/logo.svg')).then((data) => {
+      pdfLogoDataUrl = data || '';
+      return pdfLogoDataUrl;
+    });
+  }
+
+  function waitForOneImage(img) {
+    if (!img) return Promise.resolve();
+    if (img.complete) return Promise.resolve();
+    return new Promise((resolve) => {
+      img.addEventListener('load', resolve, { once: true });
+      img.addEventListener('error', resolve, { once: true });
+      setTimeout(resolve, 6000);
+    });
+  }
+
+  function applyPdfImageDataUrl(img, dataUrl) {
+    if (dataUrl) {
+      img.setAttribute('src', dataUrl);
+      img.src = dataUrl;
+    }
+    return waitForOneImage(img);
+  }
+
+  function inlinePdfImage(img) {
+    const src = img.getAttribute('src') || img.src || '';
+    if (!src) return Promise.resolve();
+    if (/^data:image\/(jpeg|png|webp)/i.test(src)) return Promise.resolve();
+    if (src.startsWith('data:')) {
+      return urlToDataUrl(src).then((dataUrl) => applyPdfImageDataUrl(img, dataUrl || ''));
+    }
+    return urlToDataUrl(src)
+      .then((dataUrl) => applyPdfImageDataUrl(img, dataUrl || ''))
+      .catch(() => applyPdfImageDataUrl(img, ''));
+  }
+
+  function preparePdfImages(container) {
+    const imgs = container.querySelectorAll('img');
+    if (!imgs.length) return Promise.resolve();
+    return Promise.all(
+      Array.from(imgs).map((img) => {
+        if (img.classList.contains('quote-pdf-doc__logo-image')) {
+          return Promise.resolve();
+        }
+        const src = img.getAttribute('src') || img.src || '';
+        if (/^data:image\/(jpeg|png|webp)/i.test(src)) return Promise.resolve();
+        return inlinePdfImage(img).catch(() => waitForOneImage(img));
+      })
+    );
+  }
+
+  function waitForImages(container) {
+    const imgs = container.querySelectorAll('img');
+    if (!imgs.length) return Promise.resolve();
+    return Promise.all(
+      Array.from(imgs).map((img) => {
+        if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+        return new Promise((resolve) => {
+          img.addEventListener('load', resolve, { once: true });
+          img.addEventListener('error', resolve, { once: true });
+        });
+      })
+    );
+  }
+
   function pdfField(label, value, fullWidth) {
     const val = value == null || value === '' ? '—' : String(value);
     return `<div class="quote-pdf-field${fullWidth ? ' quote-pdf-field--full' : ''}">
@@ -749,16 +957,51 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
     </section>`;
   }
 
-  function buildPdfProductRows(data) {
+  function pdfMetaItem(label, value) {
+    return `<div class="quote-pdf-card__meta-row"><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value || '—')}</dd></div>`;
+  }
+
+  function pdfLogoHtml(className) {
+    if (!pdfLogoDataUrl) {
+      return `<div class="${className}"><span class="quote-pdf-doc__logo-text">ABRALION</span></div>`;
+    }
+    return `<div class="${className}" aria-hidden="true"><img class="quote-pdf-doc__logo-image" src="${escapeAttr(pdfLogoDataUrl)}" alt="" /></div>`;
+  }
+
+  function buildPdfProductCards(data) {
     if (!data.products?.length) return '';
-    return `<table class="quote-pdf-table">
-      <thead><tr><th>#</th><th>Ürün</th><th>Model</th><th>Miktar</th></tr></thead>
-      <tbody>${data.products
-        .map(
-          (row, i) =>
-            `<tr><td>${i + 1}</td><td>${escapeHtml(row.product?.name || row.productId)}</td><td>${escapeHtml(row.label)}</td><td>${escapeHtml(row.qty || '—')}</td></tr>`
-        )
-        .join('')}</tbody></table>`;
+    const cards = [];
+    data.products.forEach((row) => {
+      const product = row.product;
+      if (!product) return;
+      const imgSrc = row.pdfImageDataUrl || productMailImageUrl(product);
+      const categoryName = productCategoryName(product);
+      let specLines = [];
+      if (typeof variantSpecLines === 'function' && row.variant && product) {
+        specLines = variantSpecLines(row.variant, product).slice(0, 4);
+      }
+      const desc = product.description ? String(product.description).trim() : '';
+      const shortDesc = desc.length > 180 ? `${desc.slice(0, 177)}…` : desc;
+      const imgHtml = imgSrc
+        ? `<img class="quote-pdf-card__img" src="${escapeAttr(imgSrc)}" alt="" />`
+        : '<div class="quote-pdf-card__img-placeholder">Görsel yok</div>';
+      const specHtml = specLines.map((line) => pdfMetaItem(line.label || line[0] || '', line.value || line[1] || '')).join('');
+      cards.push(`<article class="quote-pdf-card">
+        <div class="quote-pdf-card__badge">Ürün ${cards.length + 1}</div>
+        <div class="quote-pdf-card__media">${imgHtml}</div>
+        <div class="quote-pdf-card__body">
+          <p class="quote-pdf-card__name">${escapeHtml(product.name || row.productId || '—')}</p>
+          ${categoryName ? `<p class="quote-pdf-card__category">${escapeHtml(categoryName)}</p>` : ''}
+          <p class="quote-pdf-card__model">${escapeHtml(row.label || '—')}</p>
+          <dl class="quote-pdf-card__meta">
+            ${pdfMetaItem('Miktar', row.qty || '—')}
+            ${specHtml}
+          </dl>
+          ${shortDesc ? `<p class="quote-pdf-card__desc">${escapeHtml(shortDesc)}</p>` : ''}
+        </div>
+      </article>`);
+    });
+    return cards.join('');
   }
 
   function buildPdfSheet(data) {
@@ -766,7 +1009,7 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
     if (!sheet) return null;
 
     const dateStr = new Date().toLocaleString('tr-TR');
-    const productsHtml = buildPdfProductRows(data) || '<p class="quote-pdf-empty">Ürün seçilmedi</p>';
+    const productsHtml = buildPdfProductCards(data) || '<p class="quote-pdf-empty">Ürün seçilmedi</p>';
 
     const contactHtml =
       pdfField('Ad soyad', data.name) +
@@ -790,16 +1033,17 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
 
     sheet.innerHTML = `<div class="quote-pdf-doc">
       <header class="quote-pdf-doc__header">
-        <div class="quote-pdf-doc__logo"><span class="quote-pdf-doc__logo-text">ABRALION</span></div>
+        ${pdfLogoHtml('quote-pdf-doc__logo')}
         <div class="quote-pdf-doc__header-main">
           <h1>Fiyat Teklifi Talep Formu</h1>
           <p class="quote-pdf-doc__date">Talep tarihi: ${escapeHtml(dateStr)}${data.reference ? ` · Ref: ${escapeHtml(data.reference)}` : ''}</p>
         </div>
       </header>
-      ${pdfBlock('Seçilen ürünler', productsHtml)}
+      ${pdfBlock('Seçilen ürünler', `<div class="quote-pdf-products">${productsHtml}</div>`)}
       ${pdfBlock('İletişim bilgileri', `<div class="quote-pdf-fields">${contactHtml}</div>`)}
       ${detailsBlock}
       <footer class="quote-pdf-doc__footer">
+        ${pdfLogoHtml('quote-pdf-doc__footer-logo')}
         <p>EKS-PLAST LLC · info@abralion.com · www.abralion.com · 8 (495) 142-42-67</p>
         <p class="quote-pdf-doc__footnote">Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliği taşımaz.</p>
       </footer>
@@ -871,68 +1115,103 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
     }
   }
 
-  function downloadPdf() {
+  function runQuoteDocumentPipeline({ mode, btnId, onSuccess, onFallback }) {
     const data = collectFormData();
     if (!validateForm(data, { requireContact: false })) {
-      showToast('PDF için en az bir ürün seçmelisiniz.', 'error');
-      return;
+      showToast('En az bir ürün seçmelisiniz.', 'error');
+      return Promise.resolve();
     }
 
     data.reference = data.reference || makeReference();
-    const btn = document.getElementById('quote-pdf-btn');
+    const btn = document.getElementById(btnId);
     const h2c = window.html2canvas;
     const JsPDF = window.jspdf && (window.jspdf.jsPDF || window.jspdf.default);
 
-    if (!h2c || !JsPDF) {
+    if (mode === 'pdf' && (!h2c || !JsPDF)) {
       showToast('PDF modülü yüklenemedi. Sayfayı yenileyin.', 'error');
-      return;
+      return Promise.resolve();
     }
 
     if (btn) btn.disabled = true;
 
-    const sheet = buildPdfSheet(data);
-    if (!sheet) {
-      if (btn) btn.disabled = false;
-      showToast('PDF sayfası oluşturulamadı.', 'error');
-      return;
-    }
+    const ctx = { sheet: null, data };
 
-    sheet.hidden = false;
-    sheet.classList.add('is-capturing');
-    sheet.setAttribute('aria-hidden', 'false');
-
-    const fontReady = document.fonts?.ready ? document.fonts.ready : Promise.resolve();
-
-    fontReady
+    return resolveAllProductImages(data.products)
+      .then(() => ensurePdfLogoDataUrl())
+      .then(() => {
+        ctx.sheet = buildPdfSheet(data);
+        if (!ctx.sheet) throw new Error('missing sheet');
+        ctx.sheet.hidden = false;
+        ctx.sheet.classList.add('is-capturing');
+        ctx.sheet.setAttribute('aria-hidden', 'false');
+        const fontReady = document.fonts?.ready ? document.fonts.ready : Promise.resolve();
+        return fontReady;
+      })
+      .then(() => preparePdfImages(ctx.sheet))
+      .then(() => waitForImages(ctx.sheet))
       .then(
         () =>
           new Promise((resolve) => {
             requestAnimationFrame(() => requestAnimationFrame(resolve));
           })
       )
-      .then(() => captureSheetToCanvas(sheet, h2c))
-      .then((canvas) => {
-        if (!canvas?.width || !canvas?.height) throw new Error('empty canvas');
-        const pdf = new JsPDF('p', 'mm', 'a4');
-        canvasToPdf(pdf, canvas);
-        pdf.save(`Abralion-Teklif-${data.reference || 'ozet'}.pdf`);
-        showToast('PDF indirildi.', 'success');
+      .then(() => {
+        if (mode === 'print') {
+          if (printViaIframe(buildPrintHtml(data))) {
+            onSuccess?.();
+          } else {
+            onFallback?.(data);
+          }
+          return null;
+        }
+        return captureSheetToCanvas(ctx.sheet, h2c).then((canvas) => {
+          if (!canvas?.width || !canvas?.height) throw new Error('empty canvas');
+          const pdf = new JsPDF('p', 'mm', 'a4');
+          canvasToPdf(pdf, canvas);
+          pdf.save(`Abralion-Teklif-${data.reference || 'ozet'}.pdf`);
+          onSuccess?.();
+        });
       })
       .catch((err) => {
-        console.error('PDF error:', err);
+        console.error(`${mode} error:`, err);
+        onFallback?.(data);
+      })
+      .finally(() => {
+        if (ctx.sheet) {
+          ctx.sheet.classList.remove('is-capturing');
+          ctx.sheet.hidden = true;
+          ctx.sheet.setAttribute('aria-hidden', 'true');
+        }
+        if (btn) btn.disabled = false;
+      });
+  }
+
+  function downloadPdf() {
+    runQuoteDocumentPipeline({
+      mode: 'pdf',
+      btnId: 'quote-pdf-btn',
+      onSuccess: () => showToast('PDF indirildi.', 'success'),
+      onFallback: (data) => {
         if (printViaIframe(buildPrintHtml(data))) {
           showToast('PDF oluşturulamadı; yazdır penceresinden “PDF olarak kaydet” kullanın.');
         } else {
           downloadHtmlFile(buildPrintHtml(data), data.reference);
           showToast('PDF oluşturulamadı; özet HTML dosyası indirildi.', 'error');
         }
-      })
-      .finally(() => {
-        sheet.classList.remove('is-capturing');
-        sheet.hidden = true;
-        sheet.setAttribute('aria-hidden', 'true');
-        if (btn) btn.disabled = false;
-      });
+      },
+    });
+  }
+
+  function printQuote() {
+    runQuoteDocumentPipeline({
+      mode: 'print',
+      btnId: 'quote-print-btn',
+      onSuccess: () => showToast('Yazdırma penceresi açıldı.', 'success'),
+      onFallback: (data) => {
+        downloadHtmlFile(buildPrintHtml(data), data.reference);
+        showToast('Yazdırma açılamadı; özet HTML dosyası indirildi.', 'error');
+      },
+    });
   }
 
   function printViaIframe(html) {

@@ -294,3 +294,96 @@ function abr_strip_data_urls_from_html(string $html): string
 {
     return (string) preg_replace('/src=(["\'])data:[^"\']+\1/i', 'src=$1$1', $html);
 }
+
+/** @param array<string,mixed> $data */
+function abr_normalize_contact_form_data(array $data): array
+{
+    return [
+        'name' => trim((string) ($data['name'] ?? '')),
+        'email' => trim((string) ($data['email'] ?? '')),
+        'phone' => trim((string) ($data['phone'] ?? '')),
+        'subject' => trim((string) ($data['subject'] ?? '')),
+        'message' => trim((string) ($data['message'] ?? '')),
+    ];
+}
+
+/** @param array<string,mixed> $data */
+function abr_build_contact_email_html(array $data, array $config = []): string
+{
+    $data = abr_normalize_contact_form_data($data);
+    $siteUrl = abr_quote_site_url($config);
+    $dateStr = date('d.m.Y H:i');
+    $logoSrc = $siteUrl . '/assets/images/logo.svg';
+    $logoHtml = '<img src="' . abr_quote_h($logoSrc) . '" alt="Abralion" width="160" style="display:block;width:160px;max-width:160px;height:auto;" />';
+
+    $subjectLine = $data['subject'] !== ''
+        ? '<p style="margin:4px 0 0;font-size:11px;color:#E2231A;font-weight:700;">Konu: ' . abr_quote_h($data['subject']) . '</p>'
+        : '';
+
+    $senderHtml = abr_quote_field_table([
+        ['Ad soyad', $data['name']],
+        ['E-posta', $data['email']],
+        ['Telefon', $data['phone'] !== '' ? $data['phone'] : '—'],
+        ['Konu', $data['subject']],
+    ]);
+
+    $messageHtml = $data['message'] !== ''
+        ? '<div style="margin:0;padding:14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#111827;white-space:pre-wrap;">'
+            . nl2br(abr_quote_h($data['message']))
+            . '</div>'
+        : '<p style="margin:0;color:#6b7280;">—</p>';
+
+    $ip = trim((string) ($_SERVER['REMOTE_ADDR'] ?? '—'));
+    $metaLine = '<p style="margin:12px 0 0;font-size:10px;color:#9ca3af;">Gönderim: '
+        . abr_quote_h($dateStr)
+        . ' · IP: '
+        . abr_quote_h($ip !== '' ? $ip : '—')
+        . '</p>';
+
+    return '<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>İletişim Formu — Abralion</title></head>'
+        . '<body style="margin:0;padding:0;background:#f3f4f6;">'
+        . '<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f3f4f6;padding:24px 12px;">'
+        . '<tr><td align="center">'
+        . '<table role="presentation" width="640" cellspacing="0" cellpadding="0" style="max-width:640px;width:100%;background:#ffffff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">'
+        . '<tr><td style="padding:24px 28px 16px;border-bottom:2px solid #E2231A;font-family:Arial,Helvetica,sans-serif;">'
+        . '<table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr>'
+        . '<td style="width:170px;vertical-align:middle;">' . $logoHtml . '</td>'
+        . '<td style="vertical-align:middle;padding-left:16px;">'
+        . '<h1 style="margin:0 0 4px;font-size:21px;line-height:1.25;color:#111827;">İletişim Formu</h1>'
+        . '<p style="margin:0;font-size:11px;color:#6b7280;">Talep tarihi: ' . abr_quote_h($dateStr) . '</p>'
+        . $subjectLine
+        . '</td></tr></table></td></tr>'
+        . '<tr><td style="padding:20px 28px 8px;">'
+        . abr_quote_email_section('Gönderen bilgileri', $senderHtml)
+        . abr_quote_email_section('Mesaj', $messageHtml . $metaLine)
+        . '</td></tr>'
+        . '<tr><td style="padding:0 28px 24px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.6;color:#6b7280;border-top:1px solid #e5e7eb;">'
+        . '<p style="margin:16px 0 6px;"><strong style="color:#111827;">Abralion — EKS-PLAST LLC</strong><br />'
+        . abr_quote_h($siteUrl) . ' · info@abralion.com · +7 985 789-60-62</p>'
+        . '<p style="margin:0;font-size:10px;">Bu e-posta web sitesi iletişim formundan otomatik gönderilmiştir.</p>'
+        . '</td></tr></table></td></tr></table></body></html>';
+}
+
+/** @param array<string,mixed> $data */
+function abr_build_contact_email_plain(array $data): string
+{
+    $data = abr_normalize_contact_form_data($data);
+    $ip = trim((string) ($_SERVER['REMOTE_ADDR'] ?? '—'));
+
+    return implode("\n", [
+        'ABRALION — İLETİŞİM FORMU',
+        'Tarih: ' . date('d.m.Y H:i'),
+        '',
+        '--- GÖNDEREN ---',
+        'Ad Soyad: ' . $data['name'],
+        'E-posta: ' . $data['email'],
+        'Telefon: ' . ($data['phone'] !== '' ? $data['phone'] : '—'),
+        'Konu: ' . $data['subject'],
+        '',
+        '--- MESAJ ---',
+        $data['message'],
+        '',
+        'Gönderim: ' . date('d.m.Y H:i:s'),
+        'IP: ' . ($ip !== '' ? $ip : '—'),
+    ]);
+}

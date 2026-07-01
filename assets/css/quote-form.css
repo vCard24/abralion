@@ -334,6 +334,27 @@
   width: 100%;
 }
 
+.page-quote .quote-btn-print {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .page-quote .quote-form-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .page-quote .quote-btn-primary {
+    flex: 1 1 100%;
+  }
+
+  .page-quote .quote-btn-pdf,
+  .page-quote .quote-btn-print {
+    flex: 1 1 calc(50% - 0.4375rem);
+    width: auto;
+  }
+}
+
 .page-quote .quote-help-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -596,4 +617,135 @@
   margin: 8px 0 0;
   font-size: 10px;
   color: #9ca3af;
+}
+
+.quote-pdf-doc__logo-image {
+  display: block;
+  width: 160px;
+  max-width: 160px;
+  height: auto;
+}
+
+.quote-pdf-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.quote-pdf-card {
+  position: relative;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.quote-pdf-card__badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(226, 35, 26, 0.92);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.quote-pdf-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 132px;
+  background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+  border-bottom: 1px solid #eef0f3;
+}
+
+.quote-pdf-card__img {
+  display: block;
+  max-width: 88%;
+  max-height: 118px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.quote-pdf-card__img-placeholder {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.quote-pdf-card__body {
+  padding: 10px 12px 11px;
+}
+
+.quote-pdf-card__name {
+  margin: 0 0 2px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.quote-pdf-card__category {
+  margin: 0 0 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #e2231a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.quote-pdf-card__model {
+  margin: 0 0 8px;
+  font-size: 11px;
+  color: #4b5563;
+  line-height: 1.35;
+}
+
+.quote-pdf-card__desc {
+  margin: 8px 0 0;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #6b7280;
+}
+
+.quote-pdf-card__meta {
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.quote-pdf-card__meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+}
+
+.quote-pdf-card__meta-row dt {
+  margin: 0;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.quote-pdf-card__meta-row dd {
+  margin: 0;
+  color: #111827;
+  font-weight: 600;
+  text-align: right;
+}
+
+.quote-pdf-doc__footer-logo {
+  margin-bottom: 8px;
+}
+
+.quote-pdf-doc__footer-logo .quote-pdf-doc__logo-image {
+  width: 120px;
+  max-width: 120px;
+  opacity: 0.85;
 }

@@ -48,8 +48,15 @@ if (!in_array($type, ['contact', 'quote'], true)) {
 
 try {
     if ($type === 'contact') {
-        [$subject, $body, $replyTo] = buildContactMail($data);
-        sendMail($config, (string) $config['mail_to'], $subject, $body, normalizeReplyTo($replyTo, $config));
+        [$subject, $htmlBody, $plainBody, $replyTo] = buildContactMail($data, $config);
+        sendHtmlMail(
+            $config,
+            (string) $config['mail_to'],
+            $subject,
+            $htmlBody,
+            $plainBody,
+            normalizeReplyTo($replyTo, $config)
+        );
     } else {
         [$subject, $htmlBody, $plainBody, $replyTo] = buildQuoteMail($data, $config);
         sendHtmlMail(
@@ -96,7 +103,7 @@ function enforceOrigin(array $allowed): void
     }
 }
 
-function buildContactMail(array $data): array
+function buildContactMail(array $data, array $config): array
 {
     $name = trim((string) ($data['name'] ?? ''));
     $email = trim((string) ($data['email'] ?? ''));
@@ -112,22 +119,10 @@ function buildContactMail(array $data): array
     }
 
     $subject = '[Abralion İletişim] ' . $subjectLine;
-    $body = implode("\n", [
-        'Yeni iletişim formu mesajı',
-        '========================',
-        'Ad Soyad: ' . $name,
-        'E-posta: ' . $email,
-        'Telefon: ' . ($phone !== '' ? $phone : '—'),
-        'Konu: ' . $subjectLine,
-        '',
-        'Mesaj:',
-        $message,
-        '',
-        'Gönderim: ' . date('d.m.Y H:i:s'),
-        'IP: ' . ($_SERVER['REMOTE_ADDR'] ?? '—'),
-    ]);
+    $html = abr_build_contact_email_html($data, $config);
+    $plain = abr_build_contact_email_plain($data);
 
-    return [$subject, $body, $email];
+    return [$subject, $html, $plain, $email];
 }
 
 function buildQuoteMail(array $data, array $config): array
