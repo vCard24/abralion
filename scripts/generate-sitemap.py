@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "assets" / "js" / "products-data.js"
 OUT = ROOT / "sitemap.xml"
-BASE = "https://www.abralion.com"
+BASE = "https://abralion.com"
 TODAY = date.today().isoformat()
 
 STATIC = [
@@ -18,6 +18,10 @@ STATIC = [
     ("hakkimizda.html", "monthly", "0.8"),
     ("iletisim.html", "monthly", "0.8"),
     ("karsilastir.html", "monthly", "0.8"),
+    ("fiyat-teklifi.html", "monthly", "0.7"),
+    ("gizlilik-politikasi.html", "yearly", "0.3"),
+    ("kullanim-kosullari.html", "yearly", "0.3"),
+    ("kvkk.html", "yearly", "0.3"),
 ]
 
 

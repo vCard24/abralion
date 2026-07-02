@@ -10,6 +10,11 @@ venv/
 node_modules/
 api/config.php
 api/config.example.php
+confic.php
+config.php
+*.env
+lighthouse-*.json
+assets/css/fonts-selfhosted.css
 api/outbox/*
 !api/outbox/.gitkeep
 !api/outbox/.htaccess

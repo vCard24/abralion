@@ -1,188 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.abralion.com/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urunler.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urunler.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/dokumanlar.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/dokumanlar.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/hakkimizda.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/hakkimizda.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/iletisim.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/iletisim.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/karsilastir.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/karsilastir.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/fiyat-teklifi.html</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.abralion.com/urun/355mm-metal-sabit-tezgah-kesme-diski.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/fiyat-teklifi.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/abs-govdeli-profesyonel-serit-metre.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/gizlilik-politikasi.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://abralion.com/kullanim-kosullari.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://abralion.com/kvkk.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://abralion.com/urun/355mm-metal-sabit-tezgah-kesme-diski.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/ao-aluminyum-oksit-flap-disk.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/abs-govdeli-profesyonel-serit-metre.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/asfalt-elmas-kesme-diski.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/ao-aluminyum-oksit-flap-disk.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/beton-elmas-kesme-diski.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/asfalt-elmas-kesme-diski.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/cam-seramik-matkap-ucu.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/beton-elmas-kesme-diski.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/duz-keski-sds-max.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/cam-seramik-matkap-ucu.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/duz-keski-sds-plus.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/duz-keski-sds-max.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/genel-amacli-elmas-kesme-diski.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/duz-keski-sds-plus.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/granit-mermer-segmentli-taslama-diski.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/genel-amacli-elmas-kesme-diski.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/hss-matkap-ucu.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/granit-mermer-segmentli-taslama-diski.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/metal-inox-kesme-tasi.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/hss-matkap-ucu.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/metal-inox-taslama-diski.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/metal-inox-kesme-tasi.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/miknatisli-anahtar-ucu.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/metal-inox-taslama-diski.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/ph2-manyetik-bits-uc.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/miknatisli-anahtar-ucu.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/profesyonel-maket-bicagi.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/ph2-manyetik-bits-uc.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/sds-max-burc-aleti.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/profesyonel-maket-bicagi.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/sds-plus-2-kesicili-beton-matkap-ucu.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/sds-max-burc-aleti.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/sds-plus-4-kesicili-beton-matkap-ucu.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/sds-plus-2-kesicili-beton-matkap-ucu.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/segmentli-standart-elmas-kesici.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/sds-plus-4-kesicili-beton-matkap-ucu.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/sivri-uclu-keski-murc-sds-max.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/segmentli-standart-elmas-kesici.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/sivri-uclu-keski-murc-sds-plus.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/sivri-uclu-keski-murc-sds-max.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/ultra-ince-elmas-disk.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/sivri-uclu-keski-murc-sds-plus.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.abralion.com/urun/zr-zirkon-flap-disk.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://abralion.com/urun/ultra-ince-elmas-disk.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://abralion.com/urun/zr-zirkon-flap-disk.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

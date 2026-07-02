@@ -1,3 +1,10 @@
+# Kimlik bilgisi içeren yapılandırma dosyalarına doğrudan erişimi engelle
+<FilesMatch "^(confic|config)\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /

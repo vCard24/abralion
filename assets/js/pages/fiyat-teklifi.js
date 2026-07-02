@@ -27,7 +27,8 @@
     });
 
     if (new URLSearchParams(window.location.search).get('tesekkur') === '1') {
-      showThankYou(readLastSubmit());
+      window.location.replace('teklif-tesekkur.html');
+      return;
     }
   }
 
@@ -789,10 +790,7 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
       .then(() => {
         syncQuoteStorage();
         saveSubmit(data);
-        showThankYou(data);
-        const url = new URL(window.location.href);
-        url.searchParams.set('tesekkur', '1');
-        window.history.replaceState({}, '', url.pathname + url.search);
+        window.location = 'teklif-tesekkur.html';
       })
       .catch((err) => {
         showToast(err.message || 'E-posta gönderilemedi.', 'error');
