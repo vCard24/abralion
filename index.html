@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="assets/css/tailwind.css?v=20260702" as="style">
-  <link rel="preload" href="assets/css/noir-migration.css?v=20260711" as="style">
-  <link rel="preload" href="assets/css/dark-theme.css?v=20260712" as="style">
+  <link rel="preload" href="assets/css/noir-migration.css?v=20260713" as="style">
+  <link rel="preload" href="assets/css/dark-theme.css?v=20260713" as="style">
   <title>Abralion - Ana Sayfa</title>
   <link rel="canonical" href="https://abralion.com/">
-  <link rel="preload" as="image" href="assets/images/home/hero-bg-1920.avif" imagesrcset="assets/images/home/hero-bg-640.avif 640w, assets/images/home/hero-bg-1024.avif 1024w, assets/images/home/hero-bg-1440.avif 1440w, assets/images/home/hero-bg-1920.avif 1920w" imagesizes="100vw" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="assets/images/home/hero-bg-640.avif" imagesrcset="assets/images/home/hero-bg-640.avif 640w, assets/images/home/hero-bg-1024.avif 1024w, assets/images/home/hero-bg-1440.avif 1440w, assets/images/home/hero-bg-1920.avif 1920w" imagesizes="100vw" fetchpriority="high" type="image/avif">
   <style id="critical-home-lcp">
     html,body{margin:0}
     :root{--header-mobile-height:72px}
@@ -16,9 +16,9 @@
     .header{position:sticky;top:0;z-index:50;width:100%;background:rgba(18,20,20,.96);border-bottom:1px solid rgba(142,142,147,.2)}
     .header-container{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:80rem;margin:0 auto;padding:1rem 16px;box-sizing:border-box}
     .header-logo{display:block;height:3.5rem;width:auto;max-width:180px}
-    .home-hero-section{position:relative;width:100%;overflow:hidden;padding:0}
+    .home-hero-section{position:relative;width:100%;overflow:hidden;padding:0;min-height:min(90vh,920px)}
     #home-hero{position:relative;display:flex;flex-direction:column;min-height:min(90vh,920px);overflow:hidden}
-    #home-hero>.pointer-events-none{position:absolute;inset:0;z-index:0;pointer-events:none}
+    #home-hero>.pointer-events-none{position:absolute;inset:0;z-index:0;pointer-events:none;min-height:inherit}
     #home-hero>.pointer-events-none>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
     #home-hero>.relative.z-10{position:relative;z-index:10;flex:1;display:flex;width:100%;max-width:1280px;margin:0 auto;flex-direction:column;justify-content:center;padding:7rem 16px 2rem;box-sizing:border-box}
     .home-hero__content{max-width:56rem;width:100%}
@@ -28,7 +28,7 @@
     .home-hero__actions{display:flex;flex-wrap:wrap;gap:1rem}
     .home-hero__stats{display:flex;flex-wrap:wrap;gap:2rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;margin-top:0}
     .text-white{color:#fff}
-    .footer-logo{display:block;height:3.5rem;width:auto;max-width:180px}
+    .footer-logo{display:block;height:3.5rem;width:auto;max-width:180px;aspect-ratio:168/132}
     .featured-carousel__viewport{min-height:300px}
     .featured-carousel__track{display:flex;gap:24px}
     .featured-carousel__track .product-card{flex:0 0 calc((100% - 48px) / 3);min-width:0}
@@ -44,6 +44,7 @@
     .product-card--static{background:#1e1e1e;border:1px solid rgba(142,142,147,.2)}
     .product-card .aspect-\[1\.9\]{aspect-ratio:1.9/1}
     @media(max-width:768px){
+      .home-hero-section,#home-hero{min-height:520px}
       .header-nav{position:fixed;inset:0 auto auto 0;width:100%;height:100dvh;display:flex!important;flex-direction:column;opacity:0;visibility:hidden;pointer-events:none;z-index:1100}
       .mobile-menu-toggle{display:flex}
       .header-compare-link{display:none}
@@ -54,12 +55,12 @@
     .aspect-square{aspect-ratio:1/1}
   </style>
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260711" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260712" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260713" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260713" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702">
-    <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260711">
-    <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260712">
+    <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260713">
+    <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260713">
   </noscript>
   <link rel="stylesheet" href="assets/css/main.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
@@ -97,12 +98,12 @@
   <header class="header sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-steel-gray/20">
     <div class="header-container flex items-center justify-between gap-6 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-4 md:py-5">
       <div class="header-brand-nav flex items-center gap-8">
-        <a href="index.html" class="header-logo-link flex shrink-0 items-center transition-opacity hover:opacity-80" aria-label="Abralion Ana Sayfa">
+        <a href="/" class="header-logo-link flex shrink-0 items-center transition-opacity hover:opacity-80" aria-label="Abralion Ana Sayfa">
           <img src="assets/images/logo-beyaz-yatay.svg" alt="Abralion" class="header-logo w-auto" width="438" height="132" decoding="async">
         </a>
         <nav class="header-nav flex items-center gap-6" aria-label="Ana navigasyon">
           <ul class="header-nav-list flex list-none items-center gap-6 m-0 p-0">
-            <li><a href="index.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Ana Sayfa</a></li>
+            <li><a href="/" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">Ana Sayfa</a></li>
             <li class="header-nav-dropdown relative">
               <a href="urunler.html" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
                 Ürünlerimiz
@@ -122,11 +123,11 @@
           Karşılaştır
           <span class="compare-badge bg-surface-container-highest px-1.5 rounded text-xs font-bold" style="display: none;">0</span>
         </a>
-        <a href="fiyat-teklifi.html" class="header-cta-btn inline-flex items-center rounded-lg bg-abrasive-red px-6 py-2 font-label-caps text-label-caps uppercase text-white transition-all hover:brightness-110 active:scale-95">Teklif Al</a>
+        <a href="fiyat-teklifi.html" class="header-cta-btn inline-flex items-center rounded-lg bg-abrasive-red px-6 py-2 font-label-caps text-label-caps uppercase text-white transition-[transform,filter] hover:brightness-110 active:scale-95">Teklif Al</a>
         <button type="button" class="mobile-menu-toggle flex flex-col items-center justify-center gap-1.5 p-2.5 text-on-surface md:hidden" aria-label="Menüyü aç/kapat" aria-expanded="false">
-          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
-          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
-          <span class="block h-0.5 w-6 rounded-sm bg-current transition-all"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-transform"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-transform"></span>
+          <span class="block h-0.5 w-6 rounded-sm bg-current transition-transform"></span>
         </button>
       </div>
     </div>
@@ -149,10 +150,10 @@
               sizes="100vw">
             <img
               class="h-full w-full object-cover object-center"
-              src="assets/images/home/hero-bg-1920.jpg"
+              src="assets/images/home/hero-bg-640.jpg"
               alt=""
-              width="1920"
-              height="1812"
+              width="640"
+              height="604"
               decoding="async"
               fetchpriority="high">
           </picture>
@@ -175,8 +176,8 @@
               Rusya'daki Türk firmalarına yüksek kaliteli kesici diskler, elmas kesiciler, flap diskler ve profesyonel uçlar sunuyoruz.
             </p>
             <div class="home-hero__actions flex flex-wrap gap-4">
-              <a href="urunler.html" class="inline-flex items-center rounded bg-abrasive-red px-8 py-4 font-label-caps text-label-caps uppercase text-on-primary-container transition-all hover:brightness-110 active:scale-95">Ürün Kataloğunu İncele</a>
-              <a href="iletisim.html" class="home-hero__btn-ghost inline-flex items-center rounded px-8 py-4 font-label-caps text-label-caps uppercase transition-all">İletişime Geç</a>
+              <a href="urunler.html" class="inline-flex items-center rounded bg-abrasive-red px-8 py-4 font-label-caps text-label-caps uppercase text-on-primary-container transition-[transform,filter] hover:brightness-110 active:scale-95">Ürün Kataloğunu İncele</a>
+              <a href="iletisim.html" class="home-hero__btn-ghost inline-flex items-center rounded px-8 py-4 font-label-caps text-label-caps uppercase transition-colors">İletişime Geç</a>
             </div>
             <div class="home-hero__stats flex flex-wrap gap-8 border-t border-white/10 pt-8">
               <div class="home-hero__stat flex flex-col">
@@ -320,7 +321,7 @@
             Tüm dökümanlarımızı tek tıkla indirin. Ürün seçimini hızlandıran teknik tabloları ve sertifikalı teknik dosyalar bir arada.
           </p>
           <div class="flex gap-4">
-            <a href="dokumanlar.html" class="bg-abrasive-red text-white px-8 py-4 rounded-lg font-label-caps text-label-caps uppercase flex items-center gap-2 hover:brightness-110 transition-all">
+            <a href="dokumanlar.html" class="bg-abrasive-red text-white px-8 py-4 rounded-lg font-label-caps text-label-caps uppercase flex items-center gap-2 hover:brightness-110 transition-[filter]">
               Katalogları İncele
               <span class="material-symbols-outlined" data-icon="download">download</span>
             </a>
@@ -404,7 +405,7 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a href="iletisim.html" class="bg-abrasive-red text-white px-10 py-5 rounded-lg font-label-caps text-label-caps uppercase hover:scale-105 transition-transform text-center">Hemen Teklif Al</a>
-              <a href="iletisim.html" class="bg-white/10 text-white px-10 py-5 rounded-lg font-label-caps text-label-caps uppercase backdrop-blur hover:bg-white/20 transition-all text-center">İletişime Geç</a>
+              <a href="iletisim.html" class="bg-white/10 text-white px-10 py-5 rounded-lg font-label-caps text-label-caps uppercase backdrop-blur hover:bg-white/20 transition-colors text-center">İletişime Geç</a>
             </div>
           </div>
         </div>
@@ -427,7 +428,11 @@
               <!-- CATALOG_STATIC_START -->
               <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="metal-inox-kesme-tasi" data-category-id="kesici-taslama-flap-disk">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
-                  <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi.webp" alt="Metal / Inox Kesme Taşı" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
+                  <picture class="absolute inset-0 block h-full w-full">
+                    <source type="image/avif" srcset="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-card.avif">
+                    <source type="image/webp" srcset="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-card.webp">
+                    <img class="product-card-image h-full w-full object-cover" src="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-card.webp" alt="Metal / Inox Kesme Taşı" loading="lazy" width="600" height="316" data-fallback="assets/images/home/hero-bg.jpg">
+                  </picture>
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
                 </div>
                 <div class="mt-auto">
@@ -437,7 +442,11 @@
               </div>
               <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="355mm-metal-sabit-tezgah-kesme-diski" data-category-id="kesici-taslama-flap-disk">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
-                  <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski.webp" alt="355mm Metal Sabit Tezgah Kesme Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
+                  <picture class="absolute inset-0 block h-full w-full">
+                    <source type="image/avif" srcset="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-card.avif">
+                    <source type="image/webp" srcset="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-card.webp">
+                    <img class="product-card-image h-full w-full object-cover" src="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-card.webp" alt="355mm Metal Sabit Tezgah Kesme Diski" loading="lazy" width="600" height="316" data-fallback="assets/images/home/hero-bg.jpg">
+                  </picture>
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
                 </div>
                 <div class="mt-auto">
@@ -447,7 +456,11 @@
               </div>
               <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="metal-inox-taslama-diski" data-category-id="kesici-taslama-flap-disk">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
-                  <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski.webp" alt="Metal / Inox Taşlama Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
+                  <picture class="absolute inset-0 block h-full w-full">
+                    <source type="image/avif" srcset="assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski-card.avif">
+                    <source type="image/webp" srcset="assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski-card.webp">
+                    <img class="product-card-image h-full w-full object-cover" src="assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski-card.webp" alt="Metal / Inox Taşlama Diski" loading="lazy" width="600" height="316" data-fallback="assets/images/home/hero-bg.jpg">
+                  </picture>
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
                 </div>
                 <div class="mt-auto">
@@ -457,7 +470,11 @@
               </div>
               <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="segmentli-standart-elmas-kesici" data-category-id="elmas-kesici">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
-                  <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici.webp" alt="Segmentli Standart Elmas Kesici" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
+                  <picture class="absolute inset-0 block h-full w-full">
+                    <source type="image/avif" srcset="assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici-card.avif">
+                    <source type="image/webp" srcset="assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici-card.webp">
+                    <img class="product-card-image h-full w-full object-cover" src="assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici-card.webp" alt="Segmentli Standart Elmas Kesici" loading="lazy" width="600" height="316" data-fallback="assets/images/home/hero-bg.jpg">
+                  </picture>
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
                 </div>
                 <div class="mt-auto">
@@ -467,7 +484,11 @@
               </div>
               <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="sds-plus-2-kesicili-beton-matkap-ucu" data-category-id="kirici-delici">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
-                  <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu.webp" alt="SDS Plus 2 Kesicili Beton Matkap Ucu" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
+                  <picture class="absolute inset-0 block h-full w-full">
+                    <source type="image/avif" srcset="assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-card.avif">
+                    <source type="image/webp" srcset="assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-card.webp">
+                    <img class="product-card-image h-full w-full object-cover" src="assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-card.webp" alt="SDS Plus 2 Kesicili Beton Matkap Ucu" loading="lazy" width="600" height="316" data-fallback="assets/images/home/hero-bg.jpg">
+                  </picture>
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
                 </div>
                 <div class="mt-auto">
@@ -483,7 +504,7 @@
           </button>
         </div>
         <div class="mt-10 md:mt-12">
-          <a href="urunler.html" class="inline-flex items-center rounded bg-abrasive-red px-8 py-4 font-label-caps text-label-caps uppercase text-on-primary-container transition-all hover:brightness-110 active:scale-95">Tüm Ürünleri Gör</a>
+          <a href="urunler.html" class="inline-flex items-center rounded bg-abrasive-red px-8 py-4 font-label-caps text-label-caps uppercase text-on-primary-container transition-[transform,filter] hover:brightness-110 active:scale-95">Tüm Ürünleri Gör</a>
         </div>
       </div>
     </section>
@@ -492,8 +513,8 @@
   <footer class="footer bg-carbon-black border-t border-white/5">
     <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
       <div class="space-y-6">
-        <a href="index.html" class="inline-block footer-logo-link" aria-label="Abralion Ana Sayfa">
-          <img src="assets/images/logo-beyaz.svg" alt="Abralion Logo" class="footer-logo h-14 w-auto" width="180" height="56" decoding="async" data-logo>
+        <a href="/" class="inline-block footer-logo-link" aria-label="Abralion Ana Sayfa">
+          <img src="assets/images/logo-beyaz.svg" alt="Abralion Logo" class="footer-logo h-14 w-auto" width="168" height="132" decoding="async" data-logo>
         </a>
         <p class="footer-description font-body-md text-body-md text-on-surface-variant leading-relaxed">
           Rusya'da faaliyet gösteren EKS-PLAST LLC bünyesinde, Türk firmalarına endüstriyel kesim ve taşlama ürünleri sunan güvenilir çözüm ortağınız.
@@ -507,7 +528,7 @@
       <div>
         <h2 class="font-label-caps text-label-caps uppercase text-white mb-6 md:mb-8">Hızlı Linkler</h2>
         <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
-          <li><a class="transition-colors hover:text-abrasive-red" href="index.html">Ana Sayfa</a></li>
+          <li><a class="transition-colors hover:text-abrasive-red" href="/">Ana Sayfa</a></li>
           <li><a class="transition-colors hover:text-abrasive-red" href="urunler.html">Ürünlerimiz</a></li>
           <li><a class="transition-colors hover:text-abrasive-red" href="dokumanlar.html">Dökümanlar</a></li>
           <li><a class="transition-colors hover:text-abrasive-red" href="hakkimizda.html">Hakkımızda</a></li>
@@ -540,7 +561,7 @@
           </li>
           <li class="flex items-start gap-3">
             <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="language">language</span>
-            <a class="transition-colors hover:text-abrasive-red" href="https://www.abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a>
+            <a class="transition-colors hover:text-abrasive-red" href="https://abralion.com" target="_blank" rel="noopener noreferrer">www.abralion.com</a>
           </li>
           <li class="flex items-start gap-3">
             <span class="material-symbols-outlined shrink-0 text-abrasive-red" data-icon="location_on">location_on</span>

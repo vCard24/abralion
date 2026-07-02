@@ -20,7 +20,7 @@ SOURCE = HOME / "hero-bg.jpg"
 HERO_WIDTHS = (640, 1024, 1440, 1920)
 CARD_WIDTH = 480
 CARD_ASPECT = 16 / 9  # aspect-video (kategori kartı)
-AVIF_QUALITY = 50
+AVIF_QUALITY = 45
 WEBP_QUALITY = 75
 JPG_QUALITY = 80
 
@@ -105,6 +105,8 @@ def main() -> None:
         webp_path = HOME / f"hero-bg-{width}.webp"
         save_avif(variant, avif_path)
         save_webp(variant, webp_path)
+        if width == 640:
+            save_jpg(variant, HOME / "hero-bg-640.jpg")
         report(avif_path, original_size)
         report(webp_path, original_size)
 
