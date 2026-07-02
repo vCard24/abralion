@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAT = re.compile(r"product-image-utils\.js\?v=[^\"']+")
-REP = "product-image-utils.js?v=20260705"
+REP = "product-image-utils.js?v=20260708"
 
 def main() -> None:
     n = 0

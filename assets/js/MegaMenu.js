@@ -98,6 +98,7 @@ function initMegaMenuInteraction(root) {
 
   const tabs = root.querySelectorAll('.mega-menu-tab');
   const panels = root.querySelectorAll('.mega-menu-panel');
+  const desktopHover = window.matchMedia('(min-width: 769px)');
 
   const activate = (catId) => {
     tabs.forEach((tab) => {
@@ -119,7 +120,7 @@ function initMegaMenuInteraction(root) {
     tab.addEventListener('focus', () => activate(tab.dataset.category));
   });
 
-  if (window.innerWidth > 768) {
+  if (desktopHover.matches) {
     let closeTimer;
     const open = () => {
       clearTimeout(closeTimer);
@@ -195,26 +196,31 @@ async function buildMegaMenu() {
       </div>
     </li>`;
 
-    container.querySelectorAll('.mega-menu-product-thumb img, .mega-menu-feature img').forEach((img) => {
-      const link = img.closest('.mega-menu-product-link, .mega-menu-feature');
-      const slugMatch = link?.getAttribute('href')?.match(/\/([^/]+)\.html$/);
-      const slug = slugMatch?.[1];
-      const product = slug ? data.products.find((p) => p.slug === slug) : null;
-      if (product && typeof bindProductImageFallback === 'function') {
-        bindProductImageFallback(img, product, base);
-        return;
-      }
-      img.addEventListener('error', () => {
-        const wrap = img.closest('.mega-menu-product-thumb') || img.closest('.mega-menu-feature');
-        wrap?.classList.add('is-missing');
+    const bindMegaMenuAfterPaint = () => {
+      const images = container.querySelectorAll('.mega-menu-product-thumb img, .mega-menu-feature img');
+      images.forEach((img) => {
+        const link = img.closest('.mega-menu-product-link, .mega-menu-feature');
+        const slugMatch = link?.getAttribute('href')?.match(/\/([^/]+)\.html$/);
+        const slug = slugMatch?.[1];
+        const product = slug ? data.products.find((p) => p.slug === slug) : null;
+        if (product && typeof bindProductImageFallback === 'function') {
+          bindProductImageFallback(img, product, base);
+          return;
+        }
+        img.addEventListener('error', () => {
+          const wrap = img.closest('.mega-menu-product-thumb') || img.closest('.mega-menu-feature');
+          wrap?.classList.add('is-missing');
+        });
       });
-    });
 
-    initMegaMenuInteraction(container);
+      initMegaMenuInteraction(container);
 
-    container.querySelectorAll('.mega-menu-panel.is-active').forEach((panel) => {
-      resetPanelFeature(panel);
-    });
+      container.querySelectorAll('.mega-menu-panel.is-active').forEach((panel) => {
+        resetPanelFeature(panel);
+      });
+    };
+
+    requestAnimationFrame(bindMegaMenuAfterPaint);
   } catch (e) {
     console.error('Mega menü yüklenemedi', e);
   }

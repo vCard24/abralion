@@ -150,12 +150,18 @@
     if (img.dataset.imageFallbackBound === '1') return;
     img.dataset.imageFallbackBound = '1';
 
+    const verifyLoaded = () => {
+      if (img.complete && !img.naturalWidth) advanceImageFallback(img);
+    };
+
     img.addEventListener('error', () => {
       advanceImageFallback(img);
     });
 
-    if (img.complete && !img.naturalWidth) {
-      advanceImageFallback(img);
+    img.addEventListener('load', verifyLoaded, { once: true });
+
+    if (img.complete) {
+      requestAnimationFrame(verifyLoaded);
     }
   }
 

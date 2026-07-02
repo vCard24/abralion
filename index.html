@@ -3,6 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abralion - Ana Sayfa</title>
+  <link rel="preload" href="assets/images/home/hero-bg.jpg" as="image" type="image/jpeg" fetchpriority="high" imagesizes="100vw">
+  <style id="critical-home-lcp">
+    html,body{margin:0}
+    body.page-noir-site{background:#0a0a0a;color:#e2e2e2;-webkit-font-smoothing:antialiased}
+    .header{position:sticky;top:0;z-index:50;width:100%;background:rgba(18,20,20,.96)}
+    .home-hero-section{position:relative;width:100%;overflow:hidden;padding:0}
+    #home-hero{position:relative;display:flex;flex-direction:column;min-height:min(90vh,920px);overflow:hidden}
+    #home-hero>.pointer-events-none{position:absolute;inset:0;z-index:0;pointer-events:none}
+    #home-hero>.pointer-events-none>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+    #home-hero>.relative{z-index:10;position:relative}
+    .home-hero__title{color:#fff;font-weight:700;line-height:1.1;margin:0;font-size:clamp(2rem,5vw,4rem)}
+    .text-white{color:#fff}
+  </style>
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/tailwind.css?v=20260702"></noscript>
+  <link rel="stylesheet" href="assets/css/main.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
+  <link rel="stylesheet" href="assets/css/components.css?v=20260603" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/components.css?v=20260603"></noscript>
+  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260707" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/noir-migration.css?v=20260707"></noscript>
+  <link rel="stylesheet" href="assets/css/responsive.css?v=20260603" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/responsive.css?v=20260603"></noscript>
+  <link rel="stylesheet" href="assets/css/dark-theme.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/dark-theme.css"></noscript>
+  <link rel="stylesheet" href="assets/css/site-extra.css?v=20260603" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/site-extra.css?v=20260603"></noscript>
   <meta name="description" content="Abralion - Profesyonel kesici, taşlama, elmas kesici ve endüstriyel uç ürünleri.">
   <link rel="canonical" href="https://abralion.com/">
   <meta property="og:type" content="website">
@@ -18,32 +46,12 @@
   <meta name="twitter:description" content="Profesyonel kesici, taşlama, elmas kesici ve endüstriyel uç ürünleri.">
   <meta name="twitter:image" content="https://abralion.com/assets/images/abralion-disc.webp">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
-  <title>Abralion - Ana Sayfa</title>
   <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/images/home/hero-bg.jpg" as="image" type="image/jpeg" fetchpriority="high">
-  <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702">
-
-  <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-  <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
-
-<link rel="preload" href="assets/css/components.css?v=20260603" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<noscript><link rel="stylesheet" href="assets/css/components.css?v=20260603"></noscript>
-<link rel="preload" href="assets/css/noir-migration.css?v=20260707" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-  <noscript><link rel="stylesheet" href="assets/css/noir-migration.css?v=20260707"></noscript>
-<link rel="preload" href="assets/css/responsive.css?v=20260603" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/responsive.css?v=20260603"></noscript>
-  <link rel="preload" href="assets/css/dark-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/dark-theme.css"></noscript>
-  <link rel="preload" href="assets/css/site-extra.css?v=20260603" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/site-extra.css?v=20260603"></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=swap"></noscript>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"></noscript>
 </head>
 <body class="page-noir-site bg-carbon-black text-on-surface font-body-md antialiased">
@@ -100,7 +108,8 @@
             alt=""
             width="1920"
             height="1080"
-            decoding="async"
+            decoding="sync"
+            loading="eager"
             fetchpriority="high">
           <div class="absolute inset-0 bg-gradient-to-r from-carbon-black via-carbon-black/90 to-carbon-black/55"></div>
           <div class="absolute inset-0 bg-carbon-black/25"></div>
@@ -204,7 +213,7 @@
           </div>
           <!-- Standard Card -->
           <div class="relative group overflow-hidden rounded-lg aspect-square bg-surface-elevation">
-            <img alt="Kesici Taşlar" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="assets/images/home/kesici-taslar-kullanim.jpg" width="600" height="600" loading="lazy" decoding="async"/>
+            <img alt="Kesici Taşlar" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="assets/images/home/kesici-taslar.jpg" width="600" height="600" loading="lazy" decoding="async"/>
             <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent p-8 flex flex-col justify-end">
               <div class="flex gap-2 mb-4">
                 <span class="bg-white/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">Inox</span>
@@ -449,14 +458,14 @@
   </footer>
 
 
-  <script defer src="assets/js/product-image-utils.js?v=20260705"></script>
+  <script defer src="assets/js/product-image-utils.js?v=20260708"></script>
   <script defer src="assets/js/site.js?v=20260605"></script>
   <script defer src="assets/js/products-data.min.js?v=20260704"></script>
   <script defer src="assets/js/CompareManager.js"></script>
   <script defer src="assets/js/ProductManager.js"></script>
   <script defer src="assets/js/ProductCard.js?v=20260525m"></script>
-  <script defer src="assets/js/Header.js?v=20260705"></script>
-  <script defer src="assets/js/MegaMenu.js?v=20260705"></script>
+  <script defer src="assets/js/Header.js?v=20260708"></script>
+  <script defer src="assets/js/MegaMenu.js?v=20260708"></script>
   <script defer src="assets/js/main.js"></script>
   <script defer src="assets/js/pages/home.js?v=20260701"></script>
 </body>

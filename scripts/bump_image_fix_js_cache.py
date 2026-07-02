@@ -4,9 +4,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BUMPS = {
-    r"MegaMenu\.js\?v=[^\"']+": "MegaMenu.js?v=20260705",
+    r"MegaMenu\.js\?v=[^\"']+": "MegaMenu.js?v=20260708",
     r"product-detail\.js\?v=[^\"']+": "product-detail.js?v=20260705",
-    r"Header\.js\?v=[^\"']+": "Header.js?v=20260705",
+    r"Header\.js\?v=[^\"']+": "Header.js?v=20260708",
 }
 
 def main() -> None:
