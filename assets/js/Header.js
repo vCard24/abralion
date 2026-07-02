@@ -16,7 +16,36 @@ class Header {
     this.init();
   }
 
+  ensureCompareNavLink() {
+    const navList = document.querySelector('.header-nav-list');
+    if (!navList || navList.querySelector('.header-nav-compare')) return;
+
+    const headerCompare = document.querySelector('.header-compare-link');
+    const base = typeof getBasePath === 'function' ? getBasePath() : '';
+    const href = headerCompare?.getAttribute('href') || `${base}karsilastir.html`;
+    const badge = headerCompare?.querySelector('.compare-badge');
+    const count = badge?.textContent?.trim() || '0';
+
+    const li = document.createElement('li');
+    li.className = 'header-nav-compare';
+    li.innerHTML = `
+      <a href="${href}" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
+        Karşılaştır
+        <span class="compare-badge bg-surface-container-highest px-1.5 rounded text-xs font-bold"${badge?.style.display === 'none' ? ' style="display: none;"' : ''}>${count}</span>
+      </a>`;
+    navList.appendChild(li);
+
+    window.addEventListener('compareListUpdated', (e) => {
+      const navBadge = li.querySelector('.compare-badge');
+      if (!navBadge) return;
+      const n = e.detail?.count ?? 0;
+      navBadge.textContent = String(n);
+      navBadge.style.display = n > 0 ? 'inline-block' : 'none';
+    });
+  }
+
   init() {
+    this.ensureCompareNavLink();
     this.ensureBackdrop();
     this.observeHeaderHeight();
     this.setupMobileNavPortal();

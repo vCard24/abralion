@@ -563,6 +563,9 @@ header.header .header-nav-link.active {
 }
 
 header.header .header-compare-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
   font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -571,6 +574,21 @@ header.header .header-compare-link {
   color: #e7bdb7;
   text-decoration: none;
   white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  header.header .header-compare-link {
+    font-size: 0;
+    gap: 0.25rem;
+  }
+
+  header.header .header-compare-link svg {
+    font-size: 20px;
+  }
+
+  header.header .header-compare-link .compare-badge {
+    font-size: 12px;
+  }
 }
 
 header.header .header-compare-link:hover {
@@ -1747,4 +1765,77 @@ html body.page-compare {
 /* restored base rule */
 .products-main .product-card-actions .btn-icon-compare {
   align-self: flex-end;
+}
+
+/* Karşılaştırma — sticky bar ve toast (ürün/katalog sayfalarında compare.css yok) */
+.compare-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: #1a1a1a;
+  color: #e2e2e2;
+  border-top: 1px solid #333;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
+  padding: 0.75rem 0;
+}
+
+.compare-bar[hidden] {
+  display: none !important;
+}
+
+.compare-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.compare-bar-text {
+  font-size: 14px;
+}
+
+.compare-bar-count {
+  color: #e2231a;
+  font-size: 1.1em;
+}
+
+.compare-bar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+body.has-compare-bar {
+  padding-bottom: 72px;
+}
+
+.compare-toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #1a1a1a;
+  color: #e2e2e2;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #333;
+  font-size: 14px;
+  z-index: 950;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+}
+
+.compare-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  body.has-compare-bar {
+    padding-bottom: 100px;
+  }
 }

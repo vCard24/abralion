@@ -193,8 +193,8 @@ class CompareManager {
     });
     document.querySelectorAll('.btn-icon-compare').forEach((btn) => {
       const pid = btn.dataset.productId;
-      const vid = btn.dataset.variantId;
-      const inList = pid && vid && this.isInList(pid, vid);
+      const vid = btn.dataset.variantId || pid;
+      const inList = Boolean(pid) && this.isInList(pid, vid);
       btn.classList.toggle('in-compare', inList);
       btn.disabled = !inList && full;
       btn.setAttribute('aria-pressed', inList ? 'true' : 'false');
