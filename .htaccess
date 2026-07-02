@@ -6,6 +6,13 @@
   RewriteRule ^index\.html$ / [R=301,L]
 </IfModule>
 
+# Doğru Content-Type (AVIF/WebP text/plain olarak sunulmasın)
+# Nginx alternatifi: mime.types veya site conf içinde types { image/avif avif; image/webp webp; }
+<IfModule mod_mime.c>
+  AddType image/avif .avif
+  AddType image/webp .webp
+</IfModule>
+
 # Statik varlıklar — sürüm sorgusu (?v=) ile uzun önbellek
 <IfModule mod_headers.c>
   <FilesMatch "\.(css|js|mjs|jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|eot|pdf|zip|webmanifest)$">

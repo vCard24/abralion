@@ -16,9 +16,7 @@ class ProductCard {
     if (typeof primaryProductImageSrc === 'function') {
       return primaryProductImageSrc(product || { slug, id: slug }, base);
     }
-    const jpg = `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
-    const png = `${base}assets/images/products/${slug}/${slug}-kart.png`;
-    return slug === 'metal-inox-kesme-tasi' ? png : jpg;
+    return `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
   }
 
   static formatTechnicalSpec(product) {
@@ -115,8 +113,15 @@ class ProductCard {
       .join('');
   }
 
+  static iconSvg(name, extraClass = '') {
+    if (typeof window.AbralionIcons !== 'undefined' && typeof window.AbralionIcons.iconSvg === 'function') {
+      return window.AbralionIcons.iconSvg(name, extraClass);
+    }
+    return '';
+  }
+
   static detailIconSvg() {
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>`;
+    return ProductCard.iconSvg('arrow_forward', 'text-[20px]');
   }
 
   createNoirCardElement() {
@@ -181,12 +186,12 @@ class ProductCard {
             <button type="button" class="btn-icon-compare flex h-10 w-10 items-center justify-center rounded text-steel-gray transition-colors hover:bg-surface-container-high hover:text-abrasive-red"
               title="İlk modeli karşılaştırmaya ekle"
               data-product-id="${p.id}" data-variant-id="${variantId}" aria-label="Karşılaştır">
-              <span class="material-symbols-outlined text-[20px]" data-icon="compare_arrows">compare_arrows</span>
+              ${ProductCard.iconSvg('compare_arrows', 'text-[20px]')}
             </button>
             <a href="${url}" class="product-card-detail flex items-center gap-2 font-label-caps group/btn transition-all text-on-surface hover:text-abrasive-red"
               data-product-id="${p.id}" aria-label="${name} detayları">
               DETAYLAR
-              <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+              ${ProductCard.iconSvg('arrow_forward', 'text-[18px] group-hover/btn:translate-x-1 transition-transform')}
             </a>
           </div>
         </div>`;

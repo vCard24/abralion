@@ -2,7 +2,7 @@
   'use strict';
 
   /** Her tarayıcıda yüklenebilen yedek görsel */
-  const PLACEHOLDER_REL = 'assets/images/home/hero-bg.jpg';
+  const PLACEHOLDER_REL = 'assets/images/products/placeholder-kart.jpg';
 
   function normalizeRelPath(src) {
     return String(src || '').replace(/^\//, '');
@@ -54,9 +54,7 @@
 
   function kartRelPaths(slug) {
     const s = slug || '';
-    const jpg = `assets/images/products/${s}/${s}-kart.jpg`;
-    const png = `assets/images/products/${s}/${s}-kart.png`;
-    return s === 'metal-inox-kesme-tasi' ? [png, jpg] : [jpg, png];
+    return [`assets/images/products/${s}/${s}-kart.jpg`];
   }
 
   function galleryRelPaths(product) {
@@ -95,7 +93,7 @@
   function productImageRelForFetch(product) {
     const candidates = buildProductImageCandidates(product, '');
     const raster = candidates.find(
-      (u) => !isWebpUrl(u) && !u.includes('placeholder') && !u.includes('hero-bg')
+      (u) => !isWebpUrl(u) && !u.includes('placeholder') && !u.includes('placeholder-kart')
     );
     const webp = candidates.find((u) => isWebpUrl(u));
     const pick = raster || webp || candidates[0] || PLACEHOLDER_REL;

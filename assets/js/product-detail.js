@@ -3,6 +3,12 @@ const NOIR_BADGE_COLUMNS = new Set([
   'bicak_malzemesi', 'kasa_malzemesi', 'kullanim_yeri', 'govde_kizak_tipi',
 ]);
 
+function iconSvg(name, extraClass = '') {
+  return (window.AbralionIcons && typeof window.AbralionIcons.iconSvg === 'function')
+    ? window.AbralionIcons.iconSvg(name, extraClass)
+    : '';
+}
+
 function formatTableCellHtml(cell, col) {
   const raw = cell == null ? '' : String(cell);
   if (!raw) return '';
@@ -14,9 +20,7 @@ function formatTableCellHtml(cell, col) {
 }
 
 function kartImageSrc(base, slug) {
-  const jpg = `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
-  const png = `${base}assets/images/products/${slug}/${slug}-kart.png`;
-  return slug === 'metal-inox-kesme-tasi' ? png : jpg;
+  return `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
 }
 
 
@@ -129,7 +133,7 @@ function renderRelatedProducts(product, pm) {
         <p class="text-[12px] text-steel-gray mb-4 line-clamp-2">${desc}${descRaw.length >= 90 ? '…' : ''}</p>
         <span class="text-abrasive-red font-label-caps text-[11px] inline-flex items-center gap-2 uppercase">
           Detayları İncele
-          <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+          ${iconSvg('chevron_right', 'text-[14px]')}
         </span>
       </div>
     </a>`;
@@ -158,7 +162,7 @@ function fillList(ul, items, options = {}) {
       const text = escapeHtml(item.replace(/^✓\s*/, ''));
       if (styled) {
         return `<li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-abrasive-red text-lg shrink-0" data-icon="check_circle">check_circle</span>
+          ${iconSvg('check_circle', 'text-abrasive-red text-lg shrink-0')}
           <span class="text-body-md text-on-surface">${text}</span>
         </li>`;
       }
@@ -207,7 +211,7 @@ function renderGallery(product, container) {
       <button type="button" class="slider-btn next absolute right-4 top-1/2 z-20 -translate-y-1/2 flex h-12 w-12 items-center justify-center border border-white/10 bg-carbon-black/60 text-white transition-colors hover:bg-abrasive-red sr-only" aria-label="Sonraki görsel">›</button>
       <div class="absolute bottom-6 left-6 flex gap-3 z-20">
         <button type="button" class="gallery-lightbox-trigger w-12 h-12 bg-carbon-black/60 border border-white/10 flex items-center justify-center hover:bg-abrasive-red transition-colors" aria-label="Yakınlaştır">
-          <span class="material-symbols-outlined text-white" data-icon="zoom_in">zoom_in</span>
+          ${iconSvg('zoom_in', 'text-white')}
         </button>
       </div>
     </div>
@@ -308,11 +312,11 @@ function renderBreadcrumb(product) {
   if (!ol) return;
   ol.innerHTML = `
     <li><a class="hover:text-on-surface transition-colors" href="${base}index.html">Ana Sayfa</a></li>
-    <li class="flex items-center gap-2" aria-hidden="true"><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+    <li class="flex items-center gap-2" aria-hidden="true">${iconSvg('chevron_right', 'text-[14px]')}</li>
     <li><a class="hover:text-on-surface transition-colors" href="${base}urunler.html">Ürünlerimiz</a></li>
-    <li class="flex items-center gap-2" aria-hidden="true"><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+    <li class="flex items-center gap-2" aria-hidden="true">${iconSvg('chevron_right', 'text-[14px]')}</li>
     <li><a class="hover:text-on-surface transition-colors" href="${base}urunler.html?kategori=${encodeURIComponent(product.categoryId)}">${escapeHtml(product.categoryName)}</a></li>
-    <li class="flex items-center gap-2" aria-hidden="true"><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+    <li class="flex items-center gap-2" aria-hidden="true">${iconSvg('chevron_right', 'text-[14px]')}</li>
     <li class="text-abrasive-red" aria-current="page">${escapeHtml(product.name)}</li>`;
 }
 

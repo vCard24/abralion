@@ -193,9 +193,6 @@ window.productThumbUrl = function (base, product) {
     return primaryProductImageSrc(product, base);
   }
   const slug = product.slug;
-  if (slug === 'metal-inox-kesme-tasi') {
-    return `${base}assets/images/products/${slug}/${slug}-kart.png`;
-  }
   return `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
 };
 

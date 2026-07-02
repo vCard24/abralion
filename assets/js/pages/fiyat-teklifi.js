@@ -180,9 +180,6 @@
     }
     const slug = product.slug || product.id;
     let rel = `assets/images/products/${slug}/${slug}-kart.jpg`;
-    if (slug === 'metal-inox-kesme-tasi') {
-      rel = `assets/images/products/${slug}/${slug}-kart.png`;
-    }
     if (rel.startsWith('http')) return rel;
     return `${base}${rel}`.replace(/([^:]\/)\/+/g, '$1');
   }
@@ -727,9 +724,6 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
         ? productImageRelForFetch(product)
         : (() => {
             const slug = product.slug || product.id;
-            if (slug === 'metal-inox-kesme-tasi') {
-              return `assets/images/products/${slug}/${slug}-kart.png`;
-            }
             return `assets/images/products/${slug}/${slug}-kart.jpg`;
           })();
     return mailAbsoluteUrl(rel);

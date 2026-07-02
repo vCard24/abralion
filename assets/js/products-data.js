@@ -55,11 +55,11 @@ window.ABRALION_CATALOG = {
           "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi"
         },
         {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kullanim.png",
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kullanim.jpg",
           "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi kullanim"
         },
         {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-varyantlar.png",
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-varyantlar.jpg",
           "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi varyantlar"
         },
         {
@@ -529,7 +529,7 @@ window.ABRALION_CATALOG = {
           "alt": "AO Alüminyum Oksit Flap Disk - ao aluminyum oksit flap disk"
         },
         {
-          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kullanim.png",
+          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kullanim.jpg",
           "alt": "AO Alüminyum Oksit Flap Disk - ao aluminyum oksit flap disk kullanim"
         },
         {
@@ -675,7 +675,7 @@ window.ABRALION_CATALOG = {
           "alt": "Ultra İnce Elmas Disk - ultra ince elmas disk etiket"
         },
         {
-          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kullanim.png",
+          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kullanim.jpg",
           "alt": "Ultra İnce Elmas Disk - ultra ince elmas disk kullanim"
         },
         {
@@ -775,7 +775,7 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/asfalt-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-kullanim.png",
+          "src": "assets/images/products/asfalt-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-kullanim.jpg",
           "alt": "Asfalt İçin Elmas Kesme Diski - asfalt icin elmas kesme diski kullanim"
         },
         {
@@ -831,7 +831,7 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/beton-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-kullanim.png",
+          "src": "assets/images/products/beton-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-kullanim.jpg",
           "alt": "Güçlendirilmiş Beton İçin Elmas Kesme Diski - guclendirilmis beton icin elmas kesme diski kullanim"
         },
         {
@@ -1375,7 +1375,7 @@ window.ABRALION_CATALOG = {
           "alt": "HSS Matkap Ucu - hss matkap ucu"
         },
         {
-          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-kullanim.png",
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-kullanim.jpg",
           "alt": "HSS Matkap Ucu - hss matkap ucu kullanim"
         }
       ],
@@ -1466,7 +1466,7 @@ window.ABRALION_CATALOG = {
           "alt": "Düz Keski SDS Plus - duz keski sds plus"
         },
         {
-          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-kullanim.png",
+          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-kullanim.jpg",
           "alt": "Düz Keski SDS Plus - duz keski sds plus kullanim"
         }
       ],
@@ -1523,7 +1523,7 @@ window.ABRALION_CATALOG = {
           "alt": "Düz Keski SDS Max - duz keski sds max"
         },
         {
-          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-kullanim.png",
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-kullanim.jpg",
           "alt": "Düz Keski SDS Max - duz keski sds max kullanim"
         }
       ],
@@ -1590,7 +1590,7 @@ window.ABRALION_CATALOG = {
           "alt": "Sivri Uçlu Keski Murç SDS Plus - sivri uclu keski murc sds plus"
         },
         {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kullanim.png",
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kullanim.jpg",
           "alt": "Sivri Uçlu Keski Murç SDS Plus - sivri uclu keski murc sds plus kullanim"
         }
       ],
@@ -1690,11 +1690,11 @@ window.ABRALION_CATALOG = {
           "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cam seramik matkap ucu"
         },
         {
-          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kutu.png",
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kutu.jpg",
           "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cok fonksiyonlu cam ve seramik matkap ucu 4 kesicili kutu"
         },
         {
-          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kullanim.png",
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kullanim.jpg",
           "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cok fonksiyonlu cam ve seramik matkap ucu 4 kesicili kullanim"
         }
       ],
@@ -1771,7 +1771,7 @@ window.ABRALION_CATALOG = {
           "alt": "SDS MAX Burç Aleti (Taraklı Murç) - sds max burc aleti"
         },
         {
-          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-tarakli-murc-kullanim.png",
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-tarakli-murc-kullanim.jpg",
           "alt": "SDS MAX Burç Aleti (Taraklı Murç) - sds max burc aleti tarakli murc kullanim"
         },
         {
@@ -1818,7 +1818,7 @@ window.ABRALION_CATALOG = {
           "alt": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü) - miknatisli anahtar ucu"
         },
         {
-          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kullanim.png",
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kullanim.jpg",
           "alt": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü) - miknatisli anahtar ucu manyetik somun adaptoru kullanim"
         }
       ],
@@ -1871,7 +1871,7 @@ window.ABRALION_CATALOG = {
           "alt": "PH2 Manyetik Bits Uç - ph2 manyetik bits uc"
         },
         {
-          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kullanim.png",
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kullanim.jpg",
           "alt": "PH2 Manyetik Bits Uç - ph2 manyetik bits uc kullanim"
         }
       ],
@@ -1947,11 +1947,11 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-metal-maket-bicagi-kullanim.png",
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-metal-maket-bicagi-kullanim.jpg",
           "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel metal maket bicagi kullanim"
         },
         {
-          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-plastik-maket-bicagi-kullanim.png",
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-plastik-maket-bicagi-kullanim.jpg",
           "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel plastik maket bicagi kullanim"
         },
         {

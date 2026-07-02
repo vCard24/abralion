@@ -1,3 +1,9 @@
+function iconSvg(name, extraClass = '') {
+  return (window.AbralionIcons && typeof window.AbralionIcons.iconSvg === 'function')
+    ? window.AbralionIcons.iconSvg(name, extraClass)
+    : '';
+}
+
 function variantBadgeText(variant, product) {
   if (variant.uzunluk_mm != null && variant.uc_genisligi_mm != null) {
     return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm}x${variant.uc_genisligi_mm} mm`.replace(/^x/, '');
@@ -32,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (keys.length < 1) {
     container.innerHTML = `
       <div class="compare-empty text-center py-16 px-6 border border-steel-gray/20 rounded-lg bg-surface-elevation">
-        <span class="material-symbols-outlined text-abrasive-red text-5xl mb-6 block" aria-hidden="true">compare_arrows</span>
+        ${iconSvg('compare_arrows', 'text-abrasive-red text-5xl mb-6 block')}
         <p class="font-headline-md text-headline-md text-white mb-2">Karşılaştırma listeniz boş</p>
         <p class="compare-empty-hint font-body-md text-on-surface-variant max-w-md mx-auto mb-8">
           Ürün sayfasındaki teknik tabloda satır başındaki kutucuklarla model ekleyin veya ürünler sayfasından seçim yapın.
@@ -110,7 +116,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       html += `<th class="compare-product-col p-6 border-b border-r border-steel-gray/20" scope="col">
         <div class="compare-product-header flex flex-col items-center gap-4 relative">
           <button type="button" class="compare-matrix-remove compare-remove-btn" data-key="${escapeHtml(key)}" aria-label="Kaldır">
-            <span class="material-symbols-outlined text-lg" aria-hidden="true">close</span>
+            ${iconSvg('close', 'text-lg')}
           </button>
           <img src="${escapeHtml(imgSrc)}" alt="" class="h-28 object-contain" loading="lazy" data-compare-product-id="${escapeHtml(product.id)}">
           <p class="product-category font-label-caps text-[10px] uppercase text-abrasive-red m-0">${escapeHtml(product.categoryName)}</p>
@@ -126,7 +132,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else {
       html += `<th class="compare-product-col compare-slot-empty p-6 border-b border-r border-steel-gray/20" scope="col">
         <div class="compare-slot-add flex flex-col items-center justify-center gap-4 min-h-[280px]">
-          <span class="compare-slot-icon material-symbols-outlined text-4xl text-steel-gray/50" aria-hidden="true">add</span>
+          ${iconSvg('add', 'compare-slot-icon text-4xl text-steel-gray/50')}
           <p class="font-label-caps text-label-caps uppercase text-steel-gray m-0">Model ekle</p>
           <a href="${base}urunler.html" class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-abrasive-red transition-colors">Ürünleri incele →</a>
         </div>
@@ -157,15 +163,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   html += `</tbody></table></div>
     <div class="compare-actions-footer flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
       <a href="${typeof buildQuotePageUrl === 'function' ? buildQuotePageUrl(entries.map((e) => e.key), base) : `${base}fiyat-teklifi.html?from=compare`}" class="inline-flex items-center justify-center gap-2 bg-abrasive-red text-white px-8 py-3 font-label-caps text-label-caps uppercase hover:brightness-110 transition-all" id="compare-request-quote">
-        <span class="material-symbols-outlined text-lg" aria-hidden="true">request_quote</span>
+        ${iconSvg('request_quote', 'text-lg')}
         Seçili Modeller İçin Teklif İste
       </a>
       <button type="button" class="compare-btn-export compare-btn-print border border-steel-gray/30 text-on-surface px-8 py-3 font-label-caps text-label-caps uppercase hover:border-abrasive-red hover:text-abrasive-red transition-all" id="compare-print-btn">
-        <span class="material-symbols-outlined text-lg" aria-hidden="true">print</span>
+        ${iconSvg('print', 'text-lg')}
         Yazdır
       </button>
       <button type="button" class="compare-btn-export compare-btn-pdf border border-steel-gray/30 text-on-surface px-8 py-3 font-label-caps text-label-caps uppercase hover:border-abrasive-red hover:text-abrasive-red transition-all" id="compare-pdf-btn">
-        <span class="material-symbols-outlined text-lg" aria-hidden="true">download</span>
+        ${iconSvg('download', 'text-lg')}
         PDF indir
       </button>
       <button type="button" class="compare-btn-clear border border-steel-gray/30 text-on-surface px-8 py-3 font-label-caps text-label-caps uppercase hover:border-abrasive-red hover:text-abrasive-red transition-all" id="clear-compare">Tümünü temizle</button>
@@ -269,9 +275,6 @@ function compareProductImageUrl(product) {
       ? productImageRelForFetch(product)
       : (() => {
           const slug = product.slug || product.id;
-          if (slug === 'metal-inox-kesme-tasi') {
-            return `assets/images/products/${slug}/${slug}-kart.png`;
-          }
           return `assets/images/products/${slug}/${slug}-kart.jpg`;
         })();
   return compareAbsoluteUrl(rel);

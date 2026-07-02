@@ -83,7 +83,7 @@ module.exports = {
         'headline-display': ['Montserrat', 'sans-serif'],
         'headline-md': ['Montserrat', 'sans-serif'],
         'body-lg': ['Inter', 'sans-serif'],
-        'technical-data': ['"JetBrains Mono"', 'monospace'],
+        'technical-data': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
         'headline-lg': ['Montserrat', 'sans-serif'],
       },
       fontSize: {

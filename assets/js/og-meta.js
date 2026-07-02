@@ -34,7 +34,6 @@
     const candidates = [];
     if (product.images?.[0]?.src) candidates.push(product.images[0].src);
     candidates.push(`assets/images/products/${slug}/${slug}-kart.jpg`);
-    candidates.push(`assets/images/products/${slug}/${slug}-kart.png`);
     for (const src of candidates) {
       const url = toAbsoluteUrl(src, base);
       if (url && url !== DEFAULT_IMAGE) return url;
