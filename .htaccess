@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Tek kanonik ana sayfa: /index.html → /
+  RewriteRule ^index\.html$ / [R=301,L]
+</IfModule>

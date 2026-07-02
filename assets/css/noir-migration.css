@@ -448,7 +448,7 @@ header.header .dropdown-arrow {
   background: transparent;
   border-radius: 0;
   padding: 0;
-  min-height: 0;
+  min-height: min(90vh, 920px);
   overflow: hidden;
 }
 

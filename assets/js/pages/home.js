@@ -47,9 +47,12 @@ function renderProductCards(grid, products, cardOptions = {}) {
   return true;
 }
 
+const featuredMqSm = window.matchMedia('(max-width: 639px)');
+const featuredMqLg = window.matchMedia('(max-width: 1023px)');
+
 function getFeaturedVisibleCount() {
-  if (window.innerWidth < 640) return 1;
-  if (window.innerWidth < 1024) return 2;
+  if (featuredMqSm.matches) return 1;
+  if (featuredMqLg.matches) return 2;
   return 3;
 }
 
@@ -76,16 +79,21 @@ function initFeaturedCarousel() {
     return Math.max(0, cards.length - visible);
   }
 
+  let cachedStep = 0;
+
   function stepSize() {
+    if (cachedStep > 0) return cachedStep;
     const card = track.querySelector('.product-card:not(.product-card--skeleton)');
     if (!card) return 0;
     const styles = getComputedStyle(track);
     const gap = parseFloat(styles.columnGap || styles.gap || '24') || 24;
-    return card.getBoundingClientRect().width + gap;
+    cachedStep = card.getBoundingClientRect().width + gap;
+    return cachedStep;
   }
 
   function update() {
     pendingUpdate = false;
+    cachedStep = 0;
     const cards = track.querySelectorAll('.product-card:not(.product-card--skeleton)');
     const visible = getFeaturedVisibleCount();
     const max = Math.max(0, cards.length - visible);
@@ -144,17 +152,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const staticBackup = grid.innerHTML;
   const hadStatic = !!grid.querySelector('.product-card--static');
 
-  if (!hadStatic) {
-    grid.innerHTML = '';
-    for (let i = 0; i < 3; i += 1) {
-      grid.appendChild(createSkeletonCard());
-    }
-  } else {
+  if (hadStatic) {
     if (fallbackMsg) fallbackMsg.hidden = true;
     initStaticCardImages(grid);
+    initFeaturedCarousel();
+    return;
   }
 
-  let carousel = initFeaturedCarousel();
+  const viewport = grid.closest('.featured-carousel__viewport');
+  if (viewport) viewport.style.minHeight = '300px';
+
+  let carousel = null;
 
   try {
     if (typeof ProductManager === 'undefined') {

@@ -80,12 +80,13 @@ class Header {
       document.documentElement.style.setProperty('--header-mobile-height', `${h}px`);
     };
 
+    let heightTimer = 0;
     const scheduleHeight = () => {
-      if (this._headerHeightRaf) cancelAnimationFrame(this._headerHeightRaf);
-      this._headerHeightRaf = requestAnimationFrame(() => {
-        this._headerHeightRaf = 0;
-        applyHeight();
-      });
+      if (heightTimer) window.clearTimeout(heightTimer);
+      heightTimer = window.setTimeout(() => {
+        heightTimer = 0;
+        requestAnimationFrame(applyHeight);
+      }, 150);
     };
 
     if (typeof ResizeObserver !== 'undefined') {
@@ -93,7 +94,7 @@ class Header {
       this._headerResizeObserver.observe(this.headerEl);
     }
 
-    scheduleHeight();
+    window.addEventListener('load', () => scheduleHeight(), { once: true });
   }
 
   syncHeaderHeight() {
