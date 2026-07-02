@@ -1,44 +1,32 @@
-/* Abralion Web Sitesi - Responsive Tasarım */
-
-/* ===== Tablet (768px - 1024px) ===== */
 @media screen and (max-width: 1024px) {
   :root {
     --font-size-h1: 32px;
-    --font-size-h2: 24px;
-    --font-size-h3: 20px;
-    --spacing-xl: 40px;
-  }
-  
-  .container {
-    padding: 0 var(--spacing-sm);
-  }
-  
-  /* Products Layout */
-  .products-layout {
-    grid-template-columns: 240px 1fr;
-  }
-  
-  /* About Page */
-  .about-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .values-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .sectors-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  /* Contact Page */
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
+
+--font-size-h2: 24px; --font-size-h3: 20px; --spacing-xl: 40px; } .container {
+  padding: 0 var(--spacing-sm);
 }
 
-/* ===== Mobil (< 768px) ===== */
-@media screen and (max-width: 768px) {
+.products-layout {
+  grid-template-columns: 240px 1fr;
+}
+
+.about-content {
+  grid-template-columns: 1fr;
+}
+
+.values-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sectors-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-layout {
+  grid-template-columns: 1fr;
+}
+
+} @media screen and (max-width: 768px) {
   :root {
     --font-size-base: 16px;
     --font-size-h1: 28px;
@@ -70,8 +58,8 @@
     overflow: visible;
   }
 
-  /* backdrop-filter fixed çocukları header kutusuna hapseder — drawer görünmez */
-  html.dark-theme body .header {
+  
+  .header {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
@@ -103,7 +91,7 @@
     flex-shrink: 0;
   }
 
-  /* Header - Mobil drawer (Tam ekran, Tailwind items-center çakışmasını ezer) */
+  
   header.header .header-nav,
   .header-nav {
     position: fixed;
@@ -242,12 +230,12 @@
     width: 100%;
   }
 
-  html.dark-theme body .header-nav {
+  .header-nav {
     background-color: var(--color-background-elevated, #252626);
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.45);
   }
 
-  html.dark-theme body .header-search {
+  .header-search {
     border-top-color: var(--color-border-subtle, #333);
   }
 
@@ -263,18 +251,18 @@
     transform: rotate(-45deg) translate(7px, -6px);
   }
   
-  /* Footer - Mobil */
+  
   .footer-container {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
   
-  /* Product Grid - Mobil (katalog grid: site-extra.css) */
+  
   .product-grid {
     grid-template-columns: 1fr;
   }
   
-  /* Buttons - Mobil (kart içi butonlar hariç — site-extra.css) */
+  
   .hero-buttons .btn,
   .cta-buttons .btn,
   .contact-form .btn,
@@ -290,7 +278,7 @@
     width: 100%;
   }
   
-  /* Hero Section - Mobil */
+  
   .hero-content {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
@@ -300,7 +288,7 @@
     order: -1;
   }
   
-  /* About Preview - Mobil */
+  
   .about-preview-content {
     grid-template-columns: 1fr;
   }
@@ -309,7 +297,7 @@
     gap: var(--spacing-sm);
   }
   
-  /* Products Page - Mobil */
+  
   .products-layout {
     grid-template-columns: 1fr;
   }
@@ -365,20 +353,20 @@
     font-weight: 600;
   }
 
-  html.dark-theme body .category-chips {
+  .category-chips {
     background: var(--color-background, #1a1a1a);
   }
 
-  html.dark-theme body .category-chip {
+  .category-chip {
     color: var(--color-text-primary, #f0f0f0);
     border-color: var(--color-border-subtle, #333);
   }
 
-  html.dark-theme body .category-chip.active {
+  .category-chip.active {
     color: var(--color-white);
   }
   
-  /* About Page - Mobil */
+  
   .vm-grid {
     grid-template-columns: 1fr;
   }
@@ -396,17 +384,17 @@
     text-align: center;
   }
   
-  /* Contact Page - Mobil */
+  
   .contact-layout {
     grid-template-columns: 1fr;
   }
 
-  /* Döküman kartları */
+  
   .documents-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Ürün kartı aksiyonları — mobil (tek kural) */
+  
   .product-card-actions {
     display: flex;
     flex-wrap: wrap;
@@ -434,35 +422,27 @@
   }
 }
 
-/* ===== Küçük Mobil (< 480px) ===== */
 @media screen and (max-width: 480px) {
   :root {
     --font-size-base: 16px;
-    --font-size-h1: 24px;
-    --font-size-h2: 20px;
-    --font-size-h3: 16px;
-  }
-  
-  .header-logo {
-    height: 40px;
-  }
-  
-  .section {
-    padding: var(--spacing-md) 0;
-  }
-  
-  .about-logo {
-    height: 80px;
-  }
-  
-  .sector-icon,
-  .vm-icon {
-    font-size: 36px;
-  }
+
+--font-size-h1: 24px; --font-size-h2: 20px; --font-size-h3: 16px; } .header-logo {
+  height: 40px;
 }
 
-/* ===== Print Styles ===== */
-@media print {
+.section {
+  background: #0f0f0f;
+}
+
+.about-logo {
+  height: 80px;
+}
+
+.sector-icon, .vm-icon {
+  font-size: 36px;
+}
+
+} @media print {
   .header,
   .footer,
   .btn,

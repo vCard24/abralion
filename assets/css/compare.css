@@ -643,13 +643,13 @@ body.dark-theme tr.compare-row-active {
     z-index: 4;
   }
 
-  html.dark-theme body.compare-page .compare-table-wrapper::before {
+  body.compare-page .compare-table-wrapper::before {
     background: #252626;
     color: var(--color-text-secondary, #ccc);
     border-bottom-color: #333;
   }
 
-  html.dark-theme body.compare-page .compare-table-wrapper::after {
+  body.compare-page .compare-table-wrapper::after {
     background: linear-gradient(to left, rgba(37, 38, 38, 0.98), rgba(37, 38, 38, 0));
   }
 }
@@ -669,8 +669,8 @@ body.dark-theme tr.compare-row-active {
     z-index: 16;
   }
 
-  html.dark-theme body.compare-page .compare-table .compare-label-col,
-  html.dark-theme body.compare-page .compare-matrix .compare-label-col {
+  body.compare-page .compare-table .compare-label-col,
+  body.compare-page .compare-matrix .compare-label-col {
     background: #2a2a2a;
   }
 }
