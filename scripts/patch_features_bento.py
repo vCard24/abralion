@@ -11,7 +11,7 @@ def card(icon: str, title: str, text: str) -> str:
     inner = f"""          <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="{icon}">{icon}</span>
           <h3 class="font-headline-md text-headline-md text-white mb-2">{title}</h3>
           <p class="font-body-md text-body-md text-secondary">{text}</p>
-          <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>"""
+          <span class="material-symbols-outlined absolute top-4 right-4 text-steel-gray group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>"""
     return el(
         "bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden",
         inner,

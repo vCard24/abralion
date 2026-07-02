@@ -25,6 +25,7 @@ async function snapshot(page) {
     const title = hero?.querySelector('.home-hero__title');
     const subtitle = hero?.querySelector('.home-hero__subtitle');
     const stats = hero?.querySelector('.home-hero__stats');
+    const logo = document.querySelector('.header-logo');
     const box = (el) => {
       if (!el) return null;
       const r = el.getBoundingClientRect();
@@ -42,6 +43,7 @@ async function snapshot(page) {
     };
     return {
       heroH: hero ? Math.round(hero.getBoundingClientRect().height * 10) / 10 : null,
+      logoH: logo ? Math.round(logo.getBoundingClientRect().height * 10) / 10 : null,
       mainH: main ? Math.round(main.getBoundingClientRect().height * 10) / 10 : null,
       title: box(title),
       subtitle: box(subtitle),
