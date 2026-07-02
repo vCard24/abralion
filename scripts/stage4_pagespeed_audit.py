@@ -12,11 +12,19 @@ ROOT = Path(__file__).resolve().parent.parent
 REPORT = ROOT / "scripts" / "stage4_pagespeed_report.json"
 
 FONT_BAD = re.compile(
-    r"@font-face|font/ttf|\.ttf|preload[^>]+as=[\"']font[\"']",
+    r"@font-face|font/ttf|\.ttf",
+    re.I,
+)
+FONT_PRELOAD_BAD = re.compile(
+    r'<link[^>]+rel=["\']preload["\'][^>]+as=["\']font["\'][^>]*>',
     re.I,
 )
 GOOGLE_FONTS = re.compile(
     r"fonts\.googleapis\.com/css2\?family=Inter.*Montserrat.*display=swap",
+    re.I,
+)
+LOCAL_FONTS = re.compile(
+    r"assets/css/fonts\.css\?v=[a-f0-9]+",
     re.I,
 )
 STALE_V = re.compile(r"\?v=20[0-9]{5}[a-z]?")
@@ -77,9 +85,15 @@ def audit_fonts(files: list[Path]) -> dict:
         text = path.read_text(encoding="utf-8")
         rel = str(path.relative_to(ROOT)).replace("\\", "/")
         if FONT_BAD.search(text):
-            issues.append(f"{rel}: inline TTF / font preload detected")
-        if not GOOGLE_FONTS.search(text):
-            issues.append(f"{rel}: missing standard Google Fonts CSS link")
+            issues.append(f"{rel}: inline TTF / @font-face detected")
+        for m in FONT_PRELOAD_BAD.finditer(text):
+            if "woff2" not in m.group(0):
+                issues.append(f"{rel}: non-woff2 font preload")
+                break
+        if GOOGLE_FONTS.search(text):
+            issues.append(f"{rel}: still uses Google Fonts CDN")
+        elif not LOCAL_FONTS.search(text):
+            issues.append(f"{rel}: missing self-hosted fonts.css link")
         else:
             ok_pages += 1
     return {"ok_pages": ok_pages, "issues": issues}

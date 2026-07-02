@@ -4,6 +4,7 @@
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --minify",
     "build:bundle": "python scripts/build_css.py",
+    "build:fonts": "python scripts/download_local_fonts.py && python scripts/patch_local_fonts.py",
     "build:js": "python scripts/minify_products_data.py",
     "sync:catalog": "python scripts/sync_catalog.py",
     "generate:menu-thumbs": "python scripts/generate_menu_thumbs.py",
