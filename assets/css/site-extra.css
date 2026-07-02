@@ -1199,13 +1199,14 @@ footer.footer .footer-caption {
   color: #aeaeb3;
 }
 
-footer.footer a {
+footer.footer a.footer-nav-link {
   color: #e2e2e2;
   text-decoration: none;
+  transition: color 0.25s ease;
 }
 
-footer.footer a:hover,
-footer.footer a.hover\:text-abrasive-red:hover {
+footer.footer a.footer-nav-link:hover,
+footer.footer a.footer-nav-link:focus-visible {
   color: #ff756e;
 }
 
