@@ -2,17 +2,21 @@
   background: var(--color-background-card);
   border-bottom: 1px solid var(--color-border-subtle);
   padding: var(--spacing-xl) 0;
+  text-align: center;
   margin-bottom: var(--spacing-lg);
 }
 
 .page-header h1 {
   color: var(--color-text-primary);
+  font-size: var(--font-size-h1);
   font-weight: 700;
   margin-bottom: var(--spacing-xs);
 }
 
 .page-header p {
   color: var(--color-text-secondary);
+  font-size: var(--font-size-large);
+  margin: 0;
 }
 
 .document-card .btn-icon-svg {
@@ -36,12 +40,13 @@
 .document-card-actions .btn-open-browser {
   background: transparent;
   color: var(--color-text-secondary);
+  border: 1px solid var(--color-gray-lighter);
   border-color: var(--color-border-subtle);
 }
 
 .document-card-actions .btn-open-browser:hover {
-  color: var(--color-primary-light);
   border-color: var(--color-primary);
+  color: var(--color-primary-light);
   background: rgba(220, 38, 38, 0.08);
 }
 
@@ -394,10 +399,13 @@ body:not(.page-noir-site) #home-trust.home-trust {
 }
 
 .product-card-image {
+  object-fit: contain;
+  background-color: var(--color-white);
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-card-image-container--static-hero {
+  line-height: 0;
   background: var(--color-background);
 }
 
@@ -411,6 +419,7 @@ body:not(.page-noir-site) #home-trust.home-trust {
 }
 
 .product-card:hover .product-card-image--hero {
+  filter: grayscale(0%);
   transform: scale(1.08);
 }
 
@@ -473,6 +482,7 @@ body:not(.page-noir-site) #home-trust.home-trust {
 }
 
 .products-main {
+  min-width: 0;
   background: transparent;
 }
 
@@ -481,6 +491,7 @@ body:not(.page-noir-site) #home-trust.home-trust {
 }
 
 .products-layout {
+  align-items: start;
   background: transparent;
 }
 
@@ -565,6 +576,9 @@ body.dark-theme .mega-menu::-webkit-scrollbar-thumb {
 }
 
 .sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
   margin-bottom: var(--spacing-md);
 }
 
@@ -640,9 +654,10 @@ a.category-btn {
 
 @keyframes catalog-skeleton-shimmer {
   0% {
-    background-position: 100% 0;
-
+  background-position: 100% 0;
+  transform: translateX(-100%) translateY(-100%);
 } 100% {
+  background-position: -100% 0;
   transform: translateX(100%) translateY(100%);
 }
 
@@ -2082,4 +2097,10 @@ body.page-compare, html body.page-compare {
 .page-compare ::-webkit-scrollbar-thumb {
   background: #e2231a;
   border-radius: 10px;
+}
+
+
+/* restored base rule */
+.products-main .product-card-actions .btn-icon-compare {
+  align-self: flex-end;
 }

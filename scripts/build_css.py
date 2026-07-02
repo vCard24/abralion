@@ -24,12 +24,20 @@ HTML_GLOBS = ("*.html",)
 # (regex on href/src value, replacement template with {v})
 VERSIONED_ASSETS = (
     (
-        re.compile(r"(bundle\.min\.css\?v=)\d{8}"),
+        re.compile(r"(bundle\.min\.css\?v=)[^\"'\s>]+"),
         r"\g<1>{v}",
     ),
     (
-        re.compile(r"(icons\.js\?v=)\d{8}"),
+        re.compile(r"(icons\.js\?v=)[^\"'\s>]+"),
         r"\g<1>{v}",
+    ),
+    (
+        re.compile(r"(bundle\.min\.css)(?!\?v=)"),
+        r"\1?v={v}",
+    ),
+    (
+        re.compile(r"(icons\.js)(?!\?v=)"),
+        r"\1?v={v}",
     ),
 )
 

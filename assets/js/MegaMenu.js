@@ -198,13 +198,24 @@ async function buildMegaMenu() {
 
     const bindMegaMenuAfterPaint = () => {
       const images = container.querySelectorAll('.mega-menu-product-thumb img, .mega-menu-feature img');
+    const bindMegaMenuImage = (img, product) => {
+        const kartRel = `assets/images/products/${product.slug}/${product.slug}-kart.jpg`;
+        if (typeof bindGalleryImageFallback === 'function') {
+          bindGalleryImageFallback(img, kartRel, base);
+          return;
+        }
+        if (typeof bindProductImageFallback === 'function') {
+          bindProductImageFallback(img, product, base);
+        }
+      };
+
       images.forEach((img) => {
         const link = img.closest('.mega-menu-product-link, .mega-menu-feature');
         const slugMatch = link?.getAttribute('href')?.match(/\/([^/]+)\.html$/);
         const slug = slugMatch?.[1];
         const product = slug ? data.products.find((p) => p.slug === slug) : null;
-        if (product && typeof bindProductImageFallback === 'function') {
-          bindProductImageFallback(img, product, base);
+        if (product) {
+          bindMegaMenuImage(img, product);
           return;
         }
         img.addEventListener('error', () => {

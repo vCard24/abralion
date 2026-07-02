@@ -6,8 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MARKER = "assets/js/icons.js"
-SNIPPET_ROOT = '  <script defer src="assets/js/icons.js?v=20260525"></script>\n'
-SNIPPET_URUN = '  <script defer src="../assets/js/icons.js?v=20260525"></script>\n'
+SNIPPET_ROOT = '  <script defer src="assets/js/icons.js?v=YYYYMMDD"></script>\n'
+SNIPPET_URUN = '  <script defer src="../assets/js/icons.js?v=YYYYMMDD"></script>\n'
 
 
 def prefix_for(path: Path) -> str:
