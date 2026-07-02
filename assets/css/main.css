@@ -49,6 +49,8 @@
   --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.55);
   --glow-red: 0 0 20px rgba(220, 38, 38, 0.15);
   --glow-red-strong: 0 0 30px rgba(220, 38, 38, 0.25);
+  --abrasive-red-brand: #e2231a;
+  --abrasive-red-text: #ff756e;
   --gradient-base: linear-gradient(180deg, #1f1f20 0%, #1a1a1b 100%);
   --gradient-card: linear-gradient(135deg, #2a2a2b 0%, #252626 100%);
 }

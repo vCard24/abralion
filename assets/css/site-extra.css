@@ -1098,6 +1098,12 @@ position: static; height: auto; width: auto; max-width: none; padding: 0; margin
   border-right: none;
 }
 
+/* WCAG AA: 12px label-caps on #0A0A0A — brand #E2231A is 4.23:1 */
+.font-label-caps.text-label-caps.text-abrasive-red,
+.text-label-caps.text-abrasive-red {
+  color: #ff756e;
+}
+
 #home-trust.home-trust {
   margin: 0;
   padding: 0;
@@ -1194,12 +1200,13 @@ footer.footer .footer-caption {
 }
 
 footer.footer a {
-  color: inherit;
+  color: #e2e2e2;
   text-decoration: none;
 }
 
-footer.footer a:hover {
-  color: var(--abrasive-red-text, #ff756e);
+footer.footer a:hover,
+footer.footer a.hover\:text-abrasive-red:hover {
+  color: #ff756e;
 }
 
 footer.footer .footer-logo {
