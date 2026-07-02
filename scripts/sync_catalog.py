@@ -91,6 +91,15 @@ def minify() -> None:
     subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
 
 
+def bump_products_cache() -> None:
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from asset_cache_version import bump_versioned_assets_in_html
+
+    versions = bump_versioned_assets_in_html(only_files={"products-data.min.js"})
+    v = versions.get("products-data.min.js", "?")
+    print(f"Cache bust products-data.min.js ?v={v}")
+
+
 def bump_cache(version: str) -> None:
     pat = re.compile(r"products-data\.min\.js\?v=[^\"']+")
     rep = f"products-data.min.js?v={version}"
@@ -153,6 +162,7 @@ def main() -> int:
         print(f"Kök kopya güncellendi: {ROOT_COPY.name}")
 
     minify()
+    bump_products_cache()
 
     cats = catalog.get("categories") or []
     prods = catalog.get("products") or []

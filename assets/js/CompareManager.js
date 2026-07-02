@@ -1,3 +1,4 @@
+/* exported CompareManager */
 class CompareManager {
   constructor() {
     this.storageKey = 'abralion_compare_list';
@@ -108,7 +109,9 @@ class CompareManager {
   resolveEntries(products) {
     return this.compareList.map((key) => {
       const parsed = this.parseKey(key);
-      const product = products.find((p) => p.id === parsed.productId || p.slug === parsed.productId);
+      const product = products.find(
+        (p) => p.id === parsed.productId || p.slug === parsed.productId
+      );
       if (!product) return { key, product: null, variant: null };
       let variant = product.variants?.find(
         (v) =>

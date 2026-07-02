@@ -1,4 +1,5 @@
 // FormValidator Class
+/* exported FormValidator */
 class FormValidator {
   constructor(formElement, validationRules) {
     this.form = formElement;
@@ -42,12 +43,14 @@ class FormValidator {
     }
 
     if (rules.minLength && value.length < rules.minLength) {
-      this.errors[fieldName] = rules.minLengthMessage || `En az ${rules.minLength} karakter olmalıdır`;
+      this.errors[fieldName] =
+        rules.minLengthMessage || `En az ${rules.minLength} karakter olmalıdır`;
       return false;
     }
 
     if (rules.maxLength && value.length > rules.maxLength) {
-      this.errors[fieldName] = rules.maxLengthMessage || `En fazla ${rules.maxLength} karakter olmalıdır`;
+      this.errors[fieldName] =
+        rules.maxLengthMessage || `En fazla ${rules.maxLength} karakter olmalıdır`;
       return false;
     }
 

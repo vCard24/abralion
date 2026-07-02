@@ -1,3 +1,4 @@
+/* exported QuoteManager */
 class QuoteManager {
   constructor() {
     this.storageKey = 'abralion_quote_list';
@@ -17,7 +18,9 @@ class QuoteManager {
       const stored = localStorage.getItem(this.storageKey);
       let list = stored ? JSON.parse(stored) : [];
       if (!Array.isArray(list)) list = [];
-      this.quoteList = list.filter((k) => typeof k === 'string' && k.length > 0).slice(0, this.maxItems);
+      this.quoteList = list
+        .filter((k) => typeof k === 'string' && k.length > 0)
+        .slice(0, this.maxItems);
     } catch {
       this.quoteList = [];
     }
@@ -66,7 +69,10 @@ class QuoteManager {
       return { success: false, message: 'Bu model zaten teklif listesinde.' };
     }
     if (this.isFull()) {
-      return { success: false, message: `En fazla ${this.maxItems} ürün için teklif isteyebilirsiniz.` };
+      return {
+        success: false,
+        message: `En fazla ${this.maxItems} ürün için teklif isteyebilirsiniz.`,
+      };
     }
     this.quoteList.push(key);
     this.saveToStorage();
@@ -118,7 +124,9 @@ class QuoteManager {
   resolveEntries(products) {
     return this.quoteList.map((key) => {
       const parsed = this.parseKey(key);
-      const product = products.find((p) => p.id === parsed.productId || p.slug === parsed.productId);
+      const product = products.find(
+        (p) => p.id === parsed.productId || p.slug === parsed.productId
+      );
       if (!product) return { key, product: null, variant: null };
       let variant = product.variants?.find(
         (v) =>

@@ -1,12 +1,15 @@
 function iconSvg(name, extraClass = '') {
-  return (window.AbralionIcons && typeof window.AbralionIcons.iconSvg === 'function')
+  return window.AbralionIcons && typeof window.AbralionIcons.iconSvg === 'function'
     ? window.AbralionIcons.iconSvg(name, extraClass)
     : '';
 }
 
-function variantBadgeText(variant, product) {
+function variantBadgeText(variant, _product) {
   if (variant.uzunluk_mm != null && variant.uc_genisligi_mm != null) {
-    return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm}x${variant.uc_genisligi_mm} mm`.replace(/^x/, '');
+    return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm}x${variant.uc_genisligi_mm} mm`.replace(
+      /^x/,
+      ''
+    );
   }
   if (variant.uzunluk_mm != null) {
     return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm} mm`.replace(/^x/, '');
@@ -52,10 +55,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const pm = new ProductManager();
   await pm.loadProducts();
-  const entries = window.compareManager.resolveEntries(pm.getAllProducts()).filter((e) => e.product);
+  const entries = window.compareManager
+    .resolveEntries(pm.getAllProducts())
+    .filter((e) => e.product);
 
   if (!entries.length) {
-    container.innerHTML = '<p class="text-center font-body-md text-on-surface-variant py-12">Liste yüklenemedi.</p>';
+    container.innerHTML =
+      '<p class="text-center font-body-md text-on-surface-variant py-12">Liste yüklenemedi.</p>';
     return;
   }
 
@@ -104,7 +110,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         typeof primaryProductImageSrc === 'function'
           ? primaryProductImageSrc(product, base)
           : (() => {
-              const img = (product.images?.[0]?.src || 'assets/images/home/hero-bg.jpg').replace(/^\//, '');
+              const img = (product.images?.[0]?.src || 'assets/images/home/hero-bg.jpg').replace(
+                /^\//,
+                ''
+              );
               return img.startsWith('assets') ? `${base}${img}` : img;
             })();
       const sku = variant.urun_kodu || '';
@@ -149,7 +158,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       <th class="compare-label-col p-6 border-b border-r border-steel-gray/10 text-on-surface-variant font-label-caps uppercase" scope="row">${escapeHtml(label)}</th>`;
     slots.forEach((col) => {
       if (!col) {
-        html += '<td class="compare-value-col compare-slot-empty-cell p-6 border-b border-r border-steel-gray/10 text-center text-steel-gray">—</td>';
+        html +=
+          '<td class="compare-value-col compare-slot-empty-cell p-6 border-b border-r border-steel-gray/10 text-center text-steel-gray">—</td>';
         return;
       }
       const val = col.lineMap[specKey];
@@ -162,7 +172,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   html += `</tbody></table></div>
     <div class="compare-actions-footer flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-      <a href="${typeof buildQuotePageUrl === 'function' ? buildQuotePageUrl(entries.map((e) => e.key), base) : `${base}fiyat-teklifi.html?from=compare`}" class="inline-flex items-center justify-center gap-2 bg-abrasive-red text-white px-8 py-3 font-label-caps text-label-caps uppercase hover:brightness-110 transition-all" id="compare-request-quote">
+      <a href="${
+        typeof buildQuotePageUrl === 'function'
+          ? buildQuotePageUrl(
+              entries.map((e) => e.key),
+              base
+            )
+          : `${base}fiyat-teklifi.html?from=compare`
+      }" class="inline-flex items-center justify-center gap-2 bg-abrasive-red text-white px-8 py-3 font-label-caps text-label-caps uppercase hover:brightness-110 transition-all" id="compare-request-quote">
         ${iconSvg('request_quote', 'text-lg')}
         Seçili Modeller İçin Teklif İste
       </a>
@@ -193,7 +210,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (typeof bindProductImageFallback === 'function') {
     container.querySelectorAll('img[data-compare-product-id]').forEach((img) => {
-      const product = columnData.find((col) => col.product?.id === img.dataset.compareProductId)?.product;
+      const product = columnData.find(
+        (col) => col.product?.id === img.dataset.compareProductId
+      )?.product;
       if (product) bindProductImageFallback(img, product, base);
     });
   }
@@ -356,16 +375,16 @@ function resolveImageDataUrl(url) {
   return xhrBlobToDataUrl(url).then((dataUrl) => (dataUrl ? dataUrl : urlToDataUrl(url)));
 }
 
-  function ensureCompareLogoDataUrl() {
-    if (compareLogoDataUrl) return Promise.resolve(compareLogoDataUrl);
-    if (typeof window.ensureAbralionPdfLogoDataUrl === 'function') {
-      return window.ensureAbralionPdfLogoDataUrl().then((data) => {
-        compareLogoDataUrl = data || '';
-        return compareLogoDataUrl;
-      });
-    }
-    return Promise.resolve('');
+function ensureCompareLogoDataUrl() {
+  if (compareLogoDataUrl) return Promise.resolve(compareLogoDataUrl);
+  if (typeof window.ensureAbralionPdfLogoDataUrl === 'function') {
+    return window.ensureAbralionPdfLogoDataUrl().then((data) => {
+      compareLogoDataUrl = data || '';
+      return compareLogoDataUrl;
+    });
   }
+  return Promise.resolve('');
+}
 
 function resolveCompareExportImages(state) {
   return Promise.all(
@@ -392,9 +411,7 @@ function buildCompareExportSheet(state) {
     if (!col) return;
     const { product, variant } = col;
     const imgSrc = col.exportImageDataUrl || compareProductImageUrl(product);
-    const imgHtml = imgSrc
-      ? `<img src="${escapeAttr(imgSrc)}" alt="" />`
-      : '';
+    const imgHtml = imgSrc ? `<img src="${escapeAttr(imgSrc)}" alt="" />` : '';
     headHtml += `<th scope="col"><div class="compare-export-product-head">
       ${imgHtml}
       <p class="compare-export-product-head__cat">${escapeHtml(product.categoryName || '')}</p>
@@ -484,7 +501,9 @@ function captureCompareSheetToCanvas(sheet, h2c) {
     scrollY: 0,
     useCORS: true,
   };
-  return h2c(target, { ...baseOpts, scale: 1.25 }).catch(() => h2c(target, { ...baseOpts, scale: 1 }));
+  return h2c(target, { ...baseOpts, scale: 1.25 }).catch(() =>
+    h2c(target, { ...baseOpts, scale: 1 })
+  );
 }
 
 function compareCanvasToPdf(pdf, canvas) {

@@ -346,7 +346,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!list.length) {
       if (!hadStatic) {
-        grid.innerHTML = '<p class="no-products-message">Seçilen filtrelere uygun ürün bulunamadı.</p>';
+        grid.innerHTML =
+          '<p class="no-products-message">Seçilen filtrelere uygun ürün bulunamadı.</p>';
       }
       return;
     }

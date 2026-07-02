@@ -57,10 +57,7 @@ window.resolveCatalogKeys = function (keys, products) {
     const product = products.find((p) => p.id === productId || p.slug === productId);
     if (!product) return { key, product: null, variant: null };
     let variant = product.variants?.find(
-      (v) =>
-        v.id === variantId ||
-        v.urun_kodu === variantId ||
-        String(v.id) === String(variantId)
+      (v) => v.id === variantId || v.urun_kodu === variantId || String(v.id) === String(variantId)
     );
     if (!variant && product.variants?.length) {
       variant = product.variants[0];
@@ -194,6 +191,14 @@ window.productThumbUrl = function (base, product) {
   }
   const slug = product.slug;
   return `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
+};
+
+/** Mega menü listesi — 64px kutuda 128px @2x menu-thumb.webp */
+window.productMenuThumbUrl = function (base, product) {
+  const slug = product?.slug || product?.id || '';
+  if (!slug) return '';
+  const root = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
+  return `${root}assets/images/products/${slug}/${slug}-menu-thumb.webp`;
 };
 
 /** Footer sosyal — +7 985 789-60-62 */

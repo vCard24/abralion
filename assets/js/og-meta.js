@@ -8,7 +8,7 @@
   function toAbsoluteUrl(path, base) {
     if (!path) return DEFAULT_IMAGE;
     if (/^https?:\/\//i.test(path)) return path;
-    const b = base != null ? base : (typeof getBasePath === 'function' ? getBasePath() : '');
+    const b = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
     const normalized = path.replace(/^\//, '');
     const combined = `${b}${normalized}`.replace(/\/+/g, '/');
     try {
@@ -52,7 +52,8 @@
    * @param {string} [opts.base] — getBasePath()
    */
   function setPageSocialMeta(opts) {
-    const base = opts.base != null ? opts.base : (typeof getBasePath === 'function' ? getBasePath() : '');
+    const base =
+      opts.base != null ? opts.base : typeof getBasePath === 'function' ? getBasePath() : '';
     const title = opts.title || document.title;
     const description =
       opts.description ||

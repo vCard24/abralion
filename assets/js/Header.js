@@ -1,3 +1,4 @@
+/* exported Header */
 class Header {
   constructor() {
     this.mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -113,9 +114,11 @@ class Header {
 
   getNavFocusableElements() {
     if (!this.headerNav) return [];
-    return [...this.headerNav.querySelectorAll(
-      'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    )];
+    return [
+      ...this.headerNav.querySelectorAll(
+        'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      ),
+    ];
   }
 
   setNavFocusable(enabled) {
@@ -259,7 +262,10 @@ class Header {
         if (!this.desktopMq.matches && e.target.closest('.dropdown-arrow')) {
           return;
         }
-        if (!this.desktopMq.matches && dropdown.querySelector('.mega-menu, .dropdown-menu')?.children?.length) {
+        if (
+          !this.desktopMq.matches &&
+          dropdown.querySelector('.mega-menu, .dropdown-menu')?.children?.length
+        ) {
           const hasSubmenu = dropdown.querySelector('.mega-menu-tabs, .dropdown-menu li');
           if (hasSubmenu && !dropdown.classList.contains('active')) {
             e.preventDefault();
@@ -299,7 +305,10 @@ class Header {
 
     this.navLinks.forEach((link) => {
       const href = link.getAttribute('href') || '';
-      const linkPage = href.split('?')[0].replace(/^\.\//, '').replace(/^\.\.\//, '');
+      const linkPage = href
+        .split('?')[0]
+        .replace(/^\.\//, '')
+        .replace(/^\.\.\//, '');
       let isActive = linkPage === page || (page === '' && linkPage === 'index.html');
       if (inProductPage && linkPage === 'urunler.html') isActive = true;
       link.classList.toggle('active', isActive);

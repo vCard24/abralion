@@ -1,10 +1,17 @@
 const NOIR_BADGE_COLUMNS = new Set([
-  'malzeme', 'asindirici_kodu', 'asindirici_tipi', 'urun_tipi', 'baglanti_tipi',
-  'bicak_malzemesi', 'kasa_malzemesi', 'kullanim_yeri', 'govde_kizak_tipi',
+  'malzeme',
+  'asindirici_kodu',
+  'asindirici_tipi',
+  'urun_tipi',
+  'baglanti_tipi',
+  'bicak_malzemesi',
+  'kasa_malzemesi',
+  'kullanim_yeri',
+  'govde_kizak_tipi',
 ]);
 
 function iconSvg(name, extraClass = '') {
-  return (window.AbralionIcons && typeof window.AbralionIcons.iconSvg === 'function')
+  return window.AbralionIcons && typeof window.AbralionIcons.iconSvg === 'function'
     ? window.AbralionIcons.iconSvg(name, extraClass)
     : '';
 }
@@ -22,7 +29,6 @@ function formatTableCellHtml(cell, col) {
 function kartImageSrc(base, slug) {
   return `${base}assets/images/products/${slug}/${slug}-kart.jpg`;
 }
-
 
 /** Uygulama görseli kutusu — yeni şablon veya eski img yapısı */
 function resolveApplicationVisualRoot() {
@@ -107,23 +113,26 @@ function renderRelatedProducts(product, pm) {
   if (!grid || !pm) return;
 
   const base = getBasePath();
-  const related = pm.getAllProducts()
+  const related = pm
+    .getAllProducts()
     .filter((p) => p.categoryId === product.categoryId && p.slug !== product.slug)
     .slice(0, 3);
 
   if (!related.length) {
-    grid.innerHTML = '<p class="col-span-full font-technical-data text-steel-gray">Katalogdan diğer ürün ailelerini inceleyebilirsiniz.</p>';
+    grid.innerHTML =
+      '<p class="col-span-full font-technical-data text-steel-gray">Katalogdan diğer ürün ailelerini inceleyebilirsiniz.</p>';
     return;
   }
 
-  grid.innerHTML = related.map((p) => {
-    const url = `${base}urun/${p.slug}.html`;
-    const thumb = productThumbForCard(base, p);
-    const code = (p.variants?.[0]?.urun_kodu || p.slug).toUpperCase();
-    const descRaw = (p.description || '').slice(0, 90);
-    const desc = escapeHtml(descRaw);
-    const name = escapeHtml(p.name);
-    return `<a href="${url}" class="noir-related-card group block overflow-hidden rounded-lg" data-related-product-id="${escapeHtml(p.id)}">
+  grid.innerHTML = related
+    .map((p) => {
+      const url = `${base}urun/${p.slug}.html`;
+      const thumb = productThumbForCard(base, p);
+      const code = (p.variants?.[0]?.urun_kodu || p.slug).toUpperCase();
+      const descRaw = (p.description || '').slice(0, 90);
+      const desc = escapeHtml(descRaw);
+      const name = escapeHtml(p.name);
+      return `<a href="${url}" class="noir-related-card group block overflow-hidden rounded-lg" data-related-product-id="${escapeHtml(p.id)}">
       <div class="noir-related-card__media relative flex items-center justify-center p-8 overflow-hidden">
         <img class="noir-related-card__img h-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110 opacity-80" src="${thumb}" alt="" loading="lazy" width="400" height="300" data-related-slug="${escapeHtml(p.slug)}">
         <span class="noir-related-card__code absolute top-4 left-4 font-technical-data text-[10px] text-white px-2 py-1">${escapeHtml(code)}</span>
@@ -137,7 +146,8 @@ function renderRelatedProducts(product, pm) {
         </span>
       </div>
     </a>`;
-  }).join('');
+    })
+    .join('');
 
   if (typeof bindProductImageFallback === 'function') {
     grid.querySelectorAll('[data-related-product-id]').forEach((link) => {
@@ -173,9 +183,10 @@ function fillList(ul, items, options = {}) {
 
 function renderGallery(product, container) {
   const base = getBasePath();
-  const images = (product.images && product.images.length)
-    ? product.images
-    : [{ src: 'assets/images/home/hero-bg.jpg', alt: product.name }];
+  const images =
+    product.images && product.images.length
+      ? product.images
+      : [{ src: 'assets/images/home/hero-bg.jpg', alt: product.name }];
 
   const slides = images
     .map((img, i) => {
@@ -251,7 +262,9 @@ function renderGallery(product, container) {
 
 function techSummaryItem(label, value, options = {}) {
   if (value == null || value === '') return '';
-  const valueClass = options.red ? 'font-technical-data text-abrasive-red' : 'font-technical-data text-on-surface';
+  const valueClass = options.red
+    ? 'font-technical-data text-abrasive-red'
+    : 'font-technical-data text-on-surface';
   return `<div>
     <p class="text-steel-gray text-[12px] uppercase">${escapeHtml(label)}</p>
     <p class="${valueClass}">${escapeHtml(String(value))}</p>
@@ -263,22 +276,32 @@ function renderTechSummary(product) {
   if (!wrap) return;
   const variant = (product.variants || [])[0];
   if (!variant) {
-    wrap.innerHTML = '<p class="col-span-2 text-steel-gray text-[12px]">Varyasyon tablosundan model detaylarını inceleyebilirsiniz.</p>';
+    wrap.innerHTML =
+      '<p class="col-span-2 text-steel-gray text-[12px]">Varyasyon tablosundan model detaylarını inceleyebilirsiniz.</p>';
     return;
   }
-  const rpm = variant.max_hiz_rpm != null
-    ? `${Number(variant.max_hiz_rpm).toLocaleString('tr-TR')} RPM`
-    : variant.max_hiz_ms != null
-      ? `${variant.max_hiz_ms} m/s`
-      : '';
+  const rpm =
+    variant.max_hiz_rpm != null
+      ? `${Number(variant.max_hiz_rpm).toLocaleString('tr-TR')} RPM`
+      : variant.max_hiz_ms != null
+        ? `${variant.max_hiz_ms} m/s`
+        : '';
   wrap.innerHTML = [
-    techSummaryItem('Malzeme', variant.asindirici_kodu || variant.asindirici_tipi || product.categoryName),
+    techSummaryItem(
+      'Malzeme',
+      variant.asindirici_kodu || variant.asindirici_tipi || product.categoryName
+    ),
     techSummaryItem('Çap', variant.daire_capi_mm != null ? `${variant.daire_capi_mm} mm` : ''),
     techSummaryItem('Kalınlık', variant.kalinlik_mm != null ? `${variant.kalinlik_mm} mm` : ''),
-    techSummaryItem('Delik Çapı', variant.gobek_capi_mm != null ? `${variant.gobek_capi_mm} mm` : ''),
+    techSummaryItem(
+      'Delik Çapı',
+      variant.gobek_capi_mm != null ? `${variant.gobek_capi_mm} mm` : ''
+    ),
     techSummaryItem('Max RPM', rpm, { red: Boolean(rpm) }),
     techSummaryItem('Sertifika', 'EN 12413 / oSa'),
-  ].filter(Boolean).join('');
+  ]
+    .filter(Boolean)
+    .join('');
 }
 
 function renderDescriptionContent(product) {
@@ -291,9 +314,13 @@ function renderDescriptionContent(product) {
     const parts = desc.split(/(?<=[.!?])\s+/);
     descEl.textContent = parts[0] || desc;
     if (extraEl) {
-      extraEl.innerHTML = parts.length > 1
-        ? parts.slice(1).map((part) => `<p>${escapeHtml(part.trim())}</p>`).join('')
-        : '';
+      extraEl.innerHTML =
+        parts.length > 1
+          ? parts
+              .slice(1)
+              .map((part) => `<p>${escapeHtml(part.trim())}</p>`)
+              .join('')
+          : '';
     }
   }
 
@@ -323,16 +350,20 @@ function renderBreadcrumb(product) {
 function renderVariantTable(product, tableWrap) {
   const columns = getTableColumns(product);
   if (!columns.length) {
-    tableWrap.innerHTML = '<p class="no-products-message p-4">Bu ürün için tablo yapılandırması bulunamadı.</p>';
+    tableWrap.innerHTML =
+      '<p class="no-products-message p-4">Bu ürün için tablo yapılandırması bulunamadı.</p>';
     return;
   }
 
   let thead = '<thead><tr class="bg-surface-container-high border-b border-steel-gray/20">';
-  thead += '<th class="compare-col spec-col--compare p-4 font-label-caps text-[12px] text-steel-gray" scope="col"><span class="sr-only">Karşılaştır</span></th>';
-  thead += columns.map((c) => {
-    const colClass = getSpecColumnClass(c);
-    return `<th class="spec-col ${colClass} p-4 font-label-caps text-[12px] text-steel-gray uppercase" scope="col">${escapeHtml(c.label)}</th>`;
-  }).join('');
+  thead +=
+    '<th class="compare-col spec-col--compare p-4 font-label-caps text-[12px] text-steel-gray" scope="col"><span class="sr-only">Karşılaştır</span></th>';
+  thead += columns
+    .map((c) => {
+      const colClass = getSpecColumnClass(c);
+      return `<th class="spec-col ${colClass} p-4 font-label-caps text-[12px] text-steel-gray uppercase" scope="col">${escapeHtml(c.label)}</th>`;
+    })
+    .join('');
   thead += '</tr></thead>';
 
   let tbody = '<tbody class="font-technical-data text-[14px]">';
@@ -360,7 +391,8 @@ function renderVariantTable(product, tableWrap) {
   tbody += '</tbody>';
 
   if (!(product.variants || []).length) {
-    tableWrap.innerHTML = '<p class="no-products-message p-4">Bu ürün için varyant verisi bulunamadı.</p>';
+    tableWrap.innerHTML =
+      '<p class="no-products-message p-4">Bu ürün için varyant verisi bulunamadı.</p>';
     return;
   }
 
@@ -368,10 +400,7 @@ function renderVariantTable(product, tableWrap) {
 
   tableWrap.querySelectorAll('.compare-row-input').forEach((input) => {
     input.addEventListener('change', () => {
-      const result = window.compareManager.toggle(
-        input.dataset.productId,
-        input.dataset.variantId
-      );
+      const result = window.compareManager.toggle(input.dataset.productId, input.dataset.variantId);
       if (!result.success && input.checked) {
         input.checked = false;
         if (result.message) {
@@ -399,12 +428,13 @@ function renderProductPage(product, pm) {
       ? (() => {
           const relCandidates = buildProductImageCandidates(product, '');
           const pick =
-            relCandidates.find(
-              (u) => !/\.webp(\?|#|$)/i.test(u) && !u.includes('placeholder')
-            ) || relCandidates[0];
+            relCandidates.find((u) => !/\.webp(\?|#|$)/i.test(u) && !u.includes('placeholder')) ||
+            relCandidates[0];
           if (!pick) return `assets/images/products/${slug}/${slug}-kart.jpg`;
           const match = pick.match(/assets\/images\/[^\s"']+/);
-          return match ? match[0] : product.images?.[0]?.src || `assets/images/products/${slug}/${slug}-kart.jpg`;
+          return match
+            ? match[0]
+            : product.images?.[0]?.src || `assets/images/products/${slug}/${slug}-kart.jpg`;
         })()
       : product.images?.[0]?.src || `assets/images/products/${slug}/${slug}-kart.jpg`;
   const shareImageAlt = product.images?.[0]?.alt || product.name;
@@ -439,16 +469,12 @@ function renderProductPage(product, pm) {
   renderDescriptionContent(product);
   renderTechSummary(product);
 
-  fillList(
-    document.querySelector('#product-features-short ul'),
-    product.features,
-    { styled: true }
-  );
-  fillList(
-    document.querySelector('#product-applications ul'),
-    product.applications,
-    { styled: true }
-  );
+  fillList(document.querySelector('#product-features-short ul'), product.features, {
+    styled: true,
+  });
+  fillList(document.querySelector('#product-applications ul'), product.applications, {
+    styled: true,
+  });
 
   setProductApplicationVisual(base, slug, product.name, product);
 
@@ -483,18 +509,14 @@ function initProductDetailCompareButton(product) {
   if (!btn || !window.compareManager) return;
 
   const firstVariant = (product.variants || [])[0];
-  const variantId =
-    firstVariant?.urun_kodu || firstVariant?.id || product.id || product.slug;
+  const variantId = firstVariant?.urun_kodu || firstVariant?.id || product.id || product.slug;
   btn.dataset.variantId = variantId;
 
   if (btn.dataset.compareBound === 'true') return;
   btn.dataset.compareBound = 'true';
 
   btn.addEventListener('click', () => {
-    const result = window.compareManager.toggle(
-      btn.dataset.productId,
-      btn.dataset.variantId
-    );
+    const result = window.compareManager.toggle(btn.dataset.productId, btn.dataset.variantId);
     if (!result.success && result.message) {
       const toast = document.createElement('div');
       toast.className = 'compare-toast';
@@ -510,7 +532,9 @@ function initProductDetailCompareButton(product) {
 
 function initProductDetailTabs() {
   const tabButtons = document.querySelectorAll('.product-detail-tabs [data-target]');
-  const tabPanels = document.querySelectorAll('.product-detail-tabs-section .tab-content[id^="tab-"]:not(#tab-variant-section)');
+  const tabPanels = document.querySelectorAll(
+    '.product-detail-tabs-section .tab-content[id^="tab-"]:not(#tab-variant-section)'
+  );
   if (!tabButtons.length) return;
 
   function setActiveButton(targetId) {
@@ -526,7 +550,9 @@ function initProductDetailTabs() {
 
   function activateTab(targetId) {
     if (targetId === 'tab-variant-section') {
-      document.getElementById('product-variant-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document
+        .getElementById('product-variant-section')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setActiveButton(targetId);
       return;
     }

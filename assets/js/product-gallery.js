@@ -1,6 +1,7 @@
 let productGalleryController = null;
 let productGalleryKeyHandler = null;
 
+/* exported initProductGallery */
 function initProductGallery() {
   const images = document.querySelectorAll('.gallery-main .slider-image');
   const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');

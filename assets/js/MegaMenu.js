@@ -20,11 +20,15 @@ function buildProductColumns(base, items) {
     .map((bucket) => {
       const links = bucket
         .map((p) => {
-          const thumb = productThumbUrl(base, p);
+          const thumb =
+            typeof productMenuThumbUrl === 'function'
+              ? productMenuThumbUrl(base, p)
+              : productThumbUrl(base, p);
+          const featureSrc = productThumbUrl(base, p);
           const short = p.name.length > 42 ? `${p.name.slice(0, 40)}…` : p.name;
           return `<li>
             <a href="${productUrl(p.slug)}" class="mega-menu-product-link"
-              data-feature-src="${thumb}"
+              data-feature-src="${featureSrc}"
               data-feature-name="${escapeHtml(p.name)}">
               <span class="mega-menu-product-thumb">
                 <img src="${thumb}" alt="" width="32" height="32" loading="lazy">
@@ -151,7 +155,6 @@ async function buildMegaMenu() {
     }
 
     const categories = [...data.categories].sort((a, b) => a.order - b.order);
-    const firstId = categories[0]?.id || '';
 
     let tabsHtml = '';
     let panelsHtml = '';
@@ -197,11 +200,22 @@ async function buildMegaMenu() {
     </li>`;
 
     const bindMegaMenuAfterPaint = () => {
-      const images = container.querySelectorAll('.mega-menu-product-thumb img, .mega-menu-feature img');
-    const bindMegaMenuImage = (img, product) => {
+      const images = container.querySelectorAll(
+        '.mega-menu-product-thumb img, .mega-menu-feature img'
+      );
+      const bindMegaMenuImage = (img, product) => {
+        const menuRel = `assets/images/products/${product.slug}/${product.slug}-menu-thumb.webp`;
         const kartRel = `assets/images/products/${product.slug}/${product.slug}-kart.jpg`;
         if (typeof bindGalleryImageFallback === 'function') {
-          bindGalleryImageFallback(img, kartRel, base);
+          bindGalleryImageFallback(img, menuRel, base);
+          return;
+        }
+        if (window.ABRALION_IMAGE?.bindImageFallbackChain) {
+          const root = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
+          const candidates = [`${root}${menuRel}`, `${root}${kartRel}`].map((u) =>
+            u.replace(/([^:]\/)\/+/g, '$1')
+          );
+          window.ABRALION_IMAGE.bindImageFallbackChain(img, candidates);
           return;
         }
         if (typeof bindProductImageFallback === 'function') {

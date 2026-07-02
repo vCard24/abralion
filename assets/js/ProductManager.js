@@ -1,3 +1,4 @@
+/* exported ProductManager */
 class ProductManager {
   constructor(dataPath) {
     const base = typeof getBasePath === 'function' ? getBasePath() : '';

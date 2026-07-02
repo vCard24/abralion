@@ -60,7 +60,11 @@
 
     const rowsHost = document.getElementById('quote-product-rows');
     rowsHost?.addEventListener('change', (e) => {
-      if (!e.target.matches('.quote-field-category, .quote-field-product, .quote-field-variant, .quote-field-qty')) {
+      if (
+        !e.target.matches(
+          '.quote-field-category, .quote-field-product, .quote-field-variant, .quote-field-qty'
+        )
+      ) {
         return;
       }
       const row = e.target.closest('.quote-product-row');
@@ -96,11 +100,9 @@
   }
 
   function applyInitialRows() {
-    const fromCompare =
-      typeof isQuoteFromCompare === 'function' ? isQuoteFromCompare() : false;
+    const fromCompare = typeof isQuoteFromCompare === 'function' ? isQuoteFromCompare() : false;
 
-    const keys =
-      typeof getCompareKeysForPrefill === 'function' ? getCompareKeysForPrefill() : [];
+    const keys = typeof getCompareKeysForPrefill === 'function' ? getCompareKeysForPrefill() : [];
 
     if (keys.length && window.quoteManager?.setList) {
       window.quoteManager.setList(keys);
@@ -120,7 +122,7 @@
     }
   }
 
-  function resolveInitialRows(keys, fromCompare) {
+  function resolveInitialRows(keys, _fromCompare) {
     const rows = [];
 
     if (keys.length) {
@@ -306,12 +308,14 @@
       return;
     }
 
-    products.filter((p) => p.categoryId === catId).forEach((p) => {
-      const opt = document.createElement('option');
-      opt.value = p.id;
-      opt.textContent = p.name;
-      productSel.appendChild(opt);
-    });
+    products
+      .filter((p) => p.categoryId === catId)
+      .forEach((p) => {
+        const opt = document.createElement('option');
+        opt.value = p.id;
+        opt.textContent = p.name;
+        productSel.appendChild(opt);
+      });
     productSel.disabled = false;
 
     if (productId && [...productSel.options].some((o) => o.value === productId)) {
@@ -363,7 +367,10 @@
 
   function variantBadgeText(variant) {
     if (variant.uzunluk_mm != null && variant.uc_genisligi_mm != null) {
-      return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm}x${variant.uc_genisligi_mm} mm`.replace(/^x/, '');
+      return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm}x${variant.uc_genisligi_mm} mm`.replace(
+        /^x/,
+        ''
+      );
     }
     if (variant.uzunluk_mm != null) {
       return `${variant.saft_mm ?? ''}x${variant.uzunluk_mm} mm`.replace(/^x/, '');
@@ -392,7 +399,9 @@
       if (!categoryId || !productId || !variantId) return;
 
       const product = products.find((p) => p.id === productId);
-      const variant = product?.variants?.find((v) => v.id === variantId || v.urun_kodu === variantId);
+      const variant = product?.variants?.find(
+        (v) => v.id === variantId || v.urun_kodu === variantId
+      );
       rows.push({
         categoryId,
         productId,
@@ -530,42 +539,6 @@
     }
   }
 
-  function buildSummaryText(data) {
-    const lines = [
-      'ABRALION — FİYAT TEKLİFİ TALEBİ',
-      `Tarih: ${new Date().toLocaleString('tr-TR')}`,
-      `Referans: ${data.reference || '—'}`,
-      '',
-      '--- ÜRÜNLER ---',
-    ];
-
-    data.products.forEach((row, i) => {
-      lines.push(
-        `${i + 1}. ${row.product?.name || row.productId}`,
-        `   Model: ${row.label}${row.qty ? ` | Miktar: ${row.qty}` : ''}`
-      );
-    });
-
-    lines.push(
-      '',
-      '--- İLETİŞİM ---',
-      `Ad Soyad: ${data.name}`,
-      `Telefon: ${data.phone}`,
-      `E-posta: ${data.email}`,
-      data.company ? `Firma: ${data.company}` : '',
-      `Ülke / Şehir: ${data.country} / ${data.city}`,
-      '',
-      '--- TALEP DETAYLARI ---',
-      data.application ? `Uygulama: ${data.application}` : '',
-      data.volume ? `Tahmini miktar: ${data.volume}` : '',
-      data.delivery ? `Teslimat: ${data.delivery}` : '',
-      data.urgency ? `Aciliyet: ${data.urgency}` : '',
-      data.message ? `Mesaj: ${data.message}` : ''
-    );
-
-    return lines.filter(Boolean).join('\n');
-  }
-
   function buildPrintHtml(data) {
     const logoSrc = pdfLogoDataUrl || '';
     const logoHtml = logoSrc
@@ -621,7 +594,8 @@
 
     const dateStr = new Date().toLocaleString('tr-TR');
 
-    return `<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><title>Abralion Teklif Talebi</title>
+    return (
+      `<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><title>Abralion Teklif Talebi</title>
 <style>
 @page { margin: 14mm; }
 body{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;padding:20px;color:#111;line-height:1.5;max-width:820px;margin:0 auto}
@@ -648,8 +622,10 @@ ${escapeHtml(data.country || '—')} / ${escapeHtml(data.city || '—')}</p>
 <p class="contact">${details || '—'}</p>
 <p class="footer">EKS-PLAST LLC · info@abralion.com · www.abralion.com · 8 (495) 142-42-67<br>
 Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliği taşımaz.</p>
-<script>window.onload=function(){window.focus();window.print();};<\/script>
-</body></html>`;
+<script>window.onload=function(){window.focus();window.print();};</scr` +
+      `ipt>
+</body></html>`
+    );
   }
 
   function makeReference() {
@@ -664,41 +640,6 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
     } catch {
       /* ignore */
     }
-  }
-
-  function readLastSubmit() {
-    try {
-      const raw = sessionStorage.getItem(SUBMIT_KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch {
-      return null;
-    }
-  }
-
-  function showThankYou(data) {
-    const formWrap = document.getElementById('quote-form-wrap');
-    const thankYou = document.getElementById('quote-thank-you');
-    if (!thankYou) return;
-
-    if (formWrap) {
-      formWrap.hidden = true;
-      formWrap.classList.add('hidden');
-    }
-
-    thankYou.hidden = false;
-    thankYou.classList.remove('hidden');
-
-    const refEl = document.getElementById('quote-thank-you-ref');
-    const textEl = document.getElementById('quote-thank-you-text');
-    if (data?.reference && refEl) {
-      refEl.textContent = `Referans no: ${data.reference}`;
-    }
-    if (data?.name && textEl) {
-      textEl.textContent = `Teşekkürler ${data.name}. Talebiniz kaydedildi; uzman ekibimiz genellikle 24 saat içinde size dönüş yapar.`;
-    }
-
-    thankYou.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    document.getElementById('quote-form-heading')?.scrollIntoView();
   }
 
   function mailAbsoluteUrl(relativePath) {
@@ -1027,7 +968,9 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
       const imgHtml = imgSrc
         ? `<img class="quote-pdf-card__img" src="${escapeAttr(imgSrc)}" alt="" />`
         : '<div class="quote-pdf-card__img-placeholder">Görsel yok</div>';
-      const specHtml = specLines.map((line) => pdfMetaItem(line.label || line[0] || '', line.value || line[1] || '')).join('');
+      const specHtml = specLines
+        .map((line) => pdfMetaItem(line.label || line[0] || '', line.value || line[1] || ''))
+        .join('');
       cards.push(`<article class="quote-pdf-card">
         <div class="quote-pdf-card__badge">Ürün ${cards.length + 1}</div>
         <div class="quote-pdf-card__media">${imgHtml}</div>
@@ -1051,7 +994,8 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
     if (!sheet) return null;
 
     const dateStr = new Date().toLocaleString('tr-TR');
-    const productsHtml = buildPdfProductCards(data) || '<p class="quote-pdf-empty">Ürün seçilmedi</p>';
+    const productsHtml =
+      buildPdfProductCards(data) || '<p class="quote-pdf-empty">Ürün seçilmedi</p>';
 
     const contactHtml =
       pdfField('Ad soyad', data.name) +
@@ -1107,7 +1051,9 @@ Bu belge müşteri talep formunun özetidir; bağlayıcı fiyat teklifi niteliğ
       scrollY: 0,
       useCORS: true,
     };
-    return h2c(target, { ...baseOpts, scale: 1.25 }).catch(() => h2c(target, { ...baseOpts, scale: 1 }));
+    return h2c(target, { ...baseOpts, scale: 1.25 }).catch(() =>
+      h2c(target, { ...baseOpts, scale: 1 })
+    );
   }
 
   function canvasToPdf(pdf, canvas) {

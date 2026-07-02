@@ -1,3 +1,4 @@
+/* exported ProductCard */
 class ProductCard {
   constructor(product, options = {}) {
     this.product = product;
@@ -114,7 +115,10 @@ class ProductCard {
   }
 
   static iconSvg(name, extraClass = '') {
-    if (typeof window.AbralionIcons !== 'undefined' && typeof window.AbralionIcons.iconSvg === 'function') {
+    if (
+      typeof window.AbralionIcons !== 'undefined' &&
+      typeof window.AbralionIcons.iconSvg === 'function'
+    ) {
       return window.AbralionIcons.iconSvg(name, extraClass);
     }
     return '';
@@ -160,7 +164,7 @@ class ProductCard {
     const base = getBasePath();
     const p = this.product;
     const firstVar = p.variants?.[0];
-    const variantId = firstVar ? (firstVar.urun_kodu || firstVar.id) : p.id;
+    const variantId = firstVar ? firstVar.urun_kodu || firstVar.id : p.id;
     const kartSrc = ProductCard.kartImageSrc(base, p.slug, p);
     const url = productUrl(p.slug);
     const spec = ProductCard.formatTechnicalSpecLabel(p);

@@ -25,7 +25,7 @@
       "errors": []
     },
     "assets/css/site-extra.css": {
-      "rules": 77,
+      "rules": 348,
       "errors": []
     },
     "assets/css/tailwind.css": {
@@ -33,7 +33,7 @@
       "errors": []
     }
   },
-  "duplicates_exact_count": 100,
+  "duplicates_exact_count": 101,
   "duplicates_conflict_count": 249,
   "duplicates_conflict_sample": {
     "body | line-height": [
@@ -388,7 +388,7 @@
   "orphan_unique_rules_count": 0,
   "orphan_unique_rules_sample": [],
   "bundle_class_tokens": 719,
-  "html_js_class_tokens": 647,
+  "html_js_class_tokens": 657,
   "possibly_unused_class_tokens": [
     "about-content",
     "about-cta",
@@ -480,6 +480,8 @@
     "group-hover",
     "h-",
     "h-0",
+    "h-3",
+    "h-5",
     "header-search",
     "header-search-btn",
     "header-search-input",
@@ -587,9 +589,7 @@
     "spec-col--code",
     "spec-col--medium",
     "spec-col--narrow",
-    "spec-col--wide",
-    "specifications-table",
-    "specs-table-container"
+    "spec-col--wide"
   ],
-  "possibly_unused_count": 238
+  "possibly_unused_count": 240
 }

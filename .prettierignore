@@ -1,0 +1,5 @@
+assets/js/vendor/**
+assets/js/products-data.min.js
+assets/js/products-data.js
+assets/css/bundle.min.css
+assets/css/tailwind.css

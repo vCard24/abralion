@@ -1,17 +1,3 @@
-function createSkeletonCard() {
-  const card = document.createElement('div');
-  card.className = 'product-card product-card--skeleton group bg-surface-elevation technical-border p-6 flex flex-col';
-  card.setAttribute('aria-hidden', 'true');
-  card.innerHTML = `
-    <div class="relative mb-6 aspect-[1.73] animate-pulse bg-carbon-black"></div>
-    <div class="mt-auto space-y-3">
-      <div class="h-3 w-1/3 animate-pulse rounded bg-surface-container-high"></div>
-      <div class="h-5 w-3/4 animate-pulse rounded bg-surface-container-high"></div>
-      <div class="h-4 w-full animate-pulse rounded bg-surface-container-high"></div>
-    </div>`;
-  return card;
-}
-
 function initStaticCardImages(root) {
   root.querySelectorAll('.product-card-image[data-fallback]').forEach((img) => {
     img.addEventListener('error', () => {
@@ -162,8 +148,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const viewport = grid.closest('.featured-carousel__viewport');
   if (viewport) viewport.style.minHeight = '300px';
 
-  let carousel = null;
-
   try {
     if (typeof ProductManager === 'undefined') {
       throw new Error('Ürün modülü yüklenemedi.');
@@ -176,7 +160,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     if (renderProductCards(grid, featured, { compact: true })) {
       if (fallbackMsg) fallbackMsg.hidden = true;
-      carousel = initFeaturedCarousel();
+      initFeaturedCarousel();
       return;
     }
     if (!hadStatic) {
@@ -188,8 +172,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       grid.innerHTML = staticBackup;
       if (fallbackMsg) fallbackMsg.hidden = true;
       initStaticCardImages(grid);
-      carousel = initFeaturedCarousel();
-      const existing = grid.closest('.featured-products')?.querySelector('.catalog-fallback-notice');
+      initFeaturedCarousel();
+      const existing = grid
+        .closest('.featured-products')
+        ?.querySelector('.catalog-fallback-notice');
       if (!existing) {
         const notice = document.createElement('p');
         notice.className = 'catalog-fallback-notice';
@@ -200,6 +186,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
     grid.innerHTML = `<p class="loading-message">${e.message || 'Ürünler yüklenemedi.'}</p>`;
-    carousel = initFeaturedCarousel();
+    initFeaturedCarousel();
   }
 });

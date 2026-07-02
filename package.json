@@ -3,12 +3,21 @@
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --minify",
+    "build:bundle": "python scripts/build_css.py",
     "build:js": "python scripts/minify_products_data.py",
     "sync:catalog": "python scripts/sync_catalog.py",
+    "generate:menu-thumbs": "python scripts/generate_menu_thumbs.py",
+    "audit:pagespeed": "python scripts/stage4_pagespeed_audit.py",
+    "lint:js": "eslint assets/js",
+    "format": "prettier --write \"assets/js/**/*.js\" \"assets/css/main.css\" \"assets/css/components.css\" \"assets/css/responsive.css\" \"assets/css/site-extra.css\" \"assets/css/tailwind-input.css\"",
+    "audit:js": "python scripts/js_dependency_audit.py",
     "install:hooks": "python scripts/install_git_hooks.py"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.4",
     "tailwindcss": "^3.4.17"
   }
 }

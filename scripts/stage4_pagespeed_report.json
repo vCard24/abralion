@@ -1,0 +1,29 @@
+{
+  "fonts": {
+    "ok_pages": 36,
+    "issues": []
+  },
+  "versions": [],
+  "images": {
+    "missing_dimensions": [],
+    "hero_lazy": [],
+    "hero_missing_fetchpriority": [],
+    "below_fold_eager": []
+  },
+  "htaccess": {
+    "exists": true,
+    "css_immutable": true,
+    "js_immutable": true,
+    "html_no_cache": true,
+    "woff2_cache": true
+  },
+  "css_animations": {
+    "transition_all": [],
+    "layout_property_transitions": []
+  },
+  "critical_hero": {
+    "ok": true,
+    "missing_rules": [],
+    "bytes": 5751
+  }
+}

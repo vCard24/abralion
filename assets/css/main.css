@@ -22,7 +22,9 @@
   --container-max-width: 1200px;
   --border-radius: 4px;
   --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-  --transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+  --transition:
+    color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.25s ease, opacity 0.25s ease;
   --color-primary-light: #ef4444;
   --color-primary-dark: #b91c1c;
   --color-primary-glow: rgba(220, 38, 38, 0.15);
@@ -99,7 +101,12 @@ button {
   transition: var(--transition);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: var(--spacing-sm);
@@ -136,7 +143,11 @@ p {
   outline-offset: 2px;
 }
 
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
@@ -161,8 +172,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .btn-primary {
   background-color: var(--color-primary);
   color: #fff;
-  background: #E31E24;
-  border-color: #E31E24;
+  background: #e31e24;
+  border-color: #e31e24;
 }
 
 .btn-primary:hover {
@@ -173,18 +184,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .btn-secondary {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   color: #d0d0d0;
   border: 1.5px solid #5a5a5b;
   font-weight: 500;
   background: #3a3a3b;
   position: relative;
   overflow: hidden;
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
   border-color: var(--color-primary);
   color: #ffffff;
   background: var(--color-primary);
@@ -337,7 +353,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: #fff;
   font-weight: 700;
   flex-shrink: 0;
-  background: #E31E24;
+  background: #e31e24;
 }
 
 .feature-item h3 {
@@ -354,7 +370,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .featured-products {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   background: var(--color-background);
 }
 
@@ -373,7 +389,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: var(--font-size-large);
 }
 
-.loading-message, .error-message, .no-products {
+.loading-message,
+.error-message,
+.no-products {
   text-align: center;
   padding: var(--spacing-xl);
   color: var(--color-gray-medium);
@@ -392,7 +410,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .products-page {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   background: var(--color-background);
 }
 
@@ -461,7 +479,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: var(--font-size-base);
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   min-height: 44px;
   background: var(--color-background-input);
 }
@@ -589,7 +612,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   align-items: center;
   justify-content: center;
   padding: var(--spacing-lg);
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border-radius: var(--border-radius);
 }
 
@@ -630,7 +653,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
   margin: 0 auto var(--spacing-sm);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vm-card:hover .vm-icon {
@@ -688,7 +711,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
   margin: 0 auto var(--spacing-sm);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sector-card:hover .sector-icon {
@@ -782,7 +805,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .about-cta {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   background: var(--color-background-card);
   border: 1px solid var(--color-border-subtle);
   border-radius: 14px;
@@ -810,7 +833,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .contact-page {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .contact-header {
@@ -836,7 +859,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .contact-info {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   padding: var(--spacing-lg);
   border-radius: var(--border-radius);
   border: 1px solid #3a3a3b;
@@ -879,10 +902,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #E31E24, #C41820);
+  background: linear-gradient(135deg, #e31e24, #c41820);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(227, 30, 36, 0.3);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-item:hover .contact-icon {
@@ -908,7 +931,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin-bottom: var(--spacing-xs);
 }
 
-.contact-details p, .contact-details a {
+.contact-details p,
+.contact-details a {
   color: var(--color-gray-dark);
   font-size: 14px;
   line-height: 1.6;
@@ -925,7 +949,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .contact-form-container {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   padding: var(--spacing-lg);
   border-radius: var(--border-radius);
   border: 1px solid #3a3a3b;
@@ -949,7 +973,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   gap: var(--spacing-md);
 }
 
-.form-input.error, .form-textarea.error {
+.form-input.error,
+.form-textarea.error {
   border-color: var(--color-primary);
 }
 
@@ -1055,7 +1080,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .product-features {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   padding: var(--spacing-md);
   border-radius: var(--border-radius);
   border-left: 4px solid var(--color-primary);
@@ -1115,7 +1140,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-collapse: collapse;
 }
 
-.specs-table th, .specs-table td {
+.specs-table th,
+.specs-table td {
   padding: var(--spacing-sm);
   text-align: left;
   border-bottom: 1px solid var(--color-gray-lighter);
@@ -1129,7 +1155,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--color-gray-dark);
 }
 
-.specs-table tr:last-child th, .specs-table tr:last-child td {
+.specs-table tr:last-child th,
+.specs-table tr:last-child td {
   border-bottom: none;
 }
 
@@ -1189,7 +1216,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .subcategories {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   padding: var(--spacing-md);
   border-radius: var(--border-radius);
   border: 1px solid #3a3a3b;
@@ -1253,7 +1280,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   min-width: 800px;
 }
 
-.compare-table th, .compare-table td {
+.compare-table th,
+.compare-table td {
   padding: 15px 10px;
 }
 
@@ -1290,7 +1318,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .compare-product-header img {
   width: 80px;
-    height: 80px;
+  height: 80px;
 }
 
 .compare-product-header h3 {
@@ -1311,17 +1339,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #E31E24;
+  background: #e31e24;
   color: #fff;
   border: 2px solid #fff;
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-remove:hover {
@@ -1349,10 +1377,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .compare-value-col .feature-list li:before {
-  content: "✓";
+  content: '✓';
   position: absolute;
   left: 0;
-  color: #E31E24;
+  color: #e31e24;
   font-weight: bold;
 }
 
@@ -1434,7 +1462,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .document-card:hover {
@@ -1491,7 +1522,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   flex-wrap: wrap;
 }
 
-.document-size, .document-lang {
+.document-size,
+.document-lang {
   font-size: 13px;
   color: var(--color-gray-medium);
   font-weight: 500;

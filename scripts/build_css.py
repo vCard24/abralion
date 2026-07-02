@@ -3,12 +3,17 @@
 from __future__ import annotations
 
 import re
-from datetime import date
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from asset_cache_version import bump_versioned_assets_in_html, content_hash
+
 CSS_DIR = ROOT / "assets" / "css"
 OUT = CSS_DIR / "bundle.min.css"
+ICONS = ROOT / "assets" / "js" / "icons.js"
 
 # Load order must match historical <link> order on every page.
 SOURCES = (
@@ -17,28 +22,6 @@ SOURCES = (
     "components.css",
     "responsive.css",
     "site-extra.css",
-)
-
-HTML_GLOBS = ("*.html",)
-
-# (regex on href/src value, replacement template with {v})
-VERSIONED_ASSETS = (
-    (
-        re.compile(r"(bundle\.min\.css\?v=)[^\"'\s>]+"),
-        r"\g<1>{v}",
-    ),
-    (
-        re.compile(r"(icons\.js\?v=)[^\"'\s>]+"),
-        r"\g<1>{v}",
-    ),
-    (
-        re.compile(r"(bundle\.min\.css)(?!\?v=)"),
-        r"\1?v={v}",
-    ),
-    (
-        re.compile(r"(icons\.js)(?!\?v=)"),
-        r"\1?v={v}",
-    ),
 )
 
 
@@ -50,27 +33,7 @@ def minify_css(css: str) -> str:
     return css.strip()
 
 
-def cache_version() -> str:
-    return date.today().strftime("%Y%m%d")
-
-
-def bump_versioned_assets(version: str) -> list[str]:
-    """Update ?v=YYYYMMDD for versioned static assets across HTML."""
-    changed: list[str] = []
-    for path in sorted(ROOT.rglob("*.html")):
-        if "node_modules" in path.parts:
-            continue
-        text = path.read_text(encoding="utf-8")
-        orig = text
-        for pattern, repl_tpl in VERSIONED_ASSETS:
-            text = pattern.sub(repl_tpl.format(v=version), text)
-        if text != orig:
-            path.write_text(text, encoding="utf-8")
-            changed.append(str(path.relative_to(ROOT)))
-    return changed
-
-
-def build() -> str:
+def build() -> dict[str, str]:
     parts: list[str] = []
     sizes: list[tuple[str, int]] = []
 
@@ -86,18 +49,21 @@ def build() -> str:
     minified = minify_css(combined)
     OUT.write_text(minified, encoding="utf-8")
 
-    version = cache_version()
-    bumped = bump_versioned_assets(version)
+    versions = bump_versioned_assets_in_html()
+
+    bundle_v = versions.get("bundle.min.css") or content_hash(OUT)
+    icons_v = versions.get("icons.js") or (content_hash(ICONS) if ICONS.is_file() else "—")
 
     raw_kb = sum(n for _, n in sizes) / 1024
     out_kb = OUT.stat().st_size / 1024
-    print(f"Cache bust version: {version}")
+    print(f"bundle.min.css ?v={bundle_v}")
+    print(f"icons.js ?v={icons_v}")
     print(f"Wrote {OUT.relative_to(ROOT)} ({out_kb:.1f} KB minified)")
     print(f"Sources total: {raw_kb:.1f} KB pre-minify")
     for name, nbytes in sizes:
         print(f"  {name}: {nbytes / 1024:.1f} KB")
-    print(f"Updated ?v= in {len(bumped)} HTML files")
-    return version
+    print(f"Updated HTML cache keys: {len(versions)} assets")
+    return versions
 
 
 if __name__ == "__main__":

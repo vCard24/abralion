@@ -3,6 +3,8 @@
  * Boş değerler boş hücre olarak kalır (— kullanılmaz).
  */
 
+/* exported getTableColumns, getSpecColumnClass, variantRowCells, variantSpecLines, variantLabel */
+
 const COLUMN_COMPUTERS = {
   max_hiz_flap_rpm(v) {
     if (v.max_hiz_rpm != null && v.max_hiz_ms != null) {
@@ -26,12 +28,16 @@ const COLUMN_COMPUTERS = {
   },
   olcu_cap_uzunluk(v) {
     if (v.olcu_cap_mm == null && v.olcu_uzunluk_mm == null) return '';
-    return `${v.olcu_cap_mm ?? ''}x${v.olcu_uzunluk_mm ?? ''} mm`.replace(/^x|x$/g, '').trim() || '';
+    return (
+      `${v.olcu_cap_mm ?? ''}x${v.olcu_uzunluk_mm ?? ''} mm`.replace(/^x|x$/g, '').trim() || ''
+    );
   },
   olcu_saft_uzunluk_uc(v) {
     const parts = [v.saft_mm, v.uzunluk_mm, v.uc_genisligi_mm].filter((x) => x != null);
     if (!parts.length) return '';
-    return parts.join(' x ') + (v.uc_genisligi_mm != null ? ' mm' : v.uzunluk_mm != null ? ' mm' : '');
+    return (
+      parts.join(' x ') + (v.uc_genisligi_mm != null ? ' mm' : v.uzunluk_mm != null ? ' mm' : '')
+    );
   },
   olcu_saft_uzunluk(v) {
     const parts = [v.saft_mm, v.uzunluk_mm].filter((x) => x != null);
@@ -290,14 +296,6 @@ const PRODUCT_TABLE_COLUMNS = {
     { key: 'koli_adet', label: 'Koli' },
   ],
   'sds-plus-4-kesicili-beton-matkap-ucu': [
-    { key: 'urun_tipi', label: 'Ürün Tipi' },
-    { key: 'cap_mm', label: 'Çap (mm)' },
-    { key: 'toplam_uzunluk_mm', label: 'Toplam Uzunluk (mm)' },
-    { key: 'baglanti_tipi', label: 'Bağlantı Tipi' },
-    { key: 'kutu_adet', label: 'Kutu' },
-    { key: 'koli_adet', label: 'Koli' },
-  ],
-  'sds-plus-4-kesicili-beton-matkap-ucu': [
     { key: 'cap_mm', label: 'Çap (mm)' },
     { key: 'saft_tipi', label: 'Şaft Tipi' },
     { key: 'kutu_ici_adet', label: 'Kutu İçi Adet' },
@@ -329,21 +327,44 @@ const PRODUCT_TABLE_COLUMNS = {
 
 /** Tablo sütun genişliği — dar sayısal / geniş metin alanları */
 const SPEC_COL_NARROW = new Set([
-  'cap_mm', 'daire_capi_mm', 'gobek_capi_mm', 'kalinlik_mm',
-  'kutu_adet', 'koli_adet', 'kutu_ici_adet', 'grit',
-  'uzunluk_mm', 'toplam_uzunluk_mm', 'bicak_genisligi_mm',
-  'kafa_olcusu_mm', 'serit_genisligi_mm', 'uzunluk_m',
+  'cap_mm',
+  'daire_capi_mm',
+  'gobek_capi_mm',
+  'kalinlik_mm',
+  'kutu_adet',
+  'koli_adet',
+  'kutu_ici_adet',
+  'grit',
+  'uzunluk_mm',
+  'toplam_uzunluk_mm',
+  'bicak_genisligi_mm',
+  'kafa_olcusu_mm',
+  'serit_genisligi_mm',
+  'uzunluk_m',
 ]);
 
 const SPEC_COL_WIDE = new Set([
-  'saft_tipi', 'kullanim_yeri', 'malzeme', 'asindirici_tipi',
-  'baglanti_tipi', 'govde_kizak_tipi', 'bicak_malzemesi', 'urun_tipi',
-  'asindirici_kodu', 'uc_tipi', 'paket_icerigi', 'kasa_malzemesi',
+  'saft_tipi',
+  'kullanim_yeri',
+  'malzeme',
+  'asindirici_tipi',
+  'baglanti_tipi',
+  'govde_kizak_tipi',
+  'bicak_malzemesi',
+  'urun_tipi',
+  'asindirici_kodu',
+  'uc_tipi',
+  'paket_icerigi',
+  'kasa_malzemesi',
 ]);
 
 const SPEC_COL_COMPUTE_WIDE = new Set([
-  'olcu_saft_uzunluk_uc', 'olcu_saft_uzunluk', 'olcu_cap_uzunluk',
-  'max_hiz_flap_rpm', 'max_hiz_ms_only', 'max_hiz_rpm_only',
+  'olcu_saft_uzunluk_uc',
+  'olcu_saft_uzunluk',
+  'olcu_cap_uzunluk',
+  'max_hiz_flap_rpm',
+  'max_hiz_ms_only',
+  'max_hiz_rpm_only',
 ]);
 
 function getSpecColumnClass(col) {
@@ -377,7 +398,7 @@ function getCellValue(variant, col) {
   if (col.compute && COLUMN_COMPUTERS[col.compute]) {
     return COLUMN_COMPUTERS[col.compute](variant);
   }
-  const raw = col.key === 'urun_kodu' ? variant.urun_kodu ?? variant.id : variant[col.key];
+  const raw = col.key === 'urun_kodu' ? (variant.urun_kodu ?? variant.id) : variant[col.key];
   return formatVariantValue(col.key, raw);
 }
 
