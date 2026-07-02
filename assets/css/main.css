@@ -81,13 +81,13 @@ img {
   display: block;
 }
 
-a:not(.footer-nav-link) {
+a {
   color: var(--color-primary);
   text-decoration: none;
   transition: var(--transition);
 }
 
-a:not(.footer-nav-link):hover {
+a:hover {
   color: var(--color-black);
 }
 
