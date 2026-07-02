@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="assets/css/tailwind.css?v=20260702" as="style">
+  <link rel="preload" href="assets/css/noir-migration.css?v=20260711" as="style">
+  <link rel="preload" href="assets/css/dark-theme.css?v=20260711" as="style">
   <title>Abralion - Ana Sayfa</title>
   <link rel="canonical" href="https://abralion.com/">
   <link rel="preload" href="assets/images/home/hero-bg.jpg" as="image" type="image/jpeg" fetchpriority="high" imagesizes="100vw">
@@ -31,10 +34,30 @@
     .featured-carousel__track .product-card{flex:0 0 calc((100% - 48px) / 3);min-width:0}
     @media(max-width:1023px){.featured-carousel__track .product-card{flex:0 0 calc((100% - 24px) / 2)}}
     @media(max-width:639px){.featured-carousel__track .product-card{flex:0 0 100%}}
+    .bg-carbon-black,.page-noir-site{background-color:#0a0a0a}
+    .text-secondary{color:#c8c6c5}
+    .text-abrasive-red,.home-hero__accent{color:#ff756e}
+    #home-hero .home-hero__badge{margin:0;padding:0;background:transparent;display:flex;align-items:center;gap:.5rem}
+    #home-hero .home-hero__badge-dot{width:8px;height:8px;background:#e2231a;border-radius:9999px;flex-shrink:0}
+    #home-hero .home-hero__btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:.25rem}
+    .max-w-site{max-width:1280px}
+    .product-card--static{background:#1e1e1e;border:1px solid rgba(142,142,147,.2)}
+    .product-card .aspect-\[1\.9\]{aspect-ratio:1.9/1}
+    @media(max-width:768px){
+      .header-nav{position:fixed;inset:0 auto auto 0;width:100%;height:100dvh;display:flex!important;flex-direction:column;opacity:0;visibility:hidden;pointer-events:none;z-index:1100}
+      .mobile-menu-toggle{display:flex}
+      .header-compare-link{display:none}
+    }
+    @media(min-width:769px){.mobile-menu-toggle{display:none}}
   </style>
-  <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702">
-  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260710">
-  <link rel="stylesheet" href="assets/css/dark-theme.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260711" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260711" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702">
+    <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260711">
+    <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260711">
+  </noscript>
   <link rel="stylesheet" href="assets/css/main.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
   <link rel="stylesheet" href="assets/css/components.css?v=20260603" media="print" onload="this.media='all'">
