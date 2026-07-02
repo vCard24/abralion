@@ -1,0 +1,595 @@
+{
+  "parse": {
+    "assets/css/compare.css": {
+      "rules": 79,
+      "errors": []
+    },
+    "assets/css/components.css": {
+      "rules": 256,
+      "errors": []
+    },
+    "assets/css/gallery-lightbox.css": {
+      "rules": 22,
+      "errors": []
+    },
+    "assets/css/main.css": {
+      "rules": 230,
+      "errors": []
+    },
+    "assets/css/quote-form.css": {
+      "rules": 123,
+      "errors": []
+    },
+    "assets/css/responsive.css": {
+      "rules": 4,
+      "errors": []
+    },
+    "assets/css/site-extra.css": {
+      "rules": 77,
+      "errors": []
+    },
+    "assets/css/tailwind.css": {
+      "rules": 571,
+      "errors": []
+    }
+  },
+  "duplicates_exact_count": 100,
+  "duplicates_conflict_count": 249,
+  "duplicates_conflict_sample": {
+    "body | line-height": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "var(--line-height)"
+      ]
+    ],
+    "h1 | font-size": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "var(--font-size-h1)"
+      ]
+    ],
+    "h1 | font-weight": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "600"
+      ]
+    ],
+    "h2 | font-size": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "var(--font-size-h2)"
+      ]
+    ],
+    "h2 | font-weight": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "600"
+      ]
+    ],
+    "h3 | font-size": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "var(--font-size-h3)"
+      ]
+    ],
+    "h3 | font-weight": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "600"
+      ]
+    ],
+    "h4 | font-weight": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "600"
+      ]
+    ],
+    "h5 | font-weight": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "600"
+      ]
+    ],
+    "h6 | font-weight": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "600"
+      ]
+    ],
+    "a | color": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "var(--color-primary)"
+      ]
+    ],
+    "a | text-decoration": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "main.css",
+        "none"
+      ],
+      [
+        "responsive.css",
+        "underline"
+      ]
+    ],
+    "select | font-size": [
+      [
+        "tailwind.css",
+        "100%"
+      ],
+      [
+        "tailwind.css",
+        "1rem"
+      ]
+    ],
+    "select | line-height": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "tailwind.css",
+        "1.5rem"
+      ]
+    ],
+    "select | padding": [
+      [
+        "tailwind.css",
+        "0"
+      ],
+      [
+        "tailwind.css",
+        ".5rem .75rem"
+      ]
+    ],
+    "textarea | font-size": [
+      [
+        "tailwind.css",
+        "100%"
+      ],
+      [
+        "tailwind.css",
+        "1rem"
+      ]
+    ],
+    "textarea | line-height": [
+      [
+        "tailwind.css",
+        "inherit"
+      ],
+      [
+        "tailwind.css",
+        "1.5rem"
+      ]
+    ],
+    "textarea | padding": [
+      [
+        "tailwind.css",
+        "0"
+      ],
+      [
+        "tailwind.css",
+        ".5rem .75rem"
+      ]
+    ],
+    "input::-moz-placeholder | color": [
+      [
+        "tailwind.css",
+        "#9ca3af"
+      ],
+      [
+        "tailwind.css",
+        "#6b7280"
+      ]
+    ],
+    "textarea::-moz-placeholder | color": [
+      [
+        "tailwind.css",
+        "#9ca3af"
+      ],
+      [
+        "tailwind.css",
+        "#6b7280"
+      ]
+    ],
+    "input::placeholder | color": [
+      [
+        "tailwind.css",
+        "#9ca3af"
+      ],
+      [
+        "tailwind.css",
+        "#6b7280"
+      ]
+    ],
+    "textarea::placeholder | color": [
+      [
+        "tailwind.css",
+        "#9ca3af"
+      ],
+      [
+        "tailwind.css",
+        "#6b7280"
+      ]
+    ],
+    "input:where([type=file]):focus | outline": [
+      [
+        "tailwind.css",
+        "1px solid ButtonText"
+      ],
+      [
+        "tailwind.css",
+        "1px auto -webkit-focus-ring-color"
+      ]
+    ],
+    ".\\!container | max-width": [
+      [
+        "tailwind.css",
+        "640px!important"
+      ],
+      [
+        "tailwind.css",
+        "768px!important"
+      ],
+      [
+        "tailwind.css",
+        "1024px!important"
+      ],
+      [
+        "tailwind.css",
+        "1280px!important"
+      ],
+      [
+        "tailwind.css",
+        "1536px!important"
+      ]
+    ],
+    ".container | max-width": [
+      [
+        "tailwind.css",
+        "640px"
+      ],
+      [
+        "tailwind.css",
+        "768px"
+      ],
+      [
+        "tailwind.css",
+        "1024px"
+      ],
+      [
+        "tailwind.css",
+        "1280px"
+      ],
+      [
+        "tailwind.css",
+        "1536px"
+      ],
+      [
+        "main.css",
+        "var(--container-max-width)"
+      ]
+    ],
+    ".form-input | border-radius": [
+      [
+        "tailwind.css",
+        "0"
+      ],
+      [
+        "components.css",
+        "var(--border-radius)"
+      ]
+    ],
+    ".form-input | padding": [
+      [
+        "tailwind.css",
+        ".5rem .75rem"
+      ],
+      [
+        "components.css",
+        "12px"
+      ]
+    ],
+    ".form-input | font-size": [
+      [
+        "tailwind.css",
+        "1rem"
+      ],
+      [
+        "components.css",
+        "var(--font-size-base)"
+      ]
+    ],
+    ".form-textarea | border-radius": [
+      [
+        "tailwind.css",
+        "0"
+      ],
+      [
+        "components.css",
+        "var(--border-radius)"
+      ]
+    ],
+    ".form-textarea | padding": [
+      [
+        "tailwind.css",
+        ".5rem .75rem"
+      ],
+      [
+        "components.css",
+        "12px"
+      ]
+    ]
+  },
+  "suspicious_in_bundle": {
+    ".specs-table": false,
+    ".specs-table th": false,
+    ".specs-table td": true,
+    ".compare-table": false,
+    ".compare-table-wrapper": true,
+    ".compare-table th": false,
+    ".product-detail-grid": true,
+    ".product-detail-info": true,
+    ".product-detail-image": true,
+    ".product-detail-tab": false,
+    ".product-detail-tabs-section": false,
+    ".section": false,
+    ".specs-table--stitch": false,
+    ".page-product-detail .specs-table": false
+  },
+  "orphan_unique_rules_count": 0,
+  "orphan_unique_rules_sample": [],
+  "bundle_class_tokens": 719,
+  "html_js_class_tokens": 647,
+  "possibly_unused_class_tokens": [
+    "about-content",
+    "about-cta",
+    "about-hero",
+    "about-hero-content",
+    "about-image",
+    "about-logo",
+    "about-preview",
+    "about-preview-content",
+    "about-preview-features",
+    "about-preview-text",
+    "about-section",
+    "about-text",
+    "aspect-",
+    "bg-",
+    "bg-surface",
+    "blur",
+    "blur-",
+    "breadcrumb",
+    "breadcrumb-noir",
+    "breadcrumb-separator",
+    "break-all",
+    "btn-icon-svg",
+    "btn-large",
+    "btn-open-browser",
+    "btn-remove",
+    "btn-sm",
+    "capitalize",
+    "category-btn",
+    "category-chip",
+    "category-chips",
+    "category-description",
+    "category-filters",
+    "category-header",
+    "category-page",
+    "collapse",
+    "compare-actions",
+    "compare-btn-quote",
+    "compare-header",
+    "compare-row-dim",
+    "compare-row-low",
+    "contact-details",
+    "contact-form-container",
+    "contact-header",
+    "contact-icon",
+    "contact-info",
+    "contact-info-item",
+    "contact-intro",
+    "contact-item",
+    "contact-layout",
+    "contact-page",
+    "contents",
+    "cta-buttons",
+    "document-card",
+    "document-card-actions",
+    "document-icon",
+    "document-icon-safety",
+    "document-info",
+    "document-lang",
+    "document-meta",
+    "document-size",
+    "documents-category",
+    "documents-grid",
+    "documents-section",
+    "dot",
+    "dropdown-divider",
+    "emphasis-logo",
+    "emphasis-text",
+    "empty-state",
+    "empty-state-icon",
+    "error-message",
+    "feature-icon",
+    "feature-item",
+    "feature-list",
+    "feature-logo",
+    "features-list",
+    "filter",
+    "flex-shrink",
+    "flow-root",
+    "focus",
+    "footer-bottom",
+    "footer-container",
+    "form-control",
+    "form-group",
+    "form-intro",
+    "form-label",
+    "form-multiselect",
+    "form-select",
+    "group-hover",
+    "h-",
+    "h-0",
+    "header-search",
+    "header-search-btn",
+    "header-search-input",
+    "hero",
+    "hero-buttons",
+    "hero-content",
+    "hero-image",
+    "hero-logo",
+    "hero-text",
+    "highlight",
+    "home-hero__deco",
+    "home-hero__deco-wrap",
+    "home-hero__layout",
+    "home-top-panel",
+    "home-trust",
+    "home-trust__card",
+    "home-trust__grid",
+    "home-trust__icon",
+    "home-trust__text",
+    "home-trust__title",
+    "hover",
+    "image-thumbnails",
+    "info-content",
+    "info-icon",
+    "inline",
+    "inline-grid",
+    "inline-table",
+    "invisible",
+    "lead",
+    "leading-",
+    "left-1",
+    "left-2",
+    "lg",
+    "line-through",
+    "list-item",
+    "logo-emphasis",
+    "logo-emphasis-content",
+    "lowercase",
+    "m-1",
+    "main-image",
+    "max-h-",
+    "max-w-",
+    "mb-lg",
+    "mb-md",
+    "mb-sm",
+    "md",
+    "mega-menu-footer",
+    "mega-menu-header",
+    "mega-menu-list",
+    "mega-menu-panel",
+    "mega-menu-tab",
+    "min-h-",
+    "min-w-",
+    "mt-lg",
+    "mt-md",
+    "mt-sm",
+    "no-products",
+    "opacity-",
+    "org",
+    "outline",
+    "overline",
+    "page-header",
+    "product-actions",
+    "product-card-body",
+    "product-card-image--hero",
+    "product-card-image-container",
+    "product-card-image-container--static-hero",
+    "product-compare-btn",
+    "product-description",
+    "product-detail",
+    "product-detail-category",
+    "product-detail-container",
+    "product-detail-content",
+    "product-detail-description",
+    "product-detail-grid",
+    "product-detail-image",
+    "product-detail-info",
+    "product-detail-title",
+    "product-features-detailed",
+    "product-grid",
+    "product-image-gallery",
+    "products-info",
+    "products-layout",
+    "products-main",
+    "products-page",
+    "products-page-header",
+    "products-sidebar",
+    "px-1",
+    "py-0",
+    "related-products",
+    "resize",
+    "section",
+    "section-header",
+    "sector-card",
+    "sector-icon",
+    "sector-item",
+    "sectors-grid",
+    "selection",
+    "sidebar",
+    "sidebar-search",
+    "sidebar-section",
+    "skew-x-",
+    "slider-dots",
+    "sm",
+    "spec-col--code",
+    "spec-col--medium",
+    "spec-col--narrow",
+    "spec-col--wide",
+    "specifications-table",
+    "specs-table-container"
+  ],
+  "possibly_unused_count": 238
+}

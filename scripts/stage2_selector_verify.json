@@ -1,0 +1,128 @@
+[
+  {
+    "url": "urun/metal-inox-kesme-tasi.html",
+    "selector": ".specs-table--stitch",
+    "property": "border-collapse",
+    "mode": null,
+    "ok": true,
+    "value": "separate",
+    "reason": ""
+  },
+  {
+    "url": "urun/metal-inox-kesme-tasi.html",
+    "selector": "#variant-specs-table .specs-table th",
+    "property": "font-weight",
+    "mode": null,
+    "ok": true,
+    "value": "600",
+    "reason": ""
+  },
+  {
+    "url": "urun/metal-inox-kesme-tasi.html",
+    "selector": ".product-detail-tab[aria-selected='true']",
+    "property": "border-bottom-width",
+    "mode": null,
+    "ok": true,
+    "value": "0px",
+    "reason": ""
+  },
+  {
+    "url": "urun/metal-inox-kesme-tasi.html",
+    "selector": ".product-detail-tabs-section",
+    "property": "display",
+    "mode": null,
+    "ok": true,
+    "value": "block",
+    "reason": ""
+  },
+  {
+    "url": "urun/metal-inox-kesme-tasi.html",
+    "selector": ".page-product-detail #variant-specs-table .specs-table",
+    "property": "width",
+    "mode": null,
+    "ok": true,
+    "value": "1214px",
+    "reason": ""
+  },
+  {
+    "url": "karsilastir.html",
+    "selector": ".compare-table",
+    "property": "border-collapse",
+    "mode": "compare",
+    "ok": true,
+    "value": "collapse",
+    "reason": ""
+  },
+  {
+    "url": "karsilastir.html",
+    "selector": ".compare-table-wrapper",
+    "property": "overflow-x",
+    "mode": "compare",
+    "ok": true,
+    "value": "auto",
+    "reason": ""
+  },
+  {
+    "url": "karsilastir.html",
+    "selector": ".compare-table th",
+    "property": "font-weight",
+    "mode": "compare",
+    "ok": true,
+    "value": "600",
+    "reason": ""
+  },
+  {
+    "url": "index.html",
+    "selector": ".home-hero-section",
+    "property": "min-height",
+    "mode": null,
+    "ok": true,
+    "value": "648px",
+    "reason": ""
+  },
+  {
+    "url": "index.html",
+    "selector": "section.py-section-gap",
+    "property": "padding-top",
+    "mode": null,
+    "ok": true,
+    "value": "120px",
+    "reason": ""
+  },
+  {
+    "url": "hakkimizda.html",
+    "selector": "section.py-section-gap",
+    "property": "padding-top",
+    "mode": null,
+    "ok": true,
+    "value": "120px",
+    "reason": ""
+  },
+  {
+    "url": "urunler.html",
+    "selector": "#products-grid",
+    "property": "display",
+    "mode": "catalog",
+    "ok": true,
+    "value": "block",
+    "reason": ""
+  },
+  {
+    "url": "dokumanlar.html",
+    "selector": ".page-documents .docs-hero-stat",
+    "property": "border-radius",
+    "mode": null,
+    "ok": true,
+    "value": "0px",
+    "reason": ""
+  },
+  {
+    "url": "fiyat-teklifi.html",
+    "selector": ".quote-sheet",
+    "property": "border-radius",
+    "mode": null,
+    "ok": true,
+    "value": "16px",
+    "reason": ""
+  }
+]

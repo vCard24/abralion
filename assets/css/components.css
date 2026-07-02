@@ -1120,7 +1120,6 @@
 }
 
 .specs-table th {
-  padding: var(--spacing-xs) var(--spacing-sm);
   color: var(--color-text-primary);
   font-weight: 600;
 }
@@ -1140,12 +1139,19 @@
 @media (max-width: 768px) {
   .specs-table-container {
     margin: 0 -var(--spacing-md);
+  }
 
-} .specs-table {
-  font-size: var(--font-size-xs);
+  .specs-table {
+    font-size: var(--font-size-xs);
+  }
+
+  .specs-table th,
+  .specs-table td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
 }
 
-} .product-features, .product-applications {
+.product-features, .product-applications {
   margin-top: var(--spacing-lg);
 }
 
@@ -1242,12 +1248,18 @@ body.has-compare-bar #whatsapp-float, body.has-compare-bar .whatsapp-float {
   #whatsapp-float,
   .whatsapp-float {
     width: 3.25rem;
+    height: 3.25rem;
+    right: max(0.75rem, env(safe-area-inset-right, 0px));
+    bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  }
 
-height: 3.25rem; right: max(0.75rem, env(safe-area-inset-right, 0px)); bottom: max(1rem, env(safe-area-inset-bottom, 0px)); } body.has-compare-bar #whatsapp-float, body.has-compare-bar .whatsapp-float {
-  bottom: max(5rem, calc(env(safe-area-inset-bottom, 0px) + 4.25rem));
+  body.has-compare-bar #whatsapp-float,
+  body.has-compare-bar .whatsapp-float {
+    bottom: max(5rem, calc(env(safe-area-inset-bottom, 0px) + 4.25rem));
+  }
 }
 
-} @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   #whatsapp-float,
   .whatsapp-float {
     transition: none;

@@ -1147,18 +1147,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media screen and (max-width: 768px) {
   .product-detail-grid {
     display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 0;
+  }
 
-grid-template-columns: 1fr; padding: 0; gap: 0; } .product-detail-image, .product-detail-info {
-  min-width: 0;
+  .product-detail-image,
+  .product-detail-info {
+    min-width: 0;
     max-width: 100%;
     width: 100%;
+  }
+
+  .product-actions .btn {
+    width: 100%;
+  }
 }
 
-.product-actions .btn {
-  width: 100%;
-}
-
-} .category-page {
+.category-page {
   background-color: transparent;
 }
 
@@ -1358,14 +1364,17 @@ grid-template-columns: 1fr; padding: 0; gap: 0; } .product-detail-image, .produc
 @media (max-width: 768px) {
   .compare-table-wrapper {
     border-radius: 0;
+    margin: 0 -20px;
+  }
 
-margin: 0 -20px; } .compare-label-col {
-  width: 150px;
+  .compare-label-col {
+    width: 150px;
     font-size: 13px;
     padding: 15px 10px;
+  }
 }
 
-} @media (max-width: 480px) {
+@media (max-width: 480px) {
   .compare-label-col {
     width: 120px;
     font-size: 12px;
