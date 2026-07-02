@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="dark-theme dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="assets/css/tailwind.css?v=20260702" as="style">
   <link rel="preload" href="assets/css/noir-migration.css?v=20260711" as="style">
-  <link rel="preload" href="assets/css/dark-theme.css?v=20260711" as="style">
+  <link rel="preload" href="assets/css/dark-theme.css?v=20260712" as="style">
   <title>Abralion - Ana Sayfa</title>
   <link rel="canonical" href="https://abralion.com/">
-  <link rel="preload" href="assets/images/home/hero-bg.jpg" as="image" type="image/jpeg" fetchpriority="high" imagesizes="100vw">
+  <link rel="preload" as="image" href="assets/images/home/hero-bg-1920.avif" imagesrcset="assets/images/home/hero-bg-640.avif 640w, assets/images/home/hero-bg-1024.avif 1024w, assets/images/home/hero-bg-1440.avif 1440w, assets/images/home/hero-bg-1920.avif 1920w" imagesizes="100vw" fetchpriority="high" type="image/avif">
   <style id="critical-home-lcp">
     html,body{margin:0}
     :root{--header-mobile-height:72px}
@@ -49,14 +49,17 @@
       .header-compare-link{display:none}
     }
     @media(min-width:769px){.mobile-menu-toggle{display:none}}
+    #home-hero picture,#home-hero picture img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+    .aspect-video{aspect-ratio:16/9}
+    .aspect-square{aspect-ratio:1/1}
   </style>
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260711" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260711" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260712" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="assets/css/tailwind.css?v=20260702">
     <link rel="stylesheet" href="assets/css/noir-migration.css?v=20260711">
-    <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260711">
+    <link rel="stylesheet" href="assets/css/dark-theme.css?v=20260712">
   </noscript>
   <link rel="stylesheet" href="assets/css/main.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
@@ -83,13 +86,12 @@
   <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=optional" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=optional"></noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=optional" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=optional"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block"></noscript>
 </head>
-<body class="page-noir-site bg-carbon-black text-on-surface font-body-md antialiased">
-  <script>document.documentElement.classList.add("dark-theme","dark");document.body.classList.add("dark-theme");</script>
+<body class="page-noir-site dark-theme bg-carbon-black text-on-surface font-body-md antialiased">
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-abrasive-red focus:text-white focus:rounded">İçeriğe atla</a>
 
   <header class="header sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b border-steel-gray/20">
@@ -136,15 +138,24 @@
 
         <!-- Full-width arka plan + overlay -->
         <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-          <img
-            class="h-full w-full object-cover object-center"
-            src="assets/images/home/hero-bg.jpg"
-            alt=""
-            width="1920"
-            height="1080"
-            decoding="sync"
-            loading="eager"
-            fetchpriority="high">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="assets/images/home/hero-bg-640.avif 640w, assets/images/home/hero-bg-1024.avif 1024w, assets/images/home/hero-bg-1440.avif 1440w, assets/images/home/hero-bg-1920.avif 1920w"
+              sizes="100vw">
+            <source
+              type="image/webp"
+              srcset="assets/images/home/hero-bg-640.webp 640w, assets/images/home/hero-bg-1024.webp 1024w, assets/images/home/hero-bg-1440.webp 1440w, assets/images/home/hero-bg-1920.webp 1920w"
+              sizes="100vw">
+            <img
+              class="h-full w-full object-cover object-center"
+              src="assets/images/home/hero-bg-1920.jpg"
+              alt=""
+              width="1920"
+              height="1812"
+              decoding="async"
+              fetchpriority="high">
+          </picture>
           <div class="absolute inset-0 bg-gradient-to-r from-carbon-black via-carbon-black/90 to-carbon-black/55"></div>
           <div class="absolute inset-0 bg-carbon-black/25"></div>
         </div>
@@ -190,25 +201,25 @@
     <!-- Features Bento -->
     <section class="py-section-gap max-w-7xl mx-auto px-margin-desktop">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
+        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-colors group relative overflow-hidden">
           <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="verified">verified</span>
           <h2 class="font-headline-md text-headline-md text-white mb-2">Uluslararası Kalite</h2>
           <p class="font-body-md text-body-md text-secondary">Standartlara uygun, sertifikalı üretim süreçleri.</p>
           <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
-        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
+        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-colors group relative overflow-hidden">
           <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="local_shipping">local_shipping</span>
           <h2 class="font-headline-md text-headline-md text-white mb-2">Rusya'da Teslimat</h2>
           <p class="font-body-md text-body-md text-secondary">Kendi lojistik ağımızla kapıdan kapıya teslim.</p>
           <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
-        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
+        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-colors group relative overflow-hidden">
           <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="support_agent">support_agent</span>
           <h2 class="font-headline-md text-headline-md text-white mb-2">Teknik Destek</h2>
           <p class="font-body-md text-body-md text-secondary">Uzman mühendis kadromuzla anında çözüm.</p>
           <span class="material-symbols-outlined absolute top-4 right-4 text-white/10 group-hover:text-abrasive-red transition-colors" data-icon="north_east">north_east</span>
         </div>
-        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-all group relative overflow-hidden">
+        <div class="bg-surface-elevation technical-border p-8 hover:bg-surface-container-high transition-colors group relative overflow-hidden">
           <span class="material-symbols-outlined text-abrasive-red text-4xl mb-4" data-icon="timer">timer</span>
           <h2 class="font-headline-md text-headline-md text-white mb-2">Hızlı Teklif</h2>
           <p class="font-body-md text-body-md text-secondary">İhtiyaçlarınıza 24 saat içinde yanıt garantisi.</p>
@@ -232,7 +243,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
           <!-- Large Card -->
           <div class="lg:col-span-2 relative group overflow-hidden rounded-lg aspect-video bg-surface-elevation">
-            <img alt="Taşlama Diskleri" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="assets/images/home/hero-bg.jpg" width="800" height="450" loading="lazy" decoding="async"/>
+            <picture>
+              <source type="image/avif" srcset="assets/images/home/hero-card-480.avif">
+              <source type="image/webp" srcset="assets/images/home/hero-card-480.webp">
+              <img alt="Taşlama Diskleri" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 will-change-transform" src="assets/images/home/hero-card-480.jpg" width="480" height="270" loading="lazy" decoding="async">
+            </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent to-transparent p-10 flex flex-col justify-end">
               <div class="flex gap-2 mb-4">
                 <span class="bg-abrasive-red px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white">Metal</span>
@@ -247,7 +262,7 @@
           </div>
           <!-- Standard Card -->
           <div class="relative group overflow-hidden rounded-lg aspect-square bg-surface-elevation">
-            <img alt="Kesici Taşlar" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="assets/images/home/kesici-taslar.jpg" width="600" height="600" loading="lazy" decoding="async"/>
+            <img alt="Kesici Taşlar" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700 will-change-transform" src="assets/images/home/kesici-taslar.jpg" width="600" height="600" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent p-8 flex flex-col justify-end">
               <div class="flex gap-2 mb-4">
                 <span class="bg-white/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">Inox</span>
@@ -261,7 +276,10 @@
           </div>
           <!-- Standard Card -->
           <div class="relative group overflow-hidden rounded-lg aspect-square bg-surface-elevation">
-            <img alt="Flap Diskler" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="assets/images/home/zr-zirkon-flap-disk-genel.jpg" width="600" height="600" loading="lazy" decoding="async"/>
+            <picture>
+              <source type="image/webp" srcset="assets/images/home/zr-zirkon-flap-disk-genel.webp">
+              <img alt="Flap Diskler" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700 will-change-transform" src="assets/images/home/zr-zirkon-flap-disk-genel.jpg" width="600" height="600" loading="lazy" decoding="async">
+            </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent p-8 flex flex-col justify-end">
               <div class="flex gap-2 mb-4">
                 <span class="bg-white/10 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur">Alüminyum</span>
@@ -275,7 +293,7 @@
           </div>
           <!-- Large Card 2 -->
           <div class="lg:col-span-2 relative group overflow-hidden rounded-lg aspect-video bg-surface-elevation">
-            <img alt="Elmas Ürünler" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="assets/images/home/guclendirilmis-beton-icin-elmas-kesme-diski-kullanim-home.webp" width="800" height="450" loading="lazy" decoding="async"/>
+            <img alt="Elmas Ürünler" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 will-change-transform" src="assets/images/home/guclendirilmis-beton-icin-elmas-kesme-diski-kullanim-home.webp" width="800" height="450" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent to-transparent p-10 flex flex-col justify-end">
               <div class="flex gap-2 mb-4">
                 <span class="bg-abrasive-red px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white">İnşaat</span>
@@ -407,7 +425,7 @@
           <div class="featured-carousel__viewport overflow-hidden">
             <div class="featured-carousel__track" id="featured-products-grid">
               <!-- CATALOG_STATIC_START -->
-              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-all duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="metal-inox-kesme-tasi" data-category-id="kesici-taslama-flap-disk">
+              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="metal-inox-kesme-tasi" data-category-id="kesici-taslama-flap-disk">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
                   <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi.webp" alt="Metal / Inox Kesme Taşı" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
@@ -417,7 +435,7 @@
                   <h3 class="product-card-title font-headline-md text-[20px] group-hover:text-abrasive-red transition-colors"><a href="urun/metal-inox-kesme-tasi.html" class="text-inherit">Metal / Inox Kesme Taşı</a></h3>
                 </div>
               </div>
-              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-all duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="355mm-metal-sabit-tezgah-kesme-diski" data-category-id="kesici-taslama-flap-disk">
+              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="355mm-metal-sabit-tezgah-kesme-diski" data-category-id="kesici-taslama-flap-disk">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
                   <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski.webp" alt="355mm Metal Sabit Tezgah Kesme Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
@@ -427,7 +445,7 @@
                   <h3 class="product-card-title font-headline-md text-[20px] group-hover:text-abrasive-red transition-colors"><a href="urun/355mm-metal-sabit-tezgah-kesme-diski.html" class="text-inherit">355mm Metal Sabit Tezgah Kesme Diski</a></h3>
                 </div>
               </div>
-              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-all duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="metal-inox-taslama-diski" data-category-id="kesici-taslama-flap-disk">
+              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="metal-inox-taslama-diski" data-category-id="kesici-taslama-flap-disk">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
                   <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski.webp" alt="Metal / Inox Taşlama Diski" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
@@ -437,7 +455,7 @@
                   <h3 class="product-card-title font-headline-md text-[20px] group-hover:text-abrasive-red transition-colors"><a href="urun/metal-inox-taslama-diski.html" class="text-inherit">Metal / Inox Taşlama Diski</a></h3>
                 </div>
               </div>
-              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-all duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="segmentli-standart-elmas-kesici" data-category-id="elmas-kesici">
+              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="segmentli-standart-elmas-kesici" data-category-id="elmas-kesici">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
                   <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici.webp" alt="Segmentli Standart Elmas Kesici" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
@@ -447,7 +465,7 @@
                   <h3 class="product-card-title font-headline-md text-[20px] group-hover:text-abrasive-red transition-colors"><a href="urun/segmentli-standart-elmas-kesici.html" class="text-inherit">Segmentli Standart Elmas Kesici</a></h3>
                 </div>
               </div>
-              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-all duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="sds-plus-2-kesicili-beton-matkap-ucu" data-category-id="kirici-delici">
+              <div class="product-card product-card--static group bg-surface-elevation technical-border p-5 flex flex-col transition-colors duration-500 hover:border-abrasive-red/50 product-card--compact" data-product-id="sds-plus-2-kesicili-beton-matkap-ucu" data-category-id="kirici-delici">
                 <div class="relative overflow-hidden mb-6 aspect-[1.9] bg-carbon-black">
                   <img class="product-card-image absolute inset-0 h-full w-full object-cover" src="assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu.webp" alt="SDS Plus 2 Kesicili Beton Matkap Ucu" loading="lazy" width="400" height="300" data-fallback="assets/images/home/hero-bg.jpg">
                   <div class="absolute top-0 right-0 p-3"><span class="bg-abrasive-red/10 text-abrasive-red text-[10px] font-bold px-2 py-0.5 border border-abrasive-red/20">NEW</span></div>
@@ -543,7 +561,7 @@
 
 
   <script defer src="assets/js/product-image-utils.js?v=20260708"></script>
-  <script defer src="assets/js/site.js?v=20260605"></script>
+  <script defer src="assets/js/site.js?v=20260712"></script>
   <script defer src="assets/js/products-data.min.js?v=20260704"></script>
   <script defer src="assets/js/CompareManager.js"></script>
   <script defer src="assets/js/ProductManager.js"></script>

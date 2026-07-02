@@ -55,13 +55,25 @@ html.dark-theme body {
   color: var(--color-text-primary);
 }
 
-/* Smooth Transitions - Professional Feel */
-html.dark-theme body * {
-  transition: background-color 0.25s ease, 
-              border-color 0.25s ease, 
-              color 0.25s ease, 
+/* Smooth transitions — yalnızca etkileşimli öğeler (body * CLS/perf maliyeti yüksek) */
+html.dark-theme body a,
+html.dark-theme body button,
+html.dark-theme body .btn,
+html.dark-theme body .btn-primary,
+html.dark-theme body .btn-secondary,
+html.dark-theme body .product-card,
+html.dark-theme body .header-nav-link,
+html.dark-theme body .header-cta-btn,
+html.dark-theme body .mobile-menu-toggle,
+html.dark-theme body input,
+html.dark-theme body textarea,
+html.dark-theme body select {
+  transition: color 0.25s ease,
+              background-color 0.25s ease,
+              border-color 0.25s ease,
               box-shadow 0.25s ease,
-              transform 0.25s ease;
+              transform 0.25s ease,
+              opacity 0.25s ease;
 }
 
 /* ============================================
@@ -85,7 +97,7 @@ html.dark-theme body .header-nav-link {
   font-weight: 600;
   letter-spacing: 0.3px;
   border-bottom: 2px solid transparent;
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 html.dark-theme body .header-nav-link::after {
@@ -121,7 +133,7 @@ html.dark-theme body .header-search-btn {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   border-radius: 10px;
   box-shadow: var(--glow-red);
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 html.dark-theme body .header-search-btn:hover {
@@ -160,7 +172,7 @@ html.dark-theme body .mega-menu-list a {
   padding: 10px 0;
   position: relative;
   padding-left: 12px;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 html.dark-theme body .mega-menu-list a::before {
@@ -168,15 +180,17 @@ html.dark-theme body .mega-menu-list a::before {
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
-  width: 0;
+  width: 6px;
   height: 2px;
   background: var(--color-primary);
-  transition: width 0.2s ease;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s ease;
+  will-change: transform;
 }
 
 html.dark-theme body .mega-menu-list a:hover::before {
-  width: 6px;
+  transform: translateY(-50%) scaleX(1);
 }
 
 html.dark-theme body .mega-menu-list a:hover {
@@ -297,22 +311,24 @@ html.dark-theme body .btn-primary {
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html.dark-theme body .btn-primary::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  will-change: transform;
 }
 
 html.dark-theme body .btn-primary:hover::before {
-  left: 100%;
+  transform: translateX(100%);
 }
 
 html.dark-theme body .btn-primary:hover {
@@ -333,7 +349,7 @@ html.dark-theme body .btn-secondary {
   font-weight: 500;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 html.dark-theme body .btn-secondary:hover {
@@ -357,7 +373,7 @@ html.dark-theme body .product-card {
   border-radius: 14px;
   overflow: hidden;
   position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html.dark-theme body .product-card::before {
@@ -516,7 +532,7 @@ html.dark-theme body .feature-item {
   background: var(--color-background-card);
   border: 1px solid var(--color-border-subtle);
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   padding: var(--spacing-md);
 }
 
@@ -572,7 +588,7 @@ html.dark-theme body .footer-links a {
   color: var(--color-text-secondary);
   position: relative;
   padding-left: 0;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 html.dark-theme body .footer-links a::before {
@@ -1125,7 +1141,7 @@ html.dark-theme body .contact-info-item {
   border: 1px solid var(--color-border-subtle);
   border-radius: 14px;
   padding: var(--spacing-lg);
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 html.dark-theme body .contact-info-item:hover {
@@ -1226,7 +1242,7 @@ html.dark-theme body .value-card {
   border: 1px solid var(--color-border-subtle);
   border-radius: 12px;
   padding: var(--spacing-md);
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 html.dark-theme body .sector-card:hover,
@@ -1305,7 +1321,7 @@ html.dark-theme body .value-item {
   border: 1px solid var(--color-border-subtle);
   border-radius: 12px;
   padding: var(--spacing-md);
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 html.dark-theme body .sector-item:hover,
@@ -1526,7 +1542,7 @@ html.dark-theme body .category-btn {
   border: 1px solid var(--color-border-subtle);
   border-radius: 8px;
   padding: 10px 16px;
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 html.dark-theme body .category-btn:hover,
@@ -1754,7 +1770,7 @@ html.dark-theme body .contact-info-item {
   border: 1px solid var(--color-border-subtle);
   border-radius: 14px;
   padding: var(--spacing-lg);
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 html.dark-theme body .contact-info-item:hover {
@@ -1807,7 +1823,7 @@ html.dark-theme body .value-item {
   border: 1px solid var(--color-border-subtle);
   border-radius: 12px;
   padding: var(--spacing-md);
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 html.dark-theme body .sector-item:hover,
@@ -1908,7 +1924,7 @@ html.dark-theme body .category-description {
 html.dark-theme body .document-card {
   background: var(--color-background-card);
   border: 1px solid var(--color-border-subtle);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html.dark-theme body .document-card:hover {

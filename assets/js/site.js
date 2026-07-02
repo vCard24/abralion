@@ -403,11 +403,26 @@ window.sendFormMail = async function sendFormMail(payload) {
   return data;
 };
 
+function scheduleWhatsAppFloat() {
+  const run = () => {
+    try {
+      initWhatsAppFloat();
+    } catch (err) {
+      console.error('WhatsApp float:', err);
+    }
+  };
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(run, { timeout: 3500 });
+  } else {
+    window.addEventListener('load', () => setTimeout(run, 1500), { once: true });
+  }
+}
+
 function initFooter() {
   initFooterCerts();
   initFooterSocial();
   initPdfLinks();
-  initWhatsAppFloat();
+  scheduleWhatsAppFloat();
 }
 
 function bootSiteFooter() {
@@ -415,7 +430,7 @@ function bootSiteFooter() {
     initFooter();
   } catch (err) {
     console.error('Footer init:', err);
-    initWhatsAppFloat();
+    scheduleWhatsAppFloat();
   }
 }
 
@@ -424,5 +439,3 @@ if (document.readyState === 'loading') {
 } else {
   bootSiteFooter();
 }
-
-initWhatsAppFloat();
