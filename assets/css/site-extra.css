@@ -931,7 +931,11 @@ footer.footer .footer-logo-link {
 
 .page-product-detail #variant-specs-table .compare-check {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  margin: 0;
+  position: relative;
 }
 
 .page-product-detail #variant-specs-table .compare-check input {
@@ -939,16 +943,48 @@ footer.footer .footer-logo-link {
   opacity: 0;
   width: 0;
   height: 0;
+  margin: 0;
 }
 
 .page-product-detail #variant-specs-table .compare-check-box {
-  background: transparent;
-  border-color: rgba(142, 142, 147, 0.5);
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(142, 142, 147, 0.55);
+  border-radius: 3px;
+  background: #1e1e1e;
+  position: relative;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .page-product-detail #variant-specs-table .compare-check input:checked + .compare-check-box {
   background: #e2231a;
   border-color: #e2231a;
+}
+
+.page-product-detail #variant-specs-table .compare-check input:checked + .compare-check-box::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.page-product-detail #variant-specs-table .compare-check input:disabled + .compare-check-box {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-product-detail #variant-specs-table tr.compare-row-active {
+  background: rgba(226, 35, 26, 0.1);
+}
+
+.page-product-detail #variant-specs-table tr.compare-row-active td {
+  border-bottom-color: rgba(226, 35, 26, 0.25);
 }
 
 .page-product-detail .loading-message,
