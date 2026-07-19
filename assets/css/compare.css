@@ -550,43 +550,43 @@ tr.compare-row-active td {
   }
 }
 
-body.dark-theme .compare-bar {
+html.dark-theme body .compare-bar {
   background: #1a1a1a;
   border-top: 1px solid #333;
 }
 
-body.dark-theme .compare-page .compare-table-wrapper {
+html.dark-theme body .compare-page .compare-table-wrapper {
   background: var(--color-background-card, #252525);
   border-color: #333;
 }
 
-body.dark-theme .compare-page .compare-table thead th,
-body.dark-theme .compare-page .compare-matrix tbody .compare-label-col {
+html.dark-theme body .compare-page .compare-table thead th,
+html.dark-theme body .compare-page .compare-matrix tbody .compare-label-col {
   background: #1f1f1f;
   color: var(--color-text-secondary, #ccc);
 }
 
-body.dark-theme .compare-page .compare-matrix tbody .compare-value-col {
+html.dark-theme body .compare-page .compare-matrix tbody .compare-value-col {
   color: #f0f0f0;
 }
 
-body.dark-theme .compare-page .compare-slot-empty,
-body.dark-theme .compare-page .compare-slot-empty-cell {
+html.dark-theme body .compare-page .compare-slot-empty,
+html.dark-theme body .compare-page .compare-slot-empty-cell {
   background: #1a1a1a;
 }
 
-body.dark-theme .compare-page .compare-mixed-notice {
+html.dark-theme body .compare-page .compare-mixed-notice {
   color: var(--color-text-secondary, #ccc);
   background: rgba(227, 30, 36, 0.12);
   border-color: rgba(227, 30, 36, 0.35);
 }
 
-body.dark-theme .compare-check-box {
+html.dark-theme body .compare-check-box {
   background: #2a2a2a;
   border-color: #555;
 }
 
-body.dark-theme tr.compare-row-active {
+html.dark-theme body tr.compare-row-active {
   background: rgba(227, 30, 36, 0.12);
 }
 
