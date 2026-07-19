@@ -1,0 +1,18 @@
+# Abralion
+> Rusya'daki Türk firmalarına endüstriyel kesim ve
+taşlama ürünleri sunan B2B katalog sitesi.
+
+## Ürünler
+Kesici taşlar, elmas kesiciler, flap diskler,
+kırıcı-delici uçlar, maket bıçakları ve metreler
+kategorilerinde 24 ürün ailesi.
+
+## İletişim
+E-posta: info@abralion.com
+Web: https://abralion.com
+
+## Sayfalar
+- https://abralion.com/
+- https://abralion.com/urunler.html
+- https://abralion.com/hakkimizda.html
+- https://abralion.com/iletisim.html
