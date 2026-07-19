@@ -180,6 +180,7 @@ async function singleRun(browser, profileName) {
 
   const client = await page.createCDPSession();
   await client.send('Network.enable');
+  await client.send('Network.setCacheDisabled', { cacheDisabled: true });
   await client.send('Network.emulateNetworkConditions', {
     offline: false,
     latency: 150,
