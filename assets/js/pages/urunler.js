@@ -1,16 +1,15 @@
 const CATEGORY_FILTERS = {
-  'kesici-taslama': (p) =>
-    p.categoryId === 'kesici-taslama-flap-disk' && !/flap-disk/i.test(p.slug || ''),
-  'flap-disk': (p) =>
-    p.categoryId === 'kesici-taslama-flap-disk' && /flap-disk/i.test(p.slug || ''),
+  'kesici-taslama-flap-disk': (p) => p.categoryId === 'kesici-taslama-flap-disk',
   'elmas-kesici': (p) => p.categoryId === 'elmas-kesici',
   'kirici-delici': (p) => p.categoryId === 'kirici-delici',
+  'olcum-kesim': (p) => p.categoryId === 'olcum-kesim',
 };
 
 const URL_CATEGORY_TO_FILTERS = {
-  'kesici-taslama-flap-disk': ['kesici-taslama', 'flap-disk'],
+  'kesici-taslama-flap-disk': ['kesici-taslama-flap-disk'],
   'elmas-kesici': ['elmas-kesici'],
   'kirici-delici': ['kirici-delici'],
+  'olcum-kesim': ['olcum-kesim'],
 };
 
 const APPLICATION_BTN_ON =
@@ -195,11 +194,6 @@ function setApplicationButtonState(btn, active) {
 
 function syncFiltersFromUrl(kategori) {
   if (!kategori) return;
-
-  if (kategori === 'olcum-kesim') {
-    urlCategoryId = kategori;
-    return;
-  }
 
   const filterKeys = URL_CATEGORY_TO_FILTERS[kategori];
   if (!filterKeys) {
