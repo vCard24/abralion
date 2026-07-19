@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { access, readFile } from 'node:fs/promises';
+import { access, readFile, writeFile } from 'node:fs/promises';
 import http from 'node:http';
 import path from 'node:path';
 import process from 'node:process';
@@ -12,6 +12,7 @@ const RUNS = Number(process.env.PERF_RUNS || 3);
 const CSS_DELAY_MS = Number(process.env.PERF_CSS_DELAY_MS || 1500);
 const REPORT_ONLY = process.argv.includes('--report-only');
 const BASE_URL = process.env.PERF_URL || `http://127.0.0.1:${PORT}/`;
+const REPORT_PATH = path.join(ROOT, 'scripts/performance_regression_report.json');
 const CHROME_CANDIDATES = [
   process.env.CHROME_PATH,
   'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
@@ -258,7 +259,14 @@ try {
     summaries.push(summarize(profile, runs));
   }
 
-  console.log(JSON.stringify({ url: BASE_URL, runs: RUNS, summaries }, null, 2));
+  const report = {
+    url: BASE_URL,
+    runs: RUNS,
+    generatedAt: new Date().toISOString(),
+    summaries,
+  };
+  await writeFile(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+  console.log(JSON.stringify(report, null, 2));
   const failed = summaries.some(
     (summary) =>
       summary.cls > 0.05 ||

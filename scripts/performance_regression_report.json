@@ -1,0 +1,63 @@
+{
+  "url": "https://abralion.com/",
+  "runs": 3,
+  "generatedAt": "2026-07-19T22:53:43.554Z",
+  "summaries": [
+    {
+      "profile": "mobile",
+      "stability": false,
+      "cls": 0,
+      "lcpMs": 980,
+      "lcpElement": "img",
+      "lcpUrl": "https://abralion.com/assets/images/home/hero-bg-480.avif",
+      "failedRequests": 0,
+      "allFailedRequests": 0,
+      "failedSamples": [],
+      "runtimeErrors": 0,
+      "runtimeErrorSamples": [],
+      "largestShifts": []
+    },
+    {
+      "profile": "desktop",
+      "stability": false,
+      "cls": 0,
+      "lcpMs": 952,
+      "lcpElement": "img",
+      "lcpUrl": "https://abralion.com/assets/images/home/hero-bg-1440.avif",
+      "failedRequests": 0,
+      "allFailedRequests": 0,
+      "failedSamples": [],
+      "runtimeErrors": 0,
+      "runtimeErrorSamples": [],
+      "largestShifts": []
+    },
+    {
+      "profile": "mobile-css-delay",
+      "stability": true,
+      "cls": 0,
+      "lcpMs": 840,
+      "lcpElement": "img",
+      "lcpUrl": "https://abralion.com/assets/images/home/hero-bg-480.avif",
+      "failedRequests": 0,
+      "allFailedRequests": 0,
+      "failedSamples": [],
+      "runtimeErrors": 0,
+      "runtimeErrorSamples": [],
+      "largestShifts": []
+    },
+    {
+      "profile": "desktop-css-delay",
+      "stability": true,
+      "cls": 0,
+      "lcpMs": 840,
+      "lcpElement": "img",
+      "lcpUrl": "https://abralion.com/assets/images/home/hero-bg-1440.avif",
+      "failedRequests": 0,
+      "allFailedRequests": 0,
+      "failedSamples": [],
+      "runtimeErrors": 0,
+      "runtimeErrorSamples": [],
+      "largestShifts": []
+    }
+  ]
+}

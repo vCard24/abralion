@@ -1,0 +1,273 @@
+{
+  "base_url": "https://abralion.com",
+  "generated_at": "2026-07-19T22:50:40Z",
+  "modes": [
+    {
+      "mode": "cdn-cache",
+      "requests": 15,
+      "failures": 0,
+      "median_ms": 1805,
+      "p95_ms": 2627,
+      "cache_statuses": {
+        "DYNAMIC": 3,
+        "HIT": 7,
+        "MISS": 5
+      },
+      "results": [
+        {
+          "path": "/",
+          "status": 200,
+          "elapsed_ms": 1174,
+          "cache": "DYNAMIC",
+          "edge": "40d3430aed2e0fc33cdd05c4860729d2-fra-edge1",
+          "age": ""
+        },
+        {
+          "path": "/assets/css/bundle.min.css",
+          "status": 200,
+          "elapsed_ms": 1805,
+          "cache": "MISS",
+          "edge": "d3588f390dfdfa6d10b2df9354f3ace9-fra-edge4",
+          "age": ""
+        },
+        {
+          "path": "/assets/js/home.bundle.min.js",
+          "status": 200,
+          "elapsed_ms": 1361,
+          "cache": "MISS",
+          "edge": "23ec60275a447e30dd06d431d90ce583-fra-edge2",
+          "age": ""
+        },
+        {
+          "path": "/assets/images/home/hero-bg-480.avif",
+          "status": 200,
+          "elapsed_ms": 925,
+          "cache": "HIT",
+          "edge": "3b2095f1ede6a18ca3c4e34ac3a7ee6d-fra-edge3",
+          "age": "2366"
+        },
+        {
+          "path": "/assets/fonts/inter-tr-400-normal.woff2",
+          "status": 200,
+          "elapsed_ms": 1026,
+          "cache": "MISS",
+          "edge": "fdba894ed8faab65a51d29a7aff1d129-fra-edge5",
+          "age": ""
+        },
+        {
+          "path": "/",
+          "status": 200,
+          "elapsed_ms": 1963,
+          "cache": "DYNAMIC",
+          "edge": "340e49aa69f088614d092394d2390cb2-fra-edge3",
+          "age": ""
+        },
+        {
+          "path": "/assets/css/bundle.min.css",
+          "status": 200,
+          "elapsed_ms": 3236,
+          "cache": "MISS",
+          "edge": "0a503ccfdfbcd537a5b0cbfc269d7ab4-fra-edge3",
+          "age": ""
+        },
+        {
+          "path": "/assets/js/home.bundle.min.js",
+          "status": 200,
+          "elapsed_ms": 2538,
+          "cache": "HIT",
+          "edge": "bba239842c5527f14e2309449a8185bc-fra-edge4",
+          "age": "24"
+        },
+        {
+          "path": "/assets/images/home/hero-bg-480.avif",
+          "status": 200,
+          "elapsed_ms": 1514,
+          "cache": "HIT",
+          "edge": "b4570b1346d9413ce669f521f2b4ac50-fra-edge2",
+          "age": "1959"
+        },
+        {
+          "path": "/assets/fonts/inter-tr-400-normal.woff2",
+          "status": 200,
+          "elapsed_ms": 1966,
+          "cache": "HIT",
+          "edge": "e3ff4303c288f1f17963b5fca33b916b-fra-edge4",
+          "age": "26"
+        },
+        {
+          "path": "/",
+          "status": 200,
+          "elapsed_ms": 2298,
+          "cache": "DYNAMIC",
+          "edge": "d0ef5c8374cad9e738688fa377b92b0e-fra-edge5",
+          "age": ""
+        },
+        {
+          "path": "/assets/css/bundle.min.css",
+          "status": 200,
+          "elapsed_ms": 2627,
+          "cache": "HIT",
+          "edge": "97b059616edb86110d25e96898fb304a-fra-edge1",
+          "age": "30"
+        },
+        {
+          "path": "/assets/js/home.bundle.min.js",
+          "status": 200,
+          "elapsed_ms": 1915,
+          "cache": "MISS",
+          "edge": "f439e9cee1f69f392cc782db470b3eb2-fra-edge1",
+          "age": ""
+        },
+        {
+          "path": "/assets/images/home/hero-bg-480.avif",
+          "status": 200,
+          "elapsed_ms": 1394,
+          "cache": "HIT",
+          "edge": "1075f128e87e1343ce680bb8c8f41673-fra-edge2",
+          "age": "1961"
+        },
+        {
+          "path": "/assets/fonts/inter-tr-400-normal.woff2",
+          "status": 200,
+          "elapsed_ms": 1397,
+          "cache": "HIT",
+          "edge": "c8eac1dd1d8e01a44bb21931f0006851-fra-edge4",
+          "age": "29"
+        }
+      ]
+    },
+    {
+      "mode": "cache-bypass",
+      "requests": 15,
+      "failures": 0,
+      "median_ms": 783,
+      "p95_ms": 978,
+      "cache_statuses": {
+        "DYNAMIC": 3,
+        "MISS": 12
+      },
+      "results": [
+        {
+          "path": "/",
+          "status": 200,
+          "elapsed_ms": 925,
+          "cache": "DYNAMIC",
+          "edge": "080425941c3ed078bfba082036fa67d6-fra-edge5",
+          "age": ""
+        },
+        {
+          "path": "/assets/css/bundle.min.css",
+          "status": 200,
+          "elapsed_ms": 1067,
+          "cache": "MISS",
+          "edge": "96fb52d07a74811d73495a5c6e119732-fra-edge3",
+          "age": ""
+        },
+        {
+          "path": "/assets/js/home.bundle.min.js",
+          "status": 200,
+          "elapsed_ms": 978,
+          "cache": "MISS",
+          "edge": "ae61815e7772b43444aef1b3672a6887-fra-edge1",
+          "age": ""
+        },
+        {
+          "path": "/assets/images/home/hero-bg-480.avif",
+          "status": 200,
+          "elapsed_ms": 698,
+          "cache": "MISS",
+          "edge": "139d1d939b708a8f2de041eeaefdfd9b-fra-edge1",
+          "age": ""
+        },
+        {
+          "path": "/assets/fonts/inter-tr-400-normal.woff2",
+          "status": 200,
+          "elapsed_ms": 801,
+          "cache": "MISS",
+          "edge": "e215b7e825b07cccdf534fcfebb2c0f0-fra-edge4",
+          "age": ""
+        },
+        {
+          "path": "/",
+          "status": 200,
+          "elapsed_ms": 695,
+          "cache": "DYNAMIC",
+          "edge": "cc4647f0039102eba17ac5d148cf3cbc-fra-edge4",
+          "age": ""
+        },
+        {
+          "path": "/assets/css/bundle.min.css",
+          "status": 200,
+          "elapsed_ms": 783,
+          "cache": "MISS",
+          "edge": "b262f630ec083d8fada7fd3530c82fe1-fra-edge1",
+          "age": ""
+        },
+        {
+          "path": "/assets/js/home.bundle.min.js",
+          "status": 200,
+          "elapsed_ms": 628,
+          "cache": "MISS",
+          "edge": "ac59ade4a145ab28061fffdb4da2e22a-fra-edge5",
+          "age": ""
+        },
+        {
+          "path": "/assets/images/home/hero-bg-480.avif",
+          "status": 200,
+          "elapsed_ms": 344,
+          "cache": "MISS",
+          "edge": "67d7ef7c08a29bc98b3d628770bed102-fra-edge4",
+          "age": ""
+        },
+        {
+          "path": "/assets/fonts/inter-tr-400-normal.woff2",
+          "status": 200,
+          "elapsed_ms": 523,
+          "cache": "MISS",
+          "edge": "eb1b2a52246f12c5394bc58512e4c350-fra-edge3",
+          "age": ""
+        },
+        {
+          "path": "/",
+          "status": 200,
+          "elapsed_ms": 857,
+          "cache": "DYNAMIC",
+          "edge": "605fafc37c6c88fb3899df7ca9b6c90b-fra-edge3",
+          "age": ""
+        },
+        {
+          "path": "/assets/css/bundle.min.css",
+          "status": 200,
+          "elapsed_ms": 917,
+          "cache": "MISS",
+          "edge": "777cd4edea66fb090ffd61ce9178d1c7-fra-edge2",
+          "age": ""
+        },
+        {
+          "path": "/assets/js/home.bundle.min.js",
+          "status": 200,
+          "elapsed_ms": 845,
+          "cache": "MISS",
+          "edge": "978b01a225f6ad0c07947529d27098ae-fra-edge4",
+          "age": ""
+        },
+        {
+          "path": "/assets/images/home/hero-bg-480.avif",
+          "status": 200,
+          "elapsed_ms": 561,
+          "cache": "MISS",
+          "edge": "8a7932c98a5554ad15dcabb4ce26fffd-fra-edge5",
+          "age": ""
+        },
+        {
+          "path": "/assets/fonts/inter-tr-400-normal.woff2",
+          "status": 200,
+          "elapsed_ms": 691,
+          "cache": "MISS",
+          "edge": "2267c023cd75dfd544a9125ddcb84b84-fra-edge2",
+          "age": ""
+        }
+      ]
+    }
+  ]
+}
