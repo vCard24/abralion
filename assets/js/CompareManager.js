@@ -136,6 +136,11 @@ class CompareManager {
     const bar = document.createElement('div');
     bar.id = 'compare-bar';
     bar.className = 'compare-bar';
+    // Fixed overlay — does not affect document flow / CLS when shown
+    bar.style.position = 'fixed';
+    bar.style.bottom = '0';
+    bar.style.left = '0';
+    bar.style.right = '0';
     bar.setAttribute('aria-live', 'polite');
     bar.hidden = true;
     bar.innerHTML = `
