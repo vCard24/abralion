@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-import { spawn } from 'node:child_process';
-import { access } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 import http from 'node:http';
 import path from 'node:path';
 import process from 'node:process';
+import { gzipSync } from 'node:zlib';
 import puppeteer from 'puppeteer-core';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
@@ -30,6 +30,18 @@ const PROFILES = {
     userAgent:
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36',
   },
+  'mobile-css-delay': {
+    viewport: { width: 390, height: 844, deviceScaleFactor: 1, isMobile: true, hasTouch: true },
+    userAgent:
+      'Mozilla/5.0 (Linux; Android 12; Pixel 5) AppleWebKit/537.36 Chrome/126 Mobile Safari/537.36',
+    stability: true,
+  },
+  'desktop-css-delay': {
+    viewport: { width: 1365, height: 768, deviceScaleFactor: 1, isMobile: false, hasTouch: false },
+    userAgent:
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36',
+    stability: true,
+  },
 };
 
 async function chromePath() {
@@ -44,32 +56,58 @@ async function chromePath() {
   throw new Error('Chrome/Edge bulunamadı. CHROME_PATH ortam değişkenini ayarlayın.');
 }
 
-function startServer() {
+async function startServer() {
   if (process.env.PERF_URL) return null;
-  return spawn('python', ['-m', 'http.server', String(PORT), '--bind', '127.0.0.1'], {
-    cwd: ROOT,
-    stdio: 'ignore',
-    windowsHide: true,
-  });
-}
-
-async function waitForServer() {
-  for (let attempt = 0; attempt < 40; attempt += 1) {
+  const types = {
+    '.avif': 'image/avif',
+    '.css': 'text/css; charset=utf-8',
+    '.html': 'text/html; charset=utf-8',
+    '.js': 'text/javascript; charset=utf-8',
+    '.json': 'application/json; charset=utf-8',
+    '.svg': 'image/svg+xml',
+    '.webp': 'image/webp',
+    '.woff2': 'font/woff2',
+  };
+  const server = http.createServer(async (request, response) => {
     try {
-      const status = await new Promise((resolve, reject) => {
-        const request = http.get(BASE_URL, (response) => {
-          response.resume();
-          resolve(response.statusCode || 0);
-        });
-        request.on('error', reject);
-      });
-      if (status >= 200 && status < 400) return;
+      const pathname = decodeURIComponent(new URL(request.url, BASE_URL).pathname);
+      const relative = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
+      const file = path.resolve(ROOT, relative);
+      if (!file.startsWith(`${ROOT}${path.sep}`) && file !== path.join(ROOT, 'index.html')) {
+        response.writeHead(403).end();
+        return;
+      }
+      let body = await readFile(file);
+      if (
+        CSS_DELAY_MS > 0 &&
+        relative === 'assets/css/bundle.min.css' &&
+        request.headers['x-perf-css-delay'] === '1'
+      ) {
+        await new Promise((resolve) => setTimeout(resolve, CSS_DELAY_MS));
+      }
+      const headers = {
+        'Content-Type': types[path.extname(file).toLowerCase()] || 'application/octet-stream',
+        'Cache-Control': 'no-store',
+      };
+      if (
+        request.headers['accept-encoding']?.includes('gzip') &&
+        ['.css', '.html', '.js', '.json', '.svg', '.xml'].includes(path.extname(file).toLowerCase())
+      ) {
+        body = gzipSync(body);
+        headers['Content-Encoding'] = 'gzip';
+        headers.Vary = 'Accept-Encoding';
+      }
+      response.writeHead(200, headers);
+      response.end(body);
     } catch {
-      // Server is still starting.
+      response.writeHead(404).end();
     }
-    await new Promise((resolve) => setTimeout(resolve, 100));
-  }
-  throw new Error(`Test sunucusu başlatılamadı: ${BASE_URL}`);
+  });
+  await new Promise((resolve, reject) => {
+    server.once('error', reject);
+    server.listen(PORT, '127.0.0.1', resolve);
+  });
+  return server;
 }
 
 async function installObservers(page) {
@@ -114,18 +152,13 @@ async function singleRun(browser, profileName) {
   const page = await browser.newPage();
   await page.setViewport(profile.viewport);
   await page.setUserAgent(profile.userAgent);
+  if (profile.stability) {
+    await page.setExtraHTTPHeaders({ 'x-perf-css-delay': '1' });
+  }
   await installObservers(page);
 
   const failed = [];
   const failedCritical = [];
-  await page.setRequestInterception(true);
-  page.on('request', (request) => {
-    if (CSS_DELAY_MS > 0 && request.url().includes('/assets/css/bundle.min.css')) {
-      setTimeout(() => request.continue(), CSS_DELAY_MS);
-      return;
-    }
-    request.continue();
-  });
   page.on('requestfailed', (request) => {
     const url = request.url();
     if (url.endsWith('/favicon.ico')) return;
@@ -175,6 +208,7 @@ function summarize(profile, runs) {
     .sort((a, b) => Math.abs(a.cls - cls) - Math.abs(b.cls - cls))[0];
   return {
     profile,
+    stability: Boolean(PROFILES[profile].stability),
     cls: Number(cls.toFixed(4)),
     lcpMs: Number.isFinite(lcp) ? Math.round(lcp) : null,
     lcpElement: representative.lcp?.element || 'none',
@@ -188,10 +222,9 @@ function summarize(profile, runs) {
   };
 }
 
-const server = startServer();
+const server = await startServer();
 let browser;
 try {
-  await waitForServer();
   browser = await puppeteer.launch({
     executablePath: await chromePath(),
     headless: true,
@@ -211,12 +244,11 @@ try {
   const failed = summaries.some(
     (summary) =>
       summary.cls > 0.05 ||
-      summary.lcpMs === null ||
-      summary.lcpMs > 2500 ||
+      (!summary.stability && (summary.lcpMs === null || summary.lcpMs > 2500)) ||
       summary.failedRequests > 0,
   );
   if (failed && !REPORT_ONLY) process.exitCode = 1;
 } finally {
   if (browser) await browser.close();
-  if (server) server.kill();
+  if (server) await new Promise((resolve) => server.close(resolve));
 }

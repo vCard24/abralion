@@ -30,9 +30,9 @@ GOOGLE_BLOCK_ALT = re.compile(
     re.I,
 )
 
-HERO_PRELOADS = re.compile(
-    r"\s*<link rel=\"preload\" href=\"[^\"]+assets/fonts/inter-latin-400-normal\.woff2\"[^>]*>\s*"
-    r"<link rel=\"preload\" href=\"[^\"]+assets/fonts/montserrat-latin-700-normal\.woff2\"[^>]*>\s*",
+FONT_PRELOADS = re.compile(
+    r'\s*<link rel="preload" href="(?:\.\./)?assets/fonts/[^"]+\.woff2" '
+    r'as="font" type="font/woff2" crossorigin>\s*',
     re.I,
 )
 
@@ -49,8 +49,8 @@ def fonts_block(prefix: str, *, hero_preload: bool) -> str:
     if hero_preload:
         lines.extend(
             [
-                f'  <link rel="preload" href="{prefix}assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>',
-                f'  <link rel="preload" href="{prefix}assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>',
+                f'  <link rel="preload" href="{prefix}assets/fonts/inter-tr-400-normal.woff2" as="font" type="font/woff2" crossorigin>',
+                f'  <link rel="preload" href="{prefix}assets/fonts/montserrat-tr-700-normal.woff2" as="font" type="font/woff2" crossorigin>',
             ]
         )
     lines.append(
@@ -65,10 +65,17 @@ def patch_file(path: Path) -> bool:
     prefix = asset_prefix(path)
     is_home = path.name == "index.html" and path.parent == ROOT
 
-    text = HERO_PRELOADS.sub("\n", text)
+    text = FONT_PRELOADS.sub("\n", text)
     replacement = fonts_block(prefix, hero_preload=is_home)
 
-    if GOOGLE_BLOCK.search(text):
+    if "fonts.css" in text:
+        text = re.sub(
+            rf'(?m)^[ \t]*<link rel="stylesheet" href="{re.escape(prefix)}assets/css/fonts\.css\?v=[a-f0-9]+">\s*$',
+            replacement.rstrip(),
+            text,
+            count=1,
+        )
+    elif GOOGLE_BLOCK.search(text):
         text = GOOGLE_BLOCK.sub("\n" + replacement, text, count=1)
     elif GOOGLE_BLOCK_ALT.search(text):
         text = GOOGLE_BLOCK_ALT.sub("\n" + replacement, text, count=1)

@@ -6,21 +6,11 @@
   "versions": [],
   "resource_loading": {
     "deferred_main_css": [],
-    "excessive_font_preloads": [
-      "index.html: 3 font preloads",
-      "urunler.html: 3 font preloads"
-    ],
+    "excessive_font_preloads": [],
     "unscoped_high_image_preloads": []
   },
   "images": {
-    "missing_dimensions": [
-      "urunler.html:145 assets/images/catalog/metal-inox-kesme-tasi.webp",
-      "urunler.html:169 assets/images/catalog/metal-inox-taslama-diski.webp",
-      "urunler.html:189 assets/images/catalog/zr-zirkon-flap-disk.webp",
-      "urunler.html:209 assets/images/catalog/355mm-metal-sabit-tezgah-kesme-diski.webp",
-      "urunler.html:229 assets/images/catalog/segmentli-standart-elmas-kesici.webp",
-      "urunler.html:249 assets/images/catalog/ao-aluminyum-oksit-flap-disk.webp"
-    ],
+    "missing_dimensions": [],
     "hero_lazy": [],
     "hero_missing_fetchpriority": [],
     "below_fold_eager": []
