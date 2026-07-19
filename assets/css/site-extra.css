@@ -506,7 +506,6 @@ header.header .header-logo {
   height: 3rem;
   width: auto;
   max-width: none;
-  aspect-ratio: 438 / 132;
   filter: none;
   opacity: 1;
 }

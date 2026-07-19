@@ -14,11 +14,11 @@
     body.page-noir-site{background:#0a0a0a;color:#e2e2e2;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
     .header{position:sticky;top:0;z-index:50;width:100%;background:rgba(18,20,20,.96);border-bottom:1px solid rgba(142,142,147,.2)}
     .header-container{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:80rem;margin:0 auto;padding:1rem 16px;box-sizing:border-box}
-    .header-logo,header.header .header-logo{display:block;height:3rem;width:auto;max-width:none;aspect-ratio:438/132}
+    .header-logo,header.header .header-logo{display:block;height:3rem;width:auto;max-width:none}
     @media(min-width:768px){.header-logo,header.header .header-logo{height:3.25rem}}
     @media(min-width:1024px){.header-logo,header.header .header-logo{height:3.5rem}}
-    .home-hero-section{position:relative;width:100%;overflow:hidden;padding:0}
-    #home-hero{position:relative;display:flex;flex-direction:column;overflow:hidden}
+    .home-hero-section{position:relative;width:100%;overflow:hidden;padding:0;min-height:min(90vh,920px)}
+    #home-hero{position:relative;display:flex;flex-direction:column;min-height:min(90vh,920px);overflow:hidden}
     #home-hero>.pointer-events-none{position:absolute;inset:0;z-index:0;pointer-events:none;min-height:inherit}
     #home-hero>.pointer-events-none>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
     #home-hero .home-hero__title{font-size:2rem;line-height:1.1;font-weight:700;letter-spacing:-.025em;font-family:Montserrat,Arial,sans-serif;color:#fff;margin:0;min-height:4.4rem}
@@ -63,10 +63,7 @@
       .header-nav{position:fixed;inset:0 auto auto 0;width:100%;height:100dvh;display:flex!important;flex-direction:column;opacity:0;visibility:hidden;pointer-events:none;z-index:1100}
       .mobile-menu-toggle{display:flex}
     }
-    @media(min-width:769px){
-      .mobile-menu-toggle{display:none}
-      .home-hero-section,#home-hero{min-height:min(90vh,920px)}
-    }
+    @media(min-width:769px){.mobile-menu-toggle{display:none}}
     #home-hero picture,#home-hero picture img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
     .aspect-video{aspect-ratio:16/9}
     .aspect-square{aspect-ratio:1/1}
@@ -93,8 +90,8 @@
   <meta name="twitter:description" content="Profesyonel kesici, taşlama, elmas kesici ve endüstriyel uç ürünleri.">
   <meta name="twitter:image" content="https://abralion.com/assets/images/abralion-disc.webp">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
-  <link rel="stylesheet" href="assets/css/bundle.min.css?v=f4ddd0c4" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="assets/css/bundle.min.css?v=f4ddd0c4"></noscript>
+  <link rel="stylesheet" href="assets/css/bundle.min.css?v=ca23da3e" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/bundle.min.css?v=ca23da3e"></noscript>
 <link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
 </head>
 <body class="page-noir-site dark-theme bg-carbon-black text-on-surface font-body-md antialiased">
@@ -104,7 +101,7 @@
     <div class="header-container flex items-center justify-between gap-6 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-4 md:py-5">
       <div class="header-brand-nav flex items-center gap-8">
         <a href="/" class="header-logo-link flex shrink-0 items-center transition-opacity hover:opacity-80" aria-label="Abralion Ana Sayfa">
-          <img src="assets/images/logo-beyaz-yatay.svg" alt="Abralion" class="header-logo w-auto" decoding="async" data-logo>
+          <img src="assets/images/logo-beyaz-yatay.svg" alt="Abralion" class="header-logo w-auto" width="438" height="132" decoding="async" data-logo>
         </a>
         <nav class="header-nav flex items-center gap-6" aria-label="Ana navigasyon">
           <ul class="header-nav-list flex list-none items-center gap-6 m-0 p-0">
@@ -140,7 +137,7 @@
 
   <main id="main-content">
     <section class="home-hero-section relative w-full overflow-hidden p-0" id="home-hero-wrap">
-      <div class="home-hero relative flex flex-col" id="home-hero">
+      <div class="home-hero relative flex min-h-[min(90vh,920px)] flex-col" id="home-hero">
 
         <!-- Full-width arka plan + overlay -->
         <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
@@ -589,8 +586,8 @@
     <script defer src="assets/js/icons.js?v=958742a9"></script>
 <script defer src="assets/js/product-image-utils.js?v=520195eb"></script>
   <script defer src="assets/js/site.js?v=c6d44551"></script>
-  <script defer src="assets/js/products-data.min.js?v=056a86fb"></script>
-  <script defer src="assets/js/CompareManager.js?v=57d9df9f"></script>
+  <script defer src="assets/js/products-data.min.js?v=c2bd9954"></script>
+  <script defer src="assets/js/CompareManager.js?v=3772c2f8"></script>
   <script defer src="assets/js/ProductManager.js?v=0bbed12a"></script>
   <script defer src="assets/js/ProductCard.js?v=8772f883"></script>
   <script defer src="assets/js/Header.js?v=3873f97d"></script>
