@@ -149,7 +149,7 @@ def build_images() -> None:
         save_responsive(source, output, image_format)
 
     category_source = ROOT / "assets" / "images" / "home" / "kesici-taslar.jpg"
-    category_output = ROOT / "assets" / "images" / "home" / "kesici-taslar-400.webp"
+    category_output = ROOT / "assets" / "images" / "home" / "kesici-taslar-350.webp"
     with Image.open(category_source) as image:
         image.load()
         resized = image.resize((350, 350), Image.Resampling.LANCZOS)
