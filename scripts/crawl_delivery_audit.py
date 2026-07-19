@@ -70,7 +70,11 @@ def inspect_html(result: dict) -> list[str]:
     ):
         if not re.search(pattern, body, re.I):
             issues.append(f"{label} missing")
-    if re.search(r"captcha|access denied|verify you are human", body, re.I):
+    if re.search(
+        r"captcha|access denied|verify you are human|checking your browser|hcdn-cgi/jschallenge",
+        body,
+        re.I,
+    ):
         issues.append("crawler challenge detected")
     return issues
 

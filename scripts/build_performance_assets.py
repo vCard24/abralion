@@ -151,7 +151,9 @@ def build_images() -> None:
     category_source = ROOT / "assets" / "images" / "home" / "kesici-taslar.jpg"
     category_output = ROOT / "assets" / "images" / "home" / "kesici-taslar-400.webp"
     with Image.open(category_source) as image:
-        image.save(category_output, "WEBP", quality=65, method=6)
+        image.load()
+        resized = image.resize((350, 350), Image.Resampling.LANCZOS)
+        resized.save(category_output, "WEBP", quality=52, method=6)
     print(
         f"{category_output.relative_to(ROOT)}: "
         f"{category_output.stat().st_size / 1024:.1f} KB"
