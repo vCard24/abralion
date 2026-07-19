@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abralion - Ana Sayfa</title>
   <link rel="canonical" href="https://abralion.com/">
-  <link rel="preload" as="image" href="assets/images/home/hero-bg-640.avif" imagesrcset="assets/images/home/hero-bg-640.avif 640w, assets/images/home/hero-bg-1024.avif 1024w, assets/images/home/hero-bg-1440.avif 1440w, assets/images/home/hero-bg-1920.avif 1920w" imagesizes="100vw" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="assets/images/home/hero-card-480.avif" media="(max-width: 480px)" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="assets/images/home/hero-bg-1024.avif" media="(min-width: 481px)" fetchpriority="high" type="image/avif">
   <style id="critical-home-lcp">
     *,:after,:before{box-sizing:border-box}
     html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -151,20 +152,23 @@
         <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
           <picture>
             <source
+              media="(max-width: 480px)"
               type="image/avif"
-              srcset="assets/images/home/hero-bg-640.avif 640w, assets/images/home/hero-bg-1024.avif 1024w, assets/images/home/hero-bg-1440.avif 1440w, assets/images/home/hero-bg-1920.avif 1920w"
-              sizes="100vw">
+              srcset="assets/images/home/hero-card-480.avif">
             <source
-              type="image/webp"
-              srcset="assets/images/home/hero-bg-640.webp 640w, assets/images/home/hero-bg-1024.webp 1024w, assets/images/home/hero-bg-1440.webp 1440w, assets/images/home/hero-bg-1920.webp 1920w"
-              sizes="100vw">
+              media="(max-width: 1024px)"
+              type="image/avif"
+              srcset="assets/images/home/hero-bg-1024.avif">
+            <source
+              type="image/avif"
+              srcset="assets/images/home/hero-bg-1440.avif">
             <img
               class="h-full w-full object-cover object-center"
-              src="assets/images/home/hero-bg-1920.jpg"
+              src="assets/images/home/hero-bg-1440.avif"
               alt=""
               aria-hidden="true"
-              width="640"
-              height="604"
+              width="1440"
+              height="1359"
               loading="eager"
               decoding="async"
               fetchpriority="high">
