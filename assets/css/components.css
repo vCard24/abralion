@@ -25,6 +25,7 @@
 .header-logo {
   height: 50px;
   width: auto;
+  aspect-ratio: 438 / 132;
   transition: var(--transition);
   filter: drop-shadow(0 0 16px rgba(220, 38, 38, 0.3));
 }
