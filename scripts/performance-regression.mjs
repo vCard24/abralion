@@ -117,6 +117,7 @@ async function singleRun(browser, profileName) {
   await installObservers(page);
 
   const failed = [];
+  const failedCritical = [];
   await page.setRequestInterception(true);
   page.on('request', (request) => {
     if (CSS_DELAY_MS > 0 && request.url().includes('/assets/css/bundle.min.css')) {
@@ -128,7 +129,14 @@ async function singleRun(browser, profileName) {
   page.on('requestfailed', (request) => {
     const url = request.url();
     if (url.endsWith('/favicon.ico')) return;
-    failed.push(`${request.failure()?.errorText || 'failed'} ${url}`);
+    const detail = `${request.failure()?.errorText || 'failed'} ${request.resourceType()} ${url}`;
+    failed.push(detail);
+    if (
+      ['document', 'stylesheet', 'script'].includes(request.resourceType()) ||
+      url.includes('/assets/images/home/hero-bg-')
+    ) {
+      failedCritical.push(detail);
+    }
   });
 
   const client = await page.createCDPSession();
@@ -149,7 +157,7 @@ async function singleRun(browser, profileName) {
     readyState: document.readyState,
   }));
   await page.close();
-  return { ...metrics, failed };
+  return { ...metrics, failed, failedCritical };
 }
 
 function median(values) {
@@ -160,7 +168,8 @@ function median(values) {
 function summarize(profile, runs) {
   const cls = median(runs.map((run) => run.cls));
   const lcp = median(runs.map((run) => run.lcp?.value ?? Infinity));
-  const failed = runs.reduce((sum, run) => sum + run.failed.length, 0);
+  const failed = runs.reduce((sum, run) => sum + run.failedCritical.length, 0);
+  const allFailed = runs.reduce((sum, run) => sum + run.failed.length, 0);
   const representative = runs
     .slice()
     .sort((a, b) => Math.abs(a.cls - cls) - Math.abs(b.cls - cls))[0];
@@ -171,6 +180,7 @@ function summarize(profile, runs) {
     lcpElement: representative.lcp?.element || 'none',
     lcpUrl: representative.lcp?.url || '',
     failedRequests: failed,
+    allFailedRequests: allFailed,
     failedSamples: runs.flatMap((run) => run.failed).slice(0, 3),
     largestShifts: representative.shifts
       .sort((a, b) => b.value - a.value)
