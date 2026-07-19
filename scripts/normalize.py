@@ -16,17 +16,22 @@ def slugify(text):
 CATEGORY_IDS = {
     "Kesici - Taşlama - Flap Disk": "kesici-taslama-flap-disk",
     "Elmas Kesici": "elmas-kesici",
-    "Kırıcı & Delici": "uclar",
-    "Maket Bıçakları": "maket-bicaklari",
-    "Metreler": "metreler",
+    "Kırıcı & Delici": "kirici-delici",
+    "Metreler & Maket Bıçakları": "olcum-kesim",
+    # urunler.json legacy labels → current catalog IDs
+    "Maket Bıçakları": "olcum-kesim",
+    "Metreler": "olcum-kesim",
+    "Uçlar": "kirici-delici",
 }
 
 SCHEMA_MAP = {
     "Kesici - Taşlama - Flap Disk": "disk-kesici-taslama",
     "Elmas Kesici": "disk-elmas",
     "Kırıcı & Delici": "matkap-uc",
+    "Metreler & Maket Bıçakları": "olcum-kesim",
     "Maket Bıçakları": "maket",
     "Metreler": "metre",
+    "Uçlar": "matkap-uc",
 }
 
 # Ürün görselleri (slug → images); normalize sırasında korunur

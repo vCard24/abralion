@@ -11,19 +11,14 @@
       "order": 2
     },
     {
-      "id": "uclar",
+      "id": "kirici-delici",
       "name": "Kırıcı & Delici",
       "order": 3
     },
     {
-      "id": "maket-bicaklari",
-      "name": "Maket Bıçakları",
+      "id": "olcum-kesim",
+      "name": "Metreler & Maket Bıçakları",
       "order": 4
-    },
-    {
-      "id": "metreler",
-      "name": "Metreler",
-      "order": 5
     }
   ],
   "products": [
@@ -33,6 +28,7 @@
       "name": "Metal / Inox Kesme Taşı",
       "categoryId": "kesici-taslama-flap-disk",
       "categoryName": "Kesici - Taşlama - Flap Disk",
+      "featured": true,
       "description": "Paslanmaz çelik (Inox) ve metal kesimi için özel olarak geliştirilmiş takviyeli kesme taşıdır. İnce yapısı sayesinde hassas kesimlerde yüksek verim sunar. Endüstriyel uygulamalarda güvenli ve uzun ömürlü kullanım sağlar.",
       "features": [
         "Paslanmaz çelikte düşük ısı etkisi",
@@ -49,12 +45,73 @@
         "Endüstriyel metal işleme atölyeleri",
         "Medikal ve kimya sektörüne yönelik paslanmaz parça üretimi"
       ],
-      "variantSchema": "disk-kesici-taslama",
+      "images": [
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi.webp",
+          "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kullanim.jpg",
+          "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi kullanim"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-varyantlar.jpg",
+          "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi varyantlar"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x1.webp",
+          "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi 125x1"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x16.webp",
+          "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi 125x16"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x25.webp",
+          "alt": "Metal / Inox Kesme Taşı - metal inox kesme tasi 125x25"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-07.webp",
+          "alt": "Metal / Inox Kesme Taşı - abralion 07"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-08.webp",
+          "alt": "Metal / Inox Kesme Taşı - abralion 08"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-09.webp",
+          "alt": "Metal / Inox Kesme Taşı - abralion 09"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-10.webp",
+          "alt": "Metal / Inox Kesme Taşı - abralion 10"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-11.webp",
+          "alt": "Metal / Inox Kesme Taşı - abralion 11"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-12.webp",
+          "alt": "Metal / Inox Kesme Taşı - abralion 12"
+        }
+      ],
       "variants": [
         {
           "id": "260-115",
           "urun_kodu": "260-115",
           "daire_capi_mm": 115,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 1.0,
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 60 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "260-125",
+          "urun_kodu": "260-125",
+          "daire_capi_mm": 125,
           "gobek_capi_mm": 22,
           "kalinlik_mm": 1.0,
           "max_hiz_rpm": 13300,
@@ -72,18 +129,6 @@
           "max_hiz_rpm": 12200,
           "max_hiz_ms": 80,
           "asindirici_kodu": "A 60 T-BF",
-          "kutu_adet": 1,
-          "koli_adet": null
-        },
-        {
-          "id": "246-125-20",
-          "urun_kodu": "246-125-20",
-          "daire_capi_mm": 125,
-          "gobek_capi_mm": 22,
-          "kalinlik_mm": 2.0,
-          "max_hiz_rpm": 12200,
-          "max_hiz_ms": 80,
-          "asindirici_kodu": "A 46 T-BF",
           "kutu_adet": 1,
           "koli_adet": null
         },
@@ -160,49 +205,7 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-genel.png",
-          "alt": "Metal / Inox Kesme Taşı - Genel görünüm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-115x1.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø115 × 1,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x1.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø125 × 1,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x16.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø125 × 1,6 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x25.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø125 × 2,5 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-150x3.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø150 × 3,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-180x25.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø180 × 2,5 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-180x3.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø180 × 3,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-230x2.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø230 × 2,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-230x25.png",
-          "alt": "Metal / Inox Kesme Taşı - Ø230 × 2,5 mm"
-        }
-      ],
-      "featured": true
+      "technicalCatalog": "assets/documents/products/metal-inox-kesme-tasi.pdf"
     },
     {
       "id": "355mm-metal-sabit-tezgah-kesme-diski",
@@ -210,6 +213,7 @@
       "name": "355mm Metal Sabit Tezgah Kesme Diski",
       "categoryId": "kesici-taslama-flap-disk",
       "categoryName": "Kesici - Taşlama - Flap Disk",
+      "featured": true,
       "description": "Paslanmaz çelik (Inox) ve metal kesimi için özel olarak geliştirilmiş büyük çaplı takviyeli kesme taşıdır. Endüstriyel uygulamalarda yüksek kesim kapasitesi ve güvenli kullanım sağlar. 355 mm çapıyla ağır hizmet tipi kesim makinelerine uygundur.",
       "features": [
         "Büyük çaplı kesim uygulamaları için ideal",
@@ -217,8 +221,7 @@
         "Sert bağ yapısı ve özel aşındırıcı formül",
         "MPA (Almanya) sertifikalı kalite güvencesi",
         "Takviyeli yapı ile güvenli ve uzun ömürlü kullanım",
-        "Maksimum hız: 4.400 rpm",
-        "Maksimum çevresel hız: 80 m/s"
+        "Maksimum hız: 4.400 rpm / 80 m/s"
       ],
       "applications": [
         "Paslanmaz çelik boru ve profil kesimi",
@@ -227,7 +230,16 @@
         "Atölye ve fabrika tipi ağır hizmet uygulamaları",
         "Medikal ve kimya sektörüne yönelik paslanmaz parça üretimi"
       ],
-      "variantSchema": "disk-kesici-taslama",
+      "images": [
+        {
+          "src": "assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski.webp",
+          "alt": "355mm Metal Sabit Tezgah Kesme Diski - 355mm metal sabit tezgah kesme diski"
+        },
+        {
+          "src": "assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski2.webp",
+          "alt": "355mm Metal Sabit Tezgah Kesme Diski - 355mm metal sabit tezgah kesme diski2"
+        }
+      ],
       "variants": [
         {
           "id": "330-355",
@@ -242,17 +254,7 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-ana.png",
-          "alt": "355mm Metal Sabit Tezgah Kesme Diski - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski-detay.png",
-          "alt": "355mm Metal Sabit Tezgah Kesme Diski - Detay görsel"
-        }
-      ],
-      "featured": true
+      "technicalCatalog": "assets/documents/products/355mm-metal-sabit-tezgah-kesme-diski.pdf"
     },
     {
       "id": "metal-inox-taslama-diski",
@@ -260,6 +262,7 @@
       "name": "Metal / Inox Taşlama Diski",
       "categoryId": "kesici-taslama-flap-disk",
       "categoryName": "Kesici - Taşlama - Flap Disk",
+      "featured": true,
       "description": "Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş takviyeli taşlama taşıdır. 304 ve 316L kalite paslanmaz sac, boru ve lama gibi hassas malzemelerde yüksek performans sunar. Isıya duyarlı paslanmaz çeliklerde düşük ısı etkisiyle güvenli ve verimli taşlama sağlar.",
       "features": [
         "Paslanmaz çelikte düşük ısı etkisi",
@@ -275,7 +278,36 @@
         "Endüstriyel metal işleme atölyeleri",
         "Isıya duyarlı paslanmaz yüzeylerde hassas taşlama uygulamaları"
       ],
-      "variantSchema": "disk-kesici-taslama",
+      "images": [
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski.webp",
+          "alt": "Metal / Inox Taşlama Diski - productsmetal inox taslama diski"
+        },
+        {
+          "src": "assets/images/home/hero-bg.jpg",
+          "alt": "Metal / Inox Taşlama Diski - kullanım görseli"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski1.webp",
+          "alt": "Metal / Inox Taşlama Diski - productsmetal inox taslama diski1"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski2.webp",
+          "alt": "Metal / Inox Taşlama Diski - productsmetal inox taslama diski2"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski3.webp",
+          "alt": "Metal / Inox Taşlama Diski - productsmetal inox taslama diski3"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski4.webp",
+          "alt": "Metal / Inox Taşlama Diski - productsmetal inox taslama diski4"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski5.webp",
+          "alt": "Metal / Inox Taşlama Diski - productsmetal inox taslama diski5"
+        }
+      ],
       "variants": [
         {
           "id": "100-125",
@@ -326,37 +358,7 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-genel.png",
-          "alt": "Metal / Inox Taşlama Diski - Genel görünüm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-125x6.png",
-          "alt": "Metal / Inox Taşlama Diski - Ø125 × 6,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-150x6.png",
-          "alt": "Metal / Inox Taşlama Diski - Ø150 × 6,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-180x6.png",
-          "alt": "Metal / Inox Taşlama Diski - Ø180 × 6,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-180x6-2.png",
-          "alt": "Metal / Inox Taşlama Diski - Ø180 × 6,0 mm (görünüm 2)"
-        },
-        {
-          "src": "assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-230x6.png",
-          "alt": "Metal / Inox Taşlama Diski - Ø230 × 6,0 mm"
-        },
-        {
-          "src": "assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-detay.png",
-          "alt": "Metal / Inox Taşlama Diski - Detay"
-        }
-      ],
-      "featured": true
+      "technicalCatalog": "assets/documents/products/metal-inox-taslama-diski.pdf"
     },
     {
       "id": "zr-zirkon-flap-disk",
@@ -364,12 +366,12 @@
       "name": "ZR Zirkon Flap Disk",
       "categoryId": "kesici-taslama-flap-disk",
       "categoryName": "Kesici - Taşlama - Flap Disk",
-      "description": "Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş takviyeli taşlama taşıdır. 304 ve 316L kalite paslanmaz sac, boru ve lama gibi hassas malzemelerde yüksek performans sunar. Isıya duyarlı paslanmaz çeliklerde düşük ısı etkisiyle güvenli ve verimli taşlama sağlar.",
+      "featured": false,
+      "description": "Paslanmaz çelik (Inox) ve metal yüzeylerin taşlanması için özel olarak geliştirilmiş zirkon bazlı flap disktir. 304 ve 316L kalite paslanmaz sac, boru ve lama gibi hassas malzemelerde yüksek performans sunar. Düşük ısı etkisi ve yüzey deformasyonu olmadan güvenli ve verimli taşlama sağlar.",
       "features": [
         "Zirkon bazlı aşındırıcı yapı (ZR Zirconia)",
         "Paslanmaz çelik ve metal yüzeylerde yüksek verim",
-        "40# tanecik boyutu ile etkili taşlama",
-        "Düşük ısı etkisi ve yüzey deformasyonu",
+        "Düşük ısı etkisi ve yüzey deformasyonu yok",
         "Demir (Fe), sülfür (S) ve klor (Cl) içermez – < 0.15%",
         "MPA (Almanya) sertifikalı kalite güvencesi"
       ],
@@ -380,7 +382,21 @@
         "Endüstriyel metal işleme ve kaynak sonrası temizlik",
         "Medikal ve kimya sektörüne yönelik paslanmaz parça taşlama"
       ],
-      "variantSchema": "disk-kesici-taslama",
+      "technicalCatalog": "assets/documents/products/zr-zirkon-flap-disk.pdf",
+      "images": [
+        {
+          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-genel.webp",
+          "alt": "ZR Zirkon Flap Disk - zr zirkon flap disk genel"
+        },
+        {
+          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kullanim.webp",
+          "alt": "ZR Zirkon Flap Disk - zr zirkon flap disk kullanim"
+        },
+        {
+          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-125x22.webp",
+          "alt": "ZR Zirkon Flap Disk - zr zirkon flap disk 125x22"
+        }
+      ],
       "variants": [
         {
           "id": "440-115",
@@ -478,22 +494,7 @@
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ],
-      "images": [
-        {
-          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-genel.png",
-          "alt": "ZR Zirkon Flap Disk - Genel görünüm"
-        },
-        {
-          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-125x22.png",
-          "alt": "ZR Zirkon Flap Disk - Ø125 × 22 mm · 40#"
-        },
-        {
-          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kullanim.png",
-          "alt": "ZR Zirkon Flap Disk - Kullanım"
-        }
-      ],
-      "featured": true
+      ]
     },
     {
       "id": "ao-aluminyum-oksit-flap-disk",
@@ -501,12 +502,13 @@
       "name": "AO Alüminyum Oksit Flap Disk",
       "categoryId": "kesici-taslama-flap-disk",
       "categoryName": "Kesici - Taşlama - Flap Disk",
-      "description": "Metal ve ahşap yüzeylerin taşlanması için özel olarak geliştirilmiş flap disk. Alüminyum oksit (AO) aşındırıcı yapısı sayesinde dengeli performans ve geniş uygulama alanı sunar. İdeal numara seçimi ile tanecik yapısıyla orta seviye yüzey düzeltme işlemleri için idealdir.",
+      "featured": false,
+      "description": "Metal ve ahşap yüzeylerin taşlanması için özel olarak geliştirilmiş alüminyum oksit bazlı flap disktir. AO aşındırıcı yapısı sayesinde dengeli performans ve geniş uygulama alanı sunar. İdeal grit seçimi ile orta seviye yüzey düzeltme işlemleri için idealdir.",
       "features": [
         "Alüminyum oksit bazlı aşındırıcı yapı (AO)",
         "Metal ve ahşap yüzeylerde etkili taşlama",
-        "Seçiminize göre ideal tanecik boyutu ile kontrollü yüzey düzeltme",
-        "Düşük ısı etkisi ve yüzey deformasyonu",
+        "Kontrollü yüzey düzeltme için ideal tanecik boyutu seçenekleri",
+        "Düşük ısı etkisi ve yüzey deformasyonu yok",
         "Demir (Fe), sülfür (S) ve klor (Cl) içermez – < 0.15%",
         "MPA (Almanya) sertifikalı kalite güvencesi"
       ],
@@ -517,14 +519,27 @@
         "Endüstriyel metal işleme ve marangozluk uygulamaları",
         "Otomotiv, genel bakım ve onarım atölyelerinde çok amaçlı kullanım"
       ],
-      "variantSchema": "disk-kesici-taslama",
+      "images": [
+        {
+          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk.webp",
+          "alt": "AO Alüminyum Oksit Flap Disk - ao aluminyum oksit flap disk"
+        },
+        {
+          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kullanim.jpg",
+          "alt": "AO Alüminyum Oksit Flap Disk - ao aluminyum oksit flap disk kullanim"
+        },
+        {
+          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-125x22.webp",
+          "alt": "AO Alüminyum Oksit Flap Disk - ao aluminyum oksit flap disk 125x22"
+        }
+      ],
       "variants": [
         {
           "id": "540-115",
           "urun_kodu": "540-115",
-          "daire_capi_mm": 115,
+          "daire_capi_mm": 125,
           "gobek_capi_mm": 22,
-          "asindirici_tipi": "AO Aluminium Oxide",
+          "asindirici_tipi": "AO Alumnum Oxide",
           "max_hiz_rpm": 12200,
           "max_hiz_ms": 80,
           "grit": "40#",
@@ -534,9 +549,9 @@
         {
           "id": "560-115",
           "urun_kodu": "560-115",
-          "daire_capi_mm": 115,
+          "daire_capi_mm": 125,
           "gobek_capi_mm": 22,
-          "asindirici_tipi": "AO Aluminium Oxide",
+          "asindirici_tipi": "AO Alumnum Oxide",
           "max_hiz_rpm": 12200,
           "max_hiz_ms": 80,
           "grit": "60#",
@@ -546,9 +561,9 @@
         {
           "id": "580-115",
           "urun_kodu": "580-115",
-          "daire_capi_mm": 115,
+          "daire_capi_mm": 125,
           "gobek_capi_mm": 22,
-          "asindirici_tipi": "AO Aluminium Oxide",
+          "asindirici_tipi": "AO Alumnum Oxide",
           "max_hiz_rpm": 12200,
           "max_hiz_ms": 80,
           "grit": "80#",
@@ -560,7 +575,7 @@
           "urun_kodu": "560-180",
           "daire_capi_mm": 180,
           "gobek_capi_mm": 22,
-          "asindirici_tipi": "AO Aluminium Oxide",
+          "asindirici_tipi": "AO Alumnum Oxide",
           "max_hiz_rpm": 8500,
           "max_hiz_ms": 80,
           "grit": "60#",
@@ -568,21 +583,7 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-genel.png",
-          "alt": "AO Alüminyum Oksit Flap Disk - Genel görünüm"
-        },
-        {
-          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-125x22.png",
-          "alt": "AO Alüminyum Oksit Flap Disk - Ø125 × 22 mm · 40#"
-        },
-        {
-          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kullanim.png",
-          "alt": "AO Alüminyum Oksit Flap Disk - Kullanım"
-        }
-      ],
-      "featured": true
+      "technicalCatalog": "assets/documents/products/ao-aluminyum-oksit-flap-disk.pdf"
     },
     {
       "id": "segmentli-standart-elmas-kesici",
@@ -590,22 +591,37 @@
       "name": "Segmentli Standart Elmas Kesici",
       "categoryId": "elmas-kesici",
       "categoryName": "Elmas Kesici",
-      "description": "Kuru Kesim İçin Uygun. Beton, donatılı beton, granit, tuğla, taş, duvar ve çeşitli inşaat malzemelerinde çok amaçlı kullanım sağlar.",
+      "featured": true,
+      "description": "Kuru kesim için tasarlanmış; beton, donatılı beton, granit, tuğla, taş ve çeşitli inşaat malzemelerinde çok amaçlı kullanım sağlar. 10 mm lazer kaynaklı elmas segmentleri sayesinde en çok kullanılan yapı malzemelerinde uzun ürün ömrü sunar.",
       "features": [
         "Uzun süreli kesintisiz kesme performansı",
         "Temiz, güvenli ve hızlı kesim",
         "Yüksek kaliteli elmas taneleri",
-        "10 mm lazer kaynaklı elmas segmentleri sayesinde en çok kullanılan yapı malzemelerinde uzun ürün ömrü sunar"
+        "10 mm lazer kaynaklı elmas segmentleri ile uzun ömür",
+        "Kuru kesim özelliği ile zahmetsiz kullanım"
       ],
       "applications": [
         "Beton, donatılı beton, granit ve çeşitli inşaat malzemeleri",
-        "İnşaat malzemelerinde çok amaçlı kullanım",
-        "Kuru kesim özelliği ile zahmetsiz kesim imkânı sağlar"
+        "Tuğla, taş ve duvar uygulamaları",
+        "Kuru kesim gerektiren tüm inşaat uygulamaları"
       ],
-      "variantSchema": "disk-elmas",
+      "images": [
+        {
+          "src": "assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici.webp",
+          "alt": "Segmentli Standart Elmas Kesici - productssegmentli standart elmas kesici"
+        },
+        {
+          "src": "assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici-etiket.webp",
+          "alt": "Segmentli Standart Elmas Kesici - productssegmentli standart elmas kesici etiket"
+        },
+        {
+          "src": "assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici-kullanim.webp",
+          "alt": "Segmentli Standart Elmas Kesici - productssegmentli standart elmas kesici kullanim"
+        }
+      ],
       "variants": [
         {
-          "id": "1453/1",
+          "id": "1453-1",
           "urun_kodu": "1453/1",
           "daire_capi_mm": 125,
           "gobek_capi_mm": 22.2,
@@ -614,7 +630,7 @@
           "koli_adet": null
         },
         {
-          "id": "1453/2",
+          "id": "1453-2",
           "urun_kodu": "1453/2",
           "daire_capi_mm": 230,
           "gobek_capi_mm": 22.2,
@@ -623,21 +639,7 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-125.png",
-          "alt": "Segmentli Standart Elmas Kesici - Ø125 mm"
-        },
-        {
-          "src": "assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kutu.png",
-          "alt": "Segmentli Standart Elmas Kesici - Ø230 mm kutu"
-        },
-        {
-          "src": "assets/images/products/segmentli-standart-elmas-kesici/segmentli-standart-elmas-kesici-kullanim.png",
-          "alt": "Segmentli Standart Elmas Kesici - Kullanım"
-        }
-      ],
-      "featured": true
+      "technicalCatalog": "assets/documents/products/segmentli-standart-elmas-kesici.pdf"
     },
     {
       "id": "ultra-ince-elmas-disk",
@@ -645,60 +647,59 @@
       "name": "Ultra İnce Elmas Disk",
       "categoryId": "elmas-kesici",
       "categoryName": "Elmas Kesici",
-      "description": "Özel ultra ince elmas dişleri sayesinde sert malzemelerde hızlı ve pürüzsüz kesim sağlar. Abralion markalı elmas kesme diski, endüstriyel kesim ve el işleri için maksimum güvenlik ve en uygun kesme sonuçlarını sunar.",
+      "featured": false,
+      "description": "Özel ultra ince elmas dişleri sayesinde sert malzemelerde hızlı ve pürüzsüz kesim sağlar. Endüstriyel kesim ve el işleri için maksimum güvenlik ve en uygun kesme sonuçlarını sunar. Ultra Slim yapısı sayesinde daha hassas ve kontrollü kesim imkânı sunar.",
       "features": [
         "Süratli ve pürüzsüz kesim",
         "Dayanıklı ve uzun ömürlü kullanım",
         "Birinci sınıf elmas nitelikleri – yüksek yoğunluk",
         "Kısa kesme süreleri, yüksek hız",
-        "Ultra Slim yapısı sayesinde daha hassas ve kontrollü kesim imkânı sunar",
-        "Disk kalınlığı: 1.2 mm, Segment yüksekliği: 10 mm"
+        "Islak ve kuru kesim uygulamaları için sert bağlar",
+        "Ultra Slim yapısı ile hassas ve kontrollü kesim"
       ],
       "applications": [
         "Tuğla, mermer, granit",
         "Porselen, seramik, fayans",
         "Beton ve çeşitli inşaat malzemeleri",
         "Cam ve aşındırıcı sert malzemeler",
-        "Islak ve kuru kesim uygulamaları için sert bağlara sahiptir"
+        "Islak ve kuru kesim uygulamaları"
       ],
-      "variantSchema": "disk-elmas",
+      "technicalCatalog": "assets/documents/products/ultra-ince-elmas-disk.pdf",
+      "images": [
+        {
+          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-etiket.webp",
+          "alt": "Ultra İnce Elmas Disk - ultra ince elmas disk etiket"
+        },
+        {
+          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kullanim.jpg",
+          "alt": "Ultra İnce Elmas Disk - ultra ince elmas disk kullanim"
+        },
+        {
+          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-125.webp",
+          "alt": "Ultra İnce Elmas Disk - ultra ince elmas disk 125"
+        }
+      ],
       "variants": [
         {
-          "id": "1453/5",
+          "id": "1453-5",
           "urun_kodu": "1453/5",
           "daire_capi_mm": 125,
           "gobek_capi_mm": 22.23,
-          "kalinlik_mm": 1.2,
-          "segment_yuksekligi_mm": 10,
           "max_hiz_rpm": 2500,
           "max_hiz_ms": 80,
           "kutu_adet": 1,
           "koli_adet": null
         }
-      ],
-      "images": [
-        {
-          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-125.png",
-          "alt": "Ultra İnce Elmas Disk - Ø125 mm"
-        },
-        {
-          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kutu.png",
-          "alt": "Ultra İnce Elmas Disk - Blister kutu"
-        },
-        {
-          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kullanim.png",
-          "alt": "Ultra İnce Elmas Disk - Kullanım"
-        }
-      ],
-      "featured": false
+      ]
     },
     {
-      "id": "granit-ve-mermer-segmentli-taslama-diski",
-      "slug": "granit-ve-mermer-segmentli-taslama-diski",
+      "id": "granit-mermer-segmentli-taslama-diski",
+      "slug": "granit-mermer-segmentli-taslama-diski",
       "name": "Granit ve Mermer Segmentli Taşlama Diski",
       "categoryId": "elmas-kesici",
       "categoryName": "Elmas Kesici",
-      "description": "T tipi yapıya sahip bu segmentli taşlama diski; granit, mermer ve sert taş yüzeylerde yüksek performanslı kesim ve taşlama sağlar. Endüstriyel kullanım için tasarlanmış olup uzun ömürlü ve güvenli çalışma imkânı sunar.",
+      "featured": false,
+      "description": "T tipi yapıya sahip segmentli taşlama diski; granit, mermer ve sert taş yüzeylerde yüksek performanslı kesim ve taşlama sağlar. Endüstriyel kullanım için tasarlanmış olup uzun ömürlü ve güvenli çalışma imkânı sunar.",
       "features": [
         "Sert malzemelerde yüksek verimlilik",
         "Dayanıklı segment yapısı ile uzun ömür",
@@ -706,17 +707,34 @@
         "Yüksek hızda kesim ve taşlama imkânı"
       ],
       "applications": [
-        "Granit ve mermer yüzeylerin hassas taşlanması: Dekoratif taş işçiliğinde pürüzsüz yüzey elde etmek için",
-        "Beton yüzeylerin düzeltilmesi: İnşaat sonrası çıkıntıların ve yüzey hatalarının giderilmesinde",
-        "Tuğla ve doğal taş işçiliği: Restorasyon ve yapı uygulamalarında kontrollü kesim ve taşlama için",
-        "Seramik ve fayans kenar düzeltmeleri: Kaplama malzemelerinde düzgün kenar ve yüzey hazırlığı için",
-        "Endüstriyel taş işleme atölyeleri: Yüksek hızda ve dayanıklı segment yapısıyla seri üretim ortamlarında",
-        "Şantiye kullanımı: Zorlu saha koşullarında hızlı ve güvenli taşlama/kesim uygulamaları için"
+        "Granit ve mermer yüzeylerin hassas taşlanması",
+        "Beton yüzeylerin düzeltilmesi",
+        "Tuğla ve doğal taş işçiliği",
+        "Seramik ve fayans kenar düzeltmeleri",
+        "Endüstriyel taş işleme atölyeleri",
+        "Şantiye kullanımı"
       ],
-      "variantSchema": "disk-elmas",
+      "images": [
+        {
+          "src": "assets/images/products/granit-mermer-segmentli-taslama-diski/granit-mermer-segmentli-taslama-diski.webp",
+          "alt": "Granit ve Mermer Segmentli Taşlama Diski - granit mermer segmentli taslama diski"
+        },
+        {
+          "src": "assets/images/products/granit-mermer-segmentli-taslama-diski/granit-mermer-segmentli-taslama-diski-etiket.webp",
+          "alt": "Granit ve Mermer Segmentli Taşlama Diski - granit mermer segmentli taslama diski etiket"
+        },
+        {
+          "src": "assets/images/products/granit-mermer-segmentli-taslama-diski/granit-mermer-segmentli-taslama-diski-kullanim.webp",
+          "alt": "Granit ve Mermer Segmentli Taşlama Diski - granit mermer segmentli taslama diski kullanim"
+        },
+        {
+          "src": "assets/images/products/granit-mermer-segmentli-taslama-diski/granit-mermer-segmentli-taslama-diski2.webp",
+          "alt": "Granit ve Mermer Segmentli Taşlama Diski - granit mermer segmentli taslama diski2"
+        }
+      ],
       "variants": [
         {
-          "id": "1453/6",
+          "id": "1453-6",
           "urun_kodu": "1453/6",
           "daire_capi_mm": 125,
           "gobek_capi_mm": 22.2,
@@ -725,39 +743,22 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/granit-ve-mermer-segmentli-taslama-diski/granit-ve-mermer-segmentli-taslama-diski-125.png",
-          "alt": "Granit ve Mermer Segmentli Taşlama Diski - Ø125 mm"
-        },
-        {
-          "src": "assets/images/products/granit-ve-mermer-segmentli-taslama-diski/granit-ve-mermer-segmentli-taslama-diski-ust.png",
-          "alt": "Granit ve Mermer Segmentli Taşlama Diski - Üst görünüm"
-        },
-        {
-          "src": "assets/images/products/granit-ve-mermer-segmentli-taslama-diski/granit-ve-mermer-segmentli-taslama-diski-kutu.png",
-          "alt": "Granit ve Mermer Segmentli Taşlama Diski - Ambalaj"
-        },
-        {
-          "src": "assets/images/products/granit-ve-mermer-segmentli-taslama-diski/granit-ve-mermer-segmentli-taslama-diski-kullanim.png",
-          "alt": "Granit ve Mermer Segmentli Taşlama Diski - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/granit-mermer-segmentli-taslama-diski.pdf"
     },
     {
-      "id": "asfalt-icin-elmas-kesme-diski",
-      "slug": "asfalt-icin-elmas-kesme-diski",
+      "id": "asfalt-elmas-kesme-diski",
+      "slug": "asfalt-elmas-kesme-diski",
       "name": "Asfalt İçin Elmas Kesme Diski",
       "categoryId": "elmas-kesici",
       "categoryName": "Elmas Kesici",
-      "description": "Asfalt ve yumuşak aşındırıcı malzemeler için özel olarak tasarlanmış elmas daire testere. Profesyonel kullanıcılar için güvenilir ve uzun ömürlü kesim performansı sunar.",
+      "featured": false,
+      "description": "Asfalt ve yumuşak aşındırıcı malzemeler için özel olarak tasarlanmış elmas daire testere. Profesyonel kullanıcılar için güvenilir ve uzun ömürlü kesim performansı sunar. Sulu kesim özelliği ile daha uzun ömürlü kullanım ve zahmetsiz kesim imkânı sağlar.",
       "features": [
         "Uzun süreli kesintisiz kesme performansı",
-        "Temiz, güvenli ve hızlı kesim",
         "Yüksek kaliteli elmas taneleri – Süper Cut teknolojisi",
-        "10 mm lazer kaynaklı elmas segmentleri sayesinde en çok kullanılan yapı malzemelerinde uzun ürün ömrü sunar",
-        "Sulu kesim özelliği ile daha uzun ömürlü kullanım ve zahmetsiz kesim imkânı sunar"
+        "10 mm lazer kaynaklı elmas segmentleri",
+        "Sulu kesim özelliği ile uzun ömür",
+        "Profesyonel ağır hizmet tipi kesim motorları ile uyumluluk"
       ],
       "applications": [
         "Asfalt ve yumuşak aşındırıcı malzemeler",
@@ -768,10 +769,19 @@
         "Seramik, porselen, cam, kireç taşı",
         "Taze beton"
       ],
-      "variantSchema": "disk-elmas",
+      "images": [
+        {
+          "src": "assets/images/products/asfalt-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-kullanim.jpg",
+          "alt": "Asfalt İçin Elmas Kesme Diski - asfalt icin elmas kesme diski kullanim"
+        },
+        {
+          "src": "assets/images/products/asfalt-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-350.webp",
+          "alt": "Asfalt İçin Elmas Kesme Diski - asfalt icin elmas kesme diski 350"
+        }
+      ],
       "variants": [
         {
-          "id": "1453/ASP350",
+          "id": "1453-ASP350",
           "urun_kodu": "1453/ASP350",
           "daire_capi_mm": 350,
           "gobek_capi_mm": 25.4,
@@ -781,7 +791,7 @@
           "koli_adet": null
         },
         {
-          "id": "1453/ASP400",
+          "id": "1453-ASP400",
           "urun_kodu": "1453/ASP400",
           "daire_capi_mm": 400,
           "gobek_capi_mm": 25.4,
@@ -791,31 +801,21 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/asfalt-icin-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-350.png",
-          "alt": "Asfalt İçin Elmas Kesme Diski - Ø350 mm"
-        },
-        {
-          "src": "assets/images/products/asfalt-icin-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-kullanim.png",
-          "alt": "Asfalt İçin Elmas Kesme Diski - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/asfalt-elmas-kesme-diski.pdf"
     },
     {
-      "id": "guclendirilmis-beton-icin-elmas-kesme-diski",
-      "slug": "guclendirilmis-beton-icin-elmas-kesme-diski",
+      "id": "beton-elmas-kesme-diski",
+      "slug": "beton-elmas-kesme-diski",
       "name": "Güçlendirilmiş Beton İçin Elmas Kesme Diski",
       "categoryId": "elmas-kesici",
       "categoryName": "Elmas Kesici",
-      "description": "Ağır iş ve universal uygulamalar için tasarlanmıştır. Güçlendirilmiş beton, doğal taşlar, mermer ve birçok yapı malzemesinde üstün performans sağlar.",
+      "featured": false,
+      "description": "Ağır iş ve universal uygulamalar için tasarlanmıştır. Güçlendirilmiş beton, doğal taşlar, mermer ve birçok yapı malzemesinde üstün performans sağlar. Supercut teknolojisi ve 10 mm lazer kaynaklı elmas segmentleri ile uzun ömür sunar.",
       "features": [
         "Uzun süreli kesintisiz kesme performansı",
-        "Temiz, güvenli ve hızlı kesim",
         "Yüksek kaliteli elmas taneleri – Süper Cut teknolojisi",
-        "10 mm lazer kaynaklı elmas segmentleri sayesinde en çok kullanılan yapı malzemelerinde uzun ürün ömrü sunar",
-        "Sulu kesim özelliği ile daha uzun ömürlü kullanım ve zahmetsiz kesim imkânı sunar"
+        "10 mm lazer kaynaklı elmas segmentleri",
+        "Sulu kesim özelliği ile uzun ömür"
       ],
       "applications": [
         "Beton, güçlendirilmiş beton, yıkanmış beton",
@@ -825,10 +825,19 @@
         "Seramik, porselen, cam, kireç taşı",
         "Taze beton ve asfalt"
       ],
-      "variantSchema": "disk-elmas",
+      "images": [
+        {
+          "src": "assets/images/products/beton-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-kullanim.jpg",
+          "alt": "Güçlendirilmiş Beton İçin Elmas Kesme Diski - guclendirilmis beton icin elmas kesme diski kullanim"
+        },
+        {
+          "src": "assets/images/products/beton-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-400.webp",
+          "alt": "Güçlendirilmiş Beton İçin Elmas Kesme Diski - guclendirilmis beton icin elmas kesme diski 400"
+        }
+      ],
       "variants": [
         {
-          "id": "1453/REIN350",
+          "id": "1453-REIN350",
           "urun_kodu": "1453/REIN350",
           "daire_capi_mm": 350,
           "gobek_capi_mm": 25.4,
@@ -838,7 +847,7 @@
           "koli_adet": null
         },
         {
-          "id": "1453/REIN400",
+          "id": "1453-REIN400",
           "urun_kodu": "1453/REIN400",
           "daire_capi_mm": 400,
           "gobek_capi_mm": 25.4,
@@ -848,189 +857,312 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/guclendirilmis-beton-icin-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-400.png",
-          "alt": "Güçlendirilmiş Beton İçin Elmas Kesme Diski - Ø400 mm"
-        },
-        {
-          "src": "assets/images/products/guclendirilmis-beton-icin-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-kullanim.png",
-          "alt": "Güçlendirilmiş Beton İçin Elmas Kesme Diski - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/beton-elmas-kesme-diski.pdf"
     },
     {
-      "id": "sds-max-burc-aleti-tarakli-murc",
-      "slug": "sds-max-burc-aleti-tarakli-murc",
-      "name": "SDS MAX Burç Aleti (Taraklı Murç)",
-      "categoryId": "uclar",
-      "categoryName": "Kırıcı & Delici",
-      "description": "Beton, taş ve asfalt yüzeylerde pürüzlendirme, eski kaplamaları kaldırma ve taraklama işlemleri için özel olarak geliştirilmiştir. Yüksek kaliteli tungsten karbür (elmas) dişleri sayesinde en sert beton ve doğal taş yüzeylerde bile üstün performans ve uzun ömür sunar. Ağır hizmet tipi SDS MAX kırıcı-delicilerle tam uyumlu çalışarak titreşimi minimize eder ve geniş yüzeylerde hızlı bir pürüzlendirme sağlar.",
+      "id": "genel-amacli-elmas-kesme-diski",
+      "slug": "genel-amacli-elmas-kesme-diski",
+      "name": "Genel Amaçlı Segmentli Elmas Kesme Diski",
+      "categoryId": "elmas-kesici",
+      "categoryName": "Elmas Kesici",
+      "featured": false,
+      "description": "Şantiyelerde ve yapı projelerinde ihtiyaç duyulan çeşitli inşaat malzemelerinin kesim işlemleri için geliştirilmiş çok amaçlı (General Purpose) elmas daire testeredir. Hızlı soğuma sağlar ve talaş tahliyesini kolaylaştırarak performansı artırır.",
       "features": [
-        "Yüksek aşınma direncine sahip karbür (elmas) diş yapısı",
-        "Güç aktarımını maksimize eden SDS MAX bağlantı sistemi",
-        "Darbelere ve kırılmalara karşı ekstra güçlendirilmiş çelik gövde",
-        "Yüzeydeki sıva ve boya tutuculuğunu artırmak için ideal pürüzlendirme",
-        "Hızlı malzeme kazıma ve düşük aşınma oranı"
+        "Farklı yapı malzemelerini tek diskle kesebilme esnekliği",
+        "Yüksek hızda pürüzsüz kesim – Supercut teknolojisi",
+        "Uzun ömürlü (Long Life) elmas segmentler",
+        "Yoğun kullanımda ısınmayı önleyen soğutma boşlukları",
+        "Profesyonel ağır hizmet tipi motorlar ile tam uyumluluk"
       ],
       "applications": [
-        "Beton, asfalt ve doğal taş yüzeylerin pürüzlendirilmesi",
-        "Eski sıva, boya, reçine ve kaplamaların sökülmesi",
-        "Merdiven basamakları ve zeminlerde kaydırmazlık (taraklama) işlemleri",
-        "Endüstriyel yüzey hazırlığı ve restorasyon projeleri"
+        "Standart beton ve hafif donatılı yapı blokları",
+        "Çatı kiremitleri, tuğla ve gazbeton türevi malzemeler",
+        "Genel şantiye ve inşaat uygulamaları",
+        "Peyzaj ve çevre düzenleme işlerinde sert zemin materyalleri",
+        "Taze beton"
       ],
-      "variantSchema": "keski-murc",
+      "images": [
+        {
+          "src": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
+          "alt": "Genel Amaçlı Segmentli Elmas Kesme Diski - genel amacli elmas kesme diski kullanim"
+        },
+        {
+          "src": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amaclı-kesici-diski.webp",
+          "alt": "Genel Amaçlı Segmentli Elmas Kesme Diski - genel amaclı kesici diski"
+        }
+      ],
       "variants": [
         {
-          "id": "sds-max-burc-aleti-tarakli-murc-v1",
-          "urun_kodu": null,
-          "baglanti_tipi": "SDS MAX",
-          "kafa_olcusu_mm": "45x45",
-          "uzunluk_mm": 240,
+          "id": "GP-350",
+          "daire_capi_mm": 350,
+          "gobek_capi_mm": 25.4,
+          "max_hiz_rpm": 4400,
+          "max_hiz_ms": 80,
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "GP-400",
+          "daire_capi_mm": 400,
+          "gobek_capi_mm": 25.4,
+          "max_hiz_rpm": 3800,
+          "max_hiz_ms": 80,
           "kutu_adet": 1,
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/sds-max-burc-aleti-tarakli-murc/sds-max-burc-aleti-tarakli-murc-ana.png",
-          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/sds-max-burc-aleti-tarakli-murc/sds-max-burc-aleti-tarakli-murc-bas.png",
-          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - 4×4 tarak başı"
-        },
-        {
-          "src": "assets/images/products/sds-max-burc-aleti-tarakli-murc/sds-max-burc-aleti-tarakli-murc-kullanim.png",
-          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/genel-amacli-elmas-kesme-diski.pdf"
     },
     {
-      "id": "hss-matkap-ucu",
-      "slug": "hss-matkap-ucu",
-      "name": "HSS Matkap Ucu",
-      "categoryId": "uclar",
+      "id": "sds-plus-2-kesicili-beton-matkap-ucu",
+      "slug": "sds-plus-2-kesicili-beton-matkap-ucu",
+      "name": "SDS Plus 2 Kesicili Beton Matkap Ucu",
+      "categoryId": "kirici-delici",
       "categoryName": "Kırıcı & Delici",
-      "description": "Yüksek kaliteli HSS (Yüksek Hız Çeliği) malzemeden üretilmiş olup; demir, çelik, döküm, alüminyum ve diğer metal alaşımlarında hızlı, hassas ve güvenli delme işlemleri için özel olarak tasarlanmıştır. Optimize edilmiş uç açısı sayesinde delme başlangıcında kaymayı önler, pürüzsüz ve çapaksız bir delik profili sağlar. Isıya ve aşınmaya karşı yüksek direnci ile endüstriyel ve profesyonel kullanımlarda uzun ömürlü performans sunar.",
+      "featured": true,
+      "description": "Darbeli matkaplar ile beton, tuğla ve doğal taş yüzeylerde yüksek performanslı delme işlemleri için özel olarak üretilmiştir. Yüksek kaliteli 40X çelik gövdesi ve BK8 karbür kaynaklı 2 kesicili kafa yapısı sayesinde zorlu koşullarda üstün dayanıklılık gösterir.",
       "features": [
-        "Yüksek Hız Çeliği (HSS) yapısıyla uzun kullanım ömrü ve dayanıklılık",
-        "Talaş tahliyesini hızlandıran pürüzsüz spiral oluk tasarımı",
-        "Sürtünmeyi ve ısınmayı en aza indiren özel yüzey kaplaması",
-        "Hassas merkezleme yeteneği sayesinde ekstra nokta vuruşuna gerek kalmadan kolay başlangıç",
-        "Standart matkap mandrenleri ile tam uyum"
+        "BK8 Karbür Başlık: Sert malzemelere anında nüfuz eden keskin yapı",
+        "40X Çelik Gövde: Yüksek darbe mukavemeti, titreşimi sönümleyen alaşım",
+        "Hızlı Toz Tahliyesi: Aşınmayı azaltan genişletilmiş spiral oluklar",
+        "Evrensel Uyumluluk: Tüm SDS Plus mandrenli markalarla tam uyum",
+        "Premium Kalite: Ağır şantiye koşullarında yüksek verimlilik"
       ],
       "applications": [
-        "Alaşımlı ve alaşımsız çelik, dökme demir ve sac levhaların delinmesi",
-        "Alüminyum, bakır, pirinç gibi demir dışı metallerin işlenmesi",
-        "Endüstriyel imalat, otomotiv, metal işleme ve montaj atölyeleri",
-        "Sert plastik ve ahşap malzemelerde de üstün performans"
+        "Standart beton, hafif beton ve gazbeton duvarların delinmesi",
+        "Dolu tuğla, delikli tuğla ve örme duvar blokları",
+        "Doğal taş, kireçtaşı ve kumtaşında dübel ve ankraj delikleri",
+        "Elektrik, su tesisatı, klima montajı işleri"
       ],
-      "variantSchema": "matkap-uc",
+      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-kullanim.webp",
+      "images": [
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu.webp",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - sds plus 2 kesicili beton matkap ucu"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-kullanim.webp",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - sds plus 2 kesicili beton matkap ucu kullanim"
+        }
+      ],
       "variants": [
         {
-          "id": "hss-matkap-ucu-v1",
-          "urun_kodu": null,
-          "urun_tipi": "HSS Matkap Ucu",
+          "id": "sds2-6-110",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
           "cap_mm": 6,
-          "kullanim_yeri": "Metal",
-          "kutu_ici_adet": 10,
+          "toplam_uzunluk_mm": 110,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "hss-matkap-ucu-v2",
-          "urun_kodu": null,
-          "urun_tipi": "HSS Matkap Ucu",
+          "id": "sds2-6-160",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-6-210",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-6-260",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-6-710",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 710,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-8-160",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
           "cap_mm": 8,
-          "kullanim_yeri": "Metal",
-          "kutu_ici_adet": 10,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "hss-matkap-ucu-v3",
-          "urun_kodu": null,
-          "urun_tipi": "HSS Matkap Ucu",
+          "id": "sds2-8-210",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 8,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-8-260",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 8,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-110",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
           "cap_mm": 10,
-          "kullanim_yeri": "Metal",
-          "kutu_ici_adet": 5,
+          "toplam_uzunluk_mm": 110,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "hss-matkap-ucu-v4",
-          "urun_kodu": null,
-          "urun_tipi": "HSS Matkap Ucu",
+          "id": "sds2-10-160",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-210",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-260",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-310",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 310,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-12-160",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
           "cap_mm": 12,
-          "kullanim_yeri": "Metal",
-          "kutu_ici_adet": 5,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "hss-matkap-ucu-v5",
-          "urun_kodu": null,
-          "urun_tipi": "HSS Matkap Ucu",
-          "cap_mm": 14,
-          "kullanim_yeri": "Metal",
-          "kutu_ici_adet": 1,
+          "id": "sds2-12-210",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "hss-matkap-ucu-v6",
-          "urun_kodu": null,
-          "urun_tipi": "HSS Matkap Ucu",
+          "id": "sds2-12-260",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-12-310",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 310,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-16-160",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
           "cap_mm": 16,
-          "kullanim_yeri": "Metal",
-          "kutu_ici_adet": 1,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "hss-matkap-ucu-v7",
-          "urun_kodu": null,
-          "urun_tipi": "HSS Matkap Ucu",
-          "cap_mm": 18,
-          "kullanim_yeri": "Metal",
-          "kutu_ici_adet": 1,
+          "id": "sds2-16-210",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 16,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-16-260",
+          "urun_tipi": "2 Kesicili Beton Matkap Ucu",
+          "cap_mm": 16,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-ana.png",
-          "alt": "HSS Matkap Ucu - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-kullanim.png",
-          "alt": "HSS Matkap Ucu - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/sds-plus-2-kesicili-beton-matkap-ucu.pdf"
     },
     {
-      "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro",
-      "slug": "sds-plus-4-kesicili-beton-matkap-ucu-quadro",
+      "id": "sds-plus-4-kesicili-beton-matkap-ucu",
+      "slug": "sds-plus-4-kesicili-beton-matkap-ucu",
       "name": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro)",
-      "categoryId": "uclar",
+      "categoryId": "kirici-delici",
       "categoryName": "Kırıcı & Delici",
-      "description": "Beton, betonarme, doğal taş, tuğla ve duvar blokları gibi en sert yapı malzemelerinde yüksek performanslı delme işlemleri için özel olarak geliştirilmiştir. Optimize edilmiş 4 kesicili (Quadro / X-kafa) geometrisi sayesinde, delme esnasında inşaat demirlerine rastlandığında sıkışma ve kırılma riskini minimuma indirir. Dörtlü spiral oluk yapısı, ortaya çıkan toz ve talaşın hızla tahliye edilmesini sağlayarak ısınmayı azaltır ve ucun kullanım ömrünü uzatır.",
+      "featured": false,
+      "description": "Beton, betonarme, doğal taş, tuğla ve duvar bloklarında yüksek performanslı delme için geliştirilmiştir. 4 kesicili (Quadro / X-kafa) geometrisi sayesinde inşaat demirlerine rastlandığında sıkışma ve kırılma riskini minimuma indirir.",
       "features": [
-        "Betonarme yapılarda demir donatıya denk gelindiğinde sıkışmayı ve kırılmayı önleyen 4 kesicili (Quadro) kafa yapısı",
+        "Betonarme yapılarda demir donatıya denk gelindiğinde sıkışmayı önleyen Quadro kafa",
         "Aşınmaya karşı dirençli, yüksek kaliteli karbür uç teknolojisi",
-        "Toz tahliyesini maksimum düzeye çıkaran güçlendirilmiş geniş 4'lü spiral kanal tasarımı",
-        "Standart SDS Plus mandren yapısına sahip tüm kırıcı-delici matkaplarla kusursuz uyum",
-        "Titreşimi azaltarak kullanıcı konforunu artıran ve hassas merkezleme sağlayan gövde dengesi"
+        "Toz tahliyesini maksimuma çıkaran güçlendirilmiş 4'lü spiral kanal",
+        "Standart SDS Plus mandrenli tüm kırıcı-delicilerle kusursuz uyum",
+        "Titreşimi azaltarak hassas merkezleme sağlayan gövde dengesi"
       ],
       "applications": [
-        "Beton, betonarme (demir donatılı beton) ve endüstriyel zeminlerin delinmesi",
-        "Doğal taş, granit, mermer, tuğla, briket ve gazbeton duvar blokları",
-        "Ankraj cıvatası ve dübel deliklerinin hassas bir şekilde açılması",
+        "Beton, betonarme ve endüstriyel zeminlerin delinmesi",
+        "Doğal taş, granit, mermer, tuğla ve gazbeton duvar blokları",
+        "Ankraj cıvatası ve dübel deliklerinin hassas açılması",
         "İnşaat, elektrik, tesisat ve genel montaj şantiyeleri"
       ],
-      "variantSchema": "matkap-uc",
+      "images": [
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu.webp",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - sds plus 4 kesicili beton matkap ucu"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-kullanim.webp",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - sds plus 4 kesicili beton matkap ucu kullanim"
+        }
+      ],
       "variants": [
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v1",
-          "urun_kodu": null,
+          "id": "sds4-6-110",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 110,
@@ -1039,8 +1171,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v2",
-          "urun_kodu": null,
+          "id": "sds4-6-160",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 160,
@@ -1049,8 +1180,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v3",
-          "urun_kodu": null,
+          "id": "sds4-6-210",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 210,
@@ -1059,8 +1189,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v4",
-          "urun_kodu": null,
+          "id": "sds4-6-260",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 260,
@@ -1069,8 +1198,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v5",
-          "urun_kodu": null,
+          "id": "sds4-6-710",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 710,
@@ -1079,8 +1207,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v6",
-          "urun_kodu": null,
+          "id": "sds4-8-160",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 160,
@@ -1089,8 +1216,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v7",
-          "urun_kodu": null,
+          "id": "sds4-8-210",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 210,
@@ -1099,8 +1225,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v8",
-          "urun_kodu": null,
+          "id": "sds4-8-260",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 260,
@@ -1109,8 +1234,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v9",
-          "urun_kodu": null,
+          "id": "sds4-10-110",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 110,
@@ -1119,8 +1243,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v10",
-          "urun_kodu": null,
+          "id": "sds4-10-160",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 160,
@@ -1129,8 +1252,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v11",
-          "urun_kodu": null,
+          "id": "sds4-10-210",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 210,
@@ -1139,8 +1261,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v12",
-          "urun_kodu": null,
+          "id": "sds4-10-260",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 260,
@@ -1149,8 +1270,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v13",
-          "urun_kodu": null,
+          "id": "sds4-10-310",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 310,
@@ -1159,8 +1279,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v14",
-          "urun_kodu": null,
+          "id": "sds4-12-160",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 160,
@@ -1169,8 +1288,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v15",
-          "urun_kodu": null,
+          "id": "sds4-12-210",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 210,
@@ -1179,8 +1297,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v16",
-          "urun_kodu": null,
+          "id": "sds4-12-260",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 260,
@@ -1189,8 +1306,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v17",
-          "urun_kodu": null,
+          "id": "sds4-12-310",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 310,
@@ -1199,8 +1315,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v18",
-          "urun_kodu": null,
+          "id": "sds4-16-160",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 160,
@@ -1209,8 +1324,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v19",
-          "urun_kodu": null,
+          "id": "sds4-16-210",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 210,
@@ -1219,8 +1333,7 @@
           "koli_adet": null
         },
         {
-          "id": "sds-plus-4-kesicili-beton-matkap-ucu-quadro-v20",
-          "urun_kodu": null,
+          "id": "sds4-16-260",
           "urun_tipi": "4 Kesicili Beton Matkap Ucu",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 260,
@@ -1229,164 +1342,106 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu-quadro/sds-plus-4-kesicili-beton-matkap-ucu-quadro-ana.png",
-          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu-quadro/sds-plus-4-kesicili-beton-matkap-ucu-quadro-kullanim.png",
-          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - Betonarme delme"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/sds-plus-4-kesicili-beton-matkap-ucu.pdf"
     },
     {
-      "id": "miknatisli-anahtar-ucu-manyetik-somun-adaptoru",
-      "slug": "miknatisli-anahtar-ucu-manyetik-somun-adaptoru",
-      "name": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü)",
-      "categoryId": "uclar",
+      "id": "hss-matkap-ucu",
+      "slug": "hss-matkap-ucu",
+      "name": "HSS Matkap Ucu",
+      "categoryId": "kirici-delici",
       "categoryName": "Kırıcı & Delici",
-      "description": "Elektrikli ve akülü vidalamalarla kullanım için tasarlanmış yüksek performanslı manyetik somun sıkma uçlarıdır. Üstün dayanıklılığa sahip CR40 alaşımlı çelikten üretilmiştir. İçerisindeki ekstra güçlü mıknatıs sayesinde somun ve cıvataları merkezleyerek sıkıca kavrar; çalışma sırasında düşmeyi ve kaymayı önler.",
+      "featured": false,
+      "description": "Yüksek kaliteli HSS (Yüksek Hız Çeliği) malzemeden üretilmiş; demir, çelik, döküm, alüminyum ve diğer metal alaşımlarında hızlı, hassas ve güvenli delme için tasarlanmıştır. Optimize edilmiş uç açısı kaymayı önler, pürüzsüz ve çapaksız delik profili sağlar.",
       "features": [
-        "Ağır hizmet tipi kullanıma uygun, aşınma direnci yüksek CR40 çelik gövde",
-        "Cıvata ve somunları güvenle tutarak tek elle çalışmaya olanak sağlayan güçlü manyetik çekirdek",
-        "Yüksek tork gücüne dayanıklı, deformasyonu önleyen yapı",
-        "Standart 1/4\" altıgen bağlantı şaftı ile tüm matkap ve vidalamalara mükemmel uyum",
-        "Vida başlarını bozmayan hassas kenar işçiliği"
+        "Yüksek Hız Çeliği (HSS) yapısıyla uzun kullanım ömrü",
+        "Talaş tahliyesini hızlandıran pürüzsüz spiral oluk tasarımı",
+        "Sürtünmeyi ve ısınmayı en aza indiren özel yüzey kaplaması",
+        "Hassas merkezleme – ekstra nokta vuruşuna gerek kalmadan kolay başlangıç",
+        "Standart matkap mandrenleri ile tam uyum"
       ],
       "applications": [
-        "Trapez sac, sandviç panel ve çatı kaplama montajları",
-        "Çelik konstrüksiyon, cephe ve iskele sistemleri kurulumu",
-        "Otomotiv, makine montajı ve genel tamirat bakım atölyeleri",
-        "Altıgen başlı sac vidaları, akıllı vidalar ve somunların seri montajı"
-      ],
-      "variantSchema": "aksesuar",
-      "variants": [
-        {
-          "id": "miknatisli-anahtar-ucu-manyetik-somun-adaptoru-v1",
-          "urun_kodu": null,
-          "urun_tipi": "Mıknatıslı Anahtar Ucu",
-          "olcu_cap_mm": 8,
-          "olcu_uzunluk_mm": 48,
-          "malzeme": "CR40 Çelik",
-          "kutu_ici_adet": 10,
-          "koli_adet": null
-        },
-        {
-          "id": "miknatisli-anahtar-ucu-manyetik-somun-adaptoru-v2",
-          "urun_kodu": null,
-          "urun_tipi": "Mıknatıslı Anahtar Ucu",
-          "olcu_cap_mm": 10,
-          "olcu_uzunluk_mm": 48,
-          "malzeme": "CR40 Çelik",
-          "kutu_ici_adet": 10,
-          "koli_adet": null
-        }
+        "Alaşımlı ve alaşımsız çelik, dökme demir ve sac levhaların delinmesi",
+        "Alüminyum, bakır, pirinç gibi demir dışı metallerin işlenmesi",
+        "Endüstriyel imalat, otomotiv, metal işleme ve montaj atölyeleri",
+        "Sert plastik ve ahşap malzemelerde de üstün performans"
       ],
       "images": [
         {
-          "src": "assets/images/products/miknatisli-anahtar-ucu-manyetik-somun-adaptoru/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-ana.png",
-          "alt": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü) - Ana görsel"
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu.webp",
+          "alt": "HSS Matkap Ucu - hss matkap ucu"
         },
         {
-          "src": "assets/images/products/miknatisli-anahtar-ucu-manyetik-somun-adaptoru/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kullanim.png",
-          "alt": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü) - Kullanım"
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-kullanim.jpg",
+          "alt": "HSS Matkap Ucu - hss matkap ucu kullanim"
         }
       ],
-      "featured": false
-    },
-    {
-      "id": "ph2-manyetik-bits-uc",
-      "slug": "ph2-manyetik-bits-uc",
-      "name": "PH2 Manyetik Bits Uç",
-      "categoryId": "uclar",
-      "categoryName": "Kırıcı & Delici",
-      "description": "Akülü ve elektrikli vidalama makineleriyle yoğun ve profesyonel kullanım için özel olarak tasarlanmış yüksek performanslı manyetik bits uçlarıdır. Üstün kaliteli S2+ endüstriyel alaşımlı çelikten üretilmiş olup, yüksek tork altında aşınma, burkulma ve kırılmaya karşı maksimum direnç gösterir. Ekstra güçlü manyetik yapısı sayesinde vidaları sıkıca kavrar, çalışma esnasında kaymayı önler ve vida başının formunu korur.",
-      "features": [
-        "Ağır hizmet tipi kullanıma uygun, esnek ve dayanıklı S2+ takım çeliği",
-        "Vidaları merkezleyerek güvenli tutuş sağlayan ekstra güçlü mıknatıs",
-        "Yüksek tork aktarımı ve darbelere karşı optimize edilmiş gövde yapısı",
-        "Hassas frezelenmiş PH2 (Yıldız) uç profili sayesinde vida başına kusursuz uyum",
-        "Tüm standart bits tutucular, şarjlı ve elektrikli vidalamalar ile evrensel kullanım"
-      ],
-      "applications": [
-        "Ahşap işçiliği, mobilya imalatı ve montajı",
-        "Alçıpan, sunta ve metal profil vidalama işlemleri",
-        "Otomotiv, beyaz eşya, makine tamirat ve bakım servisleri",
-        "Genel inşaat, mimari restorasyon ve dekorasyon projeleri"
-      ],
-      "variantSchema": "aksesuar",
       "variants": [
         {
-          "id": "ph2-manyetik-bits-uc-v1",
-          "urun_kodu": null,
-          "urun_tipi": "Manyetik Bits Uç",
-          "uc_tipi": "PH2",
-          "uzunluk_mm": 25,
-          "malzeme": "S2+ Çelik",
+          "id": "hss-6",
+          "urun_tipi": "HSS Matkap Ucu",
+          "cap_mm": 6,
+          "kullanim_yeri": "Metal",
           "kutu_ici_adet": 10,
           "koli_adet": null
         },
         {
-          "id": "ph2-manyetik-bits-uc-v2",
-          "urun_kodu": null,
-          "urun_tipi": "Manyetik Bits Uç",
-          "uc_tipi": "PH2",
-          "uzunluk_mm": 50,
-          "malzeme": "S2+ Çelik",
+          "id": "hss-8",
+          "urun_tipi": "HSS Matkap Ucu",
+          "cap_mm": 8,
+          "kullanim_yeri": "Metal",
           "kutu_ici_adet": 10,
           "koli_adet": null
         },
         {
-          "id": "ph2-manyetik-bits-uc-v3",
-          "urun_kodu": null,
-          "urun_tipi": "Manyetik Bits Uç",
-          "uc_tipi": "PH2",
-          "uzunluk_mm": 75,
-          "malzeme": "S2+ Çelik",
-          "kutu_ici_adet": 10,
+          "id": "hss-10",
+          "urun_tipi": "HSS Matkap Ucu",
+          "cap_mm": 10,
+          "kullanim_yeri": "Metal",
+          "kutu_ici_adet": 5,
           "koli_adet": null
         },
         {
-          "id": "ph2-manyetik-bits-uc-v4",
-          "urun_kodu": null,
-          "urun_tipi": "Manyetik Bits Uç",
-          "uc_tipi": "PH2",
-          "uzunluk_mm": 100,
-          "malzeme": "S2+ Çelik",
-          "kutu_ici_adet": 10,
+          "id": "hss-12",
+          "urun_tipi": "HSS Matkap Ucu",
+          "cap_mm": 12,
+          "kullanim_yeri": "Metal",
+          "kutu_ici_adet": 5,
           "koli_adet": null
         },
         {
-          "id": "ph2-manyetik-bits-uc-v5",
-          "urun_kodu": null,
-          "urun_tipi": "Manyetik Bits Uç",
-          "uc_tipi": "PH2",
-          "uzunluk_mm": 150,
-          "malzeme": "S2+ Çelik",
-          "kutu_ici_adet": 10,
+          "id": "hss-14",
+          "urun_tipi": "HSS Matkap Ucu",
+          "cap_mm": 14,
+          "kullanim_yeri": "Metal",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "hss-16",
+          "urun_tipi": "HSS Matkap Ucu",
+          "cap_mm": 16,
+          "kullanim_yeri": "Metal",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "hss-18",
+          "urun_tipi": "HSS Matkap Ucu",
+          "cap_mm": 18,
+          "kullanim_yeri": "Metal",
+          "kutu_ici_adet": 1,
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-ana.png",
-          "alt": "PH2 Manyetik Bits Uç - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kullanim.png",
-          "alt": "PH2 Manyetik Bits Uç - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/hss-matkap-ucu.pdf"
     },
     {
       "id": "duz-keski-sds-plus",
       "slug": "duz-keski-sds-plus",
       "name": "Düz Keski SDS Plus",
-      "categoryId": "uclar",
+      "categoryId": "kirici-delici",
       "categoryName": "Kırıcı & Delici",
+      "featured": false,
       "description": "Beton, tuğla, doğal taş ve asfalt gibi sert yüzeylerde kırma, yontma ve kanal açma işlemleri için özel olarak tasarlanmıştır. Yüksek kaliteli alaşımlı çelikten üretilmiş ve ısıl işlemle güçlendirilmiş yapısı sayesinde, kırılma ve aşınmaya karşı üstün direnç gösterir. SDS Plus bağlantı sistemi, hafif restorasyonlardan orta ölçekli yıkım işlerine kadar geniş bir kullanım yelpazesi sunar.",
       "features": [
         "Hafif kırma ve restorasyon işleri için ideal kullanım",
@@ -1401,11 +1456,19 @@
         "Eski fayans, seramik, harç kalıntıları, epoksi ve sıvaların yüzeyden kazınması",
         "İnşaat, tadilat, restorasyon ve yapısal düzenleme projeleri"
       ],
-      "variantSchema": "keski-murc",
+      "images": [
+        {
+          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus.webp",
+          "alt": "Düz Keski SDS Plus - duz keski sds plus"
+        },
+        {
+          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-kullanim.jpg",
+          "alt": "Düz Keski SDS Plus - duz keski sds plus kullanim"
+        }
+      ],
       "variants": [
         {
           "id": "duz-keski-sds-plus-v1",
-          "urun_kodu": null,
           "urun_tipi": "Düz Keski",
           "saft_mm": 14,
           "uzunluk_mm": 250,
@@ -1417,7 +1480,6 @@
         },
         {
           "id": "duz-keski-sds-plus-v2",
-          "urun_kodu": null,
           "urun_tipi": "Düz Keski",
           "saft_mm": 14,
           "uzunluk_mm": 250,
@@ -1428,24 +1490,15 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-ana.png",
-          "alt": "Düz Keski SDS Plus - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-kullanim.png",
-          "alt": "Düz Keski SDS Plus - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/duz-keski-sds-plus.pdf"
     },
     {
       "id": "duz-keski-sds-max",
       "slug": "duz-keski-sds-max",
       "name": "Düz Keski SDS Max",
-      "categoryId": "uclar",
+      "categoryId": "kirici-delici",
       "categoryName": "Kırıcı & Delici",
+      "featured": false,
       "description": "Beton, tuğla, doğal taş ve asfalt gibi sert yüzeylerde kırma, yontma ve kanal açma işlemleri için özel olarak tasarlanmıştır. Yüksek kaliteli alaşımlı çelikten üretilmiş ve ısıl işlemle güçlendirilmiş yapısı sayesinde, kırılma ve aşınmaya karşı üstün direnç gösterir. SDS Max bağlantı sistemi, ağır hizmet tipi genel yıkım işlerinde geniş bir kullanım yelpazesi sunar.",
       "features": [
         "Ağır şantiye yıkım işleri için ideal kullanım",
@@ -1460,11 +1513,19 @@
         "Eski fayans, seramik, harç kalıntıları, epoksi ve sıvaların yüzeyden kazınması",
         "İnşaat, tadilat, restorasyon ve yapısal düzenleme projeleri"
       ],
-      "variantSchema": "keski-murc",
+      "images": [
+        {
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max.webp",
+          "alt": "Düz Keski SDS Max - duz keski sds max"
+        },
+        {
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-kullanim.jpg",
+          "alt": "Düz Keski SDS Max - duz keski sds max kullanim"
+        }
+      ],
       "variants": [
         {
           "id": "duz-keski-sds-max-v1",
-          "urun_kodu": null,
           "urun_tipi": "Düz Keski",
           "saft_mm": 18,
           "uzunluk_mm": 400,
@@ -1476,7 +1537,6 @@
         },
         {
           "id": "duz-keski-sds-max-v2",
-          "urun_kodu": null,
           "urun_tipi": "Düz Keski",
           "saft_mm": 18,
           "uzunluk_mm": 400,
@@ -1488,7 +1548,6 @@
         },
         {
           "id": "duz-keski-sds-max-v3",
-          "urun_kodu": null,
           "urun_tipi": "Düz Keski",
           "saft_mm": 18,
           "uzunluk_mm": 600,
@@ -1499,24 +1558,15 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-ana.png",
-          "alt": "Düz Keski SDS Max - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-kullanim.png",
-          "alt": "Düz Keski SDS Max - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/duz-keski-sds-max.pdf"
     },
     {
       "id": "sivri-uclu-keski-murc-sds-plus",
       "slug": "sivri-uclu-keski-murc-sds-plus",
-      "name": "Sivri Uçlu Keski / Murç (SDS Plus)",
-      "categoryId": "uclar",
+      "name": "Sivri Uçlu Keski Murç SDS Plus",
+      "categoryId": "kirici-delici",
       "categoryName": "Kırıcı & Delici",
+      "featured": false,
       "description": "Beton, tuğla ve doğal taş gibi sert yapı malzemelerinde kırma ve yıkım işlemleri için özel olarak tasarlanmış güçlendirilmiş sivri keskilerdir. Yüksek kaliteli çelikten üretilmiş yapısı sayesinde, yoğun çalışma koşullarında maksimum penetrasyon (nüfuz etme) sağlar ve aşınmaya karşı üstün direnç gösterir. SDS Plus bağlantı sistemi, makineden gelen darbe enerjisini doğrudan uca aktararak noktasal kırma işlemlerinde yüksek verimlilik sunar.",
       "features": [
         "Ağır yıkım ve kırma işleri için tasarlanmış ekstra güçlendirilmiş sivri uç profili",
@@ -1530,11 +1580,19 @@
         "Şap sökme, asfalt kırma ve sert zeminleri parçalama",
         "Temel atma, pürüzlendirme ve hafriyat çalışmaları"
       ],
-      "variantSchema": "keski-murc",
+      "images": [
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus.webp",
+          "alt": "Sivri Uçlu Keski Murç SDS Plus - sivri uclu keski murc sds plus"
+        },
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kullanim.jpg",
+          "alt": "Sivri Uçlu Keski Murç SDS Plus - sivri uclu keski murc sds plus kullanim"
+        }
+      ],
       "variants": [
         {
           "id": "sivri-uclu-keski-murc-sds-plus-v1",
-          "urun_kodu": null,
           "urun_tipi": "Sivri Uçlu Keski (Murç)",
           "saft_mm": 14,
           "uzunluk_mm": 250,
@@ -1544,24 +1602,15 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-ana.png",
-          "alt": "Sivri Uçlu Keski / Murç (SDS Plus) - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kullanim.png",
-          "alt": "Sivri Uçlu Keski / Murç (SDS Plus) - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/sivri-uclu-keski-murc-sds-plus.pdf"
     },
     {
       "id": "sivri-uclu-keski-murc-sds-max",
       "slug": "sivri-uclu-keski-murc-sds-max",
-      "name": "Sivri Uçlu Keski / Murç (SDS Max)",
-      "categoryId": "uclar",
+      "name": "Sivri Uçlu Keski Murç SDS Max",
+      "categoryId": "kirici-delici",
       "categoryName": "Kırıcı & Delici",
+      "featured": false,
       "description": "Beton, tuğla ve doğal taş gibi sert yapı malzemelerinde kırma ve ağır yıkım işlemleri için özel olarak tasarlanmış güçlendirilmiş sivri keskilerdir. Yüksek kaliteli çelikten üretilmiş yapısı sayesinde, yoğun çalışma koşullarında maksimum penetrasyon (nüfuz etme) sağlar ve aşınmaya karşı üstün direnç gösterir. SDS Max bağlantı sistemi, makineden gelen darbe enerjisini doğrudan uca aktararak noktasal kırma işlemlerinde yüksek verimlilik sunar.",
       "features": [
         "Ağır yıkım ve kırma işleri için tasarlanmış ekstra güçlendirilmiş sivri uç profili",
@@ -1576,11 +1625,19 @@
         "Temel atma, pürüzlendirme ve hafriyat çalışmaları",
         "İnşaat, şantiye, restorasyon ve ağır yapısal müdahaleler"
       ],
-      "variantSchema": "keski-murc",
+      "images": [
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max.webp",
+          "alt": "Sivri Uçlu Keski Murç SDS Max - sivri uclu keski murc sds max"
+        },
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max-kullanim.webp",
+          "alt": "Sivri Uçlu Keski Murç SDS Max - sivri uclu keski murc sds max kullanim"
+        }
+      ],
       "variants": [
         {
           "id": "sivri-uclu-keski-murc-sds-max-v1",
-          "urun_kodu": null,
           "urun_tipi": "Sivri Uçlu Keski (Murç)",
           "saft_mm": 18,
           "uzunluk_mm": 400,
@@ -1591,7 +1648,6 @@
         },
         {
           "id": "sivri-uclu-keski-murc-sds-max-v2",
-          "urun_kodu": null,
           "urun_tipi": "Sivri Uçlu Keski (Murç)",
           "saft_mm": 18,
           "uzunluk_mm": 600,
@@ -1601,351 +1657,418 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max-ana.png",
-          "alt": "Sivri Uçlu Keski / Murç (SDS Max) - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max-kullanim.png",
-          "alt": "Sivri Uçlu Keski / Murç (SDS Max) - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/sivri-uclu-keski-murc-sds-max.pdf"
     },
     {
-      "id": "cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili",
-      "slug": "cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili",
-      "name": "Çok Fonksiyonlu Cam ve Seramik Matkap Ucu (4 Kesicili)",
-      "categoryId": "uclar",
+      "id": "cam-seramik-matkap-ucu",
+      "slug": "cam-seramik-matkap-ucu",
+      "name": "Cam ve Seramik Matkap Ucu (4 Kesicili)",
+      "categoryId": "kirici-delici",
       "categoryName": "Kırıcı & Delici",
-      "description": "Seramik, fayans, porselen, cam, ayna ve hassas karo yüzeylerde kırma, çatlatma ve pullanma yapmadan son derece temiz ve pürüzsüz delikler açmak için özel olarak geliştirilmiştir. Güçlendirilmiş 4 kesicili çapraz (mızrak uç) karbür elmas geometrisi, delme başlangıcında kaymayı tamamen önler ve mükemmel bir merkezleme sağlar.",
+      "featured": false,
+      "description": "Seramik, fayans, porselen, cam, ayna ve hassas karo yüzeylerde kırma, çatlatma olmadan temiz ve pürüzsüz delikler açmak için özel olarak geliştirilmiştir. Güçlendirilmiş 4 kesicili çapraz karbür geometrisi ile mükemmel merkezleme sağlar.",
       "features": [
-        "Hassas yüzeylerde çatlama ve kırılma riskini minimize eden 4 kesicili çapraz karbür uç teknolojisi",
-        "Noktasal delme kolaylığı sunan ve ekstra merkezleme aparatı gerektirmeyen keskin mızrak tasarım",
-        "Isı birikimini engelleyen ve talaş tahliyesini kolaylaştıran özel gövde yapısı",
-        "Düşük devirlerde bile pürüzsüz, çapaksız ve tam kalibreli delik kalitesi",
-        "Hızlı uç değişimine olanak tanıyan ve kaymayı önleyen şaft yapısı"
+        "Hassas yüzeylerde çatlama riskini minimize eden 4 kesicili çapraz karbür uç",
+        "Ekstra merkezleme aparatı gerektirmeyen keskin mızrak tasarımı",
+        "Isı birikimini engelleyen ve talaş tahliyesini kolaylaştıran özel gövde",
+        "Düşük devirlerde bile pürüzsüz ve çapaksız delik kalitesi",
+        "Standart ve akülü vidalamalarla uyumlu 1/4\" altıgen şaft"
       ],
       "applications": [
         "Her türlü düz cam, temperli olmayan cam ve ayna yüzeylerin delinmesi",
-        "Yumuşak ve orta sertlikteki seramik, fayans ve porselen karolar",
+        "Yumuşak ve orta sertlikteki seramik, fayans ve porselen",
         "Banyo ve mutfak aksesuarlarının montajında duvar seramiklerinin hassas delimi",
         "Çömlek, kiremit ve dekoratif karo işleme projeleri"
       ],
-      "variantSchema": "matkap-uc",
+      "images": [
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu.webp",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cam seramik matkap ucu"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kutu.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cok fonksiyonlu cam ve seramik matkap ucu 4 kesicili kutu"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kullanim.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cok fonksiyonlu cam ve seramik matkap ucu 4 kesicili kullanim"
+        }
+      ],
       "variants": [
         {
-          "id": "cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-v1",
-          "urun_kodu": null,
-          "urun_tipi": "4 Kesicili Seramik & Cam Delici",
+          "id": "cam-4",
           "cap_mm": 4,
-          "saft_tipi": "1/4\" Altıgen (Hex) / Silindirik",
+          "saft_tipi": "1/4\" Altıgen / Silindirik",
           "kutu_ici_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-v2",
-          "urun_kodu": null,
-          "urun_tipi": "4 Kesicili Seramik & Cam Delici",
+          "id": "cam-5",
           "cap_mm": 5,
-          "saft_tipi": "1/4\" Altıgen (Hex) / Silindirik",
+          "saft_tipi": "1/4\" Altıgen / Silindirik",
           "kutu_ici_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-v3",
-          "urun_kodu": null,
-          "urun_tipi": "4 Kesicili Seramik & Cam Delici",
+          "id": "cam-6",
           "cap_mm": 6,
-          "saft_tipi": "1/4\" Altıgen (Hex) / Silindirik",
+          "saft_tipi": "1/4\" Altıgen / Silindirik",
           "kutu_ici_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-v4",
-          "urun_kodu": null,
-          "urun_tipi": "4 Kesicili Seramik & Cam Delici",
+          "id": "cam-8",
           "cap_mm": 8,
-          "saft_tipi": "1/4\" Altıgen (Hex) / Silindirik",
+          "saft_tipi": "1/4\" Altıgen / Silindirik",
           "kutu_ici_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-v5",
-          "urun_kodu": null,
-          "urun_tipi": "4 Kesicili Seramik & Cam Delici",
+          "id": "cam-10",
           "cap_mm": 10,
-          "saft_tipi": "1/4\" Altıgen (Hex) / Silindirik",
+          "saft_tipi": "1/4\" Altıgen / Silindirik",
           "kutu_ici_adet": 1,
           "koli_adet": null
         },
         {
-          "id": "cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-v6",
-          "urun_kodu": null,
-          "urun_tipi": "4 Kesicili Seramik & Cam Delici",
+          "id": "cam-12",
           "cap_mm": 12,
-          "saft_tipi": "1/4\" Altıgen (Hex) / Silindirik",
+          "saft_tipi": "1/4\" Altıgen / Silindirik",
           "kutu_ici_adet": 1,
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-ana.png",
-          "alt": "Çok Fonksiyonlu Cam ve Seramik Matkap Ucu (4 Kesicili) - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kutu.png",
-          "alt": "Çok Fonksiyonlu Cam ve Seramik Matkap Ucu (4 Kesicili) - Ambalaj"
-        },
-        {
-          "src": "assets/images/products/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kullanim.png",
-          "alt": "Çok Fonksiyonlu Cam ve Seramik Matkap Ucu (4 Kesicili) - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/cam-seramik-matkap-ucu.pdf"
     },
     {
-      "id": "profesyonel-plastik-maket-bicagi",
-      "slug": "profesyonel-plastik-maket-bicagi",
-      "name": "Profesyonel Plastik Maket Bıçağı",
-      "categoryId": "maket-bicaklari",
-      "categoryName": "Maket Bıçakları",
-      "description": "Karton, deri, halı, alçıpan ve yalıtım malzemeleri gibi çeşitli yüzeylerin hassas ve güvenli kesimi için tasarlanmış profesyonel bıçaktır. Kaymayı önleyen plastik saplı ergonomik gövdesi, uzun süreli kullanımlarda el yorgunluğunu azaltır. İç kısmında yer alan paslanmaz çelik bıçak kızağı ve güvenilir otomatik kilit (Auto-Lock) mekanizması, ağır kesim işlemlerinde bile bıçağın esnemesini veya geri kaymasını engeller. SK5 yüksek karbon çeliğinden üretilen kırılabilir yedek bıçak ağızları, üstün keskinlik ve uzun ömürlü performans sunar.",
+      "id": "sds-max-burc-aleti",
+      "slug": "sds-max-burc-aleti",
+      "name": "SDS MAX Burç Aleti (Taraklı Murç)",
+      "categoryId": "kirici-delici",
+      "categoryName": "Kırıcı & Delici",
+      "featured": false,
+      "description": "Beton, taş ve asfalt yüzeylerde pürüzlendirme, eski kaplamaları kaldırma ve taraklama işlemleri için özel olarak geliştirilmiştir. Yüksek kaliteli tungsten karbür dişleri sayesinde en sert beton ve doğal taş yüzeylerde bile üstün performans sunar.",
       "features": [
-        "İstenilen bıçak uzunluğunda sabitlenmeyi sağlayan ve geri kaymayı önleyen otomatik kilit sistemi (Auto-Lock)",
-        "Islak veya tozlu ortamlarda bile elden kaymayan çift bileşenli (ABS + Kauçuk) ergonomik sap tasarımı",
-        "Körelen ucu kolayca kırmak için tasarlanmış entegre kırıcı kapak yapısı",
-        "Lazer bileme teknolojisiyle üretilmiş, yüksek keskinliğini uzun süre koruyan SK5 çelik yedek ağızlar"
+        "Yüksek aşınma direncine sahip karbür diş yapısı",
+        "Güç aktarımını maksimize eden SDS MAX bağlantı sistemi",
+        "Darbelere karşı ekstra güçlendirilmiş çelik gövde",
+        "Yüzey tutuculuğunu artırmak için ideal pürüzlendirme",
+        "Hızlı malzeme kazıma ve düşük aşınma oranı"
+      ],
+      "applications": [
+        "Beton, asfalt ve doğal taş yüzeylerin pürüzlendirilmesi",
+        "Eski sıva, boya, reçine ve kaplamaların sökülmesi",
+        "Merdiven ve zeminlerde kaydırmazlık (taraklama) işlemleri",
+        "Endüstriyel yüzey hazırlığı ve restorasyon projeleri"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti.webp",
+          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - sds max burc aleti"
+        },
+        {
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-tarakli-murc-kullanim.jpg",
+          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - sds max burc aleti tarakli murc kullanim"
+        },
+        {
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti2.webp",
+          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - sds max burc aleti2"
+        }
+      ],
+      "variants": [
+        {
+          "id": "burc-45",
+          "baglanti_tipi": "SDS MAX",
+          "kafa_olcusu_mm": "45x45",
+          "uzunluk_mm": 240,
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/sds-max-burc-aleti.pdf"
+    },
+    {
+      "id": "miknatisli-anahtar-ucu",
+      "slug": "miknatisli-anahtar-ucu",
+      "name": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü)",
+      "categoryId": "kirici-delici",
+      "categoryName": "Kırıcı & Delici",
+      "featured": false,
+      "description": "Elektrikli ve akülü vidalamalarla kullanım için tasarlanmış yüksek performanslı manyetik somun sıkma uçlarıdır. CR40 alaşımlı çelikten üretilmiştir. Ekstra güçlü mıknatısı sayesinde somun ve cıvataları merkezleyerek sıkıca kavrar.",
+      "features": [
+        "Ağır hizmet tipi, aşınma direnci yüksek CR40 çelik gövde",
+        "Cıvata ve somunları güvenle tutan güçlü manyetik çekirdek",
+        "Yüksek tork gücüne dayanıklı, deformasyonu önleyen yapı",
+        "Standart 1/4\" altıgen bağlantı şaftı ile tüm vidalamalara uyum",
+        "Vida başlarını bozmayan hassas kenar işçiliği"
+      ],
+      "applications": [
+        "Trapez sac, sandviç panel ve çatı kaplama montajları",
+        "Çelik konstrüksiyon, cephe ve iskele sistemleri kurulumu",
+        "Otomotiv, makine montajı ve genel tamirat atölyeleri",
+        "Altıgen başlı sac vidaları ve somunların seri montajı"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu.webp",
+          "alt": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü) - miknatisli anahtar ucu"
+        },
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kullanim.jpg",
+          "alt": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü) - miknatisli anahtar ucu manyetik somun adaptoru kullanim"
+        }
+      ],
+      "variants": [
+        {
+          "id": "ank-8",
+          "urun_tipi": "Mıknatıslı Anahtar Ucu",
+          "olcu_cap_mm": 8,
+          "olcu_uzunluk_mm": 48,
+          "malzeme": "CR40 Çelik",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "ank-10",
+          "urun_tipi": "Mıknatıslı Anahtar Ucu",
+          "olcu_cap_mm": 10,
+          "olcu_uzunluk_mm": 48,
+          "malzeme": "CR40 Çelik",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/miknatisli-anahtar-ucu.pdf"
+    },
+    {
+      "id": "ph2-manyetik-bits-uc",
+      "slug": "ph2-manyetik-bits-uc",
+      "name": "PH2 Manyetik Bits Uç",
+      "categoryId": "kirici-delici",
+      "categoryName": "Kırıcı & Delici",
+      "featured": false,
+      "description": "Akülü ve elektrikli vidalama makineleriyle yoğun profesyonel kullanım için özel olarak tasarlanmış yüksek performanslı manyetik bits uçlarıdır. Üstün kaliteli S2+ endüstriyel alaşımlı çelikten üretilmiş olup yüksek tork altında aşınma ve kırılmaya karşı maksimum direnç gösterir.",
+      "features": [
+        "Ağır hizmet tipi, esnek ve dayanıklı S2+ takım çeliği",
+        "Vidaları merkezleyerek güvenli tutuş sağlayan ekstra güçlü mıknatıs",
+        "Yüksek tork aktarımı ve darbelere karşı optimize edilmiş gövde",
+        "Hassas frezelenmiş PH2 uç profili ile vida başına kusursuz uyum",
+        "Tüm standart bits tutucular ile evrensel kullanım"
+      ],
+      "applications": [
+        "Ahşap işçiliği, mobilya imalatı ve montajı",
+        "Alçıpan, sunta ve metal profil vidalama işlemleri",
+        "Otomotiv, beyaz eşya, makine tamirat servisleri",
+        "Genel inşaat, restorasyon ve dekorasyon projeleri"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc.webp",
+          "alt": "PH2 Manyetik Bits Uç - ph2 manyetik bits uc"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kullanim.jpg",
+          "alt": "PH2 Manyetik Bits Uç - ph2 manyetik bits uc kullanim"
+        }
+      ],
+      "variants": [
+        {
+          "id": "bits-25",
+          "urun_tipi": "Manyetik Bits Uç",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 25,
+          "malzeme": "S2+ Çelik",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "bits-50",
+          "urun_tipi": "Manyetik Bits Uç",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 50,
+          "malzeme": "S2+ Çelik",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "bits-75",
+          "urun_tipi": "Manyetik Bits Uç",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 75,
+          "malzeme": "S2+ Çelik",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "bits-100",
+          "urun_tipi": "Manyetik Bits Uç",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 100,
+          "malzeme": "S2+ Çelik",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "bits-150",
+          "urun_tipi": "Manyetik Bits Uç",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 150,
+          "malzeme": "S2+ Çelik",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/ph2-manyetik-bits-uc.pdf"
+    },
+    {
+      "id": "profesyonel-maket-bicagi",
+      "slug": "profesyonel-maket-bicagi",
+      "name": "Profesyonel Maket Bıçakları ve Yedek Uçlar",
+      "categoryId": "olcum-kesim",
+      "categoryName": "Metreler & Maket Bıçakları",
+      "featured": false,
+      "description": "Karton, deri, halı, alçıpan ve yalıtım malzemeleri gibi çeşitli yüzeylerin hassas ve güvenli kesimi için tasarlanmış profesyonel maket bıçaklarıdır. SK5 yüksek karbon çeliğinden üretilen yedek ağızlar üstün keskinlik ve uzun ömürlü performans sunar.",
+      "features": [
+        "İstenilen bıçak uzunluğunda sabitlenmeyi sağlayan Auto-Lock sistemi",
+        "Islak veya tozlu ortamlarda elden kaymayan çift bileşenli (ABS + Kauçuk) sap",
+        "Körelen ucu kolayca kırmak için entegre kırıcı kapak yapısı",
+        "Lazer bileme teknolojisiyle üretilmiş SK5 çelik yedek ağızlar"
       ],
       "applications": [
         "Alçıpan, kartonpiyer, yalıtım levhası ve strafor kesimleri",
         "Depo, ambalajlama ve lojistik operasyonlarında koli/bant açma",
         "Halı, PVC zemin kaplaması, muşamba ve deri işleme",
         "Duvar kağıdı uygulamaları, el sanatları ve günlük ofis kullanımları",
-        "Kablo sıyırma ve genel elektrik/bakım onarım işlemleri"
+        "Kablo sıyırma ve genel elektrik/bakım onarım işleri"
       ],
-      "variantSchema": "maket",
+      "images": [
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-metal-maket-bicagi-kullanim.jpg",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel metal maket bicagi kullanim"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-plastik-maket-bicagi-kullanim.jpg",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel plastik maket bicagi kullanim"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag.webp",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel maket bicag"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag2.webp",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel maket bicag2"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag3.webp",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel maket bicag3"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag4.webp",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel maket bicag4"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag5.webp",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel maket bicag5"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag6.webp",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel maket bicag6"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicagi7.webp",
+          "alt": "Profesyonel Maket Bıçakları ve Yedek Uçlar - profesyonel maket bicagi7"
+        }
+      ],
       "variants": [
         {
-          "id": "profesyonel-plastik-maket-bicagi-v1",
-          "urun_kodu": null,
+          "id": "maket-sari",
           "urun_tipi": "Maket Bıçağı (Sarı-Siyah)",
           "bicak_genisligi_mm": 18,
           "govde_kizak_tipi": "ABS Kauçuk Gövde + Metal Kızak",
           "bicak_malzemesi": "SK5 Çelik",
-          "govde_malzemesi": "Plastik (ABS)",
           "kutu_ici_adet": null,
           "koli_adet": null
         },
         {
-          "id": "profesyonel-plastik-maket-bicagi-v2",
-          "urun_kodu": null,
+          "id": "maket-kirmizi",
           "urun_tipi": "Maket Bıçağı (Kırmızı-Siyah)",
           "bicak_genisligi_mm": 18,
           "govde_kizak_tipi": "ABS Kauçuk Gövde + Metal Kızak",
           "bicak_malzemesi": "SK5 Çelik",
-          "govde_malzemesi": "Plastik (ABS)",
           "kutu_ici_adet": null,
           "koli_adet": null
         },
         {
-          "id": "profesyonel-plastik-maket-bicagi-v3",
-          "urun_kodu": null,
+          "id": "maket-mavi",
           "urun_tipi": "Maket Bıçağı (Mavi-Siyah)",
           "bicak_genisligi_mm": 18,
           "govde_kizak_tipi": "ABS Kauçuk Gövde + Metal Kızak",
           "bicak_malzemesi": "SK5 Çelik",
-          "govde_malzemesi": "Plastik (ABS)",
-          "kutu_ici_adet": null,
-          "koli_adet": null
-        }
-      ],
-      "images": [
-        {
-          "src": "assets/images/products/profesyonel-plastik-maket-bicagi/profesyonel-plastik-maket-bicagi-ana.png",
-          "alt": "Profesyonel Plastik Maket Bıçağı - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/profesyonel-plastik-maket-bicagi/profesyonel-plastik-maket-bicagi-detay.png",
-          "alt": "Profesyonel Plastik Maket Bıçağı - Detay"
-        },
-        {
-          "src": "assets/images/products/profesyonel-plastik-maket-bicagi/profesyonel-plastik-maket-bicagi-kutu.png",
-          "alt": "Profesyonel Plastik Maket Bıçağı - Ambalaj"
-        },
-        {
-          "src": "assets/images/products/profesyonel-plastik-maket-bicagi/profesyonel-plastik-maket-bicagi-kutu-arka.png",
-          "alt": "Profesyonel Plastik Maket Bıçağı - Ambalaj arka"
-        },
-        {
-          "src": "assets/images/products/profesyonel-plastik-maket-bicagi/profesyonel-plastik-maket-bicagi-kullanim.png",
-          "alt": "Profesyonel Plastik Maket Bıçağı - Kullanım"
-        }
-      ],
-      "featured": false
-    },
-    {
-      "id": "profesyonel-metal-maket-bicagi",
-      "slug": "profesyonel-metal-maket-bicagi",
-      "name": "Profesyonel Metal Maket Bıçağı",
-      "categoryId": "maket-bicaklari",
-      "categoryName": "Maket Bıçakları",
-      "description": "Karton, deri, halı, alçıpan ve yalıtım malzemeleri gibi çeşitli yüzeylerin hassas ve güvenli kesimi için tasarlanmış profesyonel maket bıçaklarıdır. Dayanıklı metal saplı gövdesi, ergonomik bir tutuş sağlayarak uzun süreli kullanımlarda el yorgunluğunu azaltır. İç kısmında yer alan paslanmaz çelik bıçak kızağı ve güvenilir otomatik kilit (Auto-Lock) mekanizması, ağır kesim işlemlerinde bile bıçağın esnemesini veya geri kaymasını engeller. SK5 yüksek karbon çeliğinden üretilen kırılabilir yedek bıçak ağızları, üstün keskinlik ve uzun ömürlü performans sunar.",
-      "features": [
-        "İstenilen bıçak uzunluğunda sabitlenmeyi sağlayan ve geri kaymayı önleyen otomatik kilit sistemi (Auto-Lock)",
-        "Islak veya tozlu ortamlarda bile elden kaymayan çift bileşenli (ABS + Kauçuk) ergonomik sap tasarımı",
-        "Körelen ucu kolayca kırmak için tasarlanmış entegre kırıcı kapak yapısı",
-        "Lazer bileme teknolojisiyle üretilmiş, yüksek keskinliğini uzun süre koruyan SK5 çelik yedek ağızlar"
-      ],
-      "applications": [
-        "Alçıpan, kartonpiyer, yalıtım levhası ve strafor kesimleri",
-        "Depo, ambalajlama ve lojistik operasyonlarında koli/bant açma",
-        "Halı, PVC zemin kaplaması, muşamba ve deri işleme",
-        "Duvar kağıdı uygulamaları, el sanatları ve günlük ofis kullanımları",
-        "Kablo sıyırma ve genel elektrik/bakım onarım işlemleri"
-      ],
-      "variantSchema": "maket",
-      "variants": [
-        {
-          "id": "profesyonel-metal-maket-bicagi-v1",
-          "urun_kodu": null,
-          "urun_tipi": "Maket Bıçağı (Sarı-Siyah)",
-          "bicak_genisligi_mm": 18,
-          "govde_kizak_tipi": "ABS Kauçuk Gövde + Metal Kızak",
-          "bicak_malzemesi": "SK5 Çelik",
-          "govde_malzemesi": "Metal",
           "kutu_ici_adet": null,
           "koli_adet": null
         },
         {
-          "id": "profesyonel-metal-maket-bicagi-v2",
-          "urun_kodu": null,
-          "urun_tipi": "Maket Bıçağı (Kırmızı-Siyah)",
-          "bicak_genisligi_mm": 18,
-          "govde_kizak_tipi": "ABS Kauçuk Gövde + Metal Kızak",
-          "bicak_malzemesi": "SK5 Çelik",
-          "govde_malzemesi": "Metal",
-          "kutu_ici_adet": null,
-          "koli_adet": null
-        },
-        {
-          "id": "profesyonel-metal-maket-bicagi-v3",
-          "urun_kodu": null,
-          "urun_tipi": "Maket Bıçağı (Mavi-Siyah)",
-          "bicak_genisligi_mm": 18,
-          "govde_kizak_tipi": "ABS Kauçuk Gövde + Metal Kızak",
-          "bicak_malzemesi": "SK5 Çelik",
-          "govde_malzemesi": "Metal",
-          "kutu_ici_adet": null,
-          "koli_adet": null
-        }
-      ],
-      "images": [
-        {
-          "src": "assets/images/products/profesyonel-metal-maket-bicagi/profesyonel-metal-maket-bicagi-ana.png",
-          "alt": "Profesyonel Metal Maket Bıçağı - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/profesyonel-metal-maket-bicagi/profesyonel-metal-maket-bicagi-detay.png",
-          "alt": "Profesyonel Metal Maket Bıçağı - Detay"
-        },
-        {
-          "src": "assets/images/products/profesyonel-metal-maket-bicagi/profesyonel-metal-maket-bicagi-kutu.png",
-          "alt": "Profesyonel Metal Maket Bıçağı - Ambalaj"
-        },
-        {
-          "src": "assets/images/products/profesyonel-metal-maket-bicagi/profesyonel-metal-maket-bicagi-kutu-arka.png",
-          "alt": "Profesyonel Metal Maket Bıçağı - Ambalaj arka"
-        },
-        {
-          "src": "assets/images/products/profesyonel-metal-maket-bicagi/profesyonel-metal-maket-bicagi-kullanim.png",
-          "alt": "Profesyonel Metal Maket Bıçağı - Kullanım"
-        }
-      ],
-      "featured": false
-    },
-    {
-      "id": "maket-bicagi-yedek-ucu",
-      "slug": "maket-bicagi-yedek-ucu",
-      "name": "Maket Bıçağı Yedek Ucu",
-      "categoryId": "maket-bicaklari",
-      "categoryName": "Maket Bıçakları",
-      "description": "Profesyonel maket bıçaklarıyla uyumlu olarak tasarlanmış yedek uçlardır. Karton, deri, halı, alçıpan ve benzeri yüzeylerde hassas kesim için idealdir. SK5 yüksek karbon çeliğinden üretilen kırılabilir bıçak ağızları, uzun ömürlü keskinlik ve güvenilir performans sağlar. Pratik paketleme sayesinde kolayca değiştirilebilir ve sürekli verimli kullanım imkânı sunar.",
-      "features": [
-        "SK5 yüksek karbon çeliğinden üretilmiş kırılabilir bıçak ağızları",
-        "Uzun ömürlü keskinlik ve dayanıklı performans",
-        "Paslanmaz çelik bıçak kızağı ile uyumlu kullanım",
-        "Güvenli ve pratik değişim için standart 18 mm ölçü",
-        "Ağır kesim işlemlerinde bile esnemeyi ve kaymayı önleyen yapı",
-        "Kompakt ambalaj ile kolay saklama ve taşıma"
-      ],
-      "applications": [
-        "Karton kutu ve ambalaj malzemelerinin kesimi",
-        "Deri, halı ve kumaş yüzeylerde hassas kesim işlemleri",
-        "Alçıpan ve yalıtım malzemelerinin düzenli kesimi",
-        "İnşaat, tadilat ve dekorasyon projelerinde profesyonel kullanım",
-        "Atölye, ofis ve ev ortamında pratik kesim ihtiyaçları"
-      ],
-      "variantSchema": "maket",
-      "variants": [
-        {
-          "id": "maket-bicagi-yedek-ucu-v1",
-          "urun_kodu": null,
+          "id": "maket-yedek",
           "urun_tipi": "Maket Bıçağı Yedek Ucu (Tüp)",
           "bicak_genisligi_mm": 18,
-          "paket_icerigi": "Tüp içi 10 adet yedek",
+          "govde_kizak_tipi": "Tüp İçi 10 Adet Yedek",
           "bicak_malzemesi": "SK5 Çelik",
           "kutu_ici_adet": 10,
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/maket-bicagi-yedek-ucu/maket-bicagi-yedek-ucu-ana.png",
-          "alt": "Maket Bıçağı Yedek Ucu - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/maket-bicagi-yedek-ucu/maket-bicagi-yedek-ucu-detay.png",
-          "alt": "Maket Bıçağı Yedek Ucu - Detay"
-        },
-        {
-          "src": "assets/images/products/maket-bicagi-yedek-ucu/maket-bicagi-yedek-ucu-kutu.png",
-          "alt": "Maket Bıçağı Yedek Ucu - Ambalaj"
-        },
-        {
-          "src": "assets/images/products/maket-bicagi-yedek-ucu/maket-bicagi-yedek-ucu-kutu-dikey.png",
-          "alt": "Maket Bıçağı Yedek Ucu - Ambalaj dikey"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/profesyonel-maket-bicagi.pdf"
     },
     {
       "id": "abs-govdeli-profesyonel-serit-metre",
       "slug": "abs-govdeli-profesyonel-serit-metre",
       "name": "ABS Gövdeli Profesyonel Şerit Metre",
-      "categoryId": "metreler",
-      "categoryName": "Metreler",
-      "description": "İnşaat, imalat ve genel tadilat işlerinde yüksek hassasiyetli ölçüm yapabilmeniz için tasarlanmış profesyonel şerit metredir. Şantiye ortamındaki düşme ve darbelere karşı ekstra koruma sağlayan TPR kauçuk kaplı dayanıklı ABS gövdeye sahiptir. Esnemeye ve kırılmaya karşı dirençli çelik şeridi, üzerindeki özel mat kaplama sayesinde ışık yansımalarını önler ve rakamların uzun yıllar silinmeden okunmasını sağlar. Güçlü geri sarma yayı, güvenilir kilitleme mekanizması ve hareketli uç kancası ile tek başınıza bile kusursuz ve net ölçümler almanıza olanak tanır.",
+      "categoryId": "olcum-kesim",
+      "categoryName": "Metreler & Maket Bıçakları",
+      "featured": false,
+      "description": "İnşaat, imalat ve genel tadilat işlerinde yüksek hassasiyetli ölçüm yapabilmeniz için tasarlanmış profesyonel şerit metredir. TPR kauçuk kaplı dayanıklı ABS gövdeye sahiptir. Mat kaplama sayesinde ışık yansımalarını önler ve rakamların uzun yıllar silinmeden okunmasını sağlar.",
       "features": [
-        "Ağır hizmet koşullarına ve darbelere karşı şok emici çift bileşenli (ABS + TPR) ergonomik gövde",
+        "Ağır hizmet koşullarına karşı şok emici çift bileşenli (ABS + TPR) ergonomik gövde",
         "Aşınmayı önleyen ve rakam görünürlüğünü artıran parlamasız (mat) şerit kaplaması",
-        "İç ve dış ölçümlerde gerçek sıfır noktasını (True-Zero) otomatik ayarlayan hareketli kanca sistemi",
+        "İç ve dış ölçümlerde gerçek sıfır noktasını (True-Zero) otomatik ayarlayan hareketli kanca",
         "İstenilen ölçüde şeridi sabit tutan kaydırmaz ve güçlü kilit mekanizması",
-        "Taşıma kolaylığı sağlayan paslanmaz çelik kemer klipsi ve dayanıklı bilek askısı"
+        "Taşıma kolaylığı sağlayan paslanmaz çelik kemer klipsi ve bilek askısı"
       ],
       "applications": [
         "İnşaat, şantiye, mimari ve mühendislik ölçüm projeleri",
         "Ahşap işçiliği, marangozluk ve mobilya imalatı",
         "Alçıpan, seramik, metal işleme ve dekorasyon uygulamaları",
-        "Ev, ofis ve atölyelerdeki genel tadilat, onarım ve ölçüm işleri"
+        "Ev, ofis ve atölyelerdeki genel tadilat ve ölçüm işleri"
       ],
-      "variantSchema": "metre",
+      "images": [
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre.webp",
+          "alt": "ABS Gövdeli Profesyonel Şerit Metre - abs govdeli profesyonel serit metre"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-kullanim.webp",
+          "alt": "ABS Gövdeli Profesyonel Şerit Metre - abs govdeli profesyonel serit metre kullanim"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre2.webp",
+          "alt": "ABS Gövdeli Profesyonel Şerit Metre - abs govdeli profesyonel serit metre2"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre3.webp",
+          "alt": "ABS Gövdeli Profesyonel Şerit Metre - abs govdeli profesyonel serit metre3"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre4.webp",
+          "alt": "ABS Gövdeli Profesyonel Şerit Metre - abs govdeli profesyonel serit metre4"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre5.webp",
+          "alt": "ABS Gövdeli Profesyonel Şerit Metre - abs govdeli profesyonel serit metre5"
+        }
+      ],
       "variants": [
         {
-          "id": "abs-govdeli-profesyonel-serit-metre-v1",
-          "urun_kodu": null,
+          "id": "metre-3m",
           "urun_tipi": "Şerit Metre",
           "uzunluk_m": 3,
           "serit_genisligi_mm": 16,
@@ -1954,8 +2077,7 @@
           "koli_adet": null
         },
         {
-          "id": "abs-govdeli-profesyonel-serit-metre-v2",
-          "urun_kodu": null,
+          "id": "metre-5m-19",
           "urun_tipi": "Şerit Metre",
           "uzunluk_m": 5,
           "serit_genisligi_mm": 19,
@@ -1964,8 +2086,7 @@
           "koli_adet": null
         },
         {
-          "id": "abs-govdeli-profesyonel-serit-metre-v3",
-          "urun_kodu": null,
+          "id": "metre-5m-25",
           "urun_tipi": "Şerit Metre",
           "uzunluk_m": 5,
           "serit_genisligi_mm": 25,
@@ -1974,8 +2095,7 @@
           "koli_adet": null
         },
         {
-          "id": "abs-govdeli-profesyonel-serit-metre-v4",
-          "urun_kodu": null,
+          "id": "metre-8m",
           "urun_tipi": "Şerit Metre",
           "uzunluk_m": 8,
           "serit_genisligi_mm": 25,
@@ -1984,8 +2104,7 @@
           "koli_adet": null
         },
         {
-          "id": "abs-govdeli-profesyonel-serit-metre-v5",
-          "urun_kodu": null,
+          "id": "metre-10m",
           "urun_tipi": "Şerit Metre",
           "uzunluk_m": 10,
           "serit_genisligi_mm": 25,
@@ -1994,33 +2113,7 @@
           "koli_adet": null
         }
       ],
-      "images": [
-        {
-          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-ana.png",
-          "alt": "ABS Gövdeli Profesyonel Şerit Metre - Ana görsel"
-        },
-        {
-          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-detay.png",
-          "alt": "ABS Gövdeli Profesyonel Şerit Metre - Detay"
-        },
-        {
-          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-serit.png",
-          "alt": "ABS Gövdeli Profesyonel Şerit Metre - Şerit"
-        },
-        {
-          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-kutu.png",
-          "alt": "ABS Gövdeli Profesyonel Şerit Metre - Ambalaj"
-        },
-        {
-          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-display.png",
-          "alt": "ABS Gövdeli Profesyonel Şerit Metre - Teşhir kutusu"
-        },
-        {
-          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-kullanim.png",
-          "alt": "ABS Gövdeli Profesyonel Şerit Metre - Kullanım"
-        }
-      ],
-      "featured": false
+      "technicalCatalog": "assets/documents/products/abs-govdeli-profesyonel-serit-metre.pdf"
     }
   ]
 }
