@@ -6,6 +6,7 @@ __pycache__/
 venv/
 .idea/
 .vscode/
+.cursor-psi/
 *.log
 node_modules/
 api/config.php
