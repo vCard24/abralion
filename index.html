@@ -37,11 +37,14 @@
     #home-hero .home-hero__stats{display:flex;flex-wrap:wrap;gap:2rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;margin-top:0}
     #home-hero .home-hero__stat-value{display:block;font-size:24px;line-height:32px;font-weight:600;color:#fff;font-family:Montserrat,sans-serif}
     #home-hero .home-hero__stat-label{display:block;font-size:14px;line-height:20px;letter-spacing:.05em;font-weight:500;text-transform:uppercase;color:#8e8e93;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-    #home-hero>.relative.z-10{position:relative;z-index:10;display:flex;flex:1;flex-direction:column;justify-content:center;width:100%;max-width:1280px;margin:0 auto;box-sizing:border-box;padding-top:7rem;padding-bottom:2rem;padding-left:16px;padding-right:16px}
+    /* justify-content:center yok — font yüklenince dikey yeniden ortalama CLS yaratıyordu */
+    #home-hero>.relative.z-10{position:relative;z-index:10;display:flex;flex-direction:column;justify-content:flex-start;width:100%;max-width:1280px;margin:0 auto;box-sizing:border-box;padding-top:7rem;padding-bottom:2rem;padding-left:16px;padding-right:16px}
     @media(min-width:768px){#home-hero>.relative.z-10{padding-top:8rem;padding-left:80px;padding-right:80px}}
     @media(min-width:1024px){#home-hero>.relative.z-10{padding-bottom:3rem}}
     .home-hero__content{max-width:56rem;width:100%}
     .home-hero__content.max-w-4xl.space-y-8>*+*{margin-top:2rem}
+    #home-hero .home-hero__subtitle{min-height:3.5rem}
+    #mega-menu:empty{display:none}
     .text-white{color:#fff}
     .text-steel-gray{color:#8e8e93}
     .footer-logo{display:block;height:3.5rem;width:auto;max-width:180px;aspect-ratio:168/132}
@@ -68,9 +71,6 @@
     @media (min-width: 769px) {
       .header-actions {
         min-width: 200px;
-      }
-      #home-hero-wrap {
-        min-height: 100vh;
       }
     }
     #home-hero picture,#home-hero picture img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
@@ -178,7 +178,7 @@
         </div>
 
         <!-- Ana metin -->
-        <div class="relative z-10 mx-auto flex w-full max-w-site flex-1 flex-col justify-center px-margin-mobile pb-8 pt-28 md:px-margin-desktop md:pt-32 lg:pb-12">
+        <div class="relative z-10 mx-auto flex w-full max-w-site flex-col justify-start px-margin-mobile pb-8 pt-28 md:px-margin-desktop md:pt-32 lg:pb-12">
           <div class="home-hero__content max-w-4xl space-y-8">
             <p class="home-hero__badge flex items-center gap-2">
               <span class="home-hero__badge-dot h-2 w-2 shrink-0 animate-pulse rounded-full" aria-hidden="true"></span>
@@ -602,9 +602,9 @@
   <script defer src="assets/js/CompareManager.js?v=3772c2f8"></script>
   <script defer src="assets/js/ProductManager.js?v=0bbed12a"></script>
   <script defer src="assets/js/ProductCard.js?v=8772f883"></script>
-  <script defer src="assets/js/Header.js?v=3873f97d"></script>
+  <script defer src="assets/js/Header.js?v=3ff8ab9e"></script>
   <script defer src="assets/js/MegaMenu.js?v=6d01fca9"></script>
   <script defer src="assets/js/main.js?v=cc059e32"></script>
-  <script defer src="assets/js/pages/home.js?v=1db1cf81"></script>
+  <script defer src="assets/js/pages/home.js?v=c0f304d0"></script>
 </body>
 </html>

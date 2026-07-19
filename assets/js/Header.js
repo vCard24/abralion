@@ -107,6 +107,10 @@ class Header {
     const applyHeight = () => {
       if (!this.headerEl) return;
       const h = Math.ceil(this.headerEl.getBoundingClientRect().height);
+      const prevRaw = document.documentElement.style.getPropertyValue('--header-mobile-height');
+      const prev = parseFloat(prevRaw || '72');
+      // Küçük farklarda CSS değişkenini değiştirme — stil invalidasyonu tetiklenmesin
+      if (Number.isFinite(prev) && Math.abs(prev - h) < 2) return;
       document.documentElement.style.setProperty('--header-mobile-height', `${h}px`);
     };
 

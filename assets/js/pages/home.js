@@ -67,35 +67,41 @@ function initFeaturedCarousel() {
 
   let cachedStep = 0;
 
-  function stepSize() {
-    if (cachedStep > 0) return cachedStep;
+  function measureStep() {
     const card = track.querySelector('.product-card:not(.product-card--skeleton)');
     if (!card) return 0;
     const styles = getComputedStyle(track);
     const gap = parseFloat(styles.columnGap || styles.gap || '24') || 24;
-    cachedStep = card.getBoundingClientRect().width + gap;
-    return cachedStep;
+    return card.getBoundingClientRect().width + gap;
   }
 
   function update() {
     pendingUpdate = false;
-    cachedStep = 0;
     const cards = track.querySelectorAll('.product-card:not(.product-card--skeleton)');
     const visible = getFeaturedVisibleCount();
     const max = Math.max(0, cards.length - visible);
     index = Math.min(index, max);
 
-    const offset = index * stepSize();
-    track.style.transform = offset ? `translateX(-${offset}px)` : '';
+    // Read geometry in this frame, write transform in the next — avoids forced reflow
+    const step = cachedStep > 0 ? cachedStep : measureStep();
+    cachedStep = step;
+    const offset = index * step;
+    const atStart = index <= 0;
+    const atEnd = index >= max;
+    const scrollable = cards.length > visible;
 
-    prevBtn.disabled = index <= 0;
-    nextBtn.disabled = index >= max;
-    carousel.classList.toggle('featured-carousel--scrollable', cards.length > visible);
+    requestAnimationFrame(() => {
+      track.style.transform = offset ? `translateX(-${offset}px)` : '';
+      prevBtn.disabled = atStart;
+      nextBtn.disabled = atEnd;
+      carousel.classList.toggle('featured-carousel--scrollable', scrollable);
+    });
   }
 
   function scheduleUpdate() {
     if (pendingUpdate) return;
     pendingUpdate = true;
+    cachedStep = 0;
     requestAnimationFrame(update);
   }
 
@@ -126,7 +132,12 @@ function initFeaturedCarousel() {
     },
   };
   carousel._featuredCarousel = api;
-  scheduleUpdate();
+  // LCP sonrası ölç — ilk boyamada zorunlu reflow'u erteler
+  if (document.readyState === 'complete') {
+    scheduleUpdate();
+  } else {
+    window.addEventListener('load', () => scheduleUpdate(), { once: true });
+  }
   return api;
 }
 
