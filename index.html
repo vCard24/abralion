@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abralion - Ana Sayfa</title>
   <link rel="canonical" href="https://abralion.com/">
-  <link rel="preload" as="image" href="assets/images/home/hero-card-480.avif" media="(max-width: 480px)" fetchpriority="high" type="image/avif">
-  <link rel="preload" as="image" href="assets/images/home/hero-bg-1024.avif" media="(min-width: 481px)" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="assets/images/home/hero-bg-480.avif" media="(max-width: 480px)" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="assets/images/home/hero-bg-1024.avif" media="(min-width: 481px) and (max-width: 1024px)" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="assets/images/home/hero-bg-1440.avif" media="(min-width: 1025px)" fetchpriority="high" type="image/avif">
   <style id="critical-home-lcp">
     *,:after,:before{box-sizing:border-box}
     html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -148,13 +149,13 @@
     <section class="home-hero-section relative w-full overflow-hidden p-0" id="home-hero-wrap">
       <div class="home-hero relative flex min-h-[min(90vh,920px)] flex-col" id="home-hero">
 
-        <!-- Full-width arka plan + overlay -->
-        <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+        <!-- Full-width arka plan + overlay (LCP görseli — lazy/aria-hidden yok) -->
+        <div class="pointer-events-none absolute inset-0 z-0">
           <picture>
             <source
               media="(max-width: 480px)"
               type="image/avif"
-              srcset="assets/images/home/hero-card-480.avif">
+              srcset="assets/images/home/hero-bg-480.avif">
             <source
               media="(max-width: 1024px)"
               type="image/avif"
@@ -166,15 +167,14 @@
               class="h-full w-full object-cover object-center"
               src="assets/images/home/hero-bg-1440.avif"
               alt=""
-              aria-hidden="true"
               width="1440"
               height="1359"
               loading="eager"
               decoding="async"
               fetchpriority="high">
           </picture>
-          <div class="absolute inset-0 bg-gradient-to-r from-carbon-black via-carbon-black/90 to-carbon-black/55"></div>
-          <div class="absolute inset-0 bg-carbon-black/25"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-carbon-black via-carbon-black/90 to-carbon-black/55" aria-hidden="true"></div>
+          <div class="absolute inset-0 bg-carbon-black/25" aria-hidden="true"></div>
         </div>
 
         <!-- Ana metin -->
@@ -261,9 +261,9 @@
           <!-- Large Card -->
           <div class="lg:col-span-2 relative group overflow-hidden rounded-lg aspect-video bg-surface-elevation">
             <picture>
-              <source type="image/avif" srcset="assets/images/home/hero-card-480.avif">
-              <source type="image/webp" srcset="assets/images/home/hero-card-480.webp">
-              <img alt="Taşlama Diskleri" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 will-change-transform" src="assets/images/home/hero-card-480.jpg" width="480" height="270" loading="lazy" decoding="async">
+              <source type="image/avif" srcset="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart-card.avif">
+              <source type="image/webp" srcset="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart-card.webp">
+              <img alt="Taşlama Diskleri" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 will-change-transform" src="assets/images/products/metal-inox-taslama-diski/metal-inox-taslama-diski-kart-card.webp" width="600" height="316" loading="lazy" decoding="async">
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-carbon-black via-transparent to-transparent p-10 flex flex-col justify-end">
               <div class="flex gap-2 mb-4">
