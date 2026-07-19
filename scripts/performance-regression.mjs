@@ -159,6 +159,11 @@ async function singleRun(browser, profileName) {
 
   const failed = [];
   const failedCritical = [];
+  const runtimeErrors = [];
+  page.on('pageerror', (error) => runtimeErrors.push(`pageerror: ${error.message}`));
+  page.on('console', (message) => {
+    if (message.type() === 'error') runtimeErrors.push(`console: ${message.text()}`);
+  });
   page.on('requestfailed', (request) => {
     const url = request.url();
     if (url.endsWith('/favicon.ico')) return;
@@ -189,8 +194,18 @@ async function singleRun(browser, profileName) {
     ...window.__perfAudit,
     readyState: document.readyState,
   }));
+  let megaMenuReady = true;
+  if (profileName === 'desktop') {
+    try {
+      await page.hover('.header-nav-dropdown > a');
+      await page.waitForSelector('#mega-menu .mega-menu-root', { timeout: 5000 });
+    } catch {
+      megaMenuReady = false;
+      runtimeErrors.push('interaction: mega menu did not initialize');
+    }
+  }
   await page.close();
-  return { ...metrics, failed, failedCritical };
+  return { ...metrics, failed, failedCritical, runtimeErrors, megaMenuReady };
 }
 
 function median(values) {
@@ -203,6 +218,7 @@ function summarize(profile, runs) {
   const lcp = median(runs.map((run) => run.lcp?.value ?? Infinity));
   const failed = runs.reduce((sum, run) => sum + run.failedCritical.length, 0);
   const allFailed = runs.reduce((sum, run) => sum + run.failed.length, 0);
+  const runtimeErrors = runs.reduce((sum, run) => sum + run.runtimeErrors.length, 0);
   const representative = runs
     .slice()
     .sort((a, b) => Math.abs(a.cls - cls) - Math.abs(b.cls - cls))[0];
@@ -216,6 +232,8 @@ function summarize(profile, runs) {
     failedRequests: failed,
     allFailedRequests: allFailed,
     failedSamples: runs.flatMap((run) => run.failed).slice(0, 3),
+    runtimeErrors,
+    runtimeErrorSamples: runs.flatMap((run) => run.runtimeErrors).slice(0, 3),
     largestShifts: representative.shifts
       .sort((a, b) => b.value - a.value)
       .slice(0, 3),
@@ -245,7 +263,8 @@ try {
     (summary) =>
       summary.cls > 0.05 ||
       (!summary.stability && (summary.lcpMs === null || summary.lcpMs > 2500)) ||
-      summary.failedRequests > 0,
+      summary.failedRequests > 0 ||
+      summary.runtimeErrors > 0,
   );
   if (failed && !REPORT_ONLY) process.exitCode = 1;
 } finally {

@@ -12,7 +12,6 @@ class Header {
     this.navInsertBefore = null;
     this.mobileMq = window.matchMedia('(max-width: 768px)');
     this.desktopMq = window.matchMedia('(min-width: 769px)');
-    this._headerHeightRaf = 0;
     this.init();
   }
 
@@ -27,7 +26,7 @@ class Header {
     const count = badge?.textContent?.trim() || '0';
 
     const li = document.createElement('li');
-    li.className = 'header-nav-compare';
+    li.className = 'header-nav-compare md:hidden';
     li.innerHTML = `
       <a href="${href}" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
         Karşılaştır
@@ -47,7 +46,6 @@ class Header {
   init() {
     this.ensureCompareNavLink();
     this.ensureBackdrop();
-    this.observeHeaderHeight();
     this.setupMobileNavPortal();
     this.setupMobileMenu();
     this.setupDropdown();
@@ -99,46 +97,6 @@ class Header {
     this.backdrop.hidden = true;
     this.backdrop.addEventListener('click', () => this.setMobileNavOpen(false));
     document.body.appendChild(this.backdrop);
-  }
-
-  observeHeaderHeight() {
-    if (!this.headerEl) return;
-
-    const applyHeight = () => {
-      if (!this.headerEl) return;
-      const h = Math.ceil(this.headerEl.getBoundingClientRect().height);
-      const prevRaw = document.documentElement.style.getPropertyValue('--header-mobile-height');
-      const prev = parseFloat(prevRaw || '72');
-      // Küçük farklarda CSS değişkenini değiştirme — stil invalidasyonu tetiklenmesin
-      if (Number.isFinite(prev) && Math.abs(prev - h) < 2) return;
-      document.documentElement.style.setProperty('--header-mobile-height', `${h}px`);
-    };
-
-    let heightTimer = 0;
-    const scheduleHeight = () => {
-      if (heightTimer) window.clearTimeout(heightTimer);
-      heightTimer = window.setTimeout(() => {
-        heightTimer = 0;
-        requestAnimationFrame(applyHeight);
-      }, 150);
-    };
-
-    if (typeof ResizeObserver !== 'undefined') {
-      this._headerResizeObserver = new ResizeObserver(scheduleHeight);
-      this._headerResizeObserver.observe(this.headerEl);
-    }
-
-    window.addEventListener('load', () => scheduleHeight(), { once: true });
-  }
-
-  syncHeaderHeight() {
-    if (!this.headerEl) return;
-    if (this._headerHeightRaf) cancelAnimationFrame(this._headerHeightRaf);
-    this._headerHeightRaf = requestAnimationFrame(() => {
-      this._headerHeightRaf = 0;
-      const h = Math.ceil(this.headerEl.getBoundingClientRect().height);
-      document.documentElement.style.setProperty('--header-mobile-height', `${h}px`);
-    });
   }
 
   isMobileMenuOpen() {

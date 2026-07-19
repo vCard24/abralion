@@ -184,7 +184,7 @@ async function buildMegaMenu() {
                   data-default-href="${featuredHref}"
                   data-default-name="${escapeHtml(featured.name)}"
                   aria-label="${escapeHtml(featured.name)}">
-                  <img src="${featuredThumb}" alt="${escapeHtml(featured.name)}" loading="lazy">
+                  <img src="${featuredThumb}" alt="${escapeHtml(featured.name)}" width="400" height="200" loading="lazy">
                 </a>`
               : ''
           }
@@ -251,4 +251,21 @@ async function buildMegaMenu() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', buildMegaMenu);
+let megaMenuPromise = null;
+
+function ensureMegaMenu() {
+  if (!megaMenuPromise) megaMenuPromise = buildMegaMenu();
+  return megaMenuPromise;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('mega-menu');
+  const trigger = container?.closest('.header-nav-dropdown');
+  if (!trigger) return;
+  const load = () => {
+    ensureMegaMenu();
+  };
+  trigger.addEventListener('pointerenter', load, { once: true });
+  trigger.addEventListener('focusin', load, { once: true });
+  trigger.addEventListener('pointerdown', load, { once: true });
+});

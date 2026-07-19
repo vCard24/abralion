@@ -6,6 +6,7 @@
     "build:bundle": "python scripts/build_css.py",
     "build:fonts": "python scripts/build_performance_assets.py && python scripts/patch_local_fonts.py && python scripts/asset_cache_version.py",
     "build:js": "python scripts/minify_products_data.py",
+    "build:home-js": "node scripts/build-home-js.mjs",
     "sync:catalog": "python scripts/sync_catalog.py",
     "generate:menu-thumbs": "python scripts/generate_menu_thumbs.py",
     "audit:pagespeed": "python scripts/stage4_pagespeed_audit.py",
@@ -23,6 +24,7 @@
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.4",
     "puppeteer-core": "^24.16.0",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "terser": "^5.43.1"
   }
 }

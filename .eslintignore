@@ -1,3 +1,4 @@
 vendor/**
 assets/js/products-data.min.js
 assets/js/products-data.js
+assets/js/home.bundle.min.js
