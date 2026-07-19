@@ -33,6 +33,18 @@ LAYOUT_ANIM = re.compile(
     r"transition[^;{]*(top|left|right|bottom|width|height|margin)[^;{]*;",
     re.I,
 )
+DEFERRED_MAIN_CSS = re.compile(
+    r'<link[^>]+href=["\'][^"\']*bundle\.min\.css[^"\']*["\'][^>]+media=["\']print["\']',
+    re.I,
+)
+FONT_PRELOAD = re.compile(
+    r'<link[^>]+rel=["\']preload["\'][^>]+as=["\']font["\'][^>]*>',
+    re.I,
+)
+IMAGE_PRELOAD = re.compile(
+    r'<link[^>]+rel=["\']preload["\'][^>]+as=["\']image["\'][^>]*>',
+    re.I,
+)
 
 
 class ImgParser(HTMLParser):
@@ -112,6 +124,34 @@ def audit_versions(files: list[Path]) -> list[str]:
                 continue
             issues.append(f"{rel}: unversioned asset {ref}")
     return issues
+
+
+def audit_resource_loading(files: list[Path]) -> dict:
+    deferred_main_css: list[str] = []
+    excessive_font_preloads: list[str] = []
+    unscoped_high_image_preloads: list[str] = []
+    for path in files:
+        text = path.read_text(encoding="utf-8")
+        rel = str(path.relative_to(ROOT)).replace("\\", "/")
+        if DEFERRED_MAIN_CSS.search(text):
+            deferred_main_css.append(f"{rel}: bundle.min.css must be render-blocking")
+        font_preloads = FONT_PRELOAD.findall(text)
+        if len(font_preloads) > 2:
+            excessive_font_preloads.append(f"{rel}: {len(font_preloads)} font preloads")
+        high_unscoped = [
+            tag
+            for tag in IMAGE_PRELOAD.findall(text)
+            if 'fetchpriority="high"' in tag and "media=" not in tag
+        ]
+        if len(high_unscoped) > 1:
+            unscoped_high_image_preloads.append(
+                f"{rel}: {len(high_unscoped)} unscoped high-priority image preloads"
+            )
+    return {
+        "deferred_main_css": deferred_main_css,
+        "excessive_font_preloads": excessive_font_preloads,
+        "unscoped_high_image_preloads": unscoped_high_image_preloads,
+    }
 
 
 def audit_images(files: list[Path]) -> dict:
@@ -214,6 +254,7 @@ def main() -> int:
     report = {
         "fonts": audit_fonts(files),
         "versions": audit_versions(files),
+        "resource_loading": audit_resource_loading(files),
         "images": audit_images(files),
         "htaccess": audit_htaccess(),
         "css_animations": audit_css_animations(),
@@ -224,6 +265,8 @@ def main() -> int:
     issues = 0
     issues += len(report["fonts"]["issues"])
     issues += len(report["versions"])
+    for key in report["resource_loading"]:
+        issues += len(report["resource_loading"][key])
     for key in report["images"]:
         issues += len(report["images"][key])
     if not report["critical_hero"].get("ok"):
@@ -238,6 +281,8 @@ def main() -> int:
             print(f"  font: {item}")
         for item in report["versions"][:5]:
             print(f"  version: {item}")
+        for item in report["resource_loading"]["deferred_main_css"][:5]:
+            print(f"  loading: {item}")
         for item in report["images"]["missing_dimensions"][:5]:
             print(f"  img: {item}")
         for item in report["css_animations"]["transition_all"][:5]:
