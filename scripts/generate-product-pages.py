@@ -5,6 +5,8 @@ import re
 from pathlib import Path
 from urllib.parse import quote
 
+from structured_data import inject, product_schema
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE_ORIGIN = "https://abralion.com"
 TEMPLATE_PATH = Path(__file__).resolve().parent / "templates" / "product-detail-noir.html"
@@ -70,6 +72,7 @@ def main():
             "technical_catalog_href": product_technical_catalog_href(p),
         }.items():
             html = html.replace("{" + key + "}", val)
+        html = inject(html, product_schema(p))
         (out_dir / f"{slug}.html").write_text(html, encoding="utf-8")
         count += 1
     print(f"OK: {count} sayfa -> urun/")

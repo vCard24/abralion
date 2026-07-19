@@ -1,0 +1,114 @@
+{
+  "base_url": "http://127.0.0.1:4174",
+  "checks": [
+    {
+      "crawler": "Googlebot",
+      "path": "/",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 112,
+      "bytes": 60413,
+      "issues": []
+    },
+    {
+      "crawler": "Googlebot",
+      "path": "/urunler.html",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 29,
+      "bytes": 36021,
+      "issues": []
+    },
+    {
+      "crawler": "Googlebot",
+      "path": "/urun/metal-inox-kesme-tasi.html",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 19,
+      "bytes": 29703,
+      "issues": []
+    },
+    {
+      "crawler": "GPTBot",
+      "path": "/",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 20,
+      "bytes": 60413,
+      "issues": []
+    },
+    {
+      "crawler": "GPTBot",
+      "path": "/urunler.html",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 20,
+      "bytes": 36021,
+      "issues": []
+    },
+    {
+      "crawler": "GPTBot",
+      "path": "/urun/metal-inox-kesme-tasi.html",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 16,
+      "bytes": 29703,
+      "issues": []
+    },
+    {
+      "crawler": "ClaudeBot",
+      "path": "/",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 20,
+      "bytes": 60413,
+      "issues": []
+    },
+    {
+      "crawler": "ClaudeBot",
+      "path": "/urunler.html",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 38,
+      "bytes": 36021,
+      "issues": []
+    },
+    {
+      "crawler": "ClaudeBot",
+      "path": "/urun/metal-inox-kesme-tasi.html",
+      "status": 200,
+      "content_type": "text/html",
+      "elapsed_ms": 15,
+      "bytes": 29703,
+      "issues": []
+    },
+    {
+      "crawler": "Googlebot",
+      "path": "/robots.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "elapsed_ms": 11,
+      "bytes": 70,
+      "issues": []
+    },
+    {
+      "crawler": "Googlebot",
+      "path": "/llms.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "elapsed_ms": 11,
+      "bytes": 7737,
+      "issues": []
+    },
+    {
+      "crawler": "Googlebot",
+      "path": "/sitemap.xml",
+      "status": 200,
+      "content_type": "text/xml",
+      "elapsed_ms": 12,
+      "bytes": 6548,
+      "issues": []
+    }
+  ],
+  "issues": []
+}
