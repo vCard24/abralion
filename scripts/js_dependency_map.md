@@ -68,7 +68,7 @@ Otomatik üretim: `python scripts/js_dependency_audit.py`
 - **contact.js**: `FormValidator`, `sendFormMail`
 - **fiyat-teklifi.js**: `ABRALION_CATALOG`, `ProductManager`, `bindProductImageFallback`, `ensureAbralionPdfLogoDataUrl`, `getBasePath`, `getCompareKeysForPrefill`, `isQuoteFromCompare`, `primaryProductImageSrc`, `productImageRelForFetch`, `productUrl`, `quoteManager`, `resolveCatalogKeys`, `sendFormMail`, `variantLabel`, `variantSpecLines`
 - **gallery-lightbox.js**: `GalleryLightbox`, `initGalleryLightbox`
-- **home.js**: `ProductCard`, `ProductManager`
+- **home.bundle.min.js**: `ABRALION_CATALOG`, `ABRALION_IMAGE`, `AbralionIcons`, `CompareManager`, `Header`, `bindGalleryImageFallback`, `bindProductImageFallback`, `buildProductImageCandidates`, `buildQuotePageUrl`, `collectCompareKeysForQuote`, `compareManager`, `documentDownloadFilename`, `encodeCompareKeysForUrl`, `getBasePath`, `getCompareKeysForPrefill`, `initPdfDownloadLinks`, `initPdfLinks`, `isQuoteFromCompare`, `navigateToQuotePage`, `parseModelsFromUrl`, `primaryProductImageSrc`, `productImageRelForFetch`, `productMenuThumbUrl`, `productThumbUrl`, `productUrl`, `quoteManager`, `readCompareListFromStorage`, `readComparePrefillForQuote`, `resolveCatalogKeys`, `sanitizeDownloadLabel`, `saveComparePrefillForQuote`, `sendFormMail`
 - **icons.js**: `AbralionIcons`
 - **karsilastir.js**: `AbralionIcons`, `ProductManager`, `bindProductImageFallback`, `buildQuotePageUrl`, `compareManager`, `ensureAbralionPdfLogoDataUrl`, `getBasePath`, `navigateToQuotePage`, `primaryProductImageSrc`, `productImageRelForFetch`, `productUrl`, `quoteManager`, `variantSpecLines`
 - **main.js**: `Header`, `compareManager`

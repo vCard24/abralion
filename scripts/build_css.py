@@ -14,6 +14,14 @@ from asset_cache_version import bump_versioned_assets_in_html, content_hash
 CSS_DIR = ROOT / "assets" / "css"
 OUT = CSS_DIR / "bundle.min.css"
 ICONS = ROOT / "assets" / "js" / "icons.js"
+HOME = ROOT / "index.html"
+HOME_CSS_BLOCK = re.compile(
+    r"\s*<!-- HOME_CSS_START -->.*?<!-- HOME_CSS_END -->\s*",
+    re.S,
+)
+HOME_BUNDLE_LINK = re.compile(
+    r'\s*<link rel="stylesheet" href="assets/css/bundle\.min\.css\?v=[a-f0-9]+">\s*'
+)
 
 # Load order must match historical <link> order on every page.
 SOURCES = (
@@ -33,6 +41,23 @@ def minify_css(css: str) -> str:
     return css.strip()
 
 
+def inline_home_css(css: str) -> None:
+    """Make homepage first paint independent from a separate CDN CSS request."""
+    html = HOME.read_text(encoding="utf-8")
+    block = (
+        "\n  <!-- HOME_CSS_START -->\n"
+        f'  <style id="home-styles">{css}</style>\n'
+        "  <!-- HOME_CSS_END -->\n"
+    )
+    if HOME_CSS_BLOCK.search(html):
+        updated = HOME_CSS_BLOCK.sub(lambda _match: block, html, count=1)
+    elif HOME_BUNDLE_LINK.search(html):
+        updated = HOME_BUNDLE_LINK.sub(lambda _match: block, html, count=1)
+    else:
+        raise RuntimeError("Homepage bundle stylesheet marker/link not found")
+    HOME.write_text(updated, encoding="utf-8")
+
+
 def build() -> dict[str, str]:
     parts: list[str] = []
     sizes: list[tuple[str, int]] = []
@@ -48,6 +73,7 @@ def build() -> dict[str, str]:
     combined = "\n".join(parts)
     minified = minify_css(combined)
     OUT.write_text(minified, encoding="utf-8")
+    inline_home_css(minified)
 
     versions = bump_versioned_assets_in_html()
 
