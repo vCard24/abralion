@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap"></noscript>
 <title>Abralion - Ana Sayfa</title>
   <link rel="canonical" href="https://abralion.com/">
-  <link rel="preload" as="image" href="assets/images/home/hero-card-480.avif" media="(max-width: 480px)" type="image/avif" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/images/home/hero-bg-1024.avif" media="(min-width: 481px)" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/home/hero-card-480.avif" media="(max-width: 480px)" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="assets/images/home/hero-bg-1024.avif" media="(min-width: 481px)" fetchpriority="high" type="image/avif">
   <style id="critical-home-lcp">
     *,:after,:before{box-sizing:border-box}
     html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -81,6 +77,14 @@
     .aspect-video{aspect-ratio:16/9}
     .aspect-square{aspect-ratio:1/1}
   </style>
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css?v=8da66213" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="assets/css/fonts.css?v=8da66213">
+  </noscript>
+
 <meta name="description" content="Abralion, Rusya merkezli EKS-PLAST LLC bünyesinde kesici, taşlama, elmas disk ve delici ürünler sunar. Türk firmalarına güvenilir endüstriyel tedarik ortağıdır.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Abralion">
@@ -163,8 +167,8 @@
               src="assets/images/home/hero-bg-1440.avif"
               alt=""
               aria-hidden="true"
-              width="480"
-              height="480"
+              width="1440"
+              height="1359"
               loading="eager"
               decoding="async"
               fetchpriority="high">
