@@ -885,6 +885,7 @@ window.ABRALION_CATALOG = {
         "Peyzaj ve çevre düzenleme işlerinde sert zemin materyalleri",
         "Taze beton"
       ],
+      "applicationImage": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
       "images": [
         {
           "src": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",

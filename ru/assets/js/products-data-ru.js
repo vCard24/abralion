@@ -883,6 +883,7 @@ window.ABRALION_CATALOG = {
         "Твёрдые покрытия в ландшафтных и благоустроительных работах",
         "Свежий бетон"
       ],
+      "applicationImage": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
       "images": [
         {
           "src": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
