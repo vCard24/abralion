@@ -1,0 +1,2121 @@
+/* Каталог продукции Abralion на русском языке.
+   Исходные идентификаторы, пути, числовые значения, коды изделий и technicalCatalog сохранены без изменений. */
+window.ABRALION_CATALOG = {
+  "categories": [
+    {
+      "id": "kesici-taslama-flap-disk",
+      "name": "Отрезные и шлифовальные круги",
+      "order": 1
+    },
+    {
+      "id": "elmas-kesici",
+      "name": "Алмазные диски",
+      "order": 2
+    },
+    {
+      "id": "kirici-delici",
+      "name": "Буры и зубила",
+      "order": 3
+    },
+    {
+      "id": "olcum-kesim",
+      "name": "Рулетки и строительные ножи",
+      "order": 4
+    }
+  ],
+  "products": [
+    {
+      "id": "metal-inox-kesme-tasi",
+      "slug": "metal-inox-kesme-tasi",
+      "name": "Отрезной круг по металлу и нержавеющей стали",
+      "categoryId": "kesici-taslama-flap-disk",
+      "categoryName": "Отрезные и шлифовальные круги",
+      "featured": true,
+      "description": "Армированный отрезной круг, специально разработанный для резки нержавеющей стали (Inox) и чёрных металлов. Малая толщина обеспечивает высокую производительность и точность реза. Рассчитан на безопасную и продолжительную эксплуатацию в промышленных условиях.",
+      "features": [
+        "Низкое тепловое воздействие при обработке нержавеющей стали",
+        "Не содержит железа (Fe), серы (S) и хлора (Cl) — < 0,1%",
+        "Твёрдая связка и специальная абразивная формула",
+        "Качество подтверждено сертификатом MPA (Германия)",
+        "Армированная конструкция для безопасной и долговечной работы",
+        "Сертификаты: EAC и MPA (Германия)"
+      ],
+      "applications": [
+        "Резка труб и полос из нержавеющей стали",
+        "Точная резка деталей металлоконструкций",
+        "Резка тонколистового металла и профилей",
+        "Промышленные металлообрабатывающие цеха",
+        "Изготовление деталей из нержавеющей стали для медицинской и химической промышленности"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-kullanim.jpg",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — применение"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-varyantlar.jpg",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — варианты"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x1.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x16.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/metal-inox-kesme-tasi-125x25.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-07.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-08.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-09.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-10.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-11.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-kesme-tasi/abralion-12.webp",
+          "alt": "Отрезной круг по металлу и нержавеющей стали — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "260-115",
+          "urun_kodu": "260-115",
+          "daire_capi_mm": 115,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 1.0,
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 60 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "260-125",
+          "urun_kodu": "260-125",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 1.0,
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 60 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "260-125-16",
+          "urun_kodu": "260-125-16",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 1.6,
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 60 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "246-125-25",
+          "urun_kodu": "246-125-25",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 2.5,
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 46 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "246-150",
+          "urun_kodu": "246-150",
+          "daire_capi_mm": 150,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 3.0,
+          "max_hiz_rpm": 10200,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 30 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "230-180-25",
+          "urun_kodu": "230-180-25",
+          "daire_capi_mm": 180,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 2.5,
+          "max_hiz_rpm": 8500,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 30 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "230-180-30",
+          "urun_kodu": "230-180-30",
+          "daire_capi_mm": 180,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 3.0,
+          "max_hiz_rpm": 8500,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 30 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "246-230-20",
+          "urun_kodu": "246-230-20",
+          "daire_capi_mm": 230,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 2.0,
+          "max_hiz_rpm": 6600,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 46 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "246-230-25",
+          "urun_kodu": "246-230-25",
+          "daire_capi_mm": 230,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 2.5,
+          "max_hiz_rpm": 6600,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 46 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/metal-inox-kesme-tasi.pdf"
+    },
+    {
+      "id": "355mm-metal-sabit-tezgah-kesme-diski",
+      "slug": "355mm-metal-sabit-tezgah-kesme-diski",
+      "name": "Стационарный отрезной круг по металлу 355 мм",
+      "categoryId": "kesici-taslama-flap-disk",
+      "categoryName": "Отрезные и шлифовальные круги",
+      "featured": true,
+      "description": "Армированный отрезной круг большого диаметра, специально разработанный для резки нержавеющей стали (Inox) и металла. Обеспечивает высокую производительность и безопасность при промышленной эксплуатации. Диаметр 355 мм подходит для тяжёлых стационарных отрезных станков.",
+      "features": [
+        "Оптимален для резки заготовок большого сечения",
+        "Не содержит железа (Fe), серы (S) и хлора (Cl) — < 0,15%",
+        "Твёрдая связка и специальная абразивная формула",
+        "Качество подтверждено сертификатом MPA (Германия)",
+        "Армированная конструкция для безопасной и долговечной работы",
+        "Максимальная скорость: 4 400 об/мин / 80 м/с"
+      ],
+      "applications": [
+        "Резка труб и профилей из нержавеющей стали",
+        "Точная резка деталей металлоконструкций",
+        "Крупносерийная резка на промышленных станках",
+        "Тяжёлые работы в цехах и на производстве",
+        "Изготовление деталей из нержавеющей стали для медицинской и химической промышленности"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski.webp",
+          "alt": "Стационарный отрезной круг по металлу 355 мм — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/355mm-metal-sabit-tezgah-kesme-diski/355mm-metal-sabit-tezgah-kesme-diski2.webp",
+          "alt": "Стационарный отрезной круг по металлу 355 мм — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "330-355",
+          "urun_kodu": "330-355",
+          "daire_capi_mm": 355,
+          "gobek_capi_mm": 25.4,
+          "kalinlik_mm": 3.0,
+          "max_hiz_rpm": 4400,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 30 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/355mm-metal-sabit-tezgah-kesme-diski.pdf"
+    },
+    {
+      "id": "metal-inox-taslama-diski",
+      "slug": "metal-inox-taslama-diski",
+      "name": "Шлифовальный круг по металлу и нержавеющей стали",
+      "categoryId": "kesici-taslama-flap-disk",
+      "categoryName": "Отрезные и шлифовальные круги",
+      "featured": true,
+      "description": "Армированный шлифовальный круг для обработки поверхностей из нержавеющей стали (Inox) и других металлов. Демонстрирует высокую производительность на листах, трубах и полосах из нержавеющей стали марок 304 и 316L. Низкое тепловыделение обеспечивает безопасное и эффективное шлифование термочувствительных сталей.",
+      "features": [
+        "Низкое тепловое воздействие на нержавеющую сталь",
+        "Не содержит железа (Fe), серы (S) и хлора (Cl) — < 0,15%",
+        "Твёрдая связка и специальные абразивные зёрна оксида алюминия",
+        "Качество подтверждено сертификатом MPA (Германия)",
+        "Армированная конструкция для безопасной и долговечной работы"
+      ],
+      "applications": [
+        "Шлифование труб и полос из нержавеющей стали",
+        "Выравнивание поверхностей тонколистового металла",
+        "Изготовление деталей из нержавеющей стали для медицинской и химической промышленности",
+        "Промышленные металлообрабатывающие цеха",
+        "Точная обработка термочувствительных поверхностей из нержавеющей стали"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski.webp",
+          "alt": "Шлифовальный круг по металлу и нержавеющей стали"
+        },
+        {
+          "src": "assets/images/home/hero-bg.jpg",
+          "alt": "Шлифовальный круг по металлу и нержавеющей стали"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski1.webp",
+          "alt": "Шлифовальный круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski2.webp",
+          "alt": "Шлифовальный круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski3.webp",
+          "alt": "Шлифовальный круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski4.webp",
+          "alt": "Шлифовальный круг по металлу и нержавеющей стали — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/metal-inox-taslama-diski/productsmetal-inox-taslama-diski5.webp",
+          "alt": "Шлифовальный круг по металлу и нержавеющей стали — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "100-125",
+          "urun_kodu": "100-125",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 6.0,
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 24 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "100-150",
+          "urun_kodu": "100-150",
+          "daire_capi_mm": 150,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 6.0,
+          "max_hiz_rpm": 10200,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 24 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "100-180",
+          "urun_kodu": "100-180",
+          "daire_capi_mm": 180,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 6.0,
+          "max_hiz_rpm": 8500,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 24 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "100-230",
+          "urun_kodu": "100-230",
+          "daire_capi_mm": 230,
+          "gobek_capi_mm": 22,
+          "kalinlik_mm": 6.0,
+          "max_hiz_rpm": 6600,
+          "max_hiz_ms": 80,
+          "asindirici_kodu": "A 24 T-BF",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/metal-inox-taslama-diski.pdf"
+    },
+    {
+      "id": "zr-zirkon-flap-disk",
+      "slug": "zr-zirkon-flap-disk",
+      "name": "Лепестковый круг ZR с циркониевым абразивом",
+      "categoryId": "kesici-taslama-flap-disk",
+      "categoryName": "Отрезные и шлифовальные круги",
+      "featured": false,
+      "description": "Лепестковый круг на основе циркониевого электрокорунда, разработанный для шлифования нержавеющей стали (Inox) и металлических поверхностей. Обеспечивает высокую производительность при обработке листа, труб и полос из нержавеющей стали марок 304 и 316L. Работает с низким тепловыделением, не деформируя поверхность.",
+      "features": [
+        "Абразив на основе циркониевого электрокорунда (ZR Zirconia)",
+        "Высокая производительность на нержавеющей стали и металле",
+        "Низкое тепловыделение без деформации поверхности",
+        "Не содержит железа (Fe), серы (S) и хлора (Cl) — < 0,15%",
+        "Качество подтверждено сертификатом MPA (Германия)"
+      ],
+      "applications": [
+        "Выравнивание и удаление заусенцев на нержавеющей стали",
+        "Шлифование металлоконструкций",
+        "Подготовка поверхностей тонкого листа и труб",
+        "Промышленная металлообработка и зачистка сварных швов",
+        "Шлифование деталей из нержавеющей стали для медицинской и химической промышленности"
+      ],
+      "technicalCatalog": "assets/documents/products/zr-zirkon-flap-disk.pdf",
+      "images": [
+        {
+          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-genel.webp",
+          "alt": "Лепестковый круг ZR с циркониевым абразивом"
+        },
+        {
+          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-kullanim.webp",
+          "alt": "Лепестковый круг ZR с циркониевым абразивом — применение"
+        },
+        {
+          "src": "assets/images/products/zr-zirkon-flap-disk/zr-zirkon-flap-disk-125x22.webp",
+          "alt": "Лепестковый круг ZR с циркониевым абразивом — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "440-115",
+          "urun_kodu": "440-115",
+          "daire_capi_mm": 115,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "ZR Циркониевый электрокорунд",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "grit": "40#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "460-115",
+          "urun_kodu": "460-115",
+          "daire_capi_mm": 115,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "ZR Циркониевый электрокорунд",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "grit": "60#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "480-115",
+          "urun_kodu": "480-115",
+          "daire_capi_mm": 115,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "ZR Циркониевый электрокорунд",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "grit": "80#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "440-125",
+          "urun_kodu": "440-125",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "ZR Циркониевый электрокорунд",
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "grit": "40#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "460-125",
+          "urun_kodu": "460-125",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "ZR Циркониевый электрокорунд",
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "grit": "60#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "480-125",
+          "urun_kodu": "480-125",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "ZR Циркониевый электрокорунд",
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "grit": "80#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "4120-125",
+          "urun_kodu": "4120-125",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "ZR Циркониевый электрокорунд",
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "grit": "120#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "460-180",
+          "urun_kodu": "460-180",
+          "daire_capi_mm": 180,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "ZR Циркониевый электрокорунд",
+          "max_hiz_rpm": 8500,
+          "max_hiz_ms": 80,
+          "grit": "60#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ]
+    },
+    {
+      "id": "ao-aluminyum-oksit-flap-disk",
+      "slug": "ao-aluminyum-oksit-flap-disk",
+      "name": "Лепестковый круг AO с оксидом алюминия",
+      "categoryId": "kesici-taslama-flap-disk",
+      "categoryName": "Отрезные и шлифовальные круги",
+      "featured": false,
+      "description": "Лепестковый круг с абразивом из оксида алюминия, предназначенный для шлифования металлических и деревянных поверхностей. Абразив AO обеспечивает стабильную производительность и универсальность. Выбор подходящей зернистости позволяет эффективно выполнять выравнивание средней интенсивности.",
+      "features": [
+        "Абразив на основе оксида алюминия (AO)",
+        "Эффективное шлифование металла и древесины",
+        "Выбор зернистости для контролируемой обработки поверхности",
+        "Низкое тепловыделение без деформации поверхности",
+        "Не содержит железа (Fe), серы (S) и хлора (Cl) — < 0,15%",
+        "Качество подтверждено сертификатом MPA (Германия)"
+      ],
+      "applications": [
+        "Выравнивание металлических поверхностей и удаление заусенцев",
+        "Шлифование и формование древесины",
+        "Подготовка поверхностей тонкого листа и труб",
+        "Промышленная металлообработка и столярные работы",
+        "Универсальное применение в автомобильных и ремонтных мастерских"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk.webp",
+          "alt": "Лепестковый круг AO с оксидом алюминия"
+        },
+        {
+          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-kullanim.jpg",
+          "alt": "Лепестковый круг AO с оксидом алюминия — применение"
+        },
+        {
+          "src": "assets/images/products/ao-aluminyum-oksit-flap-disk/ao-aluminyum-oksit-flap-disk-125x22.webp",
+          "alt": "Лепестковый круг AO с оксидом алюминия — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "540-115",
+          "urun_kodu": "540-115",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "AO Оксид алюминия",
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "grit": "40#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "560-115",
+          "urun_kodu": "560-115",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "AO Оксид алюминия",
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "grit": "60#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "580-115",
+          "urun_kodu": "580-115",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "AO Оксид алюминия",
+          "max_hiz_rpm": 12200,
+          "max_hiz_ms": 80,
+          "grit": "80#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "560-180",
+          "urun_kodu": "560-180",
+          "daire_capi_mm": 180,
+          "gobek_capi_mm": 22,
+          "asindirici_tipi": "AO Оксид алюминия",
+          "max_hiz_rpm": 8500,
+          "max_hiz_ms": 80,
+          "grit": "60#",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/ao-aluminyum-oksit-flap-disk.pdf"
+    },
+    {
+      "id": "segmentli-standart-elmas-kesici",
+      "slug": "segmentli-standart-elmas-kesici",
+      "name": "Стандартный сегментный алмазный диск",
+      "categoryId": "elmas-kesici",
+      "categoryName": "Алмазные диски",
+      "featured": true,
+      "description": "Диск для сухой резки бетона, армированного бетона, гранита, кирпича, камня и различных строительных материалов. Лазерно приваренные алмазные сегменты высотой 10 мм обеспечивают длительный ресурс при работе с наиболее распространёнными стройматериалами.",
+      "features": [
+        "Стабильная производительность при длительной непрерывной резке",
+        "Чистый, безопасный и быстрый рез",
+        "Высококачественные алмазные зёрна",
+        "Увеличенный ресурс благодаря лазерно приваренным сегментам 10 мм",
+        "Удобная работа без подачи воды"
+      ],
+      "applications": [
+        "Бетон, армированный бетон, гранит и различные строительные материалы",
+        "Кирпич, камень и кладочные материалы",
+        "Строительные работы, требующие сухой резки"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici.webp",
+          "alt": "Стандартный сегментный алмазный диск"
+        },
+        {
+          "src": "assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici-etiket.webp",
+          "alt": "Стандартный сегментный алмазный диск — этикетка"
+        },
+        {
+          "src": "assets/images/products/segmentli-standart-elmas-kesici/productssegmentli-standart-elmas-kesici-kullanim.webp",
+          "alt": "Стандартный сегментный алмазный диск — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "1453-1",
+          "urun_kodu": "1453/1",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22.2,
+          "max_hiz_rpm": 12200,
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "1453-2",
+          "urun_kodu": "1453/2",
+          "daire_capi_mm": 230,
+          "gobek_capi_mm": 22.2,
+          "max_hiz_rpm": 6600,
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/segmentli-standart-elmas-kesici.pdf"
+    },
+    {
+      "id": "ultra-ince-elmas-disk",
+      "slug": "ultra-ince-elmas-disk",
+      "name": "Ультратонкий алмазный диск",
+      "categoryId": "elmas-kesici",
+      "categoryName": "Алмазные диски",
+      "featured": false,
+      "description": "Специальная ультратонкая алмазная режущая кромка обеспечивает быстрый и чистый рез твёрдых материалов. Диск сочетает высокую безопасность с оптимальным качеством реза при промышленной обработке и ручных работах. Конструкция Ultra Slim повышает точность и управляемость.",
+      "features": [
+        "Быстрый и чистый рез",
+        "Прочная конструкция и длительный ресурс",
+        "Высокая концентрация алмазов премиального качества",
+        "Высокая скорость и сокращённое время резки",
+        "Твёрдая связка для сухой и мокрой резки",
+        "Точный и контролируемый рез благодаря конструкции Ultra Slim"
+      ],
+      "applications": [
+        "Кирпич, мрамор и гранит",
+        "Керамогранит, керамика и плитка",
+        "Бетон и различные строительные материалы",
+        "Стекло и твёрдые абразивные материалы",
+        "Сухая и мокрая резка"
+      ],
+      "technicalCatalog": "assets/documents/products/ultra-ince-elmas-disk.pdf",
+      "images": [
+        {
+          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-etiket.webp",
+          "alt": "Ультратонкий алмазный диск — этикетка"
+        },
+        {
+          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-kullanim.jpg",
+          "alt": "Ультратонкий алмазный диск — применение"
+        },
+        {
+          "src": "assets/images/products/ultra-ince-elmas-disk/ultra-ince-elmas-disk-125.webp",
+          "alt": "Ультратонкий алмазный диск — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "1453-5",
+          "urun_kodu": "1453/5",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22.23,
+          "max_hiz_rpm": 2500,
+          "max_hiz_ms": 80,
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ]
+    },
+    {
+      "id": "granit-mermer-segmentli-taslama-diski",
+      "slug": "granit-mermer-segmentli-taslama-diski",
+      "name": "Сегментный шлифовальный диск по граниту и мрамору",
+      "categoryId": "elmas-kesici",
+      "categoryName": "Алмазные диски",
+      "featured": false,
+      "description": "Сегментный шлифовальный диск Т-образного профиля для высокопроизводительной резки и шлифования гранита, мрамора и твёрдого камня. Промышленная конструкция обеспечивает длительный ресурс и безопасную работу.",
+      "features": [
+        "Высокая производительность на твёрдых материалах",
+        "Долговечная сегментная конструкция",
+        "Стабильная и безопасная работа",
+        "Возможность высокоскоростной резки и шлифования"
+      ],
+      "applications": [
+        "Точное шлифование гранита и мрамора",
+        "Выравнивание бетонных поверхностей",
+        "Обработка кирпича и природного камня",
+        "Обработка кромок керамики и плитки",
+        "Промышленные камнеобрабатывающие цеха",
+        "Работы на строительных площадках"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/granit-mermer-segmentli-taslama-diski/granit-mermer-segmentli-taslama-diski.webp",
+          "alt": "Сегментный шлифовальный диск по граниту и мрамору"
+        },
+        {
+          "src": "assets/images/products/granit-mermer-segmentli-taslama-diski/granit-mermer-segmentli-taslama-diski-etiket.webp",
+          "alt": "Сегментный шлифовальный диск по граниту и мрамору — этикетка"
+        },
+        {
+          "src": "assets/images/products/granit-mermer-segmentli-taslama-diski/granit-mermer-segmentli-taslama-diski-kullanim.webp",
+          "alt": "Сегментный шлифовальный диск по граниту и мрамору — применение"
+        },
+        {
+          "src": "assets/images/products/granit-mermer-segmentli-taslama-diski/granit-mermer-segmentli-taslama-diski2.webp",
+          "alt": "Сегментный шлифовальный диск по граниту и мрамору — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "1453-6",
+          "urun_kodu": "1453/6",
+          "daire_capi_mm": 125,
+          "gobek_capi_mm": 22.2,
+          "max_hiz_rpm": 12200,
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/granit-mermer-segmentli-taslama-diski.pdf"
+    },
+    {
+      "id": "asfalt-elmas-kesme-diski",
+      "slug": "asfalt-elmas-kesme-diski",
+      "name": "Алмазный отрезной диск по асфальту",
+      "categoryId": "elmas-kesici",
+      "categoryName": "Алмазные диски",
+      "featured": false,
+      "description": "Алмазный диск, специально разработанный для асфальта и мягких абразивных материалов. Обеспечивает профессиональным пользователям надёжную резку и длительный ресурс. Мокрая резка снижает износ и облегчает работу.",
+      "features": [
+        "Стабильная производительность при длительной непрерывной резке",
+        "Высококачественные алмазные зёрна — технология Super Cut",
+        "Лазерно приваренные алмазные сегменты 10 мм",
+        "Увеличенный ресурс при мокрой резке",
+        "Совместимость с профессиональными мощными резчиками"
+      ],
+      "applications": [
+        "Асфальт и мягкие абразивные материалы",
+        "Бетон, армированный и мытый бетон",
+        "Бетонный кирпич, газобетон и клинкер",
+        "Гранит, кварцит и природный камень",
+        "Мрамор, песчаник и кровельная черепица",
+        "Керамика, керамогранит, стекло и известняк",
+        "Свежий бетон"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/asfalt-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-kullanim.jpg",
+          "alt": "Алмазный отрезной диск по асфальту — применение"
+        },
+        {
+          "src": "assets/images/products/asfalt-elmas-kesme-diski/asfalt-icin-elmas-kesme-diski-350.webp",
+          "alt": "Алмазный отрезной диск по асфальту — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "1453-ASP350",
+          "urun_kodu": "1453/ASP350",
+          "daire_capi_mm": 350,
+          "gobek_capi_mm": 25.4,
+          "max_hiz_rpm": 4400,
+          "max_hiz_ms": 80,
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "1453-ASP400",
+          "urun_kodu": "1453/ASP400",
+          "daire_capi_mm": 400,
+          "gobek_capi_mm": 25.4,
+          "max_hiz_rpm": 3800,
+          "max_hiz_ms": 80,
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/asfalt-elmas-kesme-diski.pdf"
+    },
+    {
+      "id": "beton-elmas-kesme-diski",
+      "slug": "beton-elmas-kesme-diski",
+      "name": "Алмазный отрезной диск по армированному бетону",
+      "categoryId": "elmas-kesici",
+      "categoryName": "Алмазные диски",
+      "featured": false,
+      "description": "Диск для тяжёлых и универсальных работ. Обеспечивает высокую производительность при резке армированного бетона, природного камня, мрамора и множества строительных материалов. Технология Supercut и лазерно приваренные алмазные сегменты 10 мм увеличивают срок службы.",
+      "features": [
+        "Стабильная производительность при длительной непрерывной резке",
+        "Высококачественные алмазные зёрна — технология Super Cut",
+        "Лазерно приваренные алмазные сегменты 10 мм",
+        "Увеличенный ресурс при мокрой резке"
+      ],
+      "applications": [
+        "Бетон, армированный и мытый бетон",
+        "Бетонный кирпич, газобетон и клинкер",
+        "Гранит, кварцит и природный камень",
+        "Мрамор, песчаник и кровельная черепица",
+        "Керамика, керамогранит, стекло и известняк",
+        "Свежий бетон и асфальт"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/beton-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-kullanim.jpg",
+          "alt": "Алмазный отрезной диск по армированному бетону — применение"
+        },
+        {
+          "src": "assets/images/products/beton-elmas-kesme-diski/guclendirilmis-beton-icin-elmas-kesme-diski-400.webp",
+          "alt": "Алмазный отрезной диск по армированному бетону — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "1453-REIN350",
+          "urun_kodu": "1453/REIN350",
+          "daire_capi_mm": 350,
+          "gobek_capi_mm": 25.4,
+          "max_hiz_rpm": 4400,
+          "max_hiz_ms": 80,
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "1453-REIN400",
+          "urun_kodu": "1453/REIN400",
+          "daire_capi_mm": 400,
+          "gobek_capi_mm": 25.4,
+          "max_hiz_rpm": 3800,
+          "max_hiz_ms": 80,
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/beton-elmas-kesme-diski.pdf"
+    },
+    {
+      "id": "genel-amacli-elmas-kesme-diski",
+      "slug": "genel-amacli-elmas-kesme-diski",
+      "name": "Универсальный сегментный алмазный отрезной диск",
+      "categoryId": "elmas-kesici",
+      "categoryName": "Алмазные диски",
+      "featured": false,
+      "description": "Универсальный алмазный диск для резки различных строительных материалов на стройплощадках и объектах. Сегментная конструкция ускоряет охлаждение и отвод шлама, поддерживая высокую производительность.",
+      "features": [
+        "Возможность резки разных строительных материалов одним диском",
+        "Чистый рез на высокой скорости — технология Supercut",
+        "Долговечные алмазные сегменты Long Life",
+        "Компенсационные прорези предотвращают перегрев при интенсивной работе",
+        "Полная совместимость с профессиональными мощными резчиками"
+      ],
+      "applications": [
+        "Обычный бетон и слабоармированные строительные блоки",
+        "Кровельная черепица, кирпич и газобетонные материалы",
+        "Общестроительные работы",
+        "Твёрдые покрытия в ландшафтных и благоустроительных работах",
+        "Свежий бетон"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
+          "alt": "Универсальный сегментный алмазный отрезной диск — применение"
+        },
+        {
+          "src": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amaclı-kesici-diski.webp",
+          "alt": "Универсальный сегментный алмазный отрезной диск"
+        }
+      ],
+      "variants": [
+        {
+          "id": "GP-350",
+          "daire_capi_mm": 350,
+          "gobek_capi_mm": 25.4,
+          "max_hiz_rpm": 4400,
+          "max_hiz_ms": 80,
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "GP-400",
+          "daire_capi_mm": 400,
+          "gobek_capi_mm": 25.4,
+          "max_hiz_rpm": 3800,
+          "max_hiz_ms": 80,
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/genel-amacli-elmas-kesme-diski.pdf"
+    },
+    {
+      "id": "sds-plus-2-kesicili-beton-matkap-ucu",
+      "slug": "sds-plus-2-kesicili-beton-matkap-ucu",
+      "name": "Двухрезцовый бур SDS Plus по бетону",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": true,
+      "description": "Предназначен для высокопроизводительного ударного сверления бетона, кирпича и природного камня. Корпус из высококачественной стали 40Х и двухрезцовая головка с напайкой из твёрдого сплава ВК8 обеспечивают исключительную стойкость в тяжёлых условиях.",
+      "features": [
+        "Твердосплавная головка ВК8: острая геометрия для быстрого входа в твёрдый материал",
+        "Корпус из стали 40Х: высокая ударная прочность и эффективное гашение вибраций",
+        "Быстрый отвод пыли: увеличенные спиральные канавки снижают износ",
+        "Универсальная совместимость: подходит для инструмента всех марок с патроном SDS Plus",
+        "Профессиональное качество: высокая производительность в тяжёлых условиях стройплощадки"
+      ],
+      "applications": [
+        "Сверление обычного и лёгкого бетона, а также газобетонных стен",
+        "Полнотелый и пустотелый кирпич, кладочные блоки",
+        "Отверстия под дюбели и анкеры в природном камне, известняке и песчанике",
+        "Монтаж электрики, сантехники и систем кондиционирования"
+      ],
+      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-kullanim.webp",
+      "images": [
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu.webp",
+          "alt": "Двухрезцовый бур SDS Plus по бетону — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-kullanim.webp",
+          "alt": "Двухрезцовый бур SDS Plus по бетону — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "sds2-6-110",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 110,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-6-160",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-6-210",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-6-260",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-6-710",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 710,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-8-160",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 8,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-8-210",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 8,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-8-260",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 8,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-110",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 110,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-160",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-210",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-260",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-10-310",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 310,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-12-160",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-12-210",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-12-260",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-12-310",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 310,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-16-160",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 16,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-16-210",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 16,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds2-16-260",
+          "urun_tipi": "Двухрезцовый бур по бетону",
+          "cap_mm": 16,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/sds-plus-2-kesicili-beton-matkap-ucu.pdf"
+    },
+    {
+      "id": "sds-plus-4-kesicili-beton-matkap-ucu",
+      "slug": "sds-plus-4-kesicili-beton-matkap-ucu",
+      "name": "Четырёхрезцовый бур SDS Plus по бетону (Quadro)",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Разработан для высокопроизводительного сверления бетона, железобетона, природного камня, кирпича и стеновых блоков. Четырёхрезцовая геометрия Quadro с Х-образной головкой снижает риск заклинивания и поломки при контакте с арматурой.",
+      "features": [
+        "Головка Quadro предотвращает заклинивание при встрече с арматурой в железобетоне",
+        "Износостойкая высококачественная твердосплавная режущая пластина",
+        "Усиленная четырёхзаходная спираль для максимально эффективного отвода пыли",
+        "Полная совместимость со всеми перфораторами со стандартным патроном SDS Plus",
+        "Сбалансированный корпус снижает вибрацию и обеспечивает точное центрирование"
+      ],
+      "applications": [
+        "Сверление бетона, железобетона и промышленных полов",
+        "Природный камень, гранит, мрамор, кирпич и газобетонные блоки",
+        "Точное сверление отверстий под анкеры и дюбели",
+        "Строительные, электромонтажные, сантехнические и общие монтажные работы"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu.webp",
+          "alt": "Четырёхрезцовый бур SDS Plus по бетону (Quadro) — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-kullanim.webp",
+          "alt": "Четырёхрезцовый бур SDS Plus по бетону (Quadro) — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "sds4-6-110",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 110,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-6-160",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-6-210",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-6-260",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-6-710",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 6,
+          "toplam_uzunluk_mm": 710,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-8-160",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 8,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-8-210",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 8,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-8-260",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 8,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-10-110",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 110,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-10-160",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-10-210",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-10-260",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-10-310",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 10,
+          "toplam_uzunluk_mm": 310,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-12-160",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-12-210",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-12-260",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-12-310",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 12,
+          "toplam_uzunluk_mm": 310,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-16-160",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 16,
+          "toplam_uzunluk_mm": 160,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-16-210",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 16,
+          "toplam_uzunluk_mm": 210,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sds4-16-260",
+          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "cap_mm": 16,
+          "toplam_uzunluk_mm": 260,
+          "baglanti_tipi": "SDS Plus",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/sds-plus-4-kesicili-beton-matkap-ucu.pdf"
+    },
+    {
+      "id": "hss-matkap-ucu",
+      "slug": "hss-matkap-ucu",
+      "name": "Сверло HSS по металлу",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Сверло из высококачественной быстрорежущей стали HSS для быстрого, точного и безопасного сверления железа, стали, чугуна, алюминия и других металлических сплавов. Оптимизированный угол заточки предотвращает увод и формирует чистое отверстие без заусенцев.",
+      "features": [
+        "Длительный ресурс благодаря быстрорежущей стали HSS",
+        "Гладкие спиральные канавки ускоряют отвод стружки",
+        "Специальное покрытие снижает трение и нагрев",
+        "Точное центрирование и лёгкое засверливание без дополнительного кернения",
+        "Полная совместимость со стандартными сверлильными патронами"
+      ],
+      "applications": [
+        "Сверление легированных и нелегированных сталей, чугуна и листового металла",
+        "Обработка цветных металлов: алюминия, меди и латуни",
+        "Промышленное производство, автосервис, металлообработка и сборочные цеха",
+        "Эффективное сверление твёрдых пластиков и древесины"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu.webp",
+          "alt": "Сверло HSS по металлу"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-kullanim.jpg",
+          "alt": "Сверло HSS по металлу — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "hss-6",
+          "urun_tipi": "Сверло HSS по металлу",
+          "cap_mm": 6,
+          "kullanim_yeri": "Металл",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "hss-8",
+          "urun_tipi": "Сверло HSS по металлу",
+          "cap_mm": 8,
+          "kullanim_yeri": "Металл",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "hss-10",
+          "urun_tipi": "Сверло HSS по металлу",
+          "cap_mm": 10,
+          "kullanim_yeri": "Металл",
+          "kutu_ici_adet": 5,
+          "koli_adet": null
+        },
+        {
+          "id": "hss-12",
+          "urun_tipi": "Сверло HSS по металлу",
+          "cap_mm": 12,
+          "kullanim_yeri": "Металл",
+          "kutu_ici_adet": 5,
+          "koli_adet": null
+        },
+        {
+          "id": "hss-14",
+          "urun_tipi": "Сверло HSS по металлу",
+          "cap_mm": 14,
+          "kullanim_yeri": "Металл",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "hss-16",
+          "urun_tipi": "Сверло HSS по металлу",
+          "cap_mm": 16,
+          "kullanim_yeri": "Металл",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "hss-18",
+          "urun_tipi": "Сверло HSS по металлу",
+          "cap_mm": 18,
+          "kullanim_yeri": "Металл",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/hss-matkap-ucu.pdf"
+    },
+    {
+      "id": "duz-keski-sds-plus",
+      "slug": "duz-keski-sds-plus",
+      "name": "Плоское зубило SDS Plus",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Предназначено для долбления, скалывания и штробления бетона, кирпича, природного камня и асфальта. Высококачественная легированная сталь с термическим упрочнением обеспечивает стойкость к излому и износу. Хвостовик SDS Plus подходит для широкого спектра работ — от лёгкой реставрации до демонтажа средней сложности.",
+      "features": [
+        "Оптимально для лёгких демонтажных и реставрационных работ",
+        "Закалённая сталь с высокой ударной прочностью и повышенной стойкостью к излому и изгибу",
+        "Хвостовик SDS Plus передаёт энергию без потерь и совместим с профессиональными перфораторами",
+        "Геометрия корпуса снижает вибрацию и препятствует заклиниванию в материале",
+        "Специальное покрытие надолго сохраняет форму режущей кромки"
+      ],
+      "applications": [
+        "Долбление, скалывание и выравнивание бетона, камня, кирпича и других стройматериалов",
+        "Штробление стен и полов под электрические, водопроводные и газовые коммуникации",
+        "Удаление старой плитки, керамики, раствора, эпоксидных покрытий и штукатурки",
+        "Строительство, ремонт, реставрация и перепланировка"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus.webp",
+          "alt": "Плоское зубило SDS Plus"
+        },
+        {
+          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-kullanim.jpg",
+          "alt": "Плоское зубило SDS Plus — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "duz-keski-sds-plus-v1",
+          "urun_tipi": "Плоское зубило",
+          "saft_mm": 14,
+          "uzunluk_mm": 250,
+          "uc_genisligi_mm": 20,
+          "baglanti_tipi": "SDS Plus",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "duz-keski-sds-plus-v2",
+          "urun_tipi": "Плоское зубило",
+          "saft_mm": 14,
+          "uzunluk_mm": 250,
+          "uc_genisligi_mm": 40,
+          "baglanti_tipi": "SDS Plus",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/duz-keski-sds-plus.pdf"
+    },
+    {
+      "id": "duz-keski-sds-max",
+      "slug": "duz-keski-sds-max",
+      "name": "Плоское зубило SDS Max",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Предназначено для долбления, скалывания и штробления бетона, кирпича, природного камня и асфальта. Высококачественная легированная сталь с термическим упрочнением обеспечивает стойкость к излому и износу. Хвостовик SDS Max рассчитан на широкий спектр тяжёлых демонтажных работ.",
+      "features": [
+        "Оптимально для тяжёлых демонтажных работ на стройплощадке",
+        "Закалённая сталь с высокой ударной прочностью и повышенной стойкостью к излому и изгибу",
+        "Хвостовик SDS Max передаёт энергию без потерь и совместим с профессиональными отбойными молотками",
+        "Геометрия корпуса снижает вибрацию и препятствует заклиниванию в материале",
+        "Специальное покрытие надолго сохраняет форму режущей кромки"
+      ],
+      "applications": [
+        "Долбление, скалывание и выравнивание бетона, камня, кирпича и других стройматериалов",
+        "Штробление стен и полов под электрические, водопроводные и газовые коммуникации",
+        "Удаление старой плитки, керамики, раствора, эпоксидных покрытий и штукатурки",
+        "Строительство, ремонт, реставрация и перепланировка"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max.webp",
+          "alt": "Плоское зубило SDS Max"
+        },
+        {
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-kullanim.jpg",
+          "alt": "Плоское зубило SDS Max — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "duz-keski-sds-max-v1",
+          "urun_tipi": "Плоское зубило",
+          "saft_mm": 18,
+          "uzunluk_mm": 400,
+          "uc_genisligi_mm": 25,
+          "baglanti_tipi": "SDS Max",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "duz-keski-sds-max-v2",
+          "urun_tipi": "Плоское зубило",
+          "saft_mm": 18,
+          "uzunluk_mm": 400,
+          "uc_genisligi_mm": 50,
+          "baglanti_tipi": "SDS Max",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "duz-keski-sds-max-v3",
+          "urun_tipi": "Плоское зубило",
+          "saft_mm": 18,
+          "uzunluk_mm": 600,
+          "uc_genisligi_mm": 25,
+          "baglanti_tipi": "SDS Max",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/duz-keski-sds-max.pdf"
+    },
+    {
+      "id": "sivri-uclu-keski-murc-sds-plus",
+      "slug": "sivri-uclu-keski-murc-sds-plus",
+      "name": "Пикообразное зубило SDS Plus",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Усиленное пикообразное зубило для разрушения и демонтажа твёрдых строительных материалов: бетона, кирпича и природного камня. Высококачественная сталь обеспечивает эффективное проникновение и износостойкость при интенсивной работе. Хвостовик SDS Plus передаёт ударную энергию непосредственно на остриё, повышая эффективность точечного разрушения.",
+      "features": [
+        "Усиленный профиль острия для тяжёлого демонтажа и разрушения",
+        "Стальной корпус с высокой ударной прочностью и стойкостью к излому",
+        "Оптимизированная геометрия для быстрого разрушения твёрдых материалов точечными ударами",
+        "Промышленный хвостовик SDS Plus сводит потери энергии к минимуму",
+        "Специальная термообработка сохраняет форму острия при длительной работе"
+      ],
+      "applications": [
+        "Долбление, разрушение и демонтаж бетонных, каменных и кирпичных конструкций",
+        "Удаление стяжки, разрушение асфальта и твёрдых покрытий",
+        "Фундаментные, подготовительные и земляные работы"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus.webp",
+          "alt": "Пикообразное зубило SDS Plus"
+        },
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kullanim.jpg",
+          "alt": "Пикообразное зубило SDS Plus — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "sivri-uclu-keski-murc-sds-plus-v1",
+          "urun_tipi": "Пикообразное зубило",
+          "saft_mm": 14,
+          "uzunluk_mm": 250,
+          "baglanti_tipi": "SDS Plus",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/sivri-uclu-keski-murc-sds-plus.pdf"
+    },
+    {
+      "id": "sivri-uclu-keski-murc-sds-max",
+      "slug": "sivri-uclu-keski-murc-sds-max",
+      "name": "Пикообразное зубило SDS Max",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Усиленное пикообразное зубило для разрушения и тяжёлого демонтажа бетона, кирпича и природного камня. Высококачественная сталь обеспечивает эффективное проникновение и износостойкость при интенсивной работе. Хвостовик SDS Max передаёт ударную энергию непосредственно на остриё, повышая эффективность точечного разрушения.",
+      "features": [
+        "Усиленный профиль острия для тяжёлого демонтажа и разрушения",
+        "Стальной корпус с высокой ударной прочностью и стойкостью к излому",
+        "Оптимизированная геометрия для быстрого разрушения твёрдых материалов точечными ударами",
+        "Промышленный хвостовик SDS Max сводит потери энергии к минимуму",
+        "Специальная термообработка сохраняет форму острия при длительной работе"
+      ],
+      "applications": [
+        "Долбление, разрушение и демонтаж бетонных, каменных и кирпичных конструкций",
+        "Удаление стяжки, разрушение асфальта и твёрдых покрытий",
+        "Фундаментные, подготовительные и земляные работы",
+        "Строительство, реставрация и тяжёлые конструкционные работы"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max.webp",
+          "alt": "Пикообразное зубило SDS Max"
+        },
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max-kullanim.webp",
+          "alt": "Пикообразное зубило SDS Max — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "sivri-uclu-keski-murc-sds-max-v1",
+          "urun_tipi": "Пикообразное зубило",
+          "saft_mm": 18,
+          "uzunluk_mm": 400,
+          "baglanti_tipi": "SDS Max",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "sivri-uclu-keski-murc-sds-max-v2",
+          "urun_tipi": "Пикообразное зубило",
+          "saft_mm": 18,
+          "uzunluk_mm": 600,
+          "baglanti_tipi": "SDS Max",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/sivri-uclu-keski-murc-sds-max.pdf"
+    },
+    {
+      "id": "cam-seramik-matkap-ucu",
+      "slug": "cam-seramik-matkap-ucu",
+      "name": "Сверло по стеклу и керамике, четырёхрезцовое",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Специально разработано для получения чистых отверстий без сколов и трещин в керамике, плитке, керамограните, стекле, зеркалах и деликатных облицовочных материалах. Усиленная четырёхрезцовая крестообразная твердосплавная головка обеспечивает точное центрирование.",
+      "features": [
+        "Четырёхрезцовая крестообразная твердосплавная головка снижает риск растрескивания",
+        "Острое копьевидное остриё не требует дополнительного центрирующего приспособления",
+        "Специальная форма корпуса предотвращает перегрев и облегчает отвод шлама",
+        "Чистые отверстия без сколов даже на низких оборотах",
+        "Шестигранный хвостовик 1/4\" совместим с обычными и аккумуляторными шуруповёртами"
+      ],
+      "applications": [
+        "Сверление листового незакалённого стекла и зеркал",
+        "Керамика, плитка и керамогранит мягкой и средней твёрдости",
+        "Точное сверление настенной плитки при установке аксессуаров для ванной и кухни",
+        "Обработка керамических изделий, черепицы и декоративной плитки"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu.webp",
+          "alt": "Сверло по стеклу и керамике, четырёхрезцовое"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kutu.jpg",
+          "alt": "Сверло по стеклу и керамике, четырёхрезцовое — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kullanim.jpg",
+          "alt": "Сверло по стеклу и керамике, четырёхрезцовое — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cam-4",
+          "cap_mm": 4,
+          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cam-5",
+          "cap_mm": 5,
+          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cam-6",
+          "cap_mm": 6,
+          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cam-8",
+          "cap_mm": 8,
+          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cam-10",
+          "cap_mm": 10,
+          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cam-12",
+          "cap_mm": 12,
+          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "kutu_ici_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/cam-seramik-matkap-ucu.pdf"
+    },
+    {
+      "id": "sds-max-burc-aleti",
+      "slug": "sds-max-burc-aleti",
+      "name": "Бучарда SDS Max",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Инструмент для шерохования бетонных, каменных и асфальтовых поверхностей, удаления старых покрытий и насечки. Высококачественные зубья из карбида вольфрама обеспечивают отличную производительность даже на особо твёрдом бетоне и природном камне.",
+      "features": [
+        "Износостойкие твердосплавные зубья",
+        "Хвостовик SDS Max обеспечивает максимальную передачу энергии",
+        "Усиленный стальной корпус с повышенной ударной прочностью",
+        "Оптимальное шерохование для повышения адгезии поверхности",
+        "Быстрое снятие материала при низком износе"
+      ],
+      "applications": [
+        "Шерохование бетона, асфальта и природного камня",
+        "Удаление старой штукатурки, краски, смол и покрытий",
+        "Создание противоскользящей насечки на ступенях и полах",
+        "Промышленная подготовка поверхностей и реставрационные работы"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti.webp",
+          "alt": "Бучарда SDS Max"
+        },
+        {
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-tarakli-murc-kullanim.jpg",
+          "alt": "Бучарда SDS Max — применение"
+        },
+        {
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti2.webp",
+          "alt": "Бучарда SDS Max — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "burc-45",
+          "baglanti_tipi": "SDS MAX",
+          "kafa_olcusu_mm": "45x45",
+          "uzunluk_mm": 240,
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/sds-max-burc-aleti.pdf"
+    },
+    {
+      "id": "miknatisli-anahtar-ucu",
+      "slug": "miknatisli-anahtar-ucu",
+      "name": "Магнитная торцевая насадка",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Высокопроизводительная магнитная торцевая насадка для электрических и аккумуляторных шуруповёртов. Изготовлена из легированной стали CR40. Мощный магнит центрирует и надёжно удерживает гайки и болты.",
+      "features": [
+        "Износостойкий корпус из стали CR40 для тяжёлых работ",
+        "Мощный магнитный сердечник надёжно удерживает болты и гайки",
+        "Стойкая к высокому крутящему моменту конструкция, предотвращающая деформацию",
+        "Стандартный шестигранный хвостовик 1/4\" совместим со всеми шуруповёртами",
+        "Точно обработанные грани не повреждают крепёж"
+      ],
+      "applications": [
+        "Монтаж профнастила, сэндвич-панелей и кровельных покрытий",
+        "Сборка металлоконструкций, фасадных систем и лесов",
+        "Автосервис, машиностроительная сборка и ремонтные мастерские",
+        "Серийный монтаж шестигранных саморезов и гаек"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu.webp",
+          "alt": "Магнитная торцевая насадка"
+        },
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kullanim.jpg",
+          "alt": "Магнитная торцевая насадка — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "ank-8",
+          "urun_tipi": "Магнитная торцевая насадка",
+          "olcu_cap_mm": 8,
+          "olcu_uzunluk_mm": 48,
+          "malzeme": "Сталь CR40",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "ank-10",
+          "urun_tipi": "Магнитная торцевая насадка",
+          "olcu_cap_mm": 10,
+          "olcu_uzunluk_mm": 48,
+          "malzeme": "Сталь CR40",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/miknatisli-anahtar-ucu.pdf"
+    },
+    {
+      "id": "ph2-manyetik-bits-uc",
+      "slug": "ph2-manyetik-bits-uc",
+      "name": "Магнитная бита PH2",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Высокопроизводительная магнитная бита для интенсивной профессиональной работы с аккумуляторными и сетевыми шуруповёртами. Изготовлена из высококачественной промышленной легированной стали S2+ и обладает максимальной стойкостью к износу и разрушению при высоком крутящем моменте.",
+      "features": [
+        "Гибкая и прочная инструментальная сталь S2+ для тяжёлых работ",
+        "Мощный магнит центрирует и надёжно удерживает винты",
+        "Корпус оптимизирован для передачи высокого крутящего момента и ударных нагрузок",
+        "Точно фрезерованный профиль PH2 идеально сопрягается с головкой винта",
+        "Универсальная совместимость со стандартными держателями бит"
+      ],
+      "applications": [
+        "Деревообработка, изготовление и сборка мебели",
+        "Монтаж гипсокартона, ДСП и металлических профилей",
+        "Автосервис, ремонт бытовой техники и оборудования",
+        "Общестроительные, реставрационные и отделочные работы"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc.webp",
+          "alt": "Магнитная бита PH2 — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kullanim.jpg",
+          "alt": "Магнитная бита PH2 — применение"
+        }
+      ],
+      "variants": [
+        {
+          "id": "bits-25",
+          "urun_tipi": "Магнитная бита",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 25,
+          "malzeme": "Сталь S2+",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "bits-50",
+          "urun_tipi": "Магнитная бита",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 50,
+          "malzeme": "Сталь S2+",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "bits-75",
+          "urun_tipi": "Магнитная бита",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 75,
+          "malzeme": "Сталь S2+",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "bits-100",
+          "urun_tipi": "Магнитная бита",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 100,
+          "malzeme": "Сталь S2+",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        },
+        {
+          "id": "bits-150",
+          "urun_tipi": "Магнитная бита",
+          "uc_tipi": "PH2",
+          "uzunluk_mm": 150,
+          "malzeme": "Сталь S2+",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/ph2-manyetik-bits-uc.pdf"
+    },
+    {
+      "id": "profesyonel-maket-bicagi",
+      "slug": "profesyonel-maket-bicagi",
+      "name": "Профессиональные строительные ножи и сменные лезвия",
+      "categoryId": "olcum-kesim",
+      "categoryName": "Рулетки и строительные ножи",
+      "featured": false,
+      "description": "Профессиональные ножи для точной и безопасной резки картона, кожи, ковролина, гипсокартона, теплоизоляции и других материалов. Сменные лезвия из высокоуглеродистой стали SK5 отличаются высокой остротой и длительным ресурсом.",
+      "features": [
+        "Система Auto-Lock надёжно фиксирует лезвие на выбранной длине",
+        "Двухкомпонентная рукоятка ABS + резина не скользит во влажной или пыльной среде",
+        "Встроенный паз в задней крышке для безопасного обламывания затупившегося сегмента",
+        "Сменные лезвия из стали SK5 с лазерной заточкой"
+      ],
+      "applications": [
+        "Резка гипсокартона, декоративных плит, утеплителя и пенополистирола",
+        "Вскрытие коробок и упаковочной ленты на складах и в логистике",
+        "Резка ковролина, ПВХ-покрытий, линолеума и кожи",
+        "Поклейка обоев, рукоделие и повседневные офисные задачи",
+        "Зачистка кабеля и общие электромонтажные и ремонтные работы"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-metal-maket-bicagi-kullanim.jpg",
+          "alt": "Профессиональные строительные ножи и сменные лезвия — применение"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-plastik-maket-bicagi-kullanim.jpg",
+          "alt": "Профессиональные строительные ножи и сменные лезвия — применение"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag.webp",
+          "alt": "Профессиональные строительные ножи и сменные лезвия"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag2.webp",
+          "alt": "Профессиональные строительные ножи и сменные лезвия — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag3.webp",
+          "alt": "Профессиональные строительные ножи и сменные лезвия — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag4.webp",
+          "alt": "Профессиональные строительные ножи и сменные лезвия — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag5.webp",
+          "alt": "Профессиональные строительные ножи и сменные лезвия — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicag6.webp",
+          "alt": "Профессиональные строительные ножи и сменные лезвия — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/profesyonel-maket-bicagi/profesyonel-maket-bicagi7.webp",
+          "alt": "Профессиональные строительные ножи и сменные лезвия — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "maket-sari",
+          "urun_tipi": "Строительный нож (жёлто-чёрный)",
+          "bicak_genisligi_mm": 18,
+          "govde_kizak_tipi": "Обрезиненный корпус ABS + металлическая направляющая",
+          "bicak_malzemesi": "Сталь SK5",
+          "kutu_ici_adet": null,
+          "koli_adet": null
+        },
+        {
+          "id": "maket-kirmizi",
+          "urun_tipi": "Строительный нож (красно-чёрный)",
+          "bicak_genisligi_mm": 18,
+          "govde_kizak_tipi": "Обрезиненный корпус ABS + металлическая направляющая",
+          "bicak_malzemesi": "Сталь SK5",
+          "kutu_ici_adet": null,
+          "koli_adet": null
+        },
+        {
+          "id": "maket-mavi",
+          "urun_tipi": "Строительный нож (сине-чёрный)",
+          "bicak_genisligi_mm": 18,
+          "govde_kizak_tipi": "Обрезиненный корпус ABS + металлическая направляющая",
+          "bicak_malzemesi": "Сталь SK5",
+          "kutu_ici_adet": null,
+          "koli_adet": null
+        },
+        {
+          "id": "maket-yedek",
+          "urun_tipi": "Сменные лезвия для строительного ножа (в тубе)",
+          "bicak_genisligi_mm": 18,
+          "govde_kizak_tipi": "10 сменных лезвий в тубе",
+          "bicak_malzemesi": "Сталь SK5",
+          "kutu_ici_adet": 10,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/profesyonel-maket-bicagi.pdf"
+    },
+    {
+      "id": "abs-govdeli-profesyonel-serit-metre",
+      "slug": "abs-govdeli-profesyonel-serit-metre",
+      "name": "Профессиональная рулетка в корпусе ABS",
+      "categoryId": "olcum-kesim",
+      "categoryName": "Рулетки и строительные ножи",
+      "featured": false,
+      "description": "Профессиональная рулетка для высокоточных измерений в строительстве, производстве и ремонте. Прочный корпус из ABS имеет резиновое покрытие TPR. Матовое покрытие ленты устраняет блики и сохраняет чёткость шкалы в течение длительного срока службы.",
+      "features": [
+        "Эргономичный ударопоглощающий двухкомпонентный корпус ABS + TPR для тяжёлых условий",
+        "Матовая износостойкая лента без бликов повышает читаемость шкалы",
+        "Подвижный зацеп True-Zero автоматически компенсирует внутренние и наружные измерения",
+        "Мощный нескользящий фиксатор надёжно удерживает ленту на выбранной длине",
+        "Нержавеющая поясная клипса и ремешок для удобной переноски"
+      ],
+      "applications": [
+        "Строительные, архитектурные и инженерные измерения",
+        "Деревообработка, столярные работы и мебельное производство",
+        "Монтаж гипсокартона и керамики, металлообработка и отделка",
+        "Общие ремонтные и измерительные работы дома, в офисе и мастерской"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre.webp",
+          "alt": "Профессиональная рулетка в корпусе ABS"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre-kullanim.webp",
+          "alt": "Профессиональная рулетка в корпусе ABS — применение"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre2.webp",
+          "alt": "Профессиональная рулетка в корпусе ABS — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre3.webp",
+          "alt": "Профессиональная рулетка в корпусе ABS — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre4.webp",
+          "alt": "Профессиональная рулетка в корпусе ABS — изображение изделия"
+        },
+        {
+          "src": "assets/images/products/abs-govdeli-profesyonel-serit-metre/abs-govdeli-profesyonel-serit-metre5.webp",
+          "alt": "Профессиональная рулетка в корпусе ABS — изображение изделия"
+        }
+      ],
+      "variants": [
+        {
+          "id": "metre-3m",
+          "urun_tipi": "Рулетка",
+          "uzunluk_m": 3,
+          "serit_genisligi_mm": 16,
+          "kasa_malzemesi": "ABS + резина",
+          "kutu_ici_adet": 12,
+          "koli_adet": null
+        },
+        {
+          "id": "metre-5m-19",
+          "urun_tipi": "Рулетка",
+          "uzunluk_m": 5,
+          "serit_genisligi_mm": 19,
+          "kasa_malzemesi": "ABS + резина",
+          "kutu_ici_adet": 12,
+          "koli_adet": null
+        },
+        {
+          "id": "metre-5m-25",
+          "urun_tipi": "Рулетка",
+          "uzunluk_m": 5,
+          "serit_genisligi_mm": 25,
+          "kasa_malzemesi": "ABS + резина",
+          "kutu_ici_adet": 12,
+          "koli_adet": null
+        },
+        {
+          "id": "metre-8m",
+          "urun_tipi": "Рулетка",
+          "uzunluk_m": 8,
+          "serit_genisligi_mm": 25,
+          "kasa_malzemesi": "ABS + резина",
+          "kutu_ici_adet": 12,
+          "koli_adet": null
+        },
+        {
+          "id": "metre-10m",
+          "urun_tipi": "Рулетка",
+          "uzunluk_m": 10,
+          "serit_genisligi_mm": 25,
+          "kasa_malzemesi": "ABS + резина",
+          "kutu_ici_adet": 12,
+          "koli_adet": null
+        }
+      ],
+      "technicalCatalog": "assets/documents/products/abs-govdeli-profesyonel-serit-metre.pdf"
+    }
+  ]
+};

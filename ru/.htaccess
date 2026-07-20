@@ -1,0 +1,8 @@
+# Russian locale subtree only — do not alter site-root .htaccess
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /ru/
+
+  # Canonical home: /ru/index.html → /ru/
+  RewriteRule ^index\.html$ /ru/ [R=301,L]
+</IfModule>

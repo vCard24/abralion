@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark-theme dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Ваш запрос цены принят. Специалисты Abralion обычно связываются с клиентом в течение 24 часов.">
+  <link rel="canonical" href="https://abralion.com/ru/spasibo.html">
+  <link rel="alternate" hreflang="tr" href="https://abralion.com/teklif-tesekkur.html">
+  <link rel="alternate" hreflang="ru" href="https://abralion.com/ru/spasibo.html">
+  <link rel="alternate" hreflang="x-default" href="https://abralion.com/teklif-tesekkur.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Abralion">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:url" content="https://abralion.com/ru/spasibo.html">
+  <meta property="og:title" content="Ваш запрос принят — Abralion">
+  <meta property="og:description" content="Ваш запрос цены принят. Специалисты Abralion обычно связываются с клиентом в течение 24 часов.">
+  <meta property="og:image" content="https://abralion.com/assets/images/abralion-disc.webp">
+  <title>Ваш запрос принят — Abralion</title>
+  <link rel="stylesheet" href="assets/css/bundle.min.css?v=80401e34">
+<link rel="icon" href="assets/images/arma.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=44521c46">
+<link rel="stylesheet" href="assets/css/quote-form.css?v=b3030681">
+</head>
+<body class="page-quote bg-carbon-black text-on-surface font-body-md antialiased min-h-screen flex flex-col dark-theme">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-abrasive-red focus:text-white focus:rounded">Перейти к содержанию</a>
+<div class="lang-switcher"><span class="lang-btn lang-btn--active">RU</span><a href="https://abralion.com/teklif-tesekkur.html" class="lang-btn" hreflang="tr" aria-label="Турецкая версия">TR</a></div>
+<main id="main-content" class="flex-1 flex items-center justify-center px-margin-mobile py-16">
+    <div class="quote-form-panel rounded-xl p-8 md:p-12 max-w-xl w-full text-center space-y-6">
+      <div class="quote-thank-you-icon mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-500/15">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" class="text-5xl text-green-400"><path d="M10.6 16.6 L17.65 9.55 L16.25 8.15 L10.6 13.8 L7.75 10.95 L6.35 12.35 L10.6 16.6 ZM12 22 Q9.925 22 8.1 21.212 T4.925 19.075 Q3.575 17.725 2.788 15.9 T2 12 Q2 9.925 2.788 8.1 T4.925 4.925 Q6.275 3.575 8.1 2.788 T12 2 Q14.075 2 15.9 2.788 T19.075 4.925 Q20.425 6.275 21.212 8.1 T22 12 Q22 14.075 21.212 15.9 T19.075 19.075 Q17.725 20.425 15.9 21.212 T12 22 ZM12 20 Q15.35 20 17.675 17.675 T20 12 Q20 8.65 17.675 6.325 T12 4 Q8.65 4 6.325 6.325 T4 12 Q4 15.35 6.325 17.675 T12 20 ZM12 12 Z"/></svg>
+      </div>
+      <h1 class="font-headline-md text-headline-md text-white m-0">Ваш запрос принят</h1>
+      <p class="text-on-surface-variant m-0" id="tesekkur-message">Запрос зарегистрирован. Наши специалисты обычно связываются с вами в течение 24 часов.</p>
+      <p class="text-steel-gray text-sm m-0" id="tesekkur-ref"></p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+        <a href="/ru/" class="inline-flex items-center justify-center bg-abrasive-red text-white px-8 py-3 font-label-caps text-label-caps uppercase hover:brightness-110 transition-all">Вернуться на главную</a>
+        <a href="zapros-tseny.html" class="inline-flex items-center justify-center quote-btn-outline py-3 px-8">Новый запрос</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var data = null;
+      try {
+        data = JSON.parse(sessionStorage.getItem('abralion_quote_last_submit') || 'null');
+      } catch (e) {}
+      if (data && data.name) {
+        document.getElementById('tesekkur-message').textContent =
+          'Спасибо, ' + data.name + '. Ваш запрос зарегистрирован; наши специалисты обычно свяжутся с вами в течение 24 часов.';
+      }
+      if (data && data.reference) {
+        document.getElementById('tesekkur-ref').textContent = 'Номер обращения: ' + data.reference;
+      }
+    })();
+  </script>
+</body>
+</html>
