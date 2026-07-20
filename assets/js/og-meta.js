@@ -3,7 +3,7 @@
  */
 (function () {
   const SITE_ORIGIN = 'https://abralion.com';
-  const DEFAULT_IMAGE = `${SITE_ORIGIN}/assets/images/og-share.jpg`;
+  const DEFAULT_IMAGE = `${SITE_ORIGIN}/assets/images/og-share.jpg?v=2`;
 
   function toAbsoluteUrl(path, base) {
     if (!path) return DEFAULT_IMAGE;

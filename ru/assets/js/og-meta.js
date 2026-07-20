@@ -21,7 +21,7 @@
   }
 
   const SITE_ORIGIN = resolveSiteOrigin();
-  const DEFAULT_IMAGE = 'https://abralion.com/assets/images/og-share.jpg';
+  const DEFAULT_IMAGE = 'https://abralion.com/assets/images/og-share.jpg?v=2';
 
   function toAbsoluteUrl(path, base) {
     if (!path) return DEFAULT_IMAGE;

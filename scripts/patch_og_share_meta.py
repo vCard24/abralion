@@ -12,14 +12,34 @@ IMAGES = ROOT / "assets" / "images"
 PRODUCTS = IMAGES / "products"
 SHARE = IMAGES / "og-share.jpg"
 SITE = "https://abralion.com"
-DEFAULT_OG = f"{SITE}/assets/images/og-share.jpg"
+DEFAULT_OG = f"{SITE}/assets/images/og-share.jpg?v=2"
+OG_CACHE = "v=2"
 BG = (18, 20, 20)
 W, H = 1200, 630
 
 SKIP_NAMES = {"google", "yandex"}
 
 
-def fit_on_canvas(src: Image.Image, width: int = W, height: int = H, pad: float = 0.86) -> Image.Image:
+def fit_cover(src: Image.Image, width: int = W, height: int = H) -> Image.Image:
+    """Scale (up or down) and center-crop to exactly width x height."""
+    img = src.convert("RGBA") if src.mode in ("RGBA", "P") else src.convert("RGB")
+    if img.mode == "RGBA":
+        base = Image.new("RGB", img.size, BG)
+        base.paste(img, mask=img.split()[-1])
+        img = base
+    else:
+        img = img.convert("RGB")
+    scale = max(width / img.width, height / img.height)
+    new_w = max(width, int(round(img.width * scale)))
+    new_h = max(height, int(round(img.height * scale)))
+    img = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+    left = (img.width - width) // 2
+    top = (img.height - height) // 2
+    return img.crop((left, top, left + width, top + height))
+
+
+def fit_contain(src: Image.Image, width: int = W, height: int = H, pad: float = 0.92) -> Image.Image:
+    """Scale (up or down) to fit inside canvas with small padding."""
     canvas = Image.new("RGB", (width, height), BG)
     img = src.convert("RGBA") if src.mode in ("RGBA", "P") else src.convert("RGB")
     if img.mode == "RGBA":
@@ -29,7 +49,10 @@ def fit_on_canvas(src: Image.Image, width: int = W, height: int = H, pad: float 
     else:
         img = img.convert("RGB")
     max_w, max_h = int(width * pad), int(height * pad)
-    img.thumbnail((max_w, max_h), Image.Resampling.LANCZOS)
+    scale = min(max_w / img.width, max_h / img.height)
+    new_w = max(1, int(round(img.width * scale)))
+    new_h = max(1, int(round(img.height * scale)))
+    img = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
     x = (width - img.width) // 2
     y = (height - img.height) // 2
     canvas.paste(img, (x, y))
@@ -38,49 +61,53 @@ def fit_on_canvas(src: Image.Image, width: int = W, height: int = H, pad: float 
 
 def make_share_image() -> None:
     disc = Image.open(IMAGES / "abralion-disc.webp")
-    out = fit_on_canvas(disc, pad=0.78)
-    # subtle top accent bar
-    accent = Image.new("RGB", (width := W, 6), (196, 30, 58))
+    out = fit_contain(disc, pad=0.9)
+    accent = Image.new("RGB", (W, 6), (196, 30, 58))
     out.paste(accent, (0, 0))
     SHARE.parent.mkdir(parents=True, exist_ok=True)
-    out.save(SHARE, "JPEG", quality=88, optimize=True)
+    out.save(SHARE, "JPEG", quality=90, optimize=True)
     print(f"Wrote {SHARE.relative_to(ROOT)} ({SHARE.stat().st_size} bytes)")
 
 
 def product_source(folder: Path, slug: str) -> Path | None:
+    """Pick a large hero/usage photo — never tiny -kart/-card/-og thumbs."""
+    skip_bits = ("-og.", "-kart.", "-card.", "-menu-thumb", "-thumb")
     preferred = [
-        folder / f"{slug}-og.jpg",
-        folder / f"{slug}-kart.jpg",
-        folder / f"{slug}.jpg",
-        folder / f"{slug}.png",
+        folder / f"{slug}-kullanim.jpg",
+        folder / f"{slug}-kullanim.png",
+        folder / f"{slug}-kullanim.webp",
         folder / f"{slug}.webp",
+        folder / f"{slug}.png",
+        folder / f"{slug}.jpg",
     ]
     for p in preferred:
-        if p.exists():
+        if p.exists() and p.stat().st_size > 20000:
             return p
-    # any png/jpg then webp
-    for pattern in ("*.jpg", "*.jpeg", "*.png", "*.webp"):
-        hits = sorted(folder.glob(pattern))
-        if hits:
-            return hits[0]
-    return None
+    candidates: list[Path] = []
+    for pattern in ("*.webp", "*.png", "*.jpg", "*.jpeg"):
+        for p in folder.glob(pattern):
+            name = p.name.lower()
+            if any(bit in name for bit in skip_bits):
+                continue
+            if p.stat().st_size < 15000:
+                continue
+            candidates.append(p)
+    if not candidates:
+        return None
+    # Prefer largest file (usually full hero)
+    return max(candidates, key=lambda p: p.stat().st_size)
 
 
-def ensure_product_og_jpg(folder: Path, slug: str) -> Path | None:
+def ensure_product_og_jpg(folder: Path, slug: str, force: bool = True) -> Path | None:
     og_path = folder / f"{slug}-og.jpg"
-    if og_path.exists() and og_path.stat().st_size > 5000:
-        return og_path
     src = product_source(folder, slug)
     if not src:
-        return None
-    # Prefer existing non-webp raster if already good enough for OG URL
-    if src.suffix.lower() in {".jpg", ".jpeg", ".png"} and src.name != og_path.name:
-        # Still generate consistent 1200x630 for scrapers
-        img = Image.open(src)
-        fit_on_canvas(img).save(og_path, "JPEG", quality=88, optimize=True)
+        return og_path if og_path.exists() else None
+    if not force and og_path.exists() and og_path.stat().st_size > 40000:
         return og_path
     img = Image.open(src)
-    fit_on_canvas(img).save(og_path, "JPEG", quality=88, optimize=True)
+    fit_cover(img).save(og_path, "JPEG", quality=90, optimize=True)
+    print(f"  OG {slug}: {src.name} {img.size} -> {og_path.name}")
     return og_path
 
 
@@ -187,7 +214,7 @@ def is_product_page(path: Path) -> bool:
 
 
 def product_og_url(slug: str) -> str:
-    return f"{SITE}/assets/images/products/{slug}/{slug}-og.jpg"
+    return f"{SITE}/assets/images/products/{slug}/{slug}-og.jpg?{OG_CACHE}"
 
 
 def patch_html(path: Path) -> bool:
@@ -285,12 +312,11 @@ def patch_og_meta_js() -> None:
 
 def main() -> None:
     make_share_image()
-    # Pre-generate all product OG JPGs
     n_prod = 0
     for folder in sorted(PRODUCTS.iterdir()):
         if not folder.is_dir():
             continue
-        if ensure_product_og_jpg(folder, folder.name):
+        if ensure_product_og_jpg(folder, folder.name, force=True):
             n_prod += 1
     print(f"Product OG JPGs ready: {n_prod}")
 
@@ -303,7 +329,6 @@ def main() -> None:
             print(path.relative_to(ROOT))
     patch_template()
     patch_og_meta_js()
-    # Mirror share image into ru/assets for local parity (meta still uses root URL)
     ru_share = ROOT / "ru" / "assets" / "images" / "og-share.jpg"
     if SHARE.exists():
         ru_share.parent.mkdir(parents=True, exist_ok=True)
