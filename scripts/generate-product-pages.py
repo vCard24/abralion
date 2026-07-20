@@ -27,9 +27,9 @@ def load_catalog():
 
 def product_og_image(product):
     slug = product["slug"]
-    og = ROOT / "assets" / "images" / "products" / slug / f"{slug}-og.jpg"
+    og = ROOT / "assets" / "images" / "products" / slug / f"{slug}-wa.jpg"
     if og.exists():
-        return f"{SITE_ORIGIN}/assets/images/products/{slug}/{slug}-og.jpg"
+        return f"{SITE_ORIGIN}/assets/images/products/{slug}/{slug}-wa.jpg"
     images = product.get("images") or []
     for img in images:
         src = (img.get("src") or "").lstrip("/")
@@ -38,7 +38,7 @@ def product_og_image(product):
     if images and images[0].get("src"):
         src = images[0]["src"].lstrip("/")
         return f"{SITE_ORIGIN}/{src}"
-    return f"{SITE_ORIGIN}/assets/images/og-share.jpg"
+    return f"{SITE_ORIGIN}/assets/images/og-default.jpg"
 
 
 def product_og_image_alt(product):

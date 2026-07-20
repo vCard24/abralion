@@ -10,10 +10,9 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 IMAGES = ROOT / "assets" / "images"
 PRODUCTS = IMAGES / "products"
-SHARE = IMAGES / "og-share.jpg"
+SHARE = IMAGES / "og-default.jpg"
 SITE = "https://abralion.com"
-DEFAULT_OG = f"{SITE}/assets/images/og-share.jpg?v=2"
-OG_CACHE = "v=2"
+DEFAULT_OG = f"{SITE}/assets/images/og-default.jpg"
 BG = (18, 20, 20)
 W, H = 1200, 630
 
@@ -70,8 +69,8 @@ def make_share_image() -> None:
 
 
 def product_source(folder: Path, slug: str) -> Path | None:
-    """Pick a large hero/usage photo — never tiny -kart/-card/-og thumbs."""
-    skip_bits = ("-og.", "-kart.", "-card.", "-menu-thumb", "-thumb")
+    """Pick a large hero/usage photo — never tiny thumbs or generated OG."""
+    skip_bits = ("-og.", "-wa.", "-share.", "-kart.", "-card.", "-menu-thumb", "-thumb")
     preferred = [
         folder / f"{slug}-kullanim.jpg",
         folder / f"{slug}-kullanim.png",
@@ -94,20 +93,19 @@ def product_source(folder: Path, slug: str) -> Path | None:
             candidates.append(p)
     if not candidates:
         return None
-    # Prefer largest file (usually full hero)
     return max(candidates, key=lambda p: p.stat().st_size)
 
 
 def ensure_product_og_jpg(folder: Path, slug: str, force: bool = True) -> Path | None:
-    og_path = folder / f"{slug}-og.jpg"
+    og_path = folder / f"{slug}-wa.jpg"
     src = product_source(folder, slug)
     if not src:
         return og_path if og_path.exists() else None
     if not force and og_path.exists() and og_path.stat().st_size > 40000:
         return og_path
     img = Image.open(src)
-    fit_cover(img).save(og_path, "JPEG", quality=90, optimize=True)
-    print(f"  OG {slug}: {src.name} {img.size} -> {og_path.name}")
+    fit_cover(img).save(og_path, "JPEG", quality=88, optimize=True)
+    print(f"  WA {slug}: {src.name} {img.size} -> {og_path.name} ({og_path.stat().st_size}b)")
     return og_path
 
 
@@ -214,7 +212,7 @@ def is_product_page(path: Path) -> bool:
 
 
 def product_og_url(slug: str) -> str:
-    return f"{SITE}/assets/images/products/{slug}/{slug}-og.jpg?{OG_CACHE}"
+    return f"{SITE}/assets/images/products/{slug}/{slug}-wa.jpg"
 
 
 def patch_html(path: Path) -> bool:
@@ -234,10 +232,18 @@ def patch_html(path: Path) -> bool:
         image_url = DEFAULT_OG
 
     new_text = replace_og_image_block(text, image_url, alt)
-    # Also catch any leftover abralion-disc.webp in twitter/og
-    new_text = new_text.replace(
+    # Also catch any leftover abralion-disc / old og-share / ?v=2 urls
+    for old in (
         f"{SITE}/assets/images/abralion-disc.webp",
-        DEFAULT_OG,
+        f"{SITE}/assets/images/og-share.jpg",
+        f"{SITE}/assets/images/og-share.jpg?v=2",
+    ):
+        new_text = new_text.replace(old, DEFAULT_OG)
+    # Migrate old product -og.jpg?v=2 to -wa.jpg
+    new_text = re.sub(
+        rf"{re.escape(SITE)}/assets/images/products/([^/]+)/\1-og\.jpg(?:\?v=\d+)?",
+        rf"{SITE}/assets/images/products/\1/\1-wa.jpg",
+        new_text,
     )
     if new_text == text:
         return False
@@ -270,44 +276,27 @@ def patch_template() -> None:
 
 
 def patch_og_meta_js() -> None:
-    js = ROOT / "assets" / "js" / "og-meta.js"
-    text = js.read_text(encoding="utf-8")
-    text2 = text.replace(
-        "assets/images/abralion-disc.webp",
-        "assets/images/og-share.jpg",
-    )
-    # Prefer jpg/png candidates before webp in productOgImage
-    old = """  function productOgImage(product, base) {
-    const slug = product.slug;
-    const candidates = [];
-    if (product.images?.[0]?.src) candidates.push(product.images[0].src);
-    candidates.push(`assets/images/products/${slug}/${slug}-kart.jpg`);
-    for (const src of candidates) {
-      const url = toAbsoluteUrl(src, base);
-      if (url && url !== DEFAULT_IMAGE) return url;
-    }
-    return toAbsoluteUrl(candidates[0], base);
-  }"""
-    new = """  function productOgImage(product, base) {
-    const slug = product.slug;
-    const candidates = [];
-    candidates.push(`assets/images/products/${slug}/${slug}-og.jpg`);
-    candidates.push(`assets/images/products/${slug}/${slug}-kart.jpg`);
-    if (product.images?.[0]?.src) candidates.push(product.images[0].src);
-    candidates.push(`assets/images/products/${slug}/${slug}.jpg`);
-    candidates.push(`assets/images/products/${slug}/${slug}.png`);
-    candidates.push(`assets/images/products/${slug}/${slug}.webp`);
-    for (const src of candidates) {
-      const url = toAbsoluteUrl(src, base);
-      if (url && url !== DEFAULT_IMAGE) return url;
-    }
-    return DEFAULT_IMAGE;
-  }"""
-    if old in text2:
-        text2 = text2.replace(old, new)
-    if text2 != text:
-        js.write_text(text2, encoding="utf-8", newline="\n")
-        print(f"Updated {js.relative_to(ROOT)}")
+    for js in (ROOT / "assets" / "js" / "og-meta.js", ROOT / "ru" / "assets" / "js" / "og-meta.js"):
+        if not js.exists():
+            continue
+        text = js.read_text(encoding="utf-8")
+        text2 = text
+        for old, new in (
+            ("assets/images/abralion-disc.webp", "assets/images/og-default.jpg"),
+            ("assets/images/og-share.jpg?v=2", "assets/images/og-default.jpg"),
+            ("assets/images/og-share.jpg", "assets/images/og-default.jpg"),
+            ("/${slug}-og.jpg", "/${slug}-wa.jpg"),
+            ("/${slug}-og.jpg?v=2", "/${slug}-wa.jpg"),
+        ):
+            text2 = text2.replace(old, new)
+        # Prefer wa.jpg first in candidates
+        text2 = text2.replace(
+            "`assets/images/products/${slug}/${slug}-og.jpg`",
+            "`assets/images/products/${slug}/${slug}-wa.jpg`",
+        )
+        if text2 != text:
+            js.write_text(text2, encoding="utf-8", newline="\n")
+            print(f"Updated {js.relative_to(ROOT)}")
 
 
 def main() -> None:
@@ -329,7 +318,7 @@ def main() -> None:
             print(path.relative_to(ROOT))
     patch_template()
     patch_og_meta_js()
-    ru_share = ROOT / "ru" / "assets" / "images" / "og-share.jpg"
+    ru_share = ROOT / "ru" / "assets" / "images" / "og-default.jpg"
     if SHARE.exists():
         ru_share.parent.mkdir(parents=True, exist_ok=True)
         ru_share.write_bytes(SHARE.read_bytes())
