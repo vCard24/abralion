@@ -117,9 +117,9 @@ window.parseModelsFromUrl = function (search) {
 window.buildQuotePageUrl = function (keys, base) {
   const root = base != null ? base : getBasePath();
   const list = Array.isArray(keys) ? keys.filter(Boolean).slice(0, 4) : [];
-  if (!list.length) return `${root}zapros-tseny.html?kaynak=karsilastir&from=compare`;
+  if (!list.length) return `${root}fiyat-teklifi.html?kaynak=karsilastir&from=compare`;
   const models = encodeCompareKeysForUrl(list);
-  return `${root}zapros-tseny.html?kaynak=karsilastir&from=compare&models=${models}`;
+  return `${root}fiyat-teklifi.html?kaynak=karsilastir&from=compare&models=${models}`;
 };
 
 window.isQuoteFromCompare = function (search) {
@@ -162,18 +162,14 @@ window.navigateToQuotePage = function (keys, base) {
 
 /** PDF indirme dosya adi — ic metadata yerine okunabilir ad */
 window.sanitizeDownloadLabel = function (label) {
-  const fallback =
-    typeof t === 'function' ? t('document.defaultLabel') : 'document.defaultLabel';
-  return (label || fallback)
+  return (label || 'Dokuman')
     .replace(/[\\/:*?"<>|]/g, '-')
     .replace(/\s+/g, ' ')
     .trim();
 };
 
-window.documentDownloadFilename = function (label, suffix) {
-  const defaultSuffix =
-    typeof t === 'function' ? t('document.technicalSuffix') : 'document.technicalSuffix';
-  return `${sanitizeDownloadLabel(label)} ${suffix || defaultSuffix}.pdf`;
+window.documentDownloadFilename = function (label, suffix = 'teknik döküman') {
+  return `${sanitizeDownloadLabel(label)} ${suffix}.pdf`;
 };
 
 /** Tum PDF linklerini yeni sekmede ac */
@@ -205,6 +201,25 @@ window.productMenuThumbUrl = function (base, product) {
   return `${root}assets/images/products/${slug}/${slug}-menu-thumb.webp`;
 };
 
+/** Mega menü sağ önizleme — uygulama / kullanım fotoğrafı (kart paketi değil) */
+window.productFeatureImageUrl = function (base, product) {
+  const slug = product?.slug || product?.id || '';
+  const root = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
+  const custom = product?.applicationImage;
+  if (custom && typeof buildSingleImageCandidates === 'function') {
+    const list = buildSingleImageCandidates(custom, root);
+    if (list?.[0]) return list[0];
+  }
+  if (custom) {
+    const rel = String(custom).replace(/^\//, '');
+    return `${root}${rel}`.replace(/([^:]\/)\/+/g, '$1');
+  }
+  if (slug) {
+    return `${root}assets/images/products/${slug}/${slug}-kullanim.webp`;
+  }
+  return typeof productThumbUrl === 'function' ? productThumbUrl(root, product) : '';
+};
+
 /** Footer sosyal — +7 985 789-60-62 */
 const FOOTER_SOCIAL_PHONE = '79857896062';
 
@@ -230,21 +245,11 @@ function initFooterCerts() {
   const wrap = document.createElement('div');
   wrap.className = 'footer-cert';
   wrap.setAttribute('role', 'group');
-  wrap.setAttribute('aria-label', typeof t === 'function' ? t('certification.badges') : 'certification.badges');
+  wrap.setAttribute('aria-label', 'Sertifikasyon işaretleri');
 
   [
-    {
-      src: 'mpa-logo.svg',
-      alt: typeof t === 'function' ? t('certification.mpa') : 'certification.mpa',
-      width: 82,
-      height: 29,
-    },
-    {
-      src: 'eac-logo.svg',
-      alt: typeof t === 'function' ? t('certification.eac') : 'certification.eac',
-      width: 29,
-      height: 29,
-    },
+    { src: 'mpa-logo.svg', alt: 'MPA Hannover', width: 82, height: 29 },
+    { src: 'eac-logo.svg', alt: 'EAC uygunluk işareti', width: 29, height: 29 },
   ].forEach(({ src, alt, width, height }) => {
     const img = document.createElement('img');
     img.src = `${base}assets/images/${src}`;
@@ -263,13 +268,7 @@ function findFooterContactSection() {
   const sections = document.querySelectorAll('.footer .footer-section');
   for (const section of sections) {
     const h3 = section.querySelector('h3');
-    if (
-      h3 &&
-      (h3.textContent.trim() === 'İletişim' ||
-        h3.textContent.trim() === 'Контакты' ||
-        h3.textContent.trim() ===
-          (typeof t === 'function' ? t('quote.document.contact') : ''))
-    ) {
+    if (h3 && h3.textContent.trim() === 'İletişim') {
       return section;
     }
   }
@@ -405,12 +404,10 @@ function initWhatsAppFloat() {
 /** Form gönderimi — Hostinger PHP (api/send-mail.php) */
 window.sendFormMail = async function sendFormMail(payload) {
   if (window.location.protocol === 'file:') {
-    throw new Error(
-      typeof t === 'function' ? t('form.submit.fileOnly') : 'form.submit.fileOnly'
-    );
+    throw new Error('Form gönderimi yalnızca canlı web sitesinden yapılabilir.');
   }
-  // Always use apex API — RU lives under /ru/ and must not POST to /ru/api/.
-  const response = await fetch('/api/send-mail.php', {
+  const base = getBasePath();
+  const response = await fetch(`${base}api/send-mail.php`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify(payload),
@@ -422,10 +419,7 @@ window.sendFormMail = async function sendFormMail(payload) {
     /* ignore */
   }
   if (!response.ok || !data.ok) {
-    throw new Error(
-      data.error ||
-        (typeof t === 'function' ? t('form.submit.mailError') : 'form.submit.mailError')
-    );
+    throw new Error(data.error || 'E-posta gönderilemedi. Lütfen tekrar deneyin.');
   }
   return data;
 };

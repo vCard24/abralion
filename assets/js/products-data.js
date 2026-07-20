@@ -885,7 +885,7 @@ window.ABRALION_CATALOG = {
         "Peyzaj ve çevre düzenleme işlerinde sert zemin materyalleri",
         "Taze beton"
       ],
-      "applicationImage": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
+      "applicationImage": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-uygulama.webp",
       "images": [
         {
           "src": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
@@ -939,7 +939,7 @@ window.ABRALION_CATALOG = {
         "Doğal taş, kireçtaşı ve kumtaşında dübel ve ankraj delikleri",
         "Elektrik, su tesisatı, klima montajı işleri"
       ],
-      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-kullanim.webp",
+      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-uygulama.webp",
       "images": [
         {
           "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu.webp",

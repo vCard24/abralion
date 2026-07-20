@@ -883,7 +883,7 @@ window.ABRALION_CATALOG = {
         "Твёрдые покрытия в ландшафтных и благоустроительных работах",
         "Свежий бетон"
       ],
-      "applicationImage": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
+      "applicationImage": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-uygulama.webp",
       "images": [
         {
           "src": "assets/images/products/genel-amacli-elmas-kesme-diski/genel-amacli-elmas-kesme-diski-kullanim.webp",
@@ -937,7 +937,7 @@ window.ABRALION_CATALOG = {
         "Отверстия под дюбели и анкеры в природном камне, известняке и песчанике",
         "Монтаж электрики, сантехники и систем кондиционирования"
       ],
-      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-kullanim.webp",
+      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-uygulama.webp",
       "images": [
         {
           "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu.webp",

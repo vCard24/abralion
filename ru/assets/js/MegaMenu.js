@@ -24,7 +24,10 @@ function buildProductColumns(base, items) {
             typeof productMenuThumbUrl === 'function'
               ? productMenuThumbUrl(base, p)
               : productThumbUrl(base, p);
-          const featureSrc = productThumbUrl(base, p);
+          const featureSrc =
+            typeof productFeatureImageUrl === 'function'
+              ? productFeatureImageUrl(base, p)
+              : productThumbUrl(base, p);
           const short = p.name.length > 42 ? `${p.name.slice(0, 40)}…` : p.name;
           return `<li>
             <a href="${productUrl(p.slug)}" class="mega-menu-product-link"
@@ -149,13 +152,7 @@ async function buildMegaMenu() {
   try {
     let data = window.ABRALION_CATALOG;
     if (!data?.products) {
-      const catalogRel =
-        typeof getCatalogDataPath === 'function'
-          ? getCatalogDataPath()
-          : document.documentElement.lang?.toLowerCase().startsWith('ru')
-            ? 'data/products-ru.json'
-            : 'data/products.json';
-      const res = await fetch(new URL(`${base}${catalogRel}`, window.location.href).href);
+      const res = await fetch(new URL(`${base}data/products.json`, window.location.href).href);
       if (!res.ok) throw new Error('fetch failed');
       data = await res.json();
     }
@@ -168,9 +165,13 @@ async function buildMegaMenu() {
     categories.forEach((cat, index) => {
       const isFirst = index === 0;
       const items = data.products.filter((p) => p.categoryId === cat.id);
-      const catHref = `${base}produkty.html?kategori=${encodeURIComponent(cat.id)}`;
+      const catHref = `${base}urunler.html?kategori=${encodeURIComponent(cat.id)}`;
       const featured = items[0];
-      const featuredThumb = featured ? productThumbUrl(base, featured) : '';
+      const featuredThumb = featured
+        ? typeof productFeatureImageUrl === 'function'
+          ? productFeatureImageUrl(base, featured)
+          : productThumbUrl(base, featured)
+        : '';
       const featuredHref = featured ? productUrl(featured.slug) : catHref;
 
       tabsHtml += `<li>
@@ -200,48 +201,63 @@ async function buildMegaMenu() {
 
     container.innerHTML = `<li class="mega-menu-root">
       <div class="mega-menu-layout">
-        <ul class="mega-menu-tabs" role="tablist" aria-label="${typeof t === 'function' ? t('menu.productCategories') : 'menu.productCategories'}">${tabsHtml}</ul>
+        <ul class="mega-menu-tabs" role="tablist" aria-label="Ürün kategorileri">${tabsHtml}</ul>
         <div class="mega-menu-panels">${panelsHtml}</div>
       </div>
     </li>`;
 
     const bindMegaMenuAfterPaint = () => {
-      const images = container.querySelectorAll(
-        '.mega-menu-product-thumb img, .mega-menu-feature img'
-      );
-      const bindMegaMenuImage = (img, product) => {
+      const root = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
+
+      container.querySelectorAll('.mega-menu-product-thumb img').forEach((img) => {
+        const link = img.closest('.mega-menu-product-link');
+        const slugMatch = link?.getAttribute('href')?.match(/\/([^/]+)\.html$/);
+        const slug = slugMatch?.[1];
+        const product = slug ? data.products.find((p) => p.slug === slug) : null;
+        if (!product) return;
         const menuRel = `assets/images/products/${product.slug}/${product.slug}-menu-thumb.webp`;
-        const kartRel = `assets/images/products/${product.slug}/${product.slug}-kart.jpg`;
         if (typeof bindGalleryImageFallback === 'function') {
           bindGalleryImageFallback(img, menuRel, base);
           return;
         }
         if (window.ABRALION_IMAGE?.bindImageFallbackChain) {
-          const root = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
+          const kartRel = `assets/images/products/${product.slug}/${product.slug}-kart.jpg`;
           const candidates = [`${root}${menuRel}`, `${root}${kartRel}`].map((u) =>
             u.replace(/([^:]\/)\/+/g, '$1')
           );
           window.ABRALION_IMAGE.bindImageFallbackChain(img, candidates);
-          return;
         }
-        if (typeof bindProductImageFallback === 'function') {
-          bindProductImageFallback(img, product, base);
-        }
-      };
+      });
 
-      images.forEach((img) => {
-        const link = img.closest('.mega-menu-product-link, .mega-menu-feature');
-        const slugMatch = link?.getAttribute('href')?.match(/\/([^/]+)\.html$/);
+      container.querySelectorAll('.mega-menu-feature img').forEach((img) => {
+        const feature = img.closest('.mega-menu-feature');
+        const slugMatch = feature?.getAttribute('href')?.match(/\/([^/]+)\.html$/);
         const slug = slugMatch?.[1];
         const product = slug ? data.products.find((p) => p.slug === slug) : null;
-        if (product) {
-          bindMegaMenuImage(img, product);
-          return;
+        if (!product) return;
+        const featureSrc =
+          typeof productFeatureImageUrl === 'function'
+            ? productFeatureImageUrl(base, product)
+            : productThumbUrl(base, product);
+        const candidates = [];
+        if (product.applicationImage && typeof buildSingleImageCandidates === 'function') {
+          buildSingleImageCandidates(product.applicationImage, base).forEach((u) => {
+            if (u && !candidates.includes(u)) candidates.push(u);
+          });
+        } else if (featureSrc) {
+          candidates.push(featureSrc);
         }
-        img.addEventListener('error', () => {
-          const wrap = img.closest('.mega-menu-product-thumb') || img.closest('.mega-menu-feature');
-          wrap?.classList.add('is-missing');
+        const kullanim = `${root}assets/images/products/${product.slug}/${product.slug}-kullanim.webp`;
+        const kart = `${root}assets/images/products/${product.slug}/${product.slug}-kart.jpg`;
+        [kullanim, kart].forEach((u) => {
+          const n = u.replace(/([^:]\/)\/+/g, '$1');
+          if (!candidates.includes(n)) candidates.push(n);
         });
+        if (window.ABRALION_IMAGE?.bindImageFallbackChain) {
+          window.ABRALION_IMAGE.bindImageFallbackChain(img, candidates);
+        } else if (candidates[0]) {
+          img.src = candidates[0];
+        }
       });
 
       initMegaMenuInteraction(container);
@@ -253,7 +269,7 @@ async function buildMegaMenu() {
 
     requestAnimationFrame(bindMegaMenuAfterPaint);
   } catch (e) {
-    console.error(typeof t === 'function' ? t('menu.loadError') : 'menu.loadError', e);
+    console.error('Mega menü yüklenemedi', e);
   }
 }
 

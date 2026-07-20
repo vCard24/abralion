@@ -201,6 +201,25 @@ window.productMenuThumbUrl = function (base, product) {
   return `${root}assets/images/products/${slug}/${slug}-menu-thumb.webp`;
 };
 
+/** Mega menü sağ önizleme — uygulama / kullanım fotoğrafı (kart paketi değil) */
+window.productFeatureImageUrl = function (base, product) {
+  const slug = product?.slug || product?.id || '';
+  const root = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
+  const custom = product?.applicationImage;
+  if (custom && typeof buildSingleImageCandidates === 'function') {
+    const list = buildSingleImageCandidates(custom, root);
+    if (list?.[0]) return list[0];
+  }
+  if (custom) {
+    const rel = String(custom).replace(/^\//, '');
+    return `${root}${rel}`.replace(/([^:]\/)\/+/g, '$1');
+  }
+  if (slug) {
+    return `${root}assets/images/products/${slug}/${slug}-kullanim.webp`;
+  }
+  return typeof productThumbUrl === 'function' ? productThumbUrl(root, product) : '';
+};
+
 /** Footer sosyal — +7 985 789-60-62 */
 const FOOTER_SOCIAL_PHONE = '79857896062';
 
