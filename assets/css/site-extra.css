@@ -1875,3 +1875,31 @@ body.has-compare-bar {
     padding-bottom: 100px;
   }
 }
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: inherit;
+}
+
+.lang-btn {
+  padding: 3px 8px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  opacity: 0.6;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+  line-height: 1.2;
+}
+
+.lang-btn--active {
+  opacity: 1;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+}
