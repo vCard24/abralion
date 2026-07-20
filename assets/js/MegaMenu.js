@@ -28,10 +28,15 @@ function buildProductColumns(base, items) {
             typeof productFeatureImageUrl === 'function'
               ? productFeatureImageUrl(base, p)
               : productThumbUrl(base, p);
+          const featureCandidates =
+            typeof productFeatureImageCandidates === 'function'
+              ? productFeatureImageCandidates(base, p)
+              : [featureSrc].filter(Boolean);
           const short = p.name.length > 42 ? `${p.name.slice(0, 40)}…` : p.name;
           return `<li>
             <a href="${productUrl(p.slug)}" class="mega-menu-product-link"
               data-feature-src="${featureSrc}"
+              data-feature-candidates="${encodeURIComponent(JSON.stringify(featureCandidates))}"
               data-feature-name="${escapeHtml(p.name)}">
               <span class="mega-menu-product-thumb">
                 <img src="${thumb}" alt="" width="32" height="32" loading="lazy">
@@ -46,7 +51,7 @@ function buildProductColumns(base, items) {
     .join('');
 }
 
-function setPanelFeature(panel, src, href, name) {
+function setPanelFeature(panel, src, href, name, candidates) {
   const feature = panel?.querySelector('.mega-menu-feature');
   const img = feature?.querySelector('img');
   if (!feature || !img || !src) return;
@@ -55,20 +60,32 @@ function setPanelFeature(panel, src, href, name) {
     img.alt = name;
     feature.setAttribute('aria-label', name);
   }
-  if (img.src !== src) {
-    img.src = src;
-    feature.classList.remove('is-missing');
+  feature.classList.remove('is-missing');
+  const list = Array.isArray(candidates) && candidates.length ? candidates : [src];
+  if (window.ABRALION_IMAGE?.bindImageFallbackChain) {
+    img.removeAttribute('data-image-fallback-bound');
+    window.ABRALION_IMAGE.bindImageFallbackChain(img, list);
+    img.src = list[0];
+    return;
   }
+  if (img.src !== src) img.src = src;
 }
 
 function resetPanelFeature(panel) {
   const feature = panel?.querySelector('.mega-menu-feature');
   if (!feature) return;
+  let candidates = [];
+  try {
+    candidates = JSON.parse(decodeURIComponent(feature.dataset.defaultCandidates || '%5B%5D'));
+  } catch {
+    candidates = [];
+  }
   setPanelFeature(
     panel,
     feature.dataset.defaultSrc,
     feature.dataset.defaultHref,
-    feature.dataset.defaultName
+    feature.dataset.defaultName,
+    candidates
   );
   panel.querySelectorAll('.mega-menu-product-link.is-featured').forEach((el) => {
     el.classList.remove('is-featured');
@@ -87,11 +104,18 @@ function initPanelProductPreview(panel) {
         el.classList.remove('is-featured');
       });
       link.classList.add('is-featured');
+      let candidates = [];
+      try {
+        candidates = JSON.parse(decodeURIComponent(link.dataset.featureCandidates || '%5B%5D'));
+      } catch {
+        candidates = [];
+      }
       setPanelFeature(
         panel,
-        link.dataset.featureSrc || link.querySelector('img')?.src,
+        link.dataset.featureSrc || candidates[0] || link.querySelector('img')?.src,
         link.href,
-        link.dataset.featureName || link.querySelector('.mega-menu-product-name')?.textContent
+        link.dataset.featureName || link.querySelector('.mega-menu-product-name')?.textContent,
+        candidates
       );
     };
     link.addEventListener('mouseenter', show);
@@ -172,6 +196,11 @@ async function buildMegaMenu() {
           ? productFeatureImageUrl(base, featured)
           : productThumbUrl(base, featured)
         : '';
+      const featuredCandidates = featured
+        ? typeof productFeatureImageCandidates === 'function'
+          ? productFeatureImageCandidates(base, featured)
+          : [featuredThumb].filter(Boolean)
+        : [];
       const featuredHref = featured ? productUrl(featured.slug) : catHref;
 
       tabsHtml += `<li>
@@ -188,6 +217,7 @@ async function buildMegaMenu() {
             featured
               ? `<a href="${featuredHref}" class="mega-menu-feature"
                   data-default-src="${featuredThumb}"
+                  data-default-candidates="${encodeURIComponent(JSON.stringify(featuredCandidates))}"
                   data-default-href="${featuredHref}"
                   data-default-name="${escapeHtml(featured.name)}"
                   aria-label="${escapeHtml(featured.name)}">
@@ -235,26 +265,18 @@ async function buildMegaMenu() {
         const slug = slugMatch?.[1];
         const product = slug ? data.products.find((p) => p.slug === slug) : null;
         if (!product) return;
-        const featureSrc =
-          typeof productFeatureImageUrl === 'function'
-            ? productFeatureImageUrl(base, product)
-            : productThumbUrl(base, product);
-        const candidates = [];
-        if (product.applicationImage && typeof buildSingleImageCandidates === 'function') {
-          buildSingleImageCandidates(product.applicationImage, base).forEach((u) => {
-            if (u && !candidates.includes(u)) candidates.push(u);
-          });
-        } else if (featureSrc) {
-          candidates.push(featureSrc);
-        }
-        const kullanim = `${root}assets/images/products/${product.slug}/${product.slug}-kullanim.webp`;
-        const kart = `${root}assets/images/products/${product.slug}/${product.slug}-kart.jpg`;
-        [kullanim, kart].forEach((u) => {
-          const n = u.replace(/([^:]\/)\/+/g, '$1');
-          if (!candidates.includes(n)) candidates.push(n);
-        });
+        const candidates =
+          typeof productFeatureImageCandidates === 'function'
+            ? productFeatureImageCandidates(base, product)
+            : [
+                typeof productFeatureImageUrl === 'function'
+                  ? productFeatureImageUrl(base, product)
+                  : productThumbUrl(base, product),
+              ].filter(Boolean);
         if (window.ABRALION_IMAGE?.bindImageFallbackChain) {
+          img.removeAttribute('data-image-fallback-bound');
           window.ABRALION_IMAGE.bindImageFallbackChain(img, candidates);
+          if (candidates[0]) img.src = candidates[0];
         } else if (candidates[0]) {
           img.src = candidates[0];
         }

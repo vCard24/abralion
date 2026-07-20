@@ -201,23 +201,79 @@ window.productMenuThumbUrl = function (base, product) {
   return `${root}assets/images/products/${slug}/${slug}-menu-thumb.webp`;
 };
 
-/** Mega menü sağ önizleme — uygulama / kullanım fotoğrafı (kart paketi değil) */
+/** Mega menü sağ önizleme — uygulama görseli → galeri kullanım → kart */
 window.productFeatureImageUrl = function (base, product) {
   const slug = product?.slug || product?.id || '';
   const root = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
-  const custom = product?.applicationImage;
-  if (custom && typeof buildSingleImageCandidates === 'function') {
-    const list = buildSingleImageCandidates(custom, root);
-    if (list?.[0]) return list[0];
+  const join = (rel) => {
+    if (!rel) return '';
+    if (/^https?:\/\//i.test(rel) || rel.startsWith('data:')) return rel;
+    return `${root}${String(rel).replace(/^\//, '')}`.replace(/([^:]\/)\/+/g, '$1');
+  };
+
+  if (product?.applicationImage) {
+    return join(product.applicationImage);
   }
-  if (custom) {
-    const rel = String(custom).replace(/^\//, '');
-    return `${root}${rel}`.replace(/([^:]\/)\/+/g, '$1');
+
+  const images = product?.images || [];
+  const usage = images.find((img) => /kullanim|uygulama/i.test(img?.src || ''));
+  if (usage?.src) return join(usage.src);
+
+  const firstRaster = images.find((img) => /\.(jpe?g|png|webp)(\?|#|$)/i.test(img?.src || ''));
+  if (firstRaster?.src) return join(firstRaster.src);
+
+  if (typeof productThumbUrl === 'function') {
+    return productThumbUrl(root, product || { slug });
   }
+  if (slug) return join(`assets/images/products/${slug}/${slug}-kart.jpg`);
+  return '';
+};
+
+/** Mega menü feature adayları (kırık URL'de kart'a düşer) */
+window.productFeatureImageCandidates = function (base, product) {
+  const slug = product?.slug || product?.id || '';
+  const root = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
+  const seen = new Set();
+  const out = [];
+  const push = (url) => {
+    if (!url || seen.has(url)) return;
+    seen.add(url);
+    out.push(url);
+  };
+
+  const primary =
+    typeof productFeatureImageUrl === 'function'
+      ? productFeatureImageUrl(root, product)
+      : '';
+  push(primary);
+
+  if (product?.applicationImage && typeof buildSingleImageCandidates === 'function') {
+    buildSingleImageCandidates(product.applicationImage, root).forEach(push);
+  }
+
+  (product?.images || []).forEach((img) => {
+    const src = img?.src;
+    if (!src) return;
+    if (typeof buildSingleImageCandidates === 'function') {
+      buildSingleImageCandidates(src, root).forEach(push);
+    } else {
+      push(
+        `${root}${String(src).replace(/^\//, '')}`.replace(/([^:]\/)\/+/g, '$1')
+      );
+    }
+  });
+
   if (slug) {
-    return `${root}assets/images/products/${slug}/${slug}-kullanim.webp`;
+    push(`${root}assets/images/products/${slug}/${slug}-kullanim.webp`);
+    push(`${root}assets/images/products/${slug}/${slug}-kullanim.jpg`);
+    push(`${root}assets/images/products/${slug}/${slug}-kart.jpg`);
   }
-  return typeof productThumbUrl === 'function' ? productThumbUrl(root, product) : '';
+
+  if (typeof productThumbUrl === 'function') {
+    push(productThumbUrl(root, product || { slug }));
+  }
+
+  return out.filter(Boolean);
 };
 
 /** Footer sosyal — +7 985 789-60-62 */
