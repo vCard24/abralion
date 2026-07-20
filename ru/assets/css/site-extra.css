@@ -1882,6 +1882,7 @@ body.has-compare-bar {
   gap: 6px;
   font-size: 13px;
   font-weight: 600;
+  color: inherit;
 }
 
 .lang-btn {
@@ -1892,6 +1893,7 @@ body.has-compare-bar {
   text-decoration: none;
   color: inherit;
   transition: opacity 0.2s;
+  line-height: 1.2;
 }
 
 .lang-btn--active {
