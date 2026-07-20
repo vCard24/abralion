@@ -21,15 +21,20 @@
   }
 
   const SITE_ORIGIN = resolveSiteOrigin();
-  const DEFAULT_IMAGE = `${SITE_ORIGIN}/assets/images/abralion-disc.webp`;
+  const DEFAULT_IMAGE = 'https://abralion.com/assets/images/og-share.jpg';
 
   function toAbsoluteUrl(path, base) {
     if (!path) return DEFAULT_IMAGE;
     if (/^https?:\/\//i.test(path)) return path;
     const b = base != null ? base : typeof getBasePath === 'function' ? getBasePath() : '';
-    const normalized = path.replace(/^\//, '');
-    const combined = `${b}${normalized}`.replace(/\/+/g, '/');
+    const normalized = path.replace(/^\.\.\//, '').replace(/^\//, '');
+    // Product/share assets live at site root, not under /ru/
+    const rootOrigin = 'https://abralion.com';
+    const combined = `${b}${normalized}`.replace(/\/+/g, '/').replace(/^\//, '');
     try {
+      if (normalized.startsWith('assets/images/')) {
+        return new URL(normalized, `${rootOrigin}/`).href;
+      }
       return new URL(combined, `${SITE_ORIGIN}/`).href;
     } catch {
       return DEFAULT_IMAGE;
@@ -50,13 +55,17 @@
   function productOgImage(product, base) {
     const slug = product.slug;
     const candidates = [];
-    if (product.images?.[0]?.src) candidates.push(product.images[0].src);
+    candidates.push(`assets/images/products/${slug}/${slug}-og.jpg`);
     candidates.push(`assets/images/products/${slug}/${slug}-kart.jpg`);
+    if (product.images?.[0]?.src) candidates.push(product.images[0].src);
+    candidates.push(`assets/images/products/${slug}/${slug}.jpg`);
+    candidates.push(`assets/images/products/${slug}/${slug}.png`);
+    candidates.push(`assets/images/products/${slug}/${slug}.webp`);
     for (const src of candidates) {
       const url = toAbsoluteUrl(src, base);
       if (url && url !== DEFAULT_IMAGE) return url;
     }
-    return toAbsoluteUrl(candidates[0], base);
+    return DEFAULT_IMAGE;
   }
 
   /**
