@@ -3,7 +3,7 @@
  */
 (function () {
   const SITE_ORIGIN = 'https://abralion.com';
-  const DEFAULT_IMAGE = `${SITE_ORIGIN}/assets/images/og-default.jpg`;
+  const DEFAULT_IMAGE = `${SITE_ORIGIN}/assets/images/og-cover.jpg`;
 
   function toAbsoluteUrl(path, base) {
     if (!path) return DEFAULT_IMAGE;
@@ -32,7 +32,7 @@
   function productOgImage(product, base) {
     const slug = product.slug;
     const candidates = [];
-    candidates.push(`assets/images/products/${slug}/${slug}-wa.jpg`);
+    candidates.push(`assets/images/products/${slug}/${slug}-cover.jpg`);
     candidates.push(`assets/images/products/${slug}/${slug}-kart.jpg`);
     if (product.images?.[0]?.src) candidates.push(product.images[0].src);
     candidates.push(`assets/images/products/${slug}/${slug}.jpg`);
