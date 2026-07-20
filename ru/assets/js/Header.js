@@ -29,7 +29,7 @@ class Header {
     li.className = 'header-nav-compare md:hidden';
     li.innerHTML = `
       <a href="${href}" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
-        ${typeof t === 'function' ? t('compare.nav') : 'compare.nav'}
+        ${typeof t === 'function' ? t('compare.nav') : 'Сравнение'}
         <span class="compare-badge bg-surface-container-highest px-1.5 rounded text-xs font-bold"${badge?.style.display === 'none' ? ' style="display: none;"' : ''}>${count}</span>
       </a>`;
     navList.appendChild(li);
@@ -43,8 +43,27 @@ class Header {
     });
   }
 
+  ensureQuoteNavLink() {
+    const navList = document.querySelector('.header-nav-list');
+    if (!navList || navList.querySelector('.header-nav-quote')) return;
+
+    const cta = document.querySelector('.header-cta-btn');
+    const base = typeof getBasePath === 'function' ? getBasePath() : '';
+    const href = cta?.getAttribute('href') || `${base}zapros-tseny.html`;
+    const label = (cta?.textContent || 'Запрос цены').trim() || 'Запрос цены';
+
+    const li = document.createElement('li');
+    li.className = 'header-nav-quote md:hidden';
+    li.innerHTML = `
+      <a href="${href}" class="header-nav-link font-body-md text-body-md text-on-surface-variant transition-colors">
+        ${label}
+      </a>`;
+    navList.appendChild(li);
+  }
+
   init() {
     this.ensureCompareNavLink();
+    this.ensureQuoteNavLink();
     this.ensureBackdrop();
     this.setupMobileNavPortal();
     this.setupMobileMenu();

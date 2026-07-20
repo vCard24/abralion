@@ -576,6 +576,13 @@ header.header .header-compare-link {
   white-space: nowrap;
 }
 
+/* Tailwind hidden lg:inline-flex was overridden by !important above — restore mobile hide */
+@media (max-width: 1023px) {
+  header.header .header-compare-link {
+    display: none !important;
+  }
+}
+
 @media (max-width: 480px) {
   header.header .header-compare-link {
     font-size: 0;
@@ -604,6 +611,50 @@ header.header .header-cta-btn {
   text-transform: uppercase;
   border-radius: 0.5rem;
   white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  header.header .header-container {
+    gap: 0.75rem;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  header.header .header-brand-nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  header.header .header-logo-link {
+    max-width: 100%;
+  }
+
+  header.header .header-logo {
+    height: 2.5rem;
+    max-width: min(148px, 42vw);
+    width: auto;
+    object-fit: contain;
+  }
+
+  header.header .header-actions {
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  header.header .header-cta-btn {
+    display: none !important;
+  }
+
+  .lang-switcher {
+    gap: 4px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .lang-btn {
+    padding: 2px 6px;
+  }
 }
 
 header.header .compare-badge {
