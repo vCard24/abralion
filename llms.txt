@@ -9,6 +9,7 @@ Abralion; teknik özellikleri, varyasyonları ve uygulama alanları açıklanmı
 - [Teknik dokümanlar](https://abralion.com/dokumanlar.html): Katalog ve teknik dosyalar.
 - [Hakkımızda](https://abralion.com/hakkimizda.html): EKS-PLAST LLC ve Abralion bilgileri.
 - [İletişim](https://abralion.com/iletisim.html): Telefon, e-posta ve teklif kanalları.
+- [Русская версия](https://abralion.com/ru/): Русскоязычный каталог Abralion.
 
 ## Kategoriler
 - [Kesici - Taşlama - Flap Disk](https://abralion.com/urunler.html?kategori=kesici-taslama-flap-disk)
@@ -48,5 +49,7 @@ Abralion; teknik özellikleri, varyasyonları ve uygulama alanları açıklanmı
 - Web: https://abralion.com/
 
 ## Tarama kaynakları
-- Sitemap: https://abralion.com/sitemap.xml
+- Sitemap (TR): https://abralion.com/sitemap.xml
+- Sitemap (RU): https://abralion.com/ru/sitemap.xml
 - Robots: https://abralion.com/robots.txt
+- LLMs (RU): https://abralion.com/ru/llms.txt
