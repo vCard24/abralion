@@ -9,8 +9,10 @@
   RewriteEngine On
   RewriteBase /
 
-  # Tek kanonik ana sayfa: /index.html → /
-  RewriteRule ^index\.html$ / [R=301,L]
+  # Varsayılan dil: kök → Rusça ana sayfa
+  RewriteRule ^$ /ru/ [R=301,L]
+
+  # Türkçe ana sayfa /index.html üzerinde kalır (TR switcher döngüye girmez)
 </IfModule>
 
 # Doğru Content-Type (AVIF/WebP text/plain olarak sunulmasın)
