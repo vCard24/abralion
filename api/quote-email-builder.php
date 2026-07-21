@@ -128,7 +128,11 @@ function abr_quote_product_cards(array $data): string
 
         $category = trim((string) ($row['categoryName'] ?? ''));
         $description = trim((string) ($row['description'] ?? ''));
-        if (strlen($description) > 220) {
+        if (function_exists('mb_strlen') && function_exists('mb_substr')) {
+            if (mb_strlen($description, 'UTF-8') > 220) {
+                $description = mb_substr($description, 0, 217, 'UTF-8') . '…';
+            }
+        } elseif (strlen($description) > 220) {
             $description = substr($description, 0, 217) . '…';
         }
 

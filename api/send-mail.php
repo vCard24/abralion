@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/quote-email-builder.php';
 
+if (function_exists('mb_internal_encoding')) {
+    mb_internal_encoding('UTF-8');
+}
+
 header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -167,15 +171,17 @@ function sendMail(array $config, string $to, string $subject, string $body, stri
         return;
     }
 
+    $encoded = encodeTransferBody($body);
     $headers = implode("\r\n", [
         'MIME-Version: 1.0',
         'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: ' . $encoded['encoding'],
         'From: ' . encodeAddress($fromName, $from),
         'Reply-To: ' . $replyTo,
         'X-Mailer: Abralion-Forms',
     ]);
 
-    if (!@mail($to, encodeHeader($subject), $body, $headers)) {
+    if (!@mail($to, encodeHeader($subject), $encoded['body'], $headers)) {
         throw new RuntimeException('mail() başarısız.');
     }
 }
@@ -223,17 +229,35 @@ function sendHtmlMail(
 function buildMultipartBody(string $plainBody, string $htmlBody): array
 {
     $boundary = 'abr_' . bin2hex(random_bytes(8));
+    $plainEnc = encodeTransferBody($plainBody);
+    $htmlEnc = encodeTransferBody($htmlBody);
     $body = '--' . $boundary . "\r\n"
         . "Content-Type: text/plain; charset=UTF-8\r\n"
-        . "Content-Transfer-Encoding: 8bit\r\n\r\n"
-        . $plainBody . "\r\n\r\n"
+        . "Content-Transfer-Encoding: {$plainEnc['encoding']}\r\n\r\n"
+        . $plainEnc['body'] . "\r\n"
         . '--' . $boundary . "\r\n"
         . "Content-Type: text/html; charset=UTF-8\r\n"
-        . "Content-Transfer-Encoding: 8bit\r\n\r\n"
-        . $htmlBody . "\r\n\r\n"
+        . "Content-Transfer-Encoding: {$htmlEnc['encoding']}\r\n\r\n"
+        . $htmlEnc['body'] . "\r\n"
         . '--' . $boundary . '--';
 
     return ['boundary' => $boundary, 'body' => $body];
+}
+
+/** @return array{encoding:string,body:string} */
+function encodeTransferBody(string $text): array
+{
+    // Cyrillic / UTF-8 güvenli aktarım: 8bit yerine quoted-printable veya base64
+    if (function_exists('quoted_printable_encode')) {
+        $encoded = quoted_printable_encode($text);
+        $encoded = str_replace(["\r\n", "\r", "\n"], ["\r\n", "\r\n", "\r\n"], $encoded);
+        return ['encoding' => 'quoted-printable', 'body' => $encoded];
+    }
+
+    return [
+        'encoding' => 'base64',
+        'body' => rtrim(chunk_split(base64_encode($text), 76, "\r\n")),
+    ];
 }
 
 function saveOutboxMail(array $config, string $subject, string $body, string $boundary): void
@@ -344,7 +368,7 @@ function smtpSendRaw(
     cmd($socket, 'RCPT TO:<' . $to . '>', [250, 251]);
     cmd($socket, 'DATA', [354]);
 
-    $message = implode("\r\n", [
+    $headers = [
         'Date: ' . date('r'),
         'To: <' . $to . '>',
         'From: ' . encodeAddress($fromName, $from),
@@ -352,11 +376,18 @@ function smtpSendRaw(
         'Subject: ' . encodeHeader($subject),
         'MIME-Version: 1.0',
         'Content-Type: ' . $contentType,
-        'Content-Transfer-Encoding: 8bit',
-        '',
-        $body,
-        '.',
-    ]);
+    ];
+    // multipart dış zarfta CTE olmamalı; tek parça metinde QP kullan
+    if (!str_starts_with(strtolower($contentType), 'multipart/')) {
+        $encoded = encodeTransferBody($body);
+        $headers[] = 'Content-Transfer-Encoding: ' . $encoded['encoding'];
+        $body = $encoded['body'];
+    }
+
+    // SMTP DATA: satır başındaki '.' kaçışı
+    $stuffedBody = preg_replace('/^\./m', '..', $body) ?? $body;
+
+    $message = implode("\r\n", $headers) . "\r\n\r\n" . $stuffedBody . "\r\n.";
 
     fwrite($socket, $message . "\r\n");
     expectLine($socket, [250]);
@@ -388,14 +419,25 @@ function expectLine($socket, array $okCodes): string
 
 function encodeAddress(string $name, string $email): string
 {
-    $safeName = str_replace(['"', "\r", "\n"], '', $name);
+    $safeName = str_replace(["\r", "\n"], '', $name);
+    if ($safeName === '') {
+        return '<' . $email . '>';
+    }
+    if (preg_match('/[^\x20-\x7E]/', $safeName)) {
+        return encodeHeader($safeName) . ' <' . $email . '>';
+    }
+    $safeName = str_replace('"', '', $safeName);
     return sprintf('"%s" <%s>', $safeName, $email);
 }
 
 function encodeHeader(string $text): string
 {
+    $text = str_replace(["\r", "\n"], '', $text);
+    if ($text === '' || !preg_match('/[^\x20-\x7E]/', $text)) {
+        return $text;
+    }
     if (function_exists('mb_encode_mimeheader')) {
         return mb_encode_mimeheader($text, 'UTF-8', 'B', "\r\n");
     }
-    return $text;
+    return '=?UTF-8?B?' . base64_encode($text) . '?=';
 }
