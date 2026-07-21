@@ -117,9 +117,9 @@ window.parseModelsFromUrl = function (search) {
 window.buildQuotePageUrl = function (keys, base) {
   const root = base != null ? base : getBasePath();
   const list = Array.isArray(keys) ? keys.filter(Boolean).slice(0, 4) : [];
-  if (!list.length) return `${root}fiyat-teklifi.html?kaynak=karsilastir&from=compare`;
+  if (!list.length) return `${root}zapros-tseny.html?kaynak=karsilastir&from=compare`;
   const models = encodeCompareKeysForUrl(list);
-  return `${root}fiyat-teklifi.html?kaynak=karsilastir&from=compare&models=${models}`;
+  return `${root}zapros-tseny.html?kaynak=karsilastir&from=compare&models=${models}`;
 };
 
 window.isQuoteFromCompare = function (search) {
