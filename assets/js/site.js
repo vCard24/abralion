@@ -457,13 +457,20 @@ function initWhatsAppFloat() {
   document.body.appendChild(link);
 }
 
-/** Form gönderimi — Hostinger PHP (api/send-mail.php) */
+/** Form gönderimi — Hostinger PHP (site kökü /api/send-mail.php; /ru/ altından da aynı) */
+window.getMailApiUrl = function getMailApiUrl() {
+  try {
+    return new URL('/api/send-mail.php', window.location.origin).href;
+  } catch {
+    return '/api/send-mail.php';
+  }
+};
+
 window.sendFormMail = async function sendFormMail(payload) {
   if (window.location.protocol === 'file:') {
     throw new Error('Form gönderimi yalnızca canlı web sitesinden yapılabilir.');
   }
-  const base = getBasePath();
-  const response = await fetch(`${base}api/send-mail.php`, {
+  const response = await fetch(getMailApiUrl(), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify(payload),
