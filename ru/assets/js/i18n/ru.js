@@ -277,6 +277,13 @@ window.I18N_MESSAGES.ru = {
   'spec.paket_icerigi': 'Комплектация',
   'spec.serit_genisligi': 'Ширина ленты',
   'spec.kasa_malzemesi': 'Материал корпуса',
+  'spec.tel_tipi': 'Тип проволоки',
+  'spec.max_hiz': 'Максимальная скорость',
+  'spec.baglanti': 'Крепление',
+  'spec.kutu_adet': 'В упаковке (шт.)',
+  'spec.toplam_uzunluk_etiket': 'Общая длина',
+  'spec.sap_uzunlugu': 'Длина ручки',
+  'spec.tel_sayisi': 'Количество проволок',
 
   // Storage / legal / common
   'storage.saveError':

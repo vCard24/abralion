@@ -588,6 +588,287 @@ window.ABRALION_CATALOG = {
       "technicalCatalog": "assets/documents/products/ao-aluminyum-oksit-flap-disk.pdf"
     },
     {
+      "id": "canak-firca-sacakli",
+      "slug": "canak-firca-sacakli",
+      "name": "Чашечная щётка с гофрированной проволокой",
+      "categoryId": "kesici-taslama-flap-disk",
+      "categoryName": "Отрезные и шлифовальные круги",
+      "featured": true,
+      "description": "Чашечные щётки с гофрированной проволокой повторяют форму поверхности и дают равномерную очистку. На широких листах и профилях сокращают время ручной зачистки. Посадка M14 обеспечивает быструю и надёжную установку на угловую шлифовальную машину.",
+      "features": [
+        "Волнистая проволока даёт равномерное и гибкое движение по широкой поверхности",
+        "Сбалансированная конструкция для высокооборотных угловых шлифовальных машин",
+        "Снимает ржавчину, краску и налёт, не врезаясь в основной металл",
+        "Гибкая проволока повторяет впадины и неровный профиль",
+        "Прочная стальная проволока держит форму и служит дольше"
+      ],
+      "applications": [
+        "Очистка широкого листа и профиля от ржавчины, окислов, старой краски и стойких загрязнений",
+        "Снятие шлака и сварочного налёта после сварки",
+        "Подготовка поверхности перед окраской, изоляцией, покрытием и склеиванием",
+        "Лёгкое снятие заусенцев и скругление острых кромок после резки",
+        "Лёгкое обеспыливание, текстурирование и полировка дерева, металла и камня"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-01.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 01"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-02.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 02"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-03.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 03"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-04.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 04"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-05.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 05"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-06.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 06"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-07.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 07"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-08.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 08"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-09.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 09"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-10.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 10"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-11.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 11"
+        },
+        {
+          "src": "assets/images/products/canak-firca-sacakli/canak-firca-sacakli-galeri-12.jpg",
+          "alt": "Чашечная щётка с гофрированной проволокой — галерея 12"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cfs-65",
+          "urun_kodu": "cfs-65",
+          "daire_capi_mm": 65,
+          "daire_etiket": "Ø 65 mm (2,5\")",
+          "tel_tipi": "Гофрированная проволока",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "max_hiz_etiket": "13 300 об/мин / 80 м/с",
+          "baglanti_tipi": "M14",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cfs-75",
+          "urun_kodu": "cfs-75",
+          "daire_capi_mm": 75,
+          "daire_etiket": "Ø 75 mm (3\")",
+          "tel_tipi": "Гофрированная проволока",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "max_hiz_etiket": "13 300 об/мин / 80 м/с",
+          "baglanti_tipi": "M14",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cfs-100",
+          "urun_kodu": "cfs-100",
+          "daire_capi_mm": 100,
+          "daire_etiket": "Ø 100 mm (4\")",
+          "tel_tipi": "Гофрированная проволока",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "max_hiz_etiket": "13 300 об/мин / 80 м/с",
+          "baglanti_tipi": "M14",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ]
+    },
+    {
+      "id": "canak-firca-burgulu",
+      "slug": "canak-firca-burgulu",
+      "name": "Чашечная щётка жгутовая (усиленная)",
+      "categoryId": "kesici-taslama-flap-disk",
+      "categoryName": "Отрезные и шлифовальные круги",
+      "featured": true,
+      "description": "Усиленная чашечная щётка со жгутовой проволокой для тяжёлой очистки, глубокого снятия ржавчины и агрессивной обработки. Жёсткая проволока быстро снимает слои, въевшиеся в металл, бетон и природный камень.",
+      "features": [
+        "Жгутовая проволока повышенной жёсткости для быстрого снятия плотных слоёв",
+        "Стальная проволока устойчива к истиранию и обрыву",
+        "Чашечная форма ускоряет обработку широких поверхностей",
+        "Стабильная работа в тяжёлом режиме и увеличенный ресурс",
+        "Посадка M14 для электрических и пневматических угловых шлифовальных машин"
+      ],
+      "applications": [
+        "Глубокая очистка толстого шлака, нагара и следов сварки",
+        "Снятие тяжёлой ржавчины, коррозии, спёкшейся грязи и старой краски с металла",
+        "Удаление острых заусенцев и остатков с металла, бетона и природного камня",
+        "Подготовка поверхности в тяжёлой промышленности, металлоконструкциях, литье, судостроении и автосервисе",
+        "Конструкционная очистка на стройке и при реставрации"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-01.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 01"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-02.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 02"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-03.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 03"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-04.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 04"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-05.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 05"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-06.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 06"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-07.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 07"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-08.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 08"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-09.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 09"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-10.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 10"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-11.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 11"
+        },
+        {
+          "src": "assets/images/products/canak-firca-burgulu/canak-firca-burgulu-galeri-12.jpg",
+          "alt": "Чашечная щётка жгутовая (усиленная) — галерея 12"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cfb-65",
+          "urun_kodu": "cfb-65",
+          "daire_capi_mm": 65,
+          "daire_etiket": "Ø 65 mm (2,5\")",
+          "tel_tipi": "Жгутовая проволока",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "max_hiz_etiket": "13 300 об/мин / 80 м/с",
+          "baglanti_tipi": "M14",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cfb-75",
+          "urun_kodu": "cfb-75",
+          "daire_capi_mm": 75,
+          "daire_etiket": "Ø 75 mm (3\")",
+          "tel_tipi": "Жгутовая проволока",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "max_hiz_etiket": "13 300 об/мин / 80 м/с",
+          "baglanti_tipi": "M14",
+          "kutu_adet": 1,
+          "koli_adet": null
+        },
+        {
+          "id": "cfb-100",
+          "urun_kodu": "cfb-100",
+          "daire_capi_mm": 100,
+          "daire_etiket": "Ø 100 mm (4\")",
+          "tel_tipi": "Жгутовая проволока",
+          "max_hiz_rpm": 13300,
+          "max_hiz_ms": 80,
+          "max_hiz_etiket": "13 300 об/мин / 80 м/с",
+          "baglanti_tipi": "M14",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ]
+    },
+    {
+      "id": "plastik-sapli-celik-tel-firca",
+      "slug": "plastik-sapli-celik-tel-firca",
+      "name": "Ручная стальная щётка с пластиковой ручкой",
+      "categoryId": "kesici-taslama-flap-disk",
+      "categoryName": "Отрезные и шлифовальные круги",
+      "featured": false,
+      "description": "Ручная стальная щётка для углов, кромок и труб, куда не проходит машинная щётка. Проволока высокой прочности быстро снимает плотную ржавчину, сварочный налёт и стойкую грязь. Подходит и для слесарной зачистки, и для ухода за инструментом и арматурой.",
+      "features": [
+        "Узкий профиль достаёт до углов и труднодоступных поверхностей",
+        "Эргономичная пластиковая ручка не утомляет при долгой работе",
+        "Стальная проволока счищает грязь, ржавчину и старую краску",
+        "Малый вес даёт свободный ход и точное ведение",
+        "Одинаково уместна в цехе и при повседневном уходе"
+      ],
+      "applications": [
+        "Подготовка поверхности до сварки и снятие заусенцев и налёта после сварки",
+        "Очистка труб, профиля и угловых деталей от ржавчины, коррозии и краски",
+        "Зачистка стойких загрязнений в узких местах мастерской и на объекте",
+        "Уход за садовым инструментом, решётками гриля и сантехническими деталями",
+        "Ручное удаление сильных загрязнений со швов плитки и твёрдых полов"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/plastik-sapli-celik-tel-firca/plastik-sapli-celik-tel-firca-galeri-01.jpg",
+          "alt": "Ручная стальная щётка с пластиковой ручкой — галерея 01"
+        },
+        {
+          "src": "assets/images/products/plastik-sapli-celik-tel-firca/plastik-sapli-celik-tel-firca-galeri-02.jpg",
+          "alt": "Ручная стальная щётка с пластиковой ручкой — галерея 02"
+        },
+        {
+          "src": "assets/images/products/plastik-sapli-celik-tel-firca/plastik-sapli-celik-tel-firca-galeri-03.jpg",
+          "alt": "Ручная стальная щётка с пластиковой ручкой — галерея 03"
+        },
+        {
+          "src": "assets/images/products/plastik-sapli-celik-tel-firca/plastik-sapli-celik-tel-firca-galeri-04.jpg",
+          "alt": "Ручная стальная щётка с пластиковой ручкой — галерея 04"
+        }
+      ],
+      "variants": [
+        {
+          "id": "pstf-25",
+          "urun_kodu": "pstf-25",
+          "toplam_uzunluk": "25 см",
+          "sap_uzunlugu": "15 см",
+          "tel_sayisi": "400+",
+          "tel_tipi": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ]
+    },
+    {
       "id": "segmentli-standart-elmas-kesici",
       "slug": "segmentli-standart-elmas-kesici",
       "name": "Стандартный сегментный алмазный диск",
@@ -687,7 +968,7 @@ window.ABRALION_CATALOG = {
           "urun_kodu": "1453/5",
           "daire_capi_mm": 125,
           "gobek_capi_mm": 22.23,
-          "max_hiz_rpm": 2500,
+          "max_hiz_rpm": 12200,
           "max_hiz_ms": 80,
           "kutu_adet": 1,
           "koli_adet": null
@@ -923,19 +1204,19 @@ window.ABRALION_CATALOG = {
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": true,
-      "description": "Предназначен для высокопроизводительного ударного сверления бетона, кирпича и природного камня. Корпус из высококачественной стали 40Х и двухрезцовая головка с напайкой из твёрдого сплава ВК8 обеспечивают исключительную стойкость в тяжёлых условиях.",
+      "description": "Предназначен для высокопроизводительного ударного сверления бетона, кирпича и природного камня перфоратором. Корпус из высококачественной стали 40Х и закалённая двухрезцовая (алмазная) головка с напайкой твёрдого сплава ВК8 сохраняют стойкость в тяжёлых условиях. Бур изготовлен по стандарту Premium Quality и рассчитан на долгий ресурс (Long Life).",
       "features": [
-        "Твердосплавная головка ВК8: острая геометрия для быстрого входа в твёрдый материал",
-        "Корпус из стали 40Х: высокая ударная прочность и эффективное гашение вибраций",
-        "Быстрый отвод пыли: увеличенные спиральные канавки снижают износ",
-        "Универсальная совместимость: подходит для инструмента всех марок с патроном SDS Plus",
-        "Профессиональное качество: высокая производительность в тяжёлых условиях стройплощадки"
+        "Алмазная головка ВК8: острая кромка сразу входит в твёрдый материал и облегчает центрование.",
+        "Корпус из стали 40Х: высокая ударная прочность и сплав, который гасит вибрацию и бережёт машину.",
+        "Быстрый отвод пыли: расширенные спиральные канавки выносят пыль из отверстия и снижают износ и нагрев.",
+        "Универсальная посадка: хвостовик совместим со всеми перфораторами SDS Plus (быстросъёмный патрон).",
+        "Гарантия качества Premium: неограниченный срок хранения и высокая отдача на тяжёлой стройке."
       ],
       "applications": [
-        "Сверление обычного и лёгкого бетона, а также газобетонных стен",
-        "Полнотелый и пустотелый кирпич, кладочные блоки",
-        "Отверстия под дюбели и анкеры в природном камне, известняке и песчанике",
-        "Монтаж электрики, сантехники и систем кондиционирования"
+        "Сверление обычного бетона, лёгкого бетона и газобетона (Ytong)",
+        "Полнотелый и пустотелый кирпич, черепица и кладочные блоки",
+        "Отверстия под дюбель и анкер в природном камне, известняке и песчанике",
+        "Электромонтаж, водопровод, установка кондиционеров и общее крепление конструкций"
       ],
       "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-01.jpg",
       "images": [
@@ -1103,181 +1384,181 @@ window.ABRALION_CATALOG = {
       "variants": [
         {
           "id": "sds2-6-110",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 110,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-6-160",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-6-210",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-6-260",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-6-710",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 710,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-8-160",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-8-210",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-8-260",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-10-110",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 110,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-10-160",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-10-210",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-10-260",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-10-310",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 310,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-12-160",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-12-210",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-12-260",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-12-310",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 310,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-16-160",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-16-210",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds2-16-260",
-          "urun_tipi": "Двухрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 2 резца",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         }
@@ -1291,19 +1572,19 @@ window.ABRALION_CATALOG = {
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Разработан для высокопроизводительного сверления бетона, железобетона, природного камня, кирпича и стеновых блоков. Четырёхрезцовая геометрия Quadro с Х-образной головкой снижает риск заклинивания и поломки при контакте с арматурой.",
+      "description": "Разработан для высокопроизводительного сверления самых твёрдых материалов: бетона, железобетона, природного камня, кирпича и стеновых блоков. Оптимизированная четырёхрезцовая геометрия Quadro (X-головка) снижает риск заклинивания и поломки при встрече с арматурой. Четыре спиральные канавки быстро выносят пыль и шлам, уменьшают нагрев и продлевают ресурс. Точное центрование даёт ровное, калиброванное отверстие без увода.",
       "features": [
-        "Головка Quadro предотвращает заклинивание при встрече с арматурой в железобетоне",
-        "Износостойкая высококачественная твердосплавная режущая пластина",
-        "Усиленная четырёхзаходная спираль для максимально эффективного отвода пыли",
+        "Четырёхрезцовая головка Quadro не заклинивает и не ломается при встрече с арматурой в железобетоне",
+        "Твердосплавная кромка с высокой стойкостью к износу",
+        "Усиленные широкие четыре спиральные канавки максимально выносят пыль",
         "Полная совместимость со всеми перфораторами со стандартным патроном SDS Plus",
-        "Сбалансированный корпус снижает вибрацию и обеспечивает точное центрирование"
+        "Баланс корпуса снижает вибрацию, повышает удобство и даёт точное центрование"
       ],
       "applications": [
-        "Сверление бетона, железобетона и промышленных полов",
-        "Природный камень, гранит, мрамор, кирпич и газобетонные блоки",
-        "Точное сверление отверстий под анкеры и дюбели",
-        "Строительные, электромонтажные, сантехнические и общие монтажные работы"
+        "Сверление бетона, железобетона (бетона с арматурой) и промышленных полов",
+        "Природный камень, гранит, мрамор, кирпич, брикет и газобетонные блоки",
+        "Точные отверстия под анкерный болт и дюбель",
+        "Стройка, электромонтаж, инженерные сети и общий монтаж"
       ],
       "images": [
         {
@@ -1426,181 +1707,181 @@ window.ABRALION_CATALOG = {
       "variants": [
         {
           "id": "sds4-6-110",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 110,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-6-160",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-6-210",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-6-260",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-6-710",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 6,
           "toplam_uzunluk_mm": 710,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-8-160",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-8-210",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-8-260",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 8,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-10-110",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 110,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-10-160",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-10-210",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-10-260",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-10-310",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 10,
           "toplam_uzunluk_mm": 310,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-12-160",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-12-210",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-12-260",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-12-310",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 12,
           "toplam_uzunluk_mm": 310,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-16-160",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 160,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-16-210",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 210,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         },
         {
           "id": "sds4-16-260",
-          "urun_tipi": "Четырёхрезцовый бур по бетону",
+          "urun_tipi": "Бур по бетону, 4 резца (Quadro)",
           "cap_mm": 16,
           "toplam_uzunluk_mm": 260,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "kutu_adet": 1,
           "koli_adet": null
         }
@@ -1614,19 +1895,19 @@ window.ABRALION_CATALOG = {
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Сверло из высококачественной быстрорежущей стали HSS для быстрого, точного и безопасного сверления железа, стали, чугуна, алюминия и других металлических сплавов. Оптимизированный угол заточки предотвращает увод и формирует чистое отверстие без заусенцев.",
+      "description": "Сверло из высококачественной быстрорежущей стали HSS для быстрого, точного и безопасного сверления железа, стали, чугуна, алюминия и других металлических сплавов. Оптимизированный угол заточки предотвращает увод в начале сверления и формирует чистое отверстие без заусенцев. Высокая стойкость к нагреву и износу обеспечивает долгий ресурс в промышленной и профессиональной работе.",
       "features": [
-        "Длительный ресурс благодаря быстрорежущей стали HSS",
-        "Гладкие спиральные канавки ускоряют отвод стружки",
+        "Быстрорежущая сталь (HSS) для долгого ресурса и прочности",
+        "Гладкая спиральная канавка ускоряет отвод стружки",
         "Специальное покрытие снижает трение и нагрев",
-        "Точное центрирование и лёгкое засверливание без дополнительного кернения",
+        "Точное центрование: лёгкий заход без предварительного кернения",
         "Полная совместимость со стандартными сверлильными патронами"
       ],
       "applications": [
-        "Сверление легированных и нелегированных сталей, чугуна и листового металла",
+        "Сверление легированной и нелегированной стали, чугуна и листового металла",
         "Обработка цветных металлов: алюминия, меди и латуни",
         "Промышленное производство, автосервис, металлообработка и сборочные цеха",
-        "Эффективное сверление твёрдых пластиков и древесины"
+        "(Также показывает высокую производительность на твёрдом пластике и древесине)"
       ],
       "images": [
         {
@@ -1765,7 +2046,7 @@ window.ABRALION_CATALOG = {
       "variants": [
         {
           "id": "hss-6",
-          "urun_tipi": "Сверло HSS по металлу",
+          "urun_tipi": "Сверло HSS",
           "cap_mm": 6,
           "kullanim_yeri": "Металл",
           "kutu_ici_adet": 10,
@@ -1773,7 +2054,7 @@ window.ABRALION_CATALOG = {
         },
         {
           "id": "hss-8",
-          "urun_tipi": "Сверло HSS по металлу",
+          "urun_tipi": "Сверло HSS",
           "cap_mm": 8,
           "kullanim_yeri": "Металл",
           "kutu_ici_adet": 10,
@@ -1781,7 +2062,7 @@ window.ABRALION_CATALOG = {
         },
         {
           "id": "hss-10",
-          "urun_tipi": "Сверло HSS по металлу",
+          "urun_tipi": "Сверло HSS",
           "cap_mm": 10,
           "kullanim_yeri": "Металл",
           "kutu_ici_adet": 5,
@@ -1789,7 +2070,7 @@ window.ABRALION_CATALOG = {
         },
         {
           "id": "hss-12",
-          "urun_tipi": "Сверло HSS по металлу",
+          "urun_tipi": "Сверло HSS",
           "cap_mm": 12,
           "kullanim_yeri": "Металл",
           "kutu_ici_adet": 5,
@@ -1797,7 +2078,7 @@ window.ABRALION_CATALOG = {
         },
         {
           "id": "hss-14",
-          "urun_tipi": "Сверло HSS по металлу",
+          "urun_tipi": "Сверло HSS",
           "cap_mm": 14,
           "kullanim_yeri": "Металл",
           "kutu_ici_adet": 1,
@@ -1805,7 +2086,7 @@ window.ABRALION_CATALOG = {
         },
         {
           "id": "hss-16",
-          "urun_tipi": "Сверло HSS по металлу",
+          "urun_tipi": "Сверло HSS",
           "cap_mm": 16,
           "kullanim_yeri": "Металл",
           "kutu_ici_adet": 1,
@@ -1813,7 +2094,7 @@ window.ABRALION_CATALOG = {
         },
         {
           "id": "hss-18",
-          "urun_tipi": "Сверло HSS по металлу",
+          "urun_tipi": "Сверло HSS",
           "cap_mm": 18,
           "kullanim_yeri": "Металл",
           "kutu_ici_adet": 1,
@@ -1825,23 +2106,23 @@ window.ABRALION_CATALOG = {
     {
       "id": "duz-keski-sds-plus",
       "slug": "duz-keski-sds-plus",
-      "name": "Плоское зубило SDS Plus",
+      "name": "Плоское зубило",
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Предназначено для долбления, скалывания и штробления бетона, кирпича, природного камня и асфальта. Высококачественная легированная сталь с термическим упрочнением обеспечивает стойкость к излому и износу. Хвостовик SDS Plus подходит для широкого спектра работ — от лёгкой реставрации до демонтажа средней сложности.",
+      "description": "Предназначено для долбления, скалывания и штробления бетона, кирпича, природного камня и асфальта. Высококачественная легированная сталь с термическим упрочнением стойка к излому и износу. Варианты хвостовика SDS Plus и SDS Max перекрывают работы от лёгкой реставрации до тяжёлого демонтажа. Зубило передаёт энергию перфоратора прямо на кромку и за счёт оптимизированного угла быстро и уверенно разрушает материал.",
       "features": [
-        "Оптимально для лёгких демонтажных и реставрационных работ",
-        "Закалённая сталь с высокой ударной прочностью и повышенной стойкостью к излому и изгибу",
-        "Хвостовик SDS Plus передаёт энергию без потерь и совместим с профессиональными перфораторами",
-        "Геометрия корпуса снижает вибрацию и препятствует заклиниванию в материале",
-        "Специальное покрытие надолго сохраняет форму режущей кромки"
+        "Широкий ряд и для лёгкого долбления и реставрации (SDS Plus), и для тяжёлого демонтажа на объекте (SDS Max)",
+        "Закалённая сталь с высокой ударной стойкостью против излома и скручивания",
+        "Хвостовики без потери мощности, точно садящиеся в профессиональные перфораторы",
+        "Геометрия корпуса снижает заклинивание в материале и вибрацию",
+        "Специальное покрытие долго сохраняет форму режущей кромки"
       ],
       "applications": [
-        "Долбление, скалывание и выравнивание бетона, камня, кирпича и других стройматериалов",
-        "Штробление стен и полов под электрические, водопроводные и газовые коммуникации",
-        "Удаление старой плитки, керамики, раствора, эпоксидных покрытий и штукатурки",
-        "Строительство, ремонт, реставрация и перепланировка"
+        "Общее долбление, скалывание и выравнивание бетона, камня, кирпича и подобных материалов",
+        "Штробление стен и пола под электропроводку, воду и газ",
+        "Съём старой плитки, керамики, остатков раствора, эпоксида и штукатурки",
+        "Строительство, ремонт, реставрация и конструктивная доработка"
       ],
       "images": [
         {
@@ -1864,7 +2145,7 @@ window.ABRALION_CATALOG = {
           "saft_mm": 14,
           "uzunluk_mm": 250,
           "uc_genisligi_mm": 20,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "malzeme": "Сталь",
           "kutu_adet": 1,
           "koli_adet": null
@@ -1875,7 +2156,7 @@ window.ABRALION_CATALOG = {
           "saft_mm": 14,
           "uzunluk_mm": 250,
           "uc_genisligi_mm": 40,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "malzeme": "Сталь",
           "kutu_adet": 1,
           "koli_adet": null
@@ -1886,23 +2167,23 @@ window.ABRALION_CATALOG = {
     {
       "id": "duz-keski-sds-max",
       "slug": "duz-keski-sds-max",
-      "name": "Плоское зубило SDS Max",
+      "name": "Плоское зубило",
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Предназначено для долбления, скалывания и штробления бетона, кирпича, природного камня и асфальта. Высококачественная легированная сталь с термическим упрочнением обеспечивает стойкость к излому и износу. Хвостовик SDS Max рассчитан на широкий спектр тяжёлых демонтажных работ.",
+      "description": "Предназначено для долбления, скалывания и штробления бетона, кирпича, природного камня и асфальта. Высококачественная легированная сталь с термическим упрочнением стойка к излому и износу. Варианты хвостовика SDS Plus и SDS Max перекрывают работы от лёгкой реставрации до тяжёлого демонтажа. Зубило передаёт энергию перфоратора прямо на кромку и за счёт оптимизированного угла быстро и уверенно разрушает материал.",
       "features": [
-        "Оптимально для тяжёлых демонтажных работ на стройплощадке",
-        "Закалённая сталь с высокой ударной прочностью и повышенной стойкостью к излому и изгибу",
-        "Хвостовик SDS Max передаёт энергию без потерь и совместим с профессиональными отбойными молотками",
-        "Геометрия корпуса снижает вибрацию и препятствует заклиниванию в материале",
-        "Специальное покрытие надолго сохраняет форму режущей кромки"
+        "Широкий ряд и для лёгкого долбления и реставрации (SDS Plus), и для тяжёлого демонтажа на объекте (SDS Max)",
+        "Закалённая сталь с высокой ударной стойкостью против излома и скручивания",
+        "Хвостовики без потери мощности, точно садящиеся в профессиональные перфораторы",
+        "Геометрия корпуса снижает заклинивание в материале и вибрацию",
+        "Специальное покрытие долго сохраняет форму режущей кромки"
       ],
       "applications": [
-        "Долбление, скалывание и выравнивание бетона, камня, кирпича и других стройматериалов",
-        "Штробление стен и полов под электрические, водопроводные и газовые коммуникации",
-        "Удаление старой плитки, керамики, раствора, эпоксидных покрытий и штукатурки",
-        "Строительство, ремонт, реставрация и перепланировка"
+        "Общее долбление, скалывание и выравнивание бетона, камня, кирпича и подобных материалов",
+        "Штробление стен и пола под электропроводку, воду и газ",
+        "Съём старой плитки, керамики, остатков раствора, эпоксида и штукатурки",
+        "Строительство, ремонт, реставрация и конструктивная доработка"
       ],
       "images": [
         {
@@ -1925,7 +2206,7 @@ window.ABRALION_CATALOG = {
           "saft_mm": 18,
           "uzunluk_mm": 400,
           "uc_genisligi_mm": 25,
-          "baglanti_tipi": "SDS Max",
+          "baglanti_tipi": "SDS-max",
           "malzeme": "Сталь",
           "kutu_adet": 1,
           "koli_adet": null
@@ -1936,7 +2217,7 @@ window.ABRALION_CATALOG = {
           "saft_mm": 18,
           "uzunluk_mm": 400,
           "uc_genisligi_mm": 50,
-          "baglanti_tipi": "SDS Max",
+          "baglanti_tipi": "SDS-max",
           "malzeme": "Сталь",
           "kutu_adet": 1,
           "koli_adet": null
@@ -1947,7 +2228,7 @@ window.ABRALION_CATALOG = {
           "saft_mm": 18,
           "uzunluk_mm": 600,
           "uc_genisligi_mm": 25,
-          "baglanti_tipi": "SDS Max",
+          "baglanti_tipi": "SDS-max",
           "malzeme": "Сталь",
           "kutu_adet": 1,
           "koli_adet": null
@@ -1958,22 +2239,23 @@ window.ABRALION_CATALOG = {
     {
       "id": "sivri-uclu-keski-murc-sds-plus",
       "slug": "sivri-uclu-keski-murc-sds-plus",
-      "name": "Пикообразное зубило SDS Plus",
+      "name": "Пикообразное зубило",
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Усиленное пикообразное зубило для разрушения и демонтажа твёрдых строительных материалов: бетона, кирпича и природного камня. Высококачественная сталь обеспечивает эффективное проникновение и износостойкость при интенсивной работе. Хвостовик SDS Plus передаёт ударную энергию непосредственно на остриё, повышая эффективность точечного разрушения.",
+      "description": "Усиленное пикообразное зубило для разрушения и тяжёлого демонтажа бетона, кирпича и природного камня. Высококачественная сталь даёт максимальное проникновение и стойкость к износу при интенсивной работе. Исполнения с хвостовиком SDS Plus и SDS Max передают энергию машины прямо на остриё и эффективны при точечном долблении.",
       "features": [
-        "Усиленный профиль острия для тяжёлого демонтажа и разрушения",
-        "Стальной корпус с высокой ударной прочностью и стойкостью к излому",
-        "Оптимизированная геометрия для быстрого разрушения твёрдых материалов точечными ударами",
-        "Промышленный хвостовик SDS Plus сводит потери энергии к минимуму",
-        "Специальная термообработка сохраняет форму острия при длительной работе"
+        "Усиленный пикообразный профиль для тяжёлого разрушения и долбления",
+        "Стальной корпус с высокой ударной стойкостью против излома",
+        "Оптимизированная форма быстро дробит твёрдый материал точечными ударами",
+        "Промышленные хвостовики SDS Plus и SDS Max с минимальной потерей мощности",
+        "Термообработка долго сохраняет форму острия"
       ],
       "applications": [
-        "Долбление, разрушение и демонтаж бетонных, каменных и кирпичных конструкций",
-        "Удаление стяжки, разрушение асфальта и твёрдых покрытий",
-        "Фундаментные, подготовительные и земляные работы"
+        "Долбление, разрушение и демонтаж стен из бетона, камня и кирпича",
+        "Снятие стяжки, разрушение асфальта и твёрдых полов",
+        "Подготовка фундамента, насечка и земляные работы",
+        "Стройка, площадка, реставрация и тяжёлые конструктивные работы"
       ],
       "images": [
         {
@@ -1995,7 +2277,7 @@ window.ABRALION_CATALOG = {
           "urun_tipi": "Пикообразное зубило",
           "saft_mm": 14,
           "uzunluk_mm": 250,
-          "baglanti_tipi": "SDS Plus",
+          "baglanti_tipi": "SDS-plus",
           "malzeme": "Сталь",
           "kutu_adet": 1,
           "koli_adet": null
@@ -2006,23 +2288,23 @@ window.ABRALION_CATALOG = {
     {
       "id": "sivri-uclu-keski-murc-sds-max",
       "slug": "sivri-uclu-keski-murc-sds-max",
-      "name": "Пикообразное зубило SDS Max",
+      "name": "Пикообразное зубило",
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Усиленное пикообразное зубило для разрушения и тяжёлого демонтажа бетона, кирпича и природного камня. Высококачественная сталь обеспечивает эффективное проникновение и износостойкость при интенсивной работе. Хвостовик SDS Max передаёт ударную энергию непосредственно на остриё, повышая эффективность точечного разрушения.",
+      "description": "Усиленное пикообразное зубило для разрушения и тяжёлого демонтажа бетона, кирпича и природного камня. Высококачественная сталь даёт максимальное проникновение и стойкость к износу при интенсивной работе. Исполнения с хвостовиком SDS Plus и SDS Max передают энергию машины прямо на остриё и эффективны при точечном долблении.",
       "features": [
-        "Усиленный профиль острия для тяжёлого демонтажа и разрушения",
-        "Стальной корпус с высокой ударной прочностью и стойкостью к излому",
-        "Оптимизированная геометрия для быстрого разрушения твёрдых материалов точечными ударами",
-        "Промышленный хвостовик SDS Max сводит потери энергии к минимуму",
-        "Специальная термообработка сохраняет форму острия при длительной работе"
+        "Усиленный пикообразный профиль для тяжёлого разрушения и долбления",
+        "Стальной корпус с высокой ударной стойкостью против излома",
+        "Оптимизированная форма быстро дробит твёрдый материал точечными ударами",
+        "Промышленные хвостовики SDS Plus и SDS Max с минимальной потерей мощности",
+        "Термообработка долго сохраняет форму острия"
       ],
       "applications": [
-        "Долбление, разрушение и демонтаж бетонных, каменных и кирпичных конструкций",
-        "Удаление стяжки, разрушение асфальта и твёрдых покрытий",
-        "Фундаментные, подготовительные и земляные работы",
-        "Строительство, реставрация и тяжёлые конструкционные работы"
+        "Долбление, разрушение и демонтаж стен из бетона, камня и кирпича",
+        "Снятие стяжки, разрушение асфальта и твёрдых полов",
+        "Подготовка фундамента, насечка и земляные работы",
+        "Стройка, площадка, реставрация и тяжёлые конструктивные работы"
       ],
       "images": [
         {
@@ -2044,7 +2326,7 @@ window.ABRALION_CATALOG = {
           "urun_tipi": "Пикообразное зубило",
           "saft_mm": 18,
           "uzunluk_mm": 400,
-          "baglanti_tipi": "SDS Max",
+          "baglanti_tipi": "SDS-max",
           "malzeme": "Сталь",
           "kutu_adet": 1,
           "koli_adet": null
@@ -2054,7 +2336,7 @@ window.ABRALION_CATALOG = {
           "urun_tipi": "Пикообразное зубило",
           "saft_mm": 18,
           "uzunluk_mm": 600,
-          "baglanti_tipi": "SDS Max",
+          "baglanti_tipi": "SDS-max",
           "malzeme": "Сталь",
           "kutu_adet": 1,
           "koli_adet": null
@@ -2063,25 +2345,70 @@ window.ABRALION_CATALOG = {
       "technicalCatalog": "assets/documents/products/sivri-uclu-keski-murc-sds-max.pdf"
     },
     {
+      "id": "genis-agizli-keski",
+      "slug": "genis-agizli-keski",
+      "name": "Широкое зубило",
+      "categoryId": "kirici-delici",
+      "categoryName": "Буры и зубила",
+      "featured": false,
+      "description": "Профессиональное зубило для снятия широких слоёв на стройке, при ремонте и реставрации. Корпус из инструментальной стали K28 держит удар, а широкая кромка ускоряет очистку поверхности.",
+      "features": [
+        "Расширенная кромка распределяет удар и быстрее снимает слой",
+        "Корпус из инструментальной стали K28 с высокой ударной стойкостью",
+        "Термообработка против изгиба и раннего износа на объекте",
+        "Посадка SDS Plus для лёгких и средних перфораторов"
+      ],
+      "applications": [
+        "Снятие старой штукатурки, стяжки и остатков раствора со стен и пола",
+        "Демонтаж керамики, плитки и напольных плит без лишнего повреждения основания",
+        "Штробление и выравнивание бетона, кирпича и природного камня",
+        "Общестроительный демонтаж, скол и ремонт"
+      ],
+      "images": [
+        {
+          "src": "assets/images/products/genis-agizli-keski/genis-agizli-keski-galeri-01.jpg",
+          "alt": "Широкое зубило — галерея 01"
+        },
+        {
+          "src": "assets/images/products/genis-agizli-keski/genis-agizli-keski-galeri-02.jpg",
+          "alt": "Широкое зубило — галерея 02"
+        }
+      ],
+      "variants": [
+        {
+          "id": "gak-14-250-40",
+          "urun_kodu": "gak-14-250-40",
+          "urun_tipi": "Широкое зубило",
+          "saft_mm": 14,
+          "uzunluk_mm": 250,
+          "uc_genisligi_mm": 40,
+          "baglanti_tipi": "SDS Plus",
+          "malzeme": "Сталь",
+          "kutu_adet": 1,
+          "koli_adet": null
+        }
+      ]
+    },
+    {
       "id": "cam-seramik-matkap-ucu",
       "slug": "cam-seramik-matkap-ucu",
       "name": "Сверло по стеклу и керамике, четырёхрезцовое",
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Специально разработано для получения чистых отверстий без сколов и трещин в керамике, плитке, керамограните, стекле, зеркалах и деликатных облицовочных материалах. Усиленная четырёхрезцовая крестообразная твердосплавная головка обеспечивает точное центрирование.",
+      "description": "Специально разработано для чистых и ровных отверстий без сколов, трещин и выкрашивания в керамике, плитке, керамограните, стекле, зеркалах и деликатных облицовочных материалах. Усиленная четырёхрезцовая крестообразная (пикообразная) твердосплавная алмазная геометрия полностью исключает увод в начале сверления и даёт точное центрование. Оптимизированный корпус снижает трение и нагрев и увеличивает ресурс сверла. Эффективно работает со стандартными патронами и аккумуляторными шуруповёртами.",
       "features": [
-        "Четырёхрезцовая крестообразная твердосплавная головка снижает риск растрескивания",
-        "Острое копьевидное остриё не требует дополнительного центрирующего приспособления",
-        "Специальная форма корпуса предотвращает перегрев и облегчает отвод шлама",
-        "Чистые отверстия без сколов даже на низких оборотах",
-        "Шестигранный хвостовик 1/4\" совместим с обычными и аккумуляторными шуруповёртами"
+        "Четырёхрезцовая крестообразная твердосплавная головка снижает риск трещин и сколов на деликатных поверхностях",
+        "Острая пикообразная геометрия облегчает точечное засверливание и не требует дополнительного кондуктора",
+        "Специальная форма корпуса отводит тепло и облегчает выход стружки",
+        "Ровное, без заусенцев и точно калиброванное отверстие даже на низких оборотах",
+        "Хвостовик для быстрой смены сверла без проскальзывания"
       ],
       "applications": [
-        "Сверление листового незакалённого стекла и зеркал",
+        "Сверление плоского стекла, некалёного стекла и зеркал",
         "Керамика, плитка и керамогранит мягкой и средней твёрдости",
-        "Точное сверление настенной плитки при установке аксессуаров для ванной и кухни",
-        "Обработка керамических изделий, черепицы и декоративной плитки"
+        "Точное сверление настенной плитки при монтаже аксессуаров в ванной и на кухне",
+        "Обработка керамики, черепицы и декоративной плитки"
       ],
       "images": [
         {
@@ -2169,44 +2496,50 @@ window.ABRALION_CATALOG = {
         {
           "id": "cam-4",
           "cap_mm": 4,
-          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "saft_tipi": "1/4\" шестигранный (Hex) / цилиндрический",
           "kutu_ici_adet": 1,
-          "koli_adet": null
+          "koli_adet": null,
+          "urun_tipi": "Сверло по стеклу и керамике, 4 резца"
         },
         {
           "id": "cam-5",
           "cap_mm": 5,
-          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "saft_tipi": "1/4\" шестигранный (Hex) / цилиндрический",
           "kutu_ici_adet": 1,
-          "koli_adet": null
+          "koli_adet": null,
+          "urun_tipi": "Сверло по стеклу и керамике, 4 резца"
         },
         {
           "id": "cam-6",
           "cap_mm": 6,
-          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "saft_tipi": "1/4\" шестигранный (Hex) / цилиндрический",
           "kutu_ici_adet": 1,
-          "koli_adet": null
+          "koli_adet": null,
+          "urun_tipi": "Сверло по стеклу и керамике, 4 резца"
         },
         {
           "id": "cam-8",
           "cap_mm": 8,
-          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "saft_tipi": "1/4\" шестигранный (Hex) / цилиндрический",
           "kutu_ici_adet": 1,
-          "koli_adet": null
+          "koli_adet": null,
+          "urun_tipi": "Сверло по стеклу и керамике, 4 резца"
         },
         {
           "id": "cam-10",
           "cap_mm": 10,
-          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "saft_tipi": "1/4\" шестигранный (Hex) / цилиндрический",
           "kutu_ici_adet": 1,
-          "koli_adet": null
+          "koli_adet": null,
+          "urun_tipi": "Сверло по стеклу и керамике, 4 резца"
         },
         {
           "id": "cam-12",
           "cap_mm": 12,
-          "saft_tipi": "1/4\" шестигранный / цилиндрический",
+          "saft_tipi": "1/4\" шестигранный (Hex) / цилиндрический",
           "kutu_ici_adet": 1,
-          "koli_adet": null
+          "koli_adet": null,
+          "urun_tipi": "Сверло по стеклу и керамике, 4 резца"
         }
       ],
       "technicalCatalog": "assets/documents/products/cam-seramik-matkap-ucu.pdf"
@@ -2218,19 +2551,19 @@ window.ABRALION_CATALOG = {
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Инструмент для шерохования бетонных, каменных и асфальтовых поверхностей, удаления старых покрытий и насечки. Высококачественные зубья из карбида вольфрама обеспечивают отличную производительность даже на особо твёрдом бетоне и природном камне.",
+      "description": "Инструмент для шерохования бетонных, каменных и асфальтовых поверхностей, удаления старых покрытий и насечки. Высококачественные зубья из карбида вольфрама (алмаз) дают высокую производительность и долгий ресурс даже на особо твёрдом бетоне и природном камне. Полностью совместима с тяжёлыми перфораторами SDS MAX: снижает вибрацию и быстро шерохует широкие поверхности.",
       "features": [
-        "Износостойкие твердосплавные зубья",
-        "Хвостовик SDS Max обеспечивает максимальную передачу энергии",
-        "Усиленный стальной корпус с повышенной ударной прочностью",
-        "Оптимальное шерохование для повышения адгезии поверхности",
-        "Быстрое снятие материала при низком износе"
+        "Твердосплавные (алмазные) зубья с высокой стойкостью к износу",
+        "Посадка SDS MAX с максимальной передачей усилия",
+        "Стальной корпус, дополнительно усиленный против удара и излома",
+        "Шероховатость, которая улучшает сцепление штукатурки и краски",
+        "Быстрый съём материала при низком износе"
       ],
       "applications": [
         "Шерохование бетона, асфальта и природного камня",
-        "Удаление старой штукатурки, краски, смол и покрытий",
-        "Создание противоскользящей насечки на ступенях и полах",
-        "Промышленная подготовка поверхностей и реставрационные работы"
+        "Снятие старой штукатурки, краски, смолы и покрытий",
+        "Насечка ступеней и полов против скольжения",
+        "Промышленная подготовка поверхности и реставрация"
       ],
       "images": [
         {
@@ -2253,8 +2586,8 @@ window.ABRALION_CATALOG = {
       "variants": [
         {
           "id": "burc-45",
-          "baglanti_tipi": "SDS MAX",
-          "kafa_olcusu_mm": "45x45",
+          "baglanti_tipi": "SDS-max",
+          "kafa_olcusu_mm": "45×45 mm",
           "uzunluk_mm": 240,
           "kutu_adet": 1,
           "koli_adet": null
@@ -2269,19 +2602,19 @@ window.ABRALION_CATALOG = {
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Высокопроизводительная магнитная торцевая насадка для электрических и аккумуляторных шуруповёртов. Изготовлена из легированной стали CR40. Мощный магнит центрирует и надёжно удерживает гайки и болты.",
+      "description": "Высокопроизводительная магнитная насадка для затяжки гаек электрическим и аккумуляторным шуруповёртом. Изготовлена из особо прочной легированной стали CR40. Мощный внутренний магнит центрирует и крепко удерживает гайки и болты, не давая им упасть или соскользнуть. Надёжное, быстрое и удобное решение для монтажа с высоким крутящим моментом.",
       "features": [
-        "Износостойкий корпус из стали CR40 для тяжёлых работ",
-        "Мощный магнитный сердечник надёжно удерживает болты и гайки",
-        "Стойкая к высокому крутящему моменту конструкция, предотвращающая деформацию",
-        "Стандартный шестигранный хвостовик 1/4\" совместим со всеми шуруповёртами",
-        "Точно обработанные грани не повреждают крепёж"
+        "Корпус из стали CR40 с высокой стойкостью к износу для тяжёлой работы",
+        "Сильный магнит удерживает болт и гайку и позволяет работать одной рукой",
+        "Конструкция держит высокий крутящий момент и не деформируется",
+        "Стандартный шестигранный хвостовик 1/4\" точно садится в дрели и шуруповёрты",
+        "Точная кромка не срывает головку винта"
       ],
       "applications": [
-        "Монтаж профнастила, сэндвич-панелей и кровельных покрытий",
-        "Сборка металлоконструкций, фасадных систем и лесов",
-        "Автосервис, машиностроительная сборка и ремонтные мастерские",
-        "Серийный монтаж шестигранных саморезов и гаек"
+        "Монтаж профлиста, сэндвич-панелей и кровельных покрытий",
+        "Стальные конструкции, фасады и строительные леса",
+        "Автосервис, сборка машин и общие ремонтные мастерские",
+        "Серийный монтаж саморезов с шестигранной головкой, специальных винтов и гаек"
       ],
       "images": [
         {
@@ -2296,7 +2629,7 @@ window.ABRALION_CATALOG = {
       "variants": [
         {
           "id": "ank-8",
-          "urun_tipi": "Магнитная торцевая насадка",
+          "urun_tipi": "Магнитная торцевая головка",
           "olcu_cap_mm": 8,
           "olcu_uzunluk_mm": 48,
           "malzeme": "Сталь CR40",
@@ -2305,7 +2638,7 @@ window.ABRALION_CATALOG = {
         },
         {
           "id": "ank-10",
-          "urun_tipi": "Магнитная торцевая насадка",
+          "urun_tipi": "Магнитная торцевая головка",
           "olcu_cap_mm": 10,
           "olcu_uzunluk_mm": 48,
           "malzeme": "Сталь CR40",
@@ -2322,18 +2655,18 @@ window.ABRALION_CATALOG = {
       "categoryId": "kirici-delici",
       "categoryName": "Буры и зубила",
       "featured": false,
-      "description": "Высокопроизводительная магнитная бита для интенсивной профессиональной работы с аккумуляторными и сетевыми шуруповёртами. Изготовлена из высококачественной промышленной легированной стали S2+ и обладает максимальной стойкостью к износу и разрушению при высоком крутящем моменте.",
+      "description": "Высокопроизводительная магнитная бита для интенсивной профессиональной работы с аккумуляторными и сетевыми шуруповёртами. Изготовлена из промышленной легированной стали S2+ и максимально стойка к износу, скручиванию и излому при высоком крутящем моменте. Сильный магнит крепко держит винт, не даёт ему соскользнуть и сохраняет форму головки. Несколько длин позволяют работать и в узких, труднодоступных местах.",
       "features": [
-        "Гибкая и прочная инструментальная сталь S2+ для тяжёлых работ",
-        "Мощный магнит центрирует и надёжно удерживает винты",
-        "Корпус оптимизирован для передачи высокого крутящего момента и ударных нагрузок",
-        "Точно фрезерованный профиль PH2 идеально сопрягается с головкой винта",
-        "Универсальная совместимость со стандартными держателями бит"
+        "Гибкая и прочная инструментальная сталь S2+ для тяжёлой работы",
+        "Сильный магнит центрирует винт и надёжно его удерживает",
+        "Корпус рассчитан на высокий крутящий момент и ударную нагрузку",
+        "Точно фрезерованный профиль PH2 (крест) плотно садится в головку винта",
+        "Подходит ко всем стандартным битодержателям, аккумуляторным и сетевым шуруповёртам"
       ],
       "applications": [
         "Деревообработка, изготовление и сборка мебели",
-        "Монтаж гипсокартона, ДСП и металлических профилей",
-        "Автосервис, ремонт бытовой техники и оборудования",
+        "Завинчивание в гипсокартон, ДСП и металлический профиль",
+        "Автосервис, бытовая техника, ремонт и обслуживание машин",
         "Общестроительные, реставрационные и отделочные работы"
       ],
       "images": [

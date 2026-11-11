@@ -276,6 +276,13 @@ window.I18N_MESSAGES.tr = {
   'spec.paket_icerigi': 'Paket İçeriği',
   'spec.serit_genisligi': 'Şerit Genişliği',
   'spec.kasa_malzemesi': 'Kasa Malzemesi',
+  'spec.tel_tipi': 'Tel Tipi',
+  'spec.max_hiz': 'Maksimum Hız',
+  'spec.baglanti': 'Bağlantı',
+  'spec.kutu_adet': 'Kutu (adet)',
+  'spec.toplam_uzunluk_etiket': 'Toplam Uzunluk',
+  'spec.sap_uzunlugu': 'Sap Uzunluğu',
+  'spec.tel_sayisi': 'Tel Sayısı',
 
   // Storage / legal / common
   'storage.saveError': 'Seçiminiz kaydedilemedi. Tarayıcı depolama alanı dolu olabilir.',

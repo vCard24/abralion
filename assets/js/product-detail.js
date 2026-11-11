@@ -4,6 +4,7 @@ const NOIR_BADGE_COLUMNS = new Set([
   'asindirici_tipi',
   'urun_tipi',
   'baglanti_tipi',
+  'tel_tipi',
   'bicak_malzemesi',
   'kasa_malzemesi',
   'kullanim_yeri',

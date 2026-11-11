@@ -36,8 +36,8 @@ Foto klasörü salt okunur kalır. A1, rapor onaylanmadan başlamaz.
 - [x] **A1a pilot.** Yalnız `miknatisli-anahtar-ucu` galerisi ve `canak-firca-sacakli` kart örnekleri (siteye bağlı değil). Rapor: `scripts/raporlar/a1a-pilot-rapor.md`.
 - [x] **A1b.** Kalan 12 foto klasörü, 4 yeni ürün kartı, kardeş bağlama. Rapor: `scripts/raporlar/a1b-rapor.md`. Yeni ürün `images[]` bağlanmadı; A2 bekler.
 - [ ] **A1c — Eski galeri.** Dokuz slug + iki paylaşım hedefi, TR ve RU. Korunanlar yalnızca `{slug}-kart.jpg` ve `{slug}-kart-card.*`.
-- [ ] **A1d — Katalog.** Dört yeni iskelet. `max_hiz_rpm` 2500 → 12200. `Alumnum` → `Aluminum` (yalnız TR). 355 mm hızına dokunulmaz. Ardından `products-data.js` senkronu ve RU kopyası.
-- [ ] **A1e — Metin farkı.** Kasım kataloğu dosyası girdi olarak verilirse dokuz ürünün ad, açıklama ve varyant tablosu karşılaştırılır. O dosya gelmeden varyant satırı yazılmaz.
+- [x] **A1d — Katalog.** Dört yeni kayıt, görseller bağlı, TR/RU sayfalar açıldı. `max_hiz_rpm` 12200. `Alumnum` → `Aluminum` (yalnız TR). 355 mm hızına dokunulmadı. Dokuz mevcut ürünün metin farkı A1e’de.
+- [x] **A1e — Metin farkı.** Rapor: `scripts/raporlar/a1e-metin-farki.md`. Onaydan sonra TR ve RU metin ile tablo etiketleri geçti. Ölçü satırları durdu.
 
 ## A1’de kapanmış sayılanlar
 

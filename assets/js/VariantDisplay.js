@@ -255,6 +255,36 @@ const PRODUCT_TABLE_COLUMNS = {
     { key: 'koli_adet', label: 'Koli' },
   ],
 
+  'canak-firca-sacakli': [
+    { key: 'daire_etiket', label: 'Daire Çapı Ø' },
+    { key: 'tel_tipi', label: 'Tel Tipi' },
+    { key: 'max_hiz_etiket', label: 'Maksimum Hız' },
+    { key: 'baglanti_tipi', label: 'Bağlantı' },
+    { key: 'kutu_adet', label: 'Kutu (adet)' },
+  ],
+  'canak-firca-burgulu': [
+    { key: 'daire_etiket', label: 'Daire Çapı Ø' },
+    { key: 'tel_tipi', label: 'Tel Tipi' },
+    { key: 'max_hiz_etiket', label: 'Maksimum Hız' },
+    { key: 'baglanti_tipi', label: 'Bağlantı' },
+    { key: 'kutu_adet', label: 'Kutu (adet)' },
+  ],
+  'plastik-sapli-celik-tel-firca': [
+    { key: 'toplam_uzunluk', label: 'Toplam Uzunluk' },
+    { key: 'sap_uzunlugu', label: 'Sap Uzunluğu' },
+    { key: 'tel_sayisi', label: 'Tel Sayısı' },
+    { key: 'tel_tipi', label: 'Tel Tipi' },
+    { key: 'kutu_adet', label: 'Kutu (adet)' },
+  ],
+  'genis-agizli-keski': [
+    { key: 'urun_tipi', label: 'Ürün Tipi' },
+    { compute: 'olcu_saft_uzunluk_uc', label: 'Ölçü (Şaft x Uzunluk x Uç Genişliği)' },
+    { key: 'baglanti_tipi', label: 'Bağlantı Tipi' },
+    { key: 'malzeme', label: 'Malzeme' },
+    { key: 'kutu_adet', label: 'Kutu' },
+    { key: 'koli_adet', label: 'Koli' },
+  ],
+
   // --- YENİ ÜRÜNLER (Haziran 2026 Kataloğu) ---
   'granit-mermer-segmentli-taslama-diski': [
     { key: 'urun_kodu', label: 'Ürün Kodu' },

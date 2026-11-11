@@ -266,6 +266,36 @@ const PRODUCT_TABLE_COLUMNS = {
     { key: 'koli_adet', label: 'spec.koli' },
   ],
 
+  'canak-firca-sacakli': [
+    { key: 'daire_etiket', label: 'spec.daire_capi' },
+    { key: 'tel_tipi', label: 'spec.tel_tipi' },
+    { key: 'max_hiz_etiket', label: 'spec.max_hiz' },
+    { key: 'baglanti_tipi', label: 'spec.baglanti' },
+    { key: 'kutu_adet', label: 'spec.kutu_adet' },
+  ],
+  'canak-firca-burgulu': [
+    { key: 'daire_etiket', label: 'spec.daire_capi' },
+    { key: 'tel_tipi', label: 'spec.tel_tipi' },
+    { key: 'max_hiz_etiket', label: 'spec.max_hiz' },
+    { key: 'baglanti_tipi', label: 'spec.baglanti' },
+    { key: 'kutu_adet', label: 'spec.kutu_adet' },
+  ],
+  'plastik-sapli-celik-tel-firca': [
+    { key: 'toplam_uzunluk', label: 'spec.toplam_uzunluk_etiket' },
+    { key: 'sap_uzunlugu', label: 'spec.sap_uzunlugu' },
+    { key: 'tel_sayisi', label: 'spec.tel_sayisi' },
+    { key: 'tel_tipi', label: 'spec.tel_tipi' },
+    { key: 'kutu_adet', label: 'spec.kutu_adet' },
+  ],
+  'genis-agizli-keski': [
+    { key: 'urun_tipi', label: 'spec.urun_tipi' },
+    { compute: 'olcu_saft_uzunluk_uc', label: 'spec.olcu_saft_uzunluk_uc' },
+    { key: 'baglanti_tipi', label: 'spec.baglanti_tipi' },
+    { key: 'malzeme', label: 'spec.malzeme' },
+    { key: 'kutu_adet', label: 'spec.kutu' },
+    { key: 'koli_adet', label: 'spec.koli' },
+  ],
+
   // --- YENİ ÜRÜNLER (Haziran 2026 Kataloğu) ---
   'granit-mermer-segmentli-taslama-diski': [
     { key: 'urun_kodu', label: 'spec.urun_kodu' },
