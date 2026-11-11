@@ -34,7 +34,7 @@ Foto klasörü salt okunur kalır. A1, rapor onaylanmadan başlamaz.
 - [x] **A0 — Keşif.** Tamamlandı. Çıktı: `scripts/raporlar/a0-kasim2026-rapor.md`. Foto klasörüne yazılmadı, commit yok.
 - [x] **A0 onayı.** A1a pilotu bu onayla açıldı.
 - [x] **A1a pilot.** Yalnız `miknatisli-anahtar-ucu` galerisi ve `canak-firca-sacakli` kart örnekleri (siteye bağlı değil). Rapor: `scripts/raporlar/a1a-pilot-rapor.md`.
-- [ ] **A1b.** Kalan 12 foto klasörü, 4 yeni ürün klasörü, kardeş bağlama (düz keski Plus, sivri murç Max). Onay bekler. Mevcut `{slug}-kart.jpg` dosyalarına dokunulmaz.
+- [x] **A1b.** Kalan 12 foto klasörü, 4 yeni ürün kartı, kardeş bağlama. Rapor: `scripts/raporlar/a1b-rapor.md`. Yeni ürün `images[]` bağlanmadı; A2 bekler.
 - [ ] **A1c — Eski galeri.** Dokuz slug + iki paylaşım hedefi, TR ve RU. Korunanlar yalnızca `{slug}-kart.jpg` ve `{slug}-kart-card.*`.
 - [ ] **A1d — Katalog.** Dört yeni iskelet. `max_hiz_rpm` 2500 → 12200. `Alumnum` → `Aluminum` (yalnız TR). 355 mm hızına dokunulmaz. Ardından `products-data.js` senkronu ve RU kopyası.
 - [ ] **A1e — Metin farkı.** Kasım kataloğu dosyası girdi olarak verilirse dokuz ürünün ad, açıklama ve varyant tablosu karşılaştırılır. O dosya gelmeden varyant satırı yazılmaz.

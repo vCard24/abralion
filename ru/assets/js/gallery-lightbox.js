@@ -30,9 +30,21 @@
 
   function collectImages() {
     return Array.from(document.querySelectorAll('.gallery-main .slider-image')).map((el) => ({
-      src: el.currentSrc || el.src,
+      src: el.dataset.full || el.currentSrc || el.src,
+      fullWebpRel: el.dataset.fullWebp || '',
       alt: el.alt || '',
     }));
+  }
+
+  function fullCandidates(item) {
+    const builder =
+      window.ABRALION_IMAGE?.buildSingleImageCandidates ||
+      (typeof buildSingleImageCandidates === 'function' ? buildSingleImageCandidates : null);
+    if (item.fullWebpRel && builder) {
+      const base = typeof getBasePath === 'function' ? getBasePath() : '';
+      return builder(item.fullWebpRel, base);
+    }
+    return [item.src];
   }
 
   function ensureDialog() {
@@ -155,7 +167,13 @@
   function updateUi() {
     if (!images.length) return;
     const item = images[current];
-    imgEl.src = item.src;
+    const list = fullCandidates(item);
+    let idx = 0;
+    imgEl.onerror = () => {
+      idx += 1;
+      if (list[idx]) imgEl.src = list[idx];
+    };
+    imgEl.src = list[0] || item.src;
     imgEl.alt = item.alt;
     counterEl.textContent = `${current + 1} / ${images.length}`;
 

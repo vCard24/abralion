@@ -27,7 +27,10 @@ CATALOG_JSON = ROOT / "data" / "products.json"
 CATALOG_JS = ROOT / "assets" / "js" / "products-data.js"
 CATALOG_JS_ROOT = ROOT / "products-data.js"
 CARD_OUT = ROOT / "scripts" / "raporlar" / "a1a-kart"
+CARD_PREVIEW = ROOT / "scripts" / "raporlar" / "a1b-kartlar"
 BG = (0x0A, 0x0A, 0x0A)
+CARD_LARGE = (600, 316)
+CARD_SMALL = (190, 110)
 
 # A0 klasör → slug. Kaynak adları diskteki klasörle birebir.
 FOLDER_BY_SLUG = {
@@ -46,11 +49,81 @@ FOLDER_BY_SLUG = {
     "sivri-uclu-keski-murc-sds-plus": "Sivri Uçlu Keski Murç SDS Plus",
 }
 
-# A0 kart önerileri. miknatisli için A0 kahraman seçmedi; ürün karesi DSC_8859.
+# Ana foto: ürün tek başına, ambalaj/aksiyon karesi değil. Seçim A1b raporunda.
 HERO_FILE = {
-    "canak-firca-sacakli": "DSC_9025-редакт.jpg",
+    "canak-firca-sacakli": "DSC_8984-редакт.jpg",
+    "canak-firca-burgulu": "DSC_8974-редакт.jpg",
+    "plastik-sapli-celik-tel-firca": "DSC_8926-редакт.jpg",
+    "genis-agizli-keski": "DSC_9114-редакт.jpg",
+    "cam-seramik-matkap-ucu": "DSC_9327-редакт.jpg",
+    "hss-matkap-ucu": "DSC_8892-редакт.jpg",
+    "sds-plus-2-kesicili-beton-matkap-ucu": "DSC_9233-редакт.jpg",
+    "sds-plus-4-kesicili-beton-matkap-ucu": "DSC_9170-редакт.jpg",
+    "sds-max-burc-aleti": "DSC_9189-редакт.jpg",
     "miknatisli-anahtar-ucu": "DSC_8859-редакт.jpg",
+    "ph2-manyetik-bits-uc": "DSC_9045-редакт.jpg",
+    "duz-keski-sds-max": "DSC_8950-редакт.jpg",
+    "sivri-uclu-keski-murc-sds-plus": "DSC_8944-редакт.jpg",
 }
+
+# Kart karesi ana fotodan ayrı olabilir: yatay kartta ürünün kendisi dolsun.
+CARD_FILE = {
+    "canak-firca-sacakli": "DSC_9025-редакт.jpg",
+    "canak-firca-burgulu": "DSC_8978-редакт.jpg",
+    "plastik-sapli-celik-tel-firca": "DSC_8926-редакт.jpg",
+    "genis-agizli-keski": "DSC_9114-редакт.jpg",
+}
+
+NEW_SLUGS = (
+    "canak-firca-sacakli",
+    "canak-firca-burgulu",
+    "plastik-sapli-celik-tel-firca",
+    "genis-agizli-keski",
+)
+EXISTING_A1B = (
+    "cam-seramik-matkap-ucu",
+    "hss-matkap-ucu",
+    "sds-plus-2-kesicili-beton-matkap-ucu",
+    "sds-plus-4-kesicili-beton-matkap-ucu",
+    "sds-max-burc-aleti",
+    "ph2-manyetik-bits-uc",
+    "duz-keski-sds-max",
+    "sivri-uclu-keski-murc-sds-plus",
+)
+# Kardeş images[] kaynak galeriye bakar. Slug'a göre aranan 5 dosya kopyalanır.
+SIBLINGS = (
+    ("duz-keski-sds-plus", "duz-keski-sds-max"),
+    ("sivri-uclu-keski-murc-sds-max", "sivri-uclu-keski-murc-sds-plus"),
+)
+WIRE_SLUGS = {
+    "canak-firca-sacakli",
+    "canak-firca-burgulu",
+    "plastik-sapli-celik-tel-firca",
+}
+PRODUCT_NAME = {
+    "canak-firca-sacakli": "Saçaklı Çanak Fırça",
+    "canak-firca-burgulu": "Burgulu Çanak Fırça",
+    "plastik-sapli-celik-tel-firca": "Plastik Saplı Çelik Tel Fırça",
+    "genis-agizli-keski": "Geniş Ağızlı Keski",
+    "cam-seramik-matkap-ucu": "Cam ve Seramik Matkap Ucu (4 Kesicili)",
+    "hss-matkap-ucu": "HSS Matkap Ucu",
+    "sds-plus-2-kesicili-beton-matkap-ucu": "SDS Plus 2 Kesicili Beton Matkap Ucu",
+    "sds-plus-4-kesicili-beton-matkap-ucu": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro)",
+    "sds-max-burc-aleti": "SDS MAX Burç Aleti (Taraklı Murç)",
+    "miknatisli-anahtar-ucu": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü)",
+    "ph2-manyetik-bits-uc": "PH2 Manyetik Bits Uç",
+    "duz-keski-sds-max": "Düz Keski SDS Max",
+    "duz-keski-sds-plus": "Düz Keski SDS Plus",
+    "sivri-uclu-keski-murc-sds-plus": "Sivri Uçlu Keski Murç SDS Plus",
+    "sivri-uclu-keski-murc-sds-max": "Sivri Uçlu Keski Murç SDS Max",
+}
+SLUG_KEYED_SUFFIXES = (
+    ".webp",
+    "-cover.jpg",
+    "-og.jpg",
+    "-wa.jpg",
+    "-menu-thumb.webp",
+)
 
 KEEP_KART_JPG = re.compile(r"-kart\.jpg$", re.I)
 KEEP_KART_CARD = re.compile(r"-kart-card\.", re.I)
@@ -360,9 +433,10 @@ def ingest(slug: str, dry_run: bool, replace_legacy: bool, write_catalog: bool) 
     print(f"SLUG {slug}")
     print(f"HERO {hero.name}")
     print(f"FRAMES {len(frames)}")
+    deleted = [f"{path.relative_to(ROOT).as_posix()} {path.stat().st_size}" for path in legacy]
     print("SILINECEK")
-    for path in legacy:
-        print(f"  {path.relative_to(ROOT)} {path.stat().st_size}")
+    for line in deleted:
+        print(f"  {line}")
     if dry_run:
         print("DRY-RUN yazılmadı")
         return {"slug": slug, "frames": len(frames), "legacy": len(legacy), "before": before}
@@ -373,10 +447,11 @@ def ingest(slug: str, dry_run: bool, replace_legacy: bool, write_catalog: bool) 
 
     written: list[Path] = []
     catalog_images: list[dict] = []
-    name = "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü)"
+    name = PRODUCT_NAME.get(slug, slug)
     for i, frame in enumerate(frames, start=1):
         nn = f"{i:02d}"
-        rgb = to_srgb(Image.open(frame))
+        with Image.open(frame) as opened:
+            rgb = to_srgb(opened)
         full = fit_long_edge(rgb, FULL_EDGE)
         thumb = fit_long_edge(rgb, THUMB_EDGE)
         stem_full = dest / f"{slug}-galeri-{nn}"
@@ -389,9 +464,10 @@ def ingest(slug: str, dry_run: bool, replace_legacy: bool, write_catalog: bool) 
                 "alt": f"{name} - galeri {nn}",
             }
         )
-        print(f"  {nn} {frame.name} -> {stem_full.name}.*")
+        print(f"  {nn} {frame.name} -> {stem_full.name}.*", flush=True)
 
-    hero_rgb = to_srgb(Image.open(hero))
+    with Image.open(hero) as opened:
+        hero_rgb = to_srgb(opened)
     main = fit_long_edge(hero_rgb, HERO_EDGE)
     main_path = dest / f"{slug}.webp"
     main.save(main_path, "WEBP", quality=75, method=6)
@@ -421,11 +497,211 @@ def ingest(slug: str, dry_run: bool, replace_legacy: bool, write_catalog: bool) 
         "slug": slug,
         "frames": len(frames),
         "hero": hero.name,
-        "legacy": [str(p.relative_to(ROOT)) for p in legacy],
+        "deleted": deleted if replace_legacy else [],
         "written": len(written),
         "before": before,
         "after": after,
+        "catalog": write_catalog,
+        "images": [img["src"] for img in catalog_images],
     }
+
+
+def frame_by_name(slug: str, filename: str) -> Path:
+    folder = SOURCE / FOLDER_BY_SLUG[slug]
+    path = folder / filename
+    if not path.is_file():
+        raise SystemExit(f"Kare yok: {path}")
+    return path
+
+
+def white_halo_fraction(im: Image.Image) -> float:
+    rgba = im.convert("RGBA")
+    edge = 0
+    white = 0
+    for r, g, b, a in rgba.getdata():
+        if 12 < a < 248:
+            edge += 1
+            if r > 220 and g > 220 and b > 220:
+                white += 1
+    if edge < 30:
+        return 0.0
+    return white / edge
+
+
+def dark_feather(im: Image.Image, radius: int = 2) -> Image.Image:
+    """Tel kenarındaki beyaz haleyi 1–2 px içeri çekip zemine yaklaştır."""
+    rgba = im.convert("RGBA")
+    r, g, b, a = rgba.split()
+    shrunk = a.filter(ImageFilter.MinFilter(radius * 2 + 1))
+    outside = a.point(lambda p: 255 if p < 24 else 0)
+    grown = outside.filter(ImageFilter.MaxFilter(radius * 2 + 1))
+    rgb = Image.merge("RGB", (r, g, b))
+    luma = ImageOps.grayscale(rgb)
+    bright = luma.point(lambda p: 255 if p > 170 else 0)
+    from PIL import ImageChops
+
+    band = ImageChops.multiply(bright, grown)
+    dark = Image.new("RGB", rgba.size, BG)
+    rgb = Image.composite(dark, rgb, band)
+    return Image.merge("RGBA", (*rgb.split(), shrunk))
+
+
+def rembg_session():
+    try:
+        from rembg import new_session
+    except ImportError as exc:
+        raise SystemExit("rembg kurulu değil. Kartlar üretilmedi.") from exc
+    return new_session("u2net")
+
+
+def cutout(im: Image.Image, session) -> Image.Image:
+    from rembg import remove
+
+    out = remove(im, session=session)
+    if not isinstance(out, Image.Image):
+        out = Image.open(BytesIO(out))
+    return out.convert("RGBA")
+
+
+def composite_rgba(rgba: Image.Image, size: tuple[int, int]) -> Image.Image:
+    alpha = rgba.split()[-1]
+    box = alpha.point(lambda p: 255 if p > 16 else 0).getbbox() or (0, 0, rgba.width, rgba.height)
+    subject = rgba.crop(box)
+    tw, th = size
+    scale = min((tw * 0.86) / subject.width, (th * 0.62) / subject.height)
+    nw = max(1, int(round(subject.width * scale)))
+    nh = max(1, int(round(subject.height * scale)))
+    subject = subject.resize((nw, nh), Image.Resampling.LANCZOS)
+    canvas = Image.new("RGBA", size, BG + (255,))
+    ox = (tw - nw) // 2
+    oy = int(th * 0.42) - nh // 2
+
+    shadow = Image.new("L", size, 0)
+    draw = ImageDraw.Draw(shadow)
+    draw.ellipse((ox + int(nw * 0.12), oy + nh - 6, ox + int(nw * 0.88), oy + nh + 18), fill=160)
+    shadow = shadow.filter(ImageFilter.GaussianBlur(14))
+    shade = Image.new("RGBA", size, (0, 0, 0, 0))
+    shade.putalpha(shadow.point(lambda p: int(p * 0.65)))
+    canvas = Image.alpha_composite(canvas, shade)
+
+    canvas.paste(subject, (ox, oy), subject)
+    refl = ImageOps.flip(subject)
+    fade = Image.new("L", (nw, nh), 0)
+    pixels = fade.load()
+    for y in range(nh):
+        alpha_y = int(80 * (1 - y / nh) ** 1.6)
+        for x in range(nw):
+            pixels[x, y] = alpha_y
+    rr, gg, bb, aa = refl.split()
+    aa = ImageChops_multiply(aa, fade)
+    refl = Image.merge("RGBA", (rr, gg, bb, aa))
+    canvas.paste(refl, (ox, oy + nh - 2), refl)
+    return canvas.convert("RGB")
+
+
+def write_product_cards(slugs: tuple[str, ...] | None = None) -> list[dict]:
+    session = rembg_session()
+    CARD_PREVIEW.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for slug in slugs or NEW_SLUGS:
+        filename = CARD_FILE.get(slug) or HERO_FILE[slug]
+        src = frame_by_name(slug, filename)
+        with Image.open(src) as opened:
+            rgb = to_srgb(opened)
+        rgba = cutout(rgb, session)
+        halo_before = white_halo_fraction(rgba)
+        feathered = False
+        if slug in WIRE_SLUGS:
+            rgba = dark_feather(rgba, radius=2)
+            feathered = True
+        halo_after = white_halo_fraction(rgba) if feathered else halo_before
+        large = composite_rgba(rgba, CARD_LARGE)
+        small = large.resize(CARD_SMALL, Image.Resampling.LANCZOS)
+        dest = PRODUCTS / slug
+        dest.mkdir(parents=True, exist_ok=True)
+        kart = dest / f"{slug}-kart.jpg"
+        webp = dest / f"{slug}-kart-card.webp"
+        avif = dest / f"{slug}-kart-card.avif"
+        small.save(kart, "JPEG", quality=82, optimize=True, progressive=True)
+        large.save(webp, "WEBP", quality=75, method=6)
+        large.save(avif, "AVIF", quality=50)
+        preview = CARD_PREVIEW / f"{slug}.jpg"
+        large.save(preview, "JPEG", quality=86, optimize=True)
+        row = {
+            "slug": slug,
+            "source": filename,
+            "halo_before": round(halo_before, 3),
+            "halo_after": round(halo_after, 3),
+            "feather": feathered,
+            "kart": kart.stat().st_size,
+            "webp": webp.stat().st_size,
+            "avif": avif.stat().st_size,
+            "preview": preview.relative_to(ROOT).as_posix(),
+        }
+        rows.append(row)
+        print(
+            f"CARD {slug} {filename} halo {halo_before:.2f}->{halo_after:.2f} feather={feathered}",
+            flush=True,
+        )
+    return rows
+
+
+def gallery_images_for(slug: str) -> list[dict]:
+    dest = PRODUCTS / slug
+    files = sorted(dest.glob(f"{slug}-galeri-*.jpg"))
+    files = [p for p in files if "-thumb" not in p.name]
+    name = PRODUCT_NAME.get(slug, slug)
+    images = []
+    for path in files:
+        nn = path.stem.rsplit("-", 1)[-1]
+        images.append(
+            {
+                "src": f"assets/images/products/{slug}/{path.name}",
+                "alt": f"{name} - galeri {nn}",
+            }
+        )
+    if not images:
+        raise SystemExit(f"Galeri yok: {slug}")
+    return images
+
+
+def link_siblings() -> list[dict]:
+    rows = []
+    for dest_slug, source_slug in SIBLINGS:
+        images = gallery_images_for(source_slug)
+        name = PRODUCT_NAME[dest_slug]
+        for img in images:
+            nn = img["src"].rsplit("-", 1)[-1].split(".")[0]
+            img["alt"] = f"{name} - galeri {nn}"
+        patch_catalog_file(CATALOG_JSON, dest_slug, images)
+        patch_catalog_file(CATALOG_JS, dest_slug, images)
+        src_dir = PRODUCTS / source_slug
+        dst_dir = PRODUCTS / dest_slug
+        dst_dir.mkdir(parents=True, exist_ok=True)
+        removed = []
+        for path in legacy_files(dst_dir):
+            removed.append(f"{path.relative_to(ROOT).as_posix()} {path.stat().st_size}")
+            path.unlink()
+        copied = []
+        for suffix in SLUG_KEYED_SUFFIXES:
+            src = src_dir / f"{source_slug}{suffix}"
+            dst = dst_dir / f"{dest_slug}{suffix}"
+            if not src.is_file():
+                raise SystemExit(f"Kardeş kopyası için kaynak yok: {src}")
+            dst.write_bytes(src.read_bytes())
+            copied.append(dst.relative_to(ROOT).as_posix())
+        rows.append(
+            {
+                "dest": dest_slug,
+                "source": source_slug,
+                "images": len(images),
+                "copied": copied,
+                "removed": removed,
+            }
+        )
+        print(f"SIBLING {dest_slug} <- {source_slug} images={len(images)} copy={len(copied)}", flush=True)
+    CATALOG_JS_ROOT.write_text(CATALOG_JS.read_text(encoding="utf-8"), encoding="utf-8")
+    return rows
 
 
 def main() -> int:
@@ -435,10 +711,34 @@ def main() -> int:
     parser.add_argument("--replace-legacy", action="store_true", help="Kart dışı eski dosyaları sil")
     parser.add_argument("--write-catalog", action="store_true", help="products.json ve products-data.js images[] güncelle")
     parser.add_argument("--cards", help="Kart örneklerini scripts/raporlar/a1a-kart altına yaz")
+    parser.add_argument("--remaining", action="store_true", help="Pilot dışı 12 klasör, kardeş bağlama ve yeni kartlar")
+    parser.add_argument("--product-cards", action="store_true", help="Dört yeni ürünün koyu kartını üret")
+    parser.add_argument("--link-siblings", action="store_true", help="Kardeş images[] ve slug dosya kopyası")
     args = parser.parse_args()
 
     if args.cards:
         write_cards(args.cards)
+        return 0
+    if args.product_cards:
+        write_product_cards()
+        return 0
+    if args.link_siblings:
+        link_siblings()
+        return 0
+    if args.remaining:
+        import json as jsonlib
+
+        summary = {"products": [], "cards": [], "siblings": []}
+        for slug in EXISTING_A1B:
+            summary["products"].append(ingest(slug, args.dry_run, True, not args.dry_run))
+        for slug in NEW_SLUGS:
+            summary["products"].append(ingest(slug, args.dry_run, True, False))
+        if not args.dry_run:
+            summary["cards"] = write_product_cards()
+            summary["siblings"] = link_siblings()
+            log = ROOT / "scripts" / "raporlar" / "a1b-run.json"
+            log.write_text(jsonlib.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"LOG {log.relative_to(ROOT)}", flush=True)
         return 0
     if not args.only:
         print("--only <slug> gerekli", file=sys.stderr)

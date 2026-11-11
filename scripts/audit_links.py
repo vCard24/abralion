@@ -76,7 +76,7 @@ def is_checkable_ref(ref: str) -> bool:
         return False
     if "${" in ref or "`" in ref or "{" in ref or "}" in ref:
         return False
-    if ref in (".", ".."):
+    if ref in (".", "..") or ref.endswith("/"):
         return False
     if ref.startswith(("assets/", "data/", "urun/", "../", "./", "/")):
         return True
@@ -91,7 +91,11 @@ def normalize_ref(ref: str, base: Path) -> str | None:
     if not ref:
         return None
     if ref.startswith(("assets/", "data/", "urun/")):
-        target = ROOT / ref
+        candidates = [(base.parent / ref).resolve()]
+        if "ru" in base.parts:
+            candidates.append((ROOT / "ru" / ref).resolve())
+        candidates.append((ROOT / ref).resolve())
+        target = next((item for item in candidates if item.exists()), candidates[-1])
     elif ref.startswith("/"):
         target = ROOT / ref.lstrip("/")
     else:

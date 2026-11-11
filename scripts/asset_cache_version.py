@@ -68,6 +68,7 @@ def bump_versioned_assets_in_html(
     Returns mapping basename -> hash for assets that were updated.
     """
     hashes: dict[str, str] = {}
+    path_hashes: dict[str, str] = {}
     changed_files: list[Path] = []
 
     for html_path in sorted(root.rglob("*.html")):
@@ -84,10 +85,12 @@ def bump_versioned_assets_in_html(
             asset_path = resolve_asset_path(html_path, prefix)
             if not asset_path:
                 return m.group(0)
-            h = hashes.get(filename)
+            key = str(asset_path.resolve())
+            h = path_hashes.get(key)
             if h is None:
                 h = content_hash(asset_path)
-                hashes[filename] = h
+                path_hashes[key] = h
+            hashes[filename] = h
             return f"{prefix}?v={h}"
 
         text = VERSIONED_REF.sub(repl, text)

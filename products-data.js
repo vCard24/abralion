@@ -939,15 +939,167 @@ window.ABRALION_CATALOG = {
         "Doğal taş, kireçtaşı ve kumtaşında dübel ve ankraj delikleri",
         "Elektrik, su tesisatı, klima montajı işleri"
       ],
-      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-uygulama.webp",
+      "applicationImage": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-01.jpg",
       "images": [
         {
-          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu.webp",
-          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - sds plus 2 kesicili beton matkap ucu"
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-01.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 01"
         },
         {
-          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-kullanim.webp",
-          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - sds plus 2 kesicili beton matkap ucu kullanim"
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-02.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 02"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-03.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 03"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-04.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 04"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-05.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 05"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-06.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 06"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-07.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 07"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-08.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 08"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-09.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 09"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-10.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 10"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-11.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 11"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-12.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 12"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-13.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 13"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-14.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 14"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-15.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 15"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-16.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 16"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-17.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 17"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-18.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 18"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-19.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 19"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-20.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 20"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-21.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 21"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-22.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 22"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-23.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 23"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-24.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 24"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-25.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 25"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-26.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 26"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-27.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 27"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-28.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 28"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-29.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 29"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-30.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 30"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-31.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 31"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-32.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 32"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-33.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 33"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-34.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 34"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-35.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 35"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-36.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 36"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-37.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 37"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-38.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 38"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-39.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 39"
+        },
+        {
+          "src": "assets/images/products/sds-plus-2-kesicili-beton-matkap-ucu/sds-plus-2-kesicili-beton-matkap-ucu-galeri-40.jpg",
+          "alt": "SDS Plus 2 Kesicili Beton Matkap Ucu - galeri 40"
         }
       ],
       "variants": [
@@ -1157,12 +1309,120 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu.webp",
-          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - sds plus 4 kesicili beton matkap ucu"
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-01.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 01"
         },
         {
-          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-kullanim.webp",
-          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - sds plus 4 kesicili beton matkap ucu kullanim"
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-02.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 02"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-03.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 03"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-04.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 04"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-05.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 05"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-06.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 06"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-07.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 07"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-08.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 08"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-09.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 09"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-10.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 10"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-11.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 11"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-12.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 12"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-13.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 13"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-14.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 14"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-15.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 15"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-16.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 16"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-17.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 17"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-18.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 18"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-19.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 19"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-20.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 20"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-21.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 21"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-22.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 22"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-23.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 23"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-24.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 24"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-25.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 25"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-26.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 26"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-27.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 27"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-28.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 28"
+        },
+        {
+          "src": "assets/images/products/sds-plus-4-kesicili-beton-matkap-ucu/sds-plus-4-kesicili-beton-matkap-ucu-galeri-29.jpg",
+          "alt": "SDS Plus 4 Kesicili Beton Matkap Ucu (Quadro) - galeri 29"
         }
       ],
       "variants": [
@@ -1372,12 +1632,136 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu.webp",
-          "alt": "HSS Matkap Ucu - hss matkap ucu"
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-01.jpg",
+          "alt": "HSS Matkap Ucu - galeri 01"
         },
         {
-          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-kullanim.jpg",
-          "alt": "HSS Matkap Ucu - hss matkap ucu kullanim"
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-02.jpg",
+          "alt": "HSS Matkap Ucu - galeri 02"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-03.jpg",
+          "alt": "HSS Matkap Ucu - galeri 03"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-04.jpg",
+          "alt": "HSS Matkap Ucu - galeri 04"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-05.jpg",
+          "alt": "HSS Matkap Ucu - galeri 05"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-06.jpg",
+          "alt": "HSS Matkap Ucu - galeri 06"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-07.jpg",
+          "alt": "HSS Matkap Ucu - galeri 07"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-08.jpg",
+          "alt": "HSS Matkap Ucu - galeri 08"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-09.jpg",
+          "alt": "HSS Matkap Ucu - galeri 09"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-10.jpg",
+          "alt": "HSS Matkap Ucu - galeri 10"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-11.jpg",
+          "alt": "HSS Matkap Ucu - galeri 11"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-12.jpg",
+          "alt": "HSS Matkap Ucu - galeri 12"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-13.jpg",
+          "alt": "HSS Matkap Ucu - galeri 13"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-14.jpg",
+          "alt": "HSS Matkap Ucu - galeri 14"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-15.jpg",
+          "alt": "HSS Matkap Ucu - galeri 15"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-16.jpg",
+          "alt": "HSS Matkap Ucu - galeri 16"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-17.jpg",
+          "alt": "HSS Matkap Ucu - galeri 17"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-18.jpg",
+          "alt": "HSS Matkap Ucu - galeri 18"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-19.jpg",
+          "alt": "HSS Matkap Ucu - galeri 19"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-20.jpg",
+          "alt": "HSS Matkap Ucu - galeri 20"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-21.jpg",
+          "alt": "HSS Matkap Ucu - galeri 21"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-22.jpg",
+          "alt": "HSS Matkap Ucu - galeri 22"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-23.jpg",
+          "alt": "HSS Matkap Ucu - galeri 23"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-24.jpg",
+          "alt": "HSS Matkap Ucu - galeri 24"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-25.jpg",
+          "alt": "HSS Matkap Ucu - galeri 25"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-26.jpg",
+          "alt": "HSS Matkap Ucu - galeri 26"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-27.jpg",
+          "alt": "HSS Matkap Ucu - galeri 27"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-28.jpg",
+          "alt": "HSS Matkap Ucu - galeri 28"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-29.jpg",
+          "alt": "HSS Matkap Ucu - galeri 29"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-30.jpg",
+          "alt": "HSS Matkap Ucu - galeri 30"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-31.jpg",
+          "alt": "HSS Matkap Ucu - galeri 31"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-32.jpg",
+          "alt": "HSS Matkap Ucu - galeri 32"
+        },
+        {
+          "src": "assets/images/products/hss-matkap-ucu/hss-matkap-ucu-galeri-33.jpg",
+          "alt": "HSS Matkap Ucu - galeri 33"
         }
       ],
       "variants": [
@@ -1463,12 +1847,16 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus.webp",
-          "alt": "Düz Keski SDS Plus - duz keski sds plus"
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-galeri-01.jpg",
+          "alt": "Düz Keski SDS Plus - galeri 01"
         },
         {
-          "src": "assets/images/products/duz-keski-sds-plus/duz-keski-sds-plus-kullanim.jpg",
-          "alt": "Düz Keski SDS Plus - duz keski sds plus kullanim"
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-galeri-02.jpg",
+          "alt": "Düz Keski SDS Plus - galeri 02"
+        },
+        {
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-galeri-03.jpg",
+          "alt": "Düz Keski SDS Plus - galeri 03"
         }
       ],
       "variants": [
@@ -1520,12 +1908,16 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max.webp",
-          "alt": "Düz Keski SDS Max - duz keski sds max"
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-galeri-01.jpg",
+          "alt": "Düz Keski SDS Max - galeri 01"
         },
         {
-          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-kullanim.jpg",
-          "alt": "Düz Keski SDS Max - duz keski sds max kullanim"
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-galeri-02.jpg",
+          "alt": "Düz Keski SDS Max - galeri 02"
+        },
+        {
+          "src": "assets/images/products/duz-keski-sds-max/duz-keski-sds-max-galeri-03.jpg",
+          "alt": "Düz Keski SDS Max - galeri 03"
         }
       ],
       "variants": [
@@ -1587,12 +1979,16 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus.webp",
-          "alt": "Sivri Uçlu Keski Murç SDS Plus - sivri uclu keski murc sds plus"
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-galeri-01.jpg",
+          "alt": "Sivri Uçlu Keski Murç SDS Plus - galeri 01"
         },
         {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-kullanim.jpg",
-          "alt": "Sivri Uçlu Keski Murç SDS Plus - sivri uclu keski murc sds plus kullanim"
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-galeri-02.jpg",
+          "alt": "Sivri Uçlu Keski Murç SDS Plus - galeri 02"
+        },
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-galeri-03.jpg",
+          "alt": "Sivri Uçlu Keski Murç SDS Plus - galeri 03"
         }
       ],
       "variants": [
@@ -1632,12 +2028,16 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max.webp",
-          "alt": "Sivri Uçlu Keski Murç SDS Max - sivri uclu keski murc sds max"
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-galeri-01.jpg",
+          "alt": "Sivri Uçlu Keski Murç SDS Max - galeri 01"
         },
         {
-          "src": "assets/images/products/sivri-uclu-keski-murc-sds-max/sivri-uclu-keski-murc-sds-max-kullanim.webp",
-          "alt": "Sivri Uçlu Keski Murç SDS Max - sivri uclu keski murc sds max kullanim"
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-galeri-02.jpg",
+          "alt": "Sivri Uçlu Keski Murç SDS Max - galeri 02"
+        },
+        {
+          "src": "assets/images/products/sivri-uclu-keski-murc-sds-plus/sivri-uclu-keski-murc-sds-plus-galeri-03.jpg",
+          "alt": "Sivri Uçlu Keski Murç SDS Max - galeri 03"
         }
       ],
       "variants": [
@@ -1687,16 +2087,84 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu.webp",
-          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cam seramik matkap ucu"
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-01.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 01"
         },
         {
-          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kutu.jpg",
-          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cok fonksiyonlu cam ve seramik matkap ucu 4 kesicili kutu"
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-02.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 02"
         },
         {
-          "src": "assets/images/products/cam-seramik-matkap-ucu/cok-fonksiyonlu-cam-ve-seramik-matkap-ucu-4-kesicili-kullanim.jpg",
-          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - cok fonksiyonlu cam ve seramik matkap ucu 4 kesicili kullanim"
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-03.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 03"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-04.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 04"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-05.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 05"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-06.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 06"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-07.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 07"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-08.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 08"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-09.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 09"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-10.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 10"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-11.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 11"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-12.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 12"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-13.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 13"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-14.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 14"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-15.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 15"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-16.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 16"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-17.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 17"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-18.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 18"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-19.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 19"
+        },
+        {
+          "src": "assets/images/products/cam-seramik-matkap-ucu/cam-seramik-matkap-ucu-galeri-20.jpg",
+          "alt": "Cam ve Seramik Matkap Ucu (4 Kesicili) - galeri 20"
         }
       ],
       "variants": [
@@ -1768,16 +2236,20 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti.webp",
-          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - sds max burc aleti"
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-galeri-01.jpg",
+          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - galeri 01"
         },
         {
-          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-tarakli-murc-kullanim.jpg",
-          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - sds max burc aleti tarakli murc kullanim"
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-galeri-02.jpg",
+          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - galeri 02"
         },
         {
-          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti2.webp",
-          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - sds max burc aleti2"
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-galeri-03.jpg",
+          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - galeri 03"
+        },
+        {
+          "src": "assets/images/products/sds-max-burc-aleti/sds-max-burc-aleti-galeri-04.jpg",
+          "alt": "SDS MAX Burç Aleti (Taraklı Murç) - galeri 04"
         }
       ],
       "variants": [
@@ -1892,12 +2364,60 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc.webp",
-          "alt": "PH2 Manyetik Bits Uç - ph2 manyetik bits uc"
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-01.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 01"
         },
         {
-          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-kullanim.jpg",
-          "alt": "PH2 Manyetik Bits Uç - ph2 manyetik bits uc kullanim"
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-02.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 02"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-03.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 03"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-04.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 04"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-05.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 05"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-06.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 06"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-07.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 07"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-08.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 08"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-09.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 09"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-10.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 10"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-11.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 11"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-12.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 12"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-13.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 13"
+        },
+        {
+          "src": "assets/images/products/ph2-manyetik-bits-uc/ph2-manyetik-bits-uc-galeri-14.jpg",
+          "alt": "PH2 Manyetik Bits Uç - galeri 14"
         }
       ],
       "variants": [

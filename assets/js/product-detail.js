@@ -207,10 +207,12 @@ function renderGallery(product, container) {
       const parts = kasimGalleryParts(img.src);
       const displayRel = parts ? `${parts.base}-galeri-${parts.nn}-thumb.webp` : img.src;
       const fullRel = parts ? `${parts.base}-galeri-${parts.nn}.jpg` : img.src;
+      const fullWebpRel = parts ? `${parts.base}-galeri-${parts.nn}.webp` : '';
       const src = galleryAssetUrl(displayRel, base);
       const fullSrc = galleryAssetUrl(fullRel, base);
       const lazy = i === 0 ? '' : ' loading="lazy"';
-      return `<img src="${src}" alt="${escapeHtml(img.alt || product.name)}" class="slider-image max-w-full max-h-full w-auto h-auto object-contain p-2 transition-transform duration-700 group-hover:scale-110${i === 0 ? ' active' : ''}" data-gallery-src="${escapeHtml(displayRel)}" data-full="${escapeHtml(fullSrc)}"${lazy} decoding="async">`;
+      const fullWebpAttr = fullWebpRel ? ` data-full-webp="${escapeHtml(fullWebpRel)}"` : '';
+      return `<img src="${src}" alt="${escapeHtml(img.alt || product.name)}" class="slider-image max-w-full max-h-full w-auto h-auto object-contain p-2 transition-transform duration-700 group-hover:scale-110${i === 0 ? ' active' : ''}" data-gallery-src="${escapeHtml(displayRel)}" data-full="${escapeHtml(fullSrc)}"${fullWebpAttr}${lazy} decoding="async">`;
     })
     .join('');
 
