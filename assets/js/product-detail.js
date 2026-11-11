@@ -181,6 +181,20 @@ function fillList(ul, items, options = {}) {
     .join('');
 }
 
+function kasimGalleryParts(rel) {
+  const match = String(rel || '').match(/^(.*?)-galeri-(\d+)(?:-thumb)?\.(avif|webp|jpe?g)$/i);
+  if (!match) return null;
+  return { base: match[1], nn: match[2] };
+}
+
+function galleryAssetUrl(rel, base) {
+  if (typeof buildSingleImageCandidates === 'function') {
+    return buildSingleImageCandidates(rel, base)[0];
+  }
+  if (rel.startsWith('assets')) return `${base}${rel}`;
+  return rel;
+}
+
 function renderGallery(product, container) {
   const base = getBasePath();
   const images =
@@ -190,27 +204,24 @@ function renderGallery(product, container) {
 
   const slides = images
     .map((img, i) => {
-      const src =
-        typeof buildSingleImageCandidates === 'function'
-          ? buildSingleImageCandidates(img.src, base)[0]
-          : img.src.startsWith('assets')
-            ? `${base}${img.src}`
-            : img.src;
-      return `<img src="${src}" alt="${escapeHtml(img.alt || product.name)}" class="slider-image max-w-full max-h-full w-auto h-auto object-contain p-2 transition-transform duration-700 group-hover:scale-110${i === 0 ? ' active' : ''}" data-gallery-src="${escapeHtml(img.src)}">`;
+      const parts = kasimGalleryParts(img.src);
+      const displayRel = parts ? `${parts.base}-galeri-${parts.nn}-thumb.webp` : img.src;
+      const fullRel = parts ? `${parts.base}-galeri-${parts.nn}.jpg` : img.src;
+      const src = galleryAssetUrl(displayRel, base);
+      const fullSrc = galleryAssetUrl(fullRel, base);
+      const lazy = i === 0 ? '' : ' loading="lazy"';
+      return `<img src="${src}" alt="${escapeHtml(img.alt || product.name)}" class="slider-image max-w-full max-h-full w-auto h-auto object-contain p-2 transition-transform duration-700 group-hover:scale-110${i === 0 ? ' active' : ''}" data-gallery-src="${escapeHtml(displayRel)}" data-full="${escapeHtml(fullSrc)}"${lazy} decoding="async">`;
     })
     .join('');
 
   const thumbs = images
     .map((img, i) => {
-      const src =
-        typeof buildSingleImageCandidates === 'function'
-          ? buildSingleImageCandidates(img.src, base)[0]
-          : img.src.startsWith('assets')
-            ? `${base}${img.src}`
-            : img.src;
+      const parts = kasimGalleryParts(img.src);
+      const displayRel = parts ? `${parts.base}-galeri-${parts.nn}-thumb.webp` : img.src;
+      const src = galleryAssetUrl(displayRel, base);
       const active = i === 0;
       return `<button type="button" class="gallery-thumb-btn aspect-square bg-surface-elevation border p-2 cursor-pointer transition-colors${active ? ' border-abrasive-red' : ' border-steel-gray/10 hover:border-abrasive-red/50'}" aria-label="Görsel ${i + 1}" aria-selected="${active ? 'true' : 'false'}" data-index="${i}">
-          <img src="${src}" alt="" class="gallery-thumb w-full h-full object-contain" data-gallery-src="${escapeHtml(img.src)}">
+          <img src="${src}" alt="" class="gallery-thumb w-full h-full object-contain" loading="lazy" decoding="async" data-gallery-src="${escapeHtml(displayRel)}">
         </button>`;
     })
     .join('');

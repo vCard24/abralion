@@ -30,7 +30,7 @@
 
   function collectImages() {
     return Array.from(document.querySelectorAll('.gallery-main .slider-image')).map((el) => ({
-      src: el.currentSrc || el.src,
+      src: el.dataset.full || el.currentSrc || el.src,
       alt: el.alt || '',
     }));
   }
