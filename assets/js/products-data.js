@@ -10,19 +10,24 @@ window.ABRALION_CATALOG = {
       "order": 1
     },
     {
+      "id": "asindiricilar",
+      "name": "Aşındırıcılar",
+      "order": 2
+    },
+    {
       "id": "elmas-kesici",
       "name": "Elmas Kesici",
-      "order": 2
+      "order": 3
     },
     {
       "id": "kirici-delici",
       "name": "Kırıcı & Delici",
-      "order": 3
+      "order": 4
     },
     {
       "id": "olcum-kesim",
       "name": "Metreler & Maket Bıçakları",
-      "order": 4
+      "order": 5
     }
   ],
   "products": [
@@ -593,8 +598,8 @@ window.ABRALION_CATALOG = {
       "id": "canak-firca-sacakli",
       "slug": "canak-firca-sacakli",
       "name": "Çanak Fırça Saçaklı",
-      "categoryId": "kesici-taslama-flap-disk",
-      "categoryName": "Kesici - Taşlama - Flap Disk",
+      "categoryId": "asindiricilar",
+      "categoryName": "Aşındırıcılar",
       "featured": true,
       "description": "Esnek tel yapısı sayesinde işlenecek yüzeye mükemmel uyum sağlayarak üstün bir temizlik ve yüzey hazırlama performansı sunan genel amaçlı saçaklı çanak fırçalardır. Geniş metal levhaların ve profillerin temizliğinde işçilik zamanından tasarruf sağlar. M14 bağlantısı ile pratik ve güvenli bir kullanım sunar.",
       "features": [
@@ -707,8 +712,8 @@ window.ABRALION_CATALOG = {
       "id": "canak-firca-burgulu",
       "slug": "canak-firca-burgulu",
       "name": "Çanak Fırça Burgulu (Ağır Hizmet Tipi)",
-      "categoryId": "kesici-taslama-flap-disk",
-      "categoryName": "Kesici - Taşlama - Flap Disk",
+      "categoryId": "asindiricilar",
+      "categoryName": "Aşındırıcılar",
       "featured": true,
       "description": "Zorlu temizlik, derinlemesine pas sökme ve ağır yüzey aşındırma işlemleri için özel olarak tasarlanmış, ekstra dayanıklı burgulu (düğümlü) tel fırçadır. Agresif yapısı sayesinde metal, beton ve doğal taş gibi sert yüzeylere sıkıca tutunmuş inatçı katmanları hızla kazır.",
       "features": [
@@ -821,8 +826,8 @@ window.ABRALION_CATALOG = {
       "id": "plastik-sapli-celik-tel-firca",
       "slug": "plastik-sapli-celik-tel-firca",
       "name": "Plastik Saplı Çelik Tel Fırça (El Fırçası)",
-      "categoryId": "kesici-taslama-flap-disk",
-      "categoryName": "Kesici - Taşlama - Flap Disk",
+      "categoryId": "asindiricilar",
+      "categoryName": "Aşındırıcılar",
       "featured": false,
       "description": "Dar açılı bölgeler, köşeler ve boru yüzeyleri gibi ulaşılması zor alanlar için tasarlanmış profesyonel çelik tel el fırçasıdır. Yüksek mukavemetli çelik telleri sayesinde ağır pas, kaynak tortusu ve inatçı kirleri hızla söker. Atölyelerdeki mekanik temizliklerden bahçe ve tesisat bakımlarına kadar geniş bir yelpazede pratik çözümler sunar.",
       "features": [

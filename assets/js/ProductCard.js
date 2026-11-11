@@ -91,7 +91,7 @@ class ProductCard {
     const name = (product.name || '').toLowerCase();
 
     if (name.includes('inox')) tags.push('INOX');
-    if (name.includes('metal') || product.categoryId === 'kesici-taslama-flap-disk') {
+    if (name.includes('metal') || product.categoryId === 'kesici-taslama-flap-disk' || product.categoryId === 'asindiricilar') {
       if (!tags.includes('METAL')) tags.push('METAL');
     }
     if (product.categoryId === 'elmas-kesici') tags.push('ELMAS');

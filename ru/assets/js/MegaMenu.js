@@ -4,8 +4,42 @@ function escapeHtml(text) {
   return d.innerHTML;
 }
 
+const CHISEL_MENU_SUFFIX = {
+  'duz-keski-sds-plus': 'SDS Plus',
+  'duz-keski-sds-max': 'SDS Max',
+  'sivri-uclu-keski-murc-sds-plus': 'SDS Plus',
+  'sivri-uclu-keski-murc-sds-max': 'SDS Max',
+};
+
+const KIRICI_MENU_ORDER = [
+  'sds-plus-2-kesicili-beton-matkap-ucu',
+  'sds-plus-4-kesicili-beton-matkap-ucu',
+  'hss-matkap-ucu',
+  'cam-seramik-matkap-ucu',
+  'miknatisli-anahtar-ucu',
+  'ph2-manyetik-bits-uc',
+  'duz-keski-sds-plus',
+  'sivri-uclu-keski-murc-sds-plus',
+  'genis-agizli-keski',
+  'duz-keski-sds-max',
+  'sivri-uclu-keski-murc-sds-max',
+  'sds-max-burc-aleti',
+];
+
+function menuProductLabel(product) {
+  const suffix = CHISEL_MENU_SUFFIX[product.slug];
+  const name = suffix ? `${product.name} · ${suffix}` : product.name;
+  const limit = suffix ? 56 : 42;
+  return name.length > limit ? `${name.slice(0, limit - 1)}…` : name;
+}
+
+function orderMenuProducts(categoryId, items) {
+  if (categoryId !== 'kirici-delici') return items;
+  const rank = new Map(KIRICI_MENU_ORDER.map((slug, index) => [slug, index]));
+  return [...items].sort((a, b) => (rank.get(a.slug) ?? 100) - (rank.get(b.slug) ?? 100));
+}
+
 function columnCount(itemLen) {
-  if (itemLen > 8) return 4;
   if (itemLen > 5) return 3;
   if (itemLen > 2) return 2;
   return 1;
@@ -13,42 +47,35 @@ function columnCount(itemLen) {
 
 function buildProductColumns(base, items) {
   const cols = columnCount(items.length);
-  const buckets = Array.from({ length: cols }, () => []);
-  items.forEach((p, i) => buckets[i % cols].push(p));
-
-  return buckets
-    .map((bucket) => {
-      const links = bucket
-        .map((p) => {
-          const thumb =
-            typeof productMenuThumbUrl === 'function'
-              ? productMenuThumbUrl(base, p)
-              : productThumbUrl(base, p);
-          const featureSrc =
-            typeof productFeatureImageUrl === 'function'
-              ? productFeatureImageUrl(base, p)
-              : productThumbUrl(base, p);
-          const featureCandidates =
-            typeof productFeatureImageCandidates === 'function'
-              ? productFeatureImageCandidates(base, p)
-              : [featureSrc].filter(Boolean);
-          const short = p.name.length > 42 ? `${p.name.slice(0, 40)}…` : p.name;
-          return `<li>
+  const links = items
+    .map((p) => {
+      const thumb =
+        typeof productMenuThumbUrl === 'function'
+          ? productMenuThumbUrl(base, p)
+          : productThumbUrl(base, p);
+      const featureSrc =
+        typeof productFeatureImageUrl === 'function'
+          ? productFeatureImageUrl(base, p)
+          : productThumbUrl(base, p);
+      const featureCandidates =
+        typeof productFeatureImageCandidates === 'function'
+          ? productFeatureImageCandidates(base, p)
+          : [featureSrc].filter(Boolean);
+      const label = menuProductLabel(p);
+      return `<li>
             <a href="${productUrl(p.slug)}" class="mega-menu-product-link"
               data-feature-src="${featureSrc}"
               data-feature-candidates="${encodeURIComponent(JSON.stringify(featureCandidates))}"
-              data-feature-name="${escapeHtml(p.name)}">
+              data-feature-name="${escapeHtml(label)}">
               <span class="mega-menu-product-thumb">
                 <img src="${thumb}" alt="" width="32" height="32" loading="lazy">
               </span>
-              <span class="mega-menu-product-name">${escapeHtml(short)}</span>
+              <span class="mega-menu-product-name">${escapeHtml(label)}</span>
             </a>
           </li>`;
-        })
-        .join('');
-      return `<ul class="mega-menu-col">${links}</ul>`;
     })
     .join('');
+  return `<ul class="mega-menu-col" style="display:grid;grid-column:1 / -1;grid-template-columns:repeat(${cols},minmax(0,1fr));gap:4px 20px;align-items:start">${links}</ul>`;
 }
 
 function setPanelFeature(panel, src, href, name, candidates) {
@@ -188,7 +215,10 @@ async function buildMegaMenu() {
 
     categories.forEach((cat, index) => {
       const isFirst = index === 0;
-      const items = data.products.filter((p) => p.categoryId === cat.id);
+      const items = orderMenuProducts(
+        cat.id,
+        data.products.filter((p) => p.categoryId === cat.id)
+      );
       const catHref = `${base}urunler.html?kategori=${encodeURIComponent(cat.id)}`;
       const featured = items[0];
       const featuredThumb = featured

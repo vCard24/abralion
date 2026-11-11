@@ -1,5 +1,6 @@
 const CATEGORY_FILTERS = {
   'kesici-taslama-flap-disk': (p) => p.categoryId === 'kesici-taslama-flap-disk',
+  'asindiricilar': (p) => p.categoryId === 'asindiricilar',
   'elmas-kesici': (p) => p.categoryId === 'elmas-kesici',
   'kirici-delici': (p) => p.categoryId === 'kirici-delici',
   'olcum-kesim': (p) => p.categoryId === 'olcum-kesim',
@@ -7,6 +8,7 @@ const CATEGORY_FILTERS = {
 
 const URL_CATEGORY_TO_FILTERS = {
   'kesici-taslama-flap-disk': ['kesici-taslama-flap-disk'],
+  'asindiricilar': ['asindiricilar'],
   'elmas-kesici': ['elmas-kesici'],
   'kirici-delici': ['kirici-delici'],
   'olcum-kesim': ['olcum-kesim'],
@@ -134,7 +136,7 @@ function getProductApplications(product) {
       areas.add('mermer');
     } else if (product.categoryId === 'kirici-delici') {
       areas.add('beton');
-    } else if (product.categoryId === 'kesici-taslama-flap-disk') {
+    } else if (product.categoryId === 'kesici-taslama-flap-disk' || product.categoryId === 'asindiricilar') {
       areas.add('metal');
     } else if (product.categoryId === 'olcum-kesim') {
       areas.add('ahsap');

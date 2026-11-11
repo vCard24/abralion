@@ -8,19 +8,24 @@ window.ABRALION_CATALOG = {
       "order": 1
     },
     {
+      "id": "asindiricilar",
+      "name": "Абразивы",
+      "order": 2
+    },
+    {
       "id": "elmas-kesici",
       "name": "Алмазные диски",
-      "order": 2
+      "order": 3
     },
     {
       "id": "kirici-delici",
       "name": "Буры и зубила",
-      "order": 3
+      "order": 4
     },
     {
       "id": "olcum-kesim",
       "name": "Рулетки и строительные ножи",
-      "order": 4
+      "order": 5
     }
   ],
   "products": [
@@ -591,8 +596,8 @@ window.ABRALION_CATALOG = {
       "id": "canak-firca-sacakli",
       "slug": "canak-firca-sacakli",
       "name": "Чашечная щётка с гофрированной проволокой",
-      "categoryId": "kesici-taslama-flap-disk",
-      "categoryName": "Отрезные и шлифовальные круги",
+      "categoryId": "asindiricilar",
+      "categoryName": "Абразивы",
       "featured": true,
       "description": "Чашечные щётки с гофрированной проволокой повторяют форму поверхности и дают равномерную очистку. На широких листах и профилях сокращают время ручной зачистки. Посадка M14 обеспечивает быструю и надёжную установку на угловую шлифовальную машину.",
       "features": [
@@ -705,8 +710,8 @@ window.ABRALION_CATALOG = {
       "id": "canak-firca-burgulu",
       "slug": "canak-firca-burgulu",
       "name": "Чашечная щётка жгутовая (усиленная)",
-      "categoryId": "kesici-taslama-flap-disk",
-      "categoryName": "Отрезные и шлифовальные круги",
+      "categoryId": "asindiricilar",
+      "categoryName": "Абразивы",
       "featured": true,
       "description": "Усиленная чашечная щётка со жгутовой проволокой для тяжёлой очистки, глубокого снятия ржавчины и агрессивной обработки. Жёсткая проволока быстро снимает слои, въевшиеся в металл, бетон и природный камень.",
       "features": [
@@ -819,8 +824,8 @@ window.ABRALION_CATALOG = {
       "id": "plastik-sapli-celik-tel-firca",
       "slug": "plastik-sapli-celik-tel-firca",
       "name": "Ручная стальная щётка с пластиковой ручкой",
-      "categoryId": "kesici-taslama-flap-disk",
-      "categoryName": "Отрезные и шлифовальные круги",
+      "categoryId": "asindiricilar",
+      "categoryName": "Абразивы",
       "featured": false,
       "description": "Ручная стальная щётка для углов, кромок и труб, куда не проходит машинная щётка. Проволока высокой прочности быстро снимает плотную ржавчину, сварочный налёт и стойкую грязь. Подходит и для слесарной зачистки, и для ухода за инструментом и арматурой.",
       "features": [
