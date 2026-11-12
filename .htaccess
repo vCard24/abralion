@@ -1,3 +1,6 @@
+# Bilinmeyen adresler site içi 404 sayfasına düşer (mutlak yol; alt klasörde de çalışır)
+ErrorDocument 404 /404.html
+
 # Kimlik bilgisi içeren yapılandırma dosyalarına doğrudan erişimi engelle
 <FilesMatch "^(confic|config)\.php$">
   <IfModule mod_authz_core.c>

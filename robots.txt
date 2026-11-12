@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://abralion.com/sitemap.xml
+Sitemap: https://abralion.com/ru/sitemap.xml
