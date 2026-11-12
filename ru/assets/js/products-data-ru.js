@@ -2623,12 +2623,36 @@ window.ABRALION_CATALOG = {
       ],
       "images": [
         {
-          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu.webp",
-          "alt": "Магнитная торцевая насадка"
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-01.jpg",
+          "alt": "Магнитная торцевая насадка — галерея 01"
         },
         {
-          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kullanim.jpg",
-          "alt": "Магнитная торцевая насадка — применение"
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-02.jpg",
+          "alt": "Магнитная торцевая насадка — галерея 02"
+        },
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-03.jpg",
+          "alt": "Магнитная торцевая насадка — галерея 03"
+        },
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-04.jpg",
+          "alt": "Магнитная торцевая насадка — галерея 04"
+        },
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-05.jpg",
+          "alt": "Магнитная торцевая насадка — галерея 05"
+        },
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-06.jpg",
+          "alt": "Магнитная торцевая насадка — галерея 06"
+        },
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-07.jpg",
+          "alt": "Магнитная торцевая насадка — галерея 07"
+        },
+        {
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-08.jpg",
+          "alt": "Магнитная торцевая насадка — галерея 08"
         }
       ],
       "variants": [

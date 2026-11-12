@@ -2291,7 +2291,7 @@ window.ABRALION_CATALOG = {
           "alt": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü) - miknatisli anahtar ucu"
         },
         {
-          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-manyetik-somun-adaptoru-kullanim.jpg",
+          "src": "assets/images/products/miknatisli-anahtar-ucu/miknatisli-anahtar-ucu-galeri-01.jpg",
           "alt": "Mıknatıslı Anahtar Ucu (Manyetik Somun Adaptörü) - miknatisli anahtar ucu manyetik somun adaptoru kullanim"
         }
       ],
