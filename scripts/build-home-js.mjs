@@ -36,15 +36,16 @@ await writeFile(outputPath, `${result.code}\n`, 'utf8');
 
 const hash = createHash('md5').update(result.code).digest('hex').slice(0, 8);
 const html = await readFile(indexPath, 'utf8');
-const scriptBlock =
+const bundleTag = `  <script defer src="assets/js/home.bundle.min.js?v=${hash}"></script>`;
+const unbundled =
   /[ \t]*<script defer src="assets\/js\/icons\.js\?v=[^"]+"><\/script>[\s\S]*?<script defer src="assets\/js\/pages\/home\.js\?v=[^"]+"><\/script>/;
-if (!scriptBlock.test(html)) throw new Error('index.html ana sayfa script bloğu bulunamadı.');
-await writeFile(
-  indexPath,
-  html.replace(
-    scriptBlock,
-    `  <script defer src="assets/js/home.bundle.min.js?v=${hash}"></script>`,
-  ),
-  'utf8',
-);
+const bundled =
+  /[ \t]*<script defer src="assets\/js\/home\.bundle\.min\.js\?v=[^"]+"><\/script>/;
+const nextHtml = unbundled.test(html)
+  ? html.replace(unbundled, bundleTag)
+  : bundled.test(html)
+    ? html.replace(bundled, bundleTag)
+    : null;
+if (!nextHtml) throw new Error('index.html ana sayfa script bloğu bulunamadı.');
+await writeFile(indexPath, nextHtml, 'utf8');
 console.log(`home.bundle.min.js ?v=${hash} (${(result.code.length / 1024).toFixed(1)} KB)`);

@@ -15,15 +15,15 @@ const KIRICI_MENU_ORDER = [
   'sds-plus-2-kesicili-beton-matkap-ucu',
   'sds-plus-4-kesicili-beton-matkap-ucu',
   'hss-matkap-ucu',
-  'cam-seramik-matkap-ucu',
   'miknatisli-anahtar-ucu',
   'ph2-manyetik-bits-uc',
+  'sds-max-burc-aleti',
   'duz-keski-sds-plus',
+  'cam-seramik-matkap-ucu',
   'sivri-uclu-keski-murc-sds-plus',
   'genis-agizli-keski',
   'duz-keski-sds-max',
   'sivri-uclu-keski-murc-sds-max',
-  'sds-max-burc-aleti',
 ];
 
 function menuProductLabel(product) {
